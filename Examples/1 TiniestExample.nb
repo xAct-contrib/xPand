@@ -1,0 +1,539 @@
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[{
+ "     ",
+ StyleBox["xPand       ",
+  FontSize->36],
+ "     Ultra ",
+ StyleBox["Minimal Example",
+  FontSize->24]
+}], "Title",
+ FontSize->48],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"<<", "xPand/xPand.m"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"$DefInfoQ", "=", "False"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"SetOptions", "[", 
+   RowBox[{"AutomaticRules", ",", 
+    RowBox[{"Verbose", "\[Rule]", "False"}]}], "]"}], ";"}]}], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\<\"------------------------------------------------------------\
+\"\>"], "Print"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Package xAct`xPerm`  version \"\>", 
+   "\[InvisibleSpace]", "\<\"1.1.3\"\>", "\[InvisibleSpace]", "\<\", \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"2012", ",", "5", ",", "5"}], "}"}]}],
+  SequenceForm["Package xAct`xPerm`  version ", "1.1.3", ", ", {2012, 5, 5}],
+  Editable->False]], "Print"],
+
+Cell[BoxData["\<\"CopyRight (C) 2003-2011, Jose M. Martin-Garcia, under the \
+General Public License.\"\>"], "Print"],
+
+Cell[BoxData["\<\"Connecting to external mac executable...\"\>"], "Print"],
+
+Cell[BoxData["\<\"Connection established.\"\>"], "Print"],
+
+Cell[BoxData["\<\"------------------------------------------------------------\
+\"\>"], "Print"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Package xAct`xTensor`  version \"\>", 
+   "\[InvisibleSpace]", "\<\"1.0.4\"\>", "\[InvisibleSpace]", "\<\", \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"2012", ",", "5", ",", "5"}], "}"}]}],
+  SequenceForm["Package xAct`xTensor`  version ", "1.0.4", ", ", {2012, 5, 5}],
+  Editable->False]], "Print"],
+
+Cell[BoxData["\<\"CopyRight (C) 2002-2011, Jose M. Martin-Garcia, under the \
+General Public License.\"\>"], "Print"],
+
+Cell[BoxData["\<\"------------------------------------------------------------\
+\"\>"], "Print"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Package xAct`xPert`  version \"\>", 
+   "\[InvisibleSpace]", "\<\"1.0.2\"\>", "\[InvisibleSpace]", "\<\", \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"2011", ",", "10", ",", "10"}], "}"}]}],
+  SequenceForm["Package xAct`xPert`  version ", "1.0.2", ", ", {2011, 10, 10}],
+  Editable->False]], "Print"],
+
+Cell[BoxData["\<\"CopyRight (C) 2005-2012, David Brizuela, Jose M. \
+Martin-Garcia and Guillermo A. Mena Marugan, under the General Public \
+License.\"\>"], "Print"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"** \"\>", "\[InvisibleSpace]", "DefInertHead", 
+   "\[InvisibleSpace]", "\<\": Defining \"\>", 
+   "\[InvisibleSpace]", "\<\"inert head \"\>", "\[InvisibleSpace]", 
+   "Perturbation", "\[InvisibleSpace]", "\<\". \"\>", 
+   "\[InvisibleSpace]", "\<\"\"\>"}],
+  SequenceForm[
+  "** ", xAct`xTensor`DefInertHead, ": Defining ", "inert head ", 
+   xAct`xPert`Perturbation, ". ", ""],
+  Editable->False]], "Print"],
+
+Cell[BoxData["\<\"------------------------------------------------------------\
+\"\>"], "Print"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Package xPand`  version \"\>", 
+   "\[InvisibleSpace]", "\<\"0.0.1\"\>", "\[InvisibleSpace]", "\<\", \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"2012", ",", "12", ",", "18"}], "}"}]}],
+  SequenceForm["Package xPand`  version ", "0.0.1", ", ", {2012, 12, 18}],
+  Editable->False]], "Print"],
+
+Cell[BoxData["\<\"CopyRight (C) 2012-2013, Cyril Pitrou, Xavier Roy and \
+Obinna Umeh under the General Public License.\"\>"], "Print"],
+
+Cell[BoxData["\<\"------------------------------------------------------------\
+\"\>"], "Print"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"DefManifold", "[", 
+   RowBox[{"M", ",", "4", ",", 
+    RowBox[{"{", 
+     RowBox[{"b", ",", "c", ",", "i", ",", "j", ",", "k"}], "}"}]}], "]"}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{"DefMetric", "[", 
+   RowBox[{
+    RowBox[{"-", "1"}], ",", 
+    RowBox[{"g", "[", 
+     RowBox[{
+      RowBox[{"-", "b"}], ",", 
+      RowBox[{"-", "c"}]}], "]"}], ",", "CD"}], "]"}], ";"}]}], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"BackgroundSlicing", "[", 
+   RowBox[{"h", ",", "n", ",", "g", ",", "cd", ",", 
+    RowBox[{"{", 
+     RowBox[{"\"\<|\>\"", ",", "\"\<D\>\""}], "}"}], ",", "FLCurved"}], "]"}],
+   ";"}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\<\"** DefMetric: Don't know yet how to define epsilon for a \
+frozen metric.\"\>"], "Print"],
+
+Cell[BoxData["\<\"** MakeRule: Potential problems moving indices on the \
+LHS.\"\>"], "Print"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ToxPand", "[", 
+  RowBox[{
+   RowBox[{"RicciScalarCD", "[", "]"}], ",", "dg", ",", "u", ",", "du", ",", 
+   "h", ",", "NewtonGauge", ",", "1"}], "]"}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\<\"** Warning: The perturbed metric, or the fields required to \
+parameterize its splitting were not previously defined **\"\>"], "Print"],
+
+Cell[BoxData["\<\"** DefMetricPerturbationAndSplittingFields is called to \
+build the perturbation of the metric and the fields needed for future \
+splitting **\"\>"], "Print"],
+
+Cell[BoxData["\<\"** Warning: The perturbed velocity, or the fields required \
+to parameterize the splitting of matter fields perturbations splitting  were \
+not previously defined **\"\>"], "Print"],
+
+Cell[BoxData["\<\"** DefMatterPerturbationsAndSplittingFields is called to \
+build the perturbation of the vector field and the projected fields needed \
+for future splitting **\"\>"], "Print"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox[
+   RowBox[{"6", " ", 
+    SuperscriptBox[
+     OverscriptBox[
+      InterpretationBox[
+       StyleBox["\[ScriptCapitalH]",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       $CellContext`Hh[],
+       Editable->False], ""], "2"]}], 
+   SuperscriptBox[
+    OverscriptBox[
+     InterpretationBox[
+      StyleBox["a",
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      $CellContext`ah[],
+      Editable->False], ""], "2"]], "+", 
+  FractionBox[
+   RowBox[{"6", " ", 
+    OverscriptBox[
+     InterpretationBox[
+      StyleBox["\[ScriptCapitalH]",
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      $CellContext`Hh[],
+      Editable->False], "\[Prime]"]}], 
+   SuperscriptBox[
+    OverscriptBox[
+     InterpretationBox[
+      StyleBox["a",
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      $CellContext`ah[],
+      Editable->False], ""], "2"]], "+", 
+  FractionBox[
+   RowBox[{"6", " ", 
+    InterpretationBox[
+     StyleBox["\[ScriptK]",
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`\[ScriptK]h[],
+     Editable->False]}], 
+   SuperscriptBox[
+    OverscriptBox[
+     InterpretationBox[
+      StyleBox["a",
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      $CellContext`ah[],
+      Editable->False], ""], "2"]], "+", 
+  RowBox[{
+   StyleBox["\[Epsilon]",
+    FontColor->RGBColor[0.3, 0.8, 0.8]], " ", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"-", 
+      FractionBox[
+       RowBox[{"12", " ", 
+        SuperscriptBox[
+         OverscriptBox[
+          InterpretationBox[
+           StyleBox["\[ScriptCapitalH]",
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           $CellContext`Hh[],
+           Editable->False], ""], "2"], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          OverscriptBox["\<\"\"\>", 
+           StyleBox[
+            RowBox[{"(", "1", ")"}],
+            FontColor->RGBColor[1, 0, 1]]], 
+          OverscriptBox[
+           InterpretationBox[
+            StyleBox["\[Phi]",
+             ShowAutoStyles->False,
+             AutoSpacing->False],
+            $CellContext`\[Phi]h[],
+            Editable->False], ""]}], ")"}]}], 
+       SuperscriptBox[
+        OverscriptBox[
+         InterpretationBox[
+          StyleBox["a",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          $CellContext`ah[],
+          Editable->False], ""], "2"]]}], "-", 
+     FractionBox[
+      RowBox[{"12", " ", 
+       OverscriptBox[
+        InterpretationBox[
+         StyleBox["\[ScriptCapitalH]",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`Hh[],
+         Editable->False], "\[Prime]"], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         OverscriptBox["\<\"\"\>", 
+          StyleBox[
+           RowBox[{"(", "1", ")"}],
+           FontColor->RGBColor[1, 0, 1]]], 
+         OverscriptBox[
+          InterpretationBox[
+           StyleBox["\[Phi]",
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           $CellContext`\[Phi]h[],
+           Editable->False], ""]}], ")"}]}], 
+      SuperscriptBox[
+       OverscriptBox[
+        InterpretationBox[
+         StyleBox["a",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`ah[],
+         Editable->False], ""], "2"]], "-", 
+     FractionBox[
+      RowBox[{"6", " ", 
+       OverscriptBox[
+        InterpretationBox[
+         StyleBox["\[ScriptCapitalH]",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`Hh[],
+         Editable->False], ""], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         OverscriptBox["\<\"\"\>", 
+          StyleBox[
+           RowBox[{"(", "1", ")"}],
+           FontColor->RGBColor[1, 0, 1]]], 
+         OverscriptBox[
+          InterpretationBox[
+           StyleBox["\[Phi]",
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           $CellContext`\[Phi]h[],
+           Editable->False], "\[Prime]"]}], ")"}]}], 
+      SuperscriptBox[
+       OverscriptBox[
+        InterpretationBox[
+         StyleBox["a",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`ah[],
+         Editable->False], ""], "2"]], "+", 
+     FractionBox[
+      RowBox[{"12", " ", 
+       InterpretationBox[
+        StyleBox["\[ScriptK]",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`\[ScriptK]h[],
+        Editable->False], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         OverscriptBox["\<\"\"\>", 
+          StyleBox[
+           RowBox[{"(", "1", ")"}],
+           FontColor->RGBColor[1, 0, 1]]], 
+         OverscriptBox[
+          InterpretationBox[
+           StyleBox["\[Psi]",
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           $CellContext`\[Psi]h[],
+           Editable->False], ""]}], ")"}]}], 
+      SuperscriptBox[
+       OverscriptBox[
+        InterpretationBox[
+         StyleBox["a",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`ah[],
+         Editable->False], ""], "2"]], "-", 
+     FractionBox[
+      RowBox[{"18", " ", 
+       OverscriptBox[
+        InterpretationBox[
+         StyleBox["\[ScriptCapitalH]",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`Hh[],
+         Editable->False], ""], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         OverscriptBox["\<\"\"\>", 
+          StyleBox[
+           RowBox[{"(", "1", ")"}],
+           FontColor->RGBColor[1, 0, 1]]], 
+         OverscriptBox[
+          InterpretationBox[
+           StyleBox["\[Psi]",
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           $CellContext`\[Psi]h[],
+           Editable->False], "\[Prime]"]}], ")"}]}], 
+      SuperscriptBox[
+       OverscriptBox[
+        InterpretationBox[
+         StyleBox["a",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`ah[],
+         Editable->False], ""], "2"]], "-", 
+     FractionBox[
+      RowBox[{"6", " ", 
+       RowBox[{"(", 
+        RowBox[{
+         OverscriptBox["\<\"\"\>", 
+          StyleBox[
+           RowBox[{"(", "1", ")"}],
+           FontColor->RGBColor[1, 0, 1]]], 
+         OverscriptBox[
+          InterpretationBox[
+           StyleBox["\[Psi]",
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           $CellContext`\[Psi]h[],
+           Editable->False], "\[Prime]\[Prime]"]}], ")"}]}], 
+      SuperscriptBox[
+       OverscriptBox[
+        InterpretationBox[
+         StyleBox["a",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`ah[],
+         Editable->False], ""], "2"]], "-", 
+     FractionBox[
+      RowBox[{"2", " ", 
+       RowBox[{"(", 
+        InterpretationBox[
+         StyleBox[
+          RowBox[{
+           SubscriptBox["D", "b"], 
+           SuperscriptBox["D", "b"], 
+           OverscriptBox["\<\"\"\>", 
+            StyleBox[
+             RowBox[{"(", "1", ")"}],
+             FontColor->RGBColor[1, 0, 1]]], 
+           OverscriptBox[
+            InterpretationBox[
+             StyleBox["\[Phi]",
+              ShowAutoStyles->False,
+              AutoSpacing->False],
+             $CellContext`\[Phi]h[],
+             Editable->False], ""]}],
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`cd[-$CellContext`b][
+          $CellContext`cd[$CellContext`b][
+           $CellContext`\[Phi]h[
+            xAct`xTensor`LI[1], 
+            xAct`xTensor`LI[0]]]],
+         Editable->False], ")"}]}], 
+      SuperscriptBox[
+       OverscriptBox[
+        InterpretationBox[
+         StyleBox["a",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`ah[],
+         Editable->False], ""], "2"]], "+", 
+     FractionBox[
+      RowBox[{"4", " ", 
+       RowBox[{"(", 
+        InterpretationBox[
+         StyleBox[
+          RowBox[{
+           SubscriptBox["D", "b"], 
+           SuperscriptBox["D", "b"], 
+           OverscriptBox["\<\"\"\>", 
+            StyleBox[
+             RowBox[{"(", "1", ")"}],
+             FontColor->RGBColor[1, 0, 1]]], 
+           OverscriptBox[
+            InterpretationBox[
+             StyleBox["\[Psi]",
+              ShowAutoStyles->False,
+              AutoSpacing->False],
+             $CellContext`\[Psi]h[],
+             Editable->False], ""]}],
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`cd[-$CellContext`b][
+          $CellContext`cd[$CellContext`b][
+           $CellContext`\[Psi]h[
+            xAct`xTensor`LI[1], 
+            xAct`xTensor`LI[0]]]],
+         Editable->False], ")"}]}], 
+      SuperscriptBox[
+       OverscriptBox[
+        InterpretationBox[
+         StyleBox["a",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`ah[],
+         Editable->False], ""], "2"]]}], ")"}]}]}]], "Output"]
+}, Open  ]]
+}, Open  ]]
+},
+AutoGeneratedPackage->Automatic,
+WindowSize->{1222, 756},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+Visible->True,
+DockedCells->{
+  Cell[
+   BoxData[
+    TemplateBox[{
+      ButtonBox[
+      "\"\[Dagger]\"", ButtonFunction :> Exit[], Appearance -> Automatic, 
+       Evaluator -> Automatic, Method -> "Preemptive"], 
+      ButtonBox[
+      "\"\[RightTriangle]\"", ButtonFunction :> FrontEnd`FrontEndExecute[
+         FrontEnd`FrontEndToken["EvaluatorStart"]], Evaluator -> None, 
+       Appearance -> Automatic, Method -> "Preemptive"], 
+      ButtonBox[
+      "\"\[RightTriangle]\[RightTriangle]\"", ButtonFunction :> 
+       FrontEnd`FrontEndExecute[
+         FrontEnd`FrontEndToken["EvaluateNotebook"]], Evaluator -> None, 
+       Appearance -> Automatic, Method -> "Preemptive"], 
+      ButtonBox["\"EvalInit\"", ButtonFunction :> FrontEnd`FrontEndExecute[
+         FrontEnd`FrontEndToken["EvaluateInitialization"]], Evaluator -> None,
+        Appearance -> Automatic, Method -> "Preemptive"], 
+      ButtonBox[
+      "\"Init\"", 
+       ButtonFunction :> (Module[{Utility`Toolbar`cell = NotebookSelection[
+             SelectedNotebook[]], Utility`Toolbar`isInit}, 
+          Utility`Toolbar`isInit = ReplaceAll[InitializationCell, 
+             Options[Utility`Toolbar`cell, InitializationCell]]; If[
+            TrueQ[
+             Or[
+             Utility`Toolbar`isInit == True, Utility`Toolbar`isInit == On]], 
+            SetOptions[Utility`Toolbar`cell, InitializationCell -> False], 
+            SetOptions[Utility`Toolbar`cell, InitializationCell -> True]]]; 
+        Null), Appearance -> Automatic, Evaluator -> Automatic, Method -> 
+       "Preemptive"], 
+      ButtonBox["\"DeInit\"", ButtonFunction :> SetOptions[
+         NotebookSelection[
+          SelectedNotebook[]], InitializationCell -> False], Appearance -> 
+       Automatic, Evaluator -> Automatic, Method -> "Preemptive"], 
+      ButtonBox["\"\[DeleteKey]\"", ButtonFunction :> FrontEnd`FrontEndExecute[
+         FrontEnd`FrontEndToken["DeleteGeneratedCells"]], Evaluator -> None, 
+       Appearance -> Automatic, Method -> "Preemptive"]}, "Row", 
+     DisplayFunction -> (
+      RowBox[{#, "\[InvisibleSpace]", #2, "\[InvisibleSpace]", #3, 
+        "\[InvisibleSpace]", #4, "\[InvisibleSpace]", #5, 
+        "\[InvisibleSpace]", #6, "\[InvisibleSpace]", #7}]& ), 
+     InterpretationFunction -> (RowBox[{"Row", "[", 
+        RowBox[{"{", 
+          RowBox[{#, ",", #2, ",", #3, ",", #4, ",", #5, ",", #6, ",", #7}], 
+          "}"}], "]"}]& )]], "DockedCell"]},
+PrivateNotebookOptions->{"FileOutlineCache"->False},
+ShowSelection->True,
+Magnification->1,
+FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (January 25, \
+2013)",
+StyleDefinitions->FrontEnd`FileName[{"Creative"}, "PastelColor.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
