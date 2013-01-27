@@ -1,3 +1,7 @@
-BrowserCategory["xPand", None, {
-                        Item["xPand_Doc", "xPand_Doc.nb", CopyTag -> None]
-                    }]
+BrowserCategory["xAct Packages", None, 
+  {
+      BrowserCategory["xPand", None, {
+                        Item["xPandDoc", "xPandDoc.nb", CopyTag -> None]
+      }]
+  }
+]

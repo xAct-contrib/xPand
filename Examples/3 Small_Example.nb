@@ -21,7 +21,7 @@ Cell[BoxData[{
    RowBox[{
     RowBox[{"{", "Print", "}"}], ",", "\[IndentingNewLine]", 
     RowBox[{
-     RowBox[{"<<", "xPand/xPand.m"}], ";"}]}], "\[IndentingNewLine]", "]"}], 
+     RowBox[{"<<", "xAct/xPand.m"}], ";"}]}], "\[IndentingNewLine]", "]"}], 
   "\[IndentingNewLine]", 
   RowBox[{"(*", " ", 
    RowBox[{"To", " ", "Keep", " ", "quiet"}], " ", "*)"}], 
@@ -116,7 +116,7 @@ Cell[BoxData[
       "PrintAs", "\[Rule]", "\"\<\!\(\*OverscriptBox[\(g\), \(_\)]\)\>\""}]}],
       "]"}], ";"}], "\n", 
    RowBox[{
-    RowBox[{"BackgroundSlicing", "[", 
+    RowBox[{"SetSlicing", "[", 
      RowBox[{"h", ",", "n", ",", "g", ",", "cd", ",", 
       RowBox[{"{", 
        RowBox[{
@@ -421,10 +421,10 @@ Cell[BoxData[
   RowBox[{"\<\"** \"\>", "\[InvisibleSpace]", "DefTensor", 
    "\[InvisibleSpace]", "\<\": Defining \"\>", 
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
-   RowBox[{"n", "[", "\[Sigma]$645", "]"}], "\[InvisibleSpace]", "\<\". \"\>",
-    "\[InvisibleSpace]", "\<\"\"\>"}],
+   RowBox[{"n", "[", "\[Sigma]$1074", "]"}], 
+   "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
-   $CellContext`n[$CellContext`\[Sigma]$645], ". ", ""],
+   $CellContext`n[$CellContext`\[Sigma]$1074], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -435,12 +435,12 @@ Cell[BoxData[
    "\[InvisibleSpace]", 
    RowBox[{"h", "[", 
     RowBox[{
-     RowBox[{"-", "\[Sigma]$645"}], ",", 
-     RowBox[{"-", "\[Sigma]$646"}]}], "]"}], 
+     RowBox[{"-", "\[Sigma]$1074"}], ",", 
+     RowBox[{"-", "\[Sigma]$1075"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm[
   "** ", xAct`xTensor`DefTensor, ": Defining ", "symmetric metric tensor ", 
-   $CellContext`h[-$CellContext`\[Sigma]$645, -$CellContext`\[Sigma]$646], 
+   $CellContext`h[-$CellContext`\[Sigma]$1074, -$CellContext`\[Sigma]$1075], 
    ". ", ""],
   Editable->False]], "Print"],
 
@@ -504,11 +504,11 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"covariant derivative \"\>", "\[InvisibleSpace]", 
    
    RowBox[{"cd", "[", 
-    RowBox[{"-", "\[Sigma]$645"}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
+    RowBox[{"-", "\[Sigma]$1074"}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
    "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm[
   "** ", xAct`xTensor`DefCovD, ": Defining ", "covariant derivative ", 
-   $CellContext`cd[-$CellContext`\[Sigma]$645], ". ", ""],
+   $CellContext`cd[-$CellContext`\[Sigma]$1074], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -745,13 +745,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"ah", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xPand`Private`n$1768", "]"}], ",", 
-     RowBox[{"LI", "[", "xPand`Private`q$1768", "]"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$2274", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$2274", "]"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`ah[
-    xAct`xTensor`LI[xPand`Private`n$1768], 
-    xAct`xTensor`LI[xPand`Private`q$1768]], ". ", ""],
+    xAct`xTensor`LI[xAct`xPand`Private`p$2274], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$2274]], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -761,13 +761,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"Hh", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xPand`Private`n$1792", "]"}], ",", 
-     RowBox[{"LI", "[", "xPand`Private`q$1792", "]"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$2279", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$2279", "]"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`Hh[
-    xAct`xTensor`LI[xPand`Private`n$1792], 
-    xAct`xTensor`LI[xPand`Private`q$1792]], ". ", ""],
+    xAct`xTensor`LI[xAct`xPand`Private`p$2279], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$2279]], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -778,13 +778,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", 
    RowBox[{"gah2", "[", 
     RowBox[{
-     RowBox[{"-", "\[Sigma]$1817"}], ",", 
-     RowBox[{"-", "\[Sigma]$1818"}]}], "]"}], 
+     RowBox[{"-", "\[Sigma]$2285"}], ",", 
+     RowBox[{"-", "\[Sigma]$2286"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm[
   "** ", xAct`xTensor`DefTensor, ": Defining ", "symmetric metric tensor ", 
-   $CellContext`gah2[-$CellContext`\[Sigma]$1817, \
--$CellContext`\[Sigma]$1818], ". ", ""],
+   $CellContext`gah2[-$CellContext`\[Sigma]$2285, \
+-$CellContext`\[Sigma]$2286], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -793,13 +793,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\": Defining \"\>", 
    "\[InvisibleSpace]", "\<\"inverse metric tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"Invgah2", "[", 
-    RowBox[{"\[Sigma]$1817", ",", "\[Sigma]$1818"}], "]"}], 
+    RowBox[{"\[Sigma]$2285", ",", "\[Sigma]$2286"}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", 
    "\[InvisibleSpace]", "\<\"Metric is frozen!\"\>"}],
   SequenceForm[
   "** ", xAct`xTensor`DefTensor, ": Defining ", "inverse metric tensor ", 
-   $CellContext`Invgah2[$CellContext`\[Sigma]$1817, \
-$CellContext`\[Sigma]$1818], ". ", "Metric is frozen!"],
+   $CellContext`Invgah2[$CellContext`\[Sigma]$2285, \
+$CellContext`\[Sigma]$2286], ". ", "Metric is frozen!"],
   Editable->False]], "Print"],
 
 Cell[BoxData["\<\"** DefMetric: Don't know yet how to define epsilon for a \
@@ -812,11 +812,11 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"covariant derivative \"\>", "\[InvisibleSpace]", 
    
    RowBox[{"CDah2", "[", 
-    RowBox[{"-", "\[Sigma]$1817"}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
+    RowBox[{"-", "\[Sigma]$2285"}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
    "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm[
   "** ", xAct`xTensor`DefCovD, ": Defining ", "covariant derivative ", 
-   $CellContext`CDah2[-$CellContext`\[Sigma]$1817], ". ", ""],
+   $CellContext`CDah2[-$CellContext`\[Sigma]$2285], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -1027,13 +1027,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"Connectionh", "[", 
     RowBox[{
-     RowBox[{"-", "\[Sigma]$645"}], ",", 
-     RowBox[{"-", "\[Sigma]$646"}], ",", 
-     RowBox[{"-", "\[Sigma]$647"}]}], "]"}], 
+     RowBox[{"-", "\[Sigma]$1074"}], ",", 
+     RowBox[{"-", "\[Sigma]$1075"}], ",", 
+     RowBox[{"-", "\[Sigma]$1076"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
-   $CellContext`Connectionh[-$CellContext`\[Sigma]$645, \
--$CellContext`\[Sigma]$646, -$CellContext`\[Sigma]$647], ". ", ""],
+   $CellContext`Connectionh[-$CellContext`\[Sigma]$1074, -$CellContext`\
+\[Sigma]$1075, -$CellContext`\[Sigma]$1076], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -1043,13 +1043,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"CSh", "[", 
     RowBox[{
-     RowBox[{"-", "\[Sigma]$645"}], ",", 
-     RowBox[{"-", "\[Sigma]$646"}], ",", 
-     RowBox[{"-", "\[Sigma]$647"}]}], "]"}], 
+     RowBox[{"-", "\[Sigma]$1074"}], ",", 
+     RowBox[{"-", "\[Sigma]$1075"}], ",", 
+     RowBox[{"-", "\[Sigma]$1076"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
-   $CellContext`CSh[-$CellContext`\[Sigma]$645, -$CellContext`\[Sigma]$646, \
--$CellContext`\[Sigma]$647], ". ", ""],
+   $CellContext`CSh[-$CellContext`\[Sigma]$1074, -$CellContext`\[Sigma]$1075, \
+-$CellContext`\[Sigma]$1076], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -1059,12 +1059,12 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"nth", "[", 
     RowBox[{
-     RowBox[{"-", "\[Sigma]$645"}], ",", 
-     RowBox[{"-", "\[Sigma]$646"}]}], "]"}], 
+     RowBox[{"-", "\[Sigma]$1074"}], ",", 
+     RowBox[{"-", "\[Sigma]$1075"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
-   $CellContext`nth[-$CellContext`\[Sigma]$645, -$CellContext`\[Sigma]$646], 
-   ". ", ""],
+   $CellContext`nth[-$CellContext`\[Sigma]$1074, -$CellContext`\[Sigma]$1075],
+    ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -1073,10 +1073,10 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\": Defining \"\>", 
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"avh", "[", 
-    RowBox[{"-", "\[Sigma]$645"}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
+    RowBox[{"-", "\[Sigma]$1074"}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
    "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
-   $CellContext`avh[-$CellContext`\[Sigma]$645], ". ", ""],
+   $CellContext`avh[-$CellContext`\[Sigma]$1074], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -1086,17 +1086,17 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"Kh", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xPand`Private`n$2628", "]"}], ",", 
-     RowBox[{"LI", "[", "xPand`Private`q$2628", "]"}], ",", 
-     RowBox[{"-", "\[Sigma]$645"}], ",", 
-     RowBox[{"-", "\[Sigma]$646"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$2960", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$2960", "]"}], ",", 
+     RowBox[{"-", "\[Sigma]$1074"}], ",", 
+     RowBox[{"-", "\[Sigma]$1075"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`Kh[
-    xAct`xTensor`LI[xPand`Private`n$2628], 
+    xAct`xTensor`LI[xAct`xPand`Private`p$2960], 
     xAct`xTensor`LI[
-    xPand`Private`q$2628], -$CellContext`\[Sigma]$645, \
--$CellContext`\[Sigma]$646], ". ", ""],
+    xAct`xPand`Private`q$2960], -$CellContext`\[Sigma]$1074, -$CellContext`\
+\[Sigma]$1075], ". ", ""],
   Editable->False]], "Print"]
 }, Open  ]]
 }, Open  ]],
@@ -1210,9 +1210,8 @@ Cell[CellGroupData[{
 Cell[BoxData["\<\"** Warning: The perturbed metric, or the fields required to \
 parameterize its splitting were not previously defined **\"\>"], "Print"],
 
-Cell[BoxData["\<\"** DefMetricPerturbationAndSplittingFields is called to \
-build the perturbation of the metric and the fields needed for future \
-splitting **\"\>"], "Print"],
+Cell[BoxData["\<\"** DefMetricFields is called to build the perturbation of \
+the metric and the fields needed for future splitting **\"\>"], "Print"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -1223,7 +1222,7 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm[
   "** ", xAct`xTensor`DefParameter, ": Defining ", "parameter ", 
-   xPand`\[Epsilon], ". ", ""],
+   xAct`xPand`\[Epsilon], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -1250,101 +1249,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"\[Phi]h", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xPand`Private`n$3686", "]"}], ",", 
-     RowBox[{"LI", "[", "xPand`Private`q$3686", "]"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$3235", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$3235", "]"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`\[Phi]h[
-    xAct`xTensor`LI[xPand`Private`n$3686], 
-    xAct`xTensor`LI[xPand`Private`q$3686]], ". ", ""],
-  Editable->False]], "Print"],
-
-Cell[BoxData[
- InterpretationBox[
-  RowBox[{"\<\"** \"\>", "\[InvisibleSpace]", "DefTensor", 
-   "\[InvisibleSpace]", "\<\": Defining \"\>", 
-   "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
-   RowBox[{"\[Psi]h", "[", 
-    RowBox[{
-     RowBox[{"LI", "[", "xPand`Private`n$3718", "]"}], ",", 
-     RowBox[{"LI", "[", "xPand`Private`q$3718", "]"}]}], "]"}], 
-   "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
-  SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
-   $CellContext`\[Psi]h[
-    xAct`xTensor`LI[xPand`Private`n$3718], 
-    xAct`xTensor`LI[xPand`Private`q$3718]], ". ", ""],
-  Editable->False]], "Print"],
-
-Cell[BoxData[
- InterpretationBox[
-  RowBox[{"\<\"** \"\>", "\[InvisibleSpace]", "DefTensor", 
-   "\[InvisibleSpace]", "\<\": Defining \"\>", 
-   "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
-   RowBox[{"Eth", "[", 
-    RowBox[{
-     RowBox[{"LI", "[", "xPand`Private`n$3750", "]"}], ",", 
-     RowBox[{"LI", "[", "xPand`Private`q$3750", "]"}], ",", 
-     RowBox[{"-", "\[Alpha]"}], ",", 
-     RowBox[{"-", "\[Beta]"}]}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
-   "\[InvisibleSpace]", "\<\"\"\>"}],
-  SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
-   $CellContext`Eth[
-    xAct`xTensor`LI[xPand`Private`n$3750], 
-    xAct`xTensor`LI[
-    xPand`Private`q$3750], -$CellContext`\[Alpha], -$CellContext`\[Beta]], 
-   ". ", ""],
-  Editable->False]], "Print"],
-
-Cell[BoxData[
- InterpretationBox[
-  RowBox[{"\<\"** \"\>", "\[InvisibleSpace]", "DefTensor", 
-   "\[InvisibleSpace]", "\<\": Defining \"\>", 
-   "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
-   RowBox[{"Evh", "[", 
-    RowBox[{
-     RowBox[{"LI", "[", "xPand`Private`n$3890", "]"}], ",", 
-     RowBox[{"LI", "[", "xPand`Private`q$3890", "]"}], ",", 
-     RowBox[{"-", "\[Alpha]"}]}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
-   "\[InvisibleSpace]", "\<\"\"\>"}],
-  SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
-   $CellContext`Evh[
-    xAct`xTensor`LI[xPand`Private`n$3890], 
-    xAct`xTensor`LI[xPand`Private`q$3890], -$CellContext`\[Alpha]], ". ", ""],
-  
-  Editable->False]], "Print"],
-
-Cell[BoxData[
- InterpretationBox[
-  RowBox[{"\<\"** \"\>", "\[InvisibleSpace]", "DefTensor", 
-   "\[InvisibleSpace]", "\<\": Defining \"\>", 
-   "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
-   RowBox[{"Esh", "[", 
-    RowBox[{
-     RowBox[{"LI", "[", "xPand`Private`n$3959", "]"}], ",", 
-     RowBox[{"LI", "[", "xPand`Private`q$3959", "]"}]}], "]"}], 
-   "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
-  SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
-   $CellContext`Esh[
-    xAct`xTensor`LI[xPand`Private`n$3959], 
-    xAct`xTensor`LI[xPand`Private`q$3959]], ". ", ""],
-  Editable->False]], "Print"],
-
-Cell[BoxData[
- InterpretationBox[
-  RowBox[{"\<\"** \"\>", "\[InvisibleSpace]", "DefTensor", 
-   "\[InvisibleSpace]", "\<\": Defining \"\>", 
-   "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
-   RowBox[{"Bvh", "[", 
-    RowBox[{
-     RowBox[{"LI", "[", "xPand`Private`n$3991", "]"}], ",", 
-     RowBox[{"LI", "[", "xPand`Private`q$3991", "]"}], ",", 
-     RowBox[{"-", "\[Alpha]"}]}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
-   "\[InvisibleSpace]", "\<\"\"\>"}],
-  SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
-   $CellContext`Bvh[
-    xAct`xTensor`LI[xPand`Private`n$3991], 
-    xAct`xTensor`LI[xPand`Private`q$3991], -$CellContext`\[Alpha]], ". ", ""],
-  
+    xAct`xTensor`LI[xAct`xPand`Private`p$3235], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$3235]], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -1354,13 +1265,101 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"Bsh", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xPand`Private`n$4060", "]"}], ",", 
-     RowBox[{"LI", "[", "xPand`Private`q$4060", "]"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$3240", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$3240", "]"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`Bsh[
-    xAct`xTensor`LI[xPand`Private`n$4060], 
-    xAct`xTensor`LI[xPand`Private`q$4060]], ". ", ""],
+    xAct`xTensor`LI[xAct`xPand`Private`p$3240], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$3240]], ". ", ""],
+  Editable->False]], "Print"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"** \"\>", "\[InvisibleSpace]", "DefTensor", 
+   "\[InvisibleSpace]", "\<\": Defining \"\>", 
+   "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
+   RowBox[{"Bvh", "[", 
+    RowBox[{
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$3245", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$3245", "]"}], ",", 
+     RowBox[{"-", "\[Alpha]"}]}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
+   "\[InvisibleSpace]", "\<\"\"\>"}],
+  SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
+   $CellContext`Bvh[
+    xAct`xTensor`LI[xAct`xPand`Private`p$3245], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$3245], -$CellContext`\[Alpha]], ". ",
+    ""],
+  Editable->False]], "Print"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"** \"\>", "\[InvisibleSpace]", "DefTensor", 
+   "\[InvisibleSpace]", "\<\": Defining \"\>", 
+   "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
+   RowBox[{"\[Psi]h", "[", 
+    RowBox[{
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$3251", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$3251", "]"}]}], "]"}], 
+   "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
+  SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
+   $CellContext`\[Psi]h[
+    xAct`xTensor`LI[xAct`xPand`Private`p$3251], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$3251]], ". ", ""],
+  Editable->False]], "Print"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"** \"\>", "\[InvisibleSpace]", "DefTensor", 
+   "\[InvisibleSpace]", "\<\": Defining \"\>", 
+   "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
+   RowBox[{"Esh", "[", 
+    RowBox[{
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$3256", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$3256", "]"}]}], "]"}], 
+   "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
+  SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
+   $CellContext`Esh[
+    xAct`xTensor`LI[xAct`xPand`Private`p$3256], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$3256]], ". ", ""],
+  Editable->False]], "Print"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"** \"\>", "\[InvisibleSpace]", "DefTensor", 
+   "\[InvisibleSpace]", "\<\": Defining \"\>", 
+   "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
+   RowBox[{"Evh", "[", 
+    RowBox[{
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$3261", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$3261", "]"}], ",", 
+     RowBox[{"-", "\[Alpha]"}]}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
+   "\[InvisibleSpace]", "\<\"\"\>"}],
+  SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
+   $CellContext`Evh[
+    xAct`xTensor`LI[xAct`xPand`Private`p$3261], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$3261], -$CellContext`\[Alpha]], ". ",
+    ""],
+  Editable->False]], "Print"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"** \"\>", "\[InvisibleSpace]", "DefTensor", 
+   "\[InvisibleSpace]", "\<\": Defining \"\>", 
+   "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
+   RowBox[{"Eth", "[", 
+    RowBox[{
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$3267", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$3267", "]"}], ",", 
+     RowBox[{"-", "\[Alpha]"}], ",", 
+     RowBox[{"-", "\[Beta]"}]}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
+   "\[InvisibleSpace]", "\<\"\"\>"}],
+  SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
+   $CellContext`Eth[
+    xAct`xTensor`LI[xAct`xPand`Private`p$3267], 
+    xAct`xTensor`LI[
+    xAct`xPand`Private`q$3267], -$CellContext`\[Alpha], \
+-$CellContext`\[Beta]], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -1370,13 +1369,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"Th", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xPand`Private`n$4092", "]"}], ",", 
-     RowBox[{"LI", "[", "xPand`Private`q$4092", "]"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$3276", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$3276", "]"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`Th[
-    xAct`xTensor`LI[xPand`Private`n$4092], 
-    xAct`xTensor`LI[xPand`Private`q$4092]], ". ", ""],
+    xAct`xTensor`LI[xAct`xPand`Private`p$3276], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$3276]], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -1386,13 +1385,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"Lsh", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xPand`Private`n$4124", "]"}], ",", 
-     RowBox[{"LI", "[", "xPand`Private`q$4124", "]"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$3281", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$3281", "]"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`Lsh[
-    xAct`xTensor`LI[xPand`Private`n$4124], 
-    xAct`xTensor`LI[xPand`Private`q$4124]], ". ", ""],
+    xAct`xTensor`LI[xAct`xPand`Private`p$3281], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$3281]], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -1402,24 +1401,24 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"Lvh", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xPand`Private`n$4156", "]"}], ",", 
-     RowBox[{"LI", "[", "xPand`Private`q$4156", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$3286", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$3286", "]"}], ",", 
      RowBox[{"-", "\[Alpha]"}]}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
    "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`Lvh[
-    xAct`xTensor`LI[xPand`Private`n$4156], 
-    xAct`xTensor`LI[xPand`Private`q$4156], -$CellContext`\[Alpha]], ". ", ""],
-  
+    xAct`xTensor`LI[xAct`xPand`Private`p$3286], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$3286], -$CellContext`\[Alpha]], ". ",
+    ""],
   Editable->False]], "Print"],
 
 Cell[BoxData["\<\"** Warning: The perturbed velocity, or the fields required \
 to parameterize the splitting of matter fields perturbations splitting  were \
 not previously defined **\"\>"], "Print"],
 
-Cell[BoxData["\<\"** DefMatterPerturbationsAndSplittingFields is called to \
-build the perturbation of the vector field and the projected fields needed \
-for future splitting **\"\>"], "Print"],
+Cell[BoxData["\<\"** DefMatterFields is called to build the perturbation of \
+the vector field and the projected fields needed for future splitting \
+**\"\>"], "Print"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -1428,13 +1427,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"\[CurlyPhi]", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xPand`Private`n$4229", "]"}], ",", 
-     RowBox[{"LI", "[", "xPand`Private`q$4229", "]"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$3296", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$3296", "]"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
-   xPand`\[CurlyPhi][
-    xAct`xTensor`LI[xPand`Private`n$4229], 
-    xAct`xTensor`LI[xPand`Private`q$4229]], ". ", ""],
+   xAct`xPand`\[CurlyPhi][
+    xAct`xTensor`LI[xAct`xPand`Private`p$3296], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$3296]], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -1444,13 +1443,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"\[Rho]u", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xPand`Private`n$4267", "]"}], ",", 
-     RowBox[{"LI", "[", "xPand`Private`q$4267", "]"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$3301", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$3301", "]"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`\[Rho]u[
-    xAct`xTensor`LI[xPand`Private`n$4267], 
-    xAct`xTensor`LI[xPand`Private`q$4267]], ". ", ""],
+    xAct`xTensor`LI[xAct`xPand`Private`p$3301], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$3301]], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -1460,13 +1459,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"Pu", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xPand`Private`n$4305", "]"}], ",", 
-     RowBox[{"LI", "[", "xPand`Private`q$4305", "]"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$3306", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$3306", "]"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`Pu[
-    xAct`xTensor`LI[xPand`Private`n$4305], 
-    xAct`xTensor`LI[xPand`Private`q$4305]], ". ", ""],
+    xAct`xTensor`LI[xAct`xPand`Private`p$3306], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$3306]], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -1476,49 +1475,15 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"Vspathu", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xPand`Private`n$4343", "]"}], ",", 
-     RowBox[{"LI", "[", "xPand`Private`q$4343", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$3311", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$3311", "]"}], ",", 
      RowBox[{"-", "\[Alpha]"}]}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
    "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`Vspathu[
-    xAct`xTensor`LI[xPand`Private`n$4343], 
-    xAct`xTensor`LI[xPand`Private`q$4343], -$CellContext`\[Alpha]], ". ", ""],
-  
-  Editable->False]], "Print"],
-
-Cell[BoxData[
- InterpretationBox[
-  RowBox[{"\<\"** \"\>", "\[InvisibleSpace]", "DefTensor", 
-   "\[InvisibleSpace]", "\<\": Defining \"\>", 
-   "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
-   RowBox[{"Vvhu", "[", 
-    RowBox[{
-     RowBox[{"LI", "[", "xPand`Private`n$4421", "]"}], ",", 
-     RowBox[{"LI", "[", "xPand`Private`q$4421", "]"}], ",", 
-     RowBox[{"-", "\[Alpha]"}]}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
-   "\[InvisibleSpace]", "\<\"\"\>"}],
-  SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
-   $CellContext`Vvhu[
-    xAct`xTensor`LI[xPand`Private`n$4421], 
-    xAct`xTensor`LI[xPand`Private`q$4421], -$CellContext`\[Alpha]], ". ", ""],
-  
-  Editable->False]], "Print"],
-
-Cell[BoxData[
- InterpretationBox[
-  RowBox[{"\<\"** \"\>", "\[InvisibleSpace]", "DefTensor", 
-   "\[InvisibleSpace]", "\<\": Defining \"\>", 
-   "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
-   RowBox[{"Vshu", "[", 
-    RowBox[{
-     RowBox[{"LI", "[", "xPand`Private`n$4499", "]"}], ",", 
-     RowBox[{"LI", "[", "xPand`Private`q$4499", "]"}]}], "]"}], 
-   "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
-  SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
-   $CellContext`Vshu[
-    xAct`xTensor`LI[xPand`Private`n$4499], 
-    xAct`xTensor`LI[xPand`Private`q$4499]], ". ", ""],
+    xAct`xTensor`LI[xAct`xPand`Private`p$3311], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$3311], -$CellContext`\[Alpha]], ". ",
+    ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -1528,13 +1493,47 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"V0hu", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xPand`Private`n$4537", "]"}], ",", 
-     RowBox[{"LI", "[", "xPand`Private`q$4537", "]"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$3317", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$3317", "]"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`V0hu[
-    xAct`xTensor`LI[xPand`Private`n$4537], 
-    xAct`xTensor`LI[xPand`Private`q$4537]], ". ", ""],
+    xAct`xTensor`LI[xAct`xPand`Private`p$3317], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$3317]], ". ", ""],
+  Editable->False]], "Print"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"** \"\>", "\[InvisibleSpace]", "DefTensor", 
+   "\[InvisibleSpace]", "\<\": Defining \"\>", 
+   "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
+   RowBox[{"Vshu", "[", 
+    RowBox[{
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$3322", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$3322", "]"}]}], "]"}], 
+   "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
+  SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
+   $CellContext`Vshu[
+    xAct`xTensor`LI[xAct`xPand`Private`p$3322], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$3322]], ". ", ""],
+  Editable->False]], "Print"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"** \"\>", "\[InvisibleSpace]", "DefTensor", 
+   "\[InvisibleSpace]", "\<\": Defining \"\>", 
+   "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
+   RowBox[{"Vvhu", "[", 
+    RowBox[{
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$3327", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$3327", "]"}], ",", 
+     RowBox[{"-", "\[Alpha]"}]}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
+   "\[InvisibleSpace]", "\<\"\"\>"}],
+  SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
+   $CellContext`Vvhu[
+    xAct`xTensor`LI[xAct`xPand`Private`p$3327], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$3327], -$CellContext`\[Alpha]], ". ",
+    ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -1612,14 +1611,15 @@ Cell[BoxData[
         xAct`xTensor`LI[0]]],
       Editable->False], "2"]], 
    "\[InvisibleSpace]", "\<\" +... was performed in \"\>", 
-   "\[InvisibleSpace]", "1.125915`6.503050598554503", 
+   "\[InvisibleSpace]", 
+   "1.25863400000000003053912678296910598874`6.120499372625735", 
    "\[InvisibleSpace]", "\<\" seconds.\"\>"}],
   SequenceForm[
   "The Splitting of ", $CellContext`RicciScalarCD[] xAct`xTensor`Scalar[
       $CellContext`ah[
        xAct`xTensor`LI[0], 
        xAct`xTensor`LI[0]]]^(-2), " +... was performed in ", 
-   1.125915`6.503050598554503, " seconds."],
+   1.25863400000000003053912678296910598874`6.120499372625735, " seconds."],
   Editable->False]], "Print"]
 }, Open  ]],
 
@@ -1681,7 +1681,7 @@ Cell[BoxData[
           OverscriptBox["\<\"\"\>", 
            StyleBox[
             RowBox[{"(", "1", ")"}],
-            FontColor->RGBColor[1, 0, 1]]], 
+            FontColor->RGBColor[0.85, 0, 0]]], 
           OverscriptBox[
            InterpretationBox[
             StyleBox["\[Phi]",
@@ -1711,7 +1711,7 @@ Cell[BoxData[
          OverscriptBox["\<\"\"\>", 
           StyleBox[
            RowBox[{"(", "1", ")"}],
-           FontColor->RGBColor[1, 0, 1]]], 
+           FontColor->RGBColor[0.85, 0, 0]]], 
          OverscriptBox[
           InterpretationBox[
            StyleBox["\[Phi]",
@@ -1741,7 +1741,7 @@ Cell[BoxData[
          OverscriptBox["\<\"\"\>", 
           StyleBox[
            RowBox[{"(", "1", ")"}],
-           FontColor->RGBColor[1, 0, 1]]], 
+           FontColor->RGBColor[0.85, 0, 0]]], 
          OverscriptBox[
           InterpretationBox[
            StyleBox["\[Phi]",
@@ -1771,7 +1771,7 @@ Cell[BoxData[
          OverscriptBox["\<\"\"\>", 
           StyleBox[
            RowBox[{"(", "1", ")"}],
-           FontColor->RGBColor[1, 0, 1]]], 
+           FontColor->RGBColor[0.85, 0, 0]]], 
          OverscriptBox[
           InterpretationBox[
            StyleBox["\[Psi]",
@@ -1794,7 +1794,7 @@ Cell[BoxData[
          OverscriptBox["\<\"\"\>", 
           StyleBox[
            RowBox[{"(", "1", ")"}],
-           FontColor->RGBColor[1, 0, 1]]], 
+           FontColor->RGBColor[0.85, 0, 0]]], 
          OverscriptBox[
           InterpretationBox[
            StyleBox["\[Psi]",
@@ -1830,7 +1830,7 @@ Cell[BoxData[
            OverscriptBox["\<\"\"\>", 
             StyleBox[
              RowBox[{"(", "1", ")"}],
-             FontColor->RGBColor[1, 0, 1]]], 
+             FontColor->RGBColor[0.85, 0, 0]]], 
            OverscriptBox[
             InterpretationBox[
              StyleBox["B",
@@ -1867,7 +1867,7 @@ Cell[BoxData[
            OverscriptBox["\<\"\"\>", 
             StyleBox[
              RowBox[{"(", "1", ")"}],
-             FontColor->RGBColor[1, 0, 1]]], 
+             FontColor->RGBColor[0.85, 0, 0]]], 
            OverscriptBox[
             InterpretationBox[
              StyleBox["B",
@@ -1911,7 +1911,7 @@ Cell[BoxData[
            OverscriptBox["\<\"\"\>", 
             StyleBox[
              RowBox[{"(", "1", ")"}],
-             FontColor->RGBColor[1, 0, 1]]], 
+             FontColor->RGBColor[0.85, 0, 0]]], 
            OverscriptBox[
             InterpretationBox[
              StyleBox["E",
@@ -1948,7 +1948,7 @@ Cell[BoxData[
            OverscriptBox["\<\"\"\>", 
             StyleBox[
              RowBox[{"(", "1", ")"}],
-             FontColor->RGBColor[1, 0, 1]]], 
+             FontColor->RGBColor[0.85, 0, 0]]], 
            OverscriptBox[
             InterpretationBox[
              StyleBox["E",
@@ -1985,7 +1985,7 @@ Cell[BoxData[
            OverscriptBox["\<\"\"\>", 
             StyleBox[
              RowBox[{"(", "1", ")"}],
-             FontColor->RGBColor[1, 0, 1]]], 
+             FontColor->RGBColor[0.85, 0, 0]]], 
            OverscriptBox[
             InterpretationBox[
              StyleBox["\[Phi]",
@@ -2022,7 +2022,7 @@ Cell[BoxData[
            OverscriptBox["\<\"\"\>", 
             StyleBox[
              RowBox[{"(", "1", ")"}],
-             FontColor->RGBColor[1, 0, 1]]], 
+             FontColor->RGBColor[0.85, 0, 0]]], 
            OverscriptBox[
             InterpretationBox[
              StyleBox["\[Psi]",
@@ -2093,11 +2093,13 @@ Cell[BoxData[
      AutoSpacing->False],
     $CellContext`RicciCD[-$CellContext`\[Mu], -$CellContext`\[Nu]],
     Editable->False], "\[InvisibleSpace]", "\<\" +... was performed in \"\>", 
-   "\[InvisibleSpace]", "2.952111`6.921677676518652", 
+   "\[InvisibleSpace]", 
+   "3.15213300000000007372591426246799528599`6.519204446953582", 
    "\[InvisibleSpace]", "\<\" seconds.\"\>"}],
   SequenceForm["The Splitting of ", 
    $CellContext`RicciCD[-$CellContext`\[Mu], -$CellContext`\[Nu]], 
-   " +... was performed in ", 2.952111`6.921677676518652, " seconds."],
+   " +... was performed in ", 
+   3.15213300000000007372591426246799528599`6.519204446953582, " seconds."],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -2252,7 +2254,7 @@ Cell[BoxData[
       OverscriptBox["\<\"\"\>", 
        StyleBox[
         RowBox[{"(", "1", ")"}],
-        FontColor->RGBColor[1, 0, 1]]], 
+        FontColor->RGBColor[0.85, 0, 0]]], 
       OverscriptBox[
        InterpretationBox[
         StyleBox[GridBox[{
@@ -2289,7 +2291,7 @@ Cell[BoxData[
         OverscriptBox["\<\"\"\>", 
          StyleBox[
           RowBox[{"(", "1", ")"}],
-          FontColor->RGBColor[1, 0, 1]]], 
+          FontColor->RGBColor[0.85, 0, 0]]], 
         OverscriptBox[
          InterpretationBox[
           StyleBox[GridBox[{
@@ -2333,7 +2335,7 @@ Cell[BoxData[
         OverscriptBox["\<\"\"\>", 
          StyleBox[
           RowBox[{"(", "1", ")"}],
-          FontColor->RGBColor[1, 0, 1]]], 
+          FontColor->RGBColor[0.85, 0, 0]]], 
         OverscriptBox[
          InterpretationBox[
           StyleBox[GridBox[{
@@ -2378,7 +2380,7 @@ Cell[BoxData[
         OverscriptBox["\<\"\"\>", 
          StyleBox[
           RowBox[{"(", "1", ")"}],
-          FontColor->RGBColor[1, 0, 1]]], 
+          FontColor->RGBColor[0.85, 0, 0]]], 
         OverscriptBox[
          InterpretationBox[
           StyleBox[GridBox[{
@@ -2422,7 +2424,7 @@ Cell[BoxData[
         OverscriptBox["\<\"\"\>", 
          StyleBox[
           RowBox[{"(", "1", ")"}],
-          FontColor->RGBColor[1, 0, 1]]], 
+          FontColor->RGBColor[0.85, 0, 0]]], 
         OverscriptBox[
          InterpretationBox[
           StyleBox[GridBox[{
@@ -2496,7 +2498,7 @@ Cell[BoxData[
         OverscriptBox["\<\"\"\>", 
          StyleBox[
           RowBox[{"(", "1", ")"}],
-          FontColor->RGBColor[1, 0, 1]]], 
+          FontColor->RGBColor[0.85, 0, 0]]], 
         OverscriptBox[
          InterpretationBox[
           StyleBox[GridBox[{
@@ -2569,7 +2571,7 @@ Cell[BoxData[
         OverscriptBox["\<\"\"\>", 
          StyleBox[
           RowBox[{"(", "1", ")"}],
-          FontColor->RGBColor[1, 0, 1]]], 
+          FontColor->RGBColor[0.85, 0, 0]]], 
         OverscriptBox[
          InterpretationBox[
           StyleBox[GridBox[{
@@ -2643,7 +2645,7 @@ Cell[BoxData[
         OverscriptBox["\<\"\"\>", 
          StyleBox[
           RowBox[{"(", "1", ")"}],
-          FontColor->RGBColor[1, 0, 1]]], 
+          FontColor->RGBColor[0.85, 0, 0]]], 
         OverscriptBox[
          InterpretationBox[
           StyleBox[GridBox[{
@@ -2753,7 +2755,7 @@ Cell[BoxData[
         OverscriptBox["\<\"\"\>", 
          StyleBox[
           RowBox[{"(", "1", ")"}],
-          FontColor->RGBColor[1, 0, 1]]], 
+          FontColor->RGBColor[0.85, 0, 0]]], 
         OverscriptBox[
          InterpretationBox[
           StyleBox["\[Phi]",
@@ -2803,7 +2805,7 @@ Cell[BoxData[
         OverscriptBox["\<\"\"\>", 
          StyleBox[
           RowBox[{"(", "1", ")"}],
-          FontColor->RGBColor[1, 0, 1]]], 
+          FontColor->RGBColor[0.85, 0, 0]]], 
         OverscriptBox[
          InterpretationBox[
           StyleBox["\[Phi]",
@@ -2853,7 +2855,7 @@ Cell[BoxData[
         OverscriptBox["\<\"\"\>", 
          StyleBox[
           RowBox[{"(", "1", ")"}],
-          FontColor->RGBColor[1, 0, 1]]], 
+          FontColor->RGBColor[0.85, 0, 0]]], 
         OverscriptBox[
          InterpretationBox[
           StyleBox["\[Phi]",
@@ -2932,7 +2934,7 @@ Cell[BoxData[
         OverscriptBox["\<\"\"\>", 
          StyleBox[
           RowBox[{"(", "1", ")"}],
-          FontColor->RGBColor[1, 0, 1]]], 
+          FontColor->RGBColor[0.85, 0, 0]]], 
         OverscriptBox[
          InterpretationBox[
           StyleBox["\[Phi]",
@@ -2983,7 +2985,7 @@ Cell[BoxData[
         OverscriptBox["\<\"\"\>", 
          StyleBox[
           RowBox[{"(", "1", ")"}],
-          FontColor->RGBColor[1, 0, 1]]], 
+          FontColor->RGBColor[0.85, 0, 0]]], 
         OverscriptBox[
          InterpretationBox[
           StyleBox["\[Psi]",
@@ -3033,7 +3035,7 @@ Cell[BoxData[
         OverscriptBox["\<\"\"\>", 
          StyleBox[
           RowBox[{"(", "1", ")"}],
-          FontColor->RGBColor[1, 0, 1]]], 
+          FontColor->RGBColor[0.85, 0, 0]]], 
         OverscriptBox[
          InterpretationBox[
           StyleBox["\[Psi]",
@@ -3083,7 +3085,7 @@ Cell[BoxData[
         OverscriptBox["\<\"\"\>", 
          StyleBox[
           RowBox[{"(", "1", ")"}],
-          FontColor->RGBColor[1, 0, 1]]], 
+          FontColor->RGBColor[0.85, 0, 0]]], 
         OverscriptBox[
          InterpretationBox[
           StyleBox["\[Psi]",
@@ -3162,7 +3164,7 @@ Cell[BoxData[
         OverscriptBox["\<\"\"\>", 
          StyleBox[
           RowBox[{"(", "1", ")"}],
-          FontColor->RGBColor[1, 0, 1]]], 
+          FontColor->RGBColor[0.85, 0, 0]]], 
         OverscriptBox[
          InterpretationBox[
           StyleBox["\[Psi]",
@@ -3205,7 +3207,7 @@ Cell[BoxData[
         OverscriptBox["\<\"\"\>", 
          StyleBox[
           RowBox[{"(", "1", ")"}],
-          FontColor->RGBColor[1, 0, 1]]], 
+          FontColor->RGBColor[0.85, 0, 0]]], 
         OverscriptBox[
          InterpretationBox[
           StyleBox["\[Psi]",
@@ -3277,7 +3279,7 @@ Cell[BoxData[
         OverscriptBox["\<\"\"\>", 
          StyleBox[
           RowBox[{"(", "1", ")"}],
-          FontColor->RGBColor[1, 0, 1]]], 
+          FontColor->RGBColor[0.85, 0, 0]]], 
         OverscriptBox[
          InterpretationBox[
           StyleBox["\[Psi]",
@@ -3333,7 +3335,7 @@ Cell[BoxData[
           OverscriptBox["\<\"\"\>", 
            StyleBox[
             RowBox[{"(", "1", ")"}],
-            FontColor->RGBColor[1, 0, 1]]], 
+            FontColor->RGBColor[0.85, 0, 0]]], 
           OverscriptBox[
            InterpretationBox[
             StyleBox["B",
@@ -3426,7 +3428,7 @@ Cell[BoxData[
           OverscriptBox["\<\"\"\>", 
            StyleBox[
             RowBox[{"(", "1", ")"}],
-            FontColor->RGBColor[1, 0, 1]]], 
+            FontColor->RGBColor[0.85, 0, 0]]], 
           OverscriptBox[
            InterpretationBox[
             StyleBox["B",
@@ -3512,7 +3514,7 @@ Cell[BoxData[
           OverscriptBox["\<\"\"\>", 
            StyleBox[
             RowBox[{"(", "1", ")"}],
-            FontColor->RGBColor[1, 0, 1]]], 
+            FontColor->RGBColor[0.85, 0, 0]]], 
           OverscriptBox[
            InterpretationBox[
             StyleBox["B",
@@ -3570,7 +3572,7 @@ Cell[BoxData[
           OverscriptBox["\<\"\"\>", 
            StyleBox[
             RowBox[{"(", "1", ")"}],
-            FontColor->RGBColor[1, 0, 1]]], 
+            FontColor->RGBColor[0.85, 0, 0]]], 
           OverscriptBox[
            InterpretationBox[
             StyleBox[GridBox[{
@@ -3652,7 +3654,7 @@ Cell[BoxData[
           OverscriptBox["\<\"\"\>", 
            StyleBox[
             RowBox[{"(", "1", ")"}],
-            FontColor->RGBColor[1, 0, 1]]], 
+            FontColor->RGBColor[0.85, 0, 0]]], 
           OverscriptBox[
            InterpretationBox[
             StyleBox[GridBox[{
@@ -3702,7 +3704,7 @@ Cell[BoxData[
         OverscriptBox["\<\"\"\>", 
          StyleBox[
           RowBox[{"(", "1", ")"}],
-          FontColor->RGBColor[1, 0, 1]]], 
+          FontColor->RGBColor[0.85, 0, 0]]], 
         OverscriptBox[
          InterpretationBox[
           StyleBox[GridBox[{
@@ -3811,7 +3813,7 @@ Cell[BoxData[
           OverscriptBox["\<\"\"\>", 
            StyleBox[
             RowBox[{"(", "1", ")"}],
-            FontColor->RGBColor[1, 0, 1]]], 
+            FontColor->RGBColor[0.85, 0, 0]]], 
           OverscriptBox[
            InterpretationBox[
             StyleBox["\[Phi]",
@@ -3868,7 +3870,7 @@ Cell[BoxData[
           OverscriptBox["\<\"\"\>", 
            StyleBox[
             RowBox[{"(", "1", ")"}],
-            FontColor->RGBColor[1, 0, 1]]], 
+            FontColor->RGBColor[0.85, 0, 0]]], 
           OverscriptBox[
            InterpretationBox[
             StyleBox["\[Psi]",
@@ -3931,7 +3933,7 @@ Cell[BoxData[
           OverscriptBox["\<\"\"\>", 
            StyleBox[
             RowBox[{"(", "1", ")"}],
-            FontColor->RGBColor[1, 0, 1]]], 
+            FontColor->RGBColor[0.85, 0, 0]]], 
           OverscriptBox[
            InterpretationBox[
             StyleBox["B",
@@ -3992,7 +3994,7 @@ Cell[BoxData[
           OverscriptBox["\<\"\"\>", 
            StyleBox[
             RowBox[{"(", "1", ")"}],
-            FontColor->RGBColor[1, 0, 1]]], 
+            FontColor->RGBColor[0.85, 0, 0]]], 
           OverscriptBox[
            InterpretationBox[
             StyleBox["B",
@@ -4024,7 +4026,7 @@ Cell[BoxData[
           OverscriptBox["\<\"\"\>", 
            StyleBox[
             RowBox[{"(", "1", ")"}],
-            FontColor->RGBColor[1, 0, 1]]], 
+            FontColor->RGBColor[0.85, 0, 0]]], 
           OverscriptBox[
            InterpretationBox[
             StyleBox[GridBox[{
@@ -4074,7 +4076,7 @@ Cell[BoxData[
           OverscriptBox["\<\"\"\>", 
            StyleBox[
             RowBox[{"(", "1", ")"}],
-            FontColor->RGBColor[1, 0, 1]]], 
+            FontColor->RGBColor[0.85, 0, 0]]], 
           OverscriptBox[
            InterpretationBox[
             StyleBox[GridBox[{
@@ -4159,7 +4161,7 @@ Cell[BoxData[
           OverscriptBox["\<\"\"\>", 
            StyleBox[
             RowBox[{"(", "1", ")"}],
-            FontColor->RGBColor[1, 0, 1]]], 
+            FontColor->RGBColor[0.85, 0, 0]]], 
           OverscriptBox[
            InterpretationBox[
             StyleBox["\[Phi]",
@@ -4213,7 +4215,7 @@ Cell[BoxData[
           OverscriptBox["\<\"\"\>", 
            StyleBox[
             RowBox[{"(", "1", ")"}],
-            FontColor->RGBColor[1, 0, 1]]], 
+            FontColor->RGBColor[0.85, 0, 0]]], 
           OverscriptBox[
            InterpretationBox[
             StyleBox["\[Psi]",
@@ -4275,7 +4277,7 @@ Cell[BoxData[
           OverscriptBox["\<\"\"\>", 
            StyleBox[
             RowBox[{"(", "1", ")"}],
-            FontColor->RGBColor[1, 0, 1]]], 
+            FontColor->RGBColor[0.85, 0, 0]]], 
           OverscriptBox[
            InterpretationBox[
             StyleBox["B",
@@ -4336,7 +4338,7 @@ Cell[BoxData[
           OverscriptBox["\<\"\"\>", 
            StyleBox[
             RowBox[{"(", "1", ")"}],
-            FontColor->RGBColor[1, 0, 1]]], 
+            FontColor->RGBColor[0.85, 0, 0]]], 
           OverscriptBox[
            InterpretationBox[
             StyleBox["B",
@@ -4368,7 +4370,7 @@ Cell[BoxData[
           OverscriptBox["\<\"\"\>", 
            StyleBox[
             RowBox[{"(", "1", ")"}],
-            FontColor->RGBColor[1, 0, 1]]], 
+            FontColor->RGBColor[0.85, 0, 0]]], 
           OverscriptBox[
            InterpretationBox[
             StyleBox[GridBox[{
@@ -4418,7 +4420,7 @@ Cell[BoxData[
           OverscriptBox["\<\"\"\>", 
            StyleBox[
             RowBox[{"(", "1", ")"}],
-            FontColor->RGBColor[1, 0, 1]]], 
+            FontColor->RGBColor[0.85, 0, 0]]], 
           OverscriptBox[
            InterpretationBox[
             StyleBox[GridBox[{
@@ -4503,7 +4505,7 @@ Cell[BoxData[
           OverscriptBox["\<\"\"\>", 
            StyleBox[
             RowBox[{"(", "1", ")"}],
-            FontColor->RGBColor[1, 0, 1]]], 
+            FontColor->RGBColor[0.85, 0, 0]]], 
           OverscriptBox[
            InterpretationBox[
             StyleBox["\[Phi]",
@@ -4557,7 +4559,7 @@ Cell[BoxData[
           OverscriptBox["\<\"\"\>", 
            StyleBox[
             RowBox[{"(", "1", ")"}],
-            FontColor->RGBColor[1, 0, 1]]], 
+            FontColor->RGBColor[0.85, 0, 0]]], 
           OverscriptBox[
            InterpretationBox[
             StyleBox["\[Psi]",
@@ -4591,7 +4593,7 @@ Cell[BoxData[
           OverscriptBox["\<\"\"\>", 
            StyleBox[
             RowBox[{"(", "1", ")"}],
-            FontColor->RGBColor[1, 0, 1]]], 
+            FontColor->RGBColor[0.85, 0, 0]]], 
           OverscriptBox[
            InterpretationBox[
             StyleBox["B",
@@ -4617,7 +4619,7 @@ Cell[BoxData[
         OverscriptBox["\<\"\"\>", 
          StyleBox[
           RowBox[{"(", "1", ")"}],
-          FontColor->RGBColor[1, 0, 1]]], 
+          FontColor->RGBColor[0.85, 0, 0]]], 
         OverscriptBox[
          InterpretationBox[
           StyleBox["B",
@@ -4643,7 +4645,7 @@ Cell[BoxData[
         OverscriptBox["\<\"\"\>", 
          StyleBox[
           RowBox[{"(", "1", ")"}],
-          FontColor->RGBColor[1, 0, 1]]], 
+          FontColor->RGBColor[0.85, 0, 0]]], 
         OverscriptBox[
          InterpretationBox[
           StyleBox["\[Phi]",
@@ -4669,7 +4671,7 @@ Cell[BoxData[
         OverscriptBox["\<\"\"\>", 
          StyleBox[
           RowBox[{"(", "1", ")"}],
-          FontColor->RGBColor[1, 0, 1]]], 
+          FontColor->RGBColor[0.85, 0, 0]]], 
         OverscriptBox[
          InterpretationBox[
           StyleBox["\[Psi]",
@@ -4726,7 +4728,7 @@ Cell[BoxData[
         OverscriptBox["\<\"\"\>", 
          StyleBox[
           RowBox[{"(", "1", ")"}],
-          FontColor->RGBColor[1, 0, 1]]], 
+          FontColor->RGBColor[0.85, 0, 0]]], 
         OverscriptBox[
          InterpretationBox[
           StyleBox["\[Phi]",
@@ -4747,7 +4749,7 @@ Cell[BoxData[
         OverscriptBox["\<\"\"\>", 
          StyleBox[
           RowBox[{"(", "1", ")"}],
-          FontColor->RGBColor[1, 0, 1]]], 
+          FontColor->RGBColor[0.85, 0, 0]]], 
         OverscriptBox[
          InterpretationBox[
           StyleBox["\[Psi]",
@@ -4761,7 +4763,7 @@ Cell[BoxData[
         OverscriptBox["\<\"\"\>", 
          StyleBox[
           RowBox[{"(", "1", ")"}],
-          FontColor->RGBColor[1, 0, 1]]], 
+          FontColor->RGBColor[0.85, 0, 0]]], 
         OverscriptBox[
          InterpretationBox[
           StyleBox["\[Psi]",
@@ -4788,7 +4790,7 @@ Cell[BoxData[
           OverscriptBox["\<\"\"\>", 
            StyleBox[
             RowBox[{"(", "1", ")"}],
-            FontColor->RGBColor[1, 0, 1]]], 
+            FontColor->RGBColor[0.85, 0, 0]]], 
           OverscriptBox[
            InterpretationBox[
             StyleBox["B",
@@ -4814,7 +4816,7 @@ Cell[BoxData[
         OverscriptBox["\<\"\"\>", 
          StyleBox[
           RowBox[{"(", "1", ")"}],
-          FontColor->RGBColor[1, 0, 1]]], 
+          FontColor->RGBColor[0.85, 0, 0]]], 
         OverscriptBox[
          InterpretationBox[
           StyleBox["B",
@@ -4840,7 +4842,7 @@ Cell[BoxData[
         OverscriptBox["\<\"\"\>", 
          StyleBox[
           RowBox[{"(", "1", ")"}],
-          FontColor->RGBColor[1, 0, 1]]], 
+          FontColor->RGBColor[0.85, 0, 0]]], 
         OverscriptBox[
          InterpretationBox[
           StyleBox["\[Phi]",
@@ -4981,7 +4983,8 @@ Cell[BoxData[
          xAct`xTensor`LI[0]]],
        Editable->False], "3"]]}], 
    "\[InvisibleSpace]", "\<\" +... was performed in \"\>", 
-   "\[InvisibleSpace]", "0.607789`6.2352978292818015", 
+   "\[InvisibleSpace]", 
+   "0.52855099999999999305089204426622018218`5.743686812113157", 
    "\[InvisibleSpace]", "\<\" seconds.\"\>"}],
   SequenceForm["The Splitting of ", ((((-1) xAct`xTensor`Scalar[
          $CellContext`ah[
@@ -4992,7 +4995,7 @@ $CellContext`u[$CellContext`\[Nu]]) $CellContext`CD[$CellContext`\[Mu]][
      $CellContext`ah[
       xAct`xTensor`LI[0], 
       xAct`xTensor`LI[0]]], " +... was performed in ", 
-   0.607789`6.2352978292818015, " seconds."],
+   0.52855099999999999305089204426622018218`5.743686812113157, " seconds."],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -5006,7 +5009,7 @@ Cell[BoxData[
       OverscriptBox["\<\"\"\>", 
        StyleBox[
         RowBox[{"(", "1", ")"}],
-        FontColor->RGBColor[1, 0, 1]]], 
+        FontColor->RGBColor[0.85, 0, 0]]], 
       OverscriptBox[
        InterpretationBox[
         StyleBox[GridBox[{
@@ -5052,7 +5055,7 @@ Cell[BoxData[
         OverscriptBox["\<\"\"\>", 
          StyleBox[
           RowBox[{"(", "1", ")"}],
-          FontColor->RGBColor[1, 0, 1]]], 
+          FontColor->RGBColor[0.85, 0, 0]]], 
         OverscriptBox[
          InterpretationBox[
           StyleBox[GridBox[{
@@ -5112,7 +5115,7 @@ Cell[BoxData[
         OverscriptBox["\<\"\"\>", 
          StyleBox[
           RowBox[{"(", "1", ")"}],
-          FontColor->RGBColor[1, 0, 1]]], 
+          FontColor->RGBColor[0.85, 0, 0]]], 
         OverscriptBox[
          InterpretationBox[
           StyleBox[GridBox[{
@@ -5156,7 +5159,7 @@ Cell[BoxData[
       OverscriptBox["\<\"\"\>", 
        StyleBox[
         RowBox[{"(", "1", ")"}],
-        FontColor->RGBColor[1, 0, 1]]], 
+        FontColor->RGBColor[0.85, 0, 0]]], 
       OverscriptBox[
        InterpretationBox[
         StyleBox[GridBox[{
@@ -5213,7 +5216,7 @@ Cell[BoxData[
           OverscriptBox["\<\"\"\>", 
            StyleBox[
             RowBox[{"(", "1", ")"}],
-            FontColor->RGBColor[1, 0, 1]]], 
+            FontColor->RGBColor[0.85, 0, 0]]], 
           OverscriptBox[
            InterpretationBox[
             StyleBox["B",
@@ -5245,7 +5248,7 @@ Cell[BoxData[
         OverscriptBox["\<\"\"\>", 
          StyleBox[
           RowBox[{"(", "1", ")"}],
-          FontColor->RGBColor[1, 0, 1]]], 
+          FontColor->RGBColor[0.85, 0, 0]]], 
         OverscriptBox[
          InterpretationBox[
           StyleBox["B",
@@ -5286,7 +5289,7 @@ Cell[BoxData[
           OverscriptBox["\<\"\"\>", 
            StyleBox[
             RowBox[{"(", "1", ")"}],
-            FontColor->RGBColor[1, 0, 1]]], 
+            FontColor->RGBColor[0.85, 0, 0]]], 
           OverscriptBox[
            InterpretationBox[
             StyleBox["V",
@@ -5318,7 +5321,7 @@ Cell[BoxData[
         OverscriptBox["\<\"\"\>", 
          StyleBox[
           RowBox[{"(", "1", ")"}],
-          FontColor->RGBColor[1, 0, 1]]], 
+          FontColor->RGBColor[0.85, 0, 0]]], 
         OverscriptBox[
          InterpretationBox[
           StyleBox["V",
@@ -5350,7 +5353,7 @@ Cell[BoxData[
         OverscriptBox["\<\"\"\>", 
          StyleBox[
           RowBox[{"(", "1", ")"}],
-          FontColor->RGBColor[1, 0, 1]]], 
+          FontColor->RGBColor[0.85, 0, 0]]], 
         OverscriptBox[
          InterpretationBox[
           StyleBox["\[Phi]",
@@ -5388,7 +5391,7 @@ Cell[BoxData[
           OverscriptBox["\<\"\"\>", 
            StyleBox[
             RowBox[{"(", "1", ")"}],
-            FontColor->RGBColor[1, 0, 1]]], 
+            FontColor->RGBColor[0.85, 0, 0]]], 
           OverscriptBox[
            InterpretationBox[
             StyleBox[GridBox[{
@@ -5435,7 +5438,7 @@ Cell[BoxData[
             OverscriptBox["\<\"\"\>", 
              StyleBox[
               RowBox[{"(", "1", ")"}],
-              FontColor->RGBColor[1, 0, 1]]], 
+              FontColor->RGBColor[0.85, 0, 0]]], 
             OverscriptBox[
              InterpretationBox[
               StyleBox[GridBox[{
@@ -5496,7 +5499,7 @@ Cell[BoxData[
             OverscriptBox["\<\"\"\>", 
              StyleBox[
               RowBox[{"(", "1", ")"}],
-              FontColor->RGBColor[1, 0, 1]]], 
+              FontColor->RGBColor[0.85, 0, 0]]], 
             OverscriptBox[
              InterpretationBox[
               StyleBox[GridBox[{
@@ -5541,7 +5544,7 @@ Cell[BoxData[
           OverscriptBox["\<\"\"\>", 
            StyleBox[
             RowBox[{"(", "1", ")"}],
-            FontColor->RGBColor[1, 0, 1]]], 
+            FontColor->RGBColor[0.85, 0, 0]]], 
           OverscriptBox[
            InterpretationBox[
             StyleBox[GridBox[{
@@ -5599,7 +5602,7 @@ Cell[BoxData[
               OverscriptBox["\<\"\"\>", 
                StyleBox[
                 RowBox[{"(", "1", ")"}],
-                FontColor->RGBColor[1, 0, 1]]], 
+                FontColor->RGBColor[0.85, 0, 0]]], 
               OverscriptBox[
                InterpretationBox[
                 StyleBox["B",
@@ -5631,7 +5634,7 @@ Cell[BoxData[
             OverscriptBox["\<\"\"\>", 
              StyleBox[
               RowBox[{"(", "1", ")"}],
-              FontColor->RGBColor[1, 0, 1]]], 
+              FontColor->RGBColor[0.85, 0, 0]]], 
             OverscriptBox[
              InterpretationBox[
               StyleBox["B",
@@ -5672,7 +5675,7 @@ Cell[BoxData[
               OverscriptBox["\<\"\"\>", 
                StyleBox[
                 RowBox[{"(", "1", ")"}],
-                FontColor->RGBColor[1, 0, 1]]], 
+                FontColor->RGBColor[0.85, 0, 0]]], 
               OverscriptBox[
                InterpretationBox[
                 StyleBox["V",
@@ -5704,7 +5707,7 @@ Cell[BoxData[
             OverscriptBox["\<\"\"\>", 
              StyleBox[
               RowBox[{"(", "1", ")"}],
-              FontColor->RGBColor[1, 0, 1]]], 
+              FontColor->RGBColor[0.85, 0, 0]]], 
             OverscriptBox[
              InterpretationBox[
               StyleBox["V",
@@ -5736,7 +5739,7 @@ Cell[BoxData[
             OverscriptBox["\<\"\"\>", 
              StyleBox[
               RowBox[{"(", "1", ")"}],
-              FontColor->RGBColor[1, 0, 1]]], 
+              FontColor->RGBColor[0.85, 0, 0]]], 
             OverscriptBox[
              InterpretationBox[
               StyleBox["\[Phi]",
@@ -5798,13 +5801,13 @@ Cell[BoxData[
          StyleBox["\[CurlyPhi]",
           ShowAutoStyles->False,
           AutoSpacing->False],
-         xPand`\[CurlyPhi][],
+         xAct`xPand`\[CurlyPhi][],
          Editable->False], ""]}],
       ShowAutoStyles->False,
       AutoSpacing->False],
      $CellContext`CD[-$CellContext`\[Nu]][
       $CellContext`CD[$CellContext`\[Nu]][
-       xPand`\[CurlyPhi][
+       xAct`xPand`\[CurlyPhi][
         xAct`xTensor`LI[0], 
         xAct`xTensor`LI[0]]]],
      Editable->False], 
@@ -5831,17 +5834,18 @@ Cell[BoxData[
         xAct`xTensor`LI[0]]],
       Editable->False], "2"]], 
    "\[InvisibleSpace]", "\<\" +... was performed in \"\>", 
-   "\[InvisibleSpace]", "0.469444`6.123128786175784", 
+   "\[InvisibleSpace]", 
+   "0.44929099999999999592859012409462593496`5.673127632363446", 
    "\[InvisibleSpace]", "\<\" seconds.\"\>"}],
   SequenceForm["The Splitting of ", xAct`xTensor`Scalar[
       $CellContext`ah[
        xAct`xTensor`LI[0], 
        xAct`xTensor`LI[0]]]^(-2) $CellContext`CD[-$CellContext`\[Nu]][
      $CellContext`CD[$CellContext`\[Nu]][
-      xPand`\[CurlyPhi][
+      xAct`xPand`\[CurlyPhi][
        xAct`xTensor`LI[0], 
        xAct`xTensor`LI[0]]]], " +... was performed in ", 
-   0.469444`6.123128786175784, " seconds."],
+   0.44929099999999999592859012409462593496`5.673127632363446, " seconds."],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -5861,7 +5865,7 @@ Cell[BoxData[
        StyleBox["\[CurlyPhi]",
         ShowAutoStyles->False,
         AutoSpacing->False],
-       xPand`\[CurlyPhi][],
+       xAct`xPand`\[CurlyPhi][],
        Editable->False], "\[Prime]"]}], 
     SuperscriptBox[
      OverscriptBox[
@@ -5877,7 +5881,7 @@ Cell[BoxData[
      StyleBox["\[CurlyPhi]",
       ShowAutoStyles->False,
       AutoSpacing->False],
-     xPand`\[CurlyPhi][],
+     xAct`xPand`\[CurlyPhi][],
      Editable->False], "\[Prime]\[Prime]"], 
    SuperscriptBox[
     OverscriptBox[
@@ -5906,14 +5910,14 @@ Cell[BoxData[
          StyleBox["\[CurlyPhi]",
           ShowAutoStyles->False,
           AutoSpacing->False],
-         xPand`\[CurlyPhi][],
+         xAct`xPand`\[CurlyPhi][],
          Editable->False], "\[Prime]"], " ", 
        RowBox[{"(", 
         RowBox[{
          OverscriptBox["\<\"\"\>", 
           StyleBox[
            RowBox[{"(", "1", ")"}],
-           FontColor->RGBColor[1, 0, 1]]], 
+           FontColor->RGBColor[0.85, 0, 0]]], 
          OverscriptBox[
           InterpretationBox[
            StyleBox["\[Phi]",
@@ -5936,14 +5940,14 @@ Cell[BoxData[
          StyleBox["\[CurlyPhi]",
           ShowAutoStyles->False,
           AutoSpacing->False],
-         xPand`\[CurlyPhi][],
+         xAct`xPand`\[CurlyPhi][],
          Editable->False], "\[Prime]\[Prime]"], " ", 
        RowBox[{"(", 
         RowBox[{
          OverscriptBox["\<\"\"\>", 
           StyleBox[
            RowBox[{"(", "1", ")"}],
-           FontColor->RGBColor[1, 0, 1]]], 
+           FontColor->RGBColor[0.85, 0, 0]]], 
          OverscriptBox[
           InterpretationBox[
            StyleBox["\[Phi]",
@@ -5966,14 +5970,14 @@ Cell[BoxData[
          StyleBox["\[CurlyPhi]",
           ShowAutoStyles->False,
           AutoSpacing->False],
-         xPand`\[CurlyPhi][],
+         xAct`xPand`\[CurlyPhi][],
          Editable->False], "\[Prime]"], " ", 
        RowBox[{"(", 
         RowBox[{
          OverscriptBox["\<\"\"\>", 
           StyleBox[
            RowBox[{"(", "1", ")"}],
-           FontColor->RGBColor[1, 0, 1]]], 
+           FontColor->RGBColor[0.85, 0, 0]]], 
          OverscriptBox[
           InterpretationBox[
            StyleBox["\[Phi]",
@@ -5996,14 +6000,14 @@ Cell[BoxData[
          StyleBox["\[CurlyPhi]",
           ShowAutoStyles->False,
           AutoSpacing->False],
-         xPand`\[CurlyPhi][],
+         xAct`xPand`\[CurlyPhi][],
          Editable->False], "\[Prime]"], " ", 
        RowBox[{"(", 
         RowBox[{
          OverscriptBox["\<\"\"\>", 
           StyleBox[
            RowBox[{"(", "1", ")"}],
-           FontColor->RGBColor[1, 0, 1]]], 
+           FontColor->RGBColor[0.85, 0, 0]]], 
          OverscriptBox[
           InterpretationBox[
            StyleBox["\[Psi]",
@@ -6026,7 +6030,7 @@ Cell[BoxData[
          StyleBox["\[CurlyPhi]",
           ShowAutoStyles->False,
           AutoSpacing->False],
-         xPand`\[CurlyPhi][],
+         xAct`xPand`\[CurlyPhi][],
          Editable->False], "\[Prime]"], " ", 
        RowBox[{"(", 
         InterpretationBox[
@@ -6039,7 +6043,7 @@ Cell[BoxData[
            OverscriptBox["\<\"\"\>", 
             StyleBox[
              RowBox[{"(", "1", ")"}],
-             FontColor->RGBColor[1, 0, 1]]], 
+             FontColor->RGBColor[0.85, 0, 0]]], 
            OverscriptBox[
             InterpretationBox[
              StyleBox["B",
@@ -6087,13 +6091,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"\[Xi]h", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xPand`Private`ord$20135", "]"}], ",", 
-     "\[Sigma]$20136"}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`ord$15637", "]"}], ",", 
+     "\[Sigma]$15638"}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
    "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`\[Xi]h[
-    xAct`xTensor`LI[xPand`Private`ord$20135], $CellContext`\[Sigma]$20136], 
-   ". ", ""],
+    xAct`xTensor`LI[
+    xAct`xPand`Private`ord$15637], $CellContext`\[Sigma]$15638], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -6154,15 +6158,16 @@ Cell[BoxData[
         xAct`xTensor`LI[0]]],
       Editable->False], "2"]}], 
    "\[InvisibleSpace]", "\<\" +... was performed in \"\>", 
-   "\[InvisibleSpace]", "0.791442`6.349964087043176", 
+   "\[InvisibleSpace]", 
+   "0.83712500000000000799360577730112709105`5.94339022522386", 
    "\[InvisibleSpace]", "\<\" seconds.\"\>"}],
-  SequenceForm["The Splitting of ", (xPand`\[Epsilon] $CellContext`dg[
+  SequenceForm["The Splitting of ", (xAct`xPand`\[Epsilon] $CellContext`dg[
       xAct`xTensor`LI[1], -$CellContext`\[Alpha], -$CellContext`\[Beta]]) 
    xAct`xTensor`Scalar[
       $CellContext`ah[
        xAct`xTensor`LI[0], 
        xAct`xTensor`LI[0]]]^2, " +... was performed in ", 
-   0.791442`6.349964087043176, " seconds."],
+   0.83712500000000000799360577730112709105`5.94339022522386, " seconds."],
   Editable->False]], "Print"]
 }, Open  ]],
 
@@ -6292,7 +6297,7 @@ Cell[BoxData[
         OverscriptBox["\<\"\"\>", 
          StyleBox[
           RowBox[{"(", "1", ")"}],
-          FontColor->RGBColor[1, 0, 1]]], 
+          FontColor->RGBColor[0.85, 0, 0]]], 
         OverscriptBox[
          InterpretationBox[
           StyleBox[GridBox[{
@@ -6337,7 +6342,7 @@ Cell[BoxData[
         OverscriptBox["\<\"\"\>", 
          StyleBox[
           RowBox[{"(", "1", ")"}],
-          FontColor->RGBColor[1, 0, 1]]], 
+          FontColor->RGBColor[0.85, 0, 0]]], 
         OverscriptBox[
          InterpretationBox[
           StyleBox[GridBox[{
@@ -6411,7 +6416,7 @@ Cell[BoxData[
         OverscriptBox["\<\"\"\>", 
          StyleBox[
           RowBox[{"(", "1", ")"}],
-          FontColor->RGBColor[1, 0, 1]]], 
+          FontColor->RGBColor[0.85, 0, 0]]], 
         OverscriptBox[
          InterpretationBox[
           StyleBox[GridBox[{
@@ -6485,7 +6490,7 @@ Cell[BoxData[
         OverscriptBox["\<\"\"\>", 
          StyleBox[
           RowBox[{"(", "1", ")"}],
-          FontColor->RGBColor[1, 0, 1]]], 
+          FontColor->RGBColor[0.85, 0, 0]]], 
         OverscriptBox[
          InterpretationBox[
           StyleBox[GridBox[{
@@ -6559,7 +6564,7 @@ Cell[BoxData[
         OverscriptBox["\<\"\"\>", 
          StyleBox[
           RowBox[{"(", "1", ")"}],
-          FontColor->RGBColor[1, 0, 1]]], 
+          FontColor->RGBColor[0.85, 0, 0]]], 
         OverscriptBox[
          InterpretationBox[
           StyleBox[GridBox[{
@@ -6669,7 +6674,7 @@ Cell[BoxData[
         OverscriptBox["\<\"\"\>", 
          StyleBox[
           RowBox[{"(", "1", ")"}],
-          FontColor->RGBColor[1, 0, 1]]], 
+          FontColor->RGBColor[0.85, 0, 0]]], 
         OverscriptBox[
          InterpretationBox[
           StyleBox["T",
@@ -6756,7 +6761,7 @@ Cell[BoxData[
         OverscriptBox["\<\"\"\>", 
          StyleBox[
           RowBox[{"(", "1", ")"}],
-          FontColor->RGBColor[1, 0, 1]]], 
+          FontColor->RGBColor[0.85, 0, 0]]], 
         OverscriptBox[
          InterpretationBox[
           StyleBox["T",
@@ -6836,7 +6841,7 @@ Cell[BoxData[
         OverscriptBox["\<\"\"\>", 
          StyleBox[
           RowBox[{"(", "1", ")"}],
-          FontColor->RGBColor[1, 0, 1]]], 
+          FontColor->RGBColor[0.85, 0, 0]]], 
         OverscriptBox[
          InterpretationBox[
           StyleBox["T",
@@ -6916,7 +6921,7 @@ Cell[BoxData[
         OverscriptBox["\<\"\"\>", 
          StyleBox[
           RowBox[{"(", "1", ")"}],
-          FontColor->RGBColor[1, 0, 1]]], 
+          FontColor->RGBColor[0.85, 0, 0]]], 
         OverscriptBox[
          InterpretationBox[
           StyleBox["\[Phi]",
@@ -6967,7 +6972,7 @@ Cell[BoxData[
         OverscriptBox["\<\"\"\>", 
          StyleBox[
           RowBox[{"(", "1", ")"}],
-          FontColor->RGBColor[1, 0, 1]]], 
+          FontColor->RGBColor[0.85, 0, 0]]], 
         OverscriptBox[
          InterpretationBox[
           StyleBox["\[Psi]",
@@ -7022,7 +7027,7 @@ Cell[BoxData[
           OverscriptBox["\<\"\"\>", 
            StyleBox[
             RowBox[{"(", "1", ")"}],
-            FontColor->RGBColor[1, 0, 1]]], 
+            FontColor->RGBColor[0.85, 0, 0]]], 
           OverscriptBox[
            InterpretationBox[
             StyleBox["B",
@@ -7055,7 +7060,7 @@ Cell[BoxData[
           OverscriptBox["\<\"\"\>", 
            StyleBox[
             RowBox[{"(", "1", ")"}],
-            FontColor->RGBColor[1, 0, 1]]], 
+            FontColor->RGBColor[0.85, 0, 0]]], 
           OverscriptBox[
            InterpretationBox[
             StyleBox[GridBox[{
@@ -7141,7 +7146,7 @@ Cell[BoxData[
           OverscriptBox["\<\"\"\>", 
            StyleBox[
             RowBox[{"(", "1", ")"}],
-            FontColor->RGBColor[1, 0, 1]]], 
+            FontColor->RGBColor[0.85, 0, 0]]], 
           OverscriptBox[
            InterpretationBox[
             StyleBox["L",
@@ -7174,7 +7179,7 @@ Cell[BoxData[
           OverscriptBox["\<\"\"\>", 
            StyleBox[
             RowBox[{"(", "1", ")"}],
-            FontColor->RGBColor[1, 0, 1]]], 
+            FontColor->RGBColor[0.85, 0, 0]]], 
           OverscriptBox[
            InterpretationBox[
             StyleBox[GridBox[{
@@ -7260,7 +7265,7 @@ Cell[BoxData[
           OverscriptBox["\<\"\"\>", 
            StyleBox[
             RowBox[{"(", "1", ")"}],
-            FontColor->RGBColor[1, 0, 1]]], 
+            FontColor->RGBColor[0.85, 0, 0]]], 
           OverscriptBox[
            InterpretationBox[
             StyleBox["T",
@@ -7322,7 +7327,7 @@ Cell[BoxData[
           OverscriptBox["\<\"\"\>", 
            StyleBox[
             RowBox[{"(", "1", ")"}],
-            FontColor->RGBColor[1, 0, 1]]], 
+            FontColor->RGBColor[0.85, 0, 0]]], 
           OverscriptBox[
            InterpretationBox[
             StyleBox["B",
@@ -7355,7 +7360,7 @@ Cell[BoxData[
           OverscriptBox["\<\"\"\>", 
            StyleBox[
             RowBox[{"(", "1", ")"}],
-            FontColor->RGBColor[1, 0, 1]]], 
+            FontColor->RGBColor[0.85, 0, 0]]], 
           OverscriptBox[
            InterpretationBox[
             StyleBox[GridBox[{
@@ -7441,7 +7446,7 @@ Cell[BoxData[
           OverscriptBox["\<\"\"\>", 
            StyleBox[
             RowBox[{"(", "1", ")"}],
-            FontColor->RGBColor[1, 0, 1]]], 
+            FontColor->RGBColor[0.85, 0, 0]]], 
           OverscriptBox[
            InterpretationBox[
             StyleBox["L",
@@ -7474,7 +7479,7 @@ Cell[BoxData[
           OverscriptBox["\<\"\"\>", 
            StyleBox[
             RowBox[{"(", "1", ")"}],
-            FontColor->RGBColor[1, 0, 1]]], 
+            FontColor->RGBColor[0.85, 0, 0]]], 
           OverscriptBox[
            InterpretationBox[
             StyleBox[GridBox[{
@@ -7560,7 +7565,7 @@ Cell[BoxData[
           OverscriptBox["\<\"\"\>", 
            StyleBox[
             RowBox[{"(", "1", ")"}],
-            FontColor->RGBColor[1, 0, 1]]], 
+            FontColor->RGBColor[0.85, 0, 0]]], 
           OverscriptBox[
            InterpretationBox[
             StyleBox["T",
@@ -7595,7 +7600,7 @@ Cell[BoxData[
           OverscriptBox["\<\"\"\>", 
            StyleBox[
             RowBox[{"(", "1", ")"}],
-            FontColor->RGBColor[1, 0, 1]]], 
+            FontColor->RGBColor[0.85, 0, 0]]], 
           OverscriptBox[
            InterpretationBox[
             StyleBox["E",
@@ -7631,7 +7636,7 @@ Cell[BoxData[
           OverscriptBox["\<\"\"\>", 
            StyleBox[
             RowBox[{"(", "1", ")"}],
-            FontColor->RGBColor[1, 0, 1]]], 
+            FontColor->RGBColor[0.85, 0, 0]]], 
           OverscriptBox[
            InterpretationBox[
             StyleBox["L",
@@ -7694,7 +7699,7 @@ Cell[BoxData[
         OverscriptBox["\<\"\"\>", 
          StyleBox[
           RowBox[{"(", "1", ")"}],
-          FontColor->RGBColor[1, 0, 1]]], 
+          FontColor->RGBColor[0.85, 0, 0]]], 
         OverscriptBox[
          InterpretationBox[
           StyleBox["T",
@@ -7706,7 +7711,7 @@ Cell[BoxData[
       OverscriptBox["\<\"\"\>", 
        StyleBox[
         RowBox[{"(", "1", ")"}],
-        FontColor->RGBColor[1, 0, 1]]], 
+        FontColor->RGBColor[0.85, 0, 0]]], 
       OverscriptBox[
        InterpretationBox[
         StyleBox["T",
@@ -7718,7 +7723,7 @@ Cell[BoxData[
       OverscriptBox["\<\"\"\>", 
        StyleBox[
         RowBox[{"(", "1", ")"}],
-        FontColor->RGBColor[1, 0, 1]]], 
+        FontColor->RGBColor[0.85, 0, 0]]], 
       OverscriptBox[
        InterpretationBox[
         StyleBox["\[Phi]",
@@ -7772,7 +7777,7 @@ Cell[BoxData[
         OverscriptBox["\<\"\"\>", 
          StyleBox[
           RowBox[{"(", "1", ")"}],
-          FontColor->RGBColor[1, 0, 1]]], 
+          FontColor->RGBColor[0.85, 0, 0]]], 
         OverscriptBox[
          InterpretationBox[
           StyleBox[GridBox[{
@@ -7845,7 +7850,7 @@ Cell[BoxData[
         OverscriptBox["\<\"\"\>", 
          StyleBox[
           RowBox[{"(", "1", ")"}],
-          FontColor->RGBColor[1, 0, 1]]], 
+          FontColor->RGBColor[0.85, 0, 0]]], 
         OverscriptBox[
          InterpretationBox[
           StyleBox["T",
@@ -7888,7 +7893,7 @@ Cell[BoxData[
         OverscriptBox["\<\"\"\>", 
          StyleBox[
           RowBox[{"(", "1", ")"}],
-          FontColor->RGBColor[1, 0, 1]]], 
+          FontColor->RGBColor[0.85, 0, 0]]], 
         OverscriptBox[
          InterpretationBox[
           StyleBox["\[Psi]",
@@ -7907,7 +7912,7 @@ Cell[BoxData[
           OverscriptBox["\<\"\"\>", 
            StyleBox[
             RowBox[{"(", "1", ")"}],
-            FontColor->RGBColor[1, 0, 1]]], 
+            FontColor->RGBColor[0.85, 0, 0]]], 
           OverscriptBox[
            InterpretationBox[
             StyleBox[GridBox[{
@@ -7957,7 +7962,7 @@ Cell[BoxData[
           OverscriptBox["\<\"\"\>", 
            StyleBox[
             RowBox[{"(", "1", ")"}],
-            FontColor->RGBColor[1, 0, 1]]], 
+            FontColor->RGBColor[0.85, 0, 0]]], 
           OverscriptBox[
            InterpretationBox[
             StyleBox[GridBox[{
@@ -8007,7 +8012,7 @@ Cell[BoxData[
           OverscriptBox["\<\"\"\>", 
            StyleBox[
             RowBox[{"(", "1", ")"}],
-            FontColor->RGBColor[1, 0, 1]]], 
+            FontColor->RGBColor[0.85, 0, 0]]], 
           OverscriptBox[
            InterpretationBox[
             StyleBox[GridBox[{
@@ -8057,7 +8062,7 @@ Cell[BoxData[
           OverscriptBox["\<\"\"\>", 
            StyleBox[
             RowBox[{"(", "1", ")"}],
-            FontColor->RGBColor[1, 0, 1]]], 
+            FontColor->RGBColor[0.85, 0, 0]]], 
           OverscriptBox[
            InterpretationBox[
             StyleBox[GridBox[{
@@ -8106,7 +8111,7 @@ Cell[BoxData[
         OverscriptBox["\<\"\"\>", 
          StyleBox[
           RowBox[{"(", "1", ")"}],
-          FontColor->RGBColor[1, 0, 1]]], 
+          FontColor->RGBColor[0.85, 0, 0]]], 
         OverscriptBox[
          InterpretationBox[
           StyleBox["E",
@@ -8132,7 +8137,7 @@ Cell[BoxData[
         OverscriptBox["\<\"\"\>", 
          StyleBox[
           RowBox[{"(", "1", ")"}],
-          FontColor->RGBColor[1, 0, 1]]], 
+          FontColor->RGBColor[0.85, 0, 0]]], 
         OverscriptBox[
          InterpretationBox[
           StyleBox["L",
@@ -8152,17 +8157,12 @@ Cell[BoxData[
 
 Cell[CellGroupData[{
 
-Cell[BoxData[{
+Cell[BoxData[
  RowBox[{"SplitMetricAndMatterGaugeChange", "[", 
   RowBox[{
    RowBox[{
     RowBox[{"\[Rho]", "[", "u", "]"}], "[", "]"}], ",", "g", ",", "dg", ",", 
-   " ", "u", ",", "du", ",", "h", ",", "order"}], 
-  "]"}], "\[IndentingNewLine]", 
- RowBox[{"SplitMetricAndMatterGaugeChange", "[", 
-  RowBox[{
-   RowBox[{"u", "[", "\[Alpha]", "]"}], ",", "g", ",", "dg", ",", " ", "u", 
-   ",", "du", ",", "h", ",", "order"}], "]"}]}], "Input"],
+   " ", "u", ",", "du", ",", "h", ",", "order"}], "]"}]], "Input"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -8180,7 +8180,7 @@ Cell[BoxData[
          StyleBox[GridBox[{
             {"\[Xi]h", 
              StyleBox[GridBox[{
-                {"1", "\[Sigma]$22701"},
+                {"1", "\[Sigma]$17824"},
                 {" ", "       "}
                },
                GridBoxSpacings->{"Columns" -> {
@@ -8204,14 +8204,14 @@ Cell[BoxData[
           ShowAutoStyles->False,
           AutoSpacing->False],
          $CellContext`\[Xi]h[
-          xAct`xTensor`LI[1], $CellContext`\[Sigma]$22701],
+          xAct`xTensor`LI[1], $CellContext`\[Sigma]$17824],
          Editable->False], " ", 
         RowBox[{"(", 
          InterpretationBox[
           StyleBox[
            RowBox[{
             SubscriptBox[
-             OverscriptBox["\[Del]", "_"], "\[Sigma]$22701"], 
+             OverscriptBox["\[Del]", "_"], "\[Sigma]$17824"], 
             OverscriptBox[
              InterpretationBox[
               StyleBox["\[Rho]",
@@ -8221,7 +8221,7 @@ Cell[BoxData[
               Editable->False], ""]}],
            ShowAutoStyles->False,
            AutoSpacing->False],
-          $CellContext`CD[-$CellContext`\[Sigma]$22701][
+          $CellContext`CD[-$CellContext`\[Sigma]$17824][
            $CellContext`\[Rho]u[
             xAct`xTensor`LI[0], 
             xAct`xTensor`LI[0]]],
@@ -8232,25 +8232,26 @@ Cell[BoxData[
       AutoSpacing->False],
      xAct`xTensor`Scalar[$CellContext`\[Xi]h[
         xAct`xTensor`LI[
-        1], $CellContext`\[Sigma]$22701] $CellContext`CD[-$CellContext`\
-\[Sigma]$22701][
+        1], $CellContext`\[Sigma]$17824] $CellContext`CD[-$CellContext`\
+\[Sigma]$17824][
         $CellContext`\[Rho]u[
          xAct`xTensor`LI[0], 
          xAct`xTensor`LI[0]]]],
      Editable->False]}], 
    "\[InvisibleSpace]", "\<\" +... was performed in \"\>", 
-   "\[InvisibleSpace]", "0.058278`5.21704963261541", 
+   "\[InvisibleSpace]", 
+   "0.05314800000000000079758422089071245864`4.7460868396120075", 
    "\[InvisibleSpace]", "\<\" seconds.\"\>"}],
   SequenceForm[
-  "The Splitting of ", xPand`\[Epsilon] 
+  "The Splitting of ", xAct`xPand`\[Epsilon] 
    xAct`xTensor`Scalar[$CellContext`\[Xi]h[
        xAct`xTensor`LI[
-       1], $CellContext`\[Sigma]$22701] \
-$CellContext`CD[-$CellContext`\[Sigma]$22701][
+       1], $CellContext`\[Sigma]$17824] \
+$CellContext`CD[-$CellContext`\[Sigma]$17824][
        $CellContext`\[Rho]u[
         xAct`xTensor`LI[0], 
         xAct`xTensor`LI[0]]]], " +... was performed in ", 
-   0.058278`5.21704963261541, " seconds."],
+   0.05314800000000000079758422089071245864`4.7460868396120075, " seconds."],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -8273,7 +8274,7 @@ Cell[BoxData[
         OverscriptBox["\<\"\"\>", 
          StyleBox[
           RowBox[{"(", "1", ")"}],
-          FontColor->RGBColor[1, 0, 1]]], 
+          FontColor->RGBColor[0.85, 0, 0]]], 
         OverscriptBox[
          InterpretationBox[
           StyleBox["T",
@@ -8292,14 +8293,23 @@ Cell[BoxData[
       OverscriptBox["\<\"\"\>", 
        StyleBox[
         RowBox[{"(", "1", ")"}],
-        FontColor->RGBColor[1, 0, 1]]], 
+        FontColor->RGBColor[0.85, 0, 0]]], 
       OverscriptBox[
        InterpretationBox[
         StyleBox["\[Rho]",
          ShowAutoStyles->False,
          AutoSpacing->False],
         $CellContext`\[Rho]u[],
-        Editable->False], ""]}]}], ")"}]}]}]], "Output"],
+        Editable->False], ""]}]}], ")"}]}]}]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"SplitMetricAndMatterGaugeChange", "[", 
+  RowBox[{
+   RowBox[{"u", "[", "\[Alpha]", "]"}], ",", "g", ",", "dg", ",", " ", "u", 
+   ",", "du", ",", "h", ",", "order"}], "]"}]], "Input"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -8360,14 +8370,15 @@ Cell[BoxData[
        xAct`xTensor`LI[0]]],
      Editable->False]], 
    "\[InvisibleSpace]", "\<\" +... was performed in \"\>", 
-   "\[InvisibleSpace]", "0.227543`5.80860847316201", 
+   "\[InvisibleSpace]", 
+   "0.284793999999999991601384863315615803`5.475130748685665", 
    "\[InvisibleSpace]", "\<\" seconds.\"\>"}],
-  SequenceForm["The Splitting of ", xPand`\[Epsilon] ($CellContext`du[
+  SequenceForm["The Splitting of ", xAct`xPand`\[Epsilon] ($CellContext`du[
       xAct`xTensor`LI[1], $CellContext`\[Alpha]]/xAct`xTensor`Scalar[
      $CellContext`ah[
       xAct`xTensor`LI[0], 
       xAct`xTensor`LI[0]]]), " +... was performed in ", 
-   0.227543`5.80860847316201, " seconds."],
+   0.284793999999999991601384863315615803`5.475130748685665, " seconds."],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -8420,7 +8431,7 @@ Cell[BoxData[
         OverscriptBox["\<\"\"\>", 
          StyleBox[
           RowBox[{"(", "1", ")"}],
-          FontColor->RGBColor[1, 0, 1]]], 
+          FontColor->RGBColor[0.85, 0, 0]]], 
         OverscriptBox[
          InterpretationBox[
           StyleBox[GridBox[{
@@ -8502,7 +8513,7 @@ Cell[BoxData[
          OverscriptBox["\<\"\"\>", 
           StyleBox[
            RowBox[{"(", "1", ")"}],
-           FontColor->RGBColor[1, 0, 1]]], 
+           FontColor->RGBColor[0.85, 0, 0]]], 
          OverscriptBox[
           InterpretationBox[
            StyleBox["T",
@@ -8554,7 +8565,7 @@ Cell[BoxData[
          OverscriptBox["\<\"\"\>", 
           StyleBox[
            RowBox[{"(", "1", ")"}],
-           FontColor->RGBColor[1, 0, 1]]], 
+           FontColor->RGBColor[0.85, 0, 0]]], 
          OverscriptBox[
           InterpretationBox[
            StyleBox["T",
@@ -8574,7 +8585,7 @@ Cell[BoxData[
        OverscriptBox["\<\"\"\>", 
         StyleBox[
          RowBox[{"(", "1", ")"}],
-         FontColor->RGBColor[1, 0, 1]]], 
+         FontColor->RGBColor[0.85, 0, 0]]], 
        OverscriptBox[
         InterpretationBox[
          StyleBox[GridBox[{
@@ -8649,7 +8660,7 @@ Cell[BoxData[
          OverscriptBox["\<\"\"\>", 
           StyleBox[
            RowBox[{"(", "1", ")"}],
-           FontColor->RGBColor[1, 0, 1]]], 
+           FontColor->RGBColor[0.85, 0, 0]]], 
          OverscriptBox[
           InterpretationBox[
            StyleBox["\[Phi]",
@@ -8673,7 +8684,7 @@ Cell[BoxData[
          OverscriptBox["\<\"\"\>", 
           StyleBox[
            RowBox[{"(", "1", ")"}],
-           FontColor->RGBColor[1, 0, 1]]], 
+           FontColor->RGBColor[0.85, 0, 0]]], 
          OverscriptBox[
           InterpretationBox[
            StyleBox["L",
@@ -8704,7 +8715,7 @@ Cell[BoxData[
          OverscriptBox["\<\"\"\>", 
           StyleBox[
            RowBox[{"(", "1", ")"}],
-           FontColor->RGBColor[1, 0, 1]]], 
+           FontColor->RGBColor[0.85, 0, 0]]], 
          OverscriptBox[
           InterpretationBox[
            StyleBox["V",
@@ -8731,7 +8742,7 @@ Cell[BoxData[
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"?", "xPand`*"}]], "Input"],
+ RowBox[{"?", "xAct`xPand`*"}]], "Input"],
 
 Cell[BoxData[
  DynamicModuleBox[{Typeset`open$$ = True}, 
@@ -8739,486 +8750,534 @@ Cell[BoxData[
    RowBox[{
     OpenerBox[Dynamic[Typeset`open$$],
      ImageSize->Small], 
-    StyleBox["xPand`", "InfoHeading"]}], True->GridBox[{
+    StyleBox["xAct`xPand`", "InfoHeading"]}], True->GridBox[{
      {
       RowBox[{
        OpenerBox[Dynamic[Typeset`open$$],
         ImageSize->Small], 
-       StyleBox["xPand`", "InfoHeading"]}]},
+       StyleBox["xAct`xPand`", "InfoHeading"]}]},
      {GridBox[{
         {
          ButtonBox["a",
           BaseStyle->"InformationLink",
-          ButtonData:>{"Info3565080464-2828916", {"a", "xPand`"}},
-          ButtonNote->"xPand`"], 
-         ButtonBox["Ev",
+          ButtonData:>{"Info3568370111-7616020", {"a", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
+         ButtonBox["Et",
           BaseStyle->"InformationLink",
-          ButtonData:>{"Info3565080464-2828916", {"Ev", "xPand`"}},
-          ButtonNote->"xPand`"], 
+          ButtonData:>{"Info3568370111-7616020", {"Et", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
          ButtonBox["RulesVelocitySpatial",
           BaseStyle->"InformationLink",
           
           ButtonData:>{
-           "Info3565080464-2828916", {"RulesVelocitySpatial", "xPand`"}},
-          ButtonNote->"xPand`"], 
-         ButtonBox["\[ScriptK]",
+           "Info3568370111-7616020", {"RulesVelocitySpatial", "xAct`xPand`"}},
+          
+          ButtonNote->"xAct`xPand`"], 
+         ButtonBox["\[Xi]",
           BaseStyle->"InformationLink",
-          ButtonData:>{"Info3565080464-2828916", {"\[ScriptK]", "xPand`"}},
-          ButtonNote->"xPand`"]},
+          ButtonData:>{"Info3568370111-7616020", {"\[Xi]", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"]},
         {
-         ButtonBox["AnyGauge",
-          BaseStyle->"InformationLink",
-          ButtonData:>{"Info3565080464-2828916", {"AnyGauge", "xPand`"}},
-          ButtonNote->"xPand`"], 
-         ButtonBox["ExtractComponents",
+         ButtonBox["Anisotropic",
           BaseStyle->"InformationLink",
           
           ButtonData:>{
-           "Info3565080464-2828916", {"ExtractComponents", "xPand`"}},
-          ButtonNote->"xPand`"], 
+           "Info3568370111-7616020", {"Anisotropic", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
+         ButtonBox["Ev",
+          BaseStyle->"InformationLink",
+          ButtonData:>{"Info3568370111-7616020", {"Ev", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
          ButtonBox["SpaceTimesOfDefinition",
           BaseStyle->"InformationLink",
           
           ButtonData:>{
-           "Info3565080464-2828916", {"SpaceTimesOfDefinition", "xPand`"}},
-          ButtonNote->"xPand`"], 
-         ButtonBox["\[Epsilon]",
+           "Info3568370111-7616020", {
+            "SpaceTimesOfDefinition", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
+         ButtonBox["\[Rho]",
           BaseStyle->"InformationLink",
-          ButtonData:>{"Info3565080464-2828916", {"\[Epsilon]", "xPand`"}},
-          ButtonNote->"xPand`"]},
+          ButtonData:>{"Info3568370111-7616020", {"\[Rho]", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"]},
+        {
+         ButtonBox["AnyGauge",
+          BaseStyle->"InformationLink",
+          ButtonData:>{"Info3568370111-7616020", {"AnyGauge", "xAct`xPand`"}},
+          
+          ButtonNote->"xAct`xPand`"], 
+         ButtonBox["ExtractComponents",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3568370111-7616020", {"ExtractComponents", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
+         ButtonBox["SpaceType",
+          BaseStyle->"InformationLink",
+          ButtonData:>{"Info3568370111-7616020", {"SpaceType", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
+         ButtonBox["\[Phi]",
+          BaseStyle->"InformationLink",
+          ButtonData:>{"Info3568370111-7616020", {"\[Phi]", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"]},
         {
          ButtonBox["av",
           BaseStyle->"InformationLink",
-          ButtonData:>{"Info3565080464-2828916", {"av", "xPand`"}},
-          ButtonNote->"xPand`"], 
+          ButtonData:>{"Info3568370111-7616020", {"av", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
          ButtonBox["ExtractOrder",
           BaseStyle->"InformationLink",
-          ButtonData:>{"Info3565080464-2828916", {"ExtractOrder", "xPand`"}},
-          ButtonNote->"xPand`"], 
-         ButtonBox["SpaceType",
+          
+          ButtonData:>{
+           "Info3568370111-7616020", {"ExtractOrder", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
+         ButtonBox["SplitGaugeChange",
           BaseStyle->"InformationLink",
-          ButtonData:>{"Info3565080464-2828916", {"SpaceType", "xPand`"}},
-          ButtonNote->"xPand`"], 
-         ButtonBox["\[Xi]",
+          
+          ButtonData:>{
+           "Info3568370111-7616020", {"SplitGaugeChange", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
+         ButtonBox["\[CurlyPhi]",
           BaseStyle->"InformationLink",
-          ButtonData:>{"Info3565080464-2828916", {"\[Xi]", "xPand`"}},
-          ButtonNote->"xPand`"]},
+          
+          ButtonData:>{
+           "Info3568370111-7616020", {"\[CurlyPhi]", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"]},
         {
          ButtonBox["BackgroundFieldMethod",
           BaseStyle->"InformationLink",
           
           ButtonData:>{
-           "Info3565080464-2828916", {"BackgroundFieldMethod", "xPand`"}},
-          ButtonNote->"xPand`"], 
+           "Info3568370111-7616020", {"BackgroundFieldMethod", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
          ButtonBox["FlatGauge",
           BaseStyle->"InformationLink",
-          ButtonData:>{"Info3565080464-2828916", {"FlatGauge", "xPand`"}},
-          ButtonNote->"xPand`"], 
-         ButtonBox["SplitGaugeChange",
+          ButtonData:>{"Info3568370111-7616020", {"FlatGauge", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
+         ButtonBox["SplitMetricAndMatterGaugeChange",
           BaseStyle->"InformationLink",
           
           ButtonData:>{
-           "Info3565080464-2828916", {"SplitGaugeChange", "xPand`"}},
-          ButtonNote->"xPand`"], 
-         ButtonBox["\[Rho]",
+           "Info3568370111-7616020", {
+            "SplitMetricAndMatterGaugeChange", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
+         ButtonBox["\[Psi]",
           BaseStyle->"InformationLink",
-          ButtonData:>{"Info3565080464-2828916", {"\[Rho]", "xPand`"}},
-          ButtonNote->"xPand`"]},
+          ButtonData:>{"Info3568370111-7616020", {"\[Psi]", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"]},
         {
          ButtonBox["BackgroundSlicing",
           BaseStyle->"InformationLink",
           
           ButtonData:>{
-           "Info3565080464-2828916", {"BackgroundSlicing", "xPand`"}},
-          ButtonNote->"xPand`"], 
+           "Info3568370111-7616020", {"BackgroundSlicing", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
          ButtonBox["FLCurved",
           BaseStyle->"InformationLink",
-          ButtonData:>{"Info3565080464-2828916", {"FLCurved", "xPand`"}},
-          ButtonNote->"xPand`"], 
-         ButtonBox["SplitMetricAndMatterGaugeChange",
-          BaseStyle->"InformationLink",
+          ButtonData:>{"Info3568370111-7616020", {"FLCurved", "xAct`xPand`"}},
           
-          ButtonData:>{
-           "Info3565080464-2828916", {
-            "SplitMetricAndMatterGaugeChange", "xPand`"}},
-          ButtonNote->"xPand`"], 
-         ButtonBox["\[Phi]",
-          BaseStyle->"InformationLink",
-          ButtonData:>{"Info3565080464-2828916", {"\[Phi]", "xPand`"}},
-          ButtonNote->"xPand`"]},
-        {
-         ButtonBox["BackgroundST",
-          BaseStyle->"InformationLink",
-          ButtonData:>{"Info3565080464-2828916", {"BackgroundST", "xPand`"}},
-          ButtonNote->"xPand`"], 
-         ButtonBox["FLFlat",
-          BaseStyle->"InformationLink",
-          ButtonData:>{"Info3565080464-2828916", {"FLFlat", "xPand`"}},
-          ButtonNote->"xPand`"], 
+          ButtonNote->"xAct`xPand`"], 
          ButtonBox["SplitPerturbations",
           BaseStyle->"InformationLink",
           
           ButtonData:>{
-           "Info3565080464-2828916", {"SplitPerturbations", "xPand`"}},
-          ButtonNote->"xPand`"], 
-         ButtonBox["\[CurlyPhi]",
-          BaseStyle->"InformationLink",
-          ButtonData:>{"Info3565080464-2828916", {"\[CurlyPhi]", "xPand`"}},
-          ButtonNote->"xPand`"]},
-        {
-         ButtonBox["BianchiA",
-          BaseStyle->"InformationLink",
-          ButtonData:>{"Info3565080464-2828916", {"BianchiA", "xPand`"}},
-          ButtonNote->"xPand`"], 
-         ButtonBox["H",
-          BaseStyle->"InformationLink",
-          ButtonData:>{"Info3565080464-2828916", {"H", "xPand`"}},
-          ButtonNote->"xPand`"], 
-         ButtonBox["SplitPerturbationsOld",
+           "Info3568370111-7616020", {"SplitPerturbations", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
+         ButtonBox["$CacheRules",
           BaseStyle->"InformationLink",
           
           ButtonData:>{
-           "Info3565080464-2828916", {"SplitPerturbationsOld", "xPand`"}},
-          ButtonNote->"xPand`"], 
-         ButtonBox["\[Psi]",
-          BaseStyle->"InformationLink",
-          ButtonData:>{"Info3565080464-2828916", {"\[Psi]", "xPand`"}},
-          ButtonNote->"xPand`"]},
+           "Info3568370111-7616020", {"$CacheRules", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"]},
         {
-         ButtonBox["BianchiB",
+         ButtonBox["BackgroundST",
           BaseStyle->"InformationLink",
-          ButtonData:>{"Info3565080464-2828916", {"BianchiB", "xPand`"}},
-          ButtonNote->"xPand`"], 
-         ButtonBox["IndicesDown",
+          
+          ButtonData:>{
+           "Info3568370111-7616020", {"BackgroundST", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
+         ButtonBox["FLFlat",
           BaseStyle->"InformationLink",
-          ButtonData:>{"Info3565080464-2828916", {"IndicesDown", "xPand`"}},
-          ButtonNote->"xPand`"], 
+          ButtonData:>{"Info3568370111-7616020", {"FLFlat", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
          ButtonBox["SymmetricTensor",
           BaseStyle->"InformationLink",
           
           ButtonData:>{
-           "Info3565080464-2828916", {"SymmetricTensor", "xPand`"}},
-          ButtonNote->"xPand`"], 
-         ButtonBox["$CacheRules",
-          BaseStyle->"InformationLink",
-          ButtonData:>{"Info3565080464-2828916", {"$CacheRules", "xPand`"}},
-          ButtonNote->"xPand`"]},
-        {
-         ButtonBox["BianchiI",
-          BaseStyle->"InformationLink",
-          ButtonData:>{"Info3565080464-2828916", {"BianchiI", "xPand`"}},
-          ButtonNote->"xPand`"], 
-         ButtonBox["IndicesUp",
-          BaseStyle->"InformationLink",
-          ButtonData:>{"Info3565080464-2828916", {"IndicesUp", "xPand`"}},
-          ButtonNote->"xPand`"], 
-         ButtonBox["SynchronousGauge",
-          BaseStyle->"InformationLink",
-          
-          ButtonData:>{
-           "Info3565080464-2828916", {"SynchronousGauge", "xPand`"}},
-          ButtonNote->"xPand`"], 
+           "Info3568370111-7616020", {"SymmetricTensor", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
          ButtonBox["$CommutecdRules",
           BaseStyle->"InformationLink",
           
           ButtonData:>{
-           "Info3565080464-2828916", {"$CommutecdRules", "xPand`"}},
-          ButtonNote->"xPand`"]},
+           "Info3568370111-7616020", {"$CommutecdRules", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"]},
         {
-         ButtonBox["Bs",
+         ButtonBox["BianchiA",
           BaseStyle->"InformationLink",
-          ButtonData:>{"Info3565080464-2828916", {"Bs", "xPand`"}},
-          ButtonNote->"xPand`"], 
-         ButtonBox["IsoDensityGauge",
+          ButtonData:>{"Info3568370111-7616020", {"BianchiA", "xAct`xPand`"}},
+          
+          ButtonNote->"xAct`xPand`"], 
+         ButtonBox["H",
+          BaseStyle->"InformationLink",
+          ButtonData:>{"Info3568370111-7616020", {"H", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
+         ButtonBox["SynchronousGauge",
           BaseStyle->"InformationLink",
           
           ButtonData:>{
-           "Info3565080464-2828916", {"IsoDensityGauge", "xPand`"}},
-          ButtonNote->"xPand`"], 
-         ButtonBox["T",
-          BaseStyle->"InformationLink",
-          ButtonData:>{"Info3565080464-2828916", {"T", "xPand`"}},
-          ButtonNote->"xPand`"], 
+           "Info3568370111-7616020", {"SynchronousGauge", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
          ButtonBox["$ConformalTime",
           BaseStyle->"InformationLink",
-          ButtonData:>{"Info3565080464-2828916", {"$ConformalTime", "xPand`"}},
-          ButtonNote->"xPand`"]},
+          
+          ButtonData:>{
+           "Info3568370111-7616020", {"$ConformalTime", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"]},
         {
-         ButtonBox["Bv",
+         ButtonBox["BianchiB",
           BaseStyle->"InformationLink",
-          ButtonData:>{"Info3565080464-2828916", {"Bv", "xPand`"}},
-          ButtonNote->"xPand`"], 
-         ButtonBox["Ls",
-          BaseStyle->"InformationLink",
-          ButtonData:>{"Info3565080464-2828916", {"Ls", "xPand`"}},
-          ButtonNote->"xPand`"], 
-         ButtonBox["TensorProperties",
+          ButtonData:>{"Info3568370111-7616020", {"BianchiB", "xAct`xPand`"}},
+          
+          ButtonNote->"xAct`xPand`"], 
+         ButtonBox["IndicesDown",
           BaseStyle->"InformationLink",
           
           ButtonData:>{
-           "Info3565080464-2828916", {"TensorProperties", "xPand`"}},
-          ButtonNote->"xPand`"], 
+           "Info3568370111-7616020", {"IndicesDown", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
+         ButtonBox["T",
+          BaseStyle->"InformationLink",
+          ButtonData:>{"Info3568370111-7616020", {"T", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
          ButtonBox["$FirstOrderTensorPerturbations",
           BaseStyle->"InformationLink",
           
           ButtonData:>{
-           "Info3565080464-2828916", {
-            "$FirstOrderTensorPerturbations", "xPand`"}},
-          ButtonNote->"xPand`"]},
+           "Info3568370111-7616020", {
+            "$FirstOrderTensorPerturbations", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"]},
         {
-         ButtonBox["ComovingGauge",
+         ButtonBox["BianchiI",
           BaseStyle->"InformationLink",
-          ButtonData:>{"Info3565080464-2828916", {"ComovingGauge", "xPand`"}},
+          ButtonData:>{"Info3568370111-7616020", {"BianchiI", "xAct`xPand`"}},
           
-          ButtonNote->"xPand`"], 
-         ButtonBox["Lv",
+          ButtonNote->"xAct`xPand`"], 
+         ButtonBox["IndicesUp",
           BaseStyle->"InformationLink",
-          ButtonData:>{"Info3565080464-2828916", {"Lv", "xPand`"}},
-          ButtonNote->"xPand`"], 
-         ButtonBox["Tilted",
+          ButtonData:>{"Info3568370111-7616020", {"IndicesUp", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
+         ButtonBox["TensorProperties",
           BaseStyle->"InformationLink",
-          ButtonData:>{"Info3565080464-2828916", {"Tilted", "xPand`"}},
-          ButtonNote->"xPand`"], 
+          
+          ButtonData:>{
+           "Info3568370111-7616020", {"TensorProperties", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
          ButtonBox["$FirstOrderVectorPerturbations",
           BaseStyle->"InformationLink",
           
           ButtonData:>{
-           "Info3565080464-2828916", {
-            "$FirstOrderVectorPerturbations", "xPand`"}},
-          ButtonNote->"xPand`"]},
+           "Info3568370111-7616020", {
+            "$FirstOrderVectorPerturbations", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"]},
         {
-         ButtonBox["Conformal",
+         ButtonBox["Bs",
           BaseStyle->"InformationLink",
-          ButtonData:>{"Info3565080464-2828916", {"Conformal", "xPand`"}},
-          ButtonNote->"xPand`"], 
-         ButtonBox["MatterSplitting",
+          ButtonData:>{"Info3568370111-7616020", {"Bs", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
+         ButtonBox["IsoDensityGauge",
           BaseStyle->"InformationLink",
           
           ButtonData:>{
-           "Info3565080464-2828916", {"MatterSplitting", "xPand`"}},
-          ButtonNote->"xPand`"], 
-         ButtonBox["Time",
+           "Info3568370111-7616020", {"IsoDensityGauge", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
+         ButtonBox["Tilted",
           BaseStyle->"InformationLink",
-          ButtonData:>{"Info3565080464-2828916", {"Time", "xPand`"}},
-          ButtonNote->"xPand`"], 
+          ButtonData:>{"Info3568370111-7616020", {"Tilted", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
          ButtonBox["$ListFieldsBackgroundAndPerturbed",
           BaseStyle->"InformationLink",
           
           ButtonData:>{
-           "Info3565080464-2828916", {
-            "$ListFieldsBackgroundAndPerturbed", "xPand`"}},
-          ButtonNote->"xPand`"]},
+           "Info3568370111-7616020", {
+            "$ListFieldsBackgroundAndPerturbed", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"]},
+        {
+         ButtonBox["Bv",
+          BaseStyle->"InformationLink",
+          ButtonData:>{"Info3568370111-7616020", {"Bv", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
+         ButtonBox["Ls",
+          BaseStyle->"InformationLink",
+          ButtonData:>{"Info3568370111-7616020", {"Ls", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
+         ButtonBox["Time",
+          BaseStyle->"InformationLink",
+          ButtonData:>{"Info3568370111-7616020", {"Time", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
+         ButtonBox["$ListFieldsBackgroundOnly",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3568370111-7616020", {
+            "$ListFieldsBackgroundOnly", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"]},
+        {
+         ButtonBox["ComovingGauge",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3568370111-7616020", {"ComovingGauge", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
+         ButtonBox["Lv",
+          BaseStyle->"InformationLink",
+          ButtonData:>{"Info3568370111-7616020", {"Lv", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
+         ButtonBox["ToMetric",
+          BaseStyle->"InformationLink",
+          ButtonData:>{"Info3568370111-7616020", {"ToMetric", "xAct`xPand`"}},
+          
+          ButtonNote->"xAct`xPand`"], 
+         ButtonBox["$ListFieldsPerturbedOnly",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3568370111-7616020", {
+            "$ListFieldsPerturbedOnly", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"]},
+        {
+         ButtonBox["Conformal",
+          BaseStyle->"InformationLink",
+          ButtonData:>{"Info3568370111-7616020", {"Conformal", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
+         ButtonBox["MatterSplitting",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3568370111-7616020", {"MatterSplitting", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
+         ButtonBox["ToxPand",
+          BaseStyle->"InformationLink",
+          ButtonData:>{"Info3568370111-7616020", {"ToxPand", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
+         ButtonBox["$ListOfGauges",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3568370111-7616020", {"$ListOfGauges", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"]},
         {
          ButtonBox["ConformalWeight",
           BaseStyle->"InformationLink",
           
           ButtonData:>{
-           "Info3565080464-2828916", {"ConformalWeight", "xPand`"}},
-          ButtonNote->"xPand`"], 
+           "Info3568370111-7616020", {"ConformalWeight", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
          ButtonBox["MetricSplitting",
           BaseStyle->"InformationLink",
           
           ButtonData:>{
-           "Info3565080464-2828916", {"MetricSplitting", "xPand`"}},
-          ButtonNote->"xPand`"], 
-         ButtonBox["ToMetric",
-          BaseStyle->"InformationLink",
-          ButtonData:>{"Info3565080464-2828916", {"ToMetric", "xPand`"}},
-          ButtonNote->"xPand`"], 
-         ButtonBox["$ListFieldsBackgroundOnly",
-          BaseStyle->"InformationLink",
-          
-          ButtonData:>{
-           "Info3565080464-2828916", {"$ListFieldsBackgroundOnly", "xPand`"}},
-          
-          ButtonNote->"xPand`"]},
-        {
-         ButtonBox["Connection",
-          BaseStyle->"InformationLink",
-          ButtonData:>{"Info3565080464-2828916", {"Connection", "xPand`"}},
-          ButtonNote->"xPand`"], 
-         ButtonBox["Minkowski",
-          BaseStyle->"InformationLink",
-          ButtonData:>{"Info3565080464-2828916", {"Minkowski", "xPand`"}},
-          ButtonNote->"xPand`"], 
-         ButtonBox["ToxPand",
-          BaseStyle->"InformationLink",
-          ButtonData:>{"Info3565080464-2828916", {"ToxPand", "xPand`"}},
-          ButtonNote->"xPand`"], 
-         ButtonBox["$ListFieldsPerturbedOnly",
-          BaseStyle->"InformationLink",
-          
-          ButtonData:>{
-           "Info3565080464-2828916", {"$ListFieldsPerturbedOnly", "xPand`"}},
-          ButtonNote->"xPand`"]},
-        {
-         ButtonBox["CS",
-          BaseStyle->"InformationLink",
-          ButtonData:>{"Info3565080464-2828916", {"CS", "xPand`"}},
-          ButtonNote->"xPand`"], 
-         ButtonBox["NewtonGauge",
-          BaseStyle->"InformationLink",
-          ButtonData:>{"Info3565080464-2828916", {"NewtonGauge", "xPand`"}},
-          ButtonNote->"xPand`"], 
+           "Info3568370111-7616020", {"MetricSplitting", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
          ButtonBox["ToxPandFromRules",
           BaseStyle->"InformationLink",
           
           ButtonData:>{
-           "Info3565080464-2828916", {"ToxPandFromRules", "xPand`"}},
-          ButtonNote->"xPand`"], 
-         ButtonBox["$ListOfGauges",
+           "Info3568370111-7616020", {"ToxPandFromRules", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
+         ButtonBox["$ListOfSpaceTypes",
           BaseStyle->"InformationLink",
-          ButtonData:>{"Info3565080464-2828916", {"$ListOfGauges", "xPand`"}},
           
-          ButtonNote->"xPand`"]},
+          ButtonData:>{
+           "Info3568370111-7616020", {"$ListOfSpaceTypes", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"]},
+        {
+         ButtonBox["Connection",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3568370111-7616020", {"Connection", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
+         ButtonBox["Minkowski",
+          BaseStyle->"InformationLink",
+          ButtonData:>{"Info3568370111-7616020", {"Minkowski", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
+         ButtonBox["Traceless",
+          BaseStyle->"InformationLink",
+          ButtonData:>{"Info3568370111-7616020", {"Traceless", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
+         ButtonBox["$MyRules",
+          BaseStyle->"InformationLink",
+          ButtonData:>{"Info3568370111-7616020", {"$MyRules", "xAct`xPand`"}},
+          
+          ButtonNote->"xAct`xPand`"]},
+        {
+         ButtonBox["CS",
+          BaseStyle->"InformationLink",
+          ButtonData:>{"Info3568370111-7616020", {"CS", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
+         ButtonBox["NewtonGauge",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3568370111-7616020", {"NewtonGauge", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
+         ButtonBox["Transverse",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3568370111-7616020", {"Transverse", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
+         ButtonBox["$OpenConstantsOfStructure",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3568370111-7616020", {
+            "$OpenConstantsOfStructure", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"]},
         {
          ButtonBox["DefConformalMetric",
           BaseStyle->"InformationLink",
           
           ButtonData:>{
-           "Info3565080464-2828916", {"DefConformalMetric", "xPand`"}},
-          ButtonNote->"xPand`"], 
+           "Info3568370111-7616020", {"DefConformalMetric", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
          ButtonBox["NotTilted",
           BaseStyle->"InformationLink",
-          ButtonData:>{"Info3565080464-2828916", {"NotTilted", "xPand`"}},
-          ButtonNote->"xPand`"], 
-         ButtonBox["Traceless",
-          BaseStyle->"InformationLink",
-          ButtonData:>{"Info3565080464-2828916", {"Traceless", "xPand`"}},
-          ButtonNote->"xPand`"], 
-         ButtonBox["$ListOfSpaceTypes",
-          BaseStyle->"InformationLink",
-          
-          ButtonData:>{
-           "Info3565080464-2828916", {"$ListOfSpaceTypes", "xPand`"}},
-          ButtonNote->"xPand`"]},
-        {
-         ButtonBox["DefMatterPerturbationsAndSplittingFields",
-          BaseStyle->"InformationLink",
-          
-          ButtonData:>{
-           "Info3565080464-2828916", {
-            "DefMatterPerturbationsAndSplittingFields", "xPand`"}},
-          ButtonNote->"xPand`"], 
-         ButtonBox["nt",
-          BaseStyle->"InformationLink",
-          ButtonData:>{"Info3565080464-2828916", {"nt", "xPand`"}},
-          ButtonNote->"xPand`"], 
-         ButtonBox["Transverse",
-          BaseStyle->"InformationLink",
-          ButtonData:>{"Info3565080464-2828916", {"Transverse", "xPand`"}},
-          ButtonNote->"xPand`"], 
-         ButtonBox["$MyRules",
-          BaseStyle->"InformationLink",
-          ButtonData:>{"Info3565080464-2828916", {"$MyRules", "xPand`"}},
-          ButtonNote->"xPand`"]},
-        {
-         ButtonBox["DefMetricPerturbationAndSplittingFields",
-          BaseStyle->"InformationLink",
-          
-          ButtonData:>{
-           "Info3565080464-2828916", {
-            "DefMetricPerturbationAndSplittingFields", "xPand`"}},
-          ButtonNote->"xPand`"], 
-         ButtonBox["P",
-          BaseStyle->"InformationLink",
-          ButtonData:>{"Info3565080464-2828916", {"P", "xPand`"}},
-          ButtonNote->"xPand`"], 
+          ButtonData:>{"Info3568370111-7616020", {"NotTilted", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
          ButtonBox["V0",
           BaseStyle->"InformationLink",
-          ButtonData:>{"Info3565080464-2828916", {"V0", "xPand`"}},
-          ButtonNote->"xPand`"], 
-         ButtonBox["$OpenConstantsOfStructure",
+          ButtonData:>{"Info3568370111-7616020", {"V0", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
+         ButtonBox["$SortCovDAutomatic",
           BaseStyle->"InformationLink",
-          ButtonData:>{
-           "Info3565080464-2828916", {"$OpenConstantsOfStructure", "xPand`"}},
           
-          ButtonNote->"xPand`"]},
+          ButtonData:>{
+           "Info3568370111-7616020", {"$SortCovDAutomatic", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"]},
+        {
+         ButtonBox["DefMatterFields",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3568370111-7616020", {"DefMatterFields", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
+         ButtonBox["nt",
+          BaseStyle->"InformationLink",
+          ButtonData:>{"Info3568370111-7616020", {"nt", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
+         ButtonBox["VisualizeTensor",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3568370111-7616020", {"VisualizeTensor", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
+         ButtonBox["$Version",
+          BaseStyle->"InformationLink",
+          ButtonData:>{"Info3568370111-7616020", {"$Version", "xAct`xPand`"}},
+          
+          ButtonNote->"xAct`xPand`"]},
+        {
+         ButtonBox["DefMetricFields",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3568370111-7616020", {"DefMetricFields", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
+         ButtonBox["P",
+          BaseStyle->"InformationLink",
+          ButtonData:>{"Info3568370111-7616020", {"P", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
+         ButtonBox["Vs",
+          BaseStyle->"InformationLink",
+          ButtonData:>{"Info3568370111-7616020", {"Vs", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
+         ButtonBox["$xPertVersionExpected",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3568370111-7616020", {"$xPertVersionExpected", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"]},
         {
          ButtonBox["DefProjectedTensor",
           BaseStyle->"InformationLink",
           
           ButtonData:>{
-           "Info3565080464-2828916", {"DefProjectedTensor", "xPand`"}},
-          ButtonNote->"xPand`"], 
+           "Info3568370111-7616020", {"DefProjectedTensor", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
          ButtonBox["ParameterizationOfBianchiConstants",
           BaseStyle->"InformationLink",
           
           ButtonData:>{
-           "Info3565080464-2828916", {
-            "ParameterizationOfBianchiConstants", "xPand`"}},
-          ButtonNote->"xPand`"], 
-         ButtonBox["VisualizeTensor",
-          BaseStyle->"InformationLink",
-          
-          ButtonData:>{
-           "Info3565080464-2828916", {"VisualizeTensor", "xPand`"}},
-          ButtonNote->"xPand`"], 
-         ButtonBox["$SortCovDAutomatic",
-          BaseStyle->"InformationLink",
-          
-          ButtonData:>{
-           "Info3565080464-2828916", {"$SortCovDAutomatic", "xPand`"}},
-          ButtonNote->"xPand`"]},
-        {
-         ButtonBox["Disclaimer",
-          BaseStyle->"InformationLink",
-          ButtonData:>{"Info3565080464-2828916", {"Disclaimer", "xPand`"}},
-          ButtonNote->"xPand`"], 
-         ButtonBox["PerturbedST",
-          BaseStyle->"InformationLink",
-          ButtonData:>{"Info3565080464-2828916", {"PerturbedST", "xPand`"}},
-          ButtonNote->"xPand`"], 
-         ButtonBox["Vs",
-          BaseStyle->"InformationLink",
-          ButtonData:>{"Info3565080464-2828916", {"Vs", "xPand`"}},
-          ButtonNote->"xPand`"], 
-         ButtonBox["$Version",
-          BaseStyle->"InformationLink",
-          ButtonData:>{"Info3565080464-2828916", {"$Version", "xPand`"}},
-          ButtonNote->"xPand`"]},
-        {
-         ButtonBox["Es",
-          BaseStyle->"InformationLink",
-          ButtonData:>{"Info3565080464-2828916", {"Es", "xPand`"}},
-          ButtonNote->"xPand`"], 
-         ButtonBox["RulesCovDsOfTensor",
-          BaseStyle->"InformationLink",
-          
-          ButtonData:>{
-           "Info3565080464-2828916", {"RulesCovDsOfTensor", "xPand`"}},
-          ButtonNote->"xPand`"], 
+           "Info3568370111-7616020", {
+            "ParameterizationOfBianchiConstants", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
          ButtonBox["Vspat",
           BaseStyle->"InformationLink",
-          ButtonData:>{"Info3565080464-2828916", {"Vspat", "xPand`"}},
-          ButtonNote->"xPand`"], 
-         ButtonBox["$xPertVersionExpected",
-          BaseStyle->"InformationLink",
-          
-          ButtonData:>{
-           "Info3565080464-2828916", {"$xPertVersionExpected", "xPand`"}},
-          ButtonNote->"xPand`"]},
-        {
-         ButtonBox["Et",
-          BaseStyle->"InformationLink",
-          ButtonData:>{"Info3565080464-2828916", {"Et", "xPand`"}},
-          ButtonNote->"xPand`"], 
-         ButtonBox["RulesSplitCovDsOfTensor",
-          BaseStyle->"InformationLink",
-          
-          ButtonData:>{
-           "Info3565080464-2828916", {"RulesSplitCovDsOfTensor", "xPand`"}},
-          ButtonNote->"xPand`"], 
-         ButtonBox["Vv",
-          BaseStyle->"InformationLink",
-          ButtonData:>{"Info3565080464-2828916", {"Vv", "xPand`"}},
-          ButtonNote->"xPand`"], 
+          ButtonData:>{"Info3568370111-7616020", {"Vspat", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
          ButtonBox["$xTensorVersionExpected",
           BaseStyle->"InformationLink",
           
           ButtonData:>{
-           "Info3565080464-2828916", {"$xTensorVersionExpected", "xPand`"}},
-          ButtonNote->"xPand`"]}
+           "Info3568370111-7616020", {
+            "$xTensorVersionExpected", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"]},
+        {
+         ButtonBox["DefProjectedTensorProperties",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3568370111-7616020", {
+            "DefProjectedTensorProperties", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
+         ButtonBox["PerturbedST",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3568370111-7616020", {"PerturbedST", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
+         ButtonBox["Vv",
+          BaseStyle->"InformationLink",
+          ButtonData:>{"Info3568370111-7616020", {"Vv", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], ""},
+        {
+         ButtonBox["Disclaimer",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3568370111-7616020", {"Disclaimer", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
+         ButtonBox["RulesCovDsOfTensor",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3568370111-7616020", {"RulesCovDsOfTensor", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
+         ButtonBox["\[ScriptK]",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3568370111-7616020", {"\[ScriptK]", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], ""},
+        {
+         ButtonBox["Es",
+          BaseStyle->"InformationLink",
+          ButtonData:>{"Info3568370111-7616020", {"Es", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
+         ButtonBox["RulesSplitCovDsOfTensor",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3568370111-7616020", {
+            "RulesSplitCovDsOfTensor", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
+         ButtonBox["\[Epsilon]",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3568370111-7616020", {"\[Epsilon]", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], ""}
        },
        DefaultBaseStyle->"InfoGrid",
        GridBoxItemSize->{"Columns" -> {{
@@ -9232,7 +9291,7 @@ Cell[BoxData[
 }, Open  ]]
 },
 AutoGeneratedPackage->Automatic,
-WindowSize->{1621, 1006},
+WindowSize->{1224, 756},
 WindowMargins->{{0, Automatic}, {Automatic, 0}},
 Visible->True,
 DockedCells->{

@@ -10,7 +10,7 @@ Examples of Conformal Transformations with xPand\
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"<<", "xPand/xPand.m"}]], "Input"],
+ RowBox[{"<<", "xAct/xPand.m"}]], "Input"],
 
 Cell[CellGroupData[{
 
@@ -20,14 +20,15 @@ Cell[BoxData["\<\"------------------------------------------------------------\
 Cell[BoxData[
  InterpretationBox[
   RowBox[{"\<\"Package xAct`xPerm`  version \"\>", 
-   "\[InvisibleSpace]", "\<\"1.1.3\"\>", "\[InvisibleSpace]", "\<\", \"\>", 
+   "\[InvisibleSpace]", "\<\"1.2.0\"\>", "\[InvisibleSpace]", "\<\", \"\>", 
    "\[InvisibleSpace]", 
    RowBox[{"{", 
-    RowBox[{"2012", ",", "5", ",", "5"}], "}"}]}],
-  SequenceForm["Package xAct`xPerm`  version ", "1.1.3", ", ", {2012, 5, 5}],
+    RowBox[{"2013", ",", "1", ",", "27"}], "}"}]}],
+  SequenceForm["Package xAct`xPerm`  version ", "1.2.0", ", ", {2013, 1, 27}],
+  
   Editable->False]], "Print"],
 
-Cell[BoxData["\<\"CopyRight (C) 2003-2011, Jose M. Martin-Garcia, under the \
+Cell[BoxData["\<\"CopyRight (C) 2003-2013, Jose M. Martin-Garcia, under the \
 General Public License.\"\>"], "Print"],
 
 Cell[BoxData["\<\"Connecting to external mac executable...\"\>"], "Print"],
@@ -40,14 +41,15 @@ Cell[BoxData["\<\"------------------------------------------------------------\
 Cell[BoxData[
  InterpretationBox[
   RowBox[{"\<\"Package xAct`xTensor`  version \"\>", 
-   "\[InvisibleSpace]", "\<\"1.0.4\"\>", "\[InvisibleSpace]", "\<\", \"\>", 
+   "\[InvisibleSpace]", "\<\"1.0.5\"\>", "\[InvisibleSpace]", "\<\", \"\>", 
    "\[InvisibleSpace]", 
    RowBox[{"{", 
-    RowBox[{"2012", ",", "5", ",", "5"}], "}"}]}],
-  SequenceForm["Package xAct`xTensor`  version ", "1.0.4", ", ", {2012, 5, 5}],
+    RowBox[{"2013", ",", "1", ",", "27"}], "}"}]}],
+  SequenceForm[
+  "Package xAct`xTensor`  version ", "1.0.5", ", ", {2013, 1, 27}],
   Editable->False]], "Print"],
 
-Cell[BoxData["\<\"CopyRight (C) 2002-2011, Jose M. Martin-Garcia, under the \
+Cell[BoxData["\<\"CopyRight (C) 2002-2013, Jose M. Martin-Garcia, under the \
 General Public License.\"\>"], "Print"],
 
 Cell[BoxData["\<\"------------------------------------------------------------\
@@ -56,16 +58,71 @@ Cell[BoxData["\<\"------------------------------------------------------------\
 Cell[BoxData[
  InterpretationBox[
   RowBox[{"\<\"Package xAct`xPert`  version \"\>", 
-   "\[InvisibleSpace]", "\<\"1.0.2\"\>", "\[InvisibleSpace]", "\<\", \"\>", 
+   "\[InvisibleSpace]", "\<\"1.0.3\"\>", "\[InvisibleSpace]", "\<\", \"\>", 
    "\[InvisibleSpace]", 
    RowBox[{"{", 
-    RowBox[{"2011", ",", "10", ",", "10"}], "}"}]}],
-  SequenceForm["Package xAct`xPert`  version ", "1.0.2", ", ", {2011, 10, 10}],
+    RowBox[{"2013", ",", "1", ",", "27"}], "}"}]}],
+  SequenceForm["Package xAct`xPert`  version ", "1.0.3", ", ", {2013, 1, 27}],
+  
   Editable->False]], "Print"],
 
-Cell[BoxData["\<\"CopyRight (C) 2005-2012, David Brizuela, Jose M. \
+Cell[BoxData["\<\"CopyRight (C) 2005-2013, David Brizuela, Jose M. \
 Martin-Garcia and Guillermo A. Mena Marugan, under the General Public \
 License.\"\>"], "Print"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"** Variable \"\>", "\[InvisibleSpace]", "$PrePrint", 
+   "\[InvisibleSpace]", "\<\" assigned value \"\>", "\[InvisibleSpace]", 
+   "ScreenDollarIndices"}],
+  SequenceForm[
+  "** Variable ", $PrePrint, " assigned value ", 
+   xAct`xTensor`ScreenDollarIndices],
+  Editable->False]], "Print"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"** Variable \"\>", "\[InvisibleSpace]", "$CovDFormat", 
+   "\[InvisibleSpace]", "\<\" changed from \"\>", 
+   "\[InvisibleSpace]", "\<\"Prefix\"\>", "\[InvisibleSpace]", "\<\" to \"\>",
+    "\[InvisibleSpace]", "\<\"Postfix\"\>"}],
+  SequenceForm[
+  "** Variable ", xAct`xTensor`$CovDFormat, " changed from ", "Prefix", 
+   " to ", "Postfix"],
+  Editable->False]], "Print"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"** Option \"\>", "\[InvisibleSpace]", "AllowUpperDerivatives", 
+   "\[InvisibleSpace]", "\<\" of \"\>", "\[InvisibleSpace]", "ContractMetric",
+    "\[InvisibleSpace]", "\<\" changed from \"\>", "\[InvisibleSpace]", 
+   "False", "\[InvisibleSpace]", "\<\" to \"\>", "\[InvisibleSpace]", "True"}],
+  SequenceForm[
+  "** Option ", xAct`xTensor`AllowUpperDerivatives, " of ", 
+   xAct`xTensor`ContractMetric, " changed from ", False, " to ", True],
+  Editable->False]], "Print"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"** Option \"\>", "\[InvisibleSpace]", "MetricOn", 
+   "\[InvisibleSpace]", "\<\" of \"\>", "\[InvisibleSpace]", "MakeRule", 
+   "\[InvisibleSpace]", "\<\" changed from \"\>", "\[InvisibleSpace]", "None",
+    "\[InvisibleSpace]", "\<\" to \"\>", "\[InvisibleSpace]", "All"}],
+  SequenceForm[
+  "** Option ", xAct`xTensor`MetricOn, " of ", xAct`xTensor`MakeRule, 
+   " changed from ", None, " to ", All],
+  Editable->False]], "Print"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"** Option \"\>", "\[InvisibleSpace]", "ContractMetrics", 
+   "\[InvisibleSpace]", "\<\" of \"\>", "\[InvisibleSpace]", "MakeRule", 
+   "\[InvisibleSpace]", "\<\" changed from \"\>", "\[InvisibleSpace]", 
+   "False", "\[InvisibleSpace]", "\<\" to \"\>", "\[InvisibleSpace]", "True"}],
+  SequenceForm[
+  "** Option ", xAct`xTensor`ContractMetrics, " of ", xAct`xTensor`MakeRule, 
+   " changed from ", False, " to ", True],
+  Editable->False]], "Print"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -84,16 +141,28 @@ Cell[BoxData["\<\"------------------------------------------------------------\
 
 Cell[BoxData[
  InterpretationBox[
-  RowBox[{"\<\"Package xPand`  version \"\>", 
-   "\[InvisibleSpace]", "\<\"0.0.1\"\>", "\[InvisibleSpace]", "\<\", \"\>", 
+  RowBox[{"\<\"Package xAct`xPand`  version \"\>", 
+   "\[InvisibleSpace]", "\<\"0.3.0\"\>", "\[InvisibleSpace]", "\<\", \"\>", 
    "\[InvisibleSpace]", 
    RowBox[{"{", 
-    RowBox[{"2012", ",", "12", ",", "21"}], "}"}]}],
-  SequenceForm["Package xPand`  version ", "0.0.1", ", ", {2012, 12, 21}],
+    RowBox[{"2013", ",", "1", ",", "27"}], "}"}]}],
+  SequenceForm["Package xAct`xPand`  version ", "0.3.0", ", ", {2013, 1, 27}],
+  
   Editable->False]], "Print"],
 
 Cell[BoxData["\<\"CopyRight (C) 2012-2013, Cyril Pitrou, Xavier Roy and \
-Obinna Umeh under the General Public License.\"\>"], "Print"]
+Obinna Umeh under the General Public License.\"\>"], "Print"],
+
+Cell[BoxData["\<\"------------------------------------------------------------\
+\"\>"], "Print"],
+
+Cell[BoxData["\<\"These packages come with ABSOLUTELY NO WARRANTY; for \
+details type Disclaimer[]. This is free software, and you are welcome to \
+redistribute it under certain conditions. See the General Public License for \
+details.\"\>"], "Print"],
+
+Cell[BoxData["\<\"------------------------------------------------------------\
+\"\>"], "Print"]
 }, Open  ]]
 }, Open  ]],
 
@@ -436,13 +505,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"S", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xPand`Private`n$645", "]"}], ",", 
-     RowBox[{"LI", "[", "xPand`Private`q$645", "]"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`n$1073", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$1073", "]"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`S[
-    xAct`xTensor`LI[xPand`Private`n$645], 
-    xAct`xTensor`LI[xPand`Private`q$645]], ". ", ""],
+    xAct`xTensor`LI[xAct`xPand`Private`n$1073], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$1073]], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -453,13 +522,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", 
    RowBox[{"gS2", "[", 
     RowBox[{
-     RowBox[{"-", "\[Sigma]$646"}], ",", 
-     RowBox[{"-", "\[Sigma]$647"}]}], "]"}], 
+     RowBox[{"-", "\[Sigma]$1074"}], ",", 
+     RowBox[{"-", "\[Sigma]$1075"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm[
   "** ", xAct`xTensor`DefTensor, ": Defining ", "symmetric metric tensor ", 
-   $CellContext`gS2[-$CellContext`\[Sigma]$646, -$CellContext`\[Sigma]$647], 
-   ". ", ""],
+   $CellContext`gS2[-$CellContext`\[Sigma]$1074, -$CellContext`\[Sigma]$1075],
+    ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -468,13 +537,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\": Defining \"\>", 
    "\[InvisibleSpace]", "\<\"inverse metric tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"InvgS2", "[", 
-    RowBox[{"\[Sigma]$646", ",", "\[Sigma]$647"}], "]"}], 
+    RowBox[{"\[Sigma]$1074", ",", "\[Sigma]$1075"}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", 
    "\[InvisibleSpace]", "\<\"Metric is frozen!\"\>"}],
   SequenceForm[
   "** ", xAct`xTensor`DefTensor, ": Defining ", "inverse metric tensor ", 
-   $CellContext`InvgS2[$CellContext`\[Sigma]$646, $CellContext`\[Sigma]$647], 
-   ". ", "Metric is frozen!"],
+   $CellContext`InvgS2[$CellContext`\[Sigma]$1074, \
+$CellContext`\[Sigma]$1075], ". ", "Metric is frozen!"],
   Editable->False]], "Print"],
 
 Cell[BoxData["\<\"** DefMetric: Don't know yet how to define epsilon for a \
@@ -487,11 +556,11 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"covariant derivative \"\>", "\[InvisibleSpace]", 
    
    RowBox[{"CDS2", "[", 
-    RowBox[{"-", "\[Sigma]$646"}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
+    RowBox[{"-", "\[Sigma]$1074"}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
    "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm[
   "** ", xAct`xTensor`DefCovD, ": Defining ", "covariant derivative ", 
-   $CellContext`CDS2[-$CellContext`\[Sigma]$646], ". ", ""],
+   $CellContext`CDS2[-$CellContext`\[Sigma]$1074], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -702,13 +771,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"Sa", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xPand`Private`n$1058", "]"}], ",", 
-     RowBox[{"LI", "[", "xPand`Private`q$1058", "]"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`n$1400", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$1400", "]"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`Sa[
-    xAct`xTensor`LI[xPand`Private`n$1058], 
-    xAct`xTensor`LI[xPand`Private`q$1058]], ". ", ""],
+    xAct`xTensor`LI[xAct`xPand`Private`n$1400], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$1400]], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -719,13 +788,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", 
    RowBox[{"gSa2", "[", 
     RowBox[{
-     RowBox[{"-", "\[Sigma]$1059"}], ",", 
-     RowBox[{"-", "\[Sigma]$1060"}]}], "]"}], 
+     RowBox[{"-", "\[Sigma]$1401"}], ",", 
+     RowBox[{"-", "\[Sigma]$1402"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm[
   "** ", xAct`xTensor`DefTensor, ": Defining ", "symmetric metric tensor ", 
-   $CellContext`gSa2[-$CellContext`\[Sigma]$1059, \
--$CellContext`\[Sigma]$1060], ". ", ""],
+   $CellContext`gSa2[-$CellContext`\[Sigma]$1401, \
+-$CellContext`\[Sigma]$1402], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -734,13 +803,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\": Defining \"\>", 
    "\[InvisibleSpace]", "\<\"inverse metric tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"InvgSa2", "[", 
-    RowBox[{"\[Sigma]$1059", ",", "\[Sigma]$1060"}], "]"}], 
+    RowBox[{"\[Sigma]$1401", ",", "\[Sigma]$1402"}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", 
    "\[InvisibleSpace]", "\<\"Metric is frozen!\"\>"}],
   SequenceForm[
   "** ", xAct`xTensor`DefTensor, ": Defining ", "inverse metric tensor ", 
-   $CellContext`InvgSa2[$CellContext`\[Sigma]$1059, \
-$CellContext`\[Sigma]$1060], ". ", "Metric is frozen!"],
+   $CellContext`InvgSa2[$CellContext`\[Sigma]$1401, \
+$CellContext`\[Sigma]$1402], ". ", "Metric is frozen!"],
   Editable->False]], "Print"],
 
 Cell[BoxData["\<\"** DefMetric: Don't know yet how to define epsilon for a \
@@ -753,11 +822,11 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"covariant derivative \"\>", "\[InvisibleSpace]", 
    
    RowBox[{"CDSa2", "[", 
-    RowBox[{"-", "\[Sigma]$1059"}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
+    RowBox[{"-", "\[Sigma]$1401"}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
    "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm[
   "** ", xAct`xTensor`DefCovD, ": Defining ", "covariant derivative ", 
-   $CellContext`CDSa2[-$CellContext`\[Sigma]$1059], ". ", ""],
+   $CellContext`CDSa2[-$CellContext`\[Sigma]$1401], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -968,13 +1037,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"Sb", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xPand`Private`n$1477", "]"}], ",", 
-     RowBox[{"LI", "[", "xPand`Private`q$1477", "]"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`n$1727", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$1727", "]"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`Sb[
-    xAct`xTensor`LI[xPand`Private`n$1477], 
-    xAct`xTensor`LI[xPand`Private`q$1477]], ". ", ""],
+    xAct`xTensor`LI[xAct`xPand`Private`n$1727], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$1727]], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -985,13 +1054,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", 
    RowBox[{"gSb2", "[", 
     RowBox[{
-     RowBox[{"-", "\[Sigma]$1478"}], ",", 
-     RowBox[{"-", "\[Sigma]$1479"}]}], "]"}], 
+     RowBox[{"-", "\[Sigma]$1728"}], ",", 
+     RowBox[{"-", "\[Sigma]$1729"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm[
   "** ", xAct`xTensor`DefTensor, ": Defining ", "symmetric metric tensor ", 
-   $CellContext`gSb2[-$CellContext`\[Sigma]$1478, \
--$CellContext`\[Sigma]$1479], ". ", ""],
+   $CellContext`gSb2[-$CellContext`\[Sigma]$1728, \
+-$CellContext`\[Sigma]$1729], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -1000,13 +1069,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\": Defining \"\>", 
    "\[InvisibleSpace]", "\<\"inverse metric tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"InvgSb2", "[", 
-    RowBox[{"\[Sigma]$1478", ",", "\[Sigma]$1479"}], "]"}], 
+    RowBox[{"\[Sigma]$1728", ",", "\[Sigma]$1729"}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", 
    "\[InvisibleSpace]", "\<\"Metric is frozen!\"\>"}],
   SequenceForm[
   "** ", xAct`xTensor`DefTensor, ": Defining ", "inverse metric tensor ", 
-   $CellContext`InvgSb2[$CellContext`\[Sigma]$1478, \
-$CellContext`\[Sigma]$1479], ". ", "Metric is frozen!"],
+   $CellContext`InvgSb2[$CellContext`\[Sigma]$1728, \
+$CellContext`\[Sigma]$1729], ". ", "Metric is frozen!"],
   Editable->False]], "Print"],
 
 Cell[BoxData["\<\"** DefMetric: Don't know yet how to define epsilon for a \
@@ -1019,11 +1088,11 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"covariant derivative \"\>", "\[InvisibleSpace]", 
    
    RowBox[{"CDSb2", "[", 
-    RowBox[{"-", "\[Sigma]$1478"}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
+    RowBox[{"-", "\[Sigma]$1728"}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
    "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm[
   "** ", xAct`xTensor`DefCovD, ": Defining ", "covariant derivative ", 
-   $CellContext`CDSb2[-$CellContext`\[Sigma]$1478], ". ", ""],
+   $CellContext`CDSb2[-$CellContext`\[Sigma]$1728], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -1234,13 +1303,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"Sc", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xPand`Private`n$1892", "]"}], ",", 
-     RowBox[{"LI", "[", "xPand`Private`q$1892", "]"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`n$2055", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$2055", "]"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`Sc[
-    xAct`xTensor`LI[xPand`Private`n$1892], 
-    xAct`xTensor`LI[xPand`Private`q$1892]], ". ", ""],
+    xAct`xTensor`LI[xAct`xPand`Private`n$2055], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$2055]], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -1251,13 +1320,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", 
    RowBox[{"gSb2Sc2", "[", 
     RowBox[{
-     RowBox[{"-", "\[Sigma]$1893"}], ",", 
-     RowBox[{"-", "\[Sigma]$1894"}]}], "]"}], 
+     RowBox[{"-", "\[Sigma]$2056"}], ",", 
+     RowBox[{"-", "\[Sigma]$2057"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm[
   "** ", xAct`xTensor`DefTensor, ": Defining ", "symmetric metric tensor ", 
-   $CellContext`gSb2Sc2[-$CellContext`\[Sigma]$1893, \
--$CellContext`\[Sigma]$1894], ". ", ""],
+   $CellContext`gSb2Sc2[-$CellContext`\[Sigma]$2056, \
+-$CellContext`\[Sigma]$2057], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -1266,13 +1335,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\": Defining \"\>", 
    "\[InvisibleSpace]", "\<\"inverse metric tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"InvgSb2Sc2", "[", 
-    RowBox[{"\[Sigma]$1893", ",", "\[Sigma]$1894"}], "]"}], 
+    RowBox[{"\[Sigma]$2056", ",", "\[Sigma]$2057"}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", 
    "\[InvisibleSpace]", "\<\"Metric is frozen!\"\>"}],
   SequenceForm[
   "** ", xAct`xTensor`DefTensor, ": Defining ", "inverse metric tensor ", 
-   $CellContext`InvgSb2Sc2[$CellContext`\[Sigma]$1893, \
-$CellContext`\[Sigma]$1894], ". ", "Metric is frozen!"],
+   $CellContext`InvgSb2Sc2[$CellContext`\[Sigma]$2056, \
+$CellContext`\[Sigma]$2057], ". ", "Metric is frozen!"],
   Editable->False]], "Print"],
 
 Cell[BoxData["\<\"** DefMetric: Don't know yet how to define epsilon for a \
@@ -1285,11 +1354,11 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"covariant derivative \"\>", "\[InvisibleSpace]", 
    
    RowBox[{"CDSb2Sc2", "[", 
-    RowBox[{"-", "\[Sigma]$1893"}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
+    RowBox[{"-", "\[Sigma]$2056"}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
    "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm[
   "** ", xAct`xTensor`DefCovD, ": Defining ", "covariant derivative ", 
-   $CellContext`CDSb2Sc2[-$CellContext`\[Sigma]$1893], ". ", ""],
+   $CellContext`CDSb2Sc2[-$CellContext`\[Sigma]$2056], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -3460,7 +3529,7 @@ be conformally related by DefConformalMetric. \
 \\n\\nConformal[metric1,metric2][expr] provides the final result with respect \
 to the ambient metric, which is the first metric defined on the \
 manifold.\"\>", "MSG"]], "Print", "PrintUsage",
- CellTags->"Info3565677929-4850139"]
+ CellTags->"Info3568634580-3469816"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -4865,7 +4934,7 @@ Cell[BoxData[
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"BackgroundSlicing", "[", 
+ RowBox[{"SetSlicing", "[", 
   RowBox[{"h", ",", "n", ",", "g", ",", "cd", ",", 
    RowBox[{"{", 
     RowBox[{"\"\<;\>\"", ",", "\"\<D\>\""}], "}"}], ",", "BianchiI"}], 
@@ -4878,10 +4947,10 @@ Cell[BoxData[
   RowBox[{"\<\"** \"\>", "\[InvisibleSpace]", "DefTensor", 
    "\[InvisibleSpace]", "\<\": Defining \"\>", 
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
-   RowBox[{"n", "[", "\[Sigma]$6193", "]"}], 
+   RowBox[{"n", "[", "\[Sigma]$5912", "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
-   $CellContext`n[$CellContext`\[Sigma]$6193], ". ", ""],
+   $CellContext`n[$CellContext`\[Sigma]$5912], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -4892,12 +4961,12 @@ Cell[BoxData[
    "\[InvisibleSpace]", 
    RowBox[{"h", "[", 
     RowBox[{
-     RowBox[{"-", "\[Sigma]$6193"}], ",", 
-     RowBox[{"-", "\[Sigma]$6194"}]}], "]"}], 
+     RowBox[{"-", "\[Sigma]$5912"}], ",", 
+     RowBox[{"-", "\[Sigma]$5913"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm[
   "** ", xAct`xTensor`DefTensor, ": Defining ", "symmetric metric tensor ", 
-   $CellContext`h[-$CellContext`\[Sigma]$6193, -$CellContext`\[Sigma]$6194], 
+   $CellContext`h[-$CellContext`\[Sigma]$5912, -$CellContext`\[Sigma]$5913], 
    ". ", ""],
   Editable->False]], "Print"],
 
@@ -4961,11 +5030,11 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"covariant derivative \"\>", "\[InvisibleSpace]", 
    
    RowBox[{"cd", "[", 
-    RowBox[{"-", "\[Sigma]$6193"}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
+    RowBox[{"-", "\[Sigma]$5912"}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
    "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm[
   "** ", xAct`xTensor`DefCovD, ": Defining ", "covariant derivative ", 
-   $CellContext`cd[-$CellContext`\[Sigma]$6193], ". ", ""],
+   $CellContext`cd[-$CellContext`\[Sigma]$5912], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -5199,12 +5268,52 @@ Cell[BoxData[
  InterpretationBox[
   RowBox[{"\<\"   Rules \"\>", "\[InvisibleSpace]", 
    RowBox[{"{", 
+    RowBox[{
+    "1", ",", "2", ",", "3", ",", "4", ",", "5", ",", "6", ",", "7", ",", 
+     "8"}], "}"}], 
+   "\[InvisibleSpace]", "\<\" have been declared as UpValues for \"\>", 
+   "\[InvisibleSpace]", "h", "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm["   Rules ", 
+   Shallow[{1, 2, 3, 4, 5, 6, 7, 8}], 
+   " have been declared as UpValues for ", $CellContext`h, "."],
+  Editable->False]], "Print"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"   Rules \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+    "1", ",", "2", ",", "3", ",", "4", ",", "5", ",", "6", ",", "7", ",", 
+     "8"}], "}"}], 
+   "\[InvisibleSpace]", "\<\" have been declared as UpValues for \"\>", 
+   "\[InvisibleSpace]", "h", "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm["   Rules ", 
+   Shallow[{1, 2, 3, 4, 5, 6, 7, 8}], 
+   " have been declared as UpValues for ", $CellContext`h, "."],
+  Editable->False]], "Print"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"   Rules \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
     RowBox[{"1", ",", "2"}], "}"}], 
    "\[InvisibleSpace]", "\<\" have been declared as UpValues for \"\>", 
    "\[InvisibleSpace]", "n", "\[InvisibleSpace]", "\<\".\"\>"}],
   SequenceForm["   Rules ", 
    Shallow[{1, 2}], " have been declared as UpValues for ", $CellContext`n, 
    "."],
+  Editable->False]], "Print"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"   Rules \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2", ",", "3", ",", "4"}], "}"}], 
+   "\[InvisibleSpace]", "\<\" have been declared as UpValues for \"\>", 
+   "\[InvisibleSpace]", "n", "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm["   Rules ", 
+   Shallow[{1, 2, 3, 4}], 
+   " have been declared as UpValues for ", $CellContext`n, "."],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -5228,33 +5337,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"ah", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xPand`Private`n$7309", "]"}], ",", 
-     RowBox[{"LI", "[", "xPand`Private`q$7309", "]"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$7180", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$7180", "]"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`ah[
-    xAct`xTensor`LI[xPand`Private`n$7309], 
-    xAct`xTensor`LI[xPand`Private`q$7309]], ". ", ""],
-  Editable->False]], "Print"],
-
-Cell[BoxData[
- InterpretationBox[
-  RowBox[{"\<\"   Rules \"\>", "\[InvisibleSpace]", 
-   RowBox[{"{", "1", "}"}], 
-   "\[InvisibleSpace]", "\<\" have been declared as UpValues for \"\>", 
-   "\[InvisibleSpace]", "ah", "\[InvisibleSpace]", "\<\".\"\>"}],
-  SequenceForm["   Rules ", 
-   Shallow[{1}], " have been declared as UpValues for ", $CellContext`ah, "."],
-  Editable->False]], "Print"],
-
-Cell[BoxData[
- InterpretationBox[
-  RowBox[{"\<\"   Rules \"\>", "\[InvisibleSpace]", 
-   RowBox[{"{", "1", "}"}], 
-   "\[InvisibleSpace]", "\<\" have been declared as UpValues for \"\>", 
-   "\[InvisibleSpace]", "ah", "\[InvisibleSpace]", "\<\".\"\>"}],
-  SequenceForm["   Rules ", 
-   Shallow[{1}], " have been declared as UpValues for ", $CellContext`ah, "."],
+    xAct`xTensor`LI[xAct`xPand`Private`p$7180], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$7180]], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -5264,33 +5353,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"Hh", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xPand`Private`n$7333", "]"}], ",", 
-     RowBox[{"LI", "[", "xPand`Private`q$7333", "]"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$7185", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$7185", "]"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`Hh[
-    xAct`xTensor`LI[xPand`Private`n$7333], 
-    xAct`xTensor`LI[xPand`Private`q$7333]], ". ", ""],
-  Editable->False]], "Print"],
-
-Cell[BoxData[
- InterpretationBox[
-  RowBox[{"\<\"   Rules \"\>", "\[InvisibleSpace]", 
-   RowBox[{"{", "1", "}"}], 
-   "\[InvisibleSpace]", "\<\" have been declared as UpValues for \"\>", 
-   "\[InvisibleSpace]", "Hh", "\[InvisibleSpace]", "\<\".\"\>"}],
-  SequenceForm["   Rules ", 
-   Shallow[{1}], " have been declared as UpValues for ", $CellContext`Hh, "."],
-  Editable->False]], "Print"],
-
-Cell[BoxData[
- InterpretationBox[
-  RowBox[{"\<\"   Rules \"\>", "\[InvisibleSpace]", 
-   RowBox[{"{", "1", "}"}], 
-   "\[InvisibleSpace]", "\<\" have been declared as UpValues for \"\>", 
-   "\[InvisibleSpace]", "Hh", "\[InvisibleSpace]", "\<\".\"\>"}],
-  SequenceForm["   Rules ", 
-   Shallow[{1}], " have been declared as UpValues for ", $CellContext`Hh, "."],
+    xAct`xTensor`LI[xAct`xPand`Private`p$7185], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$7185]], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -5301,13 +5370,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", 
    RowBox[{"gah2", "[", 
     RowBox[{
-     RowBox[{"-", "\[Sigma]$7358"}], ",", 
-     RowBox[{"-", "\[Sigma]$7359"}]}], "]"}], 
+     RowBox[{"-", "\[Sigma]$7191"}], ",", 
+     RowBox[{"-", "\[Sigma]$7192"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm[
   "** ", xAct`xTensor`DefTensor, ": Defining ", "symmetric metric tensor ", 
-   $CellContext`gah2[-$CellContext`\[Sigma]$7358, \
--$CellContext`\[Sigma]$7359], ". ", ""],
+   $CellContext`gah2[-$CellContext`\[Sigma]$7191, \
+-$CellContext`\[Sigma]$7192], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -5316,13 +5385,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\": Defining \"\>", 
    "\[InvisibleSpace]", "\<\"inverse metric tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"Invgah2", "[", 
-    RowBox[{"\[Sigma]$7358", ",", "\[Sigma]$7359"}], "]"}], 
+    RowBox[{"\[Sigma]$7191", ",", "\[Sigma]$7192"}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", 
    "\[InvisibleSpace]", "\<\"Metric is frozen!\"\>"}],
   SequenceForm[
   "** ", xAct`xTensor`DefTensor, ": Defining ", "inverse metric tensor ", 
-   $CellContext`Invgah2[$CellContext`\[Sigma]$7358, \
-$CellContext`\[Sigma]$7359], ". ", "Metric is frozen!"],
+   $CellContext`Invgah2[$CellContext`\[Sigma]$7191, \
+$CellContext`\[Sigma]$7192], ". ", "Metric is frozen!"],
   Editable->False]], "Print"],
 
 Cell[BoxData["\<\"** DefMetric: Don't know yet how to define epsilon for a \
@@ -5335,11 +5404,11 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"covariant derivative \"\>", "\[InvisibleSpace]", 
    
    RowBox[{"CDah2", "[", 
-    RowBox[{"-", "\[Sigma]$7358"}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
+    RowBox[{"-", "\[Sigma]$7191"}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
    "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm[
   "** ", xAct`xTensor`DefCovD, ": Defining ", "covariant derivative ", 
-   $CellContext`CDah2[-$CellContext`\[Sigma]$7358], ". ", ""],
+   $CellContext`CDah2[-$CellContext`\[Sigma]$7191], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -5575,13 +5644,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"Connectionh", "[", 
     RowBox[{
-     RowBox[{"-", "\[Sigma]$6193"}], ",", 
-     RowBox[{"-", "\[Sigma]$6194"}], ",", 
-     RowBox[{"-", "\[Sigma]$6195"}]}], "]"}], 
+     RowBox[{"-", "\[Sigma]$5912"}], ",", 
+     RowBox[{"-", "\[Sigma]$5913"}], ",", 
+     RowBox[{"-", "\[Sigma]$5914"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
-   $CellContext`Connectionh[-$CellContext`\[Sigma]$6193, -$CellContext`\
-\[Sigma]$6194, -$CellContext`\[Sigma]$6195], ". ", ""],
+   $CellContext`Connectionh[-$CellContext`\[Sigma]$5912, -$CellContext`\
+\[Sigma]$5913, -$CellContext`\[Sigma]$5914], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -5591,65 +5660,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"CSh", "[", 
     RowBox[{
-     RowBox[{"-", "\[Sigma]$6193"}], ",", 
-     RowBox[{"-", "\[Sigma]$6194"}], ",", 
-     RowBox[{"-", "\[Sigma]$6195"}]}], "]"}], 
+     RowBox[{"-", "\[Sigma]$5912"}], ",", 
+     RowBox[{"-", "\[Sigma]$5913"}], ",", 
+     RowBox[{"-", "\[Sigma]$5914"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
-   $CellContext`CSh[-$CellContext`\[Sigma]$6193, -$CellContext`\[Sigma]$6194, \
--$CellContext`\[Sigma]$6195], ". ", ""],
-  Editable->False]], "Print"],
-
-Cell[BoxData[
- InterpretationBox[
-  RowBox[{"\<\"** \"\>", "\[InvisibleSpace]", "DefTensor", 
-   "\[InvisibleSpace]", "\<\": Defining \"\>", 
-   "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
-   RowBox[{"nth", "[", 
-    RowBox[{
-     RowBox[{"-", "\[Sigma]$6193"}], ",", 
-     RowBox[{"-", "\[Sigma]$6194"}]}], "]"}], 
-   "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
-  SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
-   $CellContext`nth[-$CellContext`\[Sigma]$6193, -$CellContext`\[Sigma]$6194],
-    ". ", ""],
-  Editable->False]], "Print"],
-
-Cell[BoxData[
- InterpretationBox[
-  RowBox[{"\<\"** \"\>", "\[InvisibleSpace]", "DefTensor", 
-   "\[InvisibleSpace]", "\<\": Defining \"\>", 
-   "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
-   RowBox[{"avh", "[", 
-    RowBox[{"-", "\[Sigma]$6193"}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
-   "\[InvisibleSpace]", "\<\"\"\>"}],
-  SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
-   $CellContext`avh[-$CellContext`\[Sigma]$6193], ". ", ""],
-  Editable->False]], "Print"],
-
-Cell[BoxData[
- InterpretationBox[
-  RowBox[{"\<\"   Rules \"\>", "\[InvisibleSpace]", 
-   RowBox[{"{", 
-    RowBox[{
-    "1", ",", "1", ",", "2", ",", "1", ",", "3", ",", "1", ",", "4", ",", 
-     "1"}], "}"}], 
-   "\[InvisibleSpace]", "\<\" have been declared as UpValues for \"\>", 
-   "\[InvisibleSpace]", "av", "\[InvisibleSpace]", "\<\".\"\>"}],
-  SequenceForm["   Rules ", 
-   Shallow[{1, 1, 2, 1, 3, 1, 4, 1}], " have been declared as UpValues for ", 
-   xPand`av, "."],
-  Editable->False]], "Print"],
-
-Cell[BoxData[
- InterpretationBox[
-  RowBox[{"\<\"** \"\>", "\[InvisibleSpace]", "DefTensor", 
-   "\[InvisibleSpace]", "\<\": Defining \"\>", 
-   "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
-   RowBox[{"\[ScriptK]h", "[", "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
-   "\[InvisibleSpace]", "\<\"\"\>"}],
-  SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
-   $CellContext`\[ScriptK]h[], ". ", ""],
+   $CellContext`CSh[-$CellContext`\[Sigma]$5912, -$CellContext`\[Sigma]$5913, \
+-$CellContext`\[Sigma]$5914], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -5659,75 +5676,17 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"Kh", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xPand`Private`n$8164", "]"}], ",", 
-     RowBox[{"LI", "[", "xPand`Private`q$8164", "]"}], ",", 
-     RowBox[{"-", "\[Sigma]$6193"}], ",", 
-     RowBox[{"-", "\[Sigma]$6194"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$7799", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$7799", "]"}], ",", 
+     RowBox[{"-", "\[Sigma]$5912"}], ",", 
+     RowBox[{"-", "\[Sigma]$5913"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`Kh[
-    xAct`xTensor`LI[xPand`Private`n$8164], 
+    xAct`xTensor`LI[xAct`xPand`Private`p$7799], 
     xAct`xTensor`LI[
-    xPand`Private`q$8164], -$CellContext`\[Sigma]$6193, \
--$CellContext`\[Sigma]$6194], ". ", ""],
-  Editable->False]], "Print"],
-
-Cell[BoxData[
- InterpretationBox[
-  RowBox[{"\<\"   Rules \"\>", "\[InvisibleSpace]", 
-   RowBox[{"{", "1", "}"}], 
-   "\[InvisibleSpace]", "\<\" have been declared as UpValues for \"\>", 
-   "\[InvisibleSpace]", "Kh", "\[InvisibleSpace]", "\<\".\"\>"}],
-  SequenceForm["   Rules ", 
-   Shallow[{1}], " have been declared as UpValues for ", $CellContext`Kh, "."],
-  Editable->False]], "Print"],
-
-Cell[BoxData[
- InterpretationBox[
-  RowBox[{"\<\"   Rules \"\>", "\[InvisibleSpace]", 
-   RowBox[{"{", 
-    RowBox[{"1", ",", "2"}], "}"}], 
-   "\[InvisibleSpace]", "\<\" have been declared as DownValues for \"\>", 
-   "\[InvisibleSpace]", "Kh", "\[InvisibleSpace]", "\<\".\"\>"}],
-  SequenceForm["   Rules ", 
-   Shallow[{1, 2}], " have been declared as DownValues for ", $CellContext`Kh,
-    "."],
-  Editable->False]], "Print"],
-
-Cell[BoxData[
- InterpretationBox[
-  RowBox[{"\<\"   Rules \"\>", "\[InvisibleSpace]", 
-   RowBox[{"{", 
-    RowBox[{"1", ",", "2", ",", "3", ",", "4"}], "}"}], 
-   "\[InvisibleSpace]", "\<\" have been declared as UpValues for \"\>", 
-   "\[InvisibleSpace]", "Kh", "\[InvisibleSpace]", "\<\".\"\>"}],
-  SequenceForm["   Rules ", 
-   Shallow[{1, 2, 3, 4}], 
-   " have been declared as UpValues for ", $CellContext`Kh, "."],
-  Editable->False]], "Print"],
-
-Cell[BoxData[
- InterpretationBox[
-  RowBox[{"\<\"   Rules \"\>", "\[InvisibleSpace]", 
-   RowBox[{"{", 
-    RowBox[{
-    "1", ",", "2", ",", "3", ",", "4", ",", "5", ",", "6", ",", "7", ",", 
-     "8"}], "}"}], 
-   "\[InvisibleSpace]", "\<\" have been declared as UpValues for \"\>", 
-   "\[InvisibleSpace]", "Kh", "\[InvisibleSpace]", "\<\".\"\>"}],
-  SequenceForm["   Rules ", 
-   Shallow[{1, 2, 3, 4, 5, 6, 7, 8}], 
-   " have been declared as UpValues for ", $CellContext`Kh, "."],
-  Editable->False]], "Print"],
-
-Cell[BoxData[
- InterpretationBox[
-  RowBox[{"\<\"   Rules \"\>", "\[InvisibleSpace]", 
-   RowBox[{"{", "1", "}"}], 
-   "\[InvisibleSpace]", "\<\" have been declared as UpValues for \"\>", 
-   "\[InvisibleSpace]", "Kh", "\[InvisibleSpace]", "\<\".\"\>"}],
-  SequenceForm["   Rules ", 
-   Shallow[{1}], " have been declared as UpValues for ", $CellContext`Kh, "."],
+    xAct`xPand`Private`q$7799], -$CellContext`\[Sigma]$5912, -$CellContext`\
+\[Sigma]$5913], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -5764,7 +5723,37 @@ Cell[BoxData[
     RowBox[{"-", "\[Alpha]"}], ",", 
     RowBox[{"-", "\[Beta]"}]}], "]"}], "]"}]], "Input"],
 
-Cell[BoxData["False"], "Output"]
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"xAct`xTensor`Private`OrthogonalToVectorQ", "[", "n", "]"}], "[", 
+  InterpretationBox[
+   StyleBox[GridBox[{
+      {"I", 
+       StyleBox[GridBox[{
+          {" ", " "},
+          {"\[Alpha]", "\[Beta]"}
+         },
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.], {
+              Offset[0.034999999999999996`]}, 
+             Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
+              Offset[0.]}}, "RowsIndexed" -> {}}],
+        FontSize->9]}
+     },
+     GridBoxAlignment->{
+      "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}}, 
+       "RowsIndexed" -> {}},
+     GridBoxSpacings->{"Columns" -> {
+         Offset[0.27999999999999997`], {
+          Offset[0.034999999999999996`]}, 
+         Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+         Offset[0.2], {
+          Offset[0.4]}, 
+         Offset[0.2]}, "RowsIndexed" -> {}}],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   $CellContext`IA[-$CellContext`\[Alpha], -$CellContext`\[Beta]],
+   Editable->False], "]"}]], "Output"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -5783,14 +5772,14 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"Test", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xPand`Private`n$9089", "]"}], ",", 
-     RowBox[{"LI", "[", "xPand`Private`q$9089", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$8148", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$8148", "]"}], ",", 
      RowBox[{"AnyIndices", "[", "TangentM", "]"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`Test[
-    xAct`xTensor`LI[xPand`Private`n$9089], 
-    xAct`xTensor`LI[xPand`Private`q$9089], 
+    xAct`xTensor`LI[xAct`xPand`Private`p$8148], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$8148], 
     xAct`xTensor`AnyIndices[$CellContext`TangentM]], ". ", ""],
   Editable->False]], "Print"]
 }, Open  ]],
@@ -5869,16 +5858,17 @@ Cell[BoxData["0"], "Output"]
 
 Cell[BoxData[{
  RowBox[{
+  RowBox[{"Unprotect", "[", "OrthogonalToVectorQ", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
   RowBox[{
-   RowBox[{"xAct`xTensor`Private`OrthogonalToVectorQ", "[", "vector_", "]"}], 
-   "[", 
+   RowBox[{"OrthogonalToVectorQ", "[", "vector_", "]"}], "[", 
    RowBox[{
     RowBox[{"tensor_", "?", "xTensorQ"}], "[", "inds___", "]"}], "]"}], 
   "=."}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
-   RowBox[{"xAct`xTensor`Private`OrthogonalToVectorQ", "[", "vector_", "]"}], 
-   "[", 
+   RowBox[{"OrthogonalToVectorQ", "[", "vector_", "]"}], "[", 
    RowBox[{
     RowBox[{"tensor_", "?", "xTensorQ"}], "[", "inds___", "]"}], "]"}], ":=", 
   
@@ -5898,14 +5888,15 @@ Cell[BoxData[{
      "AnyIndices"}]}]}]}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
-   RowBox[{"xAct`xTensor`Private`OrthogonalToVectorQ", "[", "vector_", "]"}], 
-   "[", 
+   RowBox[{"OrthogonalToVectorQ", "[", "vector_", "]"}], "[", 
    RowBox[{
     RowBox[{"tensor_", "?", "xTensorQ"}], "[", "inds___", "]"}], "]"}], ":=", 
   
   RowBox[{
-   RowBox[{"xAct`xTensor`Private`OrthogonalToVectorQ", "[", "vector", "]"}], 
-   "[", "tensor", "]"}]}]}], "Input"],
+   RowBox[{"OrthogonalToVectorQ", "[", "vector", "]"}], "[", "tensor", 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Protect", "[", "OrthogonalToVectorQ", "]"}], ";"}]}], "Input"],
 
 Cell[CellGroupData[{
 
