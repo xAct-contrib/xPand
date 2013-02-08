@@ -5,8 +5,8 @@ Cell["xPand. Documentation", "Chapter",
  FontSize->36],
 
 Cell[TextData[{
- "This is the doc file xPandDoc.nb of version 0.3.0 of xAct/Pand`. Last \
-update on 27 January 2013.\n",
+ "This is the doc file xPandDoc.nb of version 0.4.0 of xAct/Pand`. Last \
+update on 8 February 2013.\n",
  ButtonBox["http://www2.iap.fr/users/pitrou/xpand.htm",
   BaseStyle->"Hyperlink",
   ButtonData->{
@@ -34,14 +34,19 @@ Cell[CellGroupData[{
 Cell["Intro", "SubsubsectionIcon",
  CellFrame->{{0, 0}, {0, 0.5}}],
 
-Cell["\<\
-xAct`xPand` is a Mathematica Package which provides tools to compute formally \
-the cosmological perturbations around an homogeneous background.
-It relies on a 3+1 splitting of the background spacetimes, and uses the \
+Cell[TextData[{
+ "xAct`xPand` is a Mathematica Package which provides tools to compute \
+formally the cosmological perturbations around an homogeneous background.\nIt \
+relies on a 3+1 splitting of the background spacetimes, and uses the \
 perturbative tools developed in xAct`xPert` which itself is part of the xAct` \
-suite.
-\
-\>", "Text",
+suite.\nMore details about the algorithm can be found on a dedicated ",
+ ButtonBox["publication",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["http://arxiv.org/abs/1302.6174"], None},
+  ButtonNote->"http://arxiv.org/abs/1302.6174"],
+ ".\n"
+}], "Text",
  CellTags->{"S5.18.1", "1.2"}]
 }, Open  ]],
 
@@ -218,12 +223,11 @@ Cell[BoxData["\<\"------------------------------------------------------------\
 Cell[BoxData[
  InterpretationBox[
   RowBox[{"\<\"Package xAct`xPand`  version \"\>", 
-   "\[InvisibleSpace]", "\<\"0.3.0\"\>", "\[InvisibleSpace]", "\<\", \"\>", 
+   "\[InvisibleSpace]", "\<\"0.4.0\"\>", "\[InvisibleSpace]", "\<\", \"\>", 
    "\[InvisibleSpace]", 
    RowBox[{"{", 
-    RowBox[{"2013", ",", "1", ",", "27"}], "}"}]}],
-  SequenceForm["Package xAct`xPand`  version ", "0.3.0", ", ", {2013, 1, 27}],
-  
+    RowBox[{"2013", ",", "2", ",", "8"}], "}"}]}],
+  SequenceForm["Package xAct`xPand`  version ", "0.4.0", ", ", {2013, 2, 8}],
   Editable->False]], "Print",
  CellLabel->"During evaluation of In[1]:="],
 
@@ -245,7 +249,8 @@ Cell[BoxData["\<\"------------------------------------------------------------\
 \"\>"], "Print",
  CellLabel->"During evaluation of In[1]:="],
 
-Cell[BoxData["0.9093280000000001`"], "Output",
+Cell[BoxData["0.98801700000000003409894588912720791996`6.0153643304812965"], \
+"Output",
  CellLabel->"Out[2]="]
 }, Open  ]],
 
@@ -256,7 +261,7 @@ Cell[BoxData[
   RowBox[{"MemoryInUse", "[", "]"}], "-", "MemBefore"}]], "Input",
  CellLabel->"In[3]:="],
 
-Cell[BoxData["12707480"], "Output",
+Cell[BoxData["26728360"], "Output",
  CellLabel->"Out[3]="]
 }, Open  ]]
 }, Open  ]],
@@ -315,7 +320,7 @@ Cell[BoxData[{
     RowBox[{"Collect", "[", 
      RowBox[{"expr", ",", "$PerturbationParameter", ",", "ContractMetric"}], 
      "]"}]}]}]}]}], "Input",
- CellLabel->"In[3]:="]
+ CellLabel->"In[5]:="]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]],
@@ -366,7 +371,7 @@ Cell[BoxData[{
     RowBox[{
     "PrintAs", "\[Rule]", "\"\<\!\(\*OverscriptBox[\(g\), \(_\)]\)\>\""}]}], 
    "]"}], ";"}]}], "Input",
- CellLabel->"In[5]:="],
+ CellLabel->"In[7]:="],
 
 Cell[BoxData[
  InterpretationBox[
@@ -378,7 +383,7 @@ Cell[BoxData[
   "** ", xAct`xTensor`DefManifold, ": Defining ", "manifold ", $CellContext`M,
     ". ", ""],
   Editable->False]], "Print",
- CellLabel->"During evaluation of In[5]:="],
+ CellLabel->"During evaluation of In[7]:="],
 
 Cell[BoxData[
  InterpretationBox[
@@ -390,7 +395,7 @@ Cell[BoxData[
   "** ", xAct`xTensor`DefVBundle, ": Defining ", 
    "vbundle ", $CellContext`TangentM, ". ", ""],
   Editable->False]], "Print",
- CellLabel->"During evaluation of In[5]:="],
+ CellLabel->"During evaluation of In[7]:="],
 
 Cell[BoxData[
  InterpretationBox[
@@ -407,7 +412,7 @@ Cell[BoxData[
   "** ", xAct`xTensor`DefTensor, ": Defining ", "symmetric metric tensor ", 
    $CellContext`g[-$CellContext`\[Alpha], -$CellContext`\[Beta]], ". ", ""],
   Editable->False]], "Print",
- CellLabel->"During evaluation of In[5]:="],
+ CellLabel->"During evaluation of In[7]:="],
 
 Cell[BoxData[
  InterpretationBox[
@@ -427,7 +432,7 @@ Cell[BoxData[
    $CellContext`epsilong[-$CellContext`\[Alpha], -$CellContext`\[Beta], \
 -$CellContext`\[Gamma], -$CellContext`\[Lambda]], ". ", ""],
   Editable->False]], "Print",
- CellLabel->"During evaluation of In[5]:="],
+ CellLabel->"During evaluation of In[7]:="],
 
 Cell[BoxData[
  InterpretationBox[
@@ -445,7 +450,7 @@ Cell[BoxData[
    $CellContext`Tetrag[-$CellContext`\[Alpha], -$CellContext`\[Beta], \
 -$CellContext`\[Gamma], -$CellContext`\[Lambda]], ". ", ""],
   Editable->False]], "Print",
- CellLabel->"During evaluation of In[5]:="],
+ CellLabel->"During evaluation of In[7]:="],
 
 Cell[BoxData[
  InterpretationBox[
@@ -464,7 +469,7 @@ Cell[BoxData[
 -$CellContext`\[Beta], -$CellContext`\[Gamma], -$CellContext`\[Lambda]], ". ",
     ""],
   Editable->False]], "Print",
- CellLabel->"During evaluation of In[5]:="],
+ CellLabel->"During evaluation of In[7]:="],
 
 Cell[BoxData[
  InterpretationBox[
@@ -479,7 +484,7 @@ Cell[BoxData[
   "** ", xAct`xTensor`DefCovD, ": Defining ", "covariant derivative ", 
    $CellContext`CD[-$CellContext`\[Alpha]], ". ", ""],
   Editable->False]], "Print",
- CellLabel->"During evaluation of In[5]:="],
+ CellLabel->"During evaluation of In[7]:="],
 
 Cell[BoxData[
  InterpretationBox[
@@ -497,7 +502,7 @@ Cell[BoxData[
    $CellContext`TorsionCD[$CellContext`\[Alpha], -$CellContext`\[Beta], \
 -$CellContext`\[Gamma]], ". ", ""],
   Editable->False]], "Print",
- CellLabel->"During evaluation of In[5]:="],
+ CellLabel->"During evaluation of In[7]:="],
 
 Cell[BoxData[
  InterpretationBox[
@@ -516,7 +521,7 @@ Cell[BoxData[
    $CellContext`ChristoffelCD[$CellContext`\[Alpha], -$CellContext`\[Beta], \
 -$CellContext`\[Gamma]], ". ", ""],
   Editable->False]], "Print",
- CellLabel->"During evaluation of In[5]:="],
+ CellLabel->"During evaluation of In[7]:="],
 
 Cell[BoxData[
  InterpretationBox[
@@ -535,7 +540,7 @@ Cell[BoxData[
    $CellContext`RiemannCD[-$CellContext`\[Alpha], -$CellContext`\[Beta], \
 -$CellContext`\[Gamma], -$CellContext`\[Lambda]], ". ", ""],
   Editable->False]], "Print",
- CellLabel->"During evaluation of In[5]:="],
+ CellLabel->"During evaluation of In[7]:="],
 
 Cell[BoxData[
  InterpretationBox[
@@ -553,11 +558,11 @@ Cell[BoxData[
    $CellContext`RicciCD[-$CellContext`\[Alpha], -$CellContext`\[Beta]], ". ", 
    ""],
   Editable->False]], "Print",
- CellLabel->"During evaluation of In[5]:="],
+ CellLabel->"During evaluation of In[7]:="],
 
 Cell[BoxData["\<\"** DefCovD:  Contractions of Riemann automatically replaced \
 by Ricci.\"\>"], "Print",
- CellLabel->"During evaluation of In[5]:="],
+ CellLabel->"During evaluation of In[7]:="],
 
 Cell[BoxData[
  InterpretationBox[
@@ -570,11 +575,11 @@ Cell[BoxData[
   "** ", xAct`xTensor`DefTensor, ": Defining ", "Ricci scalar ", 
    $CellContext`RicciScalarCD[], ". ", ""],
   Editable->False]], "Print",
- CellLabel->"During evaluation of In[5]:="],
+ CellLabel->"During evaluation of In[7]:="],
 
 Cell[BoxData["\<\"** DefCovD:  Contractions of Ricci automatically replaced \
 by RicciScalar.\"\>"], "Print",
- CellLabel->"During evaluation of In[5]:="],
+ CellLabel->"During evaluation of In[7]:="],
 
 Cell[BoxData[
  InterpretationBox[
@@ -593,7 +598,7 @@ Cell[BoxData[
    $CellContext`EinsteinCD[-$CellContext`\[Alpha], -$CellContext`\[Beta]], 
    ". ", ""],
   Editable->False]], "Print",
- CellLabel->"During evaluation of In[5]:="],
+ CellLabel->"During evaluation of In[7]:="],
 
 Cell[BoxData[
  InterpretationBox[
@@ -611,7 +616,7 @@ Cell[BoxData[
    $CellContext`WeylCD[-$CellContext`\[Alpha], -$CellContext`\[Beta], \
 -$CellContext`\[Gamma], -$CellContext`\[Lambda]], ". ", ""],
   Editable->False]], "Print",
- CellLabel->"During evaluation of In[5]:="],
+ CellLabel->"During evaluation of In[7]:="],
 
 Cell[BoxData[
  InterpretationBox[
@@ -629,7 +634,7 @@ Cell[BoxData[
    $CellContext`TFRicciCD[-$CellContext`\[Alpha], -$CellContext`\[Beta]], 
    ". ", ""],
   Editable->False]], "Print",
- CellLabel->"During evaluation of In[5]:="],
+ CellLabel->"During evaluation of In[7]:="],
 
 Cell[BoxData[
  InterpretationBox[
@@ -642,7 +647,7 @@ Cell[BoxData[
   "** ", xAct`xTensor`DefTensor, ": Defining ", "Kretschmann scalar ", 
    $CellContext`KretschmannCD[], ". ", ""],
   Editable->False]], "Print",
- CellLabel->"During evaluation of In[5]:="],
+ CellLabel->"During evaluation of In[7]:="],
 
 Cell[BoxData[
  InterpretationBox[
@@ -650,7 +655,7 @@ Cell[BoxData[
    "\[InvisibleSpace]", "4"}],
   SequenceForm["** DefCovD:  Computing RiemannToWeylRules for dim ", 4],
   Editable->False]], "Print",
- CellLabel->"During evaluation of In[5]:="],
+ CellLabel->"During evaluation of In[7]:="],
 
 Cell[BoxData[
  InterpretationBox[
@@ -658,7 +663,7 @@ Cell[BoxData[
    "\[InvisibleSpace]", "4"}],
   SequenceForm["** DefCovD:  Computing RicciToTFRicci for dim ", 4],
   Editable->False]], "Print",
- CellLabel->"During evaluation of In[5]:="],
+ CellLabel->"During evaluation of In[7]:="],
 
 Cell[BoxData[
  InterpretationBox[
@@ -666,7 +671,7 @@ Cell[BoxData[
    "\[InvisibleSpace]", "4"}],
   SequenceForm["** DefCovD:  Computing RicciToEinsteinRules for dim ", 4],
   Editable->False]], "Print",
- CellLabel->"During evaluation of In[5]:="],
+ CellLabel->"During evaluation of In[7]:="],
 
 Cell[BoxData[
  InterpretationBox[
@@ -679,7 +684,7 @@ Cell[BoxData[
   "** ", xAct`xTensor`DefTensor, ": Defining ", "weight +2 density ", 
    $CellContext`Detg[], ". ", "Determinant."],
   Editable->False]], "Print",
- CellLabel->"During evaluation of In[5]:="]
+ CellLabel->"During evaluation of In[7]:="]
 }, Open  ]],
 
 Cell["\<\
@@ -783,7 +788,7 @@ Cell[BoxData[
  CellLabel->"In[9]:="],
 
 Cell[BoxData[
- StyleBox["\<\"SetSlicing[g,h,cd,{cdPost,cdPre},n,nNorm,SpaceTimeType]. \
+ StyleBox["\<\"SetSlicing[g,n,nNorm,h,cd,{cdPost,cdPre},SpaceTimeType]. \
 \\n\\nGiven a background manifold of dimension 'N' and an ambient metric 'g' \
 on that manifold, this function performs a (N-1)+1 slicing. \\n\\nMore \
 precisely, it builds the induced metric 'h' on the hypersurfaces, the \
@@ -792,17 +797,17 @@ hypersurfaces. It also sets the type 'SpaceTimeType' for the hypersurfaces. \
 The latter argument can take a value among {Anisotropic, BianchiB, BianchiA, \
 BianchiI, FLCurved, FLFlat, Minkowski}. The norm 'nNorm' of the vector 'n' is \
 set by default to -1 if omitted.\"\>", "MSG"]], "Print", "PrintUsage",
- CellTags->"Info3569137383-6081269"]
+ CellTags->"Info3570521854-2719414"]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{"SetSlicing", "[", 
-  RowBox[{"h", ",", "n", ",", "g", ",", "cd", ",", 
+  RowBox[{"g", ",", "n", ",", "h", ",", "cd", ",", 
    RowBox[{"{", 
     RowBox[{"\"\<|\>\"", ",", "\"\<\!\(\*OverscriptBox[\(D\), \(_\)]\)\>\""}],
-     "}"}], ",", "FLFlat"}], "]"}]], "Input",
+     "}"}], ",", "\"\<FLFlat\>\""}], "]"}]], "Input",
  CellLabel->"In[10]:="],
 
 Cell[BoxData[
@@ -810,10 +815,10 @@ Cell[BoxData[
   RowBox[{"\<\"** \"\>", "\[InvisibleSpace]", "DefTensor", 
    "\[InvisibleSpace]", "\<\": Defining \"\>", 
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
-   RowBox[{"n", "[", "\[Sigma]$1463", "]"}], 
+   RowBox[{"n", "[", "\[Sigma]$1474", "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
-   $CellContext`n[$CellContext`\[Sigma]$1463], ". ", ""],
+   $CellContext`n[$CellContext`\[Sigma]$1474], ". ", ""],
   Editable->False]], "Print",
  CellLabel->"During evaluation of In[10]:="],
 
@@ -825,12 +830,12 @@ Cell[BoxData[
    "\[InvisibleSpace]", 
    RowBox[{"h", "[", 
     RowBox[{
-     RowBox[{"-", "\[Sigma]$1463"}], ",", 
-     RowBox[{"-", "\[Sigma]$1464"}]}], "]"}], 
+     RowBox[{"-", "\[Sigma]$1474"}], ",", 
+     RowBox[{"-", "\[Sigma]$1475"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm[
   "** ", xAct`xTensor`DefTensor, ": Defining ", "symmetric metric tensor ", 
-   $CellContext`h[-$CellContext`\[Sigma]$1463, -$CellContext`\[Sigma]$1464], 
+   $CellContext`h[-$CellContext`\[Sigma]$1474, -$CellContext`\[Sigma]$1475], 
    ". ", ""],
   Editable->False]], "Print",
  CellLabel->"During evaluation of In[10]:="],
@@ -898,11 +903,11 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"covariant derivative \"\>", "\[InvisibleSpace]", 
    
    RowBox[{"cd", "[", 
-    RowBox[{"-", "\[Sigma]$1463"}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
+    RowBox[{"-", "\[Sigma]$1474"}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
    "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm[
   "** ", xAct`xTensor`DefCovD, ": Defining ", "covariant derivative ", 
-   $CellContext`cd[-$CellContext`\[Sigma]$1463], ". ", ""],
+   $CellContext`cd[-$CellContext`\[Sigma]$1474], ". ", ""],
   Editable->False]], "Print",
  CellLabel->"During evaluation of In[10]:="],
 
@@ -1229,13 +1234,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"ah", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$2732", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$2732", "]"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$2742", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$2742", "]"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`ah[
-    xAct`xTensor`LI[xAct`xPand`Private`p$2732], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$2732]], ". ", ""],
+    xAct`xTensor`LI[xAct`xPand`Private`p$2742], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$2742]], ". ", ""],
   Editable->False]], "Print",
  CellLabel->"During evaluation of In[10]:="],
 
@@ -1246,13 +1251,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"Hh", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$2737", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$2737", "]"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$2747", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$2747", "]"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`Hh[
-    xAct`xTensor`LI[xAct`xPand`Private`p$2737], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$2737]], ". ", ""],
+    xAct`xTensor`LI[xAct`xPand`Private`p$2747], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$2747]], ". ", ""],
   Editable->False]], "Print",
  CellLabel->"During evaluation of In[10]:="],
 
@@ -1264,13 +1269,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", 
    RowBox[{"gah2", "[", 
     RowBox[{
-     RowBox[{"-", "\[Sigma]$2743"}], ",", 
-     RowBox[{"-", "\[Sigma]$2744"}]}], "]"}], 
+     RowBox[{"-", "\[Sigma]$2753"}], ",", 
+     RowBox[{"-", "\[Sigma]$2754"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm[
   "** ", xAct`xTensor`DefTensor, ": Defining ", "symmetric metric tensor ", 
-   $CellContext`gah2[-$CellContext`\[Sigma]$2743, \
--$CellContext`\[Sigma]$2744], ". ", ""],
+   $CellContext`gah2[-$CellContext`\[Sigma]$2753, \
+-$CellContext`\[Sigma]$2754], ". ", ""],
   Editable->False]], "Print",
  CellLabel->"During evaluation of In[10]:="],
 
@@ -1280,13 +1285,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\": Defining \"\>", 
    "\[InvisibleSpace]", "\<\"inverse metric tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"Invgah2", "[", 
-    RowBox[{"\[Sigma]$2743", ",", "\[Sigma]$2744"}], "]"}], 
+    RowBox[{"\[Sigma]$2753", ",", "\[Sigma]$2754"}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", 
    "\[InvisibleSpace]", "\<\"Metric is frozen!\"\>"}],
   SequenceForm[
   "** ", xAct`xTensor`DefTensor, ": Defining ", "inverse metric tensor ", 
-   $CellContext`Invgah2[$CellContext`\[Sigma]$2743, \
-$CellContext`\[Sigma]$2744], ". ", "Metric is frozen!"],
+   $CellContext`Invgah2[$CellContext`\[Sigma]$2753, \
+$CellContext`\[Sigma]$2754], ". ", "Metric is frozen!"],
   Editable->False]], "Print",
  CellLabel->"During evaluation of In[10]:="],
 
@@ -1301,11 +1306,11 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"covariant derivative \"\>", "\[InvisibleSpace]", 
    
    RowBox[{"CDah2", "[", 
-    RowBox[{"-", "\[Sigma]$2743"}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
+    RowBox[{"-", "\[Sigma]$2753"}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
    "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm[
   "** ", xAct`xTensor`DefCovD, ": Defining ", "covariant derivative ", 
-   $CellContext`CDah2[-$CellContext`\[Sigma]$2743], ". ", ""],
+   $CellContext`CDah2[-$CellContext`\[Sigma]$2753], ". ", ""],
   Editable->False]], "Print",
  CellLabel->"During evaluation of In[10]:="],
 
@@ -1560,13 +1565,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"Connectionh", "[", 
     RowBox[{
-     RowBox[{"-", "\[Sigma]$1463"}], ",", 
-     RowBox[{"-", "\[Sigma]$1464"}], ",", 
-     RowBox[{"-", "\[Sigma]$1465"}]}], "]"}], 
+     RowBox[{"-", "\[Sigma]$1474"}], ",", 
+     RowBox[{"-", "\[Sigma]$1475"}], ",", 
+     RowBox[{"-", "\[Sigma]$1476"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
-   $CellContext`Connectionh[-$CellContext`\[Sigma]$1463, -$CellContext`\
-\[Sigma]$1464, -$CellContext`\[Sigma]$1465], ". ", ""],
+   $CellContext`Connectionh[-$CellContext`\[Sigma]$1474, -$CellContext`\
+\[Sigma]$1475, -$CellContext`\[Sigma]$1476], ". ", ""],
   Editable->False]], "Print",
  CellLabel->"During evaluation of In[10]:="],
 
@@ -1577,13 +1582,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"CSh", "[", 
     RowBox[{
-     RowBox[{"-", "\[Sigma]$1463"}], ",", 
-     RowBox[{"-", "\[Sigma]$1464"}], ",", 
-     RowBox[{"-", "\[Sigma]$1465"}]}], "]"}], 
+     RowBox[{"-", "\[Sigma]$1474"}], ",", 
+     RowBox[{"-", "\[Sigma]$1475"}], ",", 
+     RowBox[{"-", "\[Sigma]$1476"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
-   $CellContext`CSh[-$CellContext`\[Sigma]$1463, -$CellContext`\[Sigma]$1464, \
--$CellContext`\[Sigma]$1465], ". ", ""],
+   $CellContext`CSh[-$CellContext`\[Sigma]$1474, -$CellContext`\[Sigma]$1475, \
+-$CellContext`\[Sigma]$1476], ". ", ""],
   Editable->False]], "Print",
  CellLabel->"During evaluation of In[10]:="],
 
@@ -1594,11 +1599,11 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"nth", "[", 
     RowBox[{
-     RowBox[{"-", "\[Sigma]$1463"}], ",", 
-     RowBox[{"-", "\[Sigma]$1464"}]}], "]"}], 
+     RowBox[{"-", "\[Sigma]$1474"}], ",", 
+     RowBox[{"-", "\[Sigma]$1475"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
-   $CellContext`nth[-$CellContext`\[Sigma]$1463, -$CellContext`\[Sigma]$1464],
+   $CellContext`nth[-$CellContext`\[Sigma]$1474, -$CellContext`\[Sigma]$1475],
     ". ", ""],
   Editable->False]], "Print",
  CellLabel->"During evaluation of In[10]:="],
@@ -1609,10 +1614,10 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\": Defining \"\>", 
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"avh", "[", 
-    RowBox[{"-", "\[Sigma]$1463"}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
+    RowBox[{"-", "\[Sigma]$1474"}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
    "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
-   $CellContext`avh[-$CellContext`\[Sigma]$1463], ". ", ""],
+   $CellContext`avh[-$CellContext`\[Sigma]$1474], ". ", ""],
   Editable->False]], "Print",
  CellLabel->"During evaluation of In[10]:="],
 
@@ -1638,17 +1643,17 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"Kh", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$3417", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$3417", "]"}], ",", 
-     RowBox[{"-", "\[Sigma]$1463"}], ",", 
-     RowBox[{"-", "\[Sigma]$1464"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$3442", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$3442", "]"}], ",", 
+     RowBox[{"-", "\[Sigma]$1474"}], ",", 
+     RowBox[{"-", "\[Sigma]$1475"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`Kh[
-    xAct`xTensor`LI[xAct`xPand`Private`p$3417], 
+    xAct`xTensor`LI[xAct`xPand`Private`p$3442], 
     xAct`xTensor`LI[
-    xAct`xPand`Private`q$3417], -$CellContext`\[Sigma]$1463, -$CellContext`\
-\[Sigma]$1464], ". ", ""],
+    xAct`xPand`Private`q$3442], -$CellContext`\[Sigma]$1474, -$CellContext`\
+\[Sigma]$1475], ". ", ""],
   Editable->False]], "Print",
  CellLabel->"During evaluation of In[10]:="]
 }, Open  ]],
@@ -1673,7 +1678,7 @@ metric on the spatial hypersurfaces, and the optional argument 'parameter' \
 (set by default to \[Epsilon]) is the symbol used in the perturbative \
 expansions. Several tensors that are used to decompose 'gpert' are defined \
 when calling this function.\"\>", "MSG"]], "Print", "PrintUsage",
- CellTags->"Info3569137387-6081269"],
+ CellTags->"Info3570521858-2719414"],
 
 Cell[BoxData[
  StyleBox["\<\"DefMatterFields[uf,ufpert,h,parameter] defines the perturbed \
@@ -1682,7 +1687,7 @@ induced metric on the spatial hypersurfaces, and the optional argument \
 'parameter' (set by default to \[Epsilon]) is the symbol used in the \
 perturbative expansions. Several tensors that are used to decompose 'ufpert' \
 are defined when calling this function.\"\>", "MSG"]], "Print", "PrintUsage",
- CellTags->"Info3569137387-6081269"]
+ CellTags->"Info3570521858-2719414"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -1732,13 +1737,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"\[Phi]h", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$4460", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$4460", "]"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$4492", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$4492", "]"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`\[Phi]h[
-    xAct`xTensor`LI[xAct`xPand`Private`p$4460], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$4460]], ". ", ""],
+    xAct`xTensor`LI[xAct`xPand`Private`p$4492], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$4492]], ". ", ""],
   Editable->False]], "Print",
  CellLabel->"During evaluation of In[13]:="],
 
@@ -1749,13 +1754,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"Bsh", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$4465", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$4465", "]"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$4497", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$4497", "]"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`Bsh[
-    xAct`xTensor`LI[xAct`xPand`Private`p$4465], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$4465]], ". ", ""],
+    xAct`xTensor`LI[xAct`xPand`Private`p$4497], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$4497]], ". ", ""],
   Editable->False]], "Print",
  CellLabel->"During evaluation of In[13]:="],
 
@@ -1766,14 +1771,14 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"Bvh", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$4470", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$4470", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$4502", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$4502", "]"}], ",", 
      RowBox[{"-", "\[Alpha]"}]}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
    "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`Bvh[
-    xAct`xTensor`LI[xAct`xPand`Private`p$4470], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$4470], -$CellContext`\[Alpha]], ". ",
+    xAct`xTensor`LI[xAct`xPand`Private`p$4502], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$4502], -$CellContext`\[Alpha]], ". ",
     ""],
   Editable->False]], "Print",
  CellLabel->"During evaluation of In[13]:="],
@@ -1785,13 +1790,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"\[Psi]h", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$4476", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$4476", "]"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$4508", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$4508", "]"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`\[Psi]h[
-    xAct`xTensor`LI[xAct`xPand`Private`p$4476], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$4476]], ". ", ""],
+    xAct`xTensor`LI[xAct`xPand`Private`p$4508], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$4508]], ". ", ""],
   Editable->False]], "Print",
  CellLabel->"During evaluation of In[13]:="],
 
@@ -1802,13 +1807,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"Esh", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$4481", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$4481", "]"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$4513", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$4513", "]"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`Esh[
-    xAct`xTensor`LI[xAct`xPand`Private`p$4481], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$4481]], ". ", ""],
+    xAct`xTensor`LI[xAct`xPand`Private`p$4513], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$4513]], ". ", ""],
   Editable->False]], "Print",
  CellLabel->"During evaluation of In[13]:="],
 
@@ -1819,14 +1824,14 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"Evh", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$4486", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$4486", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$4518", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$4518", "]"}], ",", 
      RowBox[{"-", "\[Alpha]"}]}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
    "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`Evh[
-    xAct`xTensor`LI[xAct`xPand`Private`p$4486], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$4486], -$CellContext`\[Alpha]], ". ",
+    xAct`xTensor`LI[xAct`xPand`Private`p$4518], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$4518], -$CellContext`\[Alpha]], ". ",
     ""],
   Editable->False]], "Print",
  CellLabel->"During evaluation of In[13]:="],
@@ -1838,16 +1843,16 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"Eth", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$4492", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$4492", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$4524", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$4524", "]"}], ",", 
      RowBox[{"-", "\[Alpha]"}], ",", 
      RowBox[{"-", "\[Beta]"}]}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
    "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`Eth[
-    xAct`xTensor`LI[xAct`xPand`Private`p$4492], 
+    xAct`xTensor`LI[xAct`xPand`Private`p$4524], 
     xAct`xTensor`LI[
-    xAct`xPand`Private`q$4492], -$CellContext`\[Alpha], \
+    xAct`xPand`Private`q$4524], -$CellContext`\[Alpha], \
 -$CellContext`\[Beta]], ". ", ""],
   Editable->False]], "Print",
  CellLabel->"During evaluation of In[13]:="],
@@ -1859,13 +1864,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"Th", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$4501", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$4501", "]"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$4533", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$4533", "]"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`Th[
-    xAct`xTensor`LI[xAct`xPand`Private`p$4501], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$4501]], ". ", ""],
+    xAct`xTensor`LI[xAct`xPand`Private`p$4533], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$4533]], ". ", ""],
   Editable->False]], "Print",
  CellLabel->"During evaluation of In[13]:="],
 
@@ -1876,13 +1881,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"Lsh", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$4506", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$4506", "]"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$4538", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$4538", "]"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`Lsh[
-    xAct`xTensor`LI[xAct`xPand`Private`p$4506], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$4506]], ". ", ""],
+    xAct`xTensor`LI[xAct`xPand`Private`p$4538], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$4538]], ". ", ""],
   Editable->False]], "Print",
  CellLabel->"During evaluation of In[13]:="],
 
@@ -1893,14 +1898,14 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"Lvh", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$4511", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$4511", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$4543", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$4543", "]"}], ",", 
      RowBox[{"-", "\[Alpha]"}]}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
    "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`Lvh[
-    xAct`xTensor`LI[xAct`xPand`Private`p$4511], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$4511], -$CellContext`\[Alpha]], ". ",
+    xAct`xTensor`LI[xAct`xPand`Private`p$4543], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$4543], -$CellContext`\[Alpha]], ". ",
     ""],
   Editable->False]], "Print",
  CellLabel->"During evaluation of In[13]:="],
@@ -1912,13 +1917,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"\[CurlyPhi]", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$4519", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$4519", "]"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$4551", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$4551", "]"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    xAct`xPand`\[CurlyPhi][
-    xAct`xTensor`LI[xAct`xPand`Private`p$4519], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$4519]], ". ", ""],
+    xAct`xTensor`LI[xAct`xPand`Private`p$4551], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$4551]], ". ", ""],
   Editable->False]], "Print",
  CellLabel->"During evaluation of In[13]:="],
 
@@ -1929,13 +1934,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"\[Rho]u", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$4524", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$4524", "]"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$4556", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$4556", "]"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`\[Rho]u[
-    xAct`xTensor`LI[xAct`xPand`Private`p$4524], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$4524]], ". ", ""],
+    xAct`xTensor`LI[xAct`xPand`Private`p$4556], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$4556]], ". ", ""],
   Editable->False]], "Print",
  CellLabel->"During evaluation of In[13]:="],
 
@@ -1946,13 +1951,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"Pu", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$4529", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$4529", "]"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$4561", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$4561", "]"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`Pu[
-    xAct`xTensor`LI[xAct`xPand`Private`p$4529], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$4529]], ". ", ""],
+    xAct`xTensor`LI[xAct`xPand`Private`p$4561], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$4561]], ". ", ""],
   Editable->False]], "Print",
  CellLabel->"During evaluation of In[13]:="],
 
@@ -1963,14 +1968,14 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"Vspathu", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$4534", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$4534", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$4566", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$4566", "]"}], ",", 
      RowBox[{"-", "\[Alpha]"}]}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
    "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`Vspathu[
-    xAct`xTensor`LI[xAct`xPand`Private`p$4534], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$4534], -$CellContext`\[Alpha]], ". ",
+    xAct`xTensor`LI[xAct`xPand`Private`p$4566], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$4566], -$CellContext`\[Alpha]], ". ",
     ""],
   Editable->False]], "Print",
  CellLabel->"During evaluation of In[13]:="],
@@ -1982,13 +1987,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"V0hu", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$4540", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$4540", "]"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$4572", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$4572", "]"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`V0hu[
-    xAct`xTensor`LI[xAct`xPand`Private`p$4540], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$4540]], ". ", ""],
+    xAct`xTensor`LI[xAct`xPand`Private`p$4572], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$4572]], ". ", ""],
   Editable->False]], "Print",
  CellLabel->"During evaluation of In[13]:="],
 
@@ -1999,13 +2004,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"Vshu", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$4545", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$4545", "]"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$4577", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$4577", "]"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`Vshu[
-    xAct`xTensor`LI[xAct`xPand`Private`p$4545], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$4545]], ". ", ""],
+    xAct`xTensor`LI[xAct`xPand`Private`p$4577], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$4577]], ". ", ""],
   Editable->False]], "Print",
  CellLabel->"During evaluation of In[13]:="],
 
@@ -2016,14 +2021,14 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"Vvhu", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$4550", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$4550", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$4582", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$4582", "]"}], ",", 
      RowBox[{"-", "\[Alpha]"}]}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
    "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`Vvhu[
-    xAct`xTensor`LI[xAct`xPand`Private`p$4550], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$4550], -$CellContext`\[Alpha]], ". ",
+    xAct`xTensor`LI[xAct`xPand`Private`p$4582], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$4582], -$CellContext`\[Alpha]], ". ",
     ""],
   Editable->False]], "Print",
  CellLabel->"During evaluation of In[13]:="],
@@ -2615,7 +2620,7 @@ be conformally related by DefConformalMetric. \
 \\n\\nConformal[metric1,metric2][expr] provides the final result with respect \
 to the ambient metric, which is the first metric defined on the \
 manifold.\"\>", "MSG"]], "Print", "PrintUsage",
- CellTags->"Info3569137388-6081269"]
+ CellTags->"Info3570521859-2719414"]
 }, Open  ]],
 
 Cell["\<\
@@ -3593,14 +3598,14 @@ Cell[BoxData[
  StyleBox["\<\"Perturbed[expr, n] returns the expansion of expr perturbed up \
 to n-th order, using $PerturbationParameter.\"\>", 
   "MSG"]], "Print", "PrintUsage",
- CellTags->"Info3569137389-6081269"],
+ CellTags->"Info3570521860-2719414"],
 
 Cell[BoxData[
  StyleBox["\<\"ExpandPerturbation[expr] returns expr with all Perturbation \
 expressions expanded in terms of metric perturbations. It uses fast \
 pre-stored formulas for the general term of the perturbative expansion of the \
 most common curvature tensors.\"\>", "MSG"]], "Print", "PrintUsage",
- CellTags->"Info3569137389-6081269"]
+ CellTags->"Info3570521860-2719414"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -3998,6 +4003,7 @@ Cell[BoxData[
                     Offset[0.]}}, "RowsIndexed" -> {}}],
               FontSize->9]}
            },
+           
            GridBoxAlignment->{
             "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
              "Rows" -> {{Center}}, "RowsIndexed" -> {}},
@@ -6592,13 +6598,13 @@ Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{"?", "$ListOfGauges"}]], "Input",
- CellLabel->"In[9]:="],
+ CellLabel->"In[43]:="],
 
 Cell[BoxData[
  StyleBox["\<\"Possible gauges are: AnyGauge, ComovingGauge, FlatGauge, \
 IsoDensityGauge, NewtonGauge and SynchronousGauge.\"\>", 
   "MSG"]], "Print", "PrintUsage",
- CellTags->"Info3569178312-4740925"]
+ CellTags->"Info3570521863-2719414"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -6614,7 +6620,7 @@ hypersurfaces) and along its space components (i.e. onto the hypersurfaces), \
 being defined by the background slicing associated with the induced metric \
 'h'. \\n\\n'expr' has to be an expression involving tensors of rank 2 only.\"\
 \>", "MSG"]], "Print", "PrintUsage",
- CellTags->"Info3569137392-6081269"]
+ CellTags->"Info3570521864-2719414"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -6627,8 +6633,8 @@ Cell[BoxData[{
      RowBox[{
       RowBox[{"LI", "[", "1", "]"}], ",", "\[Mu]", ",", "\[Nu]"}], "]"}], "/.", 
     RowBox[{"SplitMetric", "[", 
-     RowBox[{"g", ",", "dg", ",", "h", ",", "AnyGauge"}], "]"}]}], ",", "h"}],
-   "]"}], "\[IndentingNewLine]", 
+     RowBox[{"g", ",", "dg", ",", "h", ",", "\"\<AnyGauge\>\""}], "]"}]}], 
+   ",", "h"}], "]"}], "\[IndentingNewLine]", 
  RowBox[{"VisualizeTensor", "[", 
   RowBox[{
    RowBox[{
@@ -6636,8 +6642,8 @@ Cell[BoxData[{
      RowBox[{
       RowBox[{"LI", "[", "1", "]"}], ",", "\[Mu]", ",", "\[Nu]"}], "]"}], "/.", 
     RowBox[{"SplitMetric", "[", 
-     RowBox[{"g", ",", "dg", ",", "h", ",", "ComovingGauge"}], "]"}]}], ",", 
-   "h"}], "]"}], "\[IndentingNewLine]", 
+     RowBox[{"g", ",", "dg", ",", "h", ",", "\"\<ComovingGauge\>\""}], 
+     "]"}]}], ",", "h"}], "]"}], "\[IndentingNewLine]", 
  RowBox[{"VisualizeTensor", "[", 
   RowBox[{
    RowBox[{
@@ -6645,8 +6651,8 @@ Cell[BoxData[{
      RowBox[{
       RowBox[{"LI", "[", "1", "]"}], ",", "\[Mu]", ",", "\[Nu]"}], "]"}], "/.", 
     RowBox[{"SplitMetric", "[", 
-     RowBox[{"g", ",", "dg", ",", "h", ",", "NewtonGauge"}], "]"}]}], ",", 
-   "h"}], "]"}], "\[IndentingNewLine]", 
+     RowBox[{"g", ",", "dg", ",", "h", ",", "\"\<NewtonGauge\>\""}], "]"}]}], 
+   ",", "h"}], "]"}], "\[IndentingNewLine]", 
  RowBox[{"VisualizeTensor", "[", 
   RowBox[{
    RowBox[{
@@ -6654,8 +6660,8 @@ Cell[BoxData[{
      RowBox[{
       RowBox[{"LI", "[", "1", "]"}], ",", "\[Mu]", ",", "\[Nu]"}], "]"}], "/.", 
     RowBox[{"SplitMetric", "[", 
-     RowBox[{"g", ",", "dg", ",", "h", ",", "SynchronousGauge"}], "]"}]}], 
-   ",", "h"}], "]"}]}], "Input",
+     RowBox[{"g", ",", "dg", ",", "h", ",", "\"\<SynchronousGauge\>\""}], 
+     "]"}]}], ",", "h"}], "]"}]}], "Input",
  CellLabel->"In[45]:="],
 
 Cell[BoxData[
@@ -7754,7 +7760,7 @@ Cell[BoxData[
 'expr', using the list of rules 'ListPairs', according to the background \
 slicing associated with the induced metric 'h'.\"\>", 
   "MSG"]], "Print", "PrintUsage",
- CellTags->"Info3569137393-6081269"]
+ CellTags->"Info3570521865-2719414"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -7763,8 +7769,8 @@ Cell[BoxData[
  RowBox[{"SplitPerturbations", "[", 
   RowBox[{"MyR", ",", 
    RowBox[{"SplitMetric", "[", 
-    RowBox[{"g", ",", "dg", ",", "h", ",", "AnyGauge"}], "]"}], ",", "h"}], 
-  "]"}]], "Input",
+    RowBox[{"g", ",", "dg", ",", "h", ",", "\"\<AnyGauge\>\""}], "]"}], ",", 
+   "h"}], "]"}]], "Input",
  CellLabel->"In[55]:="],
 
 Cell[BoxData[
@@ -7789,13 +7795,13 @@ Cell[BoxData[
        Editable->False], ""], "2"]], 
    "\[InvisibleSpace]", "\<\" +... was performed in \"\>", 
    "\[InvisibleSpace]", 
-   "0.8880940000000000500435248795838560909`5.969058849239237", 
+   "0.8539219999999999588524701721325982362`5.952018115916327", 
    "\[InvisibleSpace]", "\<\" seconds.\"\>"}],
   SequenceForm["The Splitting of ", $CellContext`ah[
       xAct`xTensor`LI[0], 
       xAct`xTensor`LI[0]]^(-2) $CellContext`RicciScalarCD[], 
    " +... was performed in ", 
-   0.8880940000000000500435248795838560909`5.969058849239237, " seconds."],
+   0.8539219999999999588524701721325982362`5.952018115916327, " seconds."],
   Editable->False]], "Print",
  CellLabel->"During evaluation of In[55]:="],
 
@@ -8258,7 +8264,7 @@ result using the rules associated with the 'gauge', and according to the \
 background slicing associated with the induced metric 'h'. \\n\\nAll the \
 perturbed fields are derived from the perturbed metric 'gpert' and the \
 perturbed fluid four-velocity 'ufpert'.\"\>", "MSG"]], "Print", "PrintUsage",
- CellTags->"Info3569137396-6081269"]
+ CellTags->"Info3570521867-2719414"]
 }, Open  ]],
 
 Cell[BoxData[
@@ -8279,8 +8285,8 @@ Cell[BoxData[
  RowBox[{
   RowBox[{"MyToxPand", "[", 
    RowBox[{
-    RowBox[{"RicciScalarCD", "[", "]"}], ",", "AnyGauge", ",", "order"}], 
-   "]"}], " "}]], "Input",
+    RowBox[{"RicciScalarCD", "[", "]"}], ",", "\"\<AnyGauge\>\"", ",", 
+    "order"}], "]"}], " "}]], "Input",
  CellLabel->"In[58]:="],
 
 Cell[BoxData[
@@ -8319,14 +8325,14 @@ Cell[BoxData[
       Editable->False], "2"]], 
    "\[InvisibleSpace]", "\<\" +... was performed in \"\>", 
    "\[InvisibleSpace]", 
-   "0.88269500000000000738964445190504193306`5.966410579825546", 
+   "0.86041000000000000813571432445314712822`5.955305362553837", 
    "\[InvisibleSpace]", "\<\" seconds.\"\>"}],
   SequenceForm[
   "The Splitting of ", $CellContext`RicciScalarCD[] xAct`xTensor`Scalar[
       $CellContext`ah[
        xAct`xTensor`LI[0], 
        xAct`xTensor`LI[0]]]^(-2), " +... was performed in ", 
-   0.88269500000000000738964445190504193306`5.966410579825546, " seconds."],
+   0.86041000000000000813571432445314712822`5.955305362553837, " seconds."],
   Editable->False]], "Print",
  CellLabel->"During evaluation of In[58]:="],
 
@@ -8771,7 +8777,7 @@ Cell[BoxData[
  StyleBox["\<\"Possible gauges are: AnyGauge, ComovingGauge, FlatGauge, \
 IsoDensityGauge, NewtonGauge and SynchronousGauge.\"\>", 
   "MSG"]], "Print", "PrintUsage",
- CellTags->"Info3569137398-6081269"]
+ CellTags->"Info3570521869-2719414"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -8780,8 +8786,8 @@ Cell[BoxData[
  RowBox[{
   RowBox[{"MyToxPand", "[", 
    RowBox[{
-    RowBox[{"RicciScalarCD", "[", "]"}], ",", "NewtonGauge", ",", "order"}], 
-   "]"}], " "}]], "Input",
+    RowBox[{"RicciScalarCD", "[", "]"}], ",", "\"\<NewtonGauge\>\"", ",", 
+    "order"}], "]"}], " "}]], "Input",
  CellLabel->"In[60]:="],
 
 Cell[BoxData[
@@ -8820,14 +8826,14 @@ Cell[BoxData[
       Editable->False], "2"]], 
    "\[InvisibleSpace]", "\<\" +... was performed in \"\>", 
    "\[InvisibleSpace]", 
-   "0.54654400000000002979305691042100079358`5.758225044227727", 
+   "0.6162029999999999452242605002538766712`5.81032372163944", 
    "\[InvisibleSpace]", "\<\" seconds.\"\>"}],
   SequenceForm[
   "The Splitting of ", $CellContext`RicciScalarCD[] xAct`xTensor`Scalar[
       $CellContext`ah[
        xAct`xTensor`LI[0], 
        xAct`xTensor`LI[0]]]^(-2), " +... was performed in ", 
-   0.54654400000000002979305691042100079358`5.758225044227727, " seconds."],
+   0.6162029999999999452242605002538766712`5.81032372163944, " seconds."],
   Editable->False]], "Print",
  CellLabel->"During evaluation of In[60]:="],
 
@@ -9101,8 +9107,8 @@ Cell[BoxData[
  RowBox[{
   RowBox[{"MyToxPand", "[", 
    RowBox[{
-    RowBox[{"RicciScalarCD", "[", "]"}], ",", "FlatGauge", ",", "order"}], 
-   "]"}], " "}]], "Input",
+    RowBox[{"RicciScalarCD", "[", "]"}], ",", "\"\<FlatGauge\>\"", ",", 
+    "order"}], "]"}], " "}]], "Input",
  CellLabel->"In[61]:="],
 
 Cell[BoxData[
@@ -9141,14 +9147,14 @@ Cell[BoxData[
       Editable->False], "2"]], 
    "\[InvisibleSpace]", "\<\" +... was performed in \"\>", 
    "\[InvisibleSpace]", 
-   "0.56417399999999995330313140584621578455`5.772012981067221", 
+   "0.55251600000000000711963821231620386243`5.762944772308442", 
    "\[InvisibleSpace]", "\<\" seconds.\"\>"}],
   SequenceForm[
   "The Splitting of ", $CellContext`RicciScalarCD[] xAct`xTensor`Scalar[
       $CellContext`ah[
        xAct`xTensor`LI[0], 
        xAct`xTensor`LI[0]]]^(-2), " +... was performed in ", 
-   0.56417399999999995330313140584621578455`5.772012981067221, " seconds."],
+   0.55251600000000000711963821231620386243`5.762944772308442, " seconds."],
   Editable->False]], "Print",
  CellLabel->"During evaluation of In[61]:="],
 
@@ -9413,8 +9419,8 @@ Cell[BoxData[
  RowBox[{
   RowBox[{"MyToxPand", "[", 
    RowBox[{
-    RowBox[{"RicciScalarCD", "[", "]"}], ",", "SynchronousGauge", ",", 
-    "order"}], "]"}], " "}]], "Input",
+    RowBox[{"RicciScalarCD", "[", "]"}], ",", "\"\<SynchronousGauge\>\"", ",",
+     "order"}], "]"}], " "}]], "Input",
  CellLabel->"In[62]:="],
 
 Cell[BoxData[
@@ -9453,14 +9459,14 @@ Cell[BoxData[
       Editable->False], "2"]], 
    "\[InvisibleSpace]", "\<\" +... was performed in \"\>", 
    "\[InvisibleSpace]", 
-   "0.69891199999999997771737980656325817108`5.865022410455469", 
+   "0.74512599999999995503685568110086023808`5.892829630964587", 
    "\[InvisibleSpace]", "\<\" seconds.\"\>"}],
   SequenceForm[
   "The Splitting of ", $CellContext`RicciScalarCD[] xAct`xTensor`Scalar[
       $CellContext`ah[
        xAct`xTensor`LI[0], 
        xAct`xTensor`LI[0]]]^(-2), " +... was performed in ", 
-   0.69891199999999997771737980656325817108`5.865022410455469, " seconds."],
+   0.74512599999999995503685568110086023808`5.892829630964587, " seconds."],
   Editable->False]], "Print",
  CellLabel->"During evaluation of In[62]:="],
 
@@ -9687,8 +9693,8 @@ Cell[BoxData[
  RowBox[{
   RowBox[{"MyToxPand", "[", 
    RowBox[{
-    RowBox[{"RicciScalarCD", "[", "]"}], ",", "ComovingGauge", ",", "order"}],
-    "]"}], " "}]], "Input",
+    RowBox[{"RicciScalarCD", "[", "]"}], ",", "\"\<ComovingGauge\>\"", ",", 
+    "order"}], "]"}], " "}]], "Input",
  CellLabel->"In[63]:="],
 
 Cell[BoxData[
@@ -9727,14 +9733,14 @@ Cell[BoxData[
       Editable->False], "2"]], 
    "\[InvisibleSpace]", "\<\" +... was performed in \"\>", 
    "\[InvisibleSpace]", 
-   "0.69460200000000005271516556604183278978`5.8623359427405655", 
+   "0.63752799999999998359356823129928670824`5.825099176861621", 
    "\[InvisibleSpace]", "\<\" seconds.\"\>"}],
   SequenceForm[
   "The Splitting of ", $CellContext`RicciScalarCD[] xAct`xTensor`Scalar[
       $CellContext`ah[
        xAct`xTensor`LI[0], 
        xAct`xTensor`LI[0]]]^(-2), " +... was performed in ", 
-   0.69460200000000005271516556604183278978`5.8623359427405655, " seconds."],
+   0.63752799999999998359356823129928670824`5.825099176861621, " seconds."],
   Editable->False]], "Print",
  CellLabel->"During evaluation of In[63]:="],
 
@@ -10105,8 +10111,8 @@ Cell[BoxData[
     RowBox[{"EinsteinCD", "[", 
      RowBox[{
       RowBox[{"-", "\[Mu]"}], ",", 
-      RowBox[{"-", "\[Nu]"}]}], "]"}], ",", "NewtonGauge", ",", "1"}], "]"}], 
-  " "}]], "Input",
+      RowBox[{"-", "\[Nu]"}]}], "]"}], ",", "\"\<NewtonGauge\>\"", ",", "1"}],
+    "]"}], " "}]], "Input",
  CellLabel->"In[64]:="],
 
 Cell[BoxData[
@@ -10143,12 +10149,12 @@ Cell[BoxData[
     $CellContext`RicciCD[-$CellContext`\[Mu], -$CellContext`\[Nu]],
     Editable->False], "\[InvisibleSpace]", "\<\" +... was performed in \"\>", 
    "\[InvisibleSpace]", 
-   "2.83926500000000014978240869822911918163`6.473805842144587", 
+   "2.79607399999999994832933225552551448345`6.467148574404192", 
    "\[InvisibleSpace]", "\<\" seconds.\"\>"}],
   SequenceForm["The Splitting of ", 
    $CellContext`RicciCD[-$CellContext`\[Mu], -$CellContext`\[Nu]], 
    " +... was performed in ", 
-   2.83926500000000014978240869822911918163`6.473805842144587, " seconds."],
+   2.79607399999999994832933225552551448345`6.467148574404192, " seconds."],
   Editable->False]], "Print",
  CellLabel->"During evaluation of In[64]:="],
 
@@ -12199,7 +12205,7 @@ the rank of the tensors of 'expr'. The free indices (in canonical order) of \
 argument 'ListOfProjectors' is omitted, all the projections for rank-0 to \
 rank-2 tensors are displayed in a table.\"\>", "MSG"]], "Print", "PrintUsage",
  
- CellTags->"Info3569137409-6081269"]
+ CellTags->"Info3570521880-2719414"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -12208,7 +12214,7 @@ Cell[BoxData[
  RowBox[{"ExtractComponents", "[", 
   RowBox[{"%%%", ",", "h", ",", 
    RowBox[{"{", 
-    RowBox[{"Time", ",", "Time"}], "}"}]}], "]"}]], "Input",
+    RowBox[{"\"\<Time\>\"", ",", "\"\<Time\>\""}], "}"}]}], "]"}]], "Input",
  CellLabel->"In[67]:="],
 
 Cell[BoxData[
@@ -12288,7 +12294,8 @@ Cell[BoxData[
  RowBox[{"ExtractComponents", "[", 
   RowBox[{"%%%%", ",", "h", ",", 
    RowBox[{"{", 
-    RowBox[{"Space", ",", "Space"}], "}"}]}], "]"}]], "Input",
+    RowBox[{"\"\<Space\>\"", ",", "\"\<Space\>\""}], "}"}]}], "]"}]], "Input",
+ 
  CellLabel->"In[68]:="],
 
 Cell[BoxData[
@@ -13331,8 +13338,8 @@ Cell[BoxData[{
     RowBox[{"EinsteinCD", "[", 
      RowBox[{
       RowBox[{"-", "\[Beta]"}], ",", 
-      RowBox[{"-", "\[Alpha]"}]}], "]"}], ",", "NewtonGauge", ",", "1"}], 
-   "]"}], ";"}], "\[IndentingNewLine]", 
+      RowBox[{"-", "\[Alpha]"}]}], "]"}], ",", "\"\<NewtonGauge\>\"", ",", 
+    "1"}], "]"}], ";"}], "\[IndentingNewLine]", 
  RowBox[{"ExtractComponents", "[", 
   RowBox[{"%", ",", "h"}], "]"}]}], "Input",
  CellLabel->"In[69]:="],
@@ -13371,12 +13378,12 @@ Cell[BoxData[
     $CellContext`RicciCD[-$CellContext`\[Alpha], -$CellContext`\[Beta]],
     Editable->False], "\[InvisibleSpace]", "\<\" +... was performed in \"\>", 
    "\[InvisibleSpace]", 
-   "2.86414599999999985868726071203127503395`6.477595065664829", 
+   "2.93553199999999980818188305420335382223`6.48828673222859", 
    "\[InvisibleSpace]", "\<\" seconds.\"\>"}],
   SequenceForm["The Splitting of ", 
    $CellContext`RicciCD[-$CellContext`\[Alpha], -$CellContext`\[Beta]], 
    " +... was performed in ", 
-   2.86414599999999985868726071203127503395`6.477595065664829, " seconds."],
+   2.93553199999999980818188305420335382223`6.48828673222859, " seconds."],
   Editable->False]], "Print",
  CellLabel->"During evaluation of In[69]:="],
 
@@ -14099,6 +14106,7 @@ Cell[BoxData[
                     Offset[0.]}}, "RowsIndexed" -> {}}],
                    FontSize->9]}
                 },
+                
                 GridBoxAlignment->{
                  "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
                   "Rows" -> {{Center}}, "RowsIndexed" -> {}},
@@ -14937,7 +14945,7 @@ Cell[BoxData[
 Cell[BoxData[
  StyleBox["\<\"ExtractOrder[expr,order] displays the expression at order \
 'order' of 'expr'.\"\>", "MSG"]], "Print", "PrintUsage",
- CellTags->"Info3569137414-6081269"]
+ CellTags->"Info3570521885-2719414"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -14949,8 +14957,8 @@ Cell[BoxData[{
     RowBox[{"EinsteinCD", "[", 
      RowBox[{
       RowBox[{"-", "\[Beta]"}], ",", 
-      RowBox[{"-", "\[Alpha]"}]}], "]"}], ",", "NewtonGauge", ",", "1"}], 
-   "]"}], ";"}], "\[IndentingNewLine]", 
+      RowBox[{"-", "\[Alpha]"}]}], "]"}], ",", "\"\<NewtonGauge\>\"", ",", 
+    "1"}], "]"}], ";"}], "\[IndentingNewLine]", 
  RowBox[{"ExtractComponents", "[", 
   RowBox[{
    RowBox[{"ExtractOrder", "[", 
@@ -14991,12 +14999,12 @@ Cell[BoxData[
     $CellContext`RicciCD[-$CellContext`\[Alpha], -$CellContext`\[Beta]],
     Editable->False], "\[InvisibleSpace]", "\<\" +... was performed in \"\>", 
    "\[InvisibleSpace]", 
-   "2.98588999999999993306687429139856249094`6.495673717581904", 
+   "2.87567599999999989890397955605294555426`6.479339866152237", 
    "\[InvisibleSpace]", "\<\" seconds.\"\>"}],
   SequenceForm["The Splitting of ", 
    $CellContext`RicciCD[-$CellContext`\[Alpha], -$CellContext`\[Beta]], 
    " +... was performed in ", 
-   2.98588999999999993306687429139856249094`6.495673717581904, " seconds."],
+   2.87567599999999989890397955605294555426`6.479339866152237, " seconds."],
   Editable->False]], "Print",
  CellLabel->"During evaluation of In[72]:="],
 
@@ -16440,8 +16448,8 @@ Cell[BoxData[
        RowBox[{"EinsteinCD", "[", 
         RowBox[{
          RowBox[{"-", "\[Beta]"}], ",", 
-         RowBox[{"-", "\[Alpha]"}]}], "]"}], ",", "NewtonGauge", ",", "1"}], 
-      "]"}], "]"}], ",", "h"}], "]"}], "//", "org"}]], "Input",
+         RowBox[{"-", "\[Alpha]"}]}], "]"}], ",", "\"\<NewtonGauge\>\"", ",", 
+       "1"}], "]"}], "]"}], ",", "h"}], "]"}], "//", "org"}]], "Input",
  CellLabel->"In[74]:="],
 
 Cell[BoxData[
@@ -16478,12 +16486,12 @@ Cell[BoxData[
     $CellContext`RicciCD[-$CellContext`\[Alpha], -$CellContext`\[Beta]],
     Editable->False], "\[InvisibleSpace]", "\<\" +... was performed in \"\>", 
    "\[InvisibleSpace]", 
-   "2.70477899999999982227905093168374150991`6.45273169917268", 
+   "2.75948500000000018772539078781846910715`6.461427950950726", 
    "\[InvisibleSpace]", "\<\" seconds.\"\>"}],
   SequenceForm["The Splitting of ", 
    $CellContext`RicciCD[-$CellContext`\[Alpha], -$CellContext`\[Beta]], 
    " +... was performed in ", 
-   2.70477899999999982227905093168374150991`6.45273169917268, " seconds."],
+   2.75948500000000018772539078781846910715`6.461427950950726, " seconds."],
   Editable->False]], "Print",
  CellLabel->"During evaluation of In[74]:="],
 
@@ -17105,8 +17113,8 @@ Cell[BoxData[
       RowBox[{"EinsteinCD", "[", 
        RowBox[{
         RowBox[{"-", "\[Beta]"}], ",", 
-        RowBox[{"-", "\[Alpha]"}]}], "]"}], ",", "NewtonGauge", ",", "1"}], 
-     "]"}], ",", "g"}], "]"}], "//", "org"}]], "Input",
+        RowBox[{"-", "\[Alpha]"}]}], "]"}], ",", "\"\<NewtonGauge\>\"", ",", 
+      "1"}], "]"}], ",", "g"}], "]"}], "//", "org"}]], "Input",
  CellLabel->"In[75]:="],
 
 Cell[BoxData[
@@ -17143,12 +17151,12 @@ Cell[BoxData[
     $CellContext`RicciCD[-$CellContext`\[Alpha], -$CellContext`\[Beta]],
     Editable->False], "\[InvisibleSpace]", "\<\" +... was performed in \"\>", 
    "\[InvisibleSpace]", 
-   "2.86081099999999999283772922353819012642`6.4770890802885255", 
+   "2.74711399999999983378984325099736452103`6.4594765954681685", 
    "\[InvisibleSpace]", "\<\" seconds.\"\>"}],
   SequenceForm["The Splitting of ", 
    $CellContext`RicciCD[-$CellContext`\[Alpha], -$CellContext`\[Beta]], 
    " +... was performed in ", 
-   2.86081099999999999283772922353819012642`6.4770890802885255, " seconds."],
+   2.74711399999999983378984325099736452103`6.4594765954681685, " seconds."],
   Editable->False]], "Print",
  CellLabel->"During evaluation of In[75]:="],
 
@@ -19675,7 +19683,7 @@ Cell[BoxData[{
       RowBox[{"-", "1"}], ",", "h", ",", "gauge", ",", "order"}], "]"}]}], 
    "]"}]}], "\[IndentingNewLine]", 
  RowBox[{"Rulesmetricmatter", "[", 
-  RowBox[{"ComovingGauge", ",", "1"}], "]"}]}], "Input",
+  RowBox[{"\"\<ComovingGauge\>\"", ",", "1"}], "]"}]}], "Input",
  CellLabel->"In[76]:="],
 
 Cell[BoxData[
@@ -19716,7 +19724,7 @@ Cell[BoxData[
        Blank[]], 
       Pattern[$CellContext`\[Beta], 
        Blank[]]],
-     Editable->False], "\[RuleDelayed]", 
+     Editable->False], "\[Rule]", 
     RowBox[{
      RowBox[{"2", " ", 
       RowBox[{"(", 
@@ -20153,7 +20161,7 @@ Cell[BoxData[
        Blank[]], 
       Pattern[$CellContext`\[Beta], 
        Blank[]]],
-     Editable->False], "\[RuleDelayed]", 
+     Editable->False], "\[Rule]", 
     RowBox[{
      RowBox[{"2", " ", 
       InterpretationBox[
@@ -20951,8 +20959,8 @@ Cell[BoxData[{
  RowBox[{
   RowBox[{"MyToxPand", "[", 
    RowBox[{
-    RowBox[{"u", "[", "\[Nu]", "]"}], ",", "NewtonGauge", ",", "order"}], 
-   "]"}], " "}], "\[IndentingNewLine]", 
+    RowBox[{"u", "[", "\[Nu]", "]"}], ",", "\"\<NewtonGauge\>\"", ",", 
+    "order"}], "]"}], " "}], "\[IndentingNewLine]", 
  RowBox[{"ExtractComponents", "[", 
   RowBox[{"%", ",", "h"}], "]"}]}], "Input",
  CellLabel->"In[78]:="],
@@ -21017,14 +21025,14 @@ Cell[BoxData[
      Editable->False]], 
    "\[InvisibleSpace]", "\<\" +... was performed in \"\>", 
    "\[InvisibleSpace]", 
-   "0.08629900000000000070965455734040006064`4.956605676584659", 
+   "0.09218700000000000505107067283461219631`4.985269595435998", 
    "\[InvisibleSpace]", "\<\" seconds.\"\>"}],
   SequenceForm["The Splitting of ", xAct`xPand`\[Epsilon] ($CellContext`du[
       xAct`xTensor`LI[1], $CellContext`\[Nu]]/xAct`xTensor`Scalar[
      $CellContext`ah[
       xAct`xTensor`LI[0], 
       xAct`xTensor`LI[0]]]), " +... was performed in ", 
-   0.08629900000000000070965455734040006064`4.956605676584659, " seconds."],
+   0.09218700000000000505107067283461219631`4.985269595435998, " seconds."],
   Editable->False]], "Print",
  CellLabel->"During evaluation of In[78]:="],
 
@@ -21332,11 +21340,11 @@ Cell[CellGroupData[{
 Cell[BoxData[{
  RowBox[{"MyToxPand", "[", 
   RowBox[{
-   RowBox[{"u", "[", "\[Nu]", "]"}], ",", "NewtonGauge", ",", "order"}], 
-  "]"}], "\[IndentingNewLine]", 
+   RowBox[{"u", "[", "\[Nu]", "]"}], ",", "\"\<NewtonGauge\>\"", ",", 
+   "order"}], "]"}], "\[IndentingNewLine]", 
  RowBox[{"ExtractComponents", "[", 
   RowBox[{"%", ",", "h", ",", 
-   RowBox[{"{", "Time", "}"}]}], "]"}]}], "Input",
+   RowBox[{"{", "\"\<Time\>\"", "}"}]}], "]"}]}], "Input",
  CellLabel->"In[80]:="],
 
 Cell[BoxData[
@@ -21399,14 +21407,14 @@ Cell[BoxData[
      Editable->False]], 
    "\[InvisibleSpace]", "\<\" +... was performed in \"\>", 
    "\[InvisibleSpace]", 
-   "0.09164999999999999535926775706684566103`4.98273238257786", 
+   "0.09150800000000000600230976033344632015`4.982058976788473", 
    "\[InvisibleSpace]", "\<\" seconds.\"\>"}],
   SequenceForm["The Splitting of ", xAct`xPand`\[Epsilon] ($CellContext`du[
       xAct`xTensor`LI[1], $CellContext`\[Nu]]/xAct`xTensor`Scalar[
      $CellContext`ah[
       xAct`xTensor`LI[0], 
       xAct`xTensor`LI[0]]]), " +... was performed in ", 
-   0.09164999999999999535926775706684566103`4.98273238257786, " seconds."],
+   0.09150800000000000600230976033344632015`4.982058976788473, " seconds."],
   Editable->False]], "Print",
  CellLabel->"During evaluation of In[80]:="],
 
@@ -21639,8 +21647,8 @@ Cell[BoxData[
     RowBox[{
      RowBox[{"CD", "[", 
       RowBox[{"-", "\[Nu]"}], "]"}], "@", 
-     RowBox[{"u", "[", "\[Nu]", "]"}]}], ",", "NewtonGauge", ",", "order"}], 
-   "]"}], " "}]], "Input",
+     RowBox[{"u", "[", "\[Nu]", "]"}]}], ",", "\"\<NewtonGauge\>\"", ",", 
+    "order"}], "]"}], " "}]], "Input",
  CellLabel->"In[82]:="],
 
 Cell[BoxData[
@@ -21721,7 +21729,7 @@ Cell[BoxData[
       Editable->False], "2"]], 
    "\[InvisibleSpace]", "\<\" +... was performed in \"\>", 
    "\[InvisibleSpace]", 
-   "0.19503799999999998915356513862207066268`5.310719148142234", 
+   "0.21521599999999999064392852687888080254`5.3534744686262385", 
    "\[InvisibleSpace]", "\<\" seconds.\"\>"}],
   SequenceForm["The Splitting of ", ((3 xAct`xTensor`Scalar[
         $CellContext`ah[
@@ -21732,7 +21740,7 @@ $CellContext`CD[-$CellContext`\[Nu]][
      $CellContext`ah[
       xAct`xTensor`LI[0], 
       xAct`xTensor`LI[0]]], " +... was performed in ", 
-   0.19503799999999998915356513862207066268`5.310719148142234, " seconds."],
+   0.21521599999999999064392852687888080254`5.3534744686262385, " seconds."],
   Editable->False]], "Print",
  CellLabel->"During evaluation of In[82]:="],
 
@@ -21877,7 +21885,7 @@ Cell[BoxData[
      RowBox[{
       RowBox[{"CD", "[", 
        RowBox[{"-", "\[Mu]"}], "]"}], "@", 
-      RowBox[{"u", "[", "\[Nu]", "]"}]}]}], ",", "NewtonGauge", ",", 
+      RowBox[{"u", "[", "\[Nu]", "]"}]}]}], ",", "\"\<NewtonGauge\>\"", ",", 
     "order"}], "]"}], " "}]], "Input",
  CellLabel->"In[83]:="],
 
@@ -21988,7 +21996,7 @@ Cell[BoxData[
       Editable->False], "3"]], 
    "\[InvisibleSpace]", "\<\" +... was performed in \"\>", 
    "\[InvisibleSpace]", 
-   "0.43659799999999998609823137485363986343`5.660681655209426", 
+   "0.43568299999999998695088265776576008648`5.659770527724834", 
    "\[InvisibleSpace]", "\<\" seconds.\"\>"}],
   SequenceForm["The Splitting of ", ((xAct`xTensor`Scalar[
         $CellContext`ah[
@@ -21999,7 +22007,7 @@ $CellContext`u[$CellContext`\[Nu]]) $CellContext`CD[-$CellContext`\[Mu]][
      $CellContext`ah[
       xAct`xTensor`LI[0], 
       xAct`xTensor`LI[0]]], " +... was performed in ", 
-   0.43659799999999998609823137485363986343`5.660681655209426, " seconds."],
+   0.43568299999999998695088265776576008648`5.659770527724834, " seconds."],
   Editable->False]], "Print",
  CellLabel->"During evaluation of In[83]:="],
 
@@ -22340,12 +22348,14 @@ Cell[BoxData[{
           RowBox[{"-", "\[Beta]"}], "]"}], "]"}], "]"}], "/.", 
        RowBox[{"Projectorh", "\[Rule]", 
         RowBox[{"ProjectWith", "[", "h", "]"}]}]}], ",", "h"}], "]"}], ",", 
-    "NewtonGauge", ",", "order"}], "]"}], " ", ";"}], "\[IndentingNewLine]", 
+    "\"\<NewtonGauge\>\"", ",", "order"}], "]"}], " ", 
+  ";"}], "\[IndentingNewLine]", 
  RowBox[{"DD", "=", 
   RowBox[{"ExtractComponents", "[", 
    RowBox[{"%", ",", "h", ",", 
     RowBox[{"{", 
-     RowBox[{"Space", ",", "Space"}], "}"}]}], "]"}]}]}], "Input",
+     RowBox[{"\"\<Space\>\"", ",", "\"\<Space\>\""}], "}"}]}], 
+   "]"}]}]}], "Input",
  CellLabel->"In[85]:="],
 
 Cell[BoxData[
@@ -22404,7 +22414,7 @@ Cell[BoxData[
       Editable->False], ")"}]}], 
    "\[InvisibleSpace]", "\<\" +... was performed in \"\>", 
    "\[InvisibleSpace]", 
-   "9.23012300000000074362560553709045052528`6.985807401723234", 
+   "8.86356499999999947192463878309354186058`6.968208347178492", 
    "\[InvisibleSpace]", "\<\" seconds.\"\>"}],
   SequenceForm[
   "The Splitting of ", (
@@ -22414,7 +22424,7 @@ $CellContext`CD[-$CellContext`\[Alpha]][
      $CellContext`ah[
       xAct`xTensor`LI[0], 
       xAct`xTensor`LI[0]]], " +... was performed in ", 
-   9.23012300000000074362560553709045052528`6.985807401723234, " seconds."],
+   8.86356499999999947192463878309354186058`6.968208347178492, " seconds."],
   Editable->False]], "Print",
  CellLabel->"During evaluation of In[85]:="],
 
@@ -22968,6 +22978,7 @@ Cell[BoxData[
                     Offset[0.]}}, "RowsIndexed" -> {}}],
                FontSize->9]}
             },
+            
             GridBoxAlignment->{
              "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
               "Rows" -> {{Center}}, "RowsIndexed" -> {}},
@@ -23651,6 +23662,7 @@ Cell[BoxData[
                     Offset[0.]}}, "RowsIndexed" -> {}}],
                  FontSize->9]}
               },
+              
               GridBoxAlignment->{
                "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
                 "Rows" -> {{Center}}, "RowsIndexed" -> {}},
@@ -25015,7 +25027,7 @@ Cell[BoxData[
            RowBox[{"-", "\[Alpha]"}], "]"}], "[", 
           RowBox[{"u", "[", 
            RowBox[{"-", "\[Beta]"}], "]"}], "]"}], ",", "h"}], "]"}], ",", 
-       "NewtonGauge", ",", "order"}], "]"}], "]"}], " ", "/.", 
+       "\"\<NewtonGauge\>\"", ",", "order"}], "]"}], "]"}], " ", "/.", 
     RowBox[{"Projectorh", "\[Rule]", 
      RowBox[{"ProjectWith", "[", "h", "]"}]}]}], "//", "org"}]}]], "Input",
  CellLabel->"In[87]:="],
@@ -25076,7 +25088,7 @@ Cell[BoxData[
       Editable->False], ")"}]}], 
    "\[InvisibleSpace]", "\<\" +... was performed in \"\>", 
    "\[InvisibleSpace]", 
-   "9.14921099999999931640104477992281317711`6.981983556731787", 
+   "9.15092300000000058446403272682800889015`6.982064814295825", 
    "\[InvisibleSpace]", "\<\" seconds.\"\>"}],
   SequenceForm[
   "The Splitting of ", (
@@ -25086,7 +25098,7 @@ $CellContext`CD[-$CellContext`\[Alpha]][
      $CellContext`ah[
       xAct`xTensor`LI[0], 
       xAct`xTensor`LI[0]]], " +... was performed in ", 
-   9.14921099999999931640104477992281317711`6.981983556731787, " seconds."],
+   9.15092300000000058446403272682800889015`6.982064814295825, " seconds."],
   Editable->False]], "Print",
  CellLabel->"During evaluation of In[87]:="],
 
@@ -26257,8 +26269,7 @@ Cell[BoxData[
             GridBoxSpacings->{"Columns" -> {
                 Offset[0.27999999999999997`], {
                  Offset[0.034999999999999996`]}, 
-                Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
-              "Rows" -> {
+                Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
                 Offset[0.2], {
                  Offset[0.4]}, 
                 Offset[0.2]}, "RowsIndexed" -> {}}],
@@ -28021,8 +28032,8 @@ Cell[BoxData[{
      RowBox[{"CD", "[", 
       RowBox[{"-", "\[Mu]"}], "]"}], "@", 
      RowBox[{"Tmunu", "[", 
-      RowBox[{"\[Mu]", ",", "\[Nu]"}], "]"}]}], ",", "NewtonGauge", ",", 
-    "order"}], "]"}], ";"}], "\[IndentingNewLine]", 
+      RowBox[{"\[Mu]", ",", "\[Nu]"}], "]"}]}], ",", "\"\<NewtonGauge\>\"", 
+    ",", "order"}], "]"}], ";"}], "\[IndentingNewLine]", 
  RowBox[{"ExtractComponents", "[", 
   RowBox[{
    RowBox[{"ExtractOrder", "[", 
@@ -28163,7 +28174,7 @@ Cell[BoxData[
       Editable->False], "3"]], 
    "\[InvisibleSpace]", "\<\" +... was performed in \"\>", 
    "\[InvisibleSpace]", 
-   "20.96485300000000151499079947825521230698`7.342091734871935", 
+   "18.8030809999999988235686032567173242569`7.294828930185218", 
    "\[InvisibleSpace]", "\<\" seconds.\"\>"}],
   SequenceForm["The Splitting of ", ((((4 $CellContext`Pu[
          xAct`xTensor`LI[0], 
@@ -28176,7 +28187,7 @@ $CellContext`u[$CellContext`\[Nu]]) $CellContext`CD[-$CellContext`\[Mu]][
      $CellContext`ah[
       xAct`xTensor`LI[0], 
       xAct`xTensor`LI[0]]], " +... was performed in ", 
-   20.96485300000000151499079947825521230698`7.342091734871935, " seconds."],
+   18.8030809999999988235686032567173242569`7.294828930185218, " seconds."],
   Editable->False]], "Print",
  CellLabel->"During evaluation of In[93]:="],
 
@@ -31636,6 +31647,7 @@ Cell[BoxData[
                     Offset[0.]}}, "RowsIndexed" -> {}}],
                 FontSize->9]}
              },
+             
              GridBoxAlignment->{
               "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
                "Rows" -> {{Center}}, "RowsIndexed" -> {}},
@@ -35640,7 +35652,6 @@ Cell[BoxData[
                     Offset[0.]}}, "RowsIndexed" -> {}}],
                 FontSize->9]}
              },
-             
              GridBoxAlignment->{
               "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
                "Rows" -> {{Center}}, "RowsIndexed" -> {}},
@@ -40363,8 +40374,8 @@ Cell[BoxData[{
      RowBox[{"CD", "[", 
       RowBox[{"-", "\[Mu]"}], "]"}], "@", 
      RowBox[{"Tmunu", "[", 
-      RowBox[{"\[Mu]", ",", "\[Nu]"}], "]"}]}], ",", "NewtonGauge", ",", 
-    "2"}], "]"}], ";"}], "\[IndentingNewLine]", 
+      RowBox[{"\[Mu]", ",", "\[Nu]"}], "]"}]}], ",", "\"\<NewtonGauge\>\"", 
+    ",", "2"}], "]"}], ";"}], "\[IndentingNewLine]", 
  RowBox[{"ExtractComponents", "[", 
   RowBox[{
    RowBox[{"ExtractOrder", "[", 
@@ -40505,7 +40516,7 @@ Cell[BoxData[
       Editable->False], "3"]], 
    "\[InvisibleSpace]", "\<\" +... was performed in \"\>", 
    "\[InvisibleSpace]", 
-   "5.40389400000000019730350686586461961269`6.753306734816409", 
+   "5.3370810000000004080789040017407387495`6.747903707349108", 
    "\[InvisibleSpace]", "\<\" seconds.\"\>"}],
   SequenceForm["The Splitting of ", ((((4 xAct`xTensor`Scalar[
           $CellContext`ah[
@@ -40518,7 +40529,7 @@ $CellContext`u[$CellContext`\[Nu]]) $CellContext`\[Rho]u[
      $CellContext`ah[
       xAct`xTensor`LI[0], 
       xAct`xTensor`LI[0]]], " +... was performed in ", 
-   5.40389400000000019730350686586461961269`6.753306734816409, " seconds."],
+   5.3370810000000004080789040017407387495`6.747903707349108, " seconds."],
   Editable->False]], "Print",
  CellLabel->"During evaluation of In[102]:="],
 
@@ -41693,6 +41704,7 @@ Cell[BoxData[
                     Offset[0.]}}, "RowsIndexed" -> {}}],
                 FontSize->9]}
              },
+             
              GridBoxAlignment->{
               "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
                "Rows" -> {{Center}}, "RowsIndexed" -> {}},
@@ -42610,8 +42622,8 @@ Cell[BoxData[
        RowBox[{"\[CurlyPhi]", "[", "]"}], "]"}]}], "+", 
      RowBox[{
       RowBox[{"V", "'"}], "[", 
-      RowBox[{"\[CurlyPhi]", "[", "]"}], "]"}]}], ",", "AnyGauge", ",", 
-    "order"}], "]"}], " "}]], "Input",
+      RowBox[{"\[CurlyPhi]", "[", "]"}], "]"}]}], ",", "\"\<AnyGauge\>\"", 
+    ",", "order"}], "]"}], " "}]], "Input",
  CellLabel->"In[109]:="],
 
 Cell[BoxData[
@@ -42664,7 +42676,7 @@ Cell[BoxData[
       Editable->False], "2"]], 
    "\[InvisibleSpace]", "\<\" +... was performed in \"\>", 
    "\[InvisibleSpace]", 
-   "0.52117700000000000137845290737459436059`5.7375851549451005", 
+   "0.49231900000000000661160015624773222953`5.712846510043499", 
    "\[InvisibleSpace]", "\<\" seconds.\"\>"}],
   SequenceForm["The Splitting of ", xAct`xTensor`Scalar[
       $CellContext`ah[
@@ -42674,7 +42686,7 @@ Cell[BoxData[
       xAct`xPand`\[CurlyPhi][
        xAct`xTensor`LI[0], 
        xAct`xTensor`LI[0]]]], " +... was performed in ", 
-   0.52117700000000000137845290737459436059`5.7375851549451005, " seconds."],
+   0.49231900000000000661160015624773222953`5.712846510043499, " seconds."],
   Editable->False]], "Print",
  CellLabel->"During evaluation of In[109]:="],
 
@@ -43507,7 +43519,7 @@ Cell[BoxData[
 pert changed to a new gauge. The change of gauge is parametrized by the \
 family of vector fields gen[LI[order], a]. Background objects are left \
 untouched.\"\>", "MSG"]], "Print", "PrintUsage",
- CellTags->"Info3569137522-6081269"]
+ CellTags->"Info3570521991-2719414"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -43635,7 +43647,7 @@ Label-Index (LI) for the order of perturbation (i.e. it has to be of the form \
 background slicing. \\n\\nThe theory and formulas for the power expansion of \
 gauge transformation was developed by Bruni et al. in: Class. Quantum Grav. \
 14, 2585 (1997).\"\>", "MSG"]], "Print", "PrintUsage",
- CellTags->"Info3569137522-6081269"]
+ CellTags->"Info3570521992-2719414"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -43651,8 +43663,8 @@ Cell[BoxData[
     RowBox[{"Join", "[", 
      RowBox[{"RulesGaugeField", ",", 
       RowBox[{"Rulesmetricmatter", "[", 
-       RowBox[{"AnyGauge", ",", "order"}], "]"}]}], "]"}], ",", "\[Xi]", ",", 
-    "h", ",", "1"}], "]"}]}]], "Input",
+       RowBox[{"\"\<AnyGauge\>\"", ",", "order"}], "]"}]}], "]"}], ",", 
+    "\[Xi]", ",", "h", ",", "1"}], "]"}]}]], "Input",
  CellLabel->"In[118]:="],
 
 Cell[BoxData[
@@ -43714,7 +43726,7 @@ Cell[BoxData[
       Editable->False], "2"]}], 
    "\[InvisibleSpace]", "\<\" +... was performed in \"\>", 
    "\[InvisibleSpace]", 
-   "0.53533900000000000929389898374211043119`5.749228796617889", 
+   "0.5257899999999999796074234836851246655`5.741412235281771", 
    "\[InvisibleSpace]", "\<\" seconds.\"\>"}],
   SequenceForm["The Splitting of ", (xAct`xPand`\[Epsilon] $CellContext`dg[
       xAct`xTensor`LI[1], -$CellContext`\[Alpha], -$CellContext`\[Beta]]) 
@@ -43722,7 +43734,7 @@ Cell[BoxData[
       $CellContext`ah[
        xAct`xTensor`LI[0], 
        xAct`xTensor`LI[0]]]^2, " +... was performed in ", 
-   0.53533900000000000929389898374211043119`5.749228796617889, " seconds."],
+   0.5257899999999999796074234836851246655`5.741412235281771, " seconds."],
   Editable->False]], "Print",
  CellLabel->"During evaluation of In[118]:="],
 
@@ -45277,31 +45289,31 @@ perturbations:\
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"?", "SplitMetricAndMatterGaugeChange"}]], "Input",
+ RowBox[{"?", "SplitFieldsAndGaugeChange"}]], "Input",
  CellLabel->"In[120]:="],
 
 Cell[BoxData[
- StyleBox["\<\"SplitMetricAndMatterGaugeChange[expr,g,dg,uf,duf,h,order] \
-performs a gauge transformation on expr where expr must involve metric \
-perturbations (or curvature tensor associated with this metric) or matter \
-field perturbation such as the fluid velocity, and splits the results \
-according to the most general gauge choice. \\nh is the induced metric, and \
-refers to the background n+1 splitting. g is the metric and dg is the metric \
-perturbation. uf is the fluid velocity and duf is the fluid velocity \
-perturbation (when index is up). \\n\[Xi] is the general vector field used \
-for the gauge transformation which must have a label index for the order of \
-perturbation (it is of the form \[Xi][LI[order],Index]), and order is the \
-order of the gauge transformation. \\nThe theory and formulas for the power \
-expansion of changes of gauge was developed by Bruni et al. in reference \
-Class. Quantum Grav. 14, 2585 (1997).\"\>", "MSG"]], "Print", "PrintUsage",
- CellTags->"Info3569137524-6081269"]
+ StyleBox["\<\"SplitFieldsAndGaugeChange[expr,g,dg,uf,duf,h,order] performs a \
+gauge transformation on expr where expr must involve metric perturbations (or \
+curvature tensor associated with this metric) or matter field perturbation \
+such as the fluid velocity, and splits the results according to the most \
+general gauge choice. \\nh is the induced metric, and refers to the \
+background n+1 splitting. g is the metric and dg is the metric perturbation. \
+uf is the fluid velocity and duf is the fluid velocity perturbation (when \
+index is up). \\n\[Xi] is the general vector field used for the gauge \
+transformation which must have a label index for the order of perturbation \
+(it is of the form \[Xi][LI[order],Index]), and order is the order of the \
+gauge transformation. \\nThe theory and formulas for the power expansion of \
+changes of gauge was developed by Bruni et al. in reference Class. Quantum \
+Grav. 14, 2585 (1997).\"\>", "MSG"]], "Print", "PrintUsage",
+ CellTags->"Info3570521993-2719414"]
 }, Open  ]],
 
 Cell[BoxData[
  RowBox[{
   RowBox[{"MyGaugeChange", "[", 
    RowBox[{"expr_", ",", "h_", ",", "order_"}], "]"}], ":=", 
-  RowBox[{"SplitMetricAndMatterGaugeChange", "[", 
+  RowBox[{"SplitFieldsAndGaugeChange", "[", 
    RowBox[{
    "expr", ",", "g", ",", "dg", ",", " ", "u", ",", "du", ",", "h", ",", 
     "order"}], "]"}]}]], "Input",
@@ -45324,13 +45336,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"\[Xi]h", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`ord$135887", "]"}], ",", 
-     "\[Sigma]$135888"}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`ord$136044", "]"}], ",", 
+     "\[Sigma]$136045"}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
    "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`\[Xi]h[
     xAct`xTensor`LI[
-    xAct`xPand`Private`ord$135887], $CellContext`\[Sigma]$135888], ". ", ""],
+    xAct`xPand`Private`ord$136044], $CellContext`\[Sigma]$136045], ". ", ""],
   Editable->False]], "Print",
  CellLabel->"During evaluation of In[122]:="],
 
@@ -45395,7 +45407,7 @@ Cell[BoxData[
        Editable->False], "2"]]}], 
    "\[InvisibleSpace]", "\<\" +... was performed in \"\>", 
    "\[InvisibleSpace]", 
-   "0.68451200000000000933653154788771644235`5.85598097931881", 
+   "0.66341399999999994818722370837349444628`5.842384545459458", 
    "\[InvisibleSpace]", "\<\" seconds.\"\>"}],
   SequenceForm[
   "The Splitting of ", ((-xAct`xPand`\[Epsilon]) $CellContext`dg[
@@ -45404,7 +45416,7 @@ Cell[BoxData[
       $CellContext`ah[
        xAct`xTensor`LI[0], 
        xAct`xTensor`LI[0]]]^(-2), " +... was performed in ", 
-   0.68451200000000000933653154788771644235`5.85598097931881, " seconds."],
+   0.66341399999999994818722370837349444628`5.842384545459458, " seconds."],
   Editable->False]], "Print",
  CellLabel->"During evaluation of In[122]:="],
 
@@ -47707,6 +47719,7 @@ Cell[BoxData[
                     Offset[0.]}}, "RowsIndexed" -> {}}],
                  FontSize->9]}
               },
+              
               GridBoxAlignment->{
                "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
                 "Rows" -> {{Center}}, "RowsIndexed" -> {}},
@@ -48102,8 +48115,8 @@ Cell[BoxData[
    RowBox[{
     RowBox[{"MyGR", "[", 
      RowBox[{"\[Mu]", ",", 
-      RowBox[{"-", "\[Nu]"}]}], "]"}], ",", "NewtonGauge", ",", "1"}], 
-   "]"}]}]], "Input",
+      RowBox[{"-", "\[Nu]"}]}], "]"}], ",", "\"\<NewtonGauge\>\"", ",", "1"}],
+    "]"}]}]], "Input",
  CellLabel->"In[128]:="],
 
 Cell[BoxData[
@@ -48155,13 +48168,13 @@ Cell[BoxData[
       Editable->False], "2"]], 
    "\[InvisibleSpace]", "\<\" +... was performed in \"\>", 
    "\[InvisibleSpace]", 
-   "3.40551899999999996282440406503155827522`6.552783220911653", 
+   "3.44733100000000014517809177050366997719`6.558082898042967", 
    "\[InvisibleSpace]", "\<\" seconds.\"\>"}],
   SequenceForm[
   "The Splitting of ", ($CellContext`\[Kappa]^(-2) $CellContext`\
 \[CapitalLambda]) xAct`xTensor`delta[$CellContext`\[Mu], -$CellContext`\[Nu]],
     " +... was performed in ", 
-   3.40551899999999996282440406503155827522`6.552783220911653, " seconds."],
+   3.44733100000000014517809177050366997719`6.558082898042967, " seconds."],
   Editable->False]], "Print",
  CellLabel->"During evaluation of In[128]:="],
 
@@ -51235,7 +51248,8 @@ Cell[BoxData[{
     RowBox[{
      RowBox[{"ah", "[", "]"}], "^", "2"}]}], ",", "h", ",", 
    RowBox[{"{", 
-    RowBox[{"Time", ",", "Time"}], "}"}]}], "]"}], "\[IndentingNewLine]", 
+    RowBox[{"\"\<Time\>\"", ",", "\"\<Time\>\""}], "}"}]}], 
+  "]"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"ExtractComponents", "[", 
    RowBox[{
@@ -51245,7 +51259,7 @@ Cell[BoxData[{
      RowBox[{
       RowBox[{"ah", "[", "]"}], "^", "2"}]}], ",", "h", ",", 
     RowBox[{"{", 
-     RowBox[{"Space", ",", "Space"}], "}"}]}], "]"}], 
+     RowBox[{"\"\<Space\>\"", ",", "\"\<Space\>\""}], "}"}]}], "]"}], 
   "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
  RowBox[{"Hdot", "=", 
   RowBox[{"IndexSolve", "[", 
@@ -52240,6 +52254,7 @@ Cell[BoxData[
                     Offset[0.]}}, "RowsIndexed" -> {}}],
                   FontSize->9]}
                },
+               
                GridBoxAlignment->{
                 "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
                  "Rows" -> {{Center}}, "RowsIndexed" -> {}},
@@ -53300,8 +53315,8 @@ Cell[BoxData[
        RowBox[{"MyGR", "[", 
         RowBox[{
          RowBox[{"-", "\[Beta]"}], ",", 
-         RowBox[{"-", "\[Alpha]"}]}], "]"}], ",", "NewtonGauge", ",", "1"}], 
-      "]"}], "]"}], ",", "h"}], "]"}], "//", "org"}]], "Input",
+         RowBox[{"-", "\[Alpha]"}]}], "]"}], ",", "\"\<NewtonGauge\>\"", ",", 
+       "1"}], "]"}], "]"}], ",", "h"}], "]"}], "//", "org"}]], "Input",
  CellLabel->"In[133]:="],
 
 Cell[BoxData[
@@ -53338,12 +53353,12 @@ Cell[BoxData[
     $CellContext`RicciCD[-$CellContext`\[Alpha], -$CellContext`\[Beta]],
     Editable->False], "\[InvisibleSpace]", "\<\" +... was performed in \"\>", 
    "\[InvisibleSpace]", 
-   "3.37907000000000001804778548830654472113`6.549397101887561", 
+   "3.4442469999999998364614839374553412199`6.557694202080563", 
    "\[InvisibleSpace]", "\<\" seconds.\"\>"}],
   SequenceForm["The Splitting of ", 
    $CellContext`RicciCD[-$CellContext`\[Alpha], -$CellContext`\[Beta]], 
    " +... was performed in ", 
-   3.37907000000000001804778548830654472113`6.549397101887561, " seconds."],
+   3.4442469999999998364614839374553412199`6.557694202080563, " seconds."],
   Editable->False]], "Print",
  CellLabel->"During evaluation of In[133]:="],
 
@@ -54105,8 +54120,8 @@ Cell[BoxData[
    RowBox[{
     RowBox[{"MyGR", "[", 
      RowBox[{"\[Mu]", ",", 
-      RowBox[{"-", "\[Nu]"}]}], "]"}], ",", "NewtonGauge", ",", "1"}], 
-   "]"}]}]], "Input",
+      RowBox[{"-", "\[Nu]"}]}], "]"}], ",", "\"\<NewtonGauge\>\"", ",", "1"}],
+    "]"}]}]], "Input",
  CellLabel->"In[139]:="],
 
 Cell[BoxData[
@@ -54158,13 +54173,13 @@ Cell[BoxData[
       Editable->False], "2"]], 
    "\[InvisibleSpace]", "\<\" +... was performed in \"\>", 
    "\[InvisibleSpace]", 
-   "2.44714000000000009293898983742110431194`6.409258729173394", 
+   "2.47647299999999992436983120569493621588`6.414433510683933", 
    "\[InvisibleSpace]", "\<\" seconds.\"\>"}],
   SequenceForm[
   "The Splitting of ", ($CellContext`\[Kappa]^(-2) $CellContext`\
 \[CapitalLambda]) xAct`xTensor`delta[$CellContext`\[Mu], -$CellContext`\[Nu]],
     " +... was performed in ", 
-   2.44714000000000009293898983742110431194`6.409258729173394, " seconds."],
+   2.47647299999999992436983120569493621588`6.414433510683933, " seconds."],
   Editable->False]], "Print",
  CellLabel->"During evaluation of In[139]:="],
 
@@ -55965,7 +55980,7 @@ Cell[BoxData[
     RowBox[{
      RowBox[{"ah", "[", "]"}], "^", "2"}]}], ",", "h", ",", 
    RowBox[{"{", 
-    RowBox[{"Time", ",", "Time"}], "}"}]}], "]"}]], "Input",
+    RowBox[{"\"\<Time\>\"", ",", "\"\<Time\>\""}], "}"}]}], "]"}]], "Input",
  CellLabel->"In[140]:="],
 
 Cell[BoxData[
@@ -56086,7 +56101,7 @@ Cell[BoxData[
     RowBox[{
      RowBox[{"ah", "[", "]"}], "^", "2"}]}], ",", "h", ",", 
    RowBox[{"{", 
-    RowBox[{"Time", ",", "Space"}], "}"}]}], "]"}]], "Input",
+    RowBox[{"\"\<Time\>\"", ",", "\"\<Space\>\""}], "}"}]}], "]"}]], "Input",
  CellLabel->"In[141]:="],
 
 Cell[BoxData[
@@ -56211,7 +56226,7 @@ Cell[BoxData[{
      RowBox[{
       RowBox[{"ah", "[", "]"}], "^", "2"}]}], ",", "h", ",", 
     RowBox[{"{", 
-     RowBox[{"Space", ",", "Space"}], "}"}]}], "]"}], 
+     RowBox[{"\"\<Space\>\"", ",", "\"\<Space\>\""}], "}"}]}], "]"}], 
   ";"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"%", "*", 
@@ -56333,23 +56348,23 @@ Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{"SetSlicing", "[", 
-  RowBox[{"hI", ",", "nI", ",", "g", ",", "cdI", ",", 
+  RowBox[{"g", ",", "nI", ",", "hI", ",", "cdI", ",", 
    RowBox[{"{", 
     RowBox[{"\"\<|\>\"", ",", "\"\<\!\(\*OverscriptBox[\(D\), \(_\)]\)\>\""}],
-     "}"}], ",", "BianchiI"}], "  ", "]"}]], "Input",
- CellLabel->"In[7]:="],
+     "}"}], ",", "\"\<BianchiI\>\""}], "]"}]], "Input",
+ CellLabel->"In[146]:="],
 
 Cell[BoxData[
  InterpretationBox[
   RowBox[{"\<\"** \"\>", "\[InvisibleSpace]", "DefTensor", 
    "\[InvisibleSpace]", "\<\": Defining \"\>", 
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
-   RowBox[{"nI", "[", "\[Sigma]$1006", "]"}], 
+   RowBox[{"nI", "[", "\[Sigma]$157207", "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
-   $CellContext`nI[$CellContext`\[Sigma]$1006], ". ", ""],
+   $CellContext`nI[$CellContext`\[Sigma]$157207], ". ", ""],
   Editable->False]], "Print",
- CellLabel->"During evaluation of In[7]:="],
+ CellLabel->"During evaluation of In[146]:="],
 
 Cell[BoxData[
  InterpretationBox[
@@ -56359,15 +56374,15 @@ Cell[BoxData[
    "\[InvisibleSpace]", 
    RowBox[{"hI", "[", 
     RowBox[{
-     RowBox[{"-", "\[Sigma]$1006"}], ",", 
-     RowBox[{"-", "\[Sigma]$1007"}]}], "]"}], 
+     RowBox[{"-", "\[Sigma]$157207"}], ",", 
+     RowBox[{"-", "\[Sigma]$157208"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm[
   "** ", xAct`xTensor`DefTensor, ": Defining ", "symmetric metric tensor ", 
-   $CellContext`hI[-$CellContext`\[Sigma]$1006, -$CellContext`\[Sigma]$1007], 
-   ". ", ""],
+   $CellContext`hI[-$CellContext`\[Sigma]$157207, \
+-$CellContext`\[Sigma]$157208], ". ", ""],
   Editable->False]], "Print",
- CellLabel->"During evaluation of In[7]:="],
+ CellLabel->"During evaluation of In[146]:="],
 
 Cell[BoxData[
  InterpretationBox[
@@ -56386,7 +56401,7 @@ Cell[BoxData[
    $CellContext`epsilonhI[-$CellContext`\[Alpha], -$CellContext`\[Beta], \
 -$CellContext`\[Gamma]], ". ", ""],
   Editable->False]], "Print",
- CellLabel->"During evaluation of In[7]:="],
+ CellLabel->"During evaluation of In[146]:="],
 
 Cell[BoxData[
  InterpretationBox[
@@ -56404,7 +56419,7 @@ Cell[BoxData[
    $CellContext`TetrahI[-$CellContext`\[Alpha], -$CellContext`\[Beta], \
 -$CellContext`\[Gamma], -$CellContext`\[Lambda]], ". ", ""],
   Editable->False]], "Print",
- CellLabel->"During evaluation of In[7]:="],
+ CellLabel->"During evaluation of In[146]:="],
 
 Cell[BoxData[
  InterpretationBox[
@@ -56423,7 +56438,7 @@ Cell[BoxData[
 -$CellContext`\[Beta], -$CellContext`\[Gamma], -$CellContext`\[Lambda]], ". ",
     ""],
   Editable->False]], "Print",
- CellLabel->"During evaluation of In[7]:="],
+ CellLabel->"During evaluation of In[146]:="],
 
 Cell[BoxData[
  InterpretationBox[
@@ -56432,13 +56447,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"covariant derivative \"\>", "\[InvisibleSpace]", 
    
    RowBox[{"cdI", "[", 
-    RowBox[{"-", "\[Sigma]$1006"}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
-   "\[InvisibleSpace]", "\<\"\"\>"}],
+    RowBox[{"-", "\[Sigma]$157207"}], "]"}], 
+   "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm[
   "** ", xAct`xTensor`DefCovD, ": Defining ", "covariant derivative ", 
-   $CellContext`cdI[-$CellContext`\[Sigma]$1006], ". ", ""],
+   $CellContext`cdI[-$CellContext`\[Sigma]$157207], ". ", ""],
   Editable->False]], "Print",
- CellLabel->"During evaluation of In[7]:="],
+ CellLabel->"During evaluation of In[146]:="],
 
 Cell[BoxData[
  InterpretationBox[
@@ -56456,7 +56471,7 @@ Cell[BoxData[
    $CellContext`TorsioncdI[$CellContext`\[Alpha], -$CellContext`\[Beta], \
 -$CellContext`\[Gamma]], ". ", ""],
   Editable->False]], "Print",
- CellLabel->"During evaluation of In[7]:="],
+ CellLabel->"During evaluation of In[146]:="],
 
 Cell[BoxData[
  InterpretationBox[
@@ -56475,7 +56490,7 @@ Cell[BoxData[
    $CellContext`ChristoffelcdI[$CellContext`\[Alpha], -$CellContext`\[Beta], \
 -$CellContext`\[Gamma]], ". ", ""],
   Editable->False]], "Print",
- CellLabel->"During evaluation of In[7]:="],
+ CellLabel->"During evaluation of In[146]:="],
 
 Cell[BoxData[
  InterpretationBox[
@@ -56494,7 +56509,7 @@ Cell[BoxData[
    $CellContext`RiemanncdI[-$CellContext`\[Alpha], -$CellContext`\[Beta], \
 -$CellContext`\[Gamma], -$CellContext`\[Lambda]], ". ", ""],
   Editable->False]], "Print",
- CellLabel->"During evaluation of In[7]:="],
+ CellLabel->"During evaluation of In[146]:="],
 
 Cell[BoxData[
  InterpretationBox[
@@ -56512,11 +56527,11 @@ Cell[BoxData[
    $CellContext`RiccicdI[-$CellContext`\[Alpha], -$CellContext`\[Beta]], ". ",
     ""],
   Editable->False]], "Print",
- CellLabel->"During evaluation of In[7]:="],
+ CellLabel->"During evaluation of In[146]:="],
 
 Cell[BoxData["\<\"** DefCovD:  Contractions of Riemann automatically replaced \
 by Ricci.\"\>"], "Print",
- CellLabel->"During evaluation of In[7]:="],
+ CellLabel->"During evaluation of In[146]:="],
 
 Cell[BoxData[
  InterpretationBox[
@@ -56529,11 +56544,11 @@ Cell[BoxData[
   "** ", xAct`xTensor`DefTensor, ": Defining ", "Ricci scalar ", 
    $CellContext`RicciScalarcdI[], ". ", ""],
   Editable->False]], "Print",
- CellLabel->"During evaluation of In[7]:="],
+ CellLabel->"During evaluation of In[146]:="],
 
 Cell[BoxData["\<\"** DefCovD:  Contractions of Ricci automatically replaced \
 by RicciScalar.\"\>"], "Print",
- CellLabel->"During evaluation of In[7]:="],
+ CellLabel->"During evaluation of In[146]:="],
 
 Cell[BoxData[
  InterpretationBox[
@@ -56552,7 +56567,7 @@ Cell[BoxData[
    $CellContext`EinsteincdI[-$CellContext`\[Alpha], -$CellContext`\[Beta]], 
    ". ", ""],
   Editable->False]], "Print",
- CellLabel->"During evaluation of In[7]:="],
+ CellLabel->"During evaluation of In[146]:="],
 
 Cell[BoxData[
  InterpretationBox[
@@ -56570,7 +56585,7 @@ Cell[BoxData[
    $CellContext`WeylcdI[-$CellContext`\[Alpha], -$CellContext`\[Beta], \
 -$CellContext`\[Gamma], -$CellContext`\[Lambda]], ". ", ""],
   Editable->False]], "Print",
- CellLabel->"During evaluation of In[7]:="],
+ CellLabel->"During evaluation of In[146]:="],
 
 Cell[BoxData[
  InterpretationBox[
@@ -56588,7 +56603,7 @@ Cell[BoxData[
    $CellContext`TFRiccicdI[-$CellContext`\[Alpha], -$CellContext`\[Beta]], 
    ". ", ""],
   Editable->False]], "Print",
- CellLabel->"During evaluation of In[7]:="],
+ CellLabel->"During evaluation of In[146]:="],
 
 Cell[BoxData[
  InterpretationBox[
@@ -56601,7 +56616,7 @@ Cell[BoxData[
   "** ", xAct`xTensor`DefTensor, ": Defining ", "Kretschmann scalar ", 
    $CellContext`KretschmanncdI[], ". ", ""],
   Editable->False]], "Print",
- CellLabel->"During evaluation of In[7]:="],
+ CellLabel->"During evaluation of In[146]:="],
 
 Cell[BoxData[
  InterpretationBox[
@@ -56609,7 +56624,7 @@ Cell[BoxData[
    "\[InvisibleSpace]", "4"}],
   SequenceForm["** DefCovD:  Computing RiemannToWeylRules for dim ", 4],
   Editable->False]], "Print",
- CellLabel->"During evaluation of In[7]:="],
+ CellLabel->"During evaluation of In[146]:="],
 
 Cell[BoxData[
  InterpretationBox[
@@ -56617,7 +56632,7 @@ Cell[BoxData[
    "\[InvisibleSpace]", "4"}],
   SequenceForm["** DefCovD:  Computing RicciToTFRicci for dim ", 4],
   Editable->False]], "Print",
- CellLabel->"During evaluation of In[7]:="],
+ CellLabel->"During evaluation of In[146]:="],
 
 Cell[BoxData[
  InterpretationBox[
@@ -56625,7 +56640,7 @@ Cell[BoxData[
    "\[InvisibleSpace]", "4"}],
   SequenceForm["** DefCovD:  Computing RicciToEinsteinRules for dim ", 4],
   Editable->False]], "Print",
- CellLabel->"During evaluation of In[7]:="],
+ CellLabel->"During evaluation of In[146]:="],
 
 Cell[BoxData[
  InterpretationBox[
@@ -56638,7 +56653,7 @@ Cell[BoxData[
   "** ", xAct`xTensor`DefTensor, ": Defining ", "weight +2 density ", 
    $CellContext`DethI[], ". ", "Determinant."],
   Editable->False]], "Print",
- CellLabel->"During evaluation of In[7]:="],
+ CellLabel->"During evaluation of In[146]:="],
 
 Cell[BoxData[
  InterpretationBox[
@@ -56655,7 +56670,7 @@ Cell[BoxData[
    $CellContext`ExtrinsicKhI[$CellContext`\[Alpha], $CellContext`\[Beta]], 
    ". ", "Associated to vector nI"],
   Editable->False]], "Print",
- CellLabel->"During evaluation of In[7]:="],
+ CellLabel->"During evaluation of In[146]:="],
 
 Cell[BoxData[
  InterpretationBox[
@@ -56670,7 +56685,7 @@ Cell[BoxData[
    $CellContext`AccelerationnI[$CellContext`\[Alpha]], ". ", 
    "Associated to vector nI"],
   Editable->False]], "Print",
- CellLabel->"During evaluation of In[7]:="],
+ CellLabel->"During evaluation of In[146]:="],
 
 Cell[BoxData[
  InterpretationBox[
@@ -56683,7 +56698,7 @@ Cell[BoxData[
   "** ", xAct`xTensor`DefInertHead, ": Defining ", 
    "projector inert-head ", $CellContext`ProjectorhI, ". ", ""],
   Editable->False]], "Print",
- CellLabel->"During evaluation of In[7]:="],
+ CellLabel->"During evaluation of In[146]:="],
 
 Cell[BoxData[
  InterpretationBox[
@@ -56698,7 +56713,7 @@ Cell[BoxData[
    Shallow[{1, 2, 3, 4, 5, 6, 7, 8}], 
    " have been declared as UpValues for ", $CellContext`hI, "."],
   Editable->False]], "Print",
- CellLabel->"During evaluation of In[7]:="],
+ CellLabel->"During evaluation of In[146]:="],
 
 Cell[BoxData[
  InterpretationBox[
@@ -56713,7 +56728,7 @@ Cell[BoxData[
    Shallow[{1, 2, 3, 4, 5, 6, 7, 8}], 
    " have been declared as UpValues for ", $CellContext`hI, "."],
   Editable->False]], "Print",
- CellLabel->"During evaluation of In[7]:="],
+ CellLabel->"During evaluation of In[146]:="],
 
 Cell[BoxData[
  InterpretationBox[
@@ -56726,7 +56741,7 @@ Cell[BoxData[
    Shallow[{1, 2}], " have been declared as UpValues for ", $CellContext`nI, 
    "."],
   Editable->False]], "Print",
- CellLabel->"During evaluation of In[7]:="],
+ CellLabel->"During evaluation of In[146]:="],
 
 Cell[BoxData[
  InterpretationBox[
@@ -56739,7 +56754,7 @@ Cell[BoxData[
    Shallow[{1, 2, 3, 4}], 
    " have been declared as UpValues for ", $CellContext`nI, "."],
   Editable->False]], "Print",
- CellLabel->"During evaluation of In[7]:="],
+ CellLabel->"During evaluation of In[146]:="],
 
 Cell[BoxData[
  InterpretationBox[
@@ -56754,7 +56769,7 @@ Cell[BoxData[
    Shallow[{1, 2, 3, 4, 5, 6, 7, 8}], 
    " have been declared as UpValues for ", $CellContext`nI, "."],
   Editable->False]], "Print",
- CellLabel->"During evaluation of In[7]:="],
+ CellLabel->"During evaluation of In[146]:="],
 
 Cell[BoxData[
  InterpretationBox[
@@ -56763,15 +56778,15 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"ahI", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$2276", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$2276", "]"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$158475", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$158475", "]"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`ahI[
-    xAct`xTensor`LI[xAct`xPand`Private`p$2276], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$2276]], ". ", ""],
+    xAct`xTensor`LI[xAct`xPand`Private`p$158475], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$158475]], ". ", ""],
   Editable->False]], "Print",
- CellLabel->"During evaluation of In[7]:="],
+ CellLabel->"During evaluation of In[146]:="],
 
 Cell[BoxData[
  InterpretationBox[
@@ -56780,15 +56795,15 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"HhI", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$2281", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$2281", "]"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$158480", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$158480", "]"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`HhI[
-    xAct`xTensor`LI[xAct`xPand`Private`p$2281], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$2281]], ". ", ""],
+    xAct`xTensor`LI[xAct`xPand`Private`p$158480], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$158480]], ". ", ""],
   Editable->False]], "Print",
- CellLabel->"During evaluation of In[7]:="],
+ CellLabel->"During evaluation of In[146]:="],
 
 Cell[BoxData[
  InterpretationBox[
@@ -56798,15 +56813,15 @@ Cell[BoxData[
    "\[InvisibleSpace]", 
    RowBox[{"gahI2", "[", 
     RowBox[{
-     RowBox[{"-", "\[Sigma]$2287"}], ",", 
-     RowBox[{"-", "\[Sigma]$2288"}]}], "]"}], 
+     RowBox[{"-", "\[Sigma]$158486"}], ",", 
+     RowBox[{"-", "\[Sigma]$158487"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm[
   "** ", xAct`xTensor`DefTensor, ": Defining ", "symmetric metric tensor ", 
-   $CellContext`gahI2[-$CellContext`\[Sigma]$2287, \
--$CellContext`\[Sigma]$2288], ". ", ""],
+   $CellContext`gahI2[-$CellContext`\[Sigma]$158486, \
+-$CellContext`\[Sigma]$158487], ". ", ""],
   Editable->False]], "Print",
- CellLabel->"During evaluation of In[7]:="],
+ CellLabel->"During evaluation of In[146]:="],
 
 Cell[BoxData[
  InterpretationBox[
@@ -56814,19 +56829,19 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\": Defining \"\>", 
    "\[InvisibleSpace]", "\<\"inverse metric tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"InvgahI2", "[", 
-    RowBox[{"\[Sigma]$2287", ",", "\[Sigma]$2288"}], "]"}], 
+    RowBox[{"\[Sigma]$158486", ",", "\[Sigma]$158487"}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", 
    "\[InvisibleSpace]", "\<\"Metric is frozen!\"\>"}],
   SequenceForm[
   "** ", xAct`xTensor`DefTensor, ": Defining ", "inverse metric tensor ", 
-   $CellContext`InvgahI2[$CellContext`\[Sigma]$2287, \
-$CellContext`\[Sigma]$2288], ". ", "Metric is frozen!"],
+   $CellContext`InvgahI2[$CellContext`\[Sigma]$158486, \
+$CellContext`\[Sigma]$158487], ". ", "Metric is frozen!"],
   Editable->False]], "Print",
- CellLabel->"During evaluation of In[7]:="],
+ CellLabel->"During evaluation of In[146]:="],
 
 Cell[BoxData["\<\"** DefMetric: Don't know yet how to define epsilon for a \
 frozen metric.\"\>"], "Print",
- CellLabel->"During evaluation of In[7]:="],
+ CellLabel->"During evaluation of In[146]:="],
 
 Cell[BoxData[
  InterpretationBox[
@@ -56835,13 +56850,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"covariant derivative \"\>", "\[InvisibleSpace]", 
    
    RowBox[{"CDahI2", "[", 
-    RowBox[{"-", "\[Sigma]$2287"}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
-   "\[InvisibleSpace]", "\<\"\"\>"}],
+    RowBox[{"-", "\[Sigma]$158486"}], "]"}], 
+   "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm[
   "** ", xAct`xTensor`DefCovD, ": Defining ", "covariant derivative ", 
-   $CellContext`CDahI2[-$CellContext`\[Sigma]$2287], ". ", ""],
+   $CellContext`CDahI2[-$CellContext`\[Sigma]$158486], ". ", ""],
   Editable->False]], "Print",
- CellLabel->"During evaluation of In[7]:="],
+ CellLabel->"During evaluation of In[146]:="],
 
 Cell[BoxData[
  InterpretationBox[
@@ -56859,7 +56874,7 @@ Cell[BoxData[
    $CellContext`TorsionCDahI2[$CellContext`\[Alpha], -$CellContext`\[Beta], \
 -$CellContext`\[Gamma]], ". ", ""],
   Editable->False]], "Print",
- CellLabel->"During evaluation of In[7]:="],
+ CellLabel->"During evaluation of In[146]:="],
 
 Cell[BoxData[
  InterpretationBox[
@@ -56878,7 +56893,7 @@ Cell[BoxData[
    $CellContext`ChristoffelCDahI2[$CellContext`\[Alpha], \
 -$CellContext`\[Beta], -$CellContext`\[Gamma]], ". ", ""],
   Editable->False]], "Print",
- CellLabel->"During evaluation of In[7]:="],
+ CellLabel->"During evaluation of In[146]:="],
 
 Cell[BoxData[
  InterpretationBox[
@@ -56897,7 +56912,7 @@ Cell[BoxData[
    $CellContext`RiemannDownCDahI2[-$CellContext`\[Alpha], -$CellContext`\
 \[Beta], -$CellContext`\[Gamma], -$CellContext`\[Lambda]], ". ", ""],
   Editable->False]], "Print",
- CellLabel->"During evaluation of In[7]:="],
+ CellLabel->"During evaluation of In[146]:="],
 
 Cell[BoxData[
  InterpretationBox[
@@ -56917,7 +56932,7 @@ Cell[BoxData[
 -$CellContext`\[Gamma], $CellContext`\[Lambda]], ". ", 
    "Antisymmetric only in the first pair."],
   Editable->False]], "Print",
- CellLabel->"During evaluation of In[7]:="],
+ CellLabel->"During evaluation of In[146]:="],
 
 Cell[BoxData[
  InterpretationBox[
@@ -56935,11 +56950,11 @@ Cell[BoxData[
    $CellContext`RicciCDahI2[-$CellContext`\[Alpha], -$CellContext`\[Beta]], 
    ". ", ""],
   Editable->False]], "Print",
- CellLabel->"During evaluation of In[7]:="],
+ CellLabel->"During evaluation of In[146]:="],
 
 Cell[BoxData["\<\"** DefCovD:  Contractions of Riemann automatically replaced \
 by Ricci.\"\>"], "Print",
- CellLabel->"During evaluation of In[7]:="],
+ CellLabel->"During evaluation of In[146]:="],
 
 Cell[BoxData[
  InterpretationBox[
@@ -56952,11 +56967,11 @@ Cell[BoxData[
   "** ", xAct`xTensor`DefTensor, ": Defining ", "Ricci scalar ", 
    $CellContext`RicciScalarCDahI2[], ". ", ""],
   Editable->False]], "Print",
- CellLabel->"During evaluation of In[7]:="],
+ CellLabel->"During evaluation of In[146]:="],
 
 Cell[BoxData["\<\"** DefCovD:  Contractions of Ricci automatically replaced \
 by RicciScalar.\"\>"], "Print",
- CellLabel->"During evaluation of In[7]:="],
+ CellLabel->"During evaluation of In[146]:="],
 
 Cell[BoxData[
  InterpretationBox[
@@ -56975,11 +56990,11 @@ Cell[BoxData[
    $CellContext`EinsteinCDahI2[-$CellContext`\[Alpha], -$CellContext`\[Beta]],
     ". ", ""],
   Editable->False]], "Print",
- CellLabel->"During evaluation of In[7]:="],
+ CellLabel->"During evaluation of In[146]:="],
 
 Cell[BoxData["\<\"** MakeRule: Potential problems moving indices on the \
 LHS.\"\>"], "Print",
- CellLabel->"During evaluation of In[7]:="],
+ CellLabel->"During evaluation of In[146]:="],
 
 Cell[BoxData[
  InterpretationBox[
@@ -56997,7 +57012,7 @@ Cell[BoxData[
    $CellContext`WeylCDahI2[-$CellContext`\[Alpha], -$CellContext`\[Beta], \
 -$CellContext`\[Gamma], -$CellContext`\[Lambda]], ". ", ""],
   Editable->False]], "Print",
- CellLabel->"During evaluation of In[7]:="],
+ CellLabel->"During evaluation of In[146]:="],
 
 Cell[BoxData[
  InterpretationBox[
@@ -57015,7 +57030,7 @@ Cell[BoxData[
    $CellContext`TFRicciCDahI2[-$CellContext`\[Alpha], -$CellContext`\[Beta]], 
    ". ", ""],
   Editable->False]], "Print",
- CellLabel->"During evaluation of In[7]:="],
+ CellLabel->"During evaluation of In[146]:="],
 
 Cell[BoxData[
  InterpretationBox[
@@ -57028,7 +57043,7 @@ Cell[BoxData[
   "** ", xAct`xTensor`DefTensor, ": Defining ", "Kretschmann scalar ", 
    $CellContext`KretschmannCDahI2[], ". ", ""],
   Editable->False]], "Print",
- CellLabel->"During evaluation of In[7]:="],
+ CellLabel->"During evaluation of In[146]:="],
 
 Cell[BoxData[
  InterpretationBox[
@@ -57036,7 +57051,7 @@ Cell[BoxData[
    "\[InvisibleSpace]", "4"}],
   SequenceForm["** DefCovD:  Computing RiemannToWeylRules for dim ", 4],
   Editable->False]], "Print",
- CellLabel->"During evaluation of In[7]:="],
+ CellLabel->"During evaluation of In[146]:="],
 
 Cell[BoxData[
  InterpretationBox[
@@ -57044,7 +57059,7 @@ Cell[BoxData[
    "\[InvisibleSpace]", "4"}],
   SequenceForm["** DefCovD:  Computing RicciToEinsteinRules for dim ", 4],
   Editable->False]], "Print",
- CellLabel->"During evaluation of In[7]:="],
+ CellLabel->"During evaluation of In[146]:="],
 
 Cell[BoxData[
  InterpretationBox[
@@ -57057,7 +57072,7 @@ Cell[BoxData[
   "** ", xAct`xTensor`DefTensor, ": Defining ", "weight +2 density ", 
    $CellContext`DetgahI2[], ". ", "Determinant."],
   Editable->False]], "Print",
- CellLabel->"During evaluation of In[7]:="],
+ CellLabel->"During evaluation of In[146]:="],
 
 Cell[BoxData[
  InterpretationBox[
@@ -57072,7 +57087,7 @@ Cell[BoxData[
    Shallow[{1, 2, 3, 4, 5, 6, 7, 8}], 
    " have been declared as UpValues for ", $CellContext`g, "."],
   Editable->False]], "Print",
- CellLabel->"During evaluation of In[7]:="],
+ CellLabel->"During evaluation of In[146]:="],
 
 Cell[BoxData[
  InterpretationBox[
@@ -57084,7 +57099,7 @@ Cell[BoxData[
    Shallow[{1}], " have been declared as UpValues for ", $CellContext`g, "."],
   
   Editable->False]], "Print",
- CellLabel->"During evaluation of In[7]:="],
+ CellLabel->"During evaluation of In[146]:="],
 
 Cell[BoxData[
  InterpretationBox[
@@ -57093,15 +57108,15 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"ConnectionhI", "[", 
     RowBox[{
-     RowBox[{"-", "\[Sigma]$1006"}], ",", 
-     RowBox[{"-", "\[Sigma]$1007"}], ",", 
-     RowBox[{"-", "\[Sigma]$1008"}]}], "]"}], 
+     RowBox[{"-", "\[Sigma]$157207"}], ",", 
+     RowBox[{"-", "\[Sigma]$157208"}], ",", 
+     RowBox[{"-", "\[Sigma]$157209"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
-   $CellContext`ConnectionhI[-$CellContext`\[Sigma]$1006, -$CellContext`\
-\[Sigma]$1007, -$CellContext`\[Sigma]$1008], ". ", ""],
+   $CellContext`ConnectionhI[-$CellContext`\[Sigma]$157207, -$CellContext`\
+\[Sigma]$157208, -$CellContext`\[Sigma]$157209], ". ", ""],
   Editable->False]], "Print",
- CellLabel->"During evaluation of In[7]:="],
+ CellLabel->"During evaluation of In[146]:="],
 
 Cell[BoxData[
  InterpretationBox[
@@ -57110,15 +57125,15 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"CShI", "[", 
     RowBox[{
-     RowBox[{"-", "\[Sigma]$1006"}], ",", 
-     RowBox[{"-", "\[Sigma]$1007"}], ",", 
-     RowBox[{"-", "\[Sigma]$1008"}]}], "]"}], 
+     RowBox[{"-", "\[Sigma]$157207"}], ",", 
+     RowBox[{"-", "\[Sigma]$157208"}], ",", 
+     RowBox[{"-", "\[Sigma]$157209"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
-   $CellContext`CShI[-$CellContext`\[Sigma]$1006, \
--$CellContext`\[Sigma]$1007, -$CellContext`\[Sigma]$1008], ". ", ""],
+   $CellContext`CShI[-$CellContext`\[Sigma]$157207, \
+-$CellContext`\[Sigma]$157208, -$CellContext`\[Sigma]$157209], ". ", ""],
   Editable->False]], "Print",
- CellLabel->"During evaluation of In[7]:="],
+ CellLabel->"During evaluation of In[146]:="],
 
 Cell[BoxData[
  InterpretationBox[
@@ -57127,31 +57142,19 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"KhI", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$2891", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$2891", "]"}], ",", 
-     RowBox[{"-", "\[Sigma]$1006"}], ",", 
-     RowBox[{"-", "\[Sigma]$1007"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$159106", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$159106", "]"}], ",", 
+     RowBox[{"-", "\[Sigma]$157207"}], ",", 
+     RowBox[{"-", "\[Sigma]$157208"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`KhI[
-    xAct`xTensor`LI[xAct`xPand`Private`p$2891], 
+    xAct`xTensor`LI[xAct`xPand`Private`p$159106], 
     xAct`xTensor`LI[
-    xAct`xPand`Private`q$2891], -$CellContext`\[Sigma]$1006, -$CellContext`\
-\[Sigma]$1007], ". ", ""],
+    xAct`xPand`Private`q$159106], -$CellContext`\[Sigma]$157207, \
+-$CellContext`\[Sigma]$157208], ". ", ""],
   Editable->False]], "Print",
- CellLabel->"During evaluation of In[7]:="],
-
-Cell[BoxData[
- InterpretationBox[
-  RowBox[{"\<\"   Rules \"\>", "\[InvisibleSpace]", 
-   RowBox[{"{", "1", "}"}], 
-   "\[InvisibleSpace]", "\<\" have been declared as UpValues for \"\>", 
-   "\[InvisibleSpace]", "KhI", "\[InvisibleSpace]", "\<\".\"\>"}],
-  SequenceForm["   Rules ", 
-   Shallow[{1}], " have been declared as UpValues for ", $CellContext`KhI, 
-   "."],
-  Editable->False]], "Print",
- CellLabel->"During evaluation of In[7]:="]
+ CellLabel->"During evaluation of In[146]:="]
 }, Open  ]],
 
 Cell[BoxData[{
@@ -57167,7 +57170,7 @@ Cell[BoxData[{
   RowBox[{
    RowBox[{"PrintAs", "[", "nI", "]"}], "^=", "\"\<n\>\""}], ";"}]}], "Input",
  
- CellLabel->"In[8]:="],
+ CellLabel->"In[147]:="],
 
 Cell["\<\
 We now define the perturbations fields associated with the metric and matter \
@@ -57194,13 +57197,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"\[Phi]hI", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$159285", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$159285", "]"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$159366", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$159366", "]"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`\[Phi]hI[
-    xAct`xTensor`LI[xAct`xPand`Private`p$159285], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$159285]], ". ", ""],
+    xAct`xTensor`LI[xAct`xPand`Private`p$159366], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$159366]], ". ", ""],
   Editable->False]], "Print",
  CellLabel->"During evaluation of In[150]:="],
 
@@ -57211,13 +57214,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"BshI", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$159290", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$159290", "]"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$159371", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$159371", "]"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`BshI[
-    xAct`xTensor`LI[xAct`xPand`Private`p$159290], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$159290]], ". ", ""],
+    xAct`xTensor`LI[xAct`xPand`Private`p$159371], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$159371]], ". ", ""],
   Editable->False]], "Print",
  CellLabel->"During evaluation of In[150]:="],
 
@@ -57228,14 +57231,14 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"BvhI", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$159295", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$159295", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$159376", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$159376", "]"}], ",", 
      RowBox[{"-", "\[Alpha]"}]}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
    "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`BvhI[
-    xAct`xTensor`LI[xAct`xPand`Private`p$159295], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$159295], -$CellContext`\[Alpha]], 
+    xAct`xTensor`LI[xAct`xPand`Private`p$159376], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$159376], -$CellContext`\[Alpha]], 
    ". ", ""],
   Editable->False]], "Print",
  CellLabel->"During evaluation of In[150]:="],
@@ -57247,13 +57250,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"\[Psi]hI", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$159301", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$159301", "]"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$159382", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$159382", "]"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`\[Psi]hI[
-    xAct`xTensor`LI[xAct`xPand`Private`p$159301], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$159301]], ". ", ""],
+    xAct`xTensor`LI[xAct`xPand`Private`p$159382], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$159382]], ". ", ""],
   Editable->False]], "Print",
  CellLabel->"During evaluation of In[150]:="],
 
@@ -57264,13 +57267,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"EshI", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$159306", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$159306", "]"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$159387", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$159387", "]"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`EshI[
-    xAct`xTensor`LI[xAct`xPand`Private`p$159306], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$159306]], ". ", ""],
+    xAct`xTensor`LI[xAct`xPand`Private`p$159387], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$159387]], ". ", ""],
   Editable->False]], "Print",
  CellLabel->"During evaluation of In[150]:="],
 
@@ -57281,14 +57284,14 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"EvhI", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$159311", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$159311", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$159392", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$159392", "]"}], ",", 
      RowBox[{"-", "\[Alpha]"}]}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
    "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`EvhI[
-    xAct`xTensor`LI[xAct`xPand`Private`p$159311], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$159311], -$CellContext`\[Alpha]], 
+    xAct`xTensor`LI[xAct`xPand`Private`p$159392], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$159392], -$CellContext`\[Alpha]], 
    ". ", ""],
   Editable->False]], "Print",
  CellLabel->"During evaluation of In[150]:="],
@@ -57300,16 +57303,16 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"EthI", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$159317", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$159317", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$159398", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$159398", "]"}], ",", 
      RowBox[{"-", "\[Alpha]"}], ",", 
      RowBox[{"-", "\[Beta]"}]}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
    "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`EthI[
-    xAct`xTensor`LI[xAct`xPand`Private`p$159317], 
+    xAct`xTensor`LI[xAct`xPand`Private`p$159398], 
     xAct`xTensor`LI[
-    xAct`xPand`Private`q$159317], -$CellContext`\[Alpha], -$CellContext`\
+    xAct`xPand`Private`q$159398], -$CellContext`\[Alpha], -$CellContext`\
 \[Beta]], ". ", ""],
   Editable->False]], "Print",
  CellLabel->"During evaluation of In[150]:="],
@@ -57321,13 +57324,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"ThI", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$159326", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$159326", "]"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$159407", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$159407", "]"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`ThI[
-    xAct`xTensor`LI[xAct`xPand`Private`p$159326], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$159326]], ". ", ""],
+    xAct`xTensor`LI[xAct`xPand`Private`p$159407], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$159407]], ". ", ""],
   Editable->False]], "Print",
  CellLabel->"During evaluation of In[150]:="],
 
@@ -57338,13 +57341,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"LshI", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$159331", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$159331", "]"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$159412", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$159412", "]"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`LshI[
-    xAct`xTensor`LI[xAct`xPand`Private`p$159331], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$159331]], ". ", ""],
+    xAct`xTensor`LI[xAct`xPand`Private`p$159412], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$159412]], ". ", ""],
   Editable->False]], "Print",
  CellLabel->"During evaluation of In[150]:="],
 
@@ -57355,14 +57358,14 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"LvhI", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$159336", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$159336", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$159417", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$159417", "]"}], ",", 
      RowBox[{"-", "\[Alpha]"}]}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
    "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`LvhI[
-    xAct`xTensor`LI[xAct`xPand`Private`p$159336], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$159336], -$CellContext`\[Alpha]], 
+    xAct`xTensor`LI[xAct`xPand`Private`p$159417], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$159417], -$CellContext`\[Alpha]], 
    ". ", ""],
   Editable->False]], "Print",
  CellLabel->"During evaluation of In[150]:="],
@@ -57469,14 +57472,14 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"VspathIu", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$159350", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$159350", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$159431", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$159431", "]"}], ",", 
      RowBox[{"-", "\[Alpha]"}]}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
    "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`VspathIu[
-    xAct`xTensor`LI[xAct`xPand`Private`p$159350], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$159350], -$CellContext`\[Alpha]], 
+    xAct`xTensor`LI[xAct`xPand`Private`p$159431], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$159431], -$CellContext`\[Alpha]], 
    ". ", ""],
   Editable->False]], "Print",
  CellLabel->"During evaluation of In[150]:="],
@@ -57488,13 +57491,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"V0hIu", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$159356", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$159356", "]"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$159437", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$159437", "]"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`V0hIu[
-    xAct`xTensor`LI[xAct`xPand`Private`p$159356], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$159356]], ". ", ""],
+    xAct`xTensor`LI[xAct`xPand`Private`p$159437], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$159437]], ". ", ""],
   Editable->False]], "Print",
  CellLabel->"During evaluation of In[150]:="],
 
@@ -57505,13 +57508,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"VshIu", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$159361", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$159361", "]"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$159442", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$159442", "]"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`VshIu[
-    xAct`xTensor`LI[xAct`xPand`Private`p$159361], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$159361]], ". ", ""],
+    xAct`xTensor`LI[xAct`xPand`Private`p$159442], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$159442]], ". ", ""],
   Editable->False]], "Print",
  CellLabel->"During evaluation of In[150]:="],
 
@@ -57522,14 +57525,14 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"VvhIu", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$159366", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$159366", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$159447", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$159447", "]"}], ",", 
      RowBox[{"-", "\[Alpha]"}]}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
    "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`VvhIu[
-    xAct`xTensor`LI[xAct`xPand`Private`p$159366], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$159366], -$CellContext`\[Alpha]], 
+    xAct`xTensor`LI[xAct`xPand`Private`p$159447], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$159447], -$CellContext`\[Alpha]], 
    ". ", ""],
   Editable->False]], "Print",
  CellLabel->"During evaluation of In[150]:="],
@@ -57738,7 +57741,7 @@ Cell[BoxData[
    RowBox[{"MyGR", "[", 
     RowBox[{
      RowBox[{"-", "\[Mu]"}], ",", 
-     RowBox[{"-", "\[Nu]"}]}], "]"}], ",", "NewtonGauge", ",", "1"}], 
+     RowBox[{"-", "\[Nu]"}]}], "]"}], ",", "\"\<NewtonGauge\>\"", ",", "1"}], 
   "]"}]], "Input",
  CellLabel->"In[154]:="],
 
@@ -57792,13 +57795,12 @@ Cell[BoxData[
     $CellContext`RicciCD[-$CellContext`\[Mu], -$CellContext`\[Nu]],
     Editable->False], "\[InvisibleSpace]", "\<\" +... was performed in \"\>", 
    "\[InvisibleSpace]", 
-   "12.16358600000000045326942199608311057091`7.1056615433496075", 
+   "14.91410199999999974806996760889887809753`7.194197022255906", 
    "\[InvisibleSpace]", "\<\" seconds.\"\>"}],
   SequenceForm["The Splitting of ", 
    $CellContext`RicciCD[-$CellContext`\[Mu], -$CellContext`\[Nu]], 
    " +... was performed in ", 
-   12.16358600000000045326942199608311057091`7.1056615433496075, " seconds."],
-  
+   14.91410199999999974806996760889887809753`7.194197022255906, " seconds."],
   Editable->False]], "Print",
  CellLabel->"During evaluation of In[154]:="],
 
@@ -78008,7 +78010,7 @@ Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{"?", "xAct`xPand`*"}]], "Input",
- CellLabel->"In[10]:="],
+ CellLabel->"In[157]:="],
 
 Cell[BoxData[
  DynamicModuleBox[{Typeset`open$$ = True}, 
@@ -78026,526 +78028,427 @@ Cell[BoxData[
         {
          ButtonBox["a",
           BaseStyle->"InformationLink",
-          ButtonData:>{"Info3568704121-8164607", {"a", "xAct`xPand`"}},
+          ButtonData:>{"Info3570522034-2719414", {"a", "xAct`xPand`"}},
           ButtonNote->"xAct`xPand`"], 
-         ButtonBox["DefMatterFields",
+         ButtonBox["Es",
+          BaseStyle->"InformationLink",
+          ButtonData:>{"Info3570522034-2719414", {"Es", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
+         ButtonBox["SpaceType",
+          BaseStyle->"InformationLink",
+          ButtonData:>{"Info3570522034-2719414", {"SpaceType", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
+         ButtonBox["VisualizeTensor",
           BaseStyle->"InformationLink",
           
           ButtonData:>{
-           "Info3568704121-8164607", {"DefMatterFields", "xAct`xPand`"}},
+           "Info3570522034-2719414", {"VisualizeTensor", "xAct`xPand`"}},
           ButtonNote->"xAct`xPand`"], 
-         ButtonBox["SplitMatter",
+         ButtonBox["$FirstOrderVectorPerturbations",
           BaseStyle->"InformationLink",
           
           ButtonData:>{
-           "Info3568704121-8164607", {"MatterSplitting", "xAct`xPand`"}},
-          ButtonNote->"xAct`xPand`"], 
-         ButtonBox["T",
-          BaseStyle->"InformationLink",
-          ButtonData:>{"Info3568704121-8164607", {"T", "xAct`xPand`"}},
-          ButtonNote->"xAct`xPand`"], 
-         ButtonBox["\[Phi]",
-          BaseStyle->"InformationLink",
-          ButtonData:>{"Info3568704121-8164607", {"\[Phi]", "xAct`xPand`"}},
-          ButtonNote->"xAct`xPand`"]},
-        {
-         ButtonBox["Anisotropic",
-          BaseStyle->"InformationLink",
-          
-          ButtonData:>{
-           "Info3568704121-8164607", {"Anisotropic", "xAct`xPand`"}},
-          ButtonNote->"xAct`xPand`"], 
-         ButtonBox["DefMetricFields",
-          BaseStyle->"InformationLink",
-          
-          ButtonData:>{
-           "Info3568704121-8164607", {"DefMetricFields", "xAct`xPand`"}},
-          ButtonNote->"xAct`xPand`"], 
-         ButtonBox["SplitMetric",
-          BaseStyle->"InformationLink",
-          
-          ButtonData:>{
-           "Info3568704121-8164607", {"MetricSplitting", "xAct`xPand`"}},
-          ButtonNote->"xAct`xPand`"], 
-         ButtonBox["TensorProperties",
-          BaseStyle->"InformationLink",
-          
-          ButtonData:>{
-           "Info3568704121-8164607", {"TensorProperties", "xAct`xPand`"}},
-          ButtonNote->"xAct`xPand`"], 
-         ButtonBox["\[CurlyPhi]",
-          BaseStyle->"InformationLink",
-          
-          ButtonData:>{
-           "Info3568704121-8164607", {"\[CurlyPhi]", "xAct`xPand`"}},
-          ButtonNote->"xAct`xPand`"]},
-        {
-         ButtonBox["AnyGauge",
-          BaseStyle->"InformationLink",
-          ButtonData:>{"Info3568704121-8164607", {"AnyGauge", "xAct`xPand`"}},
-          
-          ButtonNote->"xAct`xPand`"], 
-         ButtonBox["DefProjectedTensor",
-          BaseStyle->"InformationLink",
-          
-          ButtonData:>{
-           "Info3568704121-8164607", {"DefProjectedTensor", "xAct`xPand`"}},
-          ButtonNote->"xAct`xPand`"], 
-         ButtonBox["Minkowski",
-          BaseStyle->"InformationLink",
-          ButtonData:>{"Info3568704121-8164607", {"Minkowski", "xAct`xPand`"}},
-          ButtonNote->"xAct`xPand`"], 
-         ButtonBox["Tilted",
-          BaseStyle->"InformationLink",
-          ButtonData:>{"Info3568704121-8164607", {"Tilted", "xAct`xPand`"}},
-          ButtonNote->"xAct`xPand`"], 
-         ButtonBox["\[Psi]",
-          BaseStyle->"InformationLink",
-          ButtonData:>{"Info3568704121-8164607", {"\[Psi]", "xAct`xPand`"}},
+           "Info3570522034-2719414", {
+            "$FirstOrderVectorPerturbations", "xAct`xPand`"}},
           ButtonNote->"xAct`xPand`"]},
         {
          ButtonBox["av",
           BaseStyle->"InformationLink",
-          ButtonData:>{"Info3568704121-8164607", {"av", "xAct`xPand`"}},
+          ButtonData:>{"Info3570522034-2719414", {"av", "xAct`xPand`"}},
           ButtonNote->"xAct`xPand`"], 
-         ButtonBox["DefProjectedTensorProperties",
+         ButtonBox["Et",
+          BaseStyle->"InformationLink",
+          ButtonData:>{"Info3570522034-2719414", {"Et", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
+         ButtonBox["SplitFieldsAndGaugeChange",
           BaseStyle->"InformationLink",
           
           ButtonData:>{
-           "Info3568704121-8164607", {
-            "DefProjectedTensorProperties", "xAct`xPand`"}},
+           "Info3570522034-2719414", {
+            "SplitFieldsAndGaugeChange", "xAct`xPand`"}},
           ButtonNote->"xAct`xPand`"], 
-         ButtonBox["NewtonGauge",
+         ButtonBox["Vs",
           BaseStyle->"InformationLink",
-          ButtonData:>{
-           "Info3568704121-8164607", {"NewtonGauge", "xAct`xPand`"}},
+          ButtonData:>{"Info3570522034-2719414", {"Vs", "xAct`xPand`"}},
           ButtonNote->"xAct`xPand`"], 
-         ButtonBox["Time",
-          BaseStyle->"InformationLink",
-          ButtonData:>{"Info3568704121-8164607", {"Time", "xAct`xPand`"}},
-          ButtonNote->"xAct`xPand`"], 
-         ButtonBox["$CacheRules",
+         ButtonBox["$ListFieldsBackgroundAndPerturbed",
           BaseStyle->"InformationLink",
           
           ButtonData:>{
-           "Info3568704121-8164607", {"$CacheRules", "xAct`xPand`"}},
+           "Info3570522034-2719414", {
+            "$ListFieldsBackgroundAndPerturbed", "xAct`xPand`"}},
           ButtonNote->"xAct`xPand`"]},
         {
          ButtonBox["a$",
           BaseStyle->"InformationLink",
-          ButtonData:>{"Info3568704121-8164607", {"a$", "xAct`xPand`"}},
+          ButtonData:>{"Info3570522034-2719414", {"a$", "xAct`xPand`"}},
           ButtonNote->"xAct`xPand`"], 
-         ButtonBox["Disclaimer",
+         ButtonBox["Ev",
+          BaseStyle->"InformationLink",
+          ButtonData:>{"Info3570522034-2719414", {"Ev", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
+         ButtonBox["SplitGaugeChange",
           BaseStyle->"InformationLink",
           
           ButtonData:>{
-           "Info3568704121-8164607", {"Disclaimer", "xAct`xPand`"}},
+           "Info3570522034-2719414", {"SplitGaugeChange", "xAct`xPand`"}},
           ButtonNote->"xAct`xPand`"], 
-         ButtonBox["NotTilted",
+         ButtonBox["Vspat",
           BaseStyle->"InformationLink",
-          ButtonData:>{"Info3568704121-8164607", {"NotTilted", "xAct`xPand`"}},
+          ButtonData:>{"Info3570522034-2719414", {"Vspat", "xAct`xPand`"}},
           ButtonNote->"xAct`xPand`"], 
-         ButtonBox["ToMetric",
-          BaseStyle->"InformationLink",
-          ButtonData:>{"Info3568704121-8164607", {"ToMetric", "xAct`xPand`"}},
-          
-          ButtonNote->"xAct`xPand`"], 
-         ButtonBox["$CommutecdRules",
+         ButtonBox["$ListFieldsBackgroundOnly",
           BaseStyle->"InformationLink",
           
           ButtonData:>{
-           "Info3568704121-8164607", {"$CommutecdRules", "xAct`xPand`"}},
+           "Info3570522034-2719414", {
+            "$ListFieldsBackgroundOnly", "xAct`xPand`"}},
           ButtonNote->"xAct`xPand`"]},
         {
          ButtonBox["BackgroundFieldMethod",
           BaseStyle->"InformationLink",
           
           ButtonData:>{
-           "Info3568704121-8164607", {"BackgroundFieldMethod", "xAct`xPand`"}},
-          ButtonNote->"xAct`xPand`"], 
-         ButtonBox["Es",
-          BaseStyle->"InformationLink",
-          ButtonData:>{"Info3568704121-8164607", {"Es", "xAct`xPand`"}},
-          ButtonNote->"xAct`xPand`"], 
-         ButtonBox["nt",
-          BaseStyle->"InformationLink",
-          ButtonData:>{"Info3568704121-8164607", {"nt", "xAct`xPand`"}},
-          ButtonNote->"xAct`xPand`"], 
-         ButtonBox["ToxPand",
-          BaseStyle->"InformationLink",
-          ButtonData:>{"Info3568704121-8164607", {"ToxPand", "xAct`xPand`"}},
-          ButtonNote->"xAct`xPand`"], 
-         ButtonBox["$ConformalTime",
-          BaseStyle->"InformationLink",
-          
-          ButtonData:>{
-           "Info3568704121-8164607", {"$ConformalTime", "xAct`xPand`"}},
-          ButtonNote->"xAct`xPand`"]},
-        {
-         ButtonBox["SetSlicing",
-          BaseStyle->"InformationLink",
-          
-          ButtonData:>{
-           "Info3568704121-8164607", {"BackgroundSlicing", "xAct`xPand`"}},
-          ButtonNote->"xAct`xPand`"], 
-         ButtonBox["Et",
-          BaseStyle->"InformationLink",
-          ButtonData:>{"Info3568704121-8164607", {"Et", "xAct`xPand`"}},
-          ButtonNote->"xAct`xPand`"], 
-         ButtonBox["P",
-          BaseStyle->"InformationLink",
-          ButtonData:>{"Info3568704121-8164607", {"P", "xAct`xPand`"}},
-          ButtonNote->"xAct`xPand`"], 
-         ButtonBox["ToxPandFromRules",
-          BaseStyle->"InformationLink",
-          
-          ButtonData:>{
-           "Info3568704121-8164607", {"ToxPandFromRules", "xAct`xPand`"}},
-          ButtonNote->"xAct`xPand`"], 
-         ButtonBox["$FirstOrderTensorPerturbations",
-          BaseStyle->"InformationLink",
-          
-          ButtonData:>{
-           "Info3568704121-8164607", {
-            "$FirstOrderTensorPerturbations", "xAct`xPand`"}},
-          ButtonNote->"xAct`xPand`"]},
-        {
-         ButtonBox["BackgroundST",
-          BaseStyle->"InformationLink",
-          
-          ButtonData:>{
-           "Info3568704121-8164607", {"BackgroundST", "xAct`xPand`"}},
-          ButtonNote->"xAct`xPand`"], 
-         ButtonBox["Ev",
-          BaseStyle->"InformationLink",
-          ButtonData:>{"Info3568704121-8164607", {"Ev", "xAct`xPand`"}},
-          ButtonNote->"xAct`xPand`"], 
-         ButtonBox["ParameterizationOfBianchiConstants",
-          BaseStyle->"InformationLink",
-          
-          ButtonData:>{
-           "Info3568704121-8164607", {
-            "ParameterizationOfBianchiConstants", "xAct`xPand`"}},
-          ButtonNote->"xAct`xPand`"], 
-         ButtonBox["Traceless",
-          BaseStyle->"InformationLink",
-          ButtonData:>{"Info3568704121-8164607", {"Traceless", "xAct`xPand`"}},
-          ButtonNote->"xAct`xPand`"], 
-         ButtonBox["$FirstOrderVectorPerturbations",
-          BaseStyle->"InformationLink",
-          
-          ButtonData:>{
-           "Info3568704121-8164607", {
-            "$FirstOrderVectorPerturbations", "xAct`xPand`"}},
-          ButtonNote->"xAct`xPand`"]},
-        {
-         ButtonBox["BianchiA",
-          BaseStyle->"InformationLink",
-          ButtonData:>{"Info3568704121-8164607", {"BianchiA", "xAct`xPand`"}},
-          
+           "Info3570522034-2719414", {"BackgroundFieldMethod", "xAct`xPand`"}},
           ButtonNote->"xAct`xPand`"], 
          ButtonBox["ExtractComponents",
           BaseStyle->"InformationLink",
           
           ButtonData:>{
-           "Info3568704121-8164607", {"ExtractComponents", "xAct`xPand`"}},
+           "Info3570522034-2719414", {"ExtractComponents", "xAct`xPand`"}},
           ButtonNote->"xAct`xPand`"], 
-         ButtonBox["PerturbedST",
+         ButtonBox["SplitMatter",
           BaseStyle->"InformationLink",
           
           ButtonData:>{
-           "Info3568704121-8164607", {"PerturbedST", "xAct`xPand`"}},
+           "Info3570522034-2719414", {"SplitMatter", "xAct`xPand`"}},
           ButtonNote->"xAct`xPand`"], 
-         ButtonBox["Transverse",
+         ButtonBox["Vv",
           BaseStyle->"InformationLink",
-          
-          ButtonData:>{
-           "Info3568704121-8164607", {"Transverse", "xAct`xPand`"}},
-          ButtonNote->"xAct`xPand`"], 
-         ButtonBox["$ListFieldsBackgroundAndPerturbed",
-          BaseStyle->"InformationLink",
-          
-          ButtonData:>{
-           "Info3568704121-8164607", {
-            "$ListFieldsBackgroundAndPerturbed", "xAct`xPand`"}},
-          ButtonNote->"xAct`xPand`"]},
-        {
-         ButtonBox["BianchiB",
-          BaseStyle->"InformationLink",
-          ButtonData:>{"Info3568704121-8164607", {"BianchiB", "xAct`xPand`"}},
-          
-          ButtonNote->"xAct`xPand`"], 
-         ButtonBox["ExtractOrder",
-          BaseStyle->"InformationLink",
-          
-          ButtonData:>{
-           "Info3568704121-8164607", {"ExtractOrder", "xAct`xPand`"}},
-          ButtonNote->"xAct`xPand`"], 
-         ButtonBox["RiemannOfInducedMetricToConstants",
-          BaseStyle->"InformationLink",
-          
-          ButtonData:>{
-           "Info3568704121-8164607", {
-            "RiemannOfInducedMetricToConstants", "xAct`xPand`"}},
-          ButtonNote->"xAct`xPand`"], 
-         ButtonBox["V0",
-          BaseStyle->"InformationLink",
-          ButtonData:>{"Info3568704121-8164607", {"V0", "xAct`xPand`"}},
-          ButtonNote->"xAct`xPand`"], 
-         ButtonBox["$ListFieldsBackgroundOnly",
-          BaseStyle->"InformationLink",
-          
-          ButtonData:>{
-           "Info3568704121-8164607", {
-            "$ListFieldsBackgroundOnly", "xAct`xPand`"}},
-          ButtonNote->"xAct`xPand`"]},
-        {
-         ButtonBox["BianchiI",
-          BaseStyle->"InformationLink",
-          ButtonData:>{"Info3568704121-8164607", {"BianchiI", "xAct`xPand`"}},
-          
-          ButtonNote->"xAct`xPand`"], 
-         ButtonBox["FlatGauge",
-          BaseStyle->"InformationLink",
-          ButtonData:>{"Info3568704121-8164607", {"FlatGauge", "xAct`xPand`"}},
-          ButtonNote->"xAct`xPand`"], 
-         ButtonBox["RulesSplitCovDsOfTensor",
-          BaseStyle->"InformationLink",
-          
-          ButtonData:>{
-           "Info3568704121-8164607", {
-            "RulesSplitCovDsOfTensor", "xAct`xPand`"}},
-          ButtonNote->"xAct`xPand`"], 
-         ButtonBox["VisualizeTensor",
-          BaseStyle->"InformationLink",
-          
-          ButtonData:>{
-           "Info3568704121-8164607", {"VisualizeTensor", "xAct`xPand`"}},
+          ButtonData:>{"Info3570522034-2719414", {"Vv", "xAct`xPand`"}},
           ButtonNote->"xAct`xPand`"], 
          ButtonBox["$ListFieldsPerturbedOnly",
           BaseStyle->"InformationLink",
           
           ButtonData:>{
-           "Info3568704121-8164607", {
+           "Info3570522034-2719414", {
             "$ListFieldsPerturbedOnly", "xAct`xPand`"}},
           ButtonNote->"xAct`xPand`"]},
         {
          ButtonBox["Bs",
           BaseStyle->"InformationLink",
-          ButtonData:>{"Info3568704121-8164607", {"Bs", "xAct`xPand`"}},
+          ButtonData:>{"Info3570522034-2719414", {"Bs", "xAct`xPand`"}},
           ButtonNote->"xAct`xPand`"], 
-         ButtonBox["FLCurved",
-          BaseStyle->"InformationLink",
-          ButtonData:>{"Info3568704121-8164607", {"FLCurved", "xAct`xPand`"}},
-          
-          ButtonNote->"xAct`xPand`"], 
-         ButtonBox["RulesVelocitySpatial",
+         ButtonBox["ExtractOrder",
           BaseStyle->"InformationLink",
           
           ButtonData:>{
-           "Info3568704121-8164607", {"RulesVelocitySpatial", "xAct`xPand`"}},
-          
+           "Info3570522034-2719414", {"ExtractOrder", "xAct`xPand`"}},
           ButtonNote->"xAct`xPand`"], 
-         ButtonBox["Vs",
+         ButtonBox["SplitMetric",
           BaseStyle->"InformationLink",
-          ButtonData:>{"Info3568704121-8164607", {"Vs", "xAct`xPand`"}},
+          
+          ButtonData:>{
+           "Info3570522034-2719414", {"SplitMetric", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
+         ButtonBox["xPand",
+          BaseStyle->"InformationLink",
+          ButtonData:>{"Info3570522034-2719414", {"xPand", "xAct`xPand`"}},
           ButtonNote->"xAct`xPand`"], 
          ButtonBox["$ListOfGauges",
           BaseStyle->"InformationLink",
           
           ButtonData:>{
-           "Info3568704121-8164607", {"$ListOfGauges", "xAct`xPand`"}},
+           "Info3570522034-2719414", {"$ListOfGauges", "xAct`xPand`"}},
           ButtonNote->"xAct`xPand`"]},
         {
          ButtonBox["Bv",
           BaseStyle->"InformationLink",
-          ButtonData:>{"Info3568704121-8164607", {"Bv", "xAct`xPand`"}},
-          ButtonNote->"xAct`xPand`"], 
-         ButtonBox["FLFlat",
-          BaseStyle->"InformationLink",
-          ButtonData:>{"Info3568704121-8164607", {"FLFlat", "xAct`xPand`"}},
-          ButtonNote->"xAct`xPand`"], 
-         ButtonBox["SpaceTimesOfDefinition",
-          BaseStyle->"InformationLink",
-          
-          ButtonData:>{
-           "Info3568704121-8164607", {
-            "SpaceTimesOfDefinition", "xAct`xPand`"}},
-          ButtonNote->"xAct`xPand`"], 
-         ButtonBox["Vspat",
-          BaseStyle->"InformationLink",
-          ButtonData:>{"Info3568704121-8164607", {"Vspat", "xAct`xPand`"}},
-          ButtonNote->"xAct`xPand`"], 
-         ButtonBox["$ListOfSpaceTypes",
-          BaseStyle->"InformationLink",
-          ButtonData:>{
-           "Info3568704121-8164607", {"$ListOfSpaceTypes", "xAct`xPand`"}},
-          ButtonNote->"xAct`xPand`"]},
-        {
-         ButtonBox["ComovingGauge",
-          BaseStyle->"InformationLink",
-          
-          ButtonData:>{
-           "Info3568704121-8164607", {"ComovingGauge", "xAct`xPand`"}},
+          ButtonData:>{"Info3570522034-2719414", {"Bv", "xAct`xPand`"}},
           ButtonNote->"xAct`xPand`"], 
          ButtonBox["H",
           BaseStyle->"InformationLink",
-          ButtonData:>{"Info3568704121-8164607", {"H", "xAct`xPand`"}},
+          ButtonData:>{"Info3570522034-2719414", {"H", "xAct`xPand`"}},
           ButtonNote->"xAct`xPand`"], 
-         ButtonBox["SpaceType",
+         ButtonBox["SplitPerturbations",
           BaseStyle->"InformationLink",
-          ButtonData:>{"Info3568704121-8164607", {"SpaceType", "xAct`xPand`"}},
-          ButtonNote->"xAct`xPand`"], 
-         ButtonBox["Vv",
-          BaseStyle->"InformationLink",
-          ButtonData:>{"Info3568704121-8164607", {"Vv", "xAct`xPand`"}},
-          ButtonNote->"xAct`xPand`"], 
-         ButtonBox["$MyRules",
-          BaseStyle->"InformationLink",
-          ButtonData:>{"Info3568704121-8164607", {"$MyRules", "xAct`xPand`"}},
           
+          ButtonData:>{
+           "Info3570522034-2719414", {"SplitPerturbations", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
+         ButtonBox["\[ScriptK]",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3570522034-2719414", {"\[ScriptK]", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
+         ButtonBox["$ListOfSpaceTypes",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3570522034-2719414", {"$ListOfSpaceTypes", "xAct`xPand`"}},
           ButtonNote->"xAct`xPand`"]},
         {
          ButtonBox["Conformal",
           BaseStyle->"InformationLink",
-          ButtonData:>{"Info3568704121-8164607", {"Conformal", "xAct`xPand`"}},
+          ButtonData:>{"Info3570522034-2719414", {"Conformal", "xAct`xPand`"}},
           ButtonNote->"xAct`xPand`"], 
          ButtonBox["IndicesDown",
           BaseStyle->"InformationLink",
           
           ButtonData:>{
-           "Info3568704121-8164607", {"IndicesDown", "xAct`xPand`"}},
+           "Info3570522034-2719414", {"IndicesDown", "xAct`xPand`"}},
           ButtonNote->"xAct`xPand`"], 
-         ButtonBox["SplitGaugeChange",
+         ButtonBox["T",
+          BaseStyle->"InformationLink",
+          ButtonData:>{"Info3570522034-2719414", {"T", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
+         ButtonBox["\[Epsilon]",
           BaseStyle->"InformationLink",
           
           ButtonData:>{
-           "Info3568704121-8164607", {"SplitGaugeChange", "xAct`xPand`"}},
+           "Info3570522034-2719414", {"\[Epsilon]", "xAct`xPand`"}},
           ButtonNote->"xAct`xPand`"], 
-         ButtonBox["xPand",
+         ButtonBox["$MyRules",
           BaseStyle->"InformationLink",
-          ButtonData:>{"Info3568704121-8164607", {"xPand", "xAct`xPand`"}},
-          ButtonNote->"xAct`xPand`"], 
-         ButtonBox["$OpenConstantsOfStructure",
-          BaseStyle->"InformationLink",
+          ButtonData:>{"Info3570522034-2719414", {"$MyRules", "xAct`xPand`"}},
           
-          ButtonData:>{
-           "Info3568704121-8164607", {
-            "$OpenConstantsOfStructure", "xAct`xPand`"}},
           ButtonNote->"xAct`xPand`"]},
         {
          ButtonBox["ConformalWeight",
           BaseStyle->"InformationLink",
           
           ButtonData:>{
-           "Info3568704121-8164607", {"ConformalWeight", "xAct`xPand`"}},
+           "Info3570522034-2719414", {"ConformalWeight", "xAct`xPand`"}},
           ButtonNote->"xAct`xPand`"], 
          ButtonBox["IndicesUp",
           BaseStyle->"InformationLink",
-          ButtonData:>{"Info3568704121-8164607", {"IndicesUp", "xAct`xPand`"}},
+          ButtonData:>{"Info3570522034-2719414", {"IndicesUp", "xAct`xPand`"}},
           ButtonNote->"xAct`xPand`"], 
-         ButtonBox["SplitMetricAndMatterGaugeChange",
+         ButtonBox["TensorProperties",
           BaseStyle->"InformationLink",
           
           ButtonData:>{
-           "Info3568704121-8164607", {
-            "SplitMetricAndMatterGaugeChange", "xAct`xPand`"}},
+           "Info3570522034-2719414", {"TensorProperties", "xAct`xPand`"}},
           ButtonNote->"xAct`xPand`"], 
-         ButtonBox["\[ScriptK]",
+         ButtonBox["\[Xi]",
+          BaseStyle->"InformationLink",
+          ButtonData:>{"Info3570522034-2719414", {"\[Xi]", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
+         ButtonBox["$OpenConstantsOfStructure",
           BaseStyle->"InformationLink",
           
           ButtonData:>{
-           "Info3568704121-8164607", {"\[ScriptK]", "xAct`xPand`"}},
-          ButtonNote->"xAct`xPand`"], 
-         ButtonBox["$SortCovDAutomatic",
-          BaseStyle->"InformationLink",
-          
-          ButtonData:>{
-           "Info3568704121-8164607", {"$SortCovDAutomatic", "xAct`xPand`"}},
+           "Info3570522034-2719414", {
+            "$OpenConstantsOfStructure", "xAct`xPand`"}},
           ButtonNote->"xAct`xPand`"]},
         {
          ButtonBox["Connection",
           BaseStyle->"InformationLink",
           
           ButtonData:>{
-           "Info3568704121-8164607", {"Connection", "xAct`xPand`"}},
+           "Info3570522034-2719414", {"Connection", "xAct`xPand`"}},
           ButtonNote->"xAct`xPand`"], 
-         ButtonBox["IsoDensityGauge",
+         ButtonBox["Ls",
+          BaseStyle->"InformationLink",
+          ButtonData:>{"Info3570522034-2719414", {"Ls", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
+         ButtonBox["ToBianchiType",
           BaseStyle->"InformationLink",
           
           ButtonData:>{
-           "Info3568704121-8164607", {"IsoDensityGauge", "xAct`xPand`"}},
+           "Info3570522034-2719414", {"ToBianchiType", "xAct`xPand`"}},
           ButtonNote->"xAct`xPand`"], 
-         ButtonBox["SplitPerturbations",
+         ButtonBox["\[Rho]",
+          BaseStyle->"InformationLink",
+          ButtonData:>{"Info3570522034-2719414", {"\[Rho]", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
+         ButtonBox["$SortCovDAutomatic",
           BaseStyle->"InformationLink",
           
           ButtonData:>{
-           "Info3568704121-8164607", {"SplitPerturbations", "xAct`xPand`"}},
-          ButtonNote->"xAct`xPand`"], 
-         ButtonBox["\[Epsilon]",
-          BaseStyle->"InformationLink",
-          
-          ButtonData:>{
-           "Info3568704121-8164607", {"\[Epsilon]", "xAct`xPand`"}},
-          ButtonNote->"xAct`xPand`"], 
-         ButtonBox["$Version",
-          BaseStyle->"InformationLink",
-          ButtonData:>{"Info3568704121-8164607", {"$Version", "xAct`xPand`"}},
-          
+           "Info3570522034-2719414", {"$SortCovDAutomatic", "xAct`xPand`"}},
           ButtonNote->"xAct`xPand`"]},
         {
          ButtonBox["CS",
           BaseStyle->"InformationLink",
-          ButtonData:>{"Info3568704121-8164607", {"CS", "xAct`xPand`"}},
+          ButtonData:>{"Info3570522034-2719414", {"CS", "xAct`xPand`"}},
           ButtonNote->"xAct`xPand`"], 
-         ButtonBox["Ls",
+         ButtonBox["Lv",
           BaseStyle->"InformationLink",
-          ButtonData:>{"Info3568704121-8164607", {"Ls", "xAct`xPand`"}},
+          ButtonData:>{"Info3570522034-2719414", {"Lv", "xAct`xPand`"}},
           ButtonNote->"xAct`xPand`"], 
-         ButtonBox["SymmetricTensor",
-          BaseStyle->"InformationLink",
-          
-          ButtonData:>{
-           "Info3568704121-8164607", {"SymmetricTensor", "xAct`xPand`"}},
-          ButtonNote->"xAct`xPand`"], 
-         ButtonBox["\[Xi]",
-          BaseStyle->"InformationLink",
-          ButtonData:>{"Info3568704121-8164607", {"\[Xi]", "xAct`xPand`"}},
-          ButtonNote->"xAct`xPand`"], 
-         ButtonBox["$xPertVersionExpected",
+         ButtonBox["ToConformalTime",
           BaseStyle->"InformationLink",
           
           ButtonData:>{
-           "Info3568704121-8164607", {"$xPertVersionExpected", "xAct`xPand`"}},
+           "Info3570522034-2719414", {"ToConformalTime", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
+         ButtonBox["\[Phi]",
+          BaseStyle->"InformationLink",
+          ButtonData:>{"Info3570522034-2719414", {"\[Phi]", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
+         ButtonBox["$Version",
+          BaseStyle->"InformationLink",
+          ButtonData:>{"Info3570522034-2719414", {"$Version", "xAct`xPand`"}},
+          
           ButtonNote->"xAct`xPand`"]},
         {
          ButtonBox["DefConformalMetric",
           BaseStyle->"InformationLink",
           
           ButtonData:>{
-           "Info3568704121-8164607", {"DefConformalMetric", "xAct`xPand`"}},
+           "Info3570522034-2719414", {"DefConformalMetric", "xAct`xPand`"}},
           ButtonNote->"xAct`xPand`"], 
-         ButtonBox["Lv",
+         ButtonBox["nt",
           BaseStyle->"InformationLink",
-          ButtonData:>{"Info3568704121-8164607", {"Lv", "xAct`xPand`"}},
+          ButtonData:>{"Info3570522034-2719414", {"nt", "xAct`xPand`"}},
           ButtonNote->"xAct`xPand`"], 
-         ButtonBox["SynchronousGauge",
+         ButtonBox["ToConstantsOfStructure",
           BaseStyle->"InformationLink",
           
           ButtonData:>{
-           "Info3568704121-8164607", {"SynchronousGauge", "xAct`xPand`"}},
+           "Info3570522034-2719414", {
+            "ToConstantsOfStructure", "xAct`xPand`"}},
           ButtonNote->"xAct`xPand`"], 
-         ButtonBox["\[Rho]",
+         ButtonBox["\[CurlyPhi]",
           BaseStyle->"InformationLink",
-          ButtonData:>{"Info3568704121-8164607", {"\[Rho]", "xAct`xPand`"}},
+          
+          ButtonData:>{
+           "Info3570522034-2719414", {"\[CurlyPhi]", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
+         ButtonBox["$xPertVersionExpected",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3570522034-2719414", {"$xPertVersionExpected", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"]},
+        {
+         ButtonBox["DefMatterFields",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3570522034-2719414", {"DefMatterFields", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
+         ButtonBox["P",
+          BaseStyle->"InformationLink",
+          ButtonData:>{"Info3570522034-2719414", {"P", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
+         ButtonBox["ToCosmicTime",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3570522034-2719414", {"ToCosmicTime", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
+         ButtonBox["\[Psi]",
+          BaseStyle->"InformationLink",
+          ButtonData:>{"Info3570522034-2719414", {"\[Psi]", "xAct`xPand`"}},
           ButtonNote->"xAct`xPand`"], 
          ButtonBox["$xTensorVersionExpected",
           BaseStyle->"InformationLink",
           
           ButtonData:>{
-           "Info3568704121-8164607", {
+           "Info3570522034-2719414", {
             "$xTensorVersionExpected", "xAct`xPand`"}},
-          ButtonNote->"xAct`xPand`"]}
+          ButtonNote->"xAct`xPand`"]},
+        {
+         ButtonBox["DefMetricFields",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3570522034-2719414", {"DefMetricFields", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
+         ButtonBox["RulesSplitCovDsOfTensor",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3570522034-2719414", {
+            "RulesSplitCovDsOfTensor", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
+         ButtonBox["ToMetric",
+          BaseStyle->"InformationLink",
+          ButtonData:>{"Info3570522034-2719414", {"ToMetric", "xAct`xPand`"}},
+          
+          ButtonNote->"xAct`xPand`"], 
+         ButtonBox["$CacheRules",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3570522034-2719414", {"$CacheRules", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], ""},
+        {
+         ButtonBox["DefProjectedTensor",
+          BaseStyle->"InformationLink",
+          ButtonData:>{
+           "Info3570522034-2719414", {"DefProjectedTensor", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
+         ButtonBox["RulesVelocitySpatial",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3570522034-2719414", {"RulesVelocitySpatial", "xAct`xPand`"}},
+          
+          ButtonNote->"xAct`xPand`"], 
+         ButtonBox["ToxPand",
+          BaseStyle->"InformationLink",
+          ButtonData:>{"Info3570522034-2719414", {"ToxPand", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
+         ButtonBox["$CommutecdRules",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3570522034-2719414", {"$CommutecdRules", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], ""},
+        {
+         ButtonBox["DefProjectedTensorProperties",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3570522034-2719414", {
+            "DefProjectedTensorProperties", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
+         ButtonBox["SetSlicing",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3570522034-2719414", {"SetSlicing", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
+         ButtonBox["ToxPandFromRules",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3570522034-2719414", {"ToxPandFromRules", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
+         ButtonBox["$ConformalTime",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3570522034-2719414", {"$ConformalTime", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], ""},
+        {
+         ButtonBox["Disclaimer",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3570522034-2719414", {"Disclaimer", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
+         ButtonBox["SpaceTimesOfDefinition",
+          BaseStyle->"InformationLink",
+          ButtonData:>{
+           "Info3570522034-2719414", {
+            "SpaceTimesOfDefinition", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
+         ButtonBox["V0",
+          BaseStyle->"InformationLink",
+          ButtonData:>{"Info3570522034-2719414", {"V0", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], 
+         ButtonBox["$FirstOrderTensorPerturbations",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3570522034-2719414", {
+            "$FirstOrderTensorPerturbations", "xAct`xPand`"}},
+          ButtonNote->"xAct`xPand`"], ""}
        },
        DefaultBaseStyle->"InfoGrid",
        GridBoxItemSize->{"Columns" -> {{
@@ -78553,16 +78456,14 @@ Cell[BoxData[
     },
     GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}}]}, 
    Dynamic[Typeset`open$$],
-   ImageSize->Automatic]]], "Print", "InfoCell",
- GeneratedCell->False,
- CellAutoOverwrite->False]
+   ImageSize->Automatic]]], "Print", "InfoCell"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
 },
 AutoGeneratedPackage->Automatic,
 ScreenStyleEnvironment->"Brackets",
-WindowSize->{1440, 784},
+WindowSize->{1621, 1006},
 WindowMargins->{{0, Automatic}, {Automatic, 0}},
 DockedCells->{
   Cell[

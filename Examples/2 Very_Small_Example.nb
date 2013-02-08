@@ -152,16 +152,27 @@ Cell[BoxData["\<\"------------------------------------------------------------\
 
 Cell[BoxData[
  InterpretationBox[
-  RowBox[{"\<\"Package xPand`  version \"\>", 
-   "\[InvisibleSpace]", "\<\"0.3.0\"\>", "\[InvisibleSpace]", "\<\", \"\>", 
+  RowBox[{"\<\"Package xAct`xPand`  version \"\>", 
+   "\[InvisibleSpace]", "\<\"0.4.0\"\>", "\[InvisibleSpace]", "\<\", \"\>", 
    "\[InvisibleSpace]", 
    RowBox[{"{", 
-    RowBox[{"2013", ",", "1", ",", "27"}], "}"}]}],
-  SequenceForm["Package xPand`  version ", "0.3.0", ", ", {2013, 1, 27}],
+    RowBox[{"2013", ",", "2", ",", "8"}], "}"}]}],
+  SequenceForm["Package xAct`xPand`  version ", "0.4.0", ", ", {2013, 2, 8}],
   Editable->False]], "Print"],
 
 Cell[BoxData["\<\"CopyRight (C) 2012-2013, Cyril Pitrou, Xavier Roy and \
-Obinna Umeh under the General Public License.\"\>"], "Print"]
+Obinna Umeh under the General Public License.\"\>"], "Print"],
+
+Cell[BoxData["\<\"------------------------------------------------------------\
+\"\>"], "Print"],
+
+Cell[BoxData["\<\"These packages come with ABSOLUTELY NO WARRANTY; for \
+details type Disclaimer[]. This is free software, and you are welcome to \
+redistribute it under certain conditions. See the General Public License for \
+details.\"\>"], "Print"],
+
+Cell[BoxData["\<\"------------------------------------------------------------\
+\"\>"], "Print"]
 }, Open  ]]
 }, Open  ]],
 
@@ -190,10 +201,10 @@ Cell[BoxData[{
   ";"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"SetSlicing", "[", 
-   RowBox[{"h", ",", "n", ",", "g", ",", "cd", ",", 
+   RowBox[{"g", ",", "n", ",", "h", ",", "cd", ",", 
     RowBox[{"{", 
-     RowBox[{"\"\<|\>\"", ",", "\"\<D\>\""}], "}"}], ",", "FLCurved"}], "]"}],
-   ";"}]}], "Input"],
+     RowBox[{"\"\<|\>\"", ",", "\"\<D\>\""}], "}"}], ",", 
+    "\"\<FLCurved\>\""}], "]"}], ";"}]}], "Input"],
 
 Cell[CellGroupData[{
 
@@ -328,7 +339,7 @@ Cell[BoxData[
     StyleBox["\[Epsilon]",
      ShowAutoStyles->False,
      AutoSpacing->False],
-    xPand`\[Epsilon],
+    xAct`xPand`\[Epsilon],
     Editable->False], " ", 
    RowBox[{"(", 
     RowBox[{
@@ -348,13 +359,13 @@ Cell[BoxData[
           OverscriptBox["\<\"\"\>", 
            StyleBox[
             RowBox[{"(", "1", ")"}],
-            FontColor->RGBColor[0.85, 0, 0]]], 
+            FontColor->RGBColor[0.85, 0, 0]]], "\[NegativeThinSpace]", 
           OverscriptBox[
            InterpretationBox[
             StyleBox["\[Phi]",
              ShowAutoStyles->False,
              AutoSpacing->False],
-            xPand`\[Phi][],
+            xAct`xPand`\[Phi][],
             Editable->False], ""]}], ")"}]}], 
        SuperscriptBox[
         OverscriptBox[
@@ -378,13 +389,13 @@ Cell[BoxData[
          OverscriptBox["\<\"\"\>", 
           StyleBox[
            RowBox[{"(", "1", ")"}],
-           FontColor->RGBColor[0.85, 0, 0]]], 
+           FontColor->RGBColor[0.85, 0, 0]]], "\[NegativeThinSpace]", 
          OverscriptBox[
           InterpretationBox[
            StyleBox["\[Phi]",
             ShowAutoStyles->False,
             AutoSpacing->False],
-           xPand`\[Phi][],
+           xAct`xPand`\[Phi][],
            Editable->False], ""]}], ")"}]}], 
       SuperscriptBox[
        OverscriptBox[
@@ -408,13 +419,13 @@ Cell[BoxData[
          OverscriptBox["\<\"\"\>", 
           StyleBox[
            RowBox[{"(", "1", ")"}],
-           FontColor->RGBColor[0.85, 0, 0]]], 
+           FontColor->RGBColor[0.85, 0, 0]]], "\[NegativeThinSpace]", 
          OverscriptBox[
           InterpretationBox[
            StyleBox["\[Phi]",
             ShowAutoStyles->False,
             AutoSpacing->False],
-           xPand`\[Phi][],
+           xAct`xPand`\[Phi][],
            Editable->False], "\[Prime]"]}], ")"}]}], 
       SuperscriptBox[
        OverscriptBox[
@@ -437,13 +448,13 @@ Cell[BoxData[
          OverscriptBox["\<\"\"\>", 
           StyleBox[
            RowBox[{"(", "1", ")"}],
-           FontColor->RGBColor[0.85, 0, 0]]], 
+           FontColor->RGBColor[0.85, 0, 0]]], "\[NegativeThinSpace]", 
          OverscriptBox[
           InterpretationBox[
            StyleBox["\[Psi]",
             ShowAutoStyles->False,
             AutoSpacing->False],
-           xPand`\[Psi][],
+           xAct`xPand`\[Psi][],
            Editable->False], ""]}], ")"}]}], 
       SuperscriptBox[
        OverscriptBox[
@@ -467,13 +478,13 @@ Cell[BoxData[
          OverscriptBox["\<\"\"\>", 
           StyleBox[
            RowBox[{"(", "1", ")"}],
-           FontColor->RGBColor[0.85, 0, 0]]], 
+           FontColor->RGBColor[0.85, 0, 0]]], "\[NegativeThinSpace]", 
          OverscriptBox[
           InterpretationBox[
            StyleBox["\[Psi]",
             ShowAutoStyles->False,
             AutoSpacing->False],
-           xPand`\[Psi][],
+           xAct`xPand`\[Psi][],
            Editable->False], "\[Prime]"]}], ")"}]}], 
       SuperscriptBox[
        OverscriptBox[
@@ -490,13 +501,13 @@ Cell[BoxData[
          OverscriptBox["\<\"\"\>", 
           StyleBox[
            RowBox[{"(", "1", ")"}],
-           FontColor->RGBColor[0.85, 0, 0]]], 
+           FontColor->RGBColor[0.85, 0, 0]]], "\[NegativeThinSpace]", 
          OverscriptBox[
           InterpretationBox[
            StyleBox["\[Psi]",
             ShowAutoStyles->False,
             AutoSpacing->False],
-           xPand`\[Psi][],
+           xAct`xPand`\[Psi][],
            Editable->False], "\[Prime]\[Prime]"]}], ")"}]}], 
       SuperscriptBox[
        OverscriptBox[
@@ -517,19 +528,19 @@ Cell[BoxData[
            OverscriptBox["\<\"\"\>", 
             StyleBox[
              RowBox[{"(", "1", ")"}],
-             FontColor->RGBColor[0.85, 0, 0]]], 
+             FontColor->RGBColor[0.85, 0, 0]]], "\[NegativeThinSpace]", 
            OverscriptBox[
             InterpretationBox[
              StyleBox["\[Phi]",
               ShowAutoStyles->False,
               AutoSpacing->False],
-             xPand`\[Phi][],
+             xAct`xPand`\[Phi][],
              Editable->False], ""]}],
           ShowAutoStyles->False,
           AutoSpacing->False],
          $CellContext`cd[-$CellContext`b][
           $CellContext`cd[$CellContext`b][
-           xPand`\[Phi][
+           xAct`xPand`\[Phi][
             xAct`xTensor`LI[1], 
             xAct`xTensor`LI[0]]]],
          Editable->False], ")"}]}], 
@@ -552,19 +563,19 @@ Cell[BoxData[
            OverscriptBox["\<\"\"\>", 
             StyleBox[
              RowBox[{"(", "1", ")"}],
-             FontColor->RGBColor[0.85, 0, 0]]], 
+             FontColor->RGBColor[0.85, 0, 0]]], "\[NegativeThinSpace]", 
            OverscriptBox[
             InterpretationBox[
              StyleBox["\[Psi]",
               ShowAutoStyles->False,
               AutoSpacing->False],
-             xPand`\[Psi][],
+             xAct`xPand`\[Psi][],
              Editable->False], ""]}],
           ShowAutoStyles->False,
           AutoSpacing->False],
          $CellContext`cd[-$CellContext`b][
           $CellContext`cd[$CellContext`b][
-           xPand`\[Psi][
+           xAct`xPand`\[Psi][
             xAct`xTensor`LI[1], 
             xAct`xTensor`LI[0]]]],
          Editable->False], ")"}]}], 
@@ -617,7 +628,7 @@ Cell[BoxData[
         StyleBox["\[Epsilon]",
          ShowAutoStyles->False,
          AutoSpacing->False],
-        xPand`\[Epsilon],
+        xAct`xPand`\[Epsilon],
         Editable->False], " ", 
        RowBox[{"(", 
         RowBox[{
@@ -633,13 +644,13 @@ Cell[BoxData[
             OverscriptBox["\<\"\"\>", 
              StyleBox[
               RowBox[{"(", "1", ")"}],
-              FontColor->RGBColor[0.85, 0, 0]]], 
+              FontColor->RGBColor[0.85, 0, 0]]], "\[NegativeThinSpace]", 
             OverscriptBox[
              InterpretationBox[
               StyleBox["\[Phi]",
                ShowAutoStyles->False,
                AutoSpacing->False],
-              xPand`\[Phi][],
+              xAct`xPand`\[Phi][],
               Editable->False], ""]}], ")"}]}], "+", 
          RowBox[{"6", " ", 
           InterpretationBox[
@@ -653,13 +664,13 @@ Cell[BoxData[
             OverscriptBox["\<\"\"\>", 
              StyleBox[
               RowBox[{"(", "1", ")"}],
-              FontColor->RGBColor[0.85, 0, 0]]], 
+              FontColor->RGBColor[0.85, 0, 0]]], "\[NegativeThinSpace]", 
             OverscriptBox[
              InterpretationBox[
               StyleBox["\[Psi]",
                ShowAutoStyles->False,
                AutoSpacing->False],
-              xPand`\[Psi][],
+              xAct`xPand`\[Psi][],
               Editable->False], ""]}], ")"}]}], "-", 
          RowBox[{"6", " ", 
           OverscriptBox[
@@ -674,13 +685,13 @@ Cell[BoxData[
             OverscriptBox["\<\"\"\>", 
              StyleBox[
               RowBox[{"(", "1", ")"}],
-              FontColor->RGBColor[0.85, 0, 0]]], 
+              FontColor->RGBColor[0.85, 0, 0]]], "\[NegativeThinSpace]", 
             OverscriptBox[
              InterpretationBox[
               StyleBox["\[Psi]",
                ShowAutoStyles->False,
                AutoSpacing->False],
-              xPand`\[Psi][],
+              xAct`xPand`\[Psi][],
               Editable->False], "\[Prime]"]}], ")"}]}], "+", 
          RowBox[{"2", " ", 
           RowBox[{"(", 
@@ -692,19 +703,19 @@ Cell[BoxData[
               OverscriptBox["\<\"\"\>", 
                StyleBox[
                 RowBox[{"(", "1", ")"}],
-                FontColor->RGBColor[0.85, 0, 0]]], 
+                FontColor->RGBColor[0.85, 0, 0]]], "\[NegativeThinSpace]", 
               OverscriptBox[
                InterpretationBox[
                 StyleBox["\[Psi]",
                  ShowAutoStyles->False,
                  AutoSpacing->False],
-                xPand`\[Psi][],
+                xAct`xPand`\[Psi][],
                 Editable->False], ""]}],
              ShowAutoStyles->False,
              AutoSpacing->False],
             $CellContext`cd[-$CellContext`i][
              $CellContext`cd[$CellContext`i][
-              xPand`\[Psi][
+              xAct`xPand`\[Psi][
                xAct`xTensor`LI[1], 
                xAct`xTensor`LI[0]]]],
             Editable->False], ")"}]}]}], ")"}]}]}], 
@@ -713,7 +724,7 @@ Cell[BoxData[
        StyleBox["\[Epsilon]",
         ShowAutoStyles->False,
         AutoSpacing->False],
-       xPand`\[Epsilon],
+       xAct`xPand`\[Epsilon],
        Editable->False], " ", 
       RowBox[{"(", 
        RowBox[{
@@ -733,18 +744,18 @@ Cell[BoxData[
              OverscriptBox["\<\"\"\>", 
               StyleBox[
                RowBox[{"(", "1", ")"}],
-               FontColor->RGBColor[0.85, 0, 0]]], 
+               FontColor->RGBColor[0.85, 0, 0]]], "\[NegativeThinSpace]", 
              OverscriptBox[
               InterpretationBox[
                StyleBox["\[Phi]",
                 ShowAutoStyles->False,
                 AutoSpacing->False],
-               xPand`\[Phi][],
+               xAct`xPand`\[Phi][],
                Editable->False], ""]}],
             ShowAutoStyles->False,
             AutoSpacing->False],
            $CellContext`cd[-$CellContext`c][
-            xPand`\[Phi][
+            xAct`xPand`\[Phi][
              xAct`xTensor`LI[1], 
              xAct`xTensor`LI[0]]],
            Editable->False], ")"}]}], "+", 
@@ -757,18 +768,18 @@ Cell[BoxData[
              OverscriptBox["\<\"\"\>", 
               StyleBox[
                RowBox[{"(", "1", ")"}],
-               FontColor->RGBColor[0.85, 0, 0]]], 
+               FontColor->RGBColor[0.85, 0, 0]]], "\[NegativeThinSpace]", 
              OverscriptBox[
               InterpretationBox[
                StyleBox["\[Psi]",
                 ShowAutoStyles->False,
                 AutoSpacing->False],
-               xPand`\[Psi][],
+               xAct`xPand`\[Psi][],
                Editable->False], "\[Prime]"]}],
             ShowAutoStyles->False,
             AutoSpacing->False],
            $CellContext`cd[-$CellContext`c][
-            xPand`\[Psi][
+            xAct`xPand`\[Psi][
              xAct`xTensor`LI[1], 
              xAct`xTensor`LI[1]]],
            Editable->False], ")"}]}]}], ")"}]}]},
@@ -778,7 +789,7 @@ Cell[BoxData[
        StyleBox["\[Epsilon]",
         ShowAutoStyles->False,
         AutoSpacing->False],
-       xPand`\[Epsilon],
+       xAct`xPand`\[Epsilon],
        Editable->False], " ", 
       RowBox[{"(", 
        RowBox[{
@@ -798,18 +809,18 @@ Cell[BoxData[
              OverscriptBox["\<\"\"\>", 
               StyleBox[
                RowBox[{"(", "1", ")"}],
-               FontColor->RGBColor[0.85, 0, 0]]], 
+               FontColor->RGBColor[0.85, 0, 0]]], "\[NegativeThinSpace]", 
              OverscriptBox[
               InterpretationBox[
                StyleBox["\[Phi]",
                 ShowAutoStyles->False,
                 AutoSpacing->False],
-               xPand`\[Phi][],
+               xAct`xPand`\[Phi][],
                Editable->False], ""]}],
             ShowAutoStyles->False,
             AutoSpacing->False],
            $CellContext`cd[-$CellContext`b][
-            xPand`\[Phi][
+            xAct`xPand`\[Phi][
              xAct`xTensor`LI[1], 
              xAct`xTensor`LI[0]]],
            Editable->False], ")"}]}], "+", 
@@ -822,18 +833,18 @@ Cell[BoxData[
              OverscriptBox["\<\"\"\>", 
               StyleBox[
                RowBox[{"(", "1", ")"}],
-               FontColor->RGBColor[0.85, 0, 0]]], 
+               FontColor->RGBColor[0.85, 0, 0]]], "\[NegativeThinSpace]", 
              OverscriptBox[
               InterpretationBox[
                StyleBox["\[Psi]",
                 ShowAutoStyles->False,
                 AutoSpacing->False],
-               xPand`\[Psi][],
+               xAct`xPand`\[Psi][],
                Editable->False], "\[Prime]"]}],
             ShowAutoStyles->False,
             AutoSpacing->False],
            $CellContext`cd[-$CellContext`b][
-            xPand`\[Psi][
+            xAct`xPand`\[Psi][
              xAct`xTensor`LI[1], 
              xAct`xTensor`LI[1]]],
            Editable->False], ")"}]}]}], ")"}]}], 
@@ -958,7 +969,7 @@ Cell[BoxData[
         StyleBox["\[Epsilon]",
          ShowAutoStyles->False,
          AutoSpacing->False],
-        xPand`\[Epsilon],
+        xAct`xPand`\[Epsilon],
         Editable->False], " ", 
        RowBox[{"(", 
         RowBox[{
@@ -1007,13 +1018,13 @@ Cell[BoxData[
             OverscriptBox["\<\"\"\>", 
              StyleBox[
               RowBox[{"(", "1", ")"}],
-              FontColor->RGBColor[0.85, 0, 0]]], 
+              FontColor->RGBColor[0.85, 0, 0]]], "\[NegativeThinSpace]", 
             OverscriptBox[
              InterpretationBox[
               StyleBox["\[Phi]",
                ShowAutoStyles->False,
                AutoSpacing->False],
-              xPand`\[Phi][],
+              xAct`xPand`\[Phi][],
               Editable->False], ""]}], ")"}]}], "+", 
          RowBox[{"4", " ", 
           InterpretationBox[
@@ -1059,13 +1070,13 @@ Cell[BoxData[
             OverscriptBox["\<\"\"\>", 
              StyleBox[
               RowBox[{"(", "1", ")"}],
-              FontColor->RGBColor[0.85, 0, 0]]], 
+              FontColor->RGBColor[0.85, 0, 0]]], "\[NegativeThinSpace]", 
             OverscriptBox[
              InterpretationBox[
               StyleBox["\[Phi]",
                ShowAutoStyles->False,
                AutoSpacing->False],
-              xPand`\[Phi][],
+              xAct`xPand`\[Phi][],
               Editable->False], ""]}], ")"}]}], "+", 
          RowBox[{"2", " ", 
           InterpretationBox[
@@ -1083,7 +1094,6 @@ Cell[BoxData[
                     Offset[0.]}}, "RowsIndexed" -> {}}],
                 FontSize->9]}
              },
-             
              GridBoxAlignment->{
               "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
                "Rows" -> {{Center}}, "RowsIndexed" -> {}},
@@ -1111,13 +1121,13 @@ Cell[BoxData[
             OverscriptBox["\<\"\"\>", 
              StyleBox[
               RowBox[{"(", "1", ")"}],
-              FontColor->RGBColor[0.85, 0, 0]]], 
+              FontColor->RGBColor[0.85, 0, 0]]], "\[NegativeThinSpace]", 
             OverscriptBox[
              InterpretationBox[
               StyleBox["\[Phi]",
                ShowAutoStyles->False,
                AutoSpacing->False],
-              xPand`\[Phi][],
+              xAct`xPand`\[Phi][],
               Editable->False], "\[Prime]"]}], ")"}]}], "+", 
          RowBox[{"2", " ", 
           InterpretationBox[
@@ -1164,13 +1174,13 @@ Cell[BoxData[
             OverscriptBox["\<\"\"\>", 
              StyleBox[
               RowBox[{"(", "1", ")"}],
-              FontColor->RGBColor[0.85, 0, 0]]], 
+              FontColor->RGBColor[0.85, 0, 0]]], "\[NegativeThinSpace]", 
             OverscriptBox[
              InterpretationBox[
               StyleBox["\[Psi]",
                ShowAutoStyles->False,
                AutoSpacing->False],
-              xPand`\[Psi][],
+              xAct`xPand`\[Psi][],
               Editable->False], ""]}], ")"}]}], "+", 
          RowBox[{"4", " ", 
           InterpretationBox[
@@ -1216,13 +1226,13 @@ Cell[BoxData[
             OverscriptBox["\<\"\"\>", 
              StyleBox[
               RowBox[{"(", "1", ")"}],
-              FontColor->RGBColor[0.85, 0, 0]]], 
+              FontColor->RGBColor[0.85, 0, 0]]], "\[NegativeThinSpace]", 
             OverscriptBox[
              InterpretationBox[
               StyleBox["\[Psi]",
                ShowAutoStyles->False,
                AutoSpacing->False],
-              xPand`\[Psi][],
+              xAct`xPand`\[Psi][],
               Editable->False], ""]}], ")"}]}], "+", 
          RowBox[{"4", " ", 
           InterpretationBox[
@@ -1268,13 +1278,13 @@ Cell[BoxData[
             OverscriptBox["\<\"\"\>", 
              StyleBox[
               RowBox[{"(", "1", ")"}],
-              FontColor->RGBColor[0.85, 0, 0]]], 
+              FontColor->RGBColor[0.85, 0, 0]]], "\[NegativeThinSpace]", 
             OverscriptBox[
              InterpretationBox[
               StyleBox["\[Psi]",
                ShowAutoStyles->False,
                AutoSpacing->False],
-              xPand`\[Psi][],
+              xAct`xPand`\[Psi][],
               Editable->False], "\[Prime]"]}], ")"}]}], "+", 
          RowBox[{"2", " ", 
           InterpretationBox[
@@ -1313,13 +1323,13 @@ Cell[BoxData[
             OverscriptBox["\<\"\"\>", 
              StyleBox[
               RowBox[{"(", "1", ")"}],
-              FontColor->RGBColor[0.85, 0, 0]]], 
+              FontColor->RGBColor[0.85, 0, 0]]], "\[NegativeThinSpace]", 
             OverscriptBox[
              InterpretationBox[
               StyleBox["\[Psi]",
                ShowAutoStyles->False,
                AutoSpacing->False],
-              xPand`\[Psi][],
+              xAct`xPand`\[Psi][],
               Editable->False], "\[Prime]\[Prime]"]}], ")"}]}], "-", 
          InterpretationBox[
           StyleBox[
@@ -1329,19 +1339,19 @@ Cell[BoxData[
             OverscriptBox["\<\"\"\>", 
              StyleBox[
               RowBox[{"(", "1", ")"}],
-              FontColor->RGBColor[0.85, 0, 0]]], 
+              FontColor->RGBColor[0.85, 0, 0]]], "\[NegativeThinSpace]", 
             OverscriptBox[
              InterpretationBox[
               StyleBox["\[Phi]",
                ShowAutoStyles->False,
                AutoSpacing->False],
-              xPand`\[Phi][],
+              xAct`xPand`\[Phi][],
               Editable->False], ""]}],
            ShowAutoStyles->False,
            AutoSpacing->False],
           $CellContext`cd[-$CellContext`c][
            $CellContext`cd[-$CellContext`b][
-            xPand`\[Phi][
+            xAct`xPand`\[Phi][
              xAct`xTensor`LI[1], 
              xAct`xTensor`LI[0]]]],
           Editable->False], "+", 
@@ -1353,19 +1363,19 @@ Cell[BoxData[
             OverscriptBox["\<\"\"\>", 
              StyleBox[
               RowBox[{"(", "1", ")"}],
-              FontColor->RGBColor[0.85, 0, 0]]], 
+              FontColor->RGBColor[0.85, 0, 0]]], "\[NegativeThinSpace]", 
             OverscriptBox[
              InterpretationBox[
               StyleBox["\[Psi]",
                ShowAutoStyles->False,
                AutoSpacing->False],
-              xPand`\[Psi][],
+              xAct`xPand`\[Psi][],
               Editable->False], ""]}],
            ShowAutoStyles->False,
            AutoSpacing->False],
           $CellContext`cd[-$CellContext`c][
            $CellContext`cd[-$CellContext`b][
-            xPand`\[Psi][
+            xAct`xPand`\[Psi][
              xAct`xTensor`LI[1], 
              xAct`xTensor`LI[0]]]],
           Editable->False], "+", 
@@ -1410,19 +1420,19 @@ Cell[BoxData[
               OverscriptBox["\<\"\"\>", 
                StyleBox[
                 RowBox[{"(", "1", ")"}],
-                FontColor->RGBColor[0.85, 0, 0]]], 
+                FontColor->RGBColor[0.85, 0, 0]]], "\[NegativeThinSpace]", 
               OverscriptBox[
                InterpretationBox[
                 StyleBox["\[Phi]",
                  ShowAutoStyles->False,
                  AutoSpacing->False],
-                xPand`\[Phi][],
+                xAct`xPand`\[Phi][],
                 Editable->False], ""]}],
              ShowAutoStyles->False,
              AutoSpacing->False],
             $CellContext`cd[-$CellContext`i][
              $CellContext`cd[$CellContext`i][
-              xPand`\[Phi][
+              xAct`xPand`\[Phi][
                xAct`xTensor`LI[1], 
                xAct`xTensor`LI[0]]]],
             Editable->False], ")"}]}], "-", 
@@ -1467,19 +1477,19 @@ Cell[BoxData[
               OverscriptBox["\<\"\"\>", 
                StyleBox[
                 RowBox[{"(", "1", ")"}],
-                FontColor->RGBColor[0.85, 0, 0]]], 
+                FontColor->RGBColor[0.85, 0, 0]]], "\[NegativeThinSpace]", 
               OverscriptBox[
                InterpretationBox[
                 StyleBox["\[Psi]",
                  ShowAutoStyles->False,
                  AutoSpacing->False],
-                xPand`\[Psi][],
+                xAct`xPand`\[Psi][],
                 Editable->False], ""]}],
              ShowAutoStyles->False,
              AutoSpacing->False],
             $CellContext`cd[-$CellContext`i][
              $CellContext`cd[$CellContext`i][
-              xPand`\[Psi][
+              xAct`xPand`\[Psi][
                xAct`xTensor`LI[1], 
                xAct`xTensor`LI[0]]]],
             Editable->False], ")"}]}]}], ")"}]}]}]}

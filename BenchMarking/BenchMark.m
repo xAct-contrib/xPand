@@ -19,7 +19,7 @@
 
 
 
-SetDirectory["~/XPAND"];
+SetDirectory["~/CMB"];
 
 
 Block[{Print},
@@ -32,11 +32,11 @@ SetOptions[AutomaticRules,Verbose->False];
 (*DefConstantSymbol[d];*)
 DefManifold[M,4(*d*),{\[Alpha],\[Beta],\[Gamma],\[Mu],\[Nu],\[Lambda],\[Sigma]}];
 DefMetric[-1,g[-\[Alpha],-\[Beta]],CD,{";","\!\(\*OverscriptBox[\(\[Del]\), \(_\)]\)"},PrintAs->"\!\(\*OverscriptBox[\(g\), \(_\)]\)"];
-SetSlicing[hM,nM,g,cdM,{"|","\!\(\*OverscriptBox[\(D\), \(_\)]\)"},Minkowski];
-SetSlicing[h,n,g,cd,{"|","\!\(\*OverscriptBox[\(D\), \(_\)]\)"},FLFlat];
-SetSlicing[h2,n2,g,cd2,{"|","\!\(\*OverscriptBox[\(D\), \(_\)]\)"},FLCurved];
-SetSlicing[h3,n3,g,cd3,{"|","\!\(\*OverscriptBox[\(D\), \(_\)]\)"},BianchiI];
-SetSlicing[h4,n4,g,cd4,{"|","\!\(\*OverscriptBox[\(D\), \(_\)]\)"},BianchiB];
+SetSlicing[g,nM,hM,cdM,{"|","\!\(\*OverscriptBox[\(D\), \(_\)]\)"},"Minkowski"];
+SetSlicing[g,n,h,cd,{"|","\!\(\*OverscriptBox[\(D\), \(_\)]\)"},"FLFlat"];
+SetSlicing[g,n2,h2,cd2,{"|","\!\(\*OverscriptBox[\(D\), \(_\)]\)"},"FLCurved"];
+SetSlicing[g,n3,h3,cd3,{"|","\!\(\*OverscriptBox[\(D\), \(_\)]\)"},"BianchiI"];
+SetSlicing[g,n4,h4,cd4,{"|","\!\(\*OverscriptBox[\(D\), \(_\)]\)"},"BianchiB"];
 
 
 DefMetricFields[g,dg,hM]
@@ -64,45 +64,45 @@ ordermax=4
 $OpenConstantsOfStructure=False;
 
 
-TimingsxPert=Table[{i,First@AbsoluteTiming[ExpandPerturbation@Perturbed[Conformal[g,gah42][RicciScalarCD[]],i]//ContractMetric//ToCanonical]},{i,1,ordermax+1}]
+TimingsxPert=Table[{i,First@AbsoluteTiming[ExpandPerturbation@Perturbed[Conformal[g,gah42][RicciScalarCD[]],i]//ContractMetric//ToCanonical]},{i,1,ordermax}]
 
 
-TimingsMinkowski=Table[{i,First@AbsoluteTiming[MyxPandBenchMark[RicciScalarCD[],hM,i,NewtonGauge]]},{i,1,ordermax}]
-TimingsMinkowskiSynchronous=Table[{i,First@AbsoluteTiming[MyxPandBenchMark[RicciScalarCD[],hM,i,SynchronousGauge]]},{i,1,ordermax}]
-TimingsMinkowskiFlat=Table[{i,First@AbsoluteTiming[MyxPandBenchMark[RicciScalarCD[],hM,i,FlatGauge]]},{i,1,ordermax}]
-TimingsMinkowskiComoving=Table[{i,First@AbsoluteTiming[MyxPandBenchMark[RicciScalarCD[],hM,i,ComovingGauge]]},{i,1,ordermax}]
-TimingsMinkowskiAny=Table[{i,First@AbsoluteTiming[MyxPandBenchMark[RicciScalarCD[],hM,i,AnyGauge]]},{i,1,ordermax}]
+TimingsMinkowski=Table[{i,First@AbsoluteTiming[MyxPandBenchMark[RicciScalarCD[],hM,i,"NewtonGauge"]]},{i,1,ordermax}]
+TimingsMinkowskiSynchronous=Table[{i,First@AbsoluteTiming[MyxPandBenchMark[RicciScalarCD[],hM,i,"SynchronousGauge"]]},{i,1,ordermax}]
+TimingsMinkowskiFlat=Table[{i,First@AbsoluteTiming[MyxPandBenchMark[RicciScalarCD[],hM,i,"FlatGauge"]]},{i,1,ordermax}]
+TimingsMinkowskiComoving=Table[{i,First@AbsoluteTiming[MyxPandBenchMark[RicciScalarCD[],hM,i,"ComovingGauge"]]},{i,1,ordermax}]
+TimingsMinkowskiAny=Table[{i,First@AbsoluteTiming[MyxPandBenchMark[RicciScalarCD[],hM,i,"AnyGauge"]]},{i,1,ordermax}]
 
 
-TimingsFLFlat=Table[{i,First@AbsoluteTiming[MyxPandBenchMark[RicciScalarCD[],h,i,NewtonGauge]]},{i,1,ordermax}]
-TimingsFLFlatSynchronous=Table[{i,First@AbsoluteTiming[MyxPandBenchMark[RicciScalarCD[],h,i,SynchronousGauge]]},{i,1,ordermax}]
-TimingsFLFlatFlat=Table[{i,First@AbsoluteTiming[MyxPandBenchMark[RicciScalarCD[],h,i,FlatGauge]]},{i,1,ordermax}]
-TimingsFLFlatComoving=Table[{i,First@AbsoluteTiming[MyxPandBenchMark[RicciScalarCD[],h,i,ComovingGauge]]},{i,1,ordermax}]
-TimingsFLFlatAny=Table[{i,First@AbsoluteTiming[MyxPandBenchMark[RicciScalarCD[],h,i,AnyGauge]]},{i,1,ordermax}]
+TimingsFLFlat=Table[{i,First@AbsoluteTiming[MyxPandBenchMark[RicciScalarCD[],h,i,"NewtonGauge"]]},{i,1,ordermax}]
+TimingsFLFlatSynchronous=Table[{i,First@AbsoluteTiming[MyxPandBenchMark[RicciScalarCD[],h,i,"SynchronousGauge"]]},{i,1,ordermax}]
+TimingsFLFlatFlat=Table[{i,First@AbsoluteTiming[MyxPandBenchMark[RicciScalarCD[],h,i,"FlatGauge"]]},{i,1,ordermax}]
+TimingsFLFlatComoving=Table[{i,First@AbsoluteTiming[MyxPandBenchMark[RicciScalarCD[],h,i,"ComovingGauge"]]},{i,1,ordermax}]
+TimingsFLFlatAny=Table[{i,First@AbsoluteTiming[MyxPandBenchMark[RicciScalarCD[],h,i,"AnyGauge"]]},{i,1,ordermax}]
 
 
-TimingsFLCurved=Table[{i,First@AbsoluteTiming[MyxPandBenchMark[RicciScalarCD[],h2,i,NewtonGauge]]},{i,1,ordermax}]
-TimingsFLCurvedSynchronous=Table[{i,First@AbsoluteTiming[MyxPandBenchMark[RicciScalarCD[],h2,i,SynchronousGauge]]},{i,1,ordermax}]
-TimingsFLCurvedFlat=Table[{i,First@AbsoluteTiming[MyxPandBenchMark[RicciScalarCD[],h2,i,FlatGauge]]},{i,1,ordermax}]
-TimingsFLCurvedComoving=Table[{i,First@AbsoluteTiming[MyxPandBenchMark[RicciScalarCD[],h2,i,ComovingGauge]]},{i,1,ordermax}]
-TimingsFLCurvedAny=Table[{i,First@AbsoluteTiming[MyxPandBenchMark[RicciScalarCD[],h2,i,AnyGauge]]},{i,1,ordermax-1}]
+TimingsFLCurved=Table[{i,First@AbsoluteTiming[MyxPandBenchMark[RicciScalarCD[],h2,i,"NewtonGauge"]]},{i,1,ordermax}]
+TimingsFLCurvedSynchronous=Table[{i,First@AbsoluteTiming[MyxPandBenchMark[RicciScalarCD[],h2,i,"SynchronousGauge"]]},{i,1,ordermax}]
+TimingsFLCurvedFlat=Table[{i,First@AbsoluteTiming[MyxPandBenchMark[RicciScalarCD[],h2,i,"FlatGauge"]]},{i,1,ordermax}]
+TimingsFLCurvedComoving=Table[{i,First@AbsoluteTiming[MyxPandBenchMark[RicciScalarCD[],h2,i,"ComovingGauge"]]},{i,1,ordermax}]
+TimingsFLCurvedAny=Table[{i,First@AbsoluteTiming[MyxPandBenchMark[RicciScalarCD[],h2,i,"AnyGauge"]]},{i,1,ordermax-1}]
 
 
-TimingsBianchiI=Table[{i,First@AbsoluteTiming[MyxPandBenchMark[RicciScalarCD[],h3,i,NewtonGauge]]},{i,1,ordermax}]
-TimingsBianchiISynchronous=Table[{i,First@AbsoluteTiming[MyxPandBenchMark[RicciScalarCD[],h3,i,SynchronousGauge]]},{i,1,ordermax}]
-TimingsBianchiIFlat=Table[{i,First@AbsoluteTiming[MyxPandBenchMark[RicciScalarCD[],h3,i,FlatGauge]]},{i,1,ordermax}]
-TimingsBianchiIComoving=Table[{i,First@AbsoluteTiming[MyxPandBenchMark[RicciScalarCD[],h3,i,ComovingGauge]]},{i,1,ordermax}]
-TimingsBianchiIAny=Table[{i,First@AbsoluteTiming[MyxPandBenchMark[RicciScalarCD[],h3,i,AnyGauge]]},{i,1,ordermax-1}]
+TimingsBianchiI=Table[{i,First@AbsoluteTiming[MyxPandBenchMark[RicciScalarCD[],h3,i,"NewtonGauge"]]},{i,1,ordermax}]
+TimingsBianchiISynchronous=Table[{i,First@AbsoluteTiming[MyxPandBenchMark[RicciScalarCD[],h3,i,"SynchronousGauge"]]},{i,1,ordermax}]
+TimingsBianchiIFlat=Table[{i,First@AbsoluteTiming[MyxPandBenchMark[RicciScalarCD[],h3,i,"FlatGauge"]]},{i,1,ordermax}]
+TimingsBianchiIComoving=Table[{i,First@AbsoluteTiming[MyxPandBenchMark[RicciScalarCD[],h3,i,"ComovingGauge"]]},{i,1,ordermax}]
+TimingsBianchiIAny=Table[{i,First@AbsoluteTiming[MyxPandBenchMark[RicciScalarCD[],h3,i,"AnyGauge"]]},{i,1,ordermax-1}]
 
 
-TimingsBianchiB=Table[{i,First@AbsoluteTiming[MyxPandBenchMark[RicciScalarCD[],h4,i,NewtonGauge]]},{i,1,ordermax-1}]
-TimingsBianchiBSynchronous=Table[{i,First@AbsoluteTiming[MyxPandBenchMark[RicciScalarCD[],h4,i,SynchronousGauge]]},{i,1,ordermax-1}]
-TimingsBianchiBFlat=Table[{i,First@AbsoluteTiming[MyxPandBenchMark[RicciScalarCD[],h4,i,FlatGauge]]},{i,1,ordermax-1}]
-TimingsBianchiBComoving=Table[{i,First@AbsoluteTiming[MyxPandBenchMark[RicciScalarCD[],h4,i,ComovingGauge]]},{i,1,ordermax-1}]
-TimingsBianchiBAny=Table[{i,First@AbsoluteTiming[MyxPandBenchMark[RicciScalarCD[],h4,i,AnyGauge]]},{i,1,ordermax-2}]
+TimingsBianchiB=Table[{i,First@AbsoluteTiming[MyxPandBenchMark[RicciScalarCD[],h4,i,"NewtonGauge"]]},{i,1,ordermax-1}]
+TimingsBianchiBSynchronous=Table[{i,First@AbsoluteTiming[MyxPandBenchMark[RicciScalarCD[],h4,i,"SynchronousGauge"]]},{i,1,ordermax-2}]
+TimingsBianchiBFlat=Table[{i,First@AbsoluteTiming[MyxPandBenchMark[RicciScalarCD[],h4,i,"FlatGauge"]]},{i,1,ordermax-1}]
+TimingsBianchiBComoving=Table[{i,First@AbsoluteTiming[MyxPandBenchMark[RicciScalarCD[],h4,i,"ComovingGauge"]]},{i,1,ordermax-1}]
+TimingsBianchiBAny=Table[{i,First@AbsoluteTiming[MyxPandBenchMark[RicciScalarCD[],h4,i,"AnyGauge"]]},{i,1,ordermax-2}]
 
 
-FirstTime=True
+FirstTime=True;
 
 
 NameFileNewt=StringJoin["SaveTimingsNewtonGauge",ToString[ordermax],".dat"];

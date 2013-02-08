@@ -3,4 +3,14 @@
 ------------------------------------------------------------------------
 
 0.0.1: First version in development
+
+------------------------------------------------------------------------
+2013
+------------------------------------------------------------------------
+
+0.3.0: First released version
+
+0.4.0: Version which matches the publication
+       Many names have been changes, but the core of the algo is left unchanged.
+       Conformal rules for determinant modified to take into account the patch of xTensor.
  
