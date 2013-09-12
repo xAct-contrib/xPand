@@ -910,7 +910,7 @@ Protect[DefProjectedTensor];
 
 (*** MODULE: DefProjectedTensorProperties ***)
 
-DefProjectedTensorProperties[Name_,inds___?DownIndexQ,h_?InducedMetricQ,Properties_List,Spacetimes_List]:=Catch@Module[{prot},
+DefProjectedTensorProperties[Name_,inds___?DownIndexQ,h_?InducedMetricQ,Properties_List,Spacetimes_List]:=Catch@Module[{prot,Lengthindices},
 
 With[{
 
@@ -1097,8 +1097,19 @@ Throw[Print["** Warning: The second label-index has to be a positive integer."]]
 (* For pure perturbations (i.e. for tensors without background values), we have: *)
 If[Not[BackgroundBool]&&PerturbedBool,
 
-Name[LI[0],LI[q_?((IntegerQ[#]&&#>=0)&)],indices___?AIndexQ]:=0
-/;(Length[{indices}]===Length[{inds}])
+(* This is the 0.4.0 version way to do it. We define a delayed 0 value for the background*)
+(* HOwever this is problematic when we want to perturb. Because then when we perturbe this quantity*)
+(* we write Perturbed[quantity] but Mathematica will read Perturbed[0], and so this leads to 0.*)
+(* Instead we should append this to a list of rules, that should be applied in SplitPerturbations *)
+(* The easiest way is to define a set of global rules and to append a new rule each time there is a tensor vanishing on the background *)
+	
+(*Name[LI[0],LI[q_?((IntegerQ[#]&&#\[GreaterEqual]0)&)],indices___?AIndexQ]:=0
+/;(Length[{indices}]===Length[{inds}]);*)
+
+(* This is what is implemented below:*)
+Lengthindices=Length[{inds}];
+$RulesVanishingBackgroundFields[h]=Append[$RulesVanishingBackgroundFields[h],Name[LI[0],LI[q_?((IntegerQ[#]&&#>=0)&)],indices___?AIndexQ]:>0
+/;(Length[{indices}]===Lengthindices) ];
 
 ];
 
@@ -1484,8 +1495,12 @@ Name/:Name[LI[p_?((IntegerQ[#]&&#>=1)&)],LI[q_],indices___]:=0
 
 (* For perturbations (i.e. for tensors without background values), we have: *)
 If[Not[BackgroundBool]&&PerturbedBool,
-Name[LI[0],LI[q_?((IntegerQ[#]&&#>=0)&)],indices___?AIndexQ]:=0];
 
+(* Again we do not Set it to 0 but rather add a rule which is used in SplitPerturbations*)
+(* So when we perturbed a quantity this avoids to do Perturbed[0]. *)
+(*Name[LI[0],LI[q_?((IntegerQ[#]&&#\[GreaterEqual]0)&)],indices___?AIndexQ]:=0*)
+$RulesVanishingBackgroundFields[h]=Append[$RulesVanishingBackgroundFields[h],Name[LI[0],LI[q_?((IntegerQ[#]&&#>=0)&)],indices___?AIndexQ]:>0];
+];
 
 DefProjectedTensorQ[Name]^=True;
 
@@ -1755,6 +1770,8 @@ h1[a_,b_]cd[c_]@cd[-a_][expr1_]:>cd[c]@cd[b][expr1],
 h1[b_,-a_]cd[c_]@cd[a_][expr1_]:>cd[c]@cd[b][expr1],
 h1[b_,a_]cd[c_]@cd[-a_][expr1_]:>cd[c]@cd[b][expr1]};
 
+$RulesVanishingBackgroundFields[h1_]:={};
+
 (** All of this is now included in xAct 1.0.5 so we comment these lines **)
 (*cd[i1_][x_ y_]=.;
 cd[_?GIndexQ][expr_]=.;*)
@@ -1925,12 +1942,28 @@ Unprotect[LieD];
 (* A revoir... This is to commute Lie and induced derivative when the indices are up. Basically it just ensure that indices should be put down.*)
 
 (* The code below was reported not to work when there was a contraction of indices*)
-(* this is because we were looking only at free and up indices. Instead we could just look at Up indices but necessarily free*)
 (* Thank to Enrico Pajer for finding this.*)
 
-(*LieD[u[ind1_]][cd[ind2_][expr1_]]:=LieD[u[ind1]][IndicesDown[cd[ind2][expr1] ] ]/;Length[IndicesOf[Free,Up][cd[ind2][expr1]]]=!=0&&OrthogonalToVectorQ[u][expr1]&&Abs[u[ind1]u[-ind1]]===1;*)
+(* This was the first patch but it did not work*)
+(*LieD[u[ind1_]][cd[ind2_][expr1_]]:=LieD[u[ind1]][IndicesDown[cd[ind2][expr1] ] ]/;Length[IndicesOf[AIndex,Up][cd[ind2][expr1]]]=!=0&&OrthogonalToVectorQ[u][expr1]&&Abs[u[ind1]u[-ind1]]===1;*)
 
-LieD[u[ind1_]][cd[ind2_][expr1_]]:=LieD[u[ind1]][IndicesDown[cd[ind2][expr1] ] ]/;Length[IndicesOf[AIndex,Up][cd[ind2][expr1]]]=!=0&&OrthogonalToVectorQ[u][expr1]&&Abs[u[ind1]u[-ind1]]===1;
+(* Instead we define a new rule for this very special case of a Laplacian...*)
+(* This sound like a stupid pathc rather than something deeply thought*)
+(* We basically introduce the metric by hand in order to lower the up index in the Laplacian. Then it goes through the Lie Derivative*)
+(*  So we treat this special case by hand.*)
+
+LieD[u[ind1_]][cd[ind2_][cd[-ind2_][expr1_]]]:=Module[{dum},dum=DummyIn[Tangent[Manifold]];
+ContractMetric[LieD[u[ind1]][g[dum,ind2]]cd[-dum][cd[-ind2][expr1]]
++g[dum,ind2]LieD[u[ind1]][cd[-dum][cd[-ind2][expr1]]]]
+];
+
+LieD[u[ind1_]][cd[-ind2_][cd[ind2_][expr1_]]]:=Module[{dum},dum=DummyIn[Tangent[Manifold]];
+ContractMetric[LieD[u[ind1]][g[dum,ind2]]cd[-dum][cd[-ind2][expr1]]
++g[dum,ind2]LieD[u[ind1]][cd[-dum][cd[-ind2][expr1]]]]
+];
+
+LieD[u[ind1_]][cd[ind2_][expr1_]]:=LieD[u[ind1]][IndicesDown[cd[ind2][expr1] ] ]/;Length[IndicesOf[Free,Up][cd[ind2][expr1]]]=!=0&&OrthogonalToVectorQ[u][expr1]&&Abs[u[ind1]u[-ind1]]===1;
+
 
 LieD[u[ind1_]][cd[ind2_?DownIndexQ][expr1_]]:=Module[{dum},dum=DummyIn[Tangent[Manifold]];
 With[{frees=FindFreeIndices[expr1]},
@@ -2818,7 +2851,7 @@ RulesCovDs
 
 ProjectionAndBackgroundRuleQ[rule_,h_?InducedMetricQ,n_]:=(PerturbationOrder[RemovePatterns[First@rule]]===0)&&(Projector[h][Last@rule]===0||OrthogonalToVectorQ[n][Last@rule]);
 
-SplitPerturbations[expr_,ListPairs_List,h_?InducedMetricQ]:=Module[{res,restemp,resfinal,restemp2,res0,res1,res2,res3,res4,res4bis,res6bis,res6ter,res6quater,res4ter,res4quater,res5,res6,res7,res8,counter,rules,rulesprojectedandbackground,$Rulecdh},
+SplitPerturbations[expr_,ListPairs_List,h_?InducedMetricQ]:=Module[{res,restemp,resfinal,restemp2,res0,res1,res2,res3,res4,res4bis,res6bis,res6ter,res6quater,res4ter,res4quater,res5,res6,res7,res8,counter,rules,rulesprojectedandbackground(*,$Rulecdh*)},
 With[{g=First@InducedFrom@h,u=Last@InducedFrom@h},
 With[{CD=CovDOfMetric[g],cd=CovDOfMetric[h]},
 
@@ -2831,7 +2864,7 @@ rules=Flatten@(RulesCovDsOfTensor[expr,#,rulesprojectedandbackground,h]&/@ListPa
 
 
 res=AbsoluteTiming[
-res0=FullToInducedDerivativeAndCDDown[org[(expr//ProjectorToMetric//GaussCodazzi[#,h]&)/.Projector[h]->ProjectWith[h]],CD,cd]//ProjectorToMetric;
+res0=FullToInducedDerivativeAndCDDown[org[((expr/.$RulesVanishingBackgroundFields[h])//ProjectorToMetric//GaussCodazzi[#,h]&)/.Projector[h]->ProjectWith[h]],CD,cd]//ProjectorToMetric;
 (*If[$DebugInfoQ,Print["Stage 0  ", res0]];*)
 
 res1 =ToCanonical[(res0/.rules)/.ih_?InertHeadQ[ex_]:>ih[ToCanonical[ex]],UseMetricOnVBundle->None];
@@ -2986,13 +3019,16 @@ If[Sort[ListIndsToContract]=!=frees,Throw@Message[xPanding::error, "List of indi
 If[Length[Select[proj,And[#=!=u,#=!=h,#=!="Space",#=!="Time"]&]]!=0,Throw@Message[ExtractComponents::invalidprojector,proj]];
 
 (* Then it performs the contraction according to what is written in proj___*)
+(* NOte that we also apply /.$RulesVanishingBackgroundFields[h]. In principle this is unnecessary because the expression should have beend computed with SplitPerturbations, so all quantities which vanish on the background are already removed. Just ine case we perform this extra list of replacements, in case the user had prepared the expression in a different manner.*)
 PostProcess[h][NoScalar@org@Module[{dummy},
-Fold[(dummy=Function[{ind},If[UpIndexQ[ind],UpIndex,DownIndex][DummyIn[VBundleOfIndex[ind]]]][#2[[1]]];Switch[#2[[2]],h,h[-dummy,#2[[1]]],"Space",h[-dummy,#2[[1]]],u,If[UpIndexQ[dummy],-1*If[$ConformalTime,1,a[h][]],1*If[$ConformalTime,1,1/a[h][]]]*u[-dummy],"Time",If[UpIndexQ[dummy],-1*If[$ConformalTime,1,a[h][]],1*If[$ConformalTime,1,1/a[h][]]]*u[-dummy]]ReplaceIndex[#1,#2[[1]]->dummy])&,expr,Transpose[{ListIndsToContract,proj}]]]]]
+Fold[(dummy=Function[{ind},If[UpIndexQ[ind],UpIndex,DownIndex][DummyIn[VBundleOfIndex[ind]]]][#2[[1]]];Switch[#2[[2]],h,h[-dummy,#2[[1]]],"Space",h[-dummy,#2[[1]]],u,If[UpIndexQ[dummy],-1*If[$ConformalTime,1,a[h][]],1*If[$ConformalTime,1,1/a[h][]]]*u[-dummy],"Time",If[UpIndexQ[dummy],-1*If[$ConformalTime,1,a[h][]],1*If[$ConformalTime,1,1/a[h][]]]*u[-dummy]]ReplaceIndex[#1,#2[[1]]->dummy])&,(expr/.$RulesVanishingBackgroundFields[h]),Transpose[{ListIndsToContract,proj}]]]]]
 
 ExtractComponents[expr_,h_?InducedMetricQ,proj_List]:=With[{frees=List@@FindFreeIndices[expr]},ExtractComponents[expr,h,proj,frees]]
 
 ExtractComponents[expr_,h_?InducedMetricQ]:=VisualizeTensor[expr,h](*expr*)/;Length@IndicesOf[Free][expr]===2||Length@IndicesOf[Free][expr]===1
-ExtractComponents[expr_,h_?InducedMetricQ]:=expr/;Length@IndicesOf[Free][expr]>2||Length@IndicesOf[Free][expr]===0
+
+(*Even when there is nothing to do, we remove all quantities which should cancel on the background. Just in case the expression provided was not obtained from SplitPerturbations, where such cancellation have been made*)
+ExtractComponents[expr_,h_?InducedMetricQ]:=(expr/.$RulesVanishingBackgroundFields[h])/;Length@IndicesOf[Free][expr]>2||Length@IndicesOf[Free][expr]===0
 
 SetNumberOfArguments[ExtractComponents,{2,4}];
 Protect[ExtractComponents];

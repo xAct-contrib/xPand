@@ -13,4 +13,6 @@
 0.4.0: Version which matches the publication
        Many names have been changes, but the core of the algo is left unchanged.
        Conformal rules for determinant modified to take into account the patch of xTensor.
+
+0.4.1: Version 0.4.1 incorperates bug fixes. The degeneracy in formarting of the fluid variable variables when there is more than one fluid was fixed, we thank Enrico Pajer for reporting this bug. The bug associated with the commutation relation between the conformal time and spatial derivatives when there are dummy indices was also fixed.
  

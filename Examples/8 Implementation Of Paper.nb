@@ -15,6 +15,43 @@ Cell[BoxData["\<\"------------------------------------------------------------\
 
 Cell[BoxData[
  InterpretationBox[
+  RowBox[{"\<\"Package xAct`xPerm`  version \"\>", 
+   "\[InvisibleSpace]", "\<\"1.2.0\"\>", "\[InvisibleSpace]", "\<\", \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"2013", ",", "1", ",", "27"}], "}"}]}],
+  SequenceForm["Package xAct`xPerm`  version ", "1.2.0", ", ", {2013, 1, 27}],
+  
+  Editable->False]], "Print"],
+
+Cell[BoxData["\<\"CopyRight (C) 2003-2013, Jose M. Martin-Garcia, under the \
+General Public License.\"\>"], "Print"],
+
+Cell[BoxData["\<\"Connecting to external mac executable...\"\>"], "Print"],
+
+Cell[BoxData["\<\"Connection established.\"\>"], "Print"],
+
+Cell[BoxData["\<\"------------------------------------------------------------\
+\"\>"], "Print"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Package xAct`xTensor`  version \"\>", 
+   "\[InvisibleSpace]", "\<\"1.0.5\"\>", "\[InvisibleSpace]", "\<\", \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"2013", ",", "3", ",", "3"}], "}"}]}],
+  SequenceForm["Package xAct`xTensor`  version ", "1.0.5", ", ", {2013, 3, 3}],
+  Editable->False]], "Print"],
+
+Cell[BoxData["\<\"CopyRight (C) 2002-2013, Jose M. Martin-Garcia, under the \
+General Public License.\"\>"], "Print"],
+
+Cell[BoxData["\<\"------------------------------------------------------------\
+\"\>"], "Print"],
+
+Cell[BoxData[
+ InterpretationBox[
   RowBox[{"\<\"Package xAct`xPert`  version \"\>", 
    "\[InvisibleSpace]", "\<\"1.0.3\"\>", "\[InvisibleSpace]", "\<\", \"\>", 
    "\[InvisibleSpace]", 
@@ -41,6 +78,16 @@ Cell[BoxData["\<\"------------------------------------------------------------\
 
 Cell[BoxData[
  InterpretationBox[
+  RowBox[{"\<\"** Variable \"\>", "\[InvisibleSpace]", "$PrePrint", 
+   "\[InvisibleSpace]", "\<\" assigned value \"\>", "\[InvisibleSpace]", 
+   "ScreenDollarIndices"}],
+  SequenceForm[
+  "** Variable ", $PrePrint, " assigned value ", 
+   xAct`xTensor`ScreenDollarIndices],
+  Editable->False]], "Print"],
+
+Cell[BoxData[
+ InterpretationBox[
   RowBox[{"\<\"** Variable \"\>", "\[InvisibleSpace]", "$CovDFormat", 
    "\[InvisibleSpace]", "\<\" changed from \"\>", 
    "\[InvisibleSpace]", "\<\"Prefix\"\>", "\[InvisibleSpace]", "\<\" to \"\>",
@@ -48,6 +95,39 @@ Cell[BoxData[
   SequenceForm[
   "** Variable ", xAct`xTensor`$CovDFormat, " changed from ", "Prefix", 
    " to ", "Postfix"],
+  Editable->False]], "Print"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"** Option \"\>", "\[InvisibleSpace]", "AllowUpperDerivatives", 
+   "\[InvisibleSpace]", "\<\" of \"\>", "\[InvisibleSpace]", "ContractMetric",
+    "\[InvisibleSpace]", "\<\" changed from \"\>", "\[InvisibleSpace]", 
+   "False", "\[InvisibleSpace]", "\<\" to \"\>", "\[InvisibleSpace]", "True"}],
+  SequenceForm[
+  "** Option ", xAct`xTensor`AllowUpperDerivatives, " of ", 
+   xAct`xTensor`ContractMetric, " changed from ", False, " to ", True],
+  Editable->False]], "Print"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"** Option \"\>", "\[InvisibleSpace]", "MetricOn", 
+   "\[InvisibleSpace]", "\<\" of \"\>", "\[InvisibleSpace]", "MakeRule", 
+   "\[InvisibleSpace]", "\<\" changed from \"\>", "\[InvisibleSpace]", "None",
+    "\[InvisibleSpace]", "\<\" to \"\>", "\[InvisibleSpace]", "All"}],
+  SequenceForm[
+  "** Option ", xAct`xTensor`MetricOn, " of ", xAct`xTensor`MakeRule, 
+   " changed from ", None, " to ", All],
+  Editable->False]], "Print"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"** Option \"\>", "\[InvisibleSpace]", "ContractMetrics", 
+   "\[InvisibleSpace]", "\<\" of \"\>", "\[InvisibleSpace]", "MakeRule", 
+   "\[InvisibleSpace]", "\<\" changed from \"\>", "\[InvisibleSpace]", 
+   "False", "\[InvisibleSpace]", "\<\" to \"\>", "\[InvisibleSpace]", "True"}],
+  SequenceForm[
+  "** Option ", xAct`xTensor`ContractMetrics, " of ", xAct`xTensor`MakeRule, 
+   " changed from ", False, " to ", True],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -152,7 +232,7 @@ Cell[BoxData[
  InterpretationBox[
   RowBox[{"\<\"** \"\>", "\[InvisibleSpace]", "DefTensor", 
    "\[InvisibleSpace]", "\<\": Defining \"\>", 
-   "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
+   "\[InvisibleSpace]", "\<\"tetrametric \"\>", "\[InvisibleSpace]", 
    RowBox[{"Tetrag", "[", 
     RowBox[{
      RowBox[{"-", "\[Alpha]"}], ",", 
@@ -160,7 +240,7 @@ Cell[BoxData[
      RowBox[{"-", "\[Lambda]"}], ",", 
      RowBox[{"-", "\[Mu]"}]}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
    "\[InvisibleSpace]", "\<\"\"\>"}],
-  SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
+  SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tetrametric ", 
    $CellContext`Tetrag[-$CellContext`\[Alpha], -$CellContext`\[Beta], \
 -$CellContext`\[Lambda], -$CellContext`\[Mu]], ". ", ""],
   Editable->False]], "Print"],
@@ -169,7 +249,7 @@ Cell[BoxData[
  InterpretationBox[
   RowBox[{"\<\"** \"\>", "\[InvisibleSpace]", "DefTensor", 
    "\[InvisibleSpace]", "\<\": Defining \"\>", 
-   "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
+   "\[InvisibleSpace]", "\<\"tetrametric \"\>", "\[InvisibleSpace]", 
    RowBox[{"Tetrag\[Dagger]", "[", 
     RowBox[{
      RowBox[{"-", "\[Alpha]"}], ",", 
@@ -177,7 +257,7 @@ Cell[BoxData[
      RowBox[{"-", "\[Lambda]"}], ",", 
      RowBox[{"-", "\[Mu]"}]}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
    "\[InvisibleSpace]", "\<\"\"\>"}],
-  SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
+  SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tetrametric ", 
    $CellContext`Tetrag\[Dagger][-$CellContext`\[Alpha], \
 -$CellContext`\[Beta], -$CellContext`\[Lambda], -$CellContext`\[Mu]], ". ", 
    ""],
@@ -457,7 +537,7 @@ Cell[BoxData[
                Offset[0.034999999999999996`]}, 
               Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                Offset[0.]}}, "RowsIndexed" -> {}}],
-         FontSize->9]}
+         FontSize->Rational[39, 4]]}
       },
       GridBoxAlignment->{
        "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}}, 
@@ -488,7 +568,7 @@ Cell[BoxData[
                Offset[0.034999999999999996`]}, 
               Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                Offset[0.]}}, "RowsIndexed" -> {}}],
-         FontSize->9]}
+         FontSize->Rational[39, 4]]}
       },
       GridBoxAlignment->{
        "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}}, 
@@ -519,39 +599,44 @@ Cell[BoxData[
      AutoSpacing->False],
     xAct`xPand`\[Epsilon],
     Editable->False], " ", 
-   InterpretationBox[
-    StyleBox[GridBox[{
-       {"dg", 
-        StyleBox[GridBox[{
-           {"1", "\[Alpha]", "\[Beta]", "  ", "  "},
-           {" ", " ", " ", 
-            RowBox[{";", "\[Alpha]"}], 
-            RowBox[{";", "\[Beta]"}]}
-          },
-          GridBoxSpacings->{"Columns" -> {
-              Offset[0.], {
-               Offset[0.034999999999999996`]}, 
-              Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
-               Offset[0.]}}, "RowsIndexed" -> {}}],
-         FontSize->9]}
-      },
-      GridBoxAlignment->{
-       "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}}, 
-        "RowsIndexed" -> {}},
-      GridBoxSpacings->{"Columns" -> {
-          Offset[0.27999999999999997`], {
-           Offset[0.034999999999999996`]}, 
-          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
-          Offset[0.2], {
-           Offset[0.4]}, 
-          Offset[0.2]}, "RowsIndexed" -> {}}],
-     ShowAutoStyles->False,
-     AutoSpacing->False],
-    $CellContext`CD[-$CellContext`\[Beta]][
-     $CellContext`CD[-$CellContext`\[Alpha]][
-      $CellContext`dg[
-       xAct`xTensor`LI[1], $CellContext`\[Alpha], $CellContext`\[Beta]]]],
-    Editable->False]}], "-", 
+   RowBox[{"(", 
+    InterpretationBox[
+     StyleBox[
+      RowBox[{
+       SubscriptBox[
+        OverscriptBox["\[Del]", "_"], "\[Beta]"], 
+       SubscriptBox[
+        OverscriptBox["\[Del]", "_"], "\[Alpha]"], GridBox[{
+         {"dg", 
+          StyleBox[GridBox[{
+             {"1", "\[Alpha]", "\[Beta]"},
+             {" ", " ", " "}
+            },
+            GridBoxSpacings->{"Columns" -> {
+                Offset[0.], {
+                 Offset[0.034999999999999996`]}, 
+                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
+                 Offset[0.]}}, "RowsIndexed" -> {}}],
+           FontSize->Rational[39, 4]]}
+        },
+        GridBoxAlignment->{
+         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+          "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+        GridBoxSpacings->{"Columns" -> {
+            Offset[0.27999999999999997`], {
+             Offset[0.034999999999999996`]}, 
+            Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+          "Rows" -> {
+            Offset[0.2], {
+             Offset[0.4]}, 
+            Offset[0.2]}, "RowsIndexed" -> {}}]}],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`CD[-$CellContext`\[Beta]][
+      $CellContext`CD[-$CellContext`\[Alpha]][
+       $CellContext`dg[
+        xAct`xTensor`LI[1], $CellContext`\[Alpha], $CellContext`\[Beta]]]],
+     Editable->False], ")"}]}], "-", 
   RowBox[{
    InterpretationBox[
     StyleBox["\[Epsilon]",
@@ -559,39 +644,44 @@ Cell[BoxData[
      AutoSpacing->False],
     xAct`xPand`\[Epsilon],
     Editable->False], " ", 
-   InterpretationBox[
-    StyleBox[GridBox[{
-       {"dg", 
-        StyleBox[GridBox[{
-           {"1", "\[Alpha]", " ", 
-            RowBox[{";", "\[Beta]"}], "  "},
-           {" ", " ", "\[Alpha]", "  ", 
-            RowBox[{";", "\[Beta]"}]}
-          },
-          GridBoxSpacings->{"Columns" -> {
-              Offset[0.], {
-               Offset[0.034999999999999996`]}, 
-              Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
-               Offset[0.]}}, "RowsIndexed" -> {}}],
-         FontSize->9]}
-      },
-      GridBoxAlignment->{
-       "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}}, 
-        "RowsIndexed" -> {}},
-      GridBoxSpacings->{"Columns" -> {
-          Offset[0.27999999999999997`], {
-           Offset[0.034999999999999996`]}, 
-          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
-          Offset[0.2], {
-           Offset[0.4]}, 
-          Offset[0.2]}, "RowsIndexed" -> {}}],
-     ShowAutoStyles->False,
-     AutoSpacing->False],
-    $CellContext`CD[-$CellContext`\[Beta]][
-     $CellContext`CD[$CellContext`\[Beta]][
-      $CellContext`dg[
-       xAct`xTensor`LI[1], $CellContext`\[Alpha], -$CellContext`\[Alpha]]]],
-    Editable->False]}]}]], "Output"]
+   RowBox[{"(", 
+    InterpretationBox[
+     StyleBox[
+      RowBox[{
+       SubscriptBox[
+        OverscriptBox["\[Del]", "_"], "\[Beta]"], 
+       SuperscriptBox[
+        OverscriptBox["\[Del]", "_"], "\[Beta]"], GridBox[{
+         {"dg", 
+          StyleBox[GridBox[{
+             {"1", "\[Alpha]", " "},
+             {" ", " ", "\[Alpha]"}
+            },
+            GridBoxSpacings->{"Columns" -> {
+                Offset[0.], {
+                 Offset[0.034999999999999996`]}, 
+                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
+                 Offset[0.]}}, "RowsIndexed" -> {}}],
+           FontSize->Rational[39, 4]]}
+        },
+        GridBoxAlignment->{
+         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+          "Rows" -> {{Center}}, "RowsIndexed" -> {}},
+        GridBoxSpacings->{"Columns" -> {
+            Offset[0.27999999999999997`], {
+             Offset[0.034999999999999996`]}, 
+            Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+          "Rows" -> {
+            Offset[0.2], {
+             Offset[0.4]}, 
+            Offset[0.2]}, "RowsIndexed" -> {}}]}],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`CD[-$CellContext`\[Beta]][
+      $CellContext`CD[$CellContext`\[Beta]][
+       $CellContext`dg[
+        xAct`xTensor`LI[1], $CellContext`\[Alpha], -$CellContext`\[Alpha]]]],
+     Editable->False], ")"}]}]}]], "Output"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -606,12 +696,133 @@ Cell[BoxData["\<\"------------------------------------------------------------\
 
 Cell[BoxData[
  InterpretationBox[
-  RowBox[{"\<\"Package xAct`xPand`  version \"\>", 
-   "\[InvisibleSpace]", "\<\"0.4.0\"\>", "\[InvisibleSpace]", "\<\", \"\>", 
+  RowBox[{"\<\"Package xAct`xPerm`  version \"\>", 
+   "\[InvisibleSpace]", "\<\"1.2.0\"\>", "\[InvisibleSpace]", "\<\", \"\>", 
    "\[InvisibleSpace]", 
    RowBox[{"{", 
-    RowBox[{"2013", ",", "2", ",", "8"}], "}"}]}],
-  SequenceForm["Package xAct`xPand`  version ", "0.4.0", ", ", {2013, 2, 8}],
+    RowBox[{"2013", ",", "1", ",", "27"}], "}"}]}],
+  SequenceForm["Package xAct`xPerm`  version ", "1.2.0", ", ", {2013, 1, 27}],
+  
+  Editable->False]], "Print"],
+
+Cell[BoxData["\<\"CopyRight (C) 2003-2013, Jose M. Martin-Garcia, under the \
+General Public License.\"\>"], "Print"],
+
+Cell[BoxData["\<\"Connecting to external mac executable...\"\>"], "Print"],
+
+Cell[BoxData["\<\"Connection established.\"\>"], "Print"],
+
+Cell[BoxData["\<\"------------------------------------------------------------\
+\"\>"], "Print"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Package xAct`xTensor`  version \"\>", 
+   "\[InvisibleSpace]", "\<\"1.0.5\"\>", "\[InvisibleSpace]", "\<\", \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"2013", ",", "3", ",", "3"}], "}"}]}],
+  SequenceForm["Package xAct`xTensor`  version ", "1.0.5", ", ", {2013, 3, 3}],
+  Editable->False]], "Print"],
+
+Cell[BoxData["\<\"CopyRight (C) 2002-2013, Jose M. Martin-Garcia, under the \
+General Public License.\"\>"], "Print"],
+
+Cell[BoxData["\<\"------------------------------------------------------------\
+\"\>"], "Print"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Package xAct`xPert`  version \"\>", 
+   "\[InvisibleSpace]", "\<\"1.0.3\"\>", "\[InvisibleSpace]", "\<\", \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"2013", ",", "1", ",", "27"}], "}"}]}],
+  SequenceForm["Package xAct`xPert`  version ", "1.0.3", ", ", {2013, 1, 27}],
+  
+  Editable->False]], "Print"],
+
+Cell[BoxData["\<\"CopyRight (C) 2005-2013, David Brizuela, Jose M. \
+Martin-Garcia and Guillermo A. Mena Marugan, under the General Public \
+License.\"\>"], "Print"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"** Variable \"\>", "\[InvisibleSpace]", "$PrePrint", 
+   "\[InvisibleSpace]", "\<\" assigned value \"\>", "\[InvisibleSpace]", 
+   "ScreenDollarIndices"}],
+  SequenceForm[
+  "** Variable ", $PrePrint, " assigned value ", 
+   xAct`xTensor`ScreenDollarIndices],
+  Editable->False]], "Print"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"** Variable \"\>", "\[InvisibleSpace]", "$CovDFormat", 
+   "\[InvisibleSpace]", "\<\" changed from \"\>", 
+   "\[InvisibleSpace]", "\<\"Prefix\"\>", "\[InvisibleSpace]", "\<\" to \"\>",
+    "\[InvisibleSpace]", "\<\"Postfix\"\>"}],
+  SequenceForm[
+  "** Variable ", xAct`xTensor`$CovDFormat, " changed from ", "Prefix", 
+   " to ", "Postfix"],
+  Editable->False]], "Print"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"** Option \"\>", "\[InvisibleSpace]", "AllowUpperDerivatives", 
+   "\[InvisibleSpace]", "\<\" of \"\>", "\[InvisibleSpace]", "ContractMetric",
+    "\[InvisibleSpace]", "\<\" changed from \"\>", "\[InvisibleSpace]", 
+   "False", "\[InvisibleSpace]", "\<\" to \"\>", "\[InvisibleSpace]", "True"}],
+  SequenceForm[
+  "** Option ", xAct`xTensor`AllowUpperDerivatives, " of ", 
+   xAct`xTensor`ContractMetric, " changed from ", False, " to ", True],
+  Editable->False]], "Print"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"** Option \"\>", "\[InvisibleSpace]", "MetricOn", 
+   "\[InvisibleSpace]", "\<\" of \"\>", "\[InvisibleSpace]", "MakeRule", 
+   "\[InvisibleSpace]", "\<\" changed from \"\>", "\[InvisibleSpace]", "None",
+    "\[InvisibleSpace]", "\<\" to \"\>", "\[InvisibleSpace]", "All"}],
+  SequenceForm[
+  "** Option ", xAct`xTensor`MetricOn, " of ", xAct`xTensor`MakeRule, 
+   " changed from ", None, " to ", All],
+  Editable->False]], "Print"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"** Option \"\>", "\[InvisibleSpace]", "ContractMetrics", 
+   "\[InvisibleSpace]", "\<\" of \"\>", "\[InvisibleSpace]", "MakeRule", 
+   "\[InvisibleSpace]", "\<\" changed from \"\>", "\[InvisibleSpace]", 
+   "False", "\[InvisibleSpace]", "\<\" to \"\>", "\[InvisibleSpace]", "True"}],
+  SequenceForm[
+  "** Option ", xAct`xTensor`ContractMetrics, " of ", xAct`xTensor`MakeRule, 
+   " changed from ", False, " to ", True],
+  Editable->False]], "Print"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"** \"\>", "\[InvisibleSpace]", "DefInertHead", 
+   "\[InvisibleSpace]", "\<\": Defining \"\>", 
+   "\[InvisibleSpace]", "\<\"inert head \"\>", "\[InvisibleSpace]", 
+   "Perturbation", "\[InvisibleSpace]", "\<\". \"\>", 
+   "\[InvisibleSpace]", "\<\"\"\>"}],
+  SequenceForm[
+  "** ", xAct`xTensor`DefInertHead, ": Defining ", "inert head ", 
+   xAct`xPert`Perturbation, ". ", ""],
+  Editable->False]], "Print"],
+
+Cell[BoxData["\<\"------------------------------------------------------------\
+\"\>"], "Print"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Package xAct`xPand`  version \"\>", 
+   "\[InvisibleSpace]", "\<\"0.4.1\"\>", "\[InvisibleSpace]", "\<\", \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"2013", ",", "9", ",", "5"}], "}"}]}],
+  SequenceForm["Package xAct`xPand`  version ", "0.4.1", ", ", {2013, 9, 5}],
   Editable->False]], "Print"],
 
 Cell[BoxData["\<\"CopyRight (C) 2012-2013, Cyril Pitrou, Xavier Roy and \
@@ -627,68 +838,7 @@ details.\"\>"], "Print"],
 
 Cell[BoxData["\<\"------------------------------------------------------------\
 \"\>"], "Print"]
-}, Open  ]],
-
-Cell[BoxData[
- RowBox[{
-  StyleBox[
-   RowBox[{"ValidateSymbol", "::", "used"}], "MessageName"], ":", 
-  " ", "\<\"Symbol \[NoBreak]\\!\\(\\\"ProtectMyScalar\\\"\\)\[NoBreak] is \
-already used \[NoBreak]\\!\\(\\\"as an inert head\\\"\\)\[NoBreak].\"\>"}]], \
-"Message", "MSG"],
-
-Cell[BoxData[
- RowBox[{
-  StyleBox[
-   RowBox[{"Set", "::", "write"}], "MessageName"], ":", 
-  " ", "\<\"Tag \[NoBreak]\\!\\(DefProjectedTensor\\)\[NoBreak] in \[NoBreak]\
-\\!\\(Options[DefProjectedTensor]\\)\[NoBreak] is Protected. \
-\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
-ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/General/write\\\", \
-ButtonNote -> \\\"Set::write\\\"]\\)\"\>"}]], "Message", "MSG"],
-
-Cell[BoxData[
- RowBox[{
-  StyleBox[
-   RowBox[{"SetDelayed", "::", "write"}], "MessageName"], ":", 
-  " ", "\<\"Tag \[NoBreak]\\!\\(DefProjectedTensor\\)\[NoBreak] in \[NoBreak]\
-\\!\\(DefProjectedTensor[\\(\\(\\(\\(Name_[inds___]\\)\\), \\(\\(h_ ? \
-InducedMetricQ\\)\\), \\(\\(options___ ? OptionQ\\)\\)\\)\\)]\\)\[NoBreak] is \
-Protected. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\
-\\\", ButtonFrame->None, \
-ButtonData:>\\\"paclet:ref/message/General/write\\\", ButtonNote -> \
-\\\"SetDelayed::write\\\"]\\)\"\>"}]], "Message", "MSG"],
-
-Cell[BoxData[
- RowBox[{
-  StyleBox[
-   RowBox[{"SetDelayed", "::", "write"}], "MessageName"], ":", 
-  " ", "\<\"Tag \[NoBreak]\\!\\(DefProjectedTensor\\)\[NoBreak] in \[NoBreak]\
-\\!\\(DefProjectedTensor[]\\)\[NoBreak] is Protected. \\!\\(\\*ButtonBox[\\\"\
-\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
-ButtonData:>\\\"paclet:ref/message/General/write\\\", ButtonNote -> \
-\\\"SetDelayed::write\\\"]\\)\"\>"}]], "Message", "MSG"],
-
-Cell[BoxData[
- RowBox[{
-  StyleBox[
-   RowBox[{"SetDelayed", "::", "write"}], "MessageName"], ":", 
-  " ", "\<\"Tag \[NoBreak]\\!\\(DefProjectedTensor\\)\[NoBreak] in \[NoBreak]\
-\\!\\(DefProjectedTensor[_]\\)\[NoBreak] is Protected. \
-\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
-ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/General/write\\\", \
-ButtonNote -> \\\"SetDelayed::write\\\"]\\)\"\>"}]], "Message", "MSG"],
-
-Cell[BoxData[
- RowBox[{
-  StyleBox[
-   RowBox[{"General", "::", "stop"}], "MessageName"], ":", 
-  " ", "\<\"Further output of \[NoBreak]\\!\\(\\*StyleBox[\\(SetDelayed :: \
-write\\), \\\"MessageName\\\"]\\)\[NoBreak] will be suppressed during this \
-calculation. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
-ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
-ButtonData:>\\\"paclet:ref/message/General/stop\\\", ButtonNote -> \
-\\\"General::stop\\\"]\\)\"\>"}]], "Message", "MSG"]
+}, Open  ]]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -706,13 +856,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"a", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`n$1111", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$1111", "]"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`n$1793", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$1793", "]"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    xAct`xPand`a[
-    xAct`xTensor`LI[xAct`xPand`Private`n$1111], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$1111]], ". ", ""],
+    xAct`xTensor`LI[xAct`xPand`Private`n$1793], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$1793]], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -723,12 +873,12 @@ Cell[BoxData[
    "\[InvisibleSpace]", 
    RowBox[{"ga2", "[", 
     RowBox[{
-     RowBox[{"-", "\[Sigma]$1112"}], ",", 
-     RowBox[{"-", "\[Sigma]$1113"}]}], "]"}], 
+     RowBox[{"-", "\[Sigma]$1794"}], ",", 
+     RowBox[{"-", "\[Sigma]$1795"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm[
   "** ", xAct`xTensor`DefTensor, ": Defining ", "symmetric metric tensor ", 
-   $CellContext`ga2[-$CellContext`\[Sigma]$1112, -$CellContext`\[Sigma]$1113],
+   $CellContext`ga2[-$CellContext`\[Sigma]$1794, -$CellContext`\[Sigma]$1795],
     ". ", ""],
   Editable->False]], "Print"],
 
@@ -738,13 +888,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\": Defining \"\>", 
    "\[InvisibleSpace]", "\<\"inverse metric tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"Invga2", "[", 
-    RowBox[{"\[Sigma]$1112", ",", "\[Sigma]$1113"}], "]"}], 
+    RowBox[{"\[Sigma]$1794", ",", "\[Sigma]$1795"}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", 
    "\[InvisibleSpace]", "\<\"Metric is frozen!\"\>"}],
   SequenceForm[
   "** ", xAct`xTensor`DefTensor, ": Defining ", "inverse metric tensor ", 
-   $CellContext`Invga2[$CellContext`\[Sigma]$1112, \
-$CellContext`\[Sigma]$1113], ". ", "Metric is frozen!"],
+   $CellContext`Invga2[$CellContext`\[Sigma]$1794, \
+$CellContext`\[Sigma]$1795], ". ", "Metric is frozen!"],
   Editable->False]], "Print"],
 
 Cell[BoxData["\<\"** DefMetric: Don't know yet how to define epsilon for a \
@@ -757,11 +907,11 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"covariant derivative \"\>", "\[InvisibleSpace]", 
    
    RowBox[{"CDa2", "[", 
-    RowBox[{"-", "\[Sigma]$1112"}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
+    RowBox[{"-", "\[Sigma]$1794"}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
    "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm[
   "** ", xAct`xTensor`DefCovD, ": Defining ", "covariant derivative ", 
-   $CellContext`CDa2[-$CellContext`\[Sigma]$1112], ". ", ""],
+   $CellContext`CDa2[-$CellContext`\[Sigma]$1794], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -1010,7 +1160,7 @@ Cell[BoxData[
               Offset[0.034999999999999996`]}, 
              Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
               Offset[0.]}}, "RowsIndexed" -> {}}],
-        FontSize->9]}
+        FontSize->Rational[39, 4]]}
      },
      GridBoxAlignment->{
       "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}}, 
@@ -1041,7 +1191,7 @@ Cell[BoxData[
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -1070,7 +1220,7 @@ Cell[BoxData[
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -1162,7 +1312,7 @@ Cell[BoxData[
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -1191,7 +1341,7 @@ Cell[BoxData[
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -1283,7 +1433,7 @@ Cell[BoxData[
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -1375,7 +1525,7 @@ Cell[BoxData[
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -1467,7 +1617,7 @@ Cell[BoxData[
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -1541,7 +1691,7 @@ Cell[BoxData[
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -1616,7 +1766,7 @@ Cell[BoxData[
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -1709,7 +1859,7 @@ Cell[BoxData[
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -1802,7 +1952,7 @@ Cell[BoxData[
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -1877,7 +2027,7 @@ Cell[BoxData[
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -1990,7 +2140,7 @@ Cell[BoxData[
               Offset[0.034999999999999996`]}, 
              Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
               Offset[0.]}}, "RowsIndexed" -> {}}],
-        FontSize->9]}
+        FontSize->Rational[39, 4]]}
      },
      GridBoxAlignment->{
       "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}}, 
@@ -2030,7 +2180,7 @@ Cell[BoxData[
               Offset[0.034999999999999996`]}, 
              Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
               Offset[0.]}}, "RowsIndexed" -> {}}],
-        FontSize->9]}
+        FontSize->Rational[39, 4]]}
      },
      GridBoxAlignment->{
       "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}}, 
@@ -2147,7 +2297,7 @@ Cell[BoxData[
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -2179,7 +2329,7 @@ Cell[BoxData[
                   Offset[0.034999999999999996`]}, 
                  Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                   Offset[0.]}}, "RowsIndexed" -> {}}],
-            FontSize->9]}
+            FontSize->Rational[39, 4]]}
          },
          GridBoxAlignment->{
           "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
@@ -2232,7 +2382,7 @@ Cell[BoxData[
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -2260,7 +2410,7 @@ Cell[BoxData[
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -2338,10 +2488,10 @@ Cell[BoxData[
   RowBox[{"\<\"** \"\>", "\[InvisibleSpace]", "DefTensor", 
    "\[InvisibleSpace]", "\<\": Defining \"\>", 
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
-   RowBox[{"n", "[", "\[Sigma]$1901", "]"}], 
+   RowBox[{"n", "[", "\[Sigma]$3094", "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
-   $CellContext`n[$CellContext`\[Sigma]$1901], ". ", ""],
+   $CellContext`n[$CellContext`\[Sigma]$3094], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -2352,12 +2502,12 @@ Cell[BoxData[
    "\[InvisibleSpace]", 
    RowBox[{"h", "[", 
     RowBox[{
-     RowBox[{"-", "\[Sigma]$1901"}], ",", 
-     RowBox[{"-", "\[Sigma]$1902"}]}], "]"}], 
+     RowBox[{"-", "\[Sigma]$3094"}], ",", 
+     RowBox[{"-", "\[Sigma]$3095"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm[
   "** ", xAct`xTensor`DefTensor, ": Defining ", "symmetric metric tensor ", 
-   $CellContext`h[-$CellContext`\[Sigma]$1901, -$CellContext`\[Sigma]$1902], 
+   $CellContext`h[-$CellContext`\[Sigma]$3094, -$CellContext`\[Sigma]$3095], 
    ". ", ""],
   Editable->False]], "Print"],
 
@@ -2383,7 +2533,7 @@ Cell[BoxData[
  InterpretationBox[
   RowBox[{"\<\"** \"\>", "\[InvisibleSpace]", "DefTensor", 
    "\[InvisibleSpace]", "\<\": Defining \"\>", 
-   "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
+   "\[InvisibleSpace]", "\<\"tetrametric \"\>", "\[InvisibleSpace]", 
    RowBox[{"Tetrah", "[", 
     RowBox[{
      RowBox[{"-", "\[Alpha]"}], ",", 
@@ -2391,7 +2541,7 @@ Cell[BoxData[
      RowBox[{"-", "\[Lambda]"}], ",", 
      RowBox[{"-", "\[Mu]"}]}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
    "\[InvisibleSpace]", "\<\"\"\>"}],
-  SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
+  SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tetrametric ", 
    $CellContext`Tetrah[-$CellContext`\[Alpha], -$CellContext`\[Beta], \
 -$CellContext`\[Lambda], -$CellContext`\[Mu]], ". ", ""],
   Editable->False]], "Print"],
@@ -2400,7 +2550,7 @@ Cell[BoxData[
  InterpretationBox[
   RowBox[{"\<\"** \"\>", "\[InvisibleSpace]", "DefTensor", 
    "\[InvisibleSpace]", "\<\": Defining \"\>", 
-   "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
+   "\[InvisibleSpace]", "\<\"tetrametric \"\>", "\[InvisibleSpace]", 
    RowBox[{"Tetrah\[Dagger]", "[", 
     RowBox[{
      RowBox[{"-", "\[Alpha]"}], ",", 
@@ -2408,7 +2558,7 @@ Cell[BoxData[
      RowBox[{"-", "\[Lambda]"}], ",", 
      RowBox[{"-", "\[Mu]"}]}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
    "\[InvisibleSpace]", "\<\"\"\>"}],
-  SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
+  SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tetrametric ", 
    $CellContext`Tetrah\[Dagger][-$CellContext`\[Alpha], \
 -$CellContext`\[Beta], -$CellContext`\[Lambda], -$CellContext`\[Mu]], ". ", 
    ""],
@@ -2421,11 +2571,11 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"covariant derivative \"\>", "\[InvisibleSpace]", 
    
    RowBox[{"cd", "[", 
-    RowBox[{"-", "\[Sigma]$1901"}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
+    RowBox[{"-", "\[Sigma]$3094"}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
    "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm[
   "** ", xAct`xTensor`DefCovD, ": Defining ", "covariant derivative ", 
-   $CellContext`cd[-$CellContext`\[Sigma]$1901], ". ", ""],
+   $CellContext`cd[-$CellContext`\[Sigma]$3094], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -2728,13 +2878,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"ah", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$3169", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$3169", "]"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$4362", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$4362", "]"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`ah[
-    xAct`xTensor`LI[xAct`xPand`Private`p$3169], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$3169]], ". ", ""],
+    xAct`xTensor`LI[xAct`xPand`Private`p$4362], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$4362]], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -2744,13 +2894,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"Hh", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$3174", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$3174", "]"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$4367", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$4367", "]"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`Hh[
-    xAct`xTensor`LI[xAct`xPand`Private`p$3174], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$3174]], ". ", ""],
+    xAct`xTensor`LI[xAct`xPand`Private`p$4367], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$4367]], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -2761,13 +2911,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", 
    RowBox[{"gah2", "[", 
     RowBox[{
-     RowBox[{"-", "\[Sigma]$3180"}], ",", 
-     RowBox[{"-", "\[Sigma]$3181"}]}], "]"}], 
+     RowBox[{"-", "\[Sigma]$4373"}], ",", 
+     RowBox[{"-", "\[Sigma]$4374"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm[
   "** ", xAct`xTensor`DefTensor, ": Defining ", "symmetric metric tensor ", 
-   $CellContext`gah2[-$CellContext`\[Sigma]$3180, \
--$CellContext`\[Sigma]$3181], ". ", ""],
+   $CellContext`gah2[-$CellContext`\[Sigma]$4373, \
+-$CellContext`\[Sigma]$4374], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -2776,13 +2926,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\": Defining \"\>", 
    "\[InvisibleSpace]", "\<\"inverse metric tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"Invgah2", "[", 
-    RowBox[{"\[Sigma]$3180", ",", "\[Sigma]$3181"}], "]"}], 
+    RowBox[{"\[Sigma]$4373", ",", "\[Sigma]$4374"}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", 
    "\[InvisibleSpace]", "\<\"Metric is frozen!\"\>"}],
   SequenceForm[
   "** ", xAct`xTensor`DefTensor, ": Defining ", "inverse metric tensor ", 
-   $CellContext`Invgah2[$CellContext`\[Sigma]$3180, \
-$CellContext`\[Sigma]$3181], ". ", "Metric is frozen!"],
+   $CellContext`Invgah2[$CellContext`\[Sigma]$4373, \
+$CellContext`\[Sigma]$4374], ". ", "Metric is frozen!"],
   Editable->False]], "Print"],
 
 Cell[BoxData["\<\"** DefMetric: Don't know yet how to define epsilon for a \
@@ -2795,11 +2945,11 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"covariant derivative \"\>", "\[InvisibleSpace]", 
    
    RowBox[{"CDah2", "[", 
-    RowBox[{"-", "\[Sigma]$3180"}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
+    RowBox[{"-", "\[Sigma]$4373"}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
    "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm[
   "** ", xAct`xTensor`DefCovD, ": Defining ", "covariant derivative ", 
-   $CellContext`CDah2[-$CellContext`\[Sigma]$3180], ". ", ""],
+   $CellContext`CDah2[-$CellContext`\[Sigma]$4373], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -3035,13 +3185,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"Connectionh", "[", 
     RowBox[{
-     RowBox[{"-", "\[Sigma]$1901"}], ",", 
-     RowBox[{"-", "\[Sigma]$1902"}], ",", 
-     RowBox[{"-", "\[Sigma]$1903"}]}], "]"}], 
+     RowBox[{"-", "\[Sigma]$3094"}], ",", 
+     RowBox[{"-", "\[Sigma]$3095"}], ",", 
+     RowBox[{"-", "\[Sigma]$3096"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
-   $CellContext`Connectionh[-$CellContext`\[Sigma]$1901, -$CellContext`\
-\[Sigma]$1902, -$CellContext`\[Sigma]$1903], ". ", ""],
+   $CellContext`Connectionh[-$CellContext`\[Sigma]$3094, -$CellContext`\
+\[Sigma]$3095, -$CellContext`\[Sigma]$3096], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -3051,13 +3201,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"CSh", "[", 
     RowBox[{
-     RowBox[{"-", "\[Sigma]$1901"}], ",", 
-     RowBox[{"-", "\[Sigma]$1902"}], ",", 
-     RowBox[{"-", "\[Sigma]$1903"}]}], "]"}], 
+     RowBox[{"-", "\[Sigma]$3094"}], ",", 
+     RowBox[{"-", "\[Sigma]$3095"}], ",", 
+     RowBox[{"-", "\[Sigma]$3096"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
-   $CellContext`CSh[-$CellContext`\[Sigma]$1901, -$CellContext`\[Sigma]$1902, \
--$CellContext`\[Sigma]$1903], ". ", ""],
+   $CellContext`CSh[-$CellContext`\[Sigma]$3094, -$CellContext`\[Sigma]$3095, \
+-$CellContext`\[Sigma]$3096], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -3067,11 +3217,11 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"nth", "[", 
     RowBox[{
-     RowBox[{"-", "\[Sigma]$1901"}], ",", 
-     RowBox[{"-", "\[Sigma]$1902"}]}], "]"}], 
+     RowBox[{"-", "\[Sigma]$3094"}], ",", 
+     RowBox[{"-", "\[Sigma]$3095"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
-   $CellContext`nth[-$CellContext`\[Sigma]$1901, -$CellContext`\[Sigma]$1902],
+   $CellContext`nth[-$CellContext`\[Sigma]$3094, -$CellContext`\[Sigma]$3095],
     ". ", ""],
   Editable->False]], "Print"],
 
@@ -3081,24 +3231,22 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\": Defining \"\>", 
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"avh", "[", 
-    RowBox[{"-", "\[Sigma]$1901"}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
+    RowBox[{"-", "\[Sigma]$3094"}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
    "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
-   $CellContext`avh[-$CellContext`\[Sigma]$1901], ". ", ""],
+   $CellContext`avh[-$CellContext`\[Sigma]$3094], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
  InterpretationBox[
   RowBox[{"\<\"   Rules \"\>", "\[InvisibleSpace]", 
    RowBox[{"{", 
-    RowBox[{
-    "1", ",", "1", ",", "2", ",", "1", ",", "3", ",", "1", ",", "4", ",", 
-     "1"}], "}"}], 
+    RowBox[{"1", ",", "2", ",", "3", ",", "4"}], "}"}], 
    "\[InvisibleSpace]", "\<\" have been declared as UpValues for \"\>", 
-   "\[InvisibleSpace]", "av", "\[InvisibleSpace]", "\<\".\"\>"}],
+   "\[InvisibleSpace]", "avh", "\[InvisibleSpace]", "\<\".\"\>"}],
   SequenceForm["   Rules ", 
-   Shallow[{1, 1, 2, 1, 3, 1, 4, 1}], " have been declared as UpValues for ", 
-   xAct`xPand`av, "."],
+   Shallow[{1, 2, 3, 4}], 
+   " have been declared as UpValues for ", $CellContext`avh, "."],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -3119,17 +3267,17 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"Kh", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$3858", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$3858", "]"}], ",", 
-     RowBox[{"-", "\[Sigma]$1901"}], ",", 
-     RowBox[{"-", "\[Sigma]$1902"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$5051", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$5051", "]"}], ",", 
+     RowBox[{"-", "\[Sigma]$3094"}], ",", 
+     RowBox[{"-", "\[Sigma]$3095"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`Kh[
-    xAct`xTensor`LI[xAct`xPand`Private`p$3858], 
+    xAct`xTensor`LI[xAct`xPand`Private`p$5051], 
     xAct`xTensor`LI[
-    xAct`xPand`Private`q$3858], -$CellContext`\[Sigma]$1901, -$CellContext`\
-\[Sigma]$1902], ". ", ""],
+    xAct`xPand`Private`q$5051], -$CellContext`\[Sigma]$3094, -$CellContext`\
+\[Sigma]$3095], ". ", ""],
   Editable->False]], "Print"]
 }, Open  ]]
 }, Open  ]],
@@ -3157,7 +3305,7 @@ Cell[BoxData[
               Offset[0.034999999999999996`]}, 
              Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
               Offset[0.]}}, "RowsIndexed" -> {}}],
-        FontSize->9]}
+        FontSize->Rational[39, 4]]}
      },
      GridBoxAlignment->{
       "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}}, 
@@ -3197,10 +3345,10 @@ Cell[BoxData[
   RowBox[{"\<\"** \"\>", "\[InvisibleSpace]", "DefTensor", 
    "\[InvisibleSpace]", "\<\": Defining \"\>", 
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
-   RowBox[{"nA", "[", "\[Sigma]$4296", "]"}], 
+   RowBox[{"nA", "[", "\[Sigma]$5549", "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
-   $CellContext`nA[$CellContext`\[Sigma]$4296], ". ", ""],
+   $CellContext`nA[$CellContext`\[Sigma]$5549], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -3211,12 +3359,12 @@ Cell[BoxData[
    "\[InvisibleSpace]", 
    RowBox[{"hA", "[", 
     RowBox[{
-     RowBox[{"-", "\[Sigma]$4296"}], ",", 
-     RowBox[{"-", "\[Sigma]$4297"}]}], "]"}], 
+     RowBox[{"-", "\[Sigma]$5549"}], ",", 
+     RowBox[{"-", "\[Sigma]$5550"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm[
   "** ", xAct`xTensor`DefTensor, ": Defining ", "symmetric metric tensor ", 
-   $CellContext`hA[-$CellContext`\[Sigma]$4296, -$CellContext`\[Sigma]$4297], 
+   $CellContext`hA[-$CellContext`\[Sigma]$5549, -$CellContext`\[Sigma]$5550], 
    ". ", ""],
   Editable->False]], "Print"],
 
@@ -3242,7 +3390,7 @@ Cell[BoxData[
  InterpretationBox[
   RowBox[{"\<\"** \"\>", "\[InvisibleSpace]", "DefTensor", 
    "\[InvisibleSpace]", "\<\": Defining \"\>", 
-   "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
+   "\[InvisibleSpace]", "\<\"tetrametric \"\>", "\[InvisibleSpace]", 
    RowBox[{"TetrahA", "[", 
     RowBox[{
      RowBox[{"-", "\[Alpha]"}], ",", 
@@ -3250,7 +3398,7 @@ Cell[BoxData[
      RowBox[{"-", "\[Lambda]"}], ",", 
      RowBox[{"-", "\[Mu]"}]}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
    "\[InvisibleSpace]", "\<\"\"\>"}],
-  SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
+  SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tetrametric ", 
    $CellContext`TetrahA[-$CellContext`\[Alpha], -$CellContext`\[Beta], \
 -$CellContext`\[Lambda], -$CellContext`\[Mu]], ". ", ""],
   Editable->False]], "Print"],
@@ -3259,7 +3407,7 @@ Cell[BoxData[
  InterpretationBox[
   RowBox[{"\<\"** \"\>", "\[InvisibleSpace]", "DefTensor", 
    "\[InvisibleSpace]", "\<\": Defining \"\>", 
-   "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
+   "\[InvisibleSpace]", "\<\"tetrametric \"\>", "\[InvisibleSpace]", 
    RowBox[{"TetrahA\[Dagger]", "[", 
     RowBox[{
      RowBox[{"-", "\[Alpha]"}], ",", 
@@ -3267,7 +3415,7 @@ Cell[BoxData[
      RowBox[{"-", "\[Lambda]"}], ",", 
      RowBox[{"-", "\[Mu]"}]}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
    "\[InvisibleSpace]", "\<\"\"\>"}],
-  SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
+  SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tetrametric ", 
    $CellContext`TetrahA\[Dagger][-$CellContext`\[Alpha], \
 -$CellContext`\[Beta], -$CellContext`\[Lambda], -$CellContext`\[Mu]], ". ", 
    ""],
@@ -3280,11 +3428,11 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"covariant derivative \"\>", "\[InvisibleSpace]", 
    
    RowBox[{"cdA", "[", 
-    RowBox[{"-", "\[Sigma]$4296"}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
+    RowBox[{"-", "\[Sigma]$5549"}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
    "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm[
   "** ", xAct`xTensor`DefCovD, ": Defining ", "covariant derivative ", 
-   $CellContext`cdA[-$CellContext`\[Sigma]$4296], ". ", ""],
+   $CellContext`cdA[-$CellContext`\[Sigma]$5549], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -3587,13 +3735,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"ahA", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$5564", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$5564", "]"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$6817", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$6817", "]"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`ahA[
-    xAct`xTensor`LI[xAct`xPand`Private`p$5564], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$5564]], ". ", ""],
+    xAct`xTensor`LI[xAct`xPand`Private`p$6817], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$6817]], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -3603,13 +3751,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"HhA", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$5569", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$5569", "]"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$6822", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$6822", "]"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`HhA[
-    xAct`xTensor`LI[xAct`xPand`Private`p$5569], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$5569]], ". ", ""],
+    xAct`xTensor`LI[xAct`xPand`Private`p$6822], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$6822]], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -3620,13 +3768,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", 
    RowBox[{"gahA2", "[", 
     RowBox[{
-     RowBox[{"-", "\[Sigma]$5575"}], ",", 
-     RowBox[{"-", "\[Sigma]$5576"}]}], "]"}], 
+     RowBox[{"-", "\[Sigma]$6828"}], ",", 
+     RowBox[{"-", "\[Sigma]$6829"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm[
   "** ", xAct`xTensor`DefTensor, ": Defining ", "symmetric metric tensor ", 
-   $CellContext`gahA2[-$CellContext`\[Sigma]$5575, \
--$CellContext`\[Sigma]$5576], ". ", ""],
+   $CellContext`gahA2[-$CellContext`\[Sigma]$6828, \
+-$CellContext`\[Sigma]$6829], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -3635,13 +3783,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\": Defining \"\>", 
    "\[InvisibleSpace]", "\<\"inverse metric tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"InvgahA2", "[", 
-    RowBox[{"\[Sigma]$5575", ",", "\[Sigma]$5576"}], "]"}], 
+    RowBox[{"\[Sigma]$6828", ",", "\[Sigma]$6829"}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", 
    "\[InvisibleSpace]", "\<\"Metric is frozen!\"\>"}],
   SequenceForm[
   "** ", xAct`xTensor`DefTensor, ": Defining ", "inverse metric tensor ", 
-   $CellContext`InvgahA2[$CellContext`\[Sigma]$5575, \
-$CellContext`\[Sigma]$5576], ". ", "Metric is frozen!"],
+   $CellContext`InvgahA2[$CellContext`\[Sigma]$6828, \
+$CellContext`\[Sigma]$6829], ". ", "Metric is frozen!"],
   Editable->False]], "Print"],
 
 Cell[BoxData["\<\"** DefMetric: Don't know yet how to define epsilon for a \
@@ -3654,11 +3802,11 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"covariant derivative \"\>", "\[InvisibleSpace]", 
    
    RowBox[{"CDahA2", "[", 
-    RowBox[{"-", "\[Sigma]$5575"}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
+    RowBox[{"-", "\[Sigma]$6828"}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
    "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm[
   "** ", xAct`xTensor`DefCovD, ": Defining ", "covariant derivative ", 
-   $CellContext`CDahA2[-$CellContext`\[Sigma]$5575], ". ", ""],
+   $CellContext`CDahA2[-$CellContext`\[Sigma]$6828], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -3893,13 +4041,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"ConnectionhA", "[", 
     RowBox[{
-     RowBox[{"-", "\[Sigma]$4296"}], ",", 
-     RowBox[{"-", "\[Sigma]$4297"}], ",", 
-     RowBox[{"-", "\[Sigma]$4298"}]}], "]"}], 
+     RowBox[{"-", "\[Sigma]$5549"}], ",", 
+     RowBox[{"-", "\[Sigma]$5550"}], ",", 
+     RowBox[{"-", "\[Sigma]$5551"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
-   $CellContext`ConnectionhA[-$CellContext`\[Sigma]$4296, -$CellContext`\
-\[Sigma]$4297, -$CellContext`\[Sigma]$4298], ". ", ""],
+   $CellContext`ConnectionhA[-$CellContext`\[Sigma]$5549, -$CellContext`\
+\[Sigma]$5550, -$CellContext`\[Sigma]$5551], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -3909,13 +4057,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"CShA", "[", 
     RowBox[{
-     RowBox[{"-", "\[Sigma]$4296"}], ",", 
-     RowBox[{"-", "\[Sigma]$4297"}], ",", 
-     RowBox[{"-", "\[Sigma]$4298"}]}], "]"}], 
+     RowBox[{"-", "\[Sigma]$5549"}], ",", 
+     RowBox[{"-", "\[Sigma]$5550"}], ",", 
+     RowBox[{"-", "\[Sigma]$5551"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
-   $CellContext`CShA[-$CellContext`\[Sigma]$4296, \
--$CellContext`\[Sigma]$4297, -$CellContext`\[Sigma]$4298], ". ", ""],
+   $CellContext`CShA[-$CellContext`\[Sigma]$5549, \
+-$CellContext`\[Sigma]$5550, -$CellContext`\[Sigma]$5551], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -3925,12 +4073,12 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"nthA", "[", 
     RowBox[{
-     RowBox[{"-", "\[Sigma]$4296"}], ",", 
-     RowBox[{"-", "\[Sigma]$4297"}]}], "]"}], 
+     RowBox[{"-", "\[Sigma]$5549"}], ",", 
+     RowBox[{"-", "\[Sigma]$5550"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
-   $CellContext`nthA[-$CellContext`\[Sigma]$4296, \
--$CellContext`\[Sigma]$4297], ". ", ""],
+   $CellContext`nthA[-$CellContext`\[Sigma]$5549, \
+-$CellContext`\[Sigma]$5550], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -3939,10 +4087,10 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\": Defining \"\>", 
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"avhA", "[", 
-    RowBox[{"-", "\[Sigma]$4296"}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
+    RowBox[{"-", "\[Sigma]$5549"}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
    "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
-   $CellContext`avhA[-$CellContext`\[Sigma]$4296], ". ", ""],
+   $CellContext`avhA[-$CellContext`\[Sigma]$5549], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -4040,17 +4188,17 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"KhA", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$7272", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$7272", "]"}], ",", 
-     RowBox[{"-", "\[Sigma]$4296"}], ",", 
-     RowBox[{"-", "\[Sigma]$4297"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$8577", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$8577", "]"}], ",", 
+     RowBox[{"-", "\[Sigma]$5549"}], ",", 
+     RowBox[{"-", "\[Sigma]$5550"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`KhA[
-    xAct`xTensor`LI[xAct`xPand`Private`p$7272], 
+    xAct`xTensor`LI[xAct`xPand`Private`p$8577], 
     xAct`xTensor`LI[
-    xAct`xPand`Private`q$7272], -$CellContext`\[Sigma]$4296, -$CellContext`\
-\[Sigma]$4297], ". ", ""],
+    xAct`xPand`Private`q$8577], -$CellContext`\[Sigma]$5549, -$CellContext`\
+\[Sigma]$5550], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -4202,7 +4350,7 @@ Cell[BoxData[
                Offset[0.034999999999999996`]}, 
               Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                Offset[0.]}}, "RowsIndexed" -> {}}],
-         FontSize->9]}
+         FontSize->Rational[39, 4]]}
       },
       GridBoxAlignment->{
        "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}}, 
@@ -4231,7 +4379,7 @@ $CellContext`\[Mu]],
                Offset[0.034999999999999996`]}, 
               Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                Offset[0.]}}, "RowsIndexed" -> {}}],
-         FontSize->9]}
+         FontSize->Rational[39, 4]]}
       },
       GridBoxAlignment->{
        "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}}, 
@@ -4262,7 +4410,7 @@ $CellContext`\[Mu]],
                Offset[0.034999999999999996`]}, 
               Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                Offset[0.]}}, "RowsIndexed" -> {}}],
-         FontSize->9]}
+         FontSize->Rational[39, 4]]}
       },
       GridBoxAlignment->{
        "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}}, 
@@ -4291,7 +4439,7 @@ $CellContext`\[Mu]],
                Offset[0.034999999999999996`]}, 
               Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                Offset[0.]}}, "RowsIndexed" -> {}}],
-         FontSize->9]}
+         FontSize->Rational[39, 4]]}
       },
       GridBoxAlignment->{
        "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}}, 
@@ -4322,7 +4470,7 @@ $CellContext`\[Mu]],
                Offset[0.034999999999999996`]}, 
               Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                Offset[0.]}}, "RowsIndexed" -> {}}],
-         FontSize->9]}
+         FontSize->Rational[39, 4]]}
       },
       GridBoxAlignment->{
        "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}}, 
@@ -4351,7 +4499,7 @@ $CellContext`\[Mu]],
                Offset[0.034999999999999996`]}, 
               Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                Offset[0.]}}, "RowsIndexed" -> {}}],
-         FontSize->9]}
+         FontSize->Rational[39, 4]]}
       },
       GridBoxAlignment->{
        "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}}, 
@@ -4382,7 +4530,7 @@ $CellContext`\[Mu]],
                Offset[0.034999999999999996`]}, 
               Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                Offset[0.]}}, "RowsIndexed" -> {}}],
-         FontSize->9]}
+         FontSize->Rational[39, 4]]}
       },
       GridBoxAlignment->{
        "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}}, 
@@ -4411,7 +4559,7 @@ $CellContext`\[Lambda]],
                Offset[0.034999999999999996`]}, 
               Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                Offset[0.]}}, "RowsIndexed" -> {}}],
-         FontSize->9]}
+         FontSize->Rational[39, 4]]}
       },
       GridBoxAlignment->{
        "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}}, 
@@ -4442,7 +4590,7 @@ $CellContext`\[Lambda]],
                Offset[0.034999999999999996`]}, 
               Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                Offset[0.]}}, "RowsIndexed" -> {}}],
-         FontSize->9]}
+         FontSize->Rational[39, 4]]}
       },
       GridBoxAlignment->{
        "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}}, 
@@ -4471,7 +4619,7 @@ $CellContext`\[Lambda]],
                Offset[0.034999999999999996`]}, 
               Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                Offset[0.]}}, "RowsIndexed" -> {}}],
-         FontSize->9]}
+         FontSize->Rational[39, 4]]}
       },
       GridBoxAlignment->{
        "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}}, 
@@ -4502,7 +4650,7 @@ $CellContext`\[Lambda]],
                Offset[0.034999999999999996`]}, 
               Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                Offset[0.]}}, "RowsIndexed" -> {}}],
-         FontSize->9]}
+         FontSize->Rational[39, 4]]}
       },
       GridBoxAlignment->{
        "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}}, 
@@ -4531,7 +4679,7 @@ $CellContext`\[Lambda]],
                Offset[0.034999999999999996`]}, 
               Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                Offset[0.]}}, "RowsIndexed" -> {}}],
-         FontSize->9]}
+         FontSize->Rational[39, 4]]}
       },
       GridBoxAlignment->{
        "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}}, 
@@ -4577,7 +4725,7 @@ Cell[BoxData[
                Offset[0.034999999999999996`]}, 
               Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                Offset[0.]}}, "RowsIndexed" -> {}}],
-         FontSize->9]}
+         FontSize->Rational[39, 4]]}
       },
       GridBoxAlignment->{
        "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}}, 
@@ -4608,7 +4756,7 @@ $CellContext`\[Beta]],
                Offset[0.034999999999999996`]}, 
               Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                Offset[0.]}}, "RowsIndexed" -> {}}],
-         FontSize->9]}
+         FontSize->Rational[39, 4]]}
       },
       GridBoxAlignment->{
        "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}}, 
@@ -4638,7 +4786,7 @@ $CellContext`\[Beta]],
                Offset[0.034999999999999996`]}, 
               Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                Offset[0.]}}, "RowsIndexed" -> {}}],
-         FontSize->9]}
+         FontSize->Rational[39, 4]]}
       },
       GridBoxAlignment->{
        "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}}, 
@@ -4669,7 +4817,7 @@ $CellContext`\[Beta]],
                Offset[0.034999999999999996`]}, 
               Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                Offset[0.]}}, "RowsIndexed" -> {}}],
-         FontSize->9]}
+         FontSize->Rational[39, 4]]}
       },
       GridBoxAlignment->{
        "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}}, 
@@ -4699,7 +4847,7 @@ $CellContext`\[Beta]],
                Offset[0.034999999999999996`]}, 
               Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                Offset[0.]}}, "RowsIndexed" -> {}}],
-         FontSize->9]}
+         FontSize->Rational[39, 4]]}
       },
       GridBoxAlignment->{
        "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}}, 
@@ -4730,7 +4878,7 @@ $CellContext`\[Beta]],
                Offset[0.034999999999999996`]}, 
               Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                Offset[0.]}}, "RowsIndexed" -> {}}],
-         FontSize->9]}
+         FontSize->Rational[39, 4]]}
       },
       GridBoxAlignment->{
        "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}}, 
@@ -4760,7 +4908,7 @@ $CellContext`\[Beta]],
                Offset[0.034999999999999996`]}, 
               Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                Offset[0.]}}, "RowsIndexed" -> {}}],
-         FontSize->9]}
+         FontSize->Rational[39, 4]]}
       },
       GridBoxAlignment->{
        "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}}, 
@@ -4791,7 +4939,7 @@ $CellContext`\[Beta]],
                Offset[0.034999999999999996`]}, 
               Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                Offset[0.]}}, "RowsIndexed" -> {}}],
-         FontSize->9]}
+         FontSize->Rational[39, 4]]}
       },
       GridBoxAlignment->{
        "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}}, 
@@ -4821,7 +4969,7 @@ $CellContext`\[Beta]],
                Offset[0.034999999999999996`]}, 
               Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                Offset[0.]}}, "RowsIndexed" -> {}}],
-         FontSize->9]}
+         FontSize->Rational[39, 4]]}
       },
       GridBoxAlignment->{
        "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}}, 
@@ -4852,7 +5000,7 @@ $CellContext`\[Beta]],
                Offset[0.034999999999999996`]}, 
               Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                Offset[0.]}}, "RowsIndexed" -> {}}],
-         FontSize->9]}
+         FontSize->Rational[39, 4]]}
       },
       GridBoxAlignment->{
        "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}}, 
@@ -4882,7 +5030,7 @@ $CellContext`\[Beta]],
                Offset[0.034999999999999996`]}, 
               Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                Offset[0.]}}, "RowsIndexed" -> {}}],
-         FontSize->9]}
+         FontSize->Rational[39, 4]]}
       },
       GridBoxAlignment->{
        "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}}, 
@@ -4913,7 +5061,7 @@ $CellContext`\[Beta]],
                Offset[0.034999999999999996`]}, 
               Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                Offset[0.]}}, "RowsIndexed" -> {}}],
-         FontSize->9]}
+         FontSize->Rational[39, 4]]}
       },
       GridBoxAlignment->{
        "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}}, 
@@ -4991,7 +5139,7 @@ Cell[BoxData[
               Offset[0.034999999999999996`]}, 
              Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
               Offset[0.]}}, "RowsIndexed" -> {}}],
-        FontSize->9]}
+        FontSize->Rational[39, 4]]}
      },
      GridBoxAlignment->{
       "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}}, 
@@ -5069,7 +5217,7 @@ Cell[BoxData[
                Offset[0.034999999999999996`]}, 
               Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                Offset[0.]}}, "RowsIndexed" -> {}}],
-         FontSize->9]}
+         FontSize->Rational[39, 4]]}
       },
       GridBoxAlignment->{
        "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}}, 
@@ -5099,7 +5247,7 @@ $CellContext`\[Beta]],
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -5127,7 +5275,7 @@ $CellContext`\[Beta]],
                Offset[0.034999999999999996`]}, 
               Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                Offset[0.]}}, "RowsIndexed" -> {}}],
-         FontSize->9]}
+         FontSize->Rational[39, 4]]}
       },
       GridBoxAlignment->{
        "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}}, 
@@ -5156,7 +5304,7 @@ $CellContext`\[Beta]],
                Offset[0.034999999999999996`]}, 
               Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                Offset[0.]}}, "RowsIndexed" -> {}}],
-         FontSize->9]}
+         FontSize->Rational[39, 4]]}
       },
       GridBoxAlignment->{
        "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}}, 
@@ -5186,7 +5334,7 @@ $CellContext`\[Lambda]],
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -5214,7 +5362,7 @@ $CellContext`\[Lambda]],
                Offset[0.034999999999999996`]}, 
               Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                Offset[0.]}}, "RowsIndexed" -> {}}],
-         FontSize->9]}
+         FontSize->Rational[39, 4]]}
       },
       GridBoxAlignment->{
        "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}}, 
@@ -5243,7 +5391,7 @@ $CellContext`\[Lambda]],
                Offset[0.034999999999999996`]}, 
               Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                Offset[0.]}}, "RowsIndexed" -> {}}],
-         FontSize->9]}
+         FontSize->Rational[39, 4]]}
       },
       GridBoxAlignment->{
        "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}}, 
@@ -5273,7 +5421,7 @@ $CellContext`\[Lambda]],
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -5301,7 +5449,7 @@ $CellContext`\[Lambda]],
                Offset[0.034999999999999996`]}, 
               Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                Offset[0.]}}, "RowsIndexed" -> {}}],
-         FontSize->9]}
+         FontSize->Rational[39, 4]]}
       },
       GridBoxAlignment->{
        "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}}, 
@@ -5330,7 +5478,7 @@ $CellContext`\[Lambda]],
                Offset[0.034999999999999996`]}, 
               Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                Offset[0.]}}, "RowsIndexed" -> {}}],
-         FontSize->9]}
+         FontSize->Rational[39, 4]]}
       },
       GridBoxAlignment->{
        "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}}, 
@@ -5360,7 +5508,7 @@ $CellContext`\[Beta]],
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -5388,7 +5536,7 @@ $CellContext`\[Beta]],
                Offset[0.034999999999999996`]}, 
               Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                Offset[0.]}}, "RowsIndexed" -> {}}],
-         FontSize->9]}
+         FontSize->Rational[39, 4]]}
       },
       GridBoxAlignment->{
        "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}}, 
@@ -5421,7 +5569,7 @@ $CellContext`\[Beta]],
                Offset[0.034999999999999996`]}, 
               Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                Offset[0.]}}, "RowsIndexed" -> {}}],
-         FontSize->9]}
+         FontSize->Rational[39, 4]]}
       },
       GridBoxAlignment->{
        "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}}, 
@@ -5460,16 +5608,16 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"U", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$9212", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$9212", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$11617", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$11617", "]"}], ",", 
      RowBox[{"-", "\[Alpha]"}], ",", 
      RowBox[{"-", "\[Beta]"}]}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
    "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`U[
-    xAct`xTensor`LI[xAct`xPand`Private`p$9212], 
+    xAct`xTensor`LI[xAct`xPand`Private`p$11617], 
     xAct`xTensor`LI[
-    xAct`xPand`Private`q$9212], -$CellContext`\[Alpha], \
+    xAct`xPand`Private`q$11617], -$CellContext`\[Alpha], \
 -$CellContext`\[Beta]], ". ", ""],
   Editable->False]], "Print"]
 }, Open  ]],
@@ -5523,7 +5671,7 @@ Cell[BoxData[
                  Offset[0.034999999999999996`]}, 
                 Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                  Offset[0.]}}, "RowsIndexed" -> {}}],
-           FontSize->9]}
+           FontSize->Rational[39, 4]]}
         },
         GridBoxAlignment->{
          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
@@ -5590,16 +5738,16 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"U", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$9221", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$9221", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$11777", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$11777", "]"}], ",", 
      RowBox[{"-", "\[Alpha]"}], ",", 
      RowBox[{"-", "\[Beta]"}]}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
    "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`U[
-    xAct`xTensor`LI[xAct`xPand`Private`p$9221], 
+    xAct`xTensor`LI[xAct`xPand`Private`p$11777], 
     xAct`xTensor`LI[
-    xAct`xPand`Private`q$9221], -$CellContext`\[Alpha], \
+    xAct`xPand`Private`q$11777], -$CellContext`\[Alpha], \
 -$CellContext`\[Beta]], ". ", ""],
   Editable->False]], "Print"]
 }, Open  ]],
@@ -5625,7 +5773,7 @@ Cell[BoxData[
               Offset[0.034999999999999996`]}, 
              Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
               Offset[0.]}}, "RowsIndexed" -> {}}],
-        FontSize->9]}
+        FontSize->Rational[39, 4]]}
      },
      GridBoxAlignment->{
       "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}}, 
@@ -5670,7 +5818,7 @@ Cell[BoxData[
                  Offset[0.034999999999999996`]}, 
                 Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                  Offset[0.]}}, "RowsIndexed" -> {}}],
-           FontSize->9]}
+           FontSize->Rational[39, 4]]}
         },
         GridBoxAlignment->{
          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
@@ -5749,7 +5897,7 @@ Cell[BoxData[
                Offset[0.034999999999999996`]}, 
               Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                Offset[0.]}}, "RowsIndexed" -> {}}],
-         FontSize->9]}
+         FontSize->Rational[39, 4]]}
       },
       GridBoxAlignment->{
        "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}}, 
@@ -5795,7 +5943,7 @@ Cell[BoxData[
                Offset[0.034999999999999996`]}, 
               Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                Offset[0.]}}, "RowsIndexed" -> {}}],
-         FontSize->9]}
+         FontSize->Rational[39, 4]]}
       },
       GridBoxAlignment->{
        "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}}, 
@@ -5828,15 +5976,15 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"VA", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$9232", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$9232", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$12005", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$12005", "]"}], ",", 
      RowBox[{"-", "\[Alpha]"}]}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
    "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`VA[
-    xAct`xTensor`LI[xAct`xPand`Private`p$9232], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$9232], -$CellContext`\[Alpha]], ". ",
-    ""],
+    xAct`xTensor`LI[xAct`xPand`Private`p$12005], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$12005], -$CellContext`\[Alpha]], 
+   ". ", ""],
   Editable->False]], "Print"]
 }, Open  ]],
 
@@ -5868,7 +6016,7 @@ Cell[BoxData[
                Offset[0.034999999999999996`]}, 
               Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                Offset[0.]}}, "RowsIndexed" -> {}}],
-         FontSize->9]}
+         FontSize->Rational[39, 4]]}
       },
       GridBoxAlignment->{
        "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}}, 
@@ -5918,7 +6066,7 @@ Cell[BoxData[
                Offset[0.034999999999999996`]}, 
               Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                Offset[0.]}}, "RowsIndexed" -> {}}],
-         FontSize->9]}
+         FontSize->Rational[39, 4]]}
       },
       GridBoxAlignment->{
        "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}}, 
@@ -5955,13 +6103,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"\[Phi]h", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$9243", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$9243", "]"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$13199", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$13199", "]"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`\[Phi]h[
-    xAct`xTensor`LI[xAct`xPand`Private`p$9243], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$9243]], ". ", ""],
+    xAct`xTensor`LI[xAct`xPand`Private`p$13199], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$13199]], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -5971,13 +6119,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"Bsh", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$9248", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$9248", "]"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$13204", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$13204", "]"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`Bsh[
-    xAct`xTensor`LI[xAct`xPand`Private`p$9248], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$9248]], ". ", ""],
+    xAct`xTensor`LI[xAct`xPand`Private`p$13204], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$13204]], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -5987,15 +6135,15 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"Bvh", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$9253", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$9253", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$13209", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$13209", "]"}], ",", 
      RowBox[{"-", "\[Alpha]"}]}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
    "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`Bvh[
-    xAct`xTensor`LI[xAct`xPand`Private`p$9253], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$9253], -$CellContext`\[Alpha]], ". ",
-    ""],
+    xAct`xTensor`LI[xAct`xPand`Private`p$13209], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$13209], -$CellContext`\[Alpha]], 
+   ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -6005,13 +6153,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"\[Psi]h", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$9259", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$9259", "]"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$13215", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$13215", "]"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`\[Psi]h[
-    xAct`xTensor`LI[xAct`xPand`Private`p$9259], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$9259]], ". ", ""],
+    xAct`xTensor`LI[xAct`xPand`Private`p$13215], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$13215]], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -6021,13 +6169,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"Esh", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$9264", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$9264", "]"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$13220", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$13220", "]"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`Esh[
-    xAct`xTensor`LI[xAct`xPand`Private`p$9264], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$9264]], ". ", ""],
+    xAct`xTensor`LI[xAct`xPand`Private`p$13220], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$13220]], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -6037,15 +6185,15 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"Evh", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$9269", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$9269", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$13225", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$13225", "]"}], ",", 
      RowBox[{"-", "\[Alpha]"}]}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
    "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`Evh[
-    xAct`xTensor`LI[xAct`xPand`Private`p$9269], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$9269], -$CellContext`\[Alpha]], ". ",
-    ""],
+    xAct`xTensor`LI[xAct`xPand`Private`p$13225], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$13225], -$CellContext`\[Alpha]], 
+   ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -6055,16 +6203,16 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"Eth", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$9275", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$9275", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$13231", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$13231", "]"}], ",", 
      RowBox[{"-", "\[Alpha]"}], ",", 
      RowBox[{"-", "\[Beta]"}]}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
    "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`Eth[
-    xAct`xTensor`LI[xAct`xPand`Private`p$9275], 
+    xAct`xTensor`LI[xAct`xPand`Private`p$13231], 
     xAct`xTensor`LI[
-    xAct`xPand`Private`q$9275], -$CellContext`\[Alpha], \
+    xAct`xPand`Private`q$13231], -$CellContext`\[Alpha], \
 -$CellContext`\[Beta]], ". ", ""],
   Editable->False]], "Print"],
 
@@ -6075,13 +6223,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"Th", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$9284", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$9284", "]"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$13240", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$13240", "]"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`Th[
-    xAct`xTensor`LI[xAct`xPand`Private`p$9284], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$9284]], ". ", ""],
+    xAct`xTensor`LI[xAct`xPand`Private`p$13240], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$13240]], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -6091,13 +6239,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"Lsh", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$9289", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$9289", "]"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$13245", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$13245", "]"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`Lsh[
-    xAct`xTensor`LI[xAct`xPand`Private`p$9289], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$9289]], ". ", ""],
+    xAct`xTensor`LI[xAct`xPand`Private`p$13245], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$13245]], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -6107,15 +6255,15 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"Lvh", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$9294", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$9294", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$13250", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$13250", "]"}], ",", 
      RowBox[{"-", "\[Alpha]"}]}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
    "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`Lvh[
-    xAct`xTensor`LI[xAct`xPand`Private`p$9294], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$9294], -$CellContext`\[Alpha]], ". ",
-    ""],
+    xAct`xTensor`LI[xAct`xPand`Private`p$13250], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$13250], -$CellContext`\[Alpha]], 
+   ". ", ""],
   Editable->False]], "Print"]
 }, Open  ]]
 }, Open  ]],
@@ -6146,7 +6294,7 @@ Cell[BoxData[
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -6188,7 +6336,7 @@ Cell[BoxData[
                     Offset[0.034999999999999996`]}, 
                     Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                     Offset[0.]}}, "RowsIndexed" -> {}}],
-               FontSize->9]}
+               FontSize->Rational[39, 4]]}
             },
             
             GridBoxAlignment->{
@@ -6225,7 +6373,7 @@ Cell[BoxData[
                     Offset[0.034999999999999996`]}, 
                     Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                     Offset[0.]}}, "RowsIndexed" -> {}}],
-               FontSize->9]}
+               FontSize->Rational[39, 4]]}
             },
             
             GridBoxAlignment->{
@@ -6255,7 +6403,7 @@ Cell[BoxData[
                   Offset[0.034999999999999996`]}, 
                  Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                   Offset[0.]}}, "RowsIndexed" -> {}}],
-            FontSize->9]}
+            FontSize->Rational[39, 4]]}
          },
          GridBoxAlignment->{
           "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
@@ -6291,7 +6439,7 @@ Cell[BoxData[
                     Offset[0.034999999999999996`]}, 
                     Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                     Offset[0.]}}, "RowsIndexed" -> {}}],
-               FontSize->9]}
+               FontSize->Rational[39, 4]]}
             },
             
             GridBoxAlignment->{
@@ -6321,7 +6469,7 @@ Cell[BoxData[
                   Offset[0.034999999999999996`]}, 
                  Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                   Offset[0.]}}, "RowsIndexed" -> {}}],
-            FontSize->9]}
+            FontSize->Rational[39, 4]]}
          },
          GridBoxAlignment->{
           "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
@@ -6351,7 +6499,7 @@ Cell[BoxData[
                   Offset[0.034999999999999996`]}, 
                  Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                   Offset[0.]}}, "RowsIndexed" -> {}}],
-            FontSize->9]}
+            FontSize->Rational[39, 4]]}
          },
          GridBoxAlignment->{
           "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
@@ -6380,7 +6528,7 @@ Cell[BoxData[
                   Offset[0.034999999999999996`]}, 
                  Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                   Offset[0.]}}, "RowsIndexed" -> {}}],
-            FontSize->9]}
+            FontSize->Rational[39, 4]]}
          },
          GridBoxAlignment->{
           "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
@@ -6423,7 +6571,7 @@ Cell[BoxData[
                   Offset[0.034999999999999996`]}, 
                  Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                   Offset[0.]}}, "RowsIndexed" -> {}}],
-            FontSize->9]}
+            FontSize->Rational[39, 4]]}
          },
          GridBoxAlignment->{
           "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
@@ -6466,7 +6614,7 @@ Cell[BoxData[
                   Offset[0.034999999999999996`]}, 
                  Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                   Offset[0.]}}, "RowsIndexed" -> {}}],
-            FontSize->9]}
+            FontSize->Rational[39, 4]]}
          },
          GridBoxAlignment->{
           "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
@@ -6528,7 +6676,7 @@ Cell[BoxData[
                     Offset[0.034999999999999996`]}, 
                     Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                     Offset[0.]}}, "RowsIndexed" -> {}}],
-               FontSize->9]}
+               FontSize->Rational[39, 4]]}
             },
             
             GridBoxAlignment->{
@@ -6594,7 +6742,7 @@ Cell[BoxData[
                   Offset[0.034999999999999996`]}, 
                  Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                   Offset[0.]}}, "RowsIndexed" -> {}}],
-            FontSize->9]}
+            FontSize->Rational[39, 4]]}
          },
          GridBoxAlignment->{
           "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
@@ -6656,7 +6804,7 @@ Cell[BoxData[
                     Offset[0.034999999999999996`]}, 
                     Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                     Offset[0.]}}, "RowsIndexed" -> {}}],
-               FontSize->9]}
+               FontSize->Rational[39, 4]]}
             },
             
             GridBoxAlignment->{
@@ -6700,7 +6848,7 @@ Cell[BoxData[
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -6738,7 +6886,7 @@ Cell[BoxData[
                   Offset[0.034999999999999996`]}, 
                  Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                   Offset[0.]}}, "RowsIndexed" -> {}}],
-            FontSize->9]}
+            FontSize->Rational[39, 4]]}
          },
          GridBoxAlignment->{
           "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
@@ -6769,7 +6917,7 @@ Cell[BoxData[
                   Offset[0.034999999999999996`]}, 
                  Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                   Offset[0.]}}, "RowsIndexed" -> {}}],
-            FontSize->9]}
+            FontSize->Rational[39, 4]]}
          },
          GridBoxAlignment->{
           "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
@@ -6800,7 +6948,7 @@ Cell[BoxData[
                   Offset[0.034999999999999996`]}, 
                  Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                   Offset[0.]}}, "RowsIndexed" -> {}}],
-            FontSize->9]}
+            FontSize->Rational[39, 4]]}
          },
          GridBoxAlignment->{
           "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
@@ -6829,7 +6977,7 @@ Cell[BoxData[
                   Offset[0.034999999999999996`]}, 
                  Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                   Offset[0.]}}, "RowsIndexed" -> {}}],
-            FontSize->9]}
+            FontSize->Rational[39, 4]]}
          },
          GridBoxAlignment->{
           "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
@@ -6860,7 +7008,7 @@ Cell[BoxData[
                   Offset[0.034999999999999996`]}, 
                  Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                   Offset[0.]}}, "RowsIndexed" -> {}}],
-            FontSize->9]}
+            FontSize->Rational[39, 4]]}
          },
          GridBoxAlignment->{
           "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
@@ -6890,7 +7038,7 @@ Cell[BoxData[
                   Offset[0.034999999999999996`]}, 
                  Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                   Offset[0.]}}, "RowsIndexed" -> {}}],
-            FontSize->9]}
+            FontSize->Rational[39, 4]]}
          },
          GridBoxAlignment->{
           "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
@@ -6919,7 +7067,7 @@ Cell[BoxData[
                   Offset[0.034999999999999996`]}, 
                  Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                   Offset[0.]}}, "RowsIndexed" -> {}}],
-            FontSize->9]}
+            FontSize->Rational[39, 4]]}
          },
          GridBoxAlignment->{
           "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
@@ -6947,7 +7095,7 @@ Cell[BoxData[
                   Offset[0.034999999999999996`]}, 
                  Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                   Offset[0.]}}, "RowsIndexed" -> {}}],
-            FontSize->9]}
+            FontSize->Rational[39, 4]]}
          },
          GridBoxAlignment->{
           "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
@@ -6979,7 +7127,7 @@ Cell[BoxData[
                   Offset[0.034999999999999996`]}, 
                  Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                   Offset[0.]}}, "RowsIndexed" -> {}}],
-            FontSize->9]}
+            FontSize->Rational[39, 4]]}
          },
          GridBoxAlignment->{
           "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
@@ -7007,7 +7155,7 @@ Cell[BoxData[
                   Offset[0.034999999999999996`]}, 
                  Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                   Offset[0.]}}, "RowsIndexed" -> {}}],
-            FontSize->9]}
+            FontSize->Rational[39, 4]]}
          },
          GridBoxAlignment->{
           "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
@@ -7039,7 +7187,7 @@ Cell[BoxData[
                   Offset[0.034999999999999996`]}, 
                  Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                   Offset[0.]}}, "RowsIndexed" -> {}}],
-            FontSize->9]}
+            FontSize->Rational[39, 4]]}
          },
          GridBoxAlignment->{
           "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
@@ -7071,7 +7219,7 @@ Cell[BoxData[
                     Offset[0.034999999999999996`]}, 
                    Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                     Offset[0.]}}, "RowsIndexed" -> {}}],
-              FontSize->9]}
+              FontSize->Rational[39, 4]]}
            },
            
            GridBoxAlignment->{
@@ -7106,7 +7254,7 @@ Cell[BoxData[
                   Offset[0.034999999999999996`]}, 
                  Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                   Offset[0.]}}, "RowsIndexed" -> {}}],
-            FontSize->9]}
+            FontSize->Rational[39, 4]]}
          },
          GridBoxAlignment->{
           "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
@@ -7144,7 +7292,7 @@ Cell[BoxData[
                     Offset[0.034999999999999996`]}, 
                    Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                     Offset[0.]}}, "RowsIndexed" -> {}}],
-              FontSize->9]}
+              FontSize->Rational[39, 4]]}
            },
            
            GridBoxAlignment->{
@@ -7179,7 +7327,7 @@ Cell[BoxData[
                   Offset[0.034999999999999996`]}, 
                  Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                   Offset[0.]}}, "RowsIndexed" -> {}}],
-            FontSize->9]}
+            FontSize->Rational[39, 4]]}
          },
          GridBoxAlignment->{
           "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
@@ -7211,7 +7359,7 @@ Cell[BoxData[
                     Offset[0.034999999999999996`]}, 
                    Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                     Offset[0.]}}, "RowsIndexed" -> {}}],
-              FontSize->9]}
+              FontSize->Rational[39, 4]]}
            },
            
            GridBoxAlignment->{
@@ -7246,7 +7394,7 @@ Cell[BoxData[
                   Offset[0.034999999999999996`]}, 
                  Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                   Offset[0.]}}, "RowsIndexed" -> {}}],
-            FontSize->9]}
+            FontSize->Rational[39, 4]]}
          },
          GridBoxAlignment->{
           "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
@@ -7299,7 +7447,7 @@ Cell[BoxData[
                   Offset[0.034999999999999996`]}, 
                  Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                   Offset[0.]}}, "RowsIndexed" -> {}}],
-            FontSize->9]}
+            FontSize->Rational[39, 4]]}
          },
          GridBoxAlignment->{
           "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
@@ -7335,7 +7483,7 @@ Cell[BoxData[
                   Offset[0.034999999999999996`]}, 
                  Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                   Offset[0.]}}, "RowsIndexed" -> {}}],
-            FontSize->9]}
+            FontSize->Rational[39, 4]]}
          },
          GridBoxAlignment->{
           "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
@@ -7364,7 +7512,7 @@ Cell[BoxData[
                Offset[0.034999999999999996`]}, 
               Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                Offset[0.]}}, "RowsIndexed" -> {}}],
-         FontSize->9]}
+         FontSize->Rational[39, 4]]}
       },
       GridBoxAlignment->{
        "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}}, 
@@ -7400,7 +7548,7 @@ Cell[BoxData[
                   Offset[0.034999999999999996`]}, 
                  Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                   Offset[0.]}}, "RowsIndexed" -> {}}],
-            FontSize->9]}
+            FontSize->Rational[39, 4]]}
          },
          GridBoxAlignment->{
           "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
@@ -7429,7 +7577,7 @@ Cell[BoxData[
                Offset[0.034999999999999996`]}, 
               Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                Offset[0.]}}, "RowsIndexed" -> {}}],
-         FontSize->9]}
+         FontSize->Rational[39, 4]]}
       },
       GridBoxAlignment->{
        "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}}, 
@@ -7459,7 +7607,7 @@ Cell[BoxData[
                Offset[0.034999999999999996`]}, 
               Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                Offset[0.]}}, "RowsIndexed" -> {}}],
-         FontSize->9]}
+         FontSize->Rational[39, 4]]}
       },
       GridBoxAlignment->{
        "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}}, 
@@ -7488,7 +7636,7 @@ Cell[BoxData[
                Offset[0.034999999999999996`]}, 
               Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                Offset[0.]}}, "RowsIndexed" -> {}}],
-         FontSize->9]}
+         FontSize->Rational[39, 4]]}
       },
       GridBoxAlignment->{
        "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}}, 
@@ -7531,7 +7679,7 @@ Cell[BoxData[
                Offset[0.034999999999999996`]}, 
               Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                Offset[0.]}}, "RowsIndexed" -> {}}],
-         FontSize->9]}
+         FontSize->Rational[39, 4]]}
       },
       GridBoxAlignment->{
        "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}}, 
@@ -7574,7 +7722,7 @@ Cell[BoxData[
                Offset[0.034999999999999996`]}, 
               Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                Offset[0.]}}, "RowsIndexed" -> {}}],
-         FontSize->9]}
+         FontSize->Rational[39, 4]]}
       },
       GridBoxAlignment->{
        "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}}, 
@@ -7636,7 +7784,7 @@ Cell[BoxData[
                   Offset[0.034999999999999996`]}, 
                  Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                   Offset[0.]}}, "RowsIndexed" -> {}}],
-            FontSize->9]}
+            FontSize->Rational[39, 4]]}
          },
          GridBoxAlignment->{
           "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
@@ -7701,7 +7849,7 @@ Cell[BoxData[
                Offset[0.034999999999999996`]}, 
               Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                Offset[0.]}}, "RowsIndexed" -> {}}],
-         FontSize->9]}
+         FontSize->Rational[39, 4]]}
       },
       GridBoxAlignment->{
        "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}}, 
@@ -7763,7 +7911,7 @@ Cell[BoxData[
                   Offset[0.034999999999999996`]}, 
                  Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                   Offset[0.]}}, "RowsIndexed" -> {}}],
-            FontSize->9]}
+            FontSize->Rational[39, 4]]}
          },
          GridBoxAlignment->{
           "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
@@ -8023,7 +8171,7 @@ Cell[BoxData[
                     Offset[0.034999999999999996`]}, 
                     Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                     Offset[0.]}}, "RowsIndexed" -> {}}],
-                  FontSize->9]}
+                  FontSize->Rational[39, 4]]}
                },
                
                GridBoxAlignment->{
@@ -8080,7 +8228,7 @@ Cell[BoxData[
                     Offset[0.034999999999999996`]}, 
                     Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                     Offset[0.]}}, "RowsIndexed" -> {}}],
-                 FontSize->9]}
+                 FontSize->Rational[39, 4]]}
               },
               
               GridBoxAlignment->{
@@ -8135,7 +8283,7 @@ Cell[BoxData[
                     Offset[0.034999999999999996`]}, 
                     Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                     Offset[0.]}}, "RowsIndexed" -> {}}],
-                    FontSize->9]}
+                    FontSize->Rational[39, 4]]}
                  },
                  
                  GridBoxAlignment->{
@@ -8171,7 +8319,7 @@ Cell[BoxData[
                     Offset[0.034999999999999996`]}, 
                     Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                     Offset[0.]}}, "RowsIndexed" -> {}}],
-                    FontSize->9]}
+                    FontSize->Rational[39, 4]]}
                  },
                  
                  GridBoxAlignment->{
@@ -8207,7 +8355,7 @@ Cell[BoxData[
                     Offset[0.034999999999999996`]}, 
                     Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                     Offset[0.]}}, "RowsIndexed" -> {}}],
-                    FontSize->9]}
+                    FontSize->Rational[39, 4]]}
                  },
                  
                  GridBoxAlignment->{
@@ -8266,7 +8414,7 @@ Cell[BoxData[
                     Offset[0.034999999999999996`]}, 
                     Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                     Offset[0.]}}, "RowsIndexed" -> {}}],
-               FontSize->9]}
+               FontSize->Rational[39, 4]]}
             },
             
             GridBoxAlignment->{
@@ -8298,7 +8446,7 @@ Cell[BoxData[
                     Offset[0.034999999999999996`]}, 
                    Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                     Offset[0.]}}, "RowsIndexed" -> {}}],
-              FontSize->9]}
+              FontSize->Rational[39, 4]]}
            },
            
            GridBoxAlignment->{
@@ -8329,7 +8477,7 @@ Cell[BoxData[
                     Offset[0.034999999999999996`]}, 
                    Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                     Offset[0.]}}, "RowsIndexed" -> {}}],
-              FontSize->9]}
+              FontSize->Rational[39, 4]]}
            },
            
            GridBoxAlignment->{
@@ -8371,7 +8519,7 @@ Cell[BoxData[
                     Offset[0.034999999999999996`]}, 
                     Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                     Offset[0.]}}, "RowsIndexed" -> {}}],
-                    FontSize->9]}
+                    FontSize->Rational[39, 4]]}
                    },
                    
                    GridBoxAlignment->{
@@ -8410,7 +8558,7 @@ Cell[BoxData[
                     Offset[0.034999999999999996`]}, 
                     Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                     Offset[0.]}}, "RowsIndexed" -> {}}],
-                    FontSize->9]}
+                    FontSize->Rational[39, 4]]}
                  },
                  
                  GridBoxAlignment->{
@@ -8449,7 +8597,7 @@ Cell[BoxData[
                     Offset[0.034999999999999996`]}, 
                     Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                     Offset[0.]}}, "RowsIndexed" -> {}}],
-                    FontSize->9]}
+                    FontSize->Rational[39, 4]]}
                  },
                  
                  GridBoxAlignment->{
@@ -8492,7 +8640,7 @@ Cell[BoxData[
                     Offset[0.034999999999999996`]}, 
                     Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                     Offset[0.]}}, "RowsIndexed" -> {}}],
-                    FontSize->9]}
+                    FontSize->Rational[39, 4]]}
                  },
                  
                  GridBoxAlignment->{
@@ -8531,7 +8679,7 @@ Cell[BoxData[
                     Offset[0.034999999999999996`]}, 
                     Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                     Offset[0.]}}, "RowsIndexed" -> {}}],
-                    FontSize->9]}
+                    FontSize->Rational[39, 4]]}
                  },
                  
                  GridBoxAlignment->{
@@ -8570,7 +8718,7 @@ Cell[BoxData[
                     Offset[0.034999999999999996`]}, 
                     Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                     Offset[0.]}}, "RowsIndexed" -> {}}],
-                    FontSize->9]}
+                    FontSize->Rational[39, 4]]}
                  },
                  
                  GridBoxAlignment->{
@@ -8654,7 +8802,7 @@ Cell[BoxData[
                     Offset[0.034999999999999996`]}, 
                    Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                     Offset[0.]}}, "RowsIndexed" -> {}}],
-              FontSize->9]}
+              FontSize->Rational[39, 4]]}
            },
            
            GridBoxAlignment->{
@@ -8685,7 +8833,7 @@ Cell[BoxData[
                  Offset[0.034999999999999996`]}, 
                 Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                  Offset[0.]}}, "RowsIndexed" -> {}}],
-           FontSize->9]}
+           FontSize->Rational[39, 4]]}
         },
         GridBoxAlignment->{
          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
@@ -8747,7 +8895,7 @@ Cell[BoxData[
                    Offset[0.034999999999999996`]}, 
                   Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                    Offset[0.]}}, "RowsIndexed" -> {}}],
-             FontSize->9]}
+             FontSize->Rational[39, 4]]}
           },
           
           GridBoxAlignment->{
@@ -8777,7 +8925,7 @@ Cell[BoxData[
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -8807,7 +8955,7 @@ Cell[BoxData[
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -8893,7 +9041,7 @@ Cell[BoxData[
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -8922,7 +9070,7 @@ Cell[BoxData[
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -8952,7 +9100,7 @@ Cell[BoxData[
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -9020,7 +9168,7 @@ Cell[BoxData[
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -9049,7 +9197,7 @@ Cell[BoxData[
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -9079,7 +9227,7 @@ Cell[BoxData[
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -9194,7 +9342,7 @@ Cell[BoxData[
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -9224,7 +9372,7 @@ Cell[BoxData[
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -9304,7 +9452,7 @@ Cell[BoxData[
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -9343,7 +9491,7 @@ Cell[BoxData[
                     Offset[0.034999999999999996`]}, 
                     Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                     Offset[0.]}}, "RowsIndexed" -> {}}],
-               FontSize->9]}
+               FontSize->Rational[39, 4]]}
             },
             
             GridBoxAlignment->{
@@ -9407,7 +9555,7 @@ Cell[BoxData[
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -9704,7 +9852,7 @@ Cell[BoxData[
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -9733,7 +9881,7 @@ Cell[BoxData[
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -9774,7 +9922,7 @@ Cell[BoxData[
                     Offset[0.034999999999999996`]}, 
                     Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                     Offset[0.]}}, "RowsIndexed" -> {}}],
-               FontSize->9]}
+               FontSize->Rational[39, 4]]}
             },
             
             GridBoxAlignment->{
@@ -9838,7 +9986,7 @@ Cell[BoxData[
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -9897,7 +10045,7 @@ Cell[BoxData[
                   Offset[0.034999999999999996`]}, 
                  Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                   Offset[0.]}}, "RowsIndexed" -> {}}],
-            FontSize->9]}
+            FontSize->Rational[39, 4]]}
          },
          GridBoxAlignment->{
           "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
@@ -9964,7 +10112,7 @@ Cell[BoxData[
                     Offset[0.034999999999999996`]}, 
                     Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                     Offset[0.]}}, "RowsIndexed" -> {}}],
-               FontSize->9]}
+               FontSize->Rational[39, 4]]}
             },
             
             GridBoxAlignment->{
@@ -10007,7 +10155,7 @@ Cell[BoxData[
                   Offset[0.034999999999999996`]}, 
                  Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                   Offset[0.]}}, "RowsIndexed" -> {}}],
-            FontSize->9]}
+            FontSize->Rational[39, 4]]}
          },
          GridBoxAlignment->{
           "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
@@ -10064,7 +10212,7 @@ Cell[BoxData[
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -10093,7 +10241,7 @@ Cell[BoxData[
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -10209,7 +10357,7 @@ Cell[BoxData[
                   Offset[0.034999999999999996`]}, 
                  Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                   Offset[0.]}}, "RowsIndexed" -> {}}],
-            FontSize->9]}
+            FontSize->Rational[39, 4]]}
          },
          GridBoxAlignment->{
           "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
@@ -10425,7 +10573,7 @@ Cell[BoxData[
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -10485,7 +10633,7 @@ Cell[BoxData[
                   Offset[0.034999999999999996`]}, 
                  Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                   Offset[0.]}}, "RowsIndexed" -> {}}],
-            FontSize->9]}
+            FontSize->Rational[39, 4]]}
          },
          GridBoxAlignment->{
           "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
@@ -10592,7 +10740,7 @@ Cell[BoxData[
                   Offset[0.034999999999999996`]}, 
                  Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                   Offset[0.]}}, "RowsIndexed" -> {}}],
-            FontSize->9]}
+            FontSize->Rational[39, 4]]}
          },
          GridBoxAlignment->{
           "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
@@ -10648,7 +10796,7 @@ Cell[BoxData[
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -10677,7 +10825,7 @@ Cell[BoxData[
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -10776,7 +10924,7 @@ Cell[BoxData[
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -10805,7 +10953,7 @@ Cell[BoxData[
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -10910,7 +11058,7 @@ Cell[BoxData[
                    Offset[0.034999999999999996`]}, 
                   Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                    Offset[0.]}}, "RowsIndexed" -> {}}],
-             FontSize->9]}
+             FontSize->Rational[39, 4]]}
           },
           
           GridBoxAlignment->{
@@ -10995,7 +11143,7 @@ Cell[BoxData[
                    Offset[0.034999999999999996`]}, 
                   Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                    Offset[0.]}}, "RowsIndexed" -> {}}],
-             FontSize->9]}
+             FontSize->Rational[39, 4]]}
           },
           
           GridBoxAlignment->{
@@ -11025,7 +11173,7 @@ Cell[BoxData[
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -11103,7 +11251,7 @@ Cell[BoxData[
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -11132,7 +11280,7 @@ Cell[BoxData[
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -11223,7 +11371,7 @@ Cell[BoxData[
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -11252,7 +11400,7 @@ Cell[BoxData[
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -11343,7 +11491,7 @@ Cell[BoxData[
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -11455,7 +11603,7 @@ Cell[BoxData[
                     Offset[0.034999999999999996`]}, 
                     Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                     Offset[0.]}}, "RowsIndexed" -> {}}],
-               FontSize->9]}
+               FontSize->Rational[39, 4]]}
             },
             
             GridBoxAlignment->{
@@ -11617,7 +11765,7 @@ Cell[BoxData[
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -11658,7 +11806,7 @@ Cell[BoxData[
                     Offset[0.034999999999999996`]}, 
                     Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                     Offset[0.]}}, "RowsIndexed" -> {}}],
-               FontSize->9]}
+               FontSize->Rational[39, 4]]}
             },
             
             GridBoxAlignment->{
@@ -11722,7 +11870,7 @@ Cell[BoxData[
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -11751,7 +11899,7 @@ Cell[BoxData[
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -11833,7 +11981,7 @@ Cell[BoxData[
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -11862,7 +12010,7 @@ Cell[BoxData[
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -11944,7 +12092,7 @@ Cell[BoxData[
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -12029,7 +12177,7 @@ Cell[BoxData[
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -12070,7 +12218,7 @@ Cell[BoxData[
                     Offset[0.034999999999999996`]}, 
                     Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                     Offset[0.]}}, "RowsIndexed" -> {}}],
-               FontSize->9]}
+               FontSize->Rational[39, 4]]}
             },
             
             GridBoxAlignment->{
@@ -12134,7 +12282,7 @@ Cell[BoxData[
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -12284,7 +12432,7 @@ Cell[BoxData[
                    Offset[0.034999999999999996`]}, 
                   Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                    Offset[0.]}}, "RowsIndexed" -> {}}],
-             FontSize->9]}
+             FontSize->Rational[39, 4]]}
           },
           
           GridBoxAlignment->{
@@ -12320,7 +12468,7 @@ Cell[BoxData[
                   Offset[0.034999999999999996`]}, 
                  Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                   Offset[0.]}}, "RowsIndexed" -> {}}],
-            FontSize->9]}
+            FontSize->Rational[39, 4]]}
          },
          GridBoxAlignment->{
           "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
@@ -12383,7 +12531,7 @@ Cell[BoxData[
                    Offset[0.034999999999999996`]}, 
                   Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                    Offset[0.]}}, "RowsIndexed" -> {}}],
-             FontSize->9]}
+             FontSize->Rational[39, 4]]}
           },
           
           GridBoxAlignment->{
@@ -12413,7 +12561,7 @@ Cell[BoxData[
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -12448,7 +12596,7 @@ Cell[BoxData[
                   Offset[0.034999999999999996`]}, 
                  Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                   Offset[0.]}}, "RowsIndexed" -> {}}],
-            FontSize->9]}
+            FontSize->Rational[39, 4]]}
          },
          GridBoxAlignment->{
           "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
@@ -12515,7 +12663,7 @@ Cell[BoxData[
                     Offset[0.034999999999999996`]}, 
                     Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                     Offset[0.]}}, "RowsIndexed" -> {}}],
-               FontSize->9]}
+               FontSize->Rational[39, 4]]}
             },
             
             GridBoxAlignment->{
@@ -12558,7 +12706,7 @@ Cell[BoxData[
                   Offset[0.034999999999999996`]}, 
                  Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                   Offset[0.]}}, "RowsIndexed" -> {}}],
-            FontSize->9]}
+            FontSize->Rational[39, 4]]}
          },
          GridBoxAlignment->{
           "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
@@ -12648,7 +12796,7 @@ Cell[BoxData[
                   Offset[0.034999999999999996`]}, 
                  Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                   Offset[0.]}}, "RowsIndexed" -> {}}],
-            FontSize->9]}
+            FontSize->Rational[39, 4]]}
          },
          GridBoxAlignment->{
           "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
@@ -12705,7 +12853,7 @@ Cell[BoxData[
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -12744,7 +12892,7 @@ Cell[BoxData[
                     Offset[0.034999999999999996`]}, 
                     Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                     Offset[0.]}}, "RowsIndexed" -> {}}],
-               FontSize->9]}
+               FontSize->Rational[39, 4]]}
             },
             
             GridBoxAlignment->{
@@ -12827,7 +12975,7 @@ Cell[BoxData[
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -12929,7 +13077,7 @@ Cell[BoxData[
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -12968,7 +13116,7 @@ Cell[BoxData[
                     Offset[0.034999999999999996`]}, 
                     Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                     Offset[0.]}}, "RowsIndexed" -> {}}],
-               FontSize->9]}
+               FontSize->Rational[39, 4]]}
             },
             
             GridBoxAlignment->{
@@ -13051,7 +13199,7 @@ Cell[BoxData[
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -13153,7 +13301,7 @@ Cell[BoxData[
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -13182,7 +13330,7 @@ Cell[BoxData[
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -13241,7 +13389,7 @@ Cell[BoxData[
                     Offset[0.034999999999999996`]}, 
                     Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                     Offset[0.]}}, "RowsIndexed" -> {}}],
-               FontSize->9]}
+               FontSize->Rational[39, 4]]}
             },
             
             GridBoxAlignment->{
@@ -13310,7 +13458,7 @@ Cell[BoxData[
                    Offset[0.034999999999999996`]}, 
                   Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                    Offset[0.]}}, "RowsIndexed" -> {}}],
-             FontSize->9]}
+             FontSize->Rational[39, 4]]}
           },
           
           GridBoxAlignment->{
@@ -13340,7 +13488,7 @@ Cell[BoxData[
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -13393,7 +13541,7 @@ Cell[BoxData[
                   Offset[0.034999999999999996`]}, 
                  Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                   Offset[0.]}}, "RowsIndexed" -> {}}],
-            FontSize->9]}
+            FontSize->Rational[39, 4]]}
          },
          GridBoxAlignment->{
           "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
@@ -13459,7 +13607,7 @@ Cell[BoxData[
                     Offset[0.034999999999999996`]}, 
                     Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                     Offset[0.]}}, "RowsIndexed" -> {}}],
-               FontSize->9]}
+               FontSize->Rational[39, 4]]}
             },
             
             GridBoxAlignment->{
@@ -13520,7 +13668,7 @@ Cell[BoxData[
                   Offset[0.034999999999999996`]}, 
                  Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                   Offset[0.]}}, "RowsIndexed" -> {}}],
-            FontSize->9]}
+            FontSize->Rational[39, 4]]}
          },
          GridBoxAlignment->{
           "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
@@ -13582,7 +13730,7 @@ Cell[BoxData[
                    Offset[0.034999999999999996`]}, 
                   Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                    Offset[0.]}}, "RowsIndexed" -> {}}],
-             FontSize->9]}
+             FontSize->Rational[39, 4]]}
           },
           
           GridBoxAlignment->{
@@ -13636,7 +13784,7 @@ Cell[BoxData[
                   Offset[0.034999999999999996`]}, 
                  Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                   Offset[0.]}}, "RowsIndexed" -> {}}],
-            FontSize->9]}
+            FontSize->Rational[39, 4]]}
          },
          GridBoxAlignment->{
           "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
@@ -13692,7 +13840,7 @@ Cell[BoxData[
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -13769,7 +13917,7 @@ Cell[BoxData[
                   Offset[0.034999999999999996`]}, 
                  Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                   Offset[0.]}}, "RowsIndexed" -> {}}],
-            FontSize->9]}
+            FontSize->Rational[39, 4]]}
          },
          GridBoxAlignment->{
           "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
@@ -13835,7 +13983,7 @@ Cell[BoxData[
                     Offset[0.034999999999999996`]}, 
                     Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                     Offset[0.]}}, "RowsIndexed" -> {}}],
-               FontSize->9]}
+               FontSize->Rational[39, 4]]}
             },
             
             GridBoxAlignment->{
@@ -13896,7 +14044,7 @@ Cell[BoxData[
                   Offset[0.034999999999999996`]}, 
                  Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                   Offset[0.]}}, "RowsIndexed" -> {}}],
-            FontSize->9]}
+            FontSize->Rational[39, 4]]}
          },
          GridBoxAlignment->{
           "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
@@ -13952,7 +14100,7 @@ Cell[BoxData[
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -13991,7 +14139,7 @@ Cell[BoxData[
                     Offset[0.034999999999999996`]}, 
                     Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                     Offset[0.]}}, "RowsIndexed" -> {}}],
-               FontSize->9]}
+               FontSize->Rational[39, 4]]}
             },
             
             GridBoxAlignment->{
@@ -14032,7 +14180,7 @@ Cell[BoxData[
                   Offset[0.034999999999999996`]}, 
                  Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                   Offset[0.]}}, "RowsIndexed" -> {}}],
-            FontSize->9]}
+            FontSize->Rational[39, 4]]}
          },
          GridBoxAlignment->{
           "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
@@ -14098,7 +14246,7 @@ Cell[BoxData[
                     Offset[0.034999999999999996`]}, 
                     Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                     Offset[0.]}}, "RowsIndexed" -> {}}],
-               FontSize->9]}
+               FontSize->Rational[39, 4]]}
             },
             
             GridBoxAlignment->{
@@ -14139,7 +14287,7 @@ Cell[BoxData[
                   Offset[0.034999999999999996`]}, 
                  Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                   Offset[0.]}}, "RowsIndexed" -> {}}],
-            FontSize->9]}
+            FontSize->Rational[39, 4]]}
          },
          GridBoxAlignment->{
           "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
@@ -14195,7 +14343,7 @@ Cell[BoxData[
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -14224,7 +14372,7 @@ Cell[BoxData[
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -14326,7 +14474,7 @@ Cell[BoxData[
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -14359,7 +14507,7 @@ Cell[BoxData[
                   Offset[0.034999999999999996`]}, 
                  Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                   Offset[0.]}}, "RowsIndexed" -> {}}],
-            FontSize->9]}
+            FontSize->Rational[39, 4]]}
          },
          GridBoxAlignment->{
           "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
@@ -14446,7 +14594,7 @@ Cell[BoxData[
                   Offset[0.034999999999999996`]}, 
                  Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                   Offset[0.]}}, "RowsIndexed" -> {}}],
-            FontSize->9]}
+            FontSize->Rational[39, 4]]}
          },
          GridBoxAlignment->{
           "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
@@ -14488,7 +14636,7 @@ Cell[BoxData[
                     Offset[0.034999999999999996`]}, 
                     Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                     Offset[0.]}}, "RowsIndexed" -> {}}],
-               FontSize->9]}
+               FontSize->Rational[39, 4]]}
             },
             
             GridBoxAlignment->{
@@ -14556,7 +14704,7 @@ Cell[BoxData[
                   Offset[0.034999999999999996`]}, 
                  Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                   Offset[0.]}}, "RowsIndexed" -> {}}],
-            FontSize->9]}
+            FontSize->Rational[39, 4]]}
          },
          GridBoxAlignment->{
           "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
@@ -14598,7 +14746,7 @@ Cell[BoxData[
                     Offset[0.034999999999999996`]}, 
                     Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                     Offset[0.]}}, "RowsIndexed" -> {}}],
-               FontSize->9]}
+               FontSize->Rational[39, 4]]}
             },
             
             GridBoxAlignment->{
@@ -14666,7 +14814,7 @@ Cell[BoxData[
                   Offset[0.034999999999999996`]}, 
                  Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                   Offset[0.]}}, "RowsIndexed" -> {}}],
-            FontSize->9]}
+            FontSize->Rational[39, 4]]}
          },
          GridBoxAlignment->{
           "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
@@ -14752,7 +14900,7 @@ Cell[BoxData[
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -14793,7 +14941,7 @@ Cell[BoxData[
                     Offset[0.034999999999999996`]}, 
                     Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                     Offset[0.]}}, "RowsIndexed" -> {}}],
-               FontSize->9]}
+               FontSize->Rational[39, 4]]}
             },
             
             GridBoxAlignment->{
@@ -14802,8 +14950,7 @@ Cell[BoxData[
             GridBoxSpacings->{"Columns" -> {
                 Offset[0.27999999999999997`], {
                  Offset[0.034999999999999996`]}, 
-                Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {\
-
+                Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
                 Offset[0.2], {
                  Offset[0.4]}, 
                 Offset[0.2]}, "RowsIndexed" -> {}}],
@@ -14858,7 +15005,7 @@ Cell[BoxData[
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -14901,7 +15048,7 @@ Cell[BoxData[
                     Offset[0.034999999999999996`]}, 
                     Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                     Offset[0.]}}, "RowsIndexed" -> {}}],
-               FontSize->9]}
+               FontSize->Rational[39, 4]]}
             },
             
             GridBoxAlignment->{
@@ -14966,7 +15113,7 @@ Cell[BoxData[
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -15009,9 +15156,8 @@ Cell[BoxData[
                     Offset[0.034999999999999996`]}, 
                     Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                     Offset[0.]}}, "RowsIndexed" -> {}}],
-               FontSize->9]}
+               FontSize->Rational[39, 4]]}
             },
-            
             GridBoxAlignment->{
              "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
               "Rows" -> {{Center}}, "RowsIndexed" -> {}},
@@ -15074,7 +15220,7 @@ Cell[BoxData[
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -15162,7 +15308,7 @@ Cell[BoxData[
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -15203,7 +15349,7 @@ Cell[BoxData[
                     Offset[0.034999999999999996`]}, 
                     Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                     Offset[0.]}}, "RowsIndexed" -> {}}],
-               FontSize->9]}
+               FontSize->Rational[39, 4]]}
             },
             
             GridBoxAlignment->{
@@ -15274,7 +15420,7 @@ Cell[BoxData[
                    Offset[0.034999999999999996`]}, 
                   Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                    Offset[0.]}}, "RowsIndexed" -> {}}],
-             FontSize->9]}
+             FontSize->Rational[39, 4]]}
           },
           
           GridBoxAlignment->{
@@ -15310,7 +15456,7 @@ Cell[BoxData[
                   Offset[0.034999999999999996`]}, 
                  Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                   Offset[0.]}}, "RowsIndexed" -> {}}],
-            FontSize->9]}
+            FontSize->Rational[39, 4]]}
          },
          GridBoxAlignment->{
           "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
@@ -15377,7 +15523,7 @@ Cell[BoxData[
                     Offset[0.034999999999999996`]}, 
                     Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                     Offset[0.]}}, "RowsIndexed" -> {}}],
-               FontSize->9]}
+               FontSize->Rational[39, 4]]}
             },
             
             GridBoxAlignment->{
@@ -15420,7 +15566,7 @@ Cell[BoxData[
                   Offset[0.034999999999999996`]}, 
                  Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                   Offset[0.]}}, "RowsIndexed" -> {}}],
-            FontSize->9]}
+            FontSize->Rational[39, 4]]}
          },
          GridBoxAlignment->{
           "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
@@ -15510,7 +15656,7 @@ Cell[BoxData[
                   Offset[0.034999999999999996`]}, 
                  Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                   Offset[0.]}}, "RowsIndexed" -> {}}],
-            FontSize->9]}
+            FontSize->Rational[39, 4]]}
          },
          GridBoxAlignment->{
           "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
@@ -15567,7 +15713,7 @@ Cell[BoxData[
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -15610,7 +15756,7 @@ Cell[BoxData[
                     Offset[0.034999999999999996`]}, 
                     Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                     Offset[0.]}}, "RowsIndexed" -> {}}],
-               FontSize->9]}
+               FontSize->Rational[39, 4]]}
             },
             
             GridBoxAlignment->{
@@ -15675,7 +15821,7 @@ Cell[BoxData[
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -15763,7 +15909,7 @@ Cell[BoxData[
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -15802,8 +15948,9 @@ Cell[BoxData[
                     Offset[0.034999999999999996`]}, 
                     Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                     Offset[0.]}}, "RowsIndexed" -> {}}],
-               FontSize->9]}
+               FontSize->Rational[39, 4]]}
             },
+            
             GridBoxAlignment->{
              "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
               "Rows" -> {{Center}}, "RowsIndexed" -> {}},
@@ -15885,7 +16032,7 @@ Cell[BoxData[
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -15926,7 +16073,7 @@ Cell[BoxData[
                     Offset[0.034999999999999996`]}, 
                     Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                     Offset[0.]}}, "RowsIndexed" -> {}}],
-               FontSize->9]}
+               FontSize->Rational[39, 4]]}
             },
             
             GridBoxAlignment->{
@@ -16010,7 +16157,7 @@ Cell[BoxData[
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -16051,7 +16198,7 @@ Cell[BoxData[
                     Offset[0.034999999999999996`]}, 
                     Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                     Offset[0.]}}, "RowsIndexed" -> {}}],
-               FontSize->9]}
+               FontSize->Rational[39, 4]]}
             },
             
             GridBoxAlignment->{
@@ -16135,7 +16282,7 @@ Cell[BoxData[
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -16240,7 +16387,7 @@ Cell[BoxData[
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -16279,7 +16426,7 @@ Cell[BoxData[
                     Offset[0.034999999999999996`]}, 
                     Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                     Offset[0.]}}, "RowsIndexed" -> {}}],
-               FontSize->9]}
+               FontSize->Rational[39, 4]]}
             },
             
             GridBoxAlignment->{
@@ -16368,7 +16515,7 @@ Cell[BoxData[
                    Offset[0.034999999999999996`]}, 
                   Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                    Offset[0.]}}, "RowsIndexed" -> {}}],
-             FontSize->9]}
+             FontSize->Rational[39, 4]]}
           },
           
           GridBoxAlignment->{
@@ -16402,7 +16549,7 @@ Cell[BoxData[
                   Offset[0.034999999999999996`]}, 
                  Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                   Offset[0.]}}, "RowsIndexed" -> {}}],
-            FontSize->9]}
+            FontSize->Rational[39, 4]]}
          },
          GridBoxAlignment->{
           "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
@@ -16488,7 +16635,7 @@ Cell[BoxData[
                     Offset[0.034999999999999996`]}, 
                     Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                     Offset[0.]}}, "RowsIndexed" -> {}}],
-               FontSize->9]}
+               FontSize->Rational[39, 4]]}
             },
             
             GridBoxAlignment->{
@@ -16529,7 +16676,7 @@ Cell[BoxData[
                   Offset[0.034999999999999996`]}, 
                  Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                   Offset[0.]}}, "RowsIndexed" -> {}}],
-            FontSize->9]}
+            FontSize->Rational[39, 4]]}
          },
          GridBoxAlignment->{
           "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
@@ -16605,7 +16752,7 @@ Cell[BoxData[
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -16646,7 +16793,7 @@ Cell[BoxData[
                     Offset[0.034999999999999996`]}, 
                     Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                     Offset[0.]}}, "RowsIndexed" -> {}}],
-               FontSize->9]}
+               FontSize->Rational[39, 4]]}
             },
             
             GridBoxAlignment->{
@@ -16730,7 +16877,7 @@ Cell[BoxData[
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -16835,7 +16982,7 @@ Cell[BoxData[
                 Offset[0.034999999999999996`]}, 
                Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                 Offset[0.]}}, "RowsIndexed" -> {}}],
-          FontSize->9]}
+          FontSize->Rational[39, 4]]}
        },
        GridBoxAlignment->{
         "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}},
@@ -16868,7 +17015,7 @@ Cell[BoxData[
                   Offset[0.034999999999999996`]}, 
                  Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                   Offset[0.]}}, "RowsIndexed" -> {}}],
-            FontSize->9]}
+            FontSize->Rational[39, 4]]}
          },
          GridBoxAlignment->{
           "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
@@ -16908,7 +17055,7 @@ Cell[BoxData[
                     Offset[0.034999999999999996`]}, 
                     Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                     Offset[0.]}}, "RowsIndexed" -> {}}],
-               FontSize->9]}
+               FontSize->Rational[39, 4]]}
             },
             
             GridBoxAlignment->{
@@ -16975,7 +17122,7 @@ Cell[BoxData[
                   Offset[0.034999999999999996`]}, 
                  Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                   Offset[0.]}}, "RowsIndexed" -> {}}],
-            FontSize->9]}
+            FontSize->Rational[39, 4]]}
          },
          GridBoxAlignment->{
           "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
@@ -17015,7 +17162,7 @@ Cell[BoxData[
                     Offset[0.034999999999999996`]}, 
                     Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                     Offset[0.]}}, "RowsIndexed" -> {}}],
-               FontSize->9]}
+               FontSize->Rational[39, 4]]}
             },
             
             GridBoxAlignment->{
@@ -17082,7 +17229,7 @@ Cell[BoxData[
                   Offset[0.034999999999999996`]}, 
                  Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                   Offset[0.]}}, "RowsIndexed" -> {}}],
-            FontSize->9]}
+            FontSize->Rational[39, 4]]}
          },
          GridBoxAlignment->{
           "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
@@ -17122,7 +17269,7 @@ Cell[BoxData[
                     Offset[0.034999999999999996`]}, 
                     Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                     Offset[0.]}}, "RowsIndexed" -> {}}],
-               FontSize->9]}
+               FontSize->Rational[39, 4]]}
             },
             
             GridBoxAlignment->{
@@ -17197,7 +17344,7 @@ Cell[BoxData[
                     Offset[0.034999999999999996`]}, 
                     Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                     Offset[0.]}}, "RowsIndexed" -> {}}],
-               FontSize->9]}
+               FontSize->Rational[39, 4]]}
             },
             
             GridBoxAlignment->{
@@ -17239,7 +17386,7 @@ Cell[BoxData[
                   Offset[0.034999999999999996`]}, 
                  Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                   Offset[0.]}}, "RowsIndexed" -> {}}],
-            FontSize->9]}
+            FontSize->Rational[39, 4]]}
          },
          GridBoxAlignment->{
           "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
@@ -17307,7 +17454,7 @@ Cell[BoxData[
                     Offset[0.034999999999999996`]}, 
                     Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                     Offset[0.]}}, "RowsIndexed" -> {}}],
-               FontSize->9]}
+               FontSize->Rational[39, 4]]}
             },
             
             GridBoxAlignment->{
@@ -17349,7 +17496,7 @@ Cell[BoxData[
                   Offset[0.034999999999999996`]}, 
                  Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                   Offset[0.]}}, "RowsIndexed" -> {}}],
-            FontSize->9]}
+            FontSize->Rational[39, 4]]}
          },
          GridBoxAlignment->{
           "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
@@ -17439,7 +17586,7 @@ Cell[BoxData[
                   Offset[0.034999999999999996`]}, 
                  Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                   Offset[0.]}}, "RowsIndexed" -> {}}],
-            FontSize->9]}
+            FontSize->Rational[39, 4]]}
          },
          GridBoxAlignment->{
           "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
@@ -17507,7 +17654,7 @@ Cell[BoxData[
                     Offset[0.034999999999999996`]}, 
                     Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                     Offset[0.]}}, "RowsIndexed" -> {}}],
-               FontSize->9]}
+               FontSize->Rational[39, 4]]}
             },
             
             GridBoxAlignment->{
@@ -17549,7 +17696,7 @@ Cell[BoxData[
                   Offset[0.034999999999999996`]}, 
                  Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                   Offset[0.]}}, "RowsIndexed" -> {}}],
-            FontSize->9]}
+            FontSize->Rational[39, 4]]}
          },
          GridBoxAlignment->{
           "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
@@ -17639,7 +17786,7 @@ Cell[BoxData[
                   Offset[0.034999999999999996`]}, 
                  Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                   Offset[0.]}}, "RowsIndexed" -> {}}],
-            FontSize->9]}
+            FontSize->Rational[39, 4]]}
          },
          GridBoxAlignment->{
           "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
@@ -17701,12 +17848,13 @@ Cell[BoxData[
       $CellContext`ah[],
       Editable->False], ""], "2"], 
    "\[InvisibleSpace]", "\<\" +... was performed in \"\>", 
-   "\[InvisibleSpace]", "5.180982`7.1659570769403516", 
+   "\[InvisibleSpace]", 
+   "4.45881300000000013739054338657297194004`6.669819171955514", 
    "\[InvisibleSpace]", "\<\" seconds.\"\>"}],
   SequenceForm["The Splitting of ", $CellContext`ah[
      xAct`xTensor`LI[0], 
      xAct`xTensor`LI[0]]^2, " +... was performed in ", 
-   5.180982`7.1659570769403516, " seconds."],
+   4.45881300000000013739054338657297194004`6.669819171955514, " seconds."],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -18066,12 +18214,13 @@ Cell[BoxData[
       $CellContext`ah[],
       Editable->False], ""], "2"], 
    "\[InvisibleSpace]", "\<\" +... was performed in \"\>", 
-   "\[InvisibleSpace]", "1.186171`6.525692295511685", 
+   "\[InvisibleSpace]", 
+   "1.05189700000000008195399914256995543838`6.042573129787818", 
    "\[InvisibleSpace]", "\<\" seconds.\"\>"}],
   SequenceForm["The Splitting of ", $CellContext`ah[
      xAct`xTensor`LI[0], 
      xAct`xTensor`LI[0]]^2, " +... was performed in ", 
-   1.186171`6.525692295511685, " seconds."],
+   1.05189700000000008195399914256995543838`6.042573129787818, " seconds."],
   Editable->False]], "Print"],
 
 Cell[BoxData[
