@@ -16586,26 +16586,51 @@ since we do not know very well how to handle that. **\>\"", "]"}], ";"}]}],
   RowBox[{"Protect", "[", "ToMetric", "]"}], ";"}]}], "Input",
  InitializationCell->True],
 
-Cell[BoxData[
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"InverseMetricQ", "[", 
+   RowBox[{"x_", "?", "xTensorQ"}], "]"}], ":=", 
+  RowBox[{"With", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"tid", "=", 
+      RowBox[{"TensorID", "@", "x"}]}], "}"}], ",", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"Length", "@", "tid"}], ">", "0"}], ")"}], "&&", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"tid", "[", 
+        RowBox[{"[", "1", "]"}], "]"}], "===", 
+       "xAct`xTensor`Private`InvMetric"}], ")"}]}]}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"InverseMetricQ", "[", "_", "]"}], ":=", "False"}]}], "Input",
+ InitializationCell->True],
+
+Cell[BoxData[{
  RowBox[{
   RowBox[{
-   RowBox[{"SeparateIndicesDownOfInverseMetric", "[", "invmetric_", "]"}], 
-   "[", "expr_", "]"}], ":=", " ", 
-  RowBox[{"If", "[", 
    RowBox[{
-    RowBox[{"invmetric", "=!=", 
-     RowBox[{"Inv", "[", "invmetric", "]"}]}], ",", 
-    RowBox[{"Fold", "[", 
+    RowBox[{"SeparateIndicesDownOfInverseMetric", "[", 
+     RowBox[{"invmetric_", "?", "InverseMetricQ"}], "]"}], "[", "expr_", 
+    "]"}], ":=", 
+   RowBox[{"Fold", "[", 
+    RowBox[{
      RowBox[{
       RowBox[{
-       RowBox[{
-        RowBox[{"SeparateMetric", "[", 
-         RowBox[{"First", "@", "$Metrics"}], "]"}], "[", 
-        RowBox[{"#1", ",", "#2"}], "]"}], "&"}], ",", "expr", ",", 
-      RowBox[{
-       RowBox[{"IndicesOf", "[", 
-        RowBox[{"Down", ",", "invmetric"}], "]"}], "[", "expr", "]"}]}], 
-     "]"}], ",", "expr"}], "]"}]}]], "Input",
+       RowBox[{"SeparateMetric", "[", 
+        RowBox[{"First", "@", "$Metrics"}], "]"}], "[", 
+       RowBox[{"#1", ",", "#2"}], "]"}], "&"}], ",", "expr", ",", 
+     RowBox[{
+      RowBox[{"IndicesOf", "[", 
+       RowBox[{"Down", ",", "invmetric"}], "]"}], "[", "expr", "]"}]}], 
+    "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"SeparateIndicesDownOfInverseMetric", "[", "_", "]"}], "[", 
+   "expr_", "]"}], ":=", "expr"}]}], "Input",
  InitializationCell->True],
 
 Cell[BoxData[{

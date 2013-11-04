@@ -2512,7 +2512,12 @@ SetNumberOfArguments[ToMetric,{1,2}]
 Protect[ToMetric];
 
 
-SeparateIndicesDownOfInverseMetric[invmetric_][expr_]:= If[invmetric=!=Inv[invmetric],Fold[SeparateMetric[First@$Metrics][#1,#2]&,expr,IndicesOf[Down,invmetric][expr]],expr]
+InverseMetricQ[x_?xTensorQ]:=With[{tid=TensorID@x},(Length@tid>0)&&(tid[[1]]===xAct`xTensor`Private`InvMetric)]
+InverseMetricQ[_]:=False
+
+
+SeparateIndicesDownOfInverseMetric[invmetric_?InverseMetricQ][expr_]:=Fold[SeparateMetric[First@$Metrics][#1,#2]&,expr,IndicesOf[Down,invmetric][expr]];
+SeparateIndicesDownOfInverseMetric[_][expr_]:=expr
 
 
 Conformal[metricbase_?MetricQ][metric1_?MetricQ,metric2_?MetricQ][expr_]:=Module[{cdb,cd1,cd2,res,res2,oldpre,resbis,exprnoproj,M,i1,i2,beforeputtingconfheads,IDInvMetric},oldpre=$PrePrint;$PrePrint=Identity;
