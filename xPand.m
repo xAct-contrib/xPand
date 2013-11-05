@@ -640,7 +640,7 @@ xAct`xTensor`NoScalar[f_?ScalarFunctionQ[expr_]]:=f[NoScalar@expr]
 Protect[xAct`xTensor`NoScalar];
 
 (** To avoid complaints from MakeRule when the rule has already been defined and the lhs is zero. **)
-xAct`xTensor`MakeRule[{lhs_?(Evaluate[#]===0&),rhs_,conditions___},options___]:={};
+xAct`xTensor`MakeRule[{lhs_?(Evaluate[#]===0&),rhs_,conditions___},options:OptionsPattern[]]:={};
 
 
 (*** DEFAULT OPTIONS AND PROTECTED NAMES ***)

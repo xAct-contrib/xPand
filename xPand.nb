@@ -2192,7 +2192,8 @@ Cell[BoxData[
             RowBox[{
              RowBox[{"Evaluate", "[", "#", "]"}], "===", "0"}], "&"}], 
            ")"}]}], ",", "rhs_", ",", "conditions___"}], "}"}], ",", 
-       "options___"}], "]"}], ":=", 
+       RowBox[{"options", ":", 
+        RowBox[{"OptionsPattern", "[", "]"}]}]}], "]"}], ":=", 
      RowBox[{"{", "}"}]}], ";"}]}]}]], "Input",
  InitializationCell->True],
 
