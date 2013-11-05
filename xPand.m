@@ -1737,7 +1737,10 @@ i2=DummyIn[Tangent[Manifold]],
 i3=DummyIn[Tangent[Manifold]],
 i4=DummyIn[Tangent[Manifold]],
 i5=DummyIn[Tangent[Manifold]],
-dummy=DummyIn[Tangent[Manifold]]},
+dummy=DummyIn[Tangent[Manifold]],
+ah=a[h],Hh=H[h],
+avh=av[h],nth=nt[h],
+CSh=CS[h]},
 
 If[Not@DefTensorQ[u],DefTensor[u[ind1],{Manifold},PrintAs->"\!\("<>ToString[u]<>"\&-\)"];,
 If[Length[SlotsOfTensor[u]]=!=1||VBundleOfIndex@DummyIn[First@SlotsOfTensor@u]=!=Tangent[Manifold],Throw[Message[SetSlicing::invalidnormalvector,u]]];
@@ -1811,23 +1814,23 @@ AutomaticRules[epsilon[g],MakeRule[Evaluate[{epsilon[g]@@indsdim u[-indsdim[[1]]
 (* We define a[h] the scale factor associated to h, and the Hubble factor related.*)
 (DefProjectedTensor[#[[1]],h,SpaceTimesOfDefinition->{"Background"},TensorProperties->{"Traceless","Transverse","SymmetricTensor"},PrintAs->#[[2]]])&/@$ListFieldsBackgroundOnly[h];
 
-Evaluate[a[h]]::usage=a::usage;
-Evaluate[H[h]]::usage=H::usage;
+ah::usage=a::usage;
+Hh::usage=H::usage;
 
 (* Patch to have a nice output for the Hubble factor *)
-Evaluate[H[h]]/:PrintAs[H[h]]=.;
-PrintAs[H[h]]^:=If[$ConformalTime,"\[ScriptCapitalH]","H"];
+Hh/:PrintAs[Hh]=.;
+PrintAs[Hh]^:=If[$ConformalTime,"\[ScriptCapitalH]","H"];
 
 Unprotect[NoScalar];
 (* We know it is safe to remove the scalar heads on scale factors and Hubble factors, because we shall never replace a Hubble factor nor a scale factor by something else which is not a pure scalar field...*)
-NoScalar[Power[Scalar[Evaluate[H[h]][LI[0],LI[0]]],n_Integer]]:=Power[Evaluate[H[h]][LI[0],LI[0]],n];
-NoScalar[Power[Scalar[Evaluate[a[h]][LI[0],LI[0]]],n_Integer]]:=Power[Evaluate[a[h]][LI[0],LI[0]],n];
+NoScalar[Power[Scalar[Hh[LI[0],LI[0]]],n_Integer]]:=Power[Hh[LI[0],LI[0]],n];
+NoScalar[Power[Scalar[ah[LI[0],LI[0]]],n_Integer]]:=Power[ah[LI[0],LI[0]],n];
 Protect[NoScalar];
 
-If[SpaceTimeType==="Minkowski",a[h][LI[0],LI[0]]=1;H[h][LI[0],LI[0]]=0;,
-a[h][LI[0],LI[1]]:=H[h][LI[0],LI[0]]a[h][LI[0],LI[0]];
-a[h][LI[0],LI[q_?((IntegerQ[#]&&#>=2)&)]]:=NoScalar@org@Nest[LieD[u[ind1]][#]&,a[h][LI[0],LI[0]],q];
-DefConformalMetric[g,a[h]];
+If[SpaceTimeType==="Minkowski",ah[LI[0],LI[0]]=1;Hh[LI[0],LI[0]]=0;,
+ah[LI[0],LI[1]]:=Hh[LI[0],LI[0]]ah[LI[0],LI[0]];
+ah[LI[0],LI[q_?((IntegerQ[#]&&#>=2)&)]]:=NoScalar@org@Nest[LieD[u[ind1]][#]&,ah[LI[0],LI[0]],q];
+DefConformalMetric[g,ah];
 ];
 
 (* Obvious. SHould be automatic in xPert*)
@@ -1844,16 +1847,17 @@ AutomaticRules[g,MakeRule[Evaluate[{LieD[u[dummy]][g[-ind1,-ind2]],LieD[u[dummy]
 
 DefTensor[Connection[h][-ind1,-ind2,-ind3],{Manifold},Antisymmetric[{-ind1,-ind3}],OrthogonalTo->{u[ind1],u[ind2],u[ind3]},ProjectedWith->{h[ind1,-ind4],h[ind2,-ind5],h[ind3,-ind6]},PrintAs->StringJoin["\[CapitalGamma]",ToString[h]]] ;
 
-DefTensor[CS[h][-ind1,-ind2,-ind3],{Manifold},Antisymmetric[{-ind2,-ind3}],OrthogonalTo->{u[ind1],u[ind2],u[ind3]},ProjectedWith->{h[ind1,-ind4],h[ind2,-ind5],h[ind3,-ind6]},PrintAs->StringJoin["C"(*,ToString[h]*)]] ;
+DefTensor[CSh[-ind1,-ind2,-ind3],{Manifold},Antisymmetric[{-ind2,-ind3}],OrthogonalTo->{u[ind1],u[ind2],u[ind3]},ProjectedWith->{h[ind1,-ind4],h[ind2,-ind5],h[ind3,-ind6]},PrintAs->StringJoin["C"(*,ToString[h]*)]] ;
 
 If[Not[FlatSpaceBool[SpaceTimeType]&&dim===4&&BianchiBool[SpaceTimeType]],
 
-DefTensor[nt[h][-ind1,-ind2],{Manifold},Symmetric[{-ind1,-ind2}],OrthogonalTo->{u[ind1],u[ind2]},ProjectedWith->{h[ind1,-ind4],h[ind2,-ind5]},PrintAs->StringJoin["N"(*,ToString[h]*)]] ;
+DefTensor[nth[-ind1,-ind2],{Manifold},Symmetric[{-ind1,-ind2}],OrthogonalTo->{u[ind1],u[ind2]},ProjectedWith->{h[ind1,-ind4],h[ind2,-ind5]},PrintAs->StringJoin["N"(*,ToString[h]*)]] ;
 
-DefTensor[av[h][-ind1],{Manifold},OrthogonalTo->{u[ind1]},ProjectedWith->{h[ind1,-ind4]},PrintAs->StringJoin["A"(*,ToString[h]*)]] ;
+DefTensor[avh[-ind1],{Manifold},OrthogonalTo->{u[ind1]},ProjectedWith->{h[ind1,-ind4]},PrintAs->StringJoin["A"(*,ToString[h]*)]] ;
+
 If[SpaceTimeType==="BianchiA",
-av[h][ind1_]=0;,
-AutomaticRules[Evaluate[av[h]],MakeRule[Evaluate[{av[h][ind1]nt[h][-ind1,-ind2],0}]]];
+avh[ind1_]=0;,
+AutomaticRules[avh,MakeRule[Evaluate[{avh[ind1]nth[-ind1,-ind2],0}]]];
 ];
 ];
 
@@ -1863,50 +1867,50 @@ AutomaticRules[Evaluate[av[h]],MakeRule[Evaluate[{av[h][ind1]nt[h][-ind1,-ind2],
 (* We first distinguish the case of Flat Friedmann and Curved Friedmann where the connections have a simple expression*)
 Which[
 FlatSpaceBool[SpaceTimeType],
-CS[h][ind1_,ind2_,ind3_]=0;
-Riemann[cd][i1_,i2_,i3_,i4_]=0; 
-Ricci[cd][i1_,i2_]=0; 
+CSh[ind1_,ind2_,ind3_]=0;
+Riemann[cd][i1_,i2_,i3_,i4_]=0;
+Ricci[cd][i1_,i2_]=0;
 RicciScalar[cd][]=0;,
 
 SpaceTimeType==="FLCurved",
 DefTensor[\[ScriptK][h][],{Manifold},PrintAs->StringJoin["\[ScriptK]"(*,ToString[h]*)]];
 
-CD[ind1_][\[ScriptK][h][]]=-1*(-2/3)*u[ind1]\[ScriptK][h][]CD[-ind2][u[ind2]]; (* This is because Subscript[\[ScriptCapitalL], u](\[ScriptK]^(1/2)Subscript[\[Epsilon]^\[Mu], \[Nu]\[Sigma]]) must be zero since Subscript[\[ScriptCapitalL], u](Subscript[C^\[Mu], \[Nu]\[Sigma]])=0*)
+CD[ind1_][\[ScriptK][h][]]:=-1*(-2/3)*u[ind1]\[ScriptK][h][]CD[-ind2][u[ind2]]; (* This is because Subscript[\[ScriptCapitalL], u](\[ScriptK]^(1/2)Subscript[\[Epsilon]^\[Mu], \[Nu]\[Sigma]]) must be zero since Subscript[\[ScriptCapitalL], u](Subscript[C^\[Mu], \[Nu]\[Sigma]])=0*)
 (* Given that we first work on the conformal metric where the trace of the extrinsic curvature is 0, then this point does not matter at all for us.*)
 cd[ind1_][\[ScriptK][h][]]=0;
-If[dim===4,CS[h][ind1_,ind2_,ind3_]=2Sqrt[\[ScriptK][h][]]epsilon[h][ind1,ind2,ind3]];
+If[dim===4,CSh[ind1_,ind2_,ind3_]:=2Sqrt[\[ScriptK][h][]]epsilon[h][ind1,ind2,ind3]];
 ,
 
 
 (BianchiBool@SpaceTimeType)&&(Not@FlatSpaceBool@SpaceTimeType),
 (* Lie derivatives of the constants of structure in general Bianchi cases It is 0 when indices are in position Subscript[(C^i), jk] .*)
 (* We are exhaustive. Maybe there is  simpler way to write it.*)
-AutomaticRules[Evaluate[CS[h]],MakeRule[Evaluate[{LieD[u[ind1]][CS[h][ind2,-ind3,-ind4]],0}],MetricOn->None]];
+AutomaticRules[CSh,MakeRule[Evaluate[{LieD[u[ind1]][CSh[ind2,-ind3,-ind4]],0}],MetricOn->None]];
 
-AutomaticRules[Evaluate[CS[h]],MakeRule[Evaluate[{LieD[u[ind1]][CS[h][-ind2,-ind3,-ind4]],ToCanonical@ContractMetric[LieD[u[ind1]][g[-ind2,-ind5]]CS[h][ind5,-ind3,-ind4]//MetricToProjector[#,h]&]}],MetricOn->None]];
+AutomaticRules[CSh,MakeRule[Evaluate[{LieD[u[ind1]][CSh[-ind2,-ind3,-ind4]],ToCanonical@ContractMetric[LieD[u[ind1]][g[-ind2,-ind5]]CSh[ind5,-ind3,-ind4]//MetricToProjector[#,h]&]}],MetricOn->None]];
 
-AutomaticRules[Evaluate[CS[h]],MakeRule[Evaluate[{LieD[u[ind1]][CS[h][ind2,-ind3,ind4]],ToCanonical@ContractMetric[LieD[u[ind1]][g[ind4,ind6]]CS[h][ind2,-ind3,-ind6]//MetricToProjector[#,h]&]}],MetricOn->None]];
+AutomaticRules[CSh,MakeRule[Evaluate[{LieD[u[ind1]][CSh[ind2,-ind3,ind4]],ToCanonical@ContractMetric[LieD[u[ind1]][g[ind4,ind6]]CSh[ind2,-ind3,-ind6]//MetricToProjector[#,h]&]}],MetricOn->None]];
 
-AutomaticRules[Evaluate[CS[h]],MakeRule[Evaluate[{LieD[u[ind1]][CS[h][ind2,ind3,-ind4]],ToCanonical@ContractMetric[LieD[u[ind1]][g[ind3,ind5]]CS[h][ind2,-ind5,-ind4]//MetricToProjector[#,h]&]}],MetricOn->None]];
+AutomaticRules[CSh,MakeRule[Evaluate[{LieD[u[ind1]][CSh[ind2,ind3,-ind4]],ToCanonical@ContractMetric[LieD[u[ind1]][g[ind3,ind5]]CSh[ind2,-ind5,-ind4]//MetricToProjector[#,h]&]}],MetricOn->None]];
 
-AutomaticRules[Evaluate[CS[h]],MakeRule[Evaluate[{LieD[u[ind1]][CS[h][-ind2,ind3,-ind4]],ToCanonical@ContractMetric[LieD[u[ind1]][g[ind3,ind5]]g[-ind6,-ind2]CS[h][ind6,-ind5,-ind4]+g[ind3,ind5]LieD[u[ind1]][g[-ind6,-ind2]]CS[h][ind6,-ind5,-ind4]//MetricToProjector[#,h]&]}],MetricOn->None]];
+AutomaticRules[CSh,MakeRule[Evaluate[{LieD[u[ind1]][CSh[-ind2,ind3,-ind4]],ToCanonical@ContractMetric[LieD[u[ind1]][g[ind3,ind5]]g[-ind6,-ind2]CSh[ind6,-ind5,-ind4]+g[ind3,ind5]LieD[u[ind1]][g[-ind6,-ind2]]CSh[ind6,-ind5,-ind4]//MetricToProjector[#,h]&]}],MetricOn->None]];
 
-AutomaticRules[Evaluate[CS[h]],MakeRule[Evaluate[{LieD[u[ind1]][CS[h][-ind2,-ind4,ind3]],ToCanonical@ContractMetric[LieD[u[ind1]][g[ind3,ind5]]g[-ind6,-ind2]CS[h][ind6,-ind4,-ind5]+g[ind3,ind5]LieD[u[ind1]][g[-ind6,-ind2]]CS[h][ind6,-ind4,-ind5]//MetricToProjector[#,h]&]}],MetricOn->None]];
+AutomaticRules[CSh,MakeRule[Evaluate[{LieD[u[ind1]][CSh[-ind2,-ind4,ind3]],ToCanonical@ContractMetric[LieD[u[ind1]][g[ind3,ind5]]g[-ind6,-ind2]CSh[ind6,-ind4,-ind5]+g[ind3,ind5]LieD[u[ind1]][g[-ind6,-ind2]]CSh[ind6,-ind4,-ind5]//MetricToProjector[#,h]&]}],MetricOn->None]];
 
-AutomaticRules[Evaluate[CS[h]],MakeRule[Evaluate[{LieD[u[ind1]][CS[h][-ind2,ind3,ind4]],
-ToCanonical@ContractMetric[LieD[u[ind1]][g[ind3,ind5]]g[-ind6,-ind2]g[ind4,ind7]CS[h][ind6,-ind5,-ind7]
-+g[ind3,ind5]LieD[u[ind1]][g[-ind6,-ind2]]g[ind4,ind7]CS[h][ind6,-ind5,-ind7]
-+g[ind3,ind5]g[-ind6,-ind2]LieD[u[ind1]][g[ind4,ind7]]CS[h][ind6,-ind5,-ind7]//MetricToProjector[#,h]&]}],MetricOn->None]];
+AutomaticRules[CSh,MakeRule[Evaluate[{LieD[u[ind1]][CSh[-ind2,ind3,ind4]],
+ToCanonical@ContractMetric[LieD[u[ind1]][g[ind3,ind5]]g[-ind6,-ind2]g[ind4,ind7]CSh[ind6,-ind5,-ind7]
++g[ind3,ind5]LieD[u[ind1]][g[-ind6,-ind2]]g[ind4,ind7]CSh[ind6,-ind5,-ind7]
++g[ind3,ind5]g[-ind6,-ind2]LieD[u[ind1]][g[ind4,ind7]]CSh[ind6,-ind5,-ind7]//MetricToProjector[#,h]&]}],MetricOn->None]];
 
-AutomaticRules[Evaluate[CS[h]],MakeRule[Evaluate[{LieD[u[ind1]][CS[h][ind2,ind3,ind4]],
-ToCanonical@ContractMetric[LieD[u[ind1]][g[ind3,ind5]]g[ind4,ind6]CS[h][ind2,-ind5,-ind6]
-+g[ind3,ind5]LieD[u[ind1]][g[ind4,ind6]]CS[h][ind2,-ind5,-ind6]//MetricToProjector[#,h]&]}],MetricOn->None]];
+AutomaticRules[CSh,MakeRule[Evaluate[{LieD[u[ind1]][CSh[ind2,ind3,ind4]],
+ToCanonical@ContractMetric[LieD[u[ind1]][g[ind3,ind5]]g[ind4,ind6]CSh[ind2,-ind5,-ind6]
++g[ind3,ind5]LieD[u[ind1]][g[ind4,ind6]]CSh[ind2,-ind5,-ind6]//MetricToProjector[#,h]&]}],MetricOn->None]];
 ];
 
 
 (* -------- *)
 (* We now define the connection and the Riemann tensor of the induced metric. See draft *)
-IndexSet[Connection[h][i1_,i2_,i3_],1/2(CS[h][i2,i1,i3]-CS[h][i1,i3,i2]+CS[h][i3,i1,i2])];
+IndexSet[Connection[h][i1_,i2_,i3_],1/2(CSh[i2,i1,i3]-CSh[i1,i3,i2]+CSh[i3,i1,i2])];
 
 If[SpaceTimeType==="FLCurved",
 IndexSet[Riemann[cd][i1_,i2_,i3_,i4_],\[ScriptK][h][](h[i1,i3]h[i2,i4]-h[i1,i4]h[i2,i3])];
@@ -1914,12 +1918,12 @@ IndexSet[Ricci[cd][i1_,i2_],\[ScriptK][h][]h[i1,i2](h[i3,-i3]-1)];
 IndexSet[RicciScalar[cd][],\[ScriptK][h][]h[i1,-i1](h[i3,-i3]-1)];,
 
 (* Rieman Ricci and RicciScalar tensors*)
-(*IndexSet[Riemann[cd][i1_,i2_,i3_,i4_], ToCanonical@ContractMetric[-Connection[h][i5,i3,i2]Connection[h][i1,i4,-i5]+Connection[h][i5,i4,i2]Connection[h][i1,i3,-i5]-CS[h][i5,i3,i4]Connection[h][i1,-i5,i2]]];
-IndexSet[Ricci[cd][i1_,i3_], ToCanonical@ContractMetric[h[-i2,-i4](-Connection[h][i5,i3,i2]Connection[h][i1,i4,-i5]+Connection[h][i5,i4,i2]Connection[h][i1,i3,-i5]-CS[h][i5,i3,i4]Connection[h][i1,-i5,i2])]];
-IndexSet[RicciScalar[cd][], ToCanonical@ContractMetric[h[-i2,-i4]h[-i1,-i3](-Connection[h][i5,i3,i2]Connection[h][i1,i4,-i5]+Connection[h][i5,i4,i2]Connection[h][i1,i3,-i5]-CS[h][i5,i3,i4]Connection[h][i1,-i5,i2])]];*)
-ConstantsOfStructureRules[h]=Flatten@Join[MakeRule[Evaluate[{Riemann[cd][i1,i2,i3,i4], ToCanonical@ContractMetric[(-Connection[h][i5,i3,i2]Connection[h][i1,i4,-i5]+Connection[h][i5,i4,i2]Connection[h][i1,i3,-i5]-CS[h][i5,i3,i4]Connection[h][i1,-i5,i2])(*/.ConstantsDecompositionRules[h]*)]}]],
-MakeRule[Evaluate[{Ricci[cd][i1,i3], ToCanonical@ContractMetric[(h[-i2,-i4](-Connection[h][i5,i3,i2]Connection[h][i1,i4,-i5]+Connection[h][i5,i4,i2]Connection[h][i1,i3,-i5]-CS[h][i5,i3,i4]Connection[h][i1,-i5,i2]))(*/.ConstantsDecompositionRules[h]*)]}]],
-MakeRule[Evaluate[{RicciScalar[cd][], ToCanonical@ContractMetric[(h[-i2,-i4]h[-i1,-i3](-Connection[h][i5,i3,i2]Connection[h][i1,i4,-i5]+Connection[h][i5,i4,i2]Connection[h][i1,i3,-i5]-CS[h][i5,i3,i4]Connection[h][i1,-i5,i2]))(*/.ConstantsDecompositionRules[h]*)]}]]
+(*IndexSet[Riemann[cd][i1_,i2_,i3_,i4_], ToCanonical@ContractMetric[-Connection[h][i5,i3,i2]Connection[h][i1,i4,-i5]+Connection[h][i5,i4,i2]Connection[h][i1,i3,-i5]-CSh[i5,i3,i4]Connection[h][i1,-i5,i2]]];
+IndexSet[Ricci[cd][i1_,i3_], ToCanonical@ContractMetric[h[-i2,-i4](-Connection[h][i5,i3,i2]Connection[h][i1,i4,-i5]+Connection[h][i5,i4,i2]Connection[h][i1,i3,-i5]-CSh[i5,i3,i4]Connection[h][i1,-i5,i2])]];
+IndexSet[RicciScalar[cd][], ToCanonical@ContractMetric[h[-i2,-i4]h[-i1,-i3](-Connection[h][i5,i3,i2]Connection[h][i1,i4,-i5]+Connection[h][i5,i4,i2]Connection[h][i1,i3,-i5]-CSh[i5,i3,i4]Connection[h][i1,-i5,i2])]];*)
+ConstantsOfStructureRules[h]=Flatten@Join[MakeRule[Evaluate[{Riemann[cd][i1,i2,i3,i4], ToCanonical@ContractMetric[(-Connection[h][i5,i3,i2]Connection[h][i1,i4,-i5]+Connection[h][i5,i4,i2]Connection[h][i1,i3,-i5]-CSh[i5,i3,i4]Connection[h][i1,-i5,i2])(*/.ConstantsDecompositionRules[h]*)]}]],
+MakeRule[Evaluate[{Ricci[cd][i1,i3], ToCanonical@ContractMetric[(h[-i2,-i4](-Connection[h][i5,i3,i2]Connection[h][i1,i4,-i5]+Connection[h][i5,i4,i2]Connection[h][i1,i3,-i5]-CSh[i5,i3,i4]Connection[h][i1,-i5,i2]))(*/.ConstantsDecompositionRules[h]*)]}]],
+MakeRule[Evaluate[{RicciScalar[cd][], ToCanonical@ContractMetric[(h[-i2,-i4]h[-i1,-i3](-Connection[h][i5,i3,i2]Connection[h][i1,i4,-i5]+Connection[h][i5,i4,i2]Connection[h][i1,i3,-i5]-CSh[i5,i3,i4]Connection[h][i1,-i5,i2]))(*/.ConstantsDecompositionRules[h]*)]}]]
 ];
 
 ];
@@ -1993,16 +1997,16 @@ ToCanonical[ContractMetric[ToInducedDerivative[IndicesDown[CD[ind1][K[h][LI[0],L
 
 If[(BianchiBool@SpaceTimeType)&&(Not@FlatSpaceBool@SpaceTimeType),
 (* Automatic rules for the gradients of the constants of structure. I should define one function only to define these rules since it is also called in the DefSTFTensor... Here I keep the way it was implemented in the first version*)
-AutomaticRules[Evaluate[CS[h]],
-MakeRule[Evaluate[{cd[ind1][CS[h][ind2,ind3,ind4]],ToCanonical[
+AutomaticRules[CSh,
+MakeRule[Evaluate[{cd[ind1][CSh[ind2,ind3,ind4]],ToCanonical[
 (* Minus the connection for down indices *)
--Plus@@((Connection[h][dummy,ind1,#] ReplaceIndex[Evaluate[CS[h][ind2,ind3,ind4]],#->-dummy])&/@{ind2,ind3,ind4})]
+-Plus@@((Connection[h][dummy,ind1,#] ReplaceIndex[CSh[ind2,ind3,ind4],#->-dummy])&/@{ind2,ind3,ind4})]
 }]]];
 
 (* From this, the n+1 splitting of Covariant derivatives is obvious. *)
-AutomaticRules[Evaluate[CS[h]],
-MakeRule[Evaluate[{CD[ind1][CS[h][ind2,ind3,ind4]],
-ToCanonical[ContractMetric[ToInducedDerivative[IndicesDown[CD[ind1][CS[h][ind2,ind3,ind4]]],CD,cd]//GradNormalToExtrinsicK]]}]]];
+AutomaticRules[CSh,
+MakeRule[Evaluate[{CD[ind1][CSh[ind2,ind3,ind4]],
+ToCanonical[ContractMetric[ToInducedDerivative[IndicesDown[CD[ind1][CSh[ind2,ind3,ind4]]],CD,cd]//GradNormalToExtrinsicK]]}]]];
 
 (* TODO Finish correctly this part *)
 (* Incomplete here for the Rieman induced. One should enforce the splitting and also the treatment of Lie derivative...*)

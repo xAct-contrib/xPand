@@ -9961,8 +9961,19 @@ $OpenConstantsOfStructure is set to False. **\>\"", "]"}], ";",
               "\[IndentingNewLine]", 
               RowBox[{"dummy", "=", 
                RowBox[{"DummyIn", "[", 
-                RowBox[{"Tangent", "[", "Manifold", "]"}], "]"}]}]}], "}"}], 
-            ",", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+                RowBox[{"Tangent", "[", "Manifold", "]"}], "]"}]}], ",", 
+              "\[IndentingNewLine]", 
+              RowBox[{"ah", "=", 
+               RowBox[{"a", "[", "h", "]"}]}], ",", 
+              RowBox[{"Hh", "=", 
+               RowBox[{"H", "[", "h", "]"}]}], ",", "\[IndentingNewLine]", 
+              RowBox[{"avh", "=", 
+               RowBox[{"av", "[", "h", "]"}]}], ",", 
+              RowBox[{"nth", "=", 
+               RowBox[{"nt", "[", "h", "]"}]}], ",", "\[IndentingNewLine]", 
+              RowBox[{"CSh", "=", 
+               RowBox[{"CS", "[", "h", "]"}]}]}], "}"}], ",", 
+            "\[IndentingNewLine]", "\[IndentingNewLine]", 
             RowBox[{
              RowBox[{"If", "[", 
               RowBox[{
@@ -10523,14 +10534,10 @@ expression.\>\""}], "]"}]}], "/;",
               RowBox[{"$ListFieldsBackgroundOnly", "[", "h", "]"}]}], ";", 
              "\[IndentingNewLine]", "\[IndentingNewLine]", 
              RowBox[{
-              RowBox[{
-               RowBox[{"Evaluate", "[", 
-                RowBox[{"a", "[", "h", "]"}], "]"}], "::", "usage"}], "=", 
+              RowBox[{"ah", "::", "usage"}], "=", 
               RowBox[{"a", "::", "usage"}]}], ";", "\[IndentingNewLine]", 
              RowBox[{
-              RowBox[{
-               RowBox[{"Evaluate", "[", 
-                RowBox[{"H", "[", "h", "]"}], "]"}], "::", "usage"}], "=", 
+              RowBox[{"Hh", "::", "usage"}], "=", 
               RowBox[{"H", "::", "usage"}]}], ";", "\[IndentingNewLine]", 
              "\[IndentingNewLine]", 
              RowBox[{"(*", " ", 
@@ -10538,16 +10545,12 @@ expression.\>\""}], "]"}]}], "/;",
               "Patch", " ", "to", " ", "have", " ", "a", " ", "nice", " ", 
                "output", " ", "for", " ", "the", " ", "Hubble", " ", 
                "factor"}], " ", "*)"}], "\[IndentingNewLine]", 
-             RowBox[{
-              RowBox[{"Evaluate", "[", 
-               RowBox[{"H", "[", "h", "]"}], "]"}], "/:", 
+             RowBox[{"Hh", "/:", 
               RowBox[{
-               RowBox[{"PrintAs", "[", 
-                RowBox[{"H", "[", "h", "]"}], "]"}], "=."}]}], ";", 
+               RowBox[{"PrintAs", "[", "Hh", "]"}], "=."}]}], ";", 
              "\[IndentingNewLine]", 
              RowBox[{
-              RowBox[{"PrintAs", "[", 
-               RowBox[{"H", "[", "h", "]"}], "]"}], "^:=", 
+              RowBox[{"PrintAs", "[", "Hh", "]"}], "^:=", 
               RowBox[{"If", "[", 
                RowBox[{
                "$ConformalTime", ",", "\"\<\[ScriptCapitalH]\>\"", ",", 
@@ -10575,18 +10578,14 @@ expression.\>\""}], "]"}]}], "/;",
                RowBox[{"Power", "[", 
                 RowBox[{
                  RowBox[{"Scalar", "[", 
-                  RowBox[{
-                   RowBox[{"Evaluate", "[", 
-                    RowBox[{"H", "[", "h", "]"}], "]"}], "[", 
+                  RowBox[{"Hh", "[", 
                    RowBox[{
                     RowBox[{"LI", "[", "0", "]"}], ",", 
                     RowBox[{"LI", "[", "0", "]"}]}], "]"}], "]"}], ",", 
                  "n_Integer"}], "]"}], "]"}], ":=", 
               RowBox[{"Power", "[", 
                RowBox[{
-                RowBox[{
-                 RowBox[{"Evaluate", "[", 
-                  RowBox[{"H", "[", "h", "]"}], "]"}], "[", 
+                RowBox[{"Hh", "[", 
                  RowBox[{
                   RowBox[{"LI", "[", "0", "]"}], ",", 
                   RowBox[{"LI", "[", "0", "]"}]}], "]"}], ",", "n"}], "]"}]}],
@@ -10596,18 +10595,14 @@ expression.\>\""}], "]"}]}], "/;",
                RowBox[{"Power", "[", 
                 RowBox[{
                  RowBox[{"Scalar", "[", 
-                  RowBox[{
-                   RowBox[{"Evaluate", "[", 
-                    RowBox[{"a", "[", "h", "]"}], "]"}], "[", 
+                  RowBox[{"ah", "[", 
                    RowBox[{
                     RowBox[{"LI", "[", "0", "]"}], ",", 
                     RowBox[{"LI", "[", "0", "]"}]}], "]"}], "]"}], ",", 
                  "n_Integer"}], "]"}], "]"}], ":=", 
               RowBox[{"Power", "[", 
                RowBox[{
-                RowBox[{
-                 RowBox[{"Evaluate", "[", 
-                  RowBox[{"a", "[", "h", "]"}], "]"}], "[", 
+                RowBox[{"ah", "[", 
                  RowBox[{
                   RowBox[{"LI", "[", "0", "]"}], ",", 
                   RowBox[{"LI", "[", "0", "]"}]}], "]"}], ",", "n"}], "]"}]}],
@@ -10619,40 +10614,34 @@ expression.\>\""}], "]"}]}], "/;",
                RowBox[{"SpaceTimeType", "===", "\"\<Minkowski\>\""}], ",", 
                RowBox[{
                 RowBox[{
-                 RowBox[{
-                  RowBox[{"a", "[", "h", "]"}], "[", 
+                 RowBox[{"ah", "[", 
                   RowBox[{
                    RowBox[{"LI", "[", "0", "]"}], ",", 
                    RowBox[{"LI", "[", "0", "]"}]}], "]"}], "=", "1"}], ";", 
                 RowBox[{
-                 RowBox[{
-                  RowBox[{"H", "[", "h", "]"}], "[", 
+                 RowBox[{"Hh", "[", 
                   RowBox[{
                    RowBox[{"LI", "[", "0", "]"}], ",", 
                    RowBox[{"LI", "[", "0", "]"}]}], "]"}], "=", "0"}], ";"}], 
                ",", "\[IndentingNewLine]", 
                RowBox[{
                 RowBox[{
-                 RowBox[{
-                  RowBox[{"a", "[", "h", "]"}], "[", 
+                 RowBox[{"ah", "[", 
                   RowBox[{
                    RowBox[{"LI", "[", "0", "]"}], ",", 
                    RowBox[{"LI", "[", "1", "]"}]}], "]"}], ":=", 
                  RowBox[{
-                  RowBox[{
-                   RowBox[{"H", "[", "h", "]"}], "[", 
+                  RowBox[{"Hh", "[", 
                    RowBox[{
                     RowBox[{"LI", "[", "0", "]"}], ",", 
                     RowBox[{"LI", "[", "0", "]"}]}], "]"}], 
-                  RowBox[{
-                   RowBox[{"a", "[", "h", "]"}], "[", 
+                  RowBox[{"ah", "[", 
                    RowBox[{
                     RowBox[{"LI", "[", "0", "]"}], ",", 
                     RowBox[{"LI", "[", "0", "]"}]}], "]"}]}]}], ";", 
                 "\[IndentingNewLine]", 
                 RowBox[{
-                 RowBox[{
-                  RowBox[{"a", "[", "h", "]"}], "[", 
+                 RowBox[{"ah", "[", 
                   RowBox[{
                    RowBox[{"LI", "[", "0", "]"}], ",", 
                    RowBox[{"LI", "[", 
@@ -10673,15 +10662,13 @@ expression.\>\""}], "]"}]}], "/;",
                     RowBox[{"LieD", "[", 
                     RowBox[{"u", "[", "ind1", "]"}], "]"}], "[", "#", "]"}], 
                     "&"}], ",", 
-                    RowBox[{
-                    RowBox[{"a", "[", "h", "]"}], "[", 
+                    RowBox[{"ah", "[", 
                     RowBox[{
                     RowBox[{"LI", "[", "0", "]"}], ",", 
                     RowBox[{"LI", "[", "0", "]"}]}], "]"}], ",", "q"}], 
                     "]"}]}]}]}], ";", "\[IndentingNewLine]", 
                 RowBox[{"DefConformalMetric", "[", 
-                 RowBox[{"g", ",", 
-                  RowBox[{"a", "[", "h", "]"}]}], "]"}], ";"}]}], 
+                 RowBox[{"g", ",", "ah"}], "]"}], ";"}]}], 
               "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
              "\[IndentingNewLine]", 
              RowBox[{"(*", " ", 
@@ -10805,8 +10792,7 @@ expression.\>\""}], "]"}]}], "/;",
              " ", ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
              RowBox[{"DefTensor", "[", 
               RowBox[{
-               RowBox[{
-                RowBox[{"CS", "[", "h", "]"}], "[", 
+               RowBox[{"CSh", "[", 
                 RowBox[{
                  RowBox[{"-", "ind1"}], ",", 
                  RowBox[{"-", "ind2"}], ",", 
@@ -10852,8 +10838,7 @@ expression.\>\""}], "]"}]}], "/;",
                RowBox[{
                 RowBox[{"DefTensor", "[", 
                  RowBox[{
-                  RowBox[{
-                   RowBox[{"nt", "[", "h", "]"}], "[", 
+                  RowBox[{"nth", "[", 
                    RowBox[{
                     RowBox[{"-", "ind1"}], ",", 
                     RowBox[{"-", "ind2"}]}], "]"}], ",", 
@@ -10886,8 +10871,7 @@ expression.\>\""}], "]"}]}], "/;",
                 "\[IndentingNewLine]", 
                 RowBox[{"DefTensor", "[", 
                  RowBox[{
-                  RowBox[{
-                   RowBox[{"av", "[", "h", "]"}], "[", 
+                  RowBox[{"avh", "[", 
                    RowBox[{"-", "ind1"}], "]"}], ",", 
                   RowBox[{"{", "Manifold", "}"}], ",", 
                   RowBox[{"OrthogonalTo", "\[Rule]", 
@@ -10904,29 +10888,25 @@ expression.\>\""}], "]"}]}], "/;",
                     RowBox[{",", 
                     RowBox[{"ToString", "[", "h", "]"}]}], "*)"}], "]"}]}]}], 
                  "]"}], " ", ";", "\[IndentingNewLine]", 
+                "\[IndentingNewLine]", 
                 RowBox[{"If", "[", 
                  RowBox[{
                   RowBox[{"SpaceTimeType", "===", "\"\<BianchiA\>\""}], ",", 
                   "\[IndentingNewLine]", 
                   RowBox[{
                    RowBox[{
-                    RowBox[{
-                    RowBox[{"av", "[", "h", "]"}], "[", "ind1_", "]"}], "=", 
-                    "0"}], ";"}], ",", "\[IndentingNewLine]", 
+                    RowBox[{"avh", "[", "ind1_", "]"}], "=", "0"}], ";"}], 
+                  ",", "\[IndentingNewLine]", 
                   RowBox[{
                    RowBox[{"AutomaticRules", "[", 
-                    RowBox[{
-                    RowBox[{"Evaluate", "[", 
-                    RowBox[{"av", "[", "h", "]"}], "]"}], ",", 
+                    RowBox[{"avh", ",", 
                     RowBox[{"MakeRule", "[", 
                     RowBox[{"Evaluate", "[", 
                     RowBox[{"{", 
                     RowBox[{
                     RowBox[{
-                    RowBox[{
-                    RowBox[{"av", "[", "h", "]"}], "[", "ind1", "]"}], 
-                    RowBox[{
-                    RowBox[{"nt", "[", "h", "]"}], "[", 
+                    RowBox[{"avh", "[", "ind1", "]"}], 
+                    RowBox[{"nth", "[", 
                     RowBox[{
                     RowBox[{"-", "ind1"}], ",", 
                     RowBox[{"-", "ind2"}]}], "]"}]}], ",", "0"}], "}"}], 
@@ -10958,19 +10938,18 @@ expression.\>\""}], "]"}]}], "/;",
                "\[IndentingNewLine]", 
                RowBox[{
                 RowBox[{
-                 RowBox[{
-                  RowBox[{"CS", "[", "h", "]"}], "[", 
+                 RowBox[{"CSh", "[", 
                   RowBox[{"ind1_", ",", "ind2_", ",", "ind3_"}], "]"}], "=", 
                  "0"}], ";", "\[IndentingNewLine]", 
                 RowBox[{
                  RowBox[{
                   RowBox[{"Riemann", "[", "cd", "]"}], "[", 
                   RowBox[{"i1_", ",", "i2_", ",", "i3_", ",", "i4_"}], "]"}], 
-                 "=", "0"}], ";", " ", "\[IndentingNewLine]", 
+                 "=", "0"}], ";", "\[IndentingNewLine]", 
                 RowBox[{
                  RowBox[{
                   RowBox[{"Ricci", "[", "cd", "]"}], "[", 
-                  RowBox[{"i1_", ",", "i2_"}], "]"}], "=", "0"}], ";", " ", 
+                  RowBox[{"i1_", ",", "i2_"}], "]"}], "=", "0"}], ";", 
                 "\[IndentingNewLine]", 
                 RowBox[{
                  RowBox[{
@@ -10995,8 +10974,7 @@ expression.\>\""}], "]"}]}], "/;",
                  RowBox[{
                   RowBox[{"CD", "[", "ind1_", "]"}], "[", 
                   RowBox[{
-                   RowBox[{"\[ScriptK]", "[", "h", "]"}], "[", "]"}], "]"}], 
-                 "=", 
+                   RowBox[{"\[ScriptK]", "[", "h", "]"}], "[", "]"}], "]"}], ":=", 
                  RowBox[{
                   RowBox[{"-", "1"}], "*", 
                   RowBox[{"(", 
@@ -11048,9 +11026,8 @@ expression.\>\""}], "]"}]}], "/;",
                  RowBox[{
                   RowBox[{"dim", "===", "4"}], ",", 
                   RowBox[{
-                   RowBox[{
-                    RowBox[{"CS", "[", "h", "]"}], "[", 
-                    RowBox[{"ind1_", ",", "ind2_", ",", "ind3_"}], "]"}], "=", 
+                   RowBox[{"CSh", "[", 
+                    RowBox[{"ind1_", ",", "ind2_", ",", "ind3_"}], "]"}], ":=", 
                    RowBox[{"2", 
                     RowBox[{"Sqrt", "[", 
                     RowBox[{
@@ -11088,9 +11065,7 @@ expression.\>\""}], "]"}]}], "/;",
                  RowBox[{"it", "."}]}], "*)"}], "\[IndentingNewLine]", 
                RowBox[{
                 RowBox[{"AutomaticRules", "[", 
-                 RowBox[{
-                  RowBox[{"Evaluate", "[", 
-                   RowBox[{"CS", "[", "h", "]"}], "]"}], ",", 
+                 RowBox[{"CSh", ",", 
                   RowBox[{"MakeRule", "[", 
                    RowBox[{
                     RowBox[{"Evaluate", "[", 
@@ -11099,8 +11074,7 @@ expression.\>\""}], "]"}]}], "/;",
                     RowBox[{
                     RowBox[{"LieD", "[", 
                     RowBox[{"u", "[", "ind1", "]"}], "]"}], "[", 
-                    RowBox[{
-                    RowBox[{"CS", "[", "h", "]"}], "[", 
+                    RowBox[{"CSh", "[", 
                     RowBox[{"ind2", ",", 
                     RowBox[{"-", "ind3"}], ",", 
                     RowBox[{"-", "ind4"}]}], "]"}], "]"}], ",", "0"}], "}"}], 
@@ -11108,9 +11082,7 @@ expression.\>\""}], "]"}]}], "/;",
                     RowBox[{"MetricOn", "\[Rule]", "None"}]}], "]"}]}], "]"}],
                  ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
                 RowBox[{"AutomaticRules", "[", 
-                 RowBox[{
-                  RowBox[{"Evaluate", "[", 
-                   RowBox[{"CS", "[", "h", "]"}], "]"}], ",", 
+                 RowBox[{"CSh", ",", 
                   RowBox[{"MakeRule", "[", 
                    RowBox[{
                     RowBox[{"Evaluate", "[", 
@@ -11119,8 +11091,7 @@ expression.\>\""}], "]"}]}], "/;",
                     RowBox[{
                     RowBox[{"LieD", "[", 
                     RowBox[{"u", "[", "ind1", "]"}], "]"}], "[", 
-                    RowBox[{
-                    RowBox[{"CS", "[", "h", "]"}], "[", 
+                    RowBox[{"CSh", "[", 
                     RowBox[{
                     RowBox[{"-", "ind2"}], ",", 
                     RowBox[{"-", "ind3"}], ",", 
@@ -11136,8 +11107,7 @@ expression.\>\""}], "]"}]}], "/;",
                     RowBox[{
                     RowBox[{"-", "ind2"}], ",", 
                     RowBox[{"-", "ind5"}]}], "]"}], "]"}], 
-                    RowBox[{
-                    RowBox[{"CS", "[", "h", "]"}], "[", 
+                    RowBox[{"CSh", "[", 
                     RowBox[{"ind5", ",", 
                     RowBox[{"-", "ind3"}], ",", 
                     RowBox[{"-", "ind4"}]}], "]"}]}], "//", 
@@ -11148,9 +11118,7 @@ expression.\>\""}], "]"}]}], "/;",
                     RowBox[{"MetricOn", "\[Rule]", "None"}]}], "]"}]}], "]"}],
                  ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
                 RowBox[{"AutomaticRules", "[", 
-                 RowBox[{
-                  RowBox[{"Evaluate", "[", 
-                   RowBox[{"CS", "[", "h", "]"}], "]"}], ",", 
+                 RowBox[{"CSh", ",", 
                   RowBox[{"MakeRule", "[", 
                    RowBox[{
                     RowBox[{"Evaluate", "[", 
@@ -11159,8 +11127,7 @@ expression.\>\""}], "]"}]}], "/;",
                     RowBox[{
                     RowBox[{"LieD", "[", 
                     RowBox[{"u", "[", "ind1", "]"}], "]"}], "[", 
-                    RowBox[{
-                    RowBox[{"CS", "[", "h", "]"}], "[", 
+                    RowBox[{"CSh", "[", 
                     RowBox[{"ind2", ",", 
                     RowBox[{"-", "ind3"}], ",", "ind4"}], "]"}], "]"}], ",", 
                     RowBox[{"ToCanonical", "@", 
@@ -11172,8 +11139,7 @@ expression.\>\""}], "]"}]}], "/;",
                     RowBox[{"u", "[", "ind1", "]"}], "]"}], "[", 
                     RowBox[{"g", "[", 
                     RowBox[{"ind4", ",", "ind6"}], "]"}], "]"}], 
-                    RowBox[{
-                    RowBox[{"CS", "[", "h", "]"}], "[", 
+                    RowBox[{"CSh", "[", 
                     RowBox[{"ind2", ",", 
                     RowBox[{"-", "ind3"}], ",", 
                     RowBox[{"-", "ind6"}]}], "]"}]}], "//", 
@@ -11184,9 +11150,7 @@ expression.\>\""}], "]"}]}], "/;",
                     RowBox[{"MetricOn", "\[Rule]", "None"}]}], "]"}]}], "]"}],
                  ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
                 RowBox[{"AutomaticRules", "[", 
-                 RowBox[{
-                  RowBox[{"Evaluate", "[", 
-                   RowBox[{"CS", "[", "h", "]"}], "]"}], ",", 
+                 RowBox[{"CSh", ",", 
                   RowBox[{"MakeRule", "[", 
                    RowBox[{
                     RowBox[{"Evaluate", "[", 
@@ -11195,8 +11159,7 @@ expression.\>\""}], "]"}]}], "/;",
                     RowBox[{
                     RowBox[{"LieD", "[", 
                     RowBox[{"u", "[", "ind1", "]"}], "]"}], "[", 
-                    RowBox[{
-                    RowBox[{"CS", "[", "h", "]"}], "[", 
+                    RowBox[{"CSh", "[", 
                     RowBox[{"ind2", ",", "ind3", ",", 
                     RowBox[{"-", "ind4"}]}], "]"}], "]"}], ",", 
                     RowBox[{"ToCanonical", "@", 
@@ -11208,8 +11171,7 @@ expression.\>\""}], "]"}]}], "/;",
                     RowBox[{"u", "[", "ind1", "]"}], "]"}], "[", 
                     RowBox[{"g", "[", 
                     RowBox[{"ind3", ",", "ind5"}], "]"}], "]"}], 
-                    RowBox[{
-                    RowBox[{"CS", "[", "h", "]"}], "[", 
+                    RowBox[{"CSh", "[", 
                     RowBox[{"ind2", ",", 
                     RowBox[{"-", "ind5"}], ",", 
                     RowBox[{"-", "ind4"}]}], "]"}]}], "//", 
@@ -11220,9 +11182,7 @@ expression.\>\""}], "]"}]}], "/;",
                     RowBox[{"MetricOn", "\[Rule]", "None"}]}], "]"}]}], "]"}],
                  ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
                 RowBox[{"AutomaticRules", "[", 
-                 RowBox[{
-                  RowBox[{"Evaluate", "[", 
-                   RowBox[{"CS", "[", "h", "]"}], "]"}], ",", 
+                 RowBox[{"CSh", ",", 
                   RowBox[{"MakeRule", "[", 
                    RowBox[{
                     RowBox[{"Evaluate", "[", 
@@ -11231,8 +11191,7 @@ expression.\>\""}], "]"}]}], "/;",
                     RowBox[{
                     RowBox[{"LieD", "[", 
                     RowBox[{"u", "[", "ind1", "]"}], "]"}], "[", 
-                    RowBox[{
-                    RowBox[{"CS", "[", "h", "]"}], "[", 
+                    RowBox[{"CSh", "[", 
                     RowBox[{
                     RowBox[{"-", "ind2"}], ",", "ind3", ",", 
                     RowBox[{"-", "ind4"}]}], "]"}], "]"}], ",", 
@@ -11250,8 +11209,7 @@ expression.\>\""}], "]"}]}], "/;",
                     RowBox[{
                     RowBox[{"-", "ind6"}], ",", 
                     RowBox[{"-", "ind2"}]}], "]"}], 
-                    RowBox[{
-                    RowBox[{"CS", "[", "h", "]"}], "[", 
+                    RowBox[{"CSh", "[", 
                     RowBox[{"ind6", ",", 
                     RowBox[{"-", "ind5"}], ",", 
                     RowBox[{"-", "ind4"}]}], "]"}]}], "+", 
@@ -11265,8 +11223,7 @@ expression.\>\""}], "]"}]}], "/;",
                     RowBox[{
                     RowBox[{"-", "ind6"}], ",", 
                     RowBox[{"-", "ind2"}]}], "]"}], "]"}], 
-                    RowBox[{
-                    RowBox[{"CS", "[", "h", "]"}], "[", 
+                    RowBox[{"CSh", "[", 
                     RowBox[{"ind6", ",", 
                     RowBox[{"-", "ind5"}], ",", 
                     RowBox[{"-", "ind4"}]}], "]"}]}]}], "//", 
@@ -11277,9 +11234,7 @@ expression.\>\""}], "]"}]}], "/;",
                     RowBox[{"MetricOn", "\[Rule]", "None"}]}], "]"}]}], "]"}],
                  ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
                 RowBox[{"AutomaticRules", "[", 
-                 RowBox[{
-                  RowBox[{"Evaluate", "[", 
-                   RowBox[{"CS", "[", "h", "]"}], "]"}], ",", 
+                 RowBox[{"CSh", ",", 
                   RowBox[{"MakeRule", "[", 
                    RowBox[{
                     RowBox[{"Evaluate", "[", 
@@ -11288,8 +11243,7 @@ expression.\>\""}], "]"}]}], "/;",
                     RowBox[{
                     RowBox[{"LieD", "[", 
                     RowBox[{"u", "[", "ind1", "]"}], "]"}], "[", 
-                    RowBox[{
-                    RowBox[{"CS", "[", "h", "]"}], "[", 
+                    RowBox[{"CSh", "[", 
                     RowBox[{
                     RowBox[{"-", "ind2"}], ",", 
                     RowBox[{"-", "ind4"}], ",", "ind3"}], "]"}], "]"}], ",", 
@@ -11307,8 +11261,7 @@ expression.\>\""}], "]"}]}], "/;",
                     RowBox[{
                     RowBox[{"-", "ind6"}], ",", 
                     RowBox[{"-", "ind2"}]}], "]"}], 
-                    RowBox[{
-                    RowBox[{"CS", "[", "h", "]"}], "[", 
+                    RowBox[{"CSh", "[", 
                     RowBox[{"ind6", ",", 
                     RowBox[{"-", "ind4"}], ",", 
                     RowBox[{"-", "ind5"}]}], "]"}]}], "+", 
@@ -11322,8 +11275,7 @@ expression.\>\""}], "]"}]}], "/;",
                     RowBox[{
                     RowBox[{"-", "ind6"}], ",", 
                     RowBox[{"-", "ind2"}]}], "]"}], "]"}], 
-                    RowBox[{
-                    RowBox[{"CS", "[", "h", "]"}], "[", 
+                    RowBox[{"CSh", "[", 
                     RowBox[{"ind6", ",", 
                     RowBox[{"-", "ind4"}], ",", 
                     RowBox[{"-", "ind5"}]}], "]"}]}]}], "//", 
@@ -11334,9 +11286,7 @@ expression.\>\""}], "]"}]}], "/;",
                     RowBox[{"MetricOn", "\[Rule]", "None"}]}], "]"}]}], "]"}],
                  ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
                 RowBox[{"AutomaticRules", "[", 
-                 RowBox[{
-                  RowBox[{"Evaluate", "[", 
-                   RowBox[{"CS", "[", "h", "]"}], "]"}], ",", 
+                 RowBox[{"CSh", ",", 
                   RowBox[{"MakeRule", "[", 
                    RowBox[{
                     RowBox[{"Evaluate", "[", 
@@ -11345,8 +11295,7 @@ expression.\>\""}], "]"}]}], "/;",
                     RowBox[{
                     RowBox[{"LieD", "[", 
                     RowBox[{"u", "[", "ind1", "]"}], "]"}], "[", 
-                    RowBox[{
-                    RowBox[{"CS", "[", "h", "]"}], "[", 
+                    RowBox[{"CSh", "[", 
                     RowBox[{
                     RowBox[{"-", "ind2"}], ",", "ind3", ",", "ind4"}], "]"}], 
                     "]"}], ",", "\[IndentingNewLine]", 
@@ -11366,8 +11315,7 @@ expression.\>\""}], "]"}]}], "/;",
                     RowBox[{"-", "ind2"}]}], "]"}], 
                     RowBox[{"g", "[", 
                     RowBox[{"ind4", ",", "ind7"}], "]"}], 
-                    RowBox[{
-                    RowBox[{"CS", "[", "h", "]"}], "[", 
+                    RowBox[{"CSh", "[", 
                     RowBox[{"ind6", ",", 
                     RowBox[{"-", "ind5"}], ",", 
                     RowBox[{"-", "ind7"}]}], "]"}]}], "\[IndentingNewLine]", 
@@ -11384,8 +11332,7 @@ expression.\>\""}], "]"}]}], "/;",
                     RowBox[{"-", "ind2"}]}], "]"}], "]"}], 
                     RowBox[{"g", "[", 
                     RowBox[{"ind4", ",", "ind7"}], "]"}], 
-                    RowBox[{
-                    RowBox[{"CS", "[", "h", "]"}], "[", 
+                    RowBox[{"CSh", "[", 
                     RowBox[{"ind6", ",", 
                     RowBox[{"-", "ind5"}], ",", 
                     RowBox[{"-", "ind7"}]}], "]"}]}], "\[IndentingNewLine]", 
@@ -11402,8 +11349,7 @@ expression.\>\""}], "]"}]}], "/;",
                     RowBox[{"u", "[", "ind1", "]"}], "]"}], "[", 
                     RowBox[{"g", "[", 
                     RowBox[{"ind4", ",", "ind7"}], "]"}], "]"}], 
-                    RowBox[{
-                    RowBox[{"CS", "[", "h", "]"}], "[", 
+                    RowBox[{"CSh", "[", 
                     RowBox[{"ind6", ",", 
                     RowBox[{"-", "ind5"}], ",", 
                     RowBox[{"-", "ind7"}]}], "]"}]}]}], "//", 
@@ -11414,9 +11360,7 @@ expression.\>\""}], "]"}]}], "/;",
                     RowBox[{"MetricOn", "\[Rule]", "None"}]}], "]"}]}], "]"}],
                  ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
                 RowBox[{"AutomaticRules", "[", 
-                 RowBox[{
-                  RowBox[{"Evaluate", "[", 
-                   RowBox[{"CS", "[", "h", "]"}], "]"}], ",", 
+                 RowBox[{"CSh", ",", 
                   RowBox[{"MakeRule", "[", 
                    RowBox[{
                     RowBox[{"Evaluate", "[", 
@@ -11425,8 +11369,7 @@ expression.\>\""}], "]"}]}], "/;",
                     RowBox[{
                     RowBox[{"LieD", "[", 
                     RowBox[{"u", "[", "ind1", "]"}], "]"}], "[", 
-                    RowBox[{
-                    RowBox[{"CS", "[", "h", "]"}], "[", 
+                    RowBox[{"CSh", "[", 
                     RowBox[{"ind2", ",", "ind3", ",", "ind4"}], "]"}], "]"}], 
                     ",", "\[IndentingNewLine]", 
                     RowBox[{"ToCanonical", "@", 
@@ -11441,8 +11384,7 @@ expression.\>\""}], "]"}]}], "/;",
                     RowBox[{"ind3", ",", "ind5"}], "]"}], "]"}], 
                     RowBox[{"g", "[", 
                     RowBox[{"ind4", ",", "ind6"}], "]"}], 
-                    RowBox[{
-                    RowBox[{"CS", "[", "h", "]"}], "[", 
+                    RowBox[{"CSh", "[", 
                     RowBox[{"ind2", ",", 
                     RowBox[{"-", "ind5"}], ",", 
                     RowBox[{"-", "ind6"}]}], "]"}]}], "\[IndentingNewLine]", 
@@ -11455,8 +11397,7 @@ expression.\>\""}], "]"}]}], "/;",
                     RowBox[{"u", "[", "ind1", "]"}], "]"}], "[", 
                     RowBox[{"g", "[", 
                     RowBox[{"ind4", ",", "ind6"}], "]"}], "]"}], 
-                    RowBox[{
-                    RowBox[{"CS", "[", "h", "]"}], "[", 
+                    RowBox[{"CSh", "[", 
                     RowBox[{"ind2", ",", 
                     RowBox[{"-", "ind5"}], ",", 
                     RowBox[{"-", "ind6"}]}], "]"}]}]}], "//", 
@@ -11489,14 +11430,11 @@ expression.\>\""}], "]"}]}], "/;",
                 RowBox[{"1", "/", "2"}], 
                 RowBox[{"(", 
                  RowBox[{
-                  RowBox[{
-                   RowBox[{"CS", "[", "h", "]"}], "[", 
+                  RowBox[{"CSh", "[", 
                    RowBox[{"i2", ",", "i1", ",", "i3"}], "]"}], "-", 
-                  RowBox[{
-                   RowBox[{"CS", "[", "h", "]"}], "[", 
+                  RowBox[{"CSh", "[", 
                    RowBox[{"i1", ",", "i3", ",", "i2"}], "]"}], "+", 
-                  RowBox[{
-                   RowBox[{"CS", "[", "h", "]"}], "[", 
+                  RowBox[{"CSh", "[", 
                    RowBox[{"i3", ",", "i1", ",", "i2"}], "]"}]}], ")"}]}]}], 
               "]"}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
              RowBox[{"If", "[", 
@@ -11592,8 +11530,7 @@ expression.\>\""}], "]"}]}], "/;",
                     RowBox[{"i1", ",", "i3", ",", 
                     RowBox[{"-", "i5"}]}], "]"}]}], "-", 
                     RowBox[{
-                    RowBox[{
-                    RowBox[{"CS", "[", "h", "]"}], "[", 
+                    RowBox[{"CSh", "[", 
                     RowBox[{"i5", ",", "i3", ",", "i4"}], "]"}], 
                     RowBox[{
                     RowBox[{"Connection", "[", "h", "]"}], "[", 
@@ -11632,8 +11569,7 @@ expression.\>\""}], "]"}]}], "/;",
                     RowBox[{"i1", ",", "i3", ",", 
                     RowBox[{"-", "i5"}]}], "]"}]}], "-", 
                     RowBox[{
-                    RowBox[{
-                    RowBox[{"CS", "[", "h", "]"}], "[", 
+                    RowBox[{"CSh", "[", 
                     RowBox[{"i5", ",", "i3", ",", "i4"}], "]"}], 
                     RowBox[{
                     RowBox[{"Connection", "[", "h", "]"}], "[", 
@@ -11676,8 +11612,7 @@ expression.\>\""}], "]"}]}], "/;",
                     RowBox[{"i1", ",", "i3", ",", 
                     RowBox[{"-", "i5"}]}], "]"}]}], "-", 
                     RowBox[{
-                    RowBox[{
-                    RowBox[{"CS", "[", "h", "]"}], "[", 
+                    RowBox[{"CSh", "[", 
                     RowBox[{"i5", ",", "i3", ",", "i4"}], "]"}], 
                     RowBox[{
                     RowBox[{"Connection", "[", "h", "]"}], "[", 
@@ -11720,8 +11655,7 @@ expression.\>\""}], "]"}]}], "/;",
                     RowBox[{"i1", ",", "i3", ",", 
                     RowBox[{"-", "i5"}]}], "]"}]}], "-", 
                     RowBox[{
-                    RowBox[{
-                    RowBox[{"CS", "[", "h", "]"}], "[", 
+                    RowBox[{"CSh", "[", 
                     RowBox[{"i5", ",", "i3", ",", "i4"}], "]"}], 
                     RowBox[{
                     RowBox[{"Connection", "[", "h", "]"}], "[", 
@@ -11767,8 +11701,7 @@ expression.\>\""}], "]"}]}], "/;",
                     RowBox[{"i1", ",", "i3", ",", 
                     RowBox[{"-", "i5"}]}], "]"}]}], "-", 
                     RowBox[{
-                    RowBox[{
-                    RowBox[{"CS", "[", "h", "]"}], "[", 
+                    RowBox[{"CSh", "[", 
                     RowBox[{"i5", ",", "i3", ",", "i4"}], "]"}], 
                     RowBox[{
                     RowBox[{"Connection", "[", "h", "]"}], "[", 
@@ -11819,8 +11752,7 @@ expression.\>\""}], "]"}]}], "/;",
                     RowBox[{"i1", ",", "i3", ",", 
                     RowBox[{"-", "i5"}]}], "]"}]}], "-", 
                     RowBox[{
-                    RowBox[{
-                    RowBox[{"CS", "[", "h", "]"}], "[", 
+                    RowBox[{"CSh", "[", 
                     RowBox[{"i5", ",", "i3", ",", "i4"}], "]"}], 
                     RowBox[{
                     RowBox[{"Connection", "[", "h", "]"}], "[", 
@@ -12338,18 +12270,14 @@ expression.\>\""}], "]"}]}], "/;",
                "\[IndentingNewLine]", 
                RowBox[{
                 RowBox[{"AutomaticRules", "[", 
-                 RowBox[{
-                  RowBox[{"Evaluate", "[", 
-                   RowBox[{"CS", "[", "h", "]"}], "]"}], ",", 
-                  "\[IndentingNewLine]", 
+                 RowBox[{"CSh", ",", "\[IndentingNewLine]", 
                   RowBox[{"MakeRule", "[", 
                    RowBox[{"Evaluate", "[", 
                     RowBox[{"{", 
                     RowBox[{
                     RowBox[{
                     RowBox[{"cd", "[", "ind1", "]"}], "[", 
-                    RowBox[{
-                    RowBox[{"CS", "[", "h", "]"}], "[", 
+                    RowBox[{"CSh", "[", 
                     RowBox[{"ind2", ",", "ind3", ",", "ind4"}], "]"}], "]"}], 
                     ",", 
                     RowBox[{"ToCanonical", "[", "\[IndentingNewLine]", 
@@ -12370,11 +12298,8 @@ expression.\>\""}], "]"}]}], "/;",
                     RowBox[{"dummy", ",", "ind1", ",", "#"}], "]"}], " ", 
                     RowBox[{"ReplaceIndex", "[", 
                     RowBox[{
-                    RowBox[{"Evaluate", "[", 
-                    RowBox[{
-                    RowBox[{"CS", "[", "h", "]"}], "[", 
-                    RowBox[{"ind2", ",", "ind3", ",", "ind4"}], "]"}], "]"}], 
-                    ",", 
+                    RowBox[{"CSh", "[", 
+                    RowBox[{"ind2", ",", "ind3", ",", "ind4"}], "]"}], ",", 
                     RowBox[{"#", "\[Rule]", 
                     RowBox[{"-", "dummy"}]}]}], "]"}]}], ")"}], "&"}], "/@", 
                     RowBox[{"{", 
@@ -12393,18 +12318,14 @@ expression.\>\""}], "]"}]}], "/;",
                     RowBox[{"obvious", "."}]}]}]}], " ", "*)"}], 
                 "\[IndentingNewLine]", 
                 RowBox[{"AutomaticRules", "[", 
-                 RowBox[{
-                  RowBox[{"Evaluate", "[", 
-                   RowBox[{"CS", "[", "h", "]"}], "]"}], ",", 
-                  "\[IndentingNewLine]", 
+                 RowBox[{"CSh", ",", "\[IndentingNewLine]", 
                   RowBox[{"MakeRule", "[", 
                    RowBox[{"Evaluate", "[", 
                     RowBox[{"{", 
                     RowBox[{
                     RowBox[{
                     RowBox[{"CD", "[", "ind1", "]"}], "[", 
-                    RowBox[{
-                    RowBox[{"CS", "[", "h", "]"}], "[", 
+                    RowBox[{"CSh", "[", 
                     RowBox[{"ind2", ",", "ind3", ",", "ind4"}], "]"}], "]"}], 
                     ",", "\[IndentingNewLine]", 
                     RowBox[{"ToCanonical", "[", 
@@ -12415,8 +12336,7 @@ expression.\>\""}], "]"}]}], "/;",
                     RowBox[{"IndicesDown", "[", 
                     RowBox[{
                     RowBox[{"CD", "[", "ind1", "]"}], "[", 
-                    RowBox[{
-                    RowBox[{"CS", "[", "h", "]"}], "[", 
+                    RowBox[{"CSh", "[", 
                     RowBox[{"ind2", ",", "ind3", ",", "ind4"}], "]"}], "]"}], 
                     "]"}], ",", "CD", ",", "cd"}], "]"}], "//", 
                     "GradNormalToExtrinsicK"}], "]"}], "]"}]}], "}"}], "]"}], 
