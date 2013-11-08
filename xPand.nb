@@ -18368,6 +18368,63 @@ Cell[BoxData[{
  InitializationCell->True],
 
 Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{"Determine", " ", "if", " ", "expr", " ", "has", " ", 
+     RowBox[{"(", 
+      RowBox[{"at", " ", "least"}], ")"}], " ", "n", " ", "nested", " ", 
+     "CDs", " ", "acting", " ", "on", " ", "inner"}], ",", " ", 
+    RowBox[{
+    "which", " ", "will", " ", "probably", " ", "be", " ", "a", " ", 
+     "pattern", " ", "expression", " ", 
+     RowBox[{"(", 
+      RowBox[{"it", " ", "can", " ", "even", " ", "be", " ", "_"}], ")"}]}]}],
+    " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"ContainsDerOrderQ", "[", 
+      RowBox[{"expr_", ",", 
+       RowBox[{"CD_", "?", "CovDQ"}], ",", "inner_", ",", 
+       RowBox[{"n_Integer", "?", "NonNegative"}]}], "]"}], ":=", 
+     RowBox[{"!", 
+      RowBox[{"FreeQ", "[", 
+       RowBox[{"expr", ",", 
+        RowBox[{"Nest", "[", 
+         RowBox[{
+          RowBox[{"CD", "[", "_", "]"}], ",", "inner", ",", "n"}], "]"}]}], 
+       "]"}]}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+    "Find", " ", "the", " ", "maximum", " ", "order", " ", "of", " ", "CD", 
+     " ", "that", " ", "expr", " ", "has", " ", "acting", " ", "on", " ", 
+     "inner", " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+       "to", " ", "simply", " ", "count", " ", "the", " ", "maximum", " ", 
+        "order", " ", "of", " ", "CD"}], ",", " ", 
+       RowBox[{"use", " ", "_", " ", "for", " ", "inner"}]}], ")"}]}], " ", 
+    "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"MaxDerOrder", "[", 
+      RowBox[{"expr_", ",", 
+       RowBox[{"CD_", "?", "CovDQ"}], ",", "inner_"}], "]"}], ":=", 
+     RowBox[{
+      RowBox[{"-", "1"}], "+", 
+      RowBox[{"NestWhile", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"#", "+", "1"}], "&"}], ",", "0", ",", 
+        RowBox[{
+         RowBox[{"ContainsDerOrderQ", "[", 
+          RowBox[{"expr", ",", "CD", ",", "inner", ",", "#"}], "]"}], "&"}]}],
+        "]"}]}]}], ";"}]}]}]], "Input",
+ InitializationCell->True],
+
+Cell[BoxData[
  RowBox[{"\[IndentingNewLine]", 
   RowBox[{"(*", " ", 
    RowBox[{
@@ -18399,19 +18456,18 @@ Cell[BoxData[
     RowBox[{
      RowBox[{"RulesCovDsOfTensor", "[", 
       RowBox[{"expr_", ",", "replacerule_", ",", "rulesprojected_", ",", 
-       RowBox[{"h_", "?", "InducedMetricQ"}], ",", 
-       RowBox[{"n_:", "10"}]}], "]"}], ":=", 
+       RowBox[{"h_", "?", "InducedMetricQ"}]}], "]"}], ":=", 
      RowBox[{"Module", "[", 
       RowBox[{
        RowBox[{"{", 
         RowBox[{
-        "dummies", ",", "dummiesup", ",", "tableleft", ",", "tableright", ",",
-          "testpatternlistnmax", ",", "ListBool", ",", "CDmax", ",", 
-         "freedownleft", ",", "dummiesdown", ",", "leftupindices", ",", 
-         "leftupindicesnopattern", ",", "tableleftnopattern", ",", 
-         "Listlhsrhsnoreplace", ",", "temp", ",", "tempdown", ",", "rhs", ",",
-          "rulepert", ",", "leftupindicesnopatterntests", ",", "tobecan", ",",
-          "oncecan", ",", "RulesCovDs"}], "}"}], ",", 
+        "dummiesup", ",", "tableleft", ",", "tableright", ",", 
+         "testpatternlistnmax", ",", "freedownleft", ",", "dummiesdown", ",", 
+         "leftupindices", ",", "leftupindicesnopattern", ",", 
+         "tableleftnopattern", ",", "Listlhsrhsnoreplace", ",", "temp", ",", 
+         "tempdown", ",", "rhs", ",", "rulepert", ",", 
+         "leftupindicesnopatterntests", ",", "tobecan", ",", "oncecan", ",", 
+         "RulesCovDs"}], "}"}], ",", 
        RowBox[{"Catch", "@", 
         RowBox[{"With", "[", 
          RowBox[{
@@ -18434,153 +18490,88 @@ Cell[BoxData[
                RowBox[{"CovDOfMetric", "[", "h", "]"}]}], ",", 
               RowBox[{"M", "=", 
                RowBox[{"ManifoldOfCovD", "@", 
-                RowBox[{"CovDOfMetric", "[", "g", "]"}]}]}], ",", 
-              RowBox[{"indicesright", "=", 
-               RowBox[{
-                RowBox[{
-                 RowBox[{"Pattern", "[", 
-                  RowBox[{"#", ",", "_"}], "]"}], "&"}], "/@", 
-                RowBox[{"FindFreeIndices", "[", 
-                 RowBox[{"Last", "@", "replacerule"}], "]"}]}]}], ",", 
-              RowBox[{"indicesleft", "=", 
-               RowBox[{"FindFreeIndices", "[", 
-                RowBox[{"First", "@", "replacerule"}], "]"}]}]}], "}"}], ",", 
-            "\[IndentingNewLine]", "\[IndentingNewLine]", 
+                RowBox[{"CovDOfMetric", "[", "g", "]"}]}]}]}], "}"}], ",", 
             "\[IndentingNewLine]", 
-            RowBox[{"(*", " ", 
+            RowBox[{"With", "[", 
              RowBox[{
-              RowBox[{
-              "In", " ", "this", " ", "fuynction", " ", "we", " ", "will", 
-               " ", "precompute", " ", "the", " ", "rules", " ", "for", " ", 
-               "the", " ", "CovDs", " ", "of", " ", "tensor", " ", "for", " ",
-                "which", " ", "the", " ", "rule", " ", "is", " ", "given", 
-               " ", "in", " ", "the", " ", "argument", " ", 
-               RowBox[{"replacerule", ".", "\[IndentingNewLine]", "For"}], 
-               " ", "instance", " ", "if", " ", "we", " ", "compute", " ", 
-               "the", " ", "perturbation", " ", "of", " ", "the", " ", 
-               "Ricci", " ", "tensor"}], ",", " ", 
-              RowBox[{
-              "there", " ", "will", " ", "be", " ", "several", " ", "terms", 
-               " ", "with", " ", "two", " ", "covariant", " ", "derivatives", 
-               " ", "of", " ", "the", " ", "perturbed", " ", 
-               RowBox[{"metric", ".", " ", "By"}], " ", "precomputing", " ", 
-               "the", " ", "rule", " ", "once", " ", "instead", " ", "of", 
-               " ", "several", " ", "times"}], ",", " ", 
-              RowBox[{
-              "we", " ", "shall", " ", "save", " ", "sone", " ", "computing", 
-               " ", 
-               RowBox[{"time", "."}]}]}], " ", "*)"}], "\[IndentingNewLine]", 
-            
-            RowBox[{
-             RowBox[{"testpatternlistnmax", "=", 
-              RowBox[{"TablePatternsCovDs", "[", 
+              RowBox[{"{", 
+               RowBox[{"CDmax", "=", 
+                RowBox[{"MaxDerOrder", "[", 
+                 RowBox[{"expr", ",", "CD", ",", 
+                  RowBox[{"First", "@", "replacerule"}]}], "]"}]}], "}"}], 
+              ",", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+              RowBox[{"(*", " ", 
                RowBox[{
-                RowBox[{"First", "@", "replacerule"}], ",", "CD", ",", "n"}], 
-               "]"}]}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
-             "\[IndentingNewLine]", 
-             RowBox[{"(*", " ", 
-              RowBox[{
-               RowBox[{
-               "For", " ", "every", " ", "number", " ", "of", " ", "CovD", 
-                " ", "we", " ", "look", " ", "at", " ", "a", " ", "match", 
-                " ", "and", " ", "give", " ", "a", " ", "list", " ", "of", 
-                " ", "the", " ", 
-                RowBox[{"booleans", ".", " ", 
-                 RowBox[{"{", 
-                  RowBox[{"True", ",", "True", ",", 
-                   RowBox[{"False", "..."}]}], "}"}]}], "\[IndentingNewLine]",
-                 "means", " ", "that", " ", "there", " ", "is", " ", "terms", 
-                " ", "with", " ", "no", " ", "CovD"}], ",", " ", 
-               RowBox[{"terms", " ", "with", " ", "one"}], ",", " ", 
-               RowBox[{
-               "but", " ", "no", " ", "terms", " ", "with", " ", "two", " ", 
-                RowBox[{"CovD", "[", "tens", "]"}], " ", "for", " ", 
-                RowBox[{"instance", "."}]}]}], " ", "*)"}], 
-             "\[IndentingNewLine]", 
-             RowBox[{"ListBool", "=", 
-              RowBox[{
-               RowBox[{
-                RowBox[{"(", 
-                 RowBox[{"#", "\[GreaterEqual]", "1"}], ")"}], "&"}], "/@", 
-               RowBox[{"Length", "/@", 
-                RowBox[{"(", 
-                 RowBox[{
-                  RowBox[{
-                   RowBox[{"Cases", "[", 
-                    RowBox[{
-                    RowBox[{"Expand", "@", "expr"}], ",", "#", ",", 
-                    "Infinity"}], "]"}], "&"}], "/@", "testpatternlistnmax"}],
-                  ")"}]}]}]}], ";", "\[IndentingNewLine]", 
-             "\[IndentingNewLine]", 
-             RowBox[{"(*", " ", 
-              RowBox[{
-              "Then", " ", "we", " ", "look", " ", "at", " ", "the", " ", 
-               "maximum", " ", "number", " ", "of", " ", "CovDs"}], " ", 
-              "*)"}], "\[IndentingNewLine]", 
-             RowBox[{"CDmax", "=", 
-              RowBox[{"Max", "[", 
-               RowBox[{"0", ",", 
                 RowBox[{
-                 RowBox[{"Max", "@", 
-                  RowBox[{"Position", "[", 
-                   RowBox[{"ListBool", ",", "True"}], "]"}]}], "-", "1"}]}], 
-               "]"}]}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
-             RowBox[{"If", "[", 
+                "In", " ", "this", " ", "fuynction", " ", "we", " ", "will", 
+                 " ", "precompute", " ", "the", " ", "rules", " ", "for", " ",
+                  "the", " ", "CovDs", " ", "of", " ", "tensor", " ", "for", 
+                 " ", "which", " ", "the", " ", "rule", " ", "is", " ", 
+                 "given", " ", "in", " ", "the", " ", "argument", " ", 
+                 RowBox[{"replacerule", ".", "\[IndentingNewLine]", "For"}], 
+                 " ", "instance", " ", "if", " ", "we", " ", "compute", " ", 
+                 "the", " ", "perturbation", " ", "of", " ", "the", " ", 
+                 "Ricci", " ", "tensor"}], ",", " ", 
+                RowBox[{
+                "there", " ", "will", " ", "be", " ", "several", " ", "terms",
+                  " ", "with", " ", "two", " ", "covariant", " ", 
+                 "derivatives", " ", "of", " ", "the", " ", "perturbed", " ", 
+                 
+                 RowBox[{"metric", ".", " ", "By"}], " ", "precomputing", " ",
+                  "the", " ", "rule", " ", "once", " ", "instead", " ", "of", 
+                 " ", "several", " ", "times"}], ",", " ", 
+                RowBox[{
+                "we", " ", "shall", " ", "save", " ", "sone", " ", 
+                 "computing", " ", 
+                 RowBox[{"time", "."}]}]}], " ", "*)"}], 
+              "\[IndentingNewLine]", "\[IndentingNewLine]", 
               RowBox[{
-               RowBox[{"CDmax", "===", "n"}], ",", 
-               RowBox[{"Throw", "[", 
-                RowBox[{"Message", "[", 
-                 RowBox[{
-                  RowBox[{"RulesSplitCovDsOfTensor", "::", "maxcovdnumber"}], 
-                  ",", "n"}], "]"}], "]"}]}], "]"}], ";", 
-             "\[IndentingNewLine]", "\[IndentingNewLine]", 
-             RowBox[{"dummiesdown", "=", 
-              RowBox[{"Take", "[", 
-               RowBox[{"ChangeIndex", "/@", 
+               RowBox[{"dummiesup", "=", 
                 RowBox[{"DummyIn", "/@", 
                  RowBox[{"Table", "[", 
                   RowBox[{
                    RowBox[{"Tangent", "[", "M", "]"}], ",", 
                    RowBox[{"{", 
                     RowBox[{"Range", "[", "CDmax", "]"}], "}"}]}], "]"}]}]}], 
-               "]"}]}], ";", "\[IndentingNewLine]", 
-             RowBox[{"dummiesup", "=", 
-              RowBox[{"ChangeIndex", "/@", "dummiesdown"}]}], ";", 
-             "\[IndentingNewLine]", "\[IndentingNewLine]", 
-             RowBox[{"Off", "[", 
-              StyleBox[
-               RowBox[{"Pattern", "::", "patvar"}], "MessageName"], "]"}], 
-             ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
-             RowBox[{"freedownleft", "=", 
-              RowBox[{
-               RowBox[{"IndicesOf", "[", 
-                RowBox[{"Free", ",", "Down"}], "]"}], "[", 
-               RowBox[{"RemovePatterns", "@", 
-                RowBox[{"First", "@", "replacerule"}]}], "]"}]}], ";", 
-             "\[IndentingNewLine]", "\[IndentingNewLine]", 
-             RowBox[{"leftupindices", "=", 
-              RowBox[{"PutPatternIndicesUp", "[", 
-               RowBox[{
-                RowBox[{"First", "@", "replacerule"}], "//", 
-                "ProjectorToMetric"}], "]"}]}], ";", "\[IndentingNewLine]", 
-             RowBox[{"leftupindicesnopattern", "=", 
-              RowBox[{"RemovePatterns", "[", "leftupindices", "]"}]}], ";", 
-             "\[IndentingNewLine]", 
-             RowBox[{"leftupindicesnopatterntests", "=", 
-              RowBox[{"RemovePatternTests", "[", "leftupindices", "]"}]}], 
-             ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
-             RowBox[{"(*", " ", 
-              RowBox[{
-              "We", " ", "build", " ", "the", " ", "left", " ", "hand", " ", 
-               "side"}], " ", "*)"}], "\[IndentingNewLine]", 
-             RowBox[{"tableleft", "=", 
-              RowBox[{"Join", "[", 
-               RowBox[{
-                RowBox[{"{", "leftupindices", "}"}], ",", 
-                RowBox[{"Table", "[", 
+               ";", "\[IndentingNewLine]", 
+               RowBox[{"dummiesdown", "=", 
+                RowBox[{"ChangeIndex", "/@", "dummiesup"}]}], ";", 
+               "\[IndentingNewLine]", "\[IndentingNewLine]", 
+               RowBox[{"Off", "[", 
+                StyleBox[
+                 RowBox[{"Pattern", "::", "patvar"}], "MessageName"], "]"}], 
+               ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+               RowBox[{"freedownleft", "=", 
+                RowBox[{
+                 RowBox[{"IndicesOf", "[", 
+                  RowBox[{"Free", ",", "Down"}], "]"}], "[", 
+                 RowBox[{"RemovePatterns", "@", 
+                  RowBox[{"First", "@", "replacerule"}]}], "]"}]}], ";", 
+               "\[IndentingNewLine]", "\[IndentingNewLine]", 
+               RowBox[{"leftupindices", "=", 
+                RowBox[{"PutPatternIndicesUp", "[", 
                  RowBox[{
-                  RowBox[{
+                  RowBox[{"First", "@", "replacerule"}], "//", 
+                  "ProjectorToMetric"}], "]"}]}], ";", "\[IndentingNewLine]", 
+               
+               RowBox[{"leftupindicesnopattern", "=", 
+                RowBox[{"RemovePatterns", "[", "leftupindices", "]"}]}], ";", 
+               "\[IndentingNewLine]", 
+               RowBox[{"leftupindicesnopatterntests", "=", 
+                RowBox[{"RemovePatternTests", "[", "leftupindices", "]"}]}], 
+               ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+               RowBox[{"(*", " ", 
+                RowBox[{
+                "We", " ", "build", " ", "the", " ", "left", " ", "hand", " ",
+                  "side"}], " ", "*)"}], "\[IndentingNewLine]", 
+               RowBox[{"tableleft", "=", 
+                RowBox[{"Join", "[", 
+                 RowBox[{
+                  RowBox[{"{", "leftupindices", "}"}], ",", 
+                  RowBox[{"Table", "[", 
                    RowBox[{
+                    RowBox[{
+                    RowBox[{
                     RowBox[{"Fold", "[", 
                     RowBox[{
                     RowBox[{
@@ -18592,32 +18583,33 @@ Cell[BoxData[
                     RowBox[{"Blank", "[", "]"}]}], "]"}], "]"}], "@", "#1"}], 
                     ")"}], "&"}], ",", "leftupindices", ",", "#"}], "]"}], 
                     "&"}], "[", 
-                   RowBox[{"Take", "[", 
+                    RowBox[{"Take", "[", 
                     RowBox[{"dummiesup", ",", "i"}], "]"}], "]"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"i", ",", "1", ",", "CDmax"}], "}"}]}], "]"}]}], 
+                 "]"}]}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+               RowBox[{"tableleftnopattern", "=", 
+                RowBox[{"RemovePatterns", "/@", "tableleft"}]}], ";", 
+               "\[IndentingNewLine]", "\[IndentingNewLine]", 
+               RowBox[{"Listlhsrhsnoreplace", "=", 
+                RowBox[{"Reverse", "@", 
+                 RowBox[{"Transpose", "[", 
                   RowBox[{"{", 
-                   RowBox[{"i", ",", "1", ",", "CDmax"}], "}"}]}], "]"}]}], 
-               "]"}]}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
-             RowBox[{"tableleftnopattern", "=", 
-              RowBox[{"RemovePatterns", "/@", "tableleft"}]}], ";", 
-             "\[IndentingNewLine]", "\[IndentingNewLine]", 
-             RowBox[{"Listlhsrhsnoreplace", "=", 
-              RowBox[{"Reverse", "@", 
-               RowBox[{"Transpose", "[", 
-                RowBox[{"{", 
-                 RowBox[{"tableleft", ",", "tableleftnopattern"}], "}"}], 
-                "]"}]}]}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
-             
-             RowBox[{"RulesCovDs", "=", 
-              RowBox[{
-               RowBox[{
-                RowBox[{"(", "\[IndentingNewLine]", 
+                   RowBox[{"tableleft", ",", "tableleftnopattern"}], "}"}], 
+                  "]"}]}]}], ";", "\[IndentingNewLine]", 
+               "\[IndentingNewLine]", 
+               RowBox[{"RulesCovDs", "=", 
+                RowBox[{
                  RowBox[{
-                  RowBox[{"tempdown", "=", 
-                   RowBox[{"IndicesDown", "[", 
+                  RowBox[{"(", "\[IndentingNewLine]", 
+                   RowBox[{
+                    RowBox[{"tempdown", "=", 
+                    RowBox[{"IndicesDown", "[", 
                     RowBox[{"Last", "@", "#"}], "]"}]}], ";", 
-                  "\[IndentingNewLine]", 
-                  RowBox[{"rulepert", "=", 
-                   RowBox[{"leftupindicesnopatterntests", "->", 
+                    "\[IndentingNewLine]", 
+                    RowBox[{"rulepert", "=", 
+                    RowBox[{"leftupindicesnopatterntests", "\[RuleDelayed]", 
+                    RowBox[{"Evaluate", "[", 
                     RowBox[{"(", 
                     RowBox[{
                     RowBox[{
@@ -18626,39 +18618,40 @@ Cell[BoxData[
                     RowBox[{"{", 
                     RowBox[{"h", ",", "u"}], "}"}]}], "]"}], "/.", 
                     "rulesprojected"}], "/.", 
-                    RowBox[{"Scalar", "\[Rule]", "ProtectMyScalar"}]}], 
-                    ")"}]}]}], ";", "\[IndentingNewLine]", 
-                  RowBox[{"temp", "=", 
-                   RowBox[{"tempdown", "/.", "rulepert"}]}], ";", 
-                  "\[IndentingNewLine]", 
-                  RowBox[{"tobecan", "=", 
-                   RowBox[{"FullToInducedDerivative", "[", 
+                    RowBox[{"Scalar", "\[Rule]", "ProtectMyScalar"}]}], ")"}],
+                     "]"}]}]}], ";", "\[IndentingNewLine]", 
+                    RowBox[{"temp", "=", 
+                    RowBox[{"tempdown", "/.", "rulepert"}]}], ";", 
+                    "\[IndentingNewLine]", 
+                    RowBox[{"tobecan", "=", 
+                    RowBox[{"FullToInducedDerivative", "[", 
                     RowBox[{"temp", ",", "CD", ",", "cd"}], "]"}]}], ";", 
-                  "\[IndentingNewLine]", 
-                  RowBox[{"oncecan", "=", 
-                   RowBox[{"ContractMetricOutSideProjector", "[", 
+                    "\[IndentingNewLine]", 
+                    RowBox[{"oncecan", "=", 
+                    RowBox[{"ContractMetricOutSideProjector", "[", 
                     RowBox[{
                     RowBox[{"Expand", "@", "tobecan"}], ",", "cd"}], "]"}]}], 
-                  ";", "\[IndentingNewLine]", 
-                  RowBox[{"rhs", "=", 
-                   RowBox[{"ToCanonical", "[", 
+                    ";", "\[IndentingNewLine]", 
+                    RowBox[{"rhs", "=", 
+                    RowBox[{"ToCanonical", "[", 
                     RowBox[{"oncecan", ",", 
                     RowBox[{"UseMetricOnVBundle", "\[Rule]", "None"}]}], 
                     "]"}]}], ";", "\[IndentingNewLine]", 
-                  "\[IndentingNewLine]", 
-                  RowBox[{"IndexRule", "[", 
-                   RowBox[{
+                    "\[IndentingNewLine]", 
+                    RowBox[{"IndexRule", "[", 
+                    RowBox[{
                     RowBox[{"(", 
                     RowBox[{
                     RowBox[{"(", 
                     RowBox[{"First", "@", "#"}], ")"}], "/.", 
                     RowBox[{"hp_HoldPattern", "\[RuleDelayed]", 
                     RowBox[{"First", "@", "hp"}]}]}], ")"}], ",", "rhs"}], 
-                   "]"}]}], ")"}], "&"}], "/@", "Listlhsrhsnoreplace"}]}], 
-             ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
-             "RulesCovDs"}]}], "\[IndentingNewLine]", "]"}]}], 
-         "\[IndentingNewLine]", "]"}]}]}], "\[IndentingNewLine]", "]"}]}], 
-    ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+                    "]"}]}], ")"}], "&"}], "/@", "Listlhsrhsnoreplace"}]}], 
+               ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+               "RulesCovDs"}]}], "\[IndentingNewLine]", "]"}]}], 
+           "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", "]"}]}]}], 
+      "\[IndentingNewLine]", "]"}]}], ";"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{
      RowBox[{"ProjectionAndBackgroundRuleQ", "[", 

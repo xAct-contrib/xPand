@@ -2802,31 +2802,26 @@ ContractMetricOutSideProjector[rest_.  cd_[a_][ex_],cd_]:=ContractMetric[rest]cd
 ContractMetricOutSideProjector[rest_,cd_]:=ContractMetric[rest];
 
 
+(* Determine if expr has (at least) n nested CDs acting on inner, which will probably be a pattern expression (it can even be _) *)
+ContainsDerOrderQ[expr_,CD_?CovDQ,inner_,n_Integer?NonNegative]:=!FreeQ[expr,Nest[CD[_],inner,n]];
+(* Find the maximum order of CD that expr has acting on inner (to simply count the maximum order of CD, use _ for inner) *)
+MaxDerOrder[expr_,CD_?CovDQ,inner_]:=-1+NestWhile[#+1&,0,ContainsDerOrderQ[expr,CD,inner,#]&];
+
+
 
 (* If the background field method is used, this rule ensures that tensor with a label index for order strictly larger than 1 vanish.*)
 BackgroundFieldRule:=If[BackgroundFieldMethod,
 {tens_?xTensorQ[inds___]:>0/;PerturbationOrder[tens[inds]]>1},{}]
 
-RulesCovDsOfTensor[expr_,replacerule_,rulesprojected_,h_?InducedMetricQ,n_:10]:=Module[{dummies,dummiesup,tableleft,tableright,testpatternlistnmax,ListBool,CDmax,freedownleft,dummiesdown,leftupindices,leftupindicesnopattern,tableleftnopattern,Listlhsrhsnoreplace,temp,tempdown,rhs,rulepert,leftupindicesnopatterntests,tobecan,oncecan,RulesCovDs},Catch@With[{g=First@InducedFrom@h,u=Last@InducedFrom@h},
-With[{CD=CovDOfMetric[g],cd=CovDOfMetric[h],M=ManifoldOfCovD@CovDOfMetric[g],indicesright=Pattern[#,_]&/@FindFreeIndices[Last@replacerule],indicesleft=FindFreeIndices[First@replacerule]},
-
+RulesCovDsOfTensor[expr_,replacerule_,rulesprojected_,h_?InducedMetricQ]:=Module[{dummiesup,tableleft,tableright,testpatternlistnmax,freedownleft,dummiesdown,leftupindices,leftupindicesnopattern,tableleftnopattern,Listlhsrhsnoreplace,temp,tempdown,rhs,rulepert,leftupindicesnopatterntests,tobecan,oncecan,RulesCovDs},Catch@With[{g=First@InducedFrom@h,u=Last@InducedFrom@h},
+With[{CD=CovDOfMetric[g],cd=CovDOfMetric[h],M=ManifoldOfCovD@CovDOfMetric[g]},
+With[{CDmax=MaxDerOrder[expr,CD,First@replacerule]},
 
 (* In this fuynction we will precompute the rules for the CovDs of tensor for which the rule is given in the argument replacerule.
 For instance if we compute the perturbation of the Ricci tensor, there will be several terms with two covariant derivatives of the perturbed metric. By precomputing the rule once instead of several times, we shall save sone computing time. *)
-testpatternlistnmax=TablePatternsCovDs[First@replacerule,CD,n];
 
-
-(* For every number of CovD we look at a match and give a list of the booleans. {True,True,False...}
-means that there is terms with no CovD, terms with one, but no terms with two CovD[tens] for instance. *)
-ListBool=(#>=1)&/@Length/@(Cases[Expand@expr,#,Infinity]&/@testpatternlistnmax);
-
-(* Then we look at the maximum number of CovDs *)
-CDmax=Max[0,Max@Position[ListBool,True]-1];
-
-If[CDmax===n,Throw[Message[RulesSplitCovDsOfTensor::maxcovdnumber,n]]];
-
-dummiesdown=Take[ChangeIndex/@DummyIn/@Table[Tangent[M],{Range[CDmax]}]];
-dummiesup=ChangeIndex/@dummiesdown;
+dummiesup=DummyIn/@Table[Tangent[M],{Range[CDmax]}];
+dummiesdown=ChangeIndex/@dummiesup;
 
 Off[Pattern::patvar];
 
@@ -2845,7 +2840,7 @@ Listlhsrhsnoreplace=Reverse@Transpose[{tableleft,tableleftnopattern}];
 
 RulesCovDs=(
 tempdown=IndicesDown[Last@#];
-rulepert=leftupindicesnopatterntests->(InducedDecomposition[leftupindicesnopattern,{h,u}]/.rulesprojected/.Scalar->ProtectMyScalar);
+rulepert=leftupindicesnopatterntests:>Evaluate[(InducedDecomposition[leftupindicesnopattern,{h,u}]/.rulesprojected/.Scalar->ProtectMyScalar)];
 temp=tempdown/.rulepert;
 tobecan=FullToInducedDerivative[temp,CD,cd];
 oncecan=ContractMetricOutSideProjector[Expand@tobecan,cd];
@@ -2854,6 +2849,7 @@ rhs=ToCanonical[oncecan,UseMetricOnVBundle->None];
 IndexRule[((First@#)/.hp_HoldPattern:>First@hp),rhs])&/@Listlhsrhsnoreplace;
 
 RulesCovDs
+]
 ]
 ]
 ];
