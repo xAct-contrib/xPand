@@ -21,8 +21,7 @@ Cell[CellGroupData[{
 Cell["Loading the package", "Subsubsection"],
 
 Cell[BoxData[
- RowBox[{"Needs", "[", "\"\<xAct`xPand`\>\"", "]"}]], "Input",
- CellChangeTimes->{{3.5930867299644012`*^9, 3.593086767609644*^9}}]
+ RowBox[{"Needs", "[", "\"\<xAct`xPand`\>\"", "]"}]], "Input"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -61866,6 +61865,7 @@ DockedCells->{
           "}"}], "]"}]& )]], "DockedCell"]},
 PrivateNotebookOptions->{"FileOutlineCache"->False},
 ShowSelection->True,
+TrackCellChangeTimes->False,
 Magnification->1,
 FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (November 20, \
 2012)",

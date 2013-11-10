@@ -10,8 +10,7 @@ Examples of Conformal Transformations with xPand\
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"Needs", "[", "\"\<xAct`xPand`\>\"", "]"}]], "Input",
- CellChangeTimes->{{3.593086813485463*^9, 3.593086813716222*^9}}],
+ RowBox[{"Needs", "[", "\"\<xAct`xPand`\>\"", "]"}]], "Input"],
 
 Cell[CellGroupData[{
 
@@ -9043,6 +9042,7 @@ DockedCells->{
           "}"}], "]"}]& )]], "DockedCell"]},
 PrivateNotebookOptions->{"FileOutlineCache"->False},
 ShowSelection->True,
+TrackCellChangeTimes->False,
 FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (November 20, \
 2012)",
 StyleDefinitions->FrontEnd`FileName[{"Creative"}, "PastelColor.nb", 
