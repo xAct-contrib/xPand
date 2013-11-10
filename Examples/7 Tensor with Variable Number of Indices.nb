@@ -10,7 +10,8 @@ Tensors with a variable number of indices in xPand.\
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"<<", "xAct/xPand.m"}]], "Input"],
+ RowBox[{"Needs", "[", "\"\<xAct`xPand`\>\"", "]"}]], "Input",
+ CellChangeTimes->{3.593087025769601*^9}],
 
 Cell[CellGroupData[{
 
@@ -37701,8 +37702,9 @@ DockedCells->{
           "}"}], "]"}]& )]], "DockedCell"]},
 PrivateNotebookOptions->{"FileOutlineCache"->False},
 ShowSelection->True,
-FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (January 25, \
-2013)",
+FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (November 20, \
+2012)",
 StyleDefinitions->FrontEnd`FileName[{"Creative"}, "PastelColor.nb", 
   CharacterEncoding -> "UTF-8"]
 ]
+

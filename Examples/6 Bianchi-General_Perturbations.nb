@@ -23,7 +23,8 @@ Cell["Loading the package", "Subsubsection"],
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"<<", "xAct/xPand.m"}]], "Input"],
+ RowBox[{"Needs", "[", "\"\<xAct`xPand`\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.5930870156982183`*^9, 3.5930870177187967`*^9}}],
 
 Cell[CellGroupData[{
 
@@ -78045,8 +78046,9 @@ DockedCells->{
 PrivateNotebookOptions->{"FileOutlineCache"->False},
 ShowSelection->True,
 Magnification->1,
-FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (January 25, \
-2013)",
+FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (November 20, \
+2012)",
 StyleDefinitions->FrontEnd`FileName[{"Creative"}, "PastelColor.nb", 
   CharacterEncoding -> "UTF-8"]
 ]
+

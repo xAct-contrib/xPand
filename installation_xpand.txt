@@ -64,15 +64,15 @@ Beware that in Windows these directories might be hidden!
 Installation of xPand:
 **********************
 
-The package can be downloaded as a single tarball xPand_0.4.0.tar.gz.
-When uncompressed (typing 'tar -xzvf xPand_0.4.0.tar.gz' under Linux),
+The package can be downloaded as a single tarball xPand_0.4.2.tar.gz.
+When uncompressed (typing 'tar -xzvf xPand_0.4.2.tar.gz' under Linux),
 it gives
 -a folder 'xPand'
 -a file 'xPand.m'
 -this documentation file 'documentation_xpand.txt''
 
 Note that in some cases, for instance if you uncompress the tarball by a double
-click, these 3 items are likely to be placed below a folder named xPand_0.4.0.
+click, these 3 items are likely to be placed below a folder named xPand_0.4.2.
 
 The folder xPand, and the file 'xPand.m' must be placed inside the
 xAct directory. For instance, in a single user installation with Mac

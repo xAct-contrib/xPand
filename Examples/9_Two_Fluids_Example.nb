@@ -8,7 +8,8 @@ Simplifying derivation involving multiple fluids with xPand:Minimal Example\
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"<<", "xAct/xPand.m"}]], "Input"],
+ RowBox[{"Needs", "[", "\"\<xAct`xPand`\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.593087054807682*^9, 3.5930870573018427`*^9}}],
 
 Cell[CellGroupData[{
 
@@ -4991,6 +4992,7 @@ Cell[BoxData[
                     Offset[0.]}}, "RowsIndexed" -> {}}],
                FontSize->9]}
             },
+            
             GridBoxAlignment->{
              "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
               "Rows" -> {{Center}}, "RowsIndexed" -> {}},
@@ -5515,7 +5517,8 @@ WindowSize->{740, 599},
 WindowMargins->{{1, Automatic}, {Automatic, 0}},
 Visible->True,
 PrivateNotebookOptions->{"FileOutlineCache"->False},
-FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (January 25, \
-2013)",
+FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (November 20, \
+2012)",
 StyleDefinitions->"Default.nb"
 ]
+
