@@ -22,8 +22,8 @@
 xAct`xPand`$Version={"0.4.2",{2013,11,10}};
 
 
-xAct`xPand`$xTensorVersionExpected={"1.1.0",{2013,7,1}};
-xAct`xPand`$xPertVersionExpected={"1.0.3",{2013,7,1}};
+xAct`xPand`$xTensorVersionExpected={"1.0.5",{2013,1,27}};
+xAct`xPand`$xPertVersionExpected={"1.0.3",{2013,1,27}};
 
 
 (* xPand: Cosmological perturbations about homogeneous space-times *)
