@@ -62,9 +62,11 @@ cosmology.
 It allows for the calculation of perturbations for all types of Bianchi \
 (homogeneous) cosmologies, at any order and in several gauges. 
         
-Version 0.4.1   (05/09/2013)\
+Version 0.4.2   (10/11/2013)\
 \>", "Text",
  InitializationCell->True,
+ CellChangeTimes->{{3.59308565191761*^9, 3.593085655298959*^9}, {
+  3.593086123394886*^9, 3.5930861301849957`*^9}},
  FontSize->14],
 
 Cell[TextData[{
@@ -135,10 +137,11 @@ Cell[TextData[{
   ButtonData->{
     URL["http://metric.iem.csic.es/Martin-Garcia/"], None}],
   FontSize->13],
- "\n\t\nIt is tested so far for xAct_1.0.5 and xPert_1.0.3, under Mathematica \
+ "\n\t\nIt is tested so far for xAct_1.1.0 and xPert_1.0.3, under Mathematica \
 7.0, 8.0 and 9.0."
 }], "Text",
  InitializationCell->True,
+ CellChangeTimes->{{3.593086163440092*^9, 3.593086164967812*^9}},
  FontSize->14],
 
 Cell[CellGroupData[{
@@ -152,28 +155,29 @@ Cell[BoxData[
  RowBox[{
   RowBox[{"xAct`xPand`$Version", "=", 
    RowBox[{"{", 
-    RowBox[{"\"\<0.4.1\>\"", ",", 
+    RowBox[{"\"\<0.4.2\>\"", ",", 
      RowBox[{"{", 
-      RowBox[{"2013", ",", "9", ",", "5"}], "}"}]}], "}"}]}], ";"}]], "Input",
- 
- InitializationCell->True],
+      RowBox[{"2013", ",", "11", ",", "10"}], "}"}]}], "}"}]}], 
+  ";"}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.593086134554441*^9, 3.5930861380986*^9}}],
 
 Cell[BoxData[{
  RowBox[{
   RowBox[{"xAct`xPand`$xTensorVersionExpected", "=", 
    RowBox[{"{", 
-    RowBox[{"\"\<1.0.5\>\"", ",", 
+    RowBox[{"\"\<1.1.0\>\"", ",", 
      RowBox[{"{", 
-      RowBox[{"2013", ",", "1", ",", "27"}], "}"}]}], "}"}]}], 
+      RowBox[{"2013", ",", "7", ",", "1"}], "}"}]}], "}"}]}], 
   ";"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"xAct`xPand`$xPertVersionExpected", "=", 
    RowBox[{"{", 
     RowBox[{"\"\<1.0.3\>\"", ",", 
      RowBox[{"{", 
-      RowBox[{"2013", ",", "1", ",", "27"}], "}"}]}], "}"}]}], 
-  ";"}]}], "Input",
- InitializationCell->True],
+      RowBox[{"2013", ",", "7", ",", "1"}], "}"}]}], "}"}]}], ";"}]}], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.59308614430634*^9, 3.593086159561925*^9}}],
 
 Cell["", "Text"]
 }, Open  ]]
@@ -956,10 +960,10 @@ with down indices.\>\""}], ";"}], "\[IndentingNewLine]",
      RowBox[{"DefProjectedTensorProperties", "::", "symmetrictensors"}], "=", 
      "\"\<The current version of DefProjectedTensorProperties can only add \
 properties to tensors that are, at least, fully symmetric.\>\""}], ";"}], 
-   "\n", "\[IndentingNewLine]", 
-   RowBox[{"(*", 
-    RowBox[{"*", " ", "ExtractComponents"}], " ", "**)"}], 
    "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{"*", " ", "ExtractComponents"}], " ", "**)"}], "\n", 
+   "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{
      RowBox[{"ExtractComponents", "::", "invalidprojector"}], " ", "=", " ", 
@@ -2126,7 +2130,7 @@ BianchiI, FLCurved, FLFlat and Minkowski.\"\>"], "Output"]
 }, Open  ]],
 
 Cell["", "Text"]
-}, Closed]],
+}, Open  ]],
 
 Cell[CellGroupData[{
 
@@ -2669,8 +2673,8 @@ Cell[BoxData[
                 RowBox[{"{", 
                  RowBox[{"i", ",", "1", ",", "q"}], "}"}]}], "]"}]}]}], 
             "]"}]}], "}"}], "]"}]}], "\[IndentingNewLine]", "]"}]}], 
-     "\[IndentingNewLine]", "]"}]}], "\n", "\[IndentingNewLine]", 
-   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", "\n", "\[IndentingNewLine]", 
    RowBox[{"xTensorFormStart", "[", "Tensor", "]"}]}]}]], "Input",
  InitializationCell->True],
 
@@ -11948,7 +11952,8 @@ expression.\>\""}], "]"}]}], "/;",
               "So", " ", "we", " ", "treat", " ", "this", " ", "special", " ",
                 "case", " ", "by", " ", 
                RowBox[{"hand", "."}]}], "*)"}], "\[IndentingNewLine]", 
-             "\[IndentingNewLine]", 
+             "\[IndentingNewLine]", "\[IndentingNewLine]", 
+             "\[IndentingNewLine]", "\[IndentingNewLine]", 
              RowBox[{
               RowBox[{
                RowBox[{"LieD", "[", 
@@ -12043,6 +12048,7 @@ expression.\>\""}], "]"}]}], "/;",
                     RowBox[{"-", "ind2"}], "]"}], "[", "expr1", "]"}], "]"}], 
                     "]"}]}]}], "]"}]}]}], "\[IndentingNewLine]", "]"}]}], ";",
               "\[IndentingNewLine]", "\[IndentingNewLine]", 
+             "\[IndentingNewLine]", 
              RowBox[{
               RowBox[{
                RowBox[{"LieD", "[", 
@@ -12077,7 +12083,17 @@ expression.\>\""}], "]"}]}], "/;",
                    RowBox[{"u", "[", 
                     RowBox[{"-", "ind1"}], "]"}]}], "]"}], "===", "1"}]}]}]}],
               ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+             RowBox[{"(*", 
+              RowBox[{
+               RowBox[{"**", " ", "This"}], " ", "part", " ", "created", " ", 
+               "a", " ", "bug", " ", "on", " ", "the", " ", "version", " ", 
+               "1.1", ".0", " ", "of", " ", "xTensor"}], " ", "***)"}], 
              "\[IndentingNewLine]", 
+             RowBox[{"(*", 
+              RowBox[{
+               RowBox[{"**", " ", "A"}], " ", "modification", "  ", "was", 
+               " ", "required", " ", "to", " ", "solve", " ", "it"}], " ", 
+              "***)"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
              RowBox[{
               RowBox[{
                RowBox[{"LieD", "[", 
@@ -12151,7 +12167,8 @@ expression.\>\""}], "]"}]}], "/;",
                     RowBox[{"expr1", ",", 
                     RowBox[{"#", "\[Rule]", 
                     RowBox[{"-", "dum"}]}]}], "]"}]}]}], ")"}], "&"}], "/@", 
-                    "frees"}], ")"}]}]}]}], ")"}], "\[IndentingNewLine]", ",", 
+                    "frees"}], ")"}]}]}]}], "\[IndentingNewLine]", ")"}], 
+                    "\[IndentingNewLine]", ",", 
                     RowBox[{"UseMetricOnVBundle", "\[Rule]", "None"}]}], 
                     "]"}]}], "]"}]}]}], "]"}], "/;", 
                RowBox[{
@@ -12172,8 +12189,10 @@ expression.\>\""}], "]"}]}], "/;",
                     RowBox[{"-", "ind1"}], "]"}]}], "]"}], "===", "1"}]}]}]}],
               ";", "\[IndentingNewLine]", 
              RowBox[{"Protect", "[", "LieD", "]"}], ";", 
+             "\[IndentingNewLine]", 
+             RowBox[{"(*", "**", "  ", "***)"}], "\[IndentingNewLine]", 
              "\[IndentingNewLine]", "\[IndentingNewLine]", 
-             "\[IndentingNewLine]", "\[IndentingNewLine]", 
+             "\[IndentingNewLine]", 
              RowBox[{"(*", " ", 
               RowBox[{"OLD", " ", "Stuff"}], " ", "*)"}], 
              "\[IndentingNewLine]", 
@@ -13760,7 +13779,13 @@ been converted (safely) to a Lie derivative with down indices **\>\"", "]"}],
      RowBox[{"expr", "/.", 
       RowBox[{"ConstantsOfStructureRules", "[", "h", "]"}]}]}], "]"}]}], 
   ";"}]}], "Input",
- InitializationCell->True]
+ InitializationCell->True,
+ CellChangeTimes->{{3.5930857693863983`*^9, 3.593085786440909*^9}, {
+  3.5930858416506233`*^9, 3.59308599123488*^9}, {3.5930860373429003`*^9, 
+  3.593086051082155*^9}, {3.593086093562008*^9, 3.593086097459868*^9}, {
+  3.5930871274422073`*^9, 3.593087130462112*^9}, {3.593087176547402*^9, 
+  3.59308717675058*^9}, {3.593087275900579*^9, 3.5930872760621157`*^9}, {
+  3.593087427787318*^9, 3.593087430325745*^9}}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -18451,7 +18476,7 @@ Cell[BoxData[
            RowBox[{"tens", "[", "inds", "]"}], "]"}], ">", "1"}]}]}], "}"}], 
       ",", 
       RowBox[{"{", "}"}]}], "]"}]}], "\[IndentingNewLine]", 
-   "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{
      RowBox[{"RulesCovDsOfTensor", "[", 
@@ -19261,7 +19286,9 @@ Cell[BoxData[
       RowBox[{"2", ",", "3"}], "}"}]}], "]"}], "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"Protect", "[", "SplitPerturbations", "]"}], ";"}]}]}]], "Input",
- InitializationCell->True]
+ InitializationCell->True,
+ CellChangeTimes->{{3.593076793262979*^9, 3.593076803892839*^9}, {
+  3.593076884165976*^9, 3.59307689615792*^9}}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -20819,8 +20846,9 @@ WindowMargins->{{0, Automatic}, {Automatic, 0}},
 PrivateNotebookOptions->{"FileOutlineCache"->False},
 ShowSelection->True,
 Magnification->1,
-FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (January 25, \
-2013)",
+FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (November 20, \
+2012)",
 StyleDefinitions->FrontEnd`FileName[{"Creative"}, "PastelColor.nb", 
   CharacterEncoding -> "UTF-8"]
 ]
+

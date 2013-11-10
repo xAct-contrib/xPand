@@ -20,9 +20,8 @@ Cell[BoxData[{
   RowBox[{"Block", "[", 
    RowBox[{
     RowBox[{"{", "Print", "}"}], ",", "\[IndentingNewLine]", 
-    RowBox[{
-     RowBox[{"<<", "xAct/xPand.m"}], ";"}]}], "\[IndentingNewLine]", "]"}], 
-  "\[IndentingNewLine]", 
+    RowBox[{"Needs", "[", "\"\<xAct`xPand`\>\"", "]"}]}], 
+   "\[IndentingNewLine]", "]"}], "\[IndentingNewLine]", 
   RowBox[{"(*", " ", 
    RowBox[{"To", " ", "Keep", " ", "quiet"}], " ", "*)"}], 
   "\[IndentingNewLine]", 
@@ -77,8 +76,8 @@ Cell[BoxData[{
  RowBox[{
   RowBox[{"(*", 
    RowBox[{
-    RowBox[{"BackgroundFieldMethod", "=", "True"}], ";"}], 
-   "*)"}]}]}], "Input"],
+    RowBox[{"BackgroundFieldMethod", "=", "True"}], ";"}], "*)"}]}]}], "Input",
+ CellChangeTimes->{{3.593086840407084*^9, 3.593086842006637*^9}}],
 
 Cell["We define the manifold, the metric and the slicing", "Text"],
 
@@ -9245,8 +9244,9 @@ DockedCells->{
 PrivateNotebookOptions->{"FileOutlineCache"->False},
 ShowSelection->True,
 Magnification->1,
-FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (January 25, \
-2013)",
+FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (November 20, \
+2012)",
 StyleDefinitions->FrontEnd`FileName[{"Creative"}, "PastelColor.nb", 
   CharacterEncoding -> "UTF-8"]
 ]
+

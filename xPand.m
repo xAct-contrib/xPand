@@ -19,11 +19,11 @@
 
 
 
-xAct`xPand`$Version={"0.4.1",{2013,9,5}};
+xAct`xPand`$Version={"0.4.2",{2013,11,10}};
 
 
-xAct`xPand`$xTensorVersionExpected={"1.0.5",{2013,1,27}};
-xAct`xPand`$xPertVersionExpected={"1.0.3",{2013,1,27}};
+xAct`xPand`$xTensorVersionExpected={"1.1.0",{2013,7,1}};
+xAct`xPand`$xPertVersionExpected={"1.0.3",{2013,7,1}};
 
 
 (* xPand: Cosmological perturbations about homogeneous space-times *)
@@ -705,14 +705,14 @@ xTensorFormStart[Tensor]
 (*** CONVENIENT FUNCTIONS TO BUILD RULES ***)
 
 PatternLeft[(left_:> right_),PositiveIntegerList_List]:=(left/.((#->Pattern[#,_])&/@ PositiveIntegerList)):>right
-(* The function PatternLeft adds a Blank (_) to any element of the list 'PositiveIntegerList' present in the left-hand side of the delayed rule 'left \[RuleDelayed] right'. 
+(* The function PatternLeft adds a Blank (_) to any element of the list 'PositiveIntegerList' present in the left-hand side of the delayed rule 'left :> right'. 
 
 It is used for the definition of general automatical rules. The elements of 'PositiveIntegerList' are the arguments of the label-indices for the perturbed tensors, they must be positive integers. *)
 
 (********** The following command aims at extending the previous one. It does not work. What is the correct way to add tests? **********)
 
 (*
-PatternLeft[(left_\[RuleDelayed] right_),PositiveIntegerList_List]:=(left/.((#\[Rule]Pattern[#,_Integer])&/@ PositiveIntegerList))\[RuleDelayed]right
+PatternLeft[(left_:> right_),PositiveIntegerList_List]:=(left/.((#->Pattern[#,_Integer])&/@ PositiveIntegerList)):>right
 *)
 
 PatternLeftGeneral[(left_:> right_),ReplaceLists_List]:=(left/.((#[[1]]->#[[2]])&/@ ReplaceLists) ):>right
@@ -720,8 +720,8 @@ PatternLeftGeneral[(left_:> right_),ReplaceLists_List]:=(left/.((#[[1]]->#[[2]])
 
 PatternLeftGeneral is a generalization of PatternLeft: 
 
-PatternLeftGeneral[(left \[RuleDelayed] right),{ {Element\[Degree]1,Pattern[Element\[Degree]1,_]}, ... , {Element\[Degree]n,Pattern[Element\[Degree]n,_]} }]
-= PatternLeft[(left \[RuleDelayed] right),{Element\[Degree]1, ... , Element\[Degree]n}] *)
+PatternLeftGeneral[(left :> right),{ {Element\[Degree]1,Pattern[Element\[Degree]1,_]}, ... , {Element\[Degree]n,Pattern[Element\[Degree]n,_]} }]
+= PatternLeft[(left :> right),{Element\[Degree]1, ... , Element\[Degree]n}] *)
 
 
 (*** HANDLING EXPRESSIONS ***)
@@ -987,13 +987,13 @@ If[$ConformalTime,1,1/a[h][]]*(LieD[n[Dummy1]][ToCan[Name[LI[p],LI[q-1],indices1
 
 (*
 
-Name/:Name[LI[p_?((IntegerQ[#] && #\[GreaterEqual]0) &)],LI[q_?((IntegerQ[#] && #\[GreaterEqual]0) &)],indices1___,Dum1_,indices2___,Dum2_,indices3___]g[-Dum1_,-Dum2_]:=0 /;( Length[Join[{indices1},{indices2},{indices3}]]+2===Length[{inds}]);
+Name/:Name[LI[p_?((IntegerQ[#] && #>=0) &)],LI[q_?((IntegerQ[#] && #>=0) &)],indices1___,Dum1_,indices2___,Dum2_,indices3___]g[-Dum1_,-Dum2_]:=0 /;( Length[Join[{indices1},{indices2},{indices3}]]+2===Length[{inds}]);
 
-Name/:Name[LI[p_?((IntegerQ[#] && #\[GreaterEqual]0) &)],LI[q_?((IntegerQ[#] && #\[GreaterEqual]0) &)],indices1___,Dum1_,indices2___,Dum2_,indices3___]g[-Dum2_,-Dum1_]:=0 /;( Length[Join[{indices1},{indices2},{indices3}]]+2===Length[{inds}]);
+Name/:Name[LI[p_?((IntegerQ[#] && #>=0) &)],LI[q_?((IntegerQ[#] && #>=0) &)],indices1___,Dum1_,indices2___,Dum2_,indices3___]g[-Dum2_,-Dum1_]:=0 /;( Length[Join[{indices1},{indices2},{indices3}]]+2===Length[{inds}]);
 
-Name/:Name[LI[p_?((IntegerQ[#] && #\[GreaterEqual]0) &)],LI[q_?((IntegerQ[#] && #\[GreaterEqual]0) &)],indices1___,-Dum1_,indices2___,-Dum2_,indices3___]g[Dum1_,Dum2_]:=0 /;( Length[Join[{indices1},{indices2},{indices3}]]+2===Length[{inds}]);
+Name/:Name[LI[p_?((IntegerQ[#] && #>=0) &)],LI[q_?((IntegerQ[#] && #>=0) &)],indices1___,-Dum1_,indices2___,-Dum2_,indices3___]g[Dum1_,Dum2_]:=0 /;( Length[Join[{indices1},{indices2},{indices3}]]+2===Length[{inds}]);
 
-Name/:Name[LI[p_?((IntegerQ[#] && #\[GreaterEqual]0) &)],LI[q_?((IntegerQ[#] && #\[GreaterEqual]0) &)],indices1___,-Dum1_,indices2___,-Dum2_,indices3___]g[Dum2_,Dum1_]:=0 /;( Length[Join[{indices1},{indices2},{indices3}]]+2===Length[{inds}]);
+Name/:Name[LI[p_?((IntegerQ[#] && #>=0) &)],LI[q_?((IntegerQ[#] && #>=0) &)],indices1___,-Dum1_,indices2___,-Dum2_,indices3___]g[Dum2_,Dum1_]:=0 /;( Length[Join[{indices1},{indices2},{indices3}]]+2===Length[{inds}]);
 
 *)
 
@@ -1103,7 +1103,7 @@ If[Not[BackgroundBool]&&PerturbedBool,
 (* Instead we should append this to a list of rules, that should be applied in SplitPerturbations *)
 (* The easiest way is to define a set of global rules and to append a new rule each time there is a tensor vanishing on the background *)
 	
-(*Name[LI[0],LI[q_?((IntegerQ[#]&&#\[GreaterEqual]0)&)],indices___?AIndexQ]:=0
+(*Name[LI[0],LI[q_?((IntegerQ[#]&&#>=0)&)],indices___?AIndexQ]:=0
 /;(Length[{indices}]===Length[{inds}]);*)
 
 (* This is what is implemented below:*)
@@ -1147,13 +1147,13 @@ Name/:Name[LI[p_?((IntegerQ[#] && #>=0) &)],LI[q_?((IntegerQ[#] && #>=0) &)],ind
 (* On background quantities we contract automatically *)
 
 (* Old Implementation *)
-(*Name/:Name[LI[p_?((IntegerQ[#] && #\[GreaterEqual]0) &)],LI[0],indices1___,Dum1_,indices2___]h[-Dum1_,Dum2_]:=Name[LI[p],LI[0],indices1,Dum2,indices2] /;( Length[Join[{indices1},{indices2}]]+1===Length[{inds}]);
+(*Name/:Name[LI[p_?((IntegerQ[#] && #>=0) &)],LI[0],indices1___,Dum1_,indices2___]h[-Dum1_,Dum2_]:=Name[LI[p],LI[0],indices1,Dum2,indices2] /;( Length[Join[{indices1},{indices2}]]+1===Length[{inds}]);
 
-Name/:Name[LI[p_?((IntegerQ[#] && #\[GreaterEqual]0) &)],LI[0],indices1___,Dum1_,indices2___]h[Dum2_,-Dum1_]:=Name[LI[p],LI[0],indices1,Dum2,indices2] /;( Length[Join[{indices1},{indices2}]]+1===Length[{inds}]);
+Name/:Name[LI[p_?((IntegerQ[#] && #>=0) &)],LI[0],indices1___,Dum1_,indices2___]h[Dum2_,-Dum1_]:=Name[LI[p],LI[0],indices1,Dum2,indices2] /;( Length[Join[{indices1},{indices2}]]+1===Length[{inds}]);
 
-Name/:Name[LI[p_?((IntegerQ[#] && #\[GreaterEqual]0) &)],LI[0],indices1___,-Dum1_,indices2___]h[Dum1_,Dum2_]:=Name[LI[p],LI[0],indices1,Dum2,indices2] /;( Length[Join[{indices1},{indices2}]]+1===Length[{inds}]);
+Name/:Name[LI[p_?((IntegerQ[#] && #>=0) &)],LI[0],indices1___,-Dum1_,indices2___]h[Dum1_,Dum2_]:=Name[LI[p],LI[0],indices1,Dum2,indices2] /;( Length[Join[{indices1},{indices2}]]+1===Length[{inds}]);
 
-Name/:Name[LI[p_?((IntegerQ[#] && #\[GreaterEqual]0) &)],LI[0],indices1___,-Dum1_,indices2___]h[Dum2_,Dum1_]:=Name[LI[p],LI[0],indices1,Dum2,indices2] /;( Length[Join[{indices1},{indices2}]]+1===Length[{inds}]);*)
+Name/:Name[LI[p_?((IntegerQ[#] && #>=0) &)],LI[0],indices1___,-Dum1_,indices2___]h[Dum2_,Dum1_]:=Name[LI[p],LI[0],indices1,Dum2,indices2] /;( Length[Join[{indices1},{indices2}]]+1===Length[{inds}]);*)
 
 $Rulecdh[h]=Append[$Rulecdh[h],
 Name[LI[p_?((IntegerQ[#] && #>=0) &)],LI[0],indices1___,Dum1_,indices2___]h[-Dum1_,-Dum2_]:>Name[LI[p],LI[0],indices1,-Dum2,indices2] /;( Length[Join[{indices1},{indices2}]]+1===Length[{inds}])];
@@ -1161,11 +1161,11 @@ Name[LI[p_?((IntegerQ[#] && #>=0) &)],LI[0],indices1___,Dum1_,indices2___]h[-Dum
 $Rulecdh[h]=Append[$Rulecdh[h],
 Name[LI[p_?((IntegerQ[#] && #>=0) &)],LI[0],indices1___,-Dum1_,indices2___]h[Dum1_?UpIndexQ,Dum2_?UpIndexQ]:>Name[LI[p],LI[0],indices1,Dum2,indices2] /;( Length[Join[{indices1},{indices2}]]+1===Length[{inds}])];
 
-(*Name/:Name[LI[p_?((IntegerQ[#] && #\[GreaterEqual]0) &)],LI[0],indices1___,Dum1_,indices2___]h[Dum2_,-Dum1_]:=Name[LI[p],LI[0],indices1,Dum2,indices2] /;( Length[Join[{indices1},{indices2}]]+1===Length[{inds}]);
+(*Name/:Name[LI[p_?((IntegerQ[#] && #>=0) &)],LI[0],indices1___,Dum1_,indices2___]h[Dum2_,-Dum1_]:=Name[LI[p],LI[0],indices1,Dum2,indices2] /;( Length[Join[{indices1},{indices2}]]+1===Length[{inds}]);
 
-Name/:Name[LI[p_?((IntegerQ[#] && #\[GreaterEqual]0) &)],LI[0],indices1___,-Dum1_,indices2___]h[Dum1_,Dum2_]:=Name[LI[p],LI[0],indices1,Dum2,indices2] /;( Length[Join[{indices1},{indices2}]]+1===Length[{inds}]);
+Name/:Name[LI[p_?((IntegerQ[#] && #>=0) &)],LI[0],indices1___,-Dum1_,indices2___]h[Dum1_,Dum2_]:=Name[LI[p],LI[0],indices1,Dum2,indices2] /;( Length[Join[{indices1},{indices2}]]+1===Length[{inds}]);
 
-Name/:Name[LI[p_?((IntegerQ[#] && #\[GreaterEqual]0) &)],LI[0],indices1___,-Dum1_,indices2___]h[Dum2_,Dum1_]:=Name[LI[p],LI[0],indices1,Dum2,indices2] /;( Length[Join[{indices1},{indices2}]]+1===Length[{inds}]);*)
+Name/:Name[LI[p_?((IntegerQ[#] && #>=0) &)],LI[0],indices1___,-Dum1_,indices2___]h[Dum2_,Dum1_]:=Name[LI[p],LI[0],indices1,Dum2,indices2] /;( Length[Join[{indices1},{indices2}]]+1===Length[{inds}]);*)
 
 Name/:Name[LI[p_?((IntegerQ[#] && #>=0) &)],LI[0],indices1___,Dum1_,indices2___]h[-Dum1_,Dum2_?UpIndexQ]:=Name[LI[p],LI[0],indices1,Dum2,indices2] /;( Length[Join[{indices1},{indices2}]]+1===Length[{inds}]);
 
@@ -1177,13 +1177,13 @@ Name/:Name[LI[p_?((IntegerQ[#] && #>=0) &)],LI[0],indices1___,-Dum1_,indices2___
 
 (*
 prot=Unprotect[cd];
-cd/:cd[a_]@Name[LI[p_?((IntegerQ[#] && #\[GreaterEqual]0) &)],LI[0],indices1___,Dum1_,indices2___]h[-Dum1_,Dum2_]:=cd[a]@Name[LI[p],LI[0],indices1,Dum2,indices2] /;( Length[Join[{indices1},{indices2}]]+1===Length[{inds}]);
+cd/:cd[a_]@Name[LI[p_?((IntegerQ[#] && #>=0) &)],LI[0],indices1___,Dum1_,indices2___]h[-Dum1_,Dum2_]:=cd[a]@Name[LI[p],LI[0],indices1,Dum2,indices2] /;( Length[Join[{indices1},{indices2}]]+1===Length[{inds}]);
 
-cd/:cd[a_]@Name[LI[p_?((IntegerQ[#] && #\[GreaterEqual]0) &)],LI[0],indices1___,Dum1_,indices2___]h[Dum2_,-Dum1_]:=cd[a]@Name[LI[p],LI[0],indices1,Dum2,indices2] /;( Length[Join[{indices1},{indices2}]]+1===Length[{inds}]);
+cd/:cd[a_]@Name[LI[p_?((IntegerQ[#] && #>=0) &)],LI[0],indices1___,Dum1_,indices2___]h[Dum2_,-Dum1_]:=cd[a]@Name[LI[p],LI[0],indices1,Dum2,indices2] /;( Length[Join[{indices1},{indices2}]]+1===Length[{inds}]);
 
-cd/:cd[a_]@Name[LI[p_?((IntegerQ[#] && #\[GreaterEqual]0) &)],LI[0],indices1___,-Dum1_,indices2___]h[Dum1_,Dum2_]:=cd[a]@Name[LI[p],LI[0],indices1,Dum2,indices2] /;( Length[Join[{indices1},{indices2}]]+1===Length[{inds}]);
+cd/:cd[a_]@Name[LI[p_?((IntegerQ[#] && #>=0) &)],LI[0],indices1___,-Dum1_,indices2___]h[Dum1_,Dum2_]:=cd[a]@Name[LI[p],LI[0],indices1,Dum2,indices2] /;( Length[Join[{indices1},{indices2}]]+1===Length[{inds}]);
 
-cd/:cd[a_]@Name[LI[p_?((IntegerQ[#] && #\[GreaterEqual]0) &)],LI[0],indices1___,-Dum1_,indices2___]h[Dum2_,Dum1_]:=cd[a]@Name[LI[p],LI[0],indices1,Dum2,indices2] /;( Length[Join[{indices1},{indices2}]]+1===Length[{inds}]);
+cd/:cd[a_]@Name[LI[p_?((IntegerQ[#] && #>=0) &)],LI[0],indices1___,-Dum1_,indices2___]h[Dum2_,Dum1_]:=cd[a]@Name[LI[p],LI[0],indices1,Dum2,indices2] /;( Length[Join[{indices1},{indices2}]]+1===Length[{inds}]);
 Protect[prot];
 *)
 
@@ -1218,7 +1218,7 @@ Name/:cd[Dum_][Name[LI[p_?((IntegerQ[#] && #>=1) &)],LI[0],indices1___,-Dum_,ind
 Name/:cd[-Dum_][Name[LI[p_?((IntegerQ[#] && #>=1) &)],LI[0],indices1___,Dum_,indices2___]]:=
 0/;( Length[Join[{indices1},{indices2}]]+1===Length[{inds}]);
 
-(* then the first rule: D^aSubscript[\[ScriptCapitalL], n]Subscript[T, a... ]= Subscript[\[ScriptCapitalL], n](D^aSubscript[T, a...]) - Subscript[\[ScriptCapitalL], n](g^ab)Subscript[D, b]Subscript[Subscript[T, a], ...] + (g^ab)[Subscript[D, b],Subscript[\[ScriptCapitalL], n]]Subscript[T, a...] *)
+(* then the first rule: D^a Subscript[\[ScriptCapitalL], n] Subscript[T, a... ]= Subscript[\[ScriptCapitalL], n](D^a Subscript[T, a...]) - Subscript[\[ScriptCapitalL], n](g^ab)Subscript[D, b] Subscript[Subscript[T, a], ...] + (g^ab)[Subscript[D, b],Subscript[\[ScriptCapitalL], n]]Subscript[T, a...] *)
 Name/:cd[Dum_][Name[LI[p_?((IntegerQ[#] && #>=1) &)],LI[q_?((IntegerQ[#] && #>=1) &)],indices1___?DownIndexQ,-Dum_,indices2___?DownIndexQ]]:=Module[{Dummy1,Dummy2},
 
 Dummy1=DummyIn[Tangent[M]];
@@ -1235,7 +1235,7 @@ If[$ConformalTime,1,1/a[h][]]*LieD[n[Dummy1]][cd[Dum][Name[LI[p],LI[q-1],indices
 ]
 ]/;( Length[Join[{indices1},{indices2}]]+1===Length[{inds}]);
 
-(* and the second rule: Subscript[D, a]Subscript[\[ScriptCapitalL], n]Subscript[T^a, ... ]= Subscript[\[ScriptCapitalL], n](D^aSubscript[T, a...]) - Subscript[\[ScriptCapitalL], n](g^ab)Subscript[D, b]Subscript[Subscript[T, a], ...] + (g^ab)[Subscript[D, b],Subscript[\[ScriptCapitalL], n]]Subscript[T, a...] *)
+(* and the second rule: Subscript[D, a] Subscript[\[ScriptCapitalL], n] Subscript[T^a, ... ]= Subscript[\[ScriptCapitalL], n](D^a Subscript[T, a...]) - Subscript[\[ScriptCapitalL], n](g^ab)Subscript[D, b] Subscript[Subscript[T, a], ...] + (g^ab)[Subscript[D, b],Subscript[\[ScriptCapitalL], n]]Subscript[T, a...] *)
 Name/:cd[-Dum_][Name[LI[p_?((IntegerQ[#] && #>=1) &)],LI[q_?((IntegerQ[#] && #>=1) &)],indices1___?DownIndexQ,Dum_,indices2___?DownIndexQ]]:=Module[{Dummy1,Dummy2},
 
 Dummy1=DummyIn[Tangent[M]];
@@ -1396,13 +1396,13 @@ If[$ConformalTime,1,1/a[h][]]*(LieD[n[Dummy1]][ToCan[Name[LI[p],LI[q-1],indices1
 
 (*
 
-Name/:Name[LI[p_?((IntegerQ[#] && #\[GreaterEqual]0) &)],LI[q_?((IntegerQ[#] && #\[GreaterEqual]0) &)],indices1___,Dum1_,indices2___,Dum2_,indices3___]g[-Dum1_,-Dum2_]:=0;
+Name/:Name[LI[p_?((IntegerQ[#] && #>=0) &)],LI[q_?((IntegerQ[#] && #>=0) &)],indices1___,Dum1_,indices2___,Dum2_,indices3___]g[-Dum1_,-Dum2_]:=0;
 
-Name/:Name[LI[p_?((IntegerQ[#] && #\[GreaterEqual]0) &)],LI[q_?((IntegerQ[#] && #\[GreaterEqual]0) &)],indices1___,Dum1_,indices2___,Dum2_,indices3___]g[-Dum2_,-Dum1_]:=0;
+Name/:Name[LI[p_?((IntegerQ[#] && #>=0) &)],LI[q_?((IntegerQ[#] && #>=0) &)],indices1___,Dum1_,indices2___,Dum2_,indices3___]g[-Dum2_,-Dum1_]:=0;
 
-Name/:Name[LI[p_?((IntegerQ[#] && #\[GreaterEqual]0) &)],LI[q_?((IntegerQ[#] && #\[GreaterEqual]0) &)],indices1___,-Dum1_,indices2___,-Dum2_,indices3___]g[Dum1_,Dum2_]:=0;
+Name/:Name[LI[p_?((IntegerQ[#] && #>=0) &)],LI[q_?((IntegerQ[#] && #>=0) &)],indices1___,-Dum1_,indices2___,-Dum2_,indices3___]g[Dum1_,Dum2_]:=0;
 
-Name/:Name[LI[p_?((IntegerQ[#] && #\[GreaterEqual]0) &)],LI[q_?((IntegerQ[#] && #\[GreaterEqual]0) &)],indices1___,-Dum1_,indices2___,-Dum2_,indices3___]g[Dum2_,Dum1_]:=0;
+Name/:Name[LI[p_?((IntegerQ[#] && #>=0) &)],LI[q_?((IntegerQ[#] && #>=0) &)],indices1___,-Dum1_,indices2___,-Dum2_,indices3___]g[Dum2_,Dum1_]:=0;
 
 *)
 
@@ -1498,7 +1498,7 @@ If[Not[BackgroundBool]&&PerturbedBool,
 
 (* Again we do not Set it to 0 but rather add a rule which is used in SplitPerturbations*)
 (* So when we perturbed a quantity this avoids to do Perturbed[0]. *)
-(*Name[LI[0],LI[q_?((IntegerQ[#]&&#\[GreaterEqual]0)&)],indices___?AIndexQ]:=0*)
+(*Name[LI[0],LI[q_?((IntegerQ[#]&&#>=0)&)],indices___?AIndexQ]:=0*)
 $RulesVanishingBackgroundFields[h]=Append[$RulesVanishingBackgroundFields[h],Name[LI[0],LI[q_?((IntegerQ[#]&&#>=0)&)],indices___?AIndexQ]:>0];
 ];
 
@@ -1527,13 +1527,13 @@ Name/:Name[LI[p_?((IntegerQ[#] && #>=0) &)],LI[q_?((IntegerQ[#] && #>=0) &)],ind
 (* and the action of the projector onto the hypersurfaces is an invariant operation: *)
 (* Old implementation *)
 (*
-Name/:Name[LI[p_?((IntegerQ[#] && #\[GreaterEqual]0) &)],LI[0],indices1___,Dum1_,indices2___]h[-Dum1_,Dum2_]:=Name[LI[p],LI[0],indices1,Dum2,indices2] ;
+Name/:Name[LI[p_?((IntegerQ[#] && #>=0) &)],LI[0],indices1___,Dum1_,indices2___]h[-Dum1_,Dum2_]:=Name[LI[p],LI[0],indices1,Dum2,indices2] ;
 
-Name/:Name[LI[p_?((IntegerQ[#] && #\[GreaterEqual]0) &)],LI[0],indices1___,Dum1_,indices2___]h[Dum2_,-Dum1_]:=Name[LI[p],LI[0],indices1,Dum2,indices2];
+Name/:Name[LI[p_?((IntegerQ[#] && #>=0) &)],LI[0],indices1___,Dum1_,indices2___]h[Dum2_,-Dum1_]:=Name[LI[p],LI[0],indices1,Dum2,indices2];
 
-Name/:Name[LI[p_?((IntegerQ[#] && #\[GreaterEqual]0) &)],LI[0],indices1___,-Dum1_,indices2___]h[Dum1_,Dum2_]:=Name[LI[p],LI[0],indices1,Dum2,indices2];
+Name/:Name[LI[p_?((IntegerQ[#] && #>=0) &)],LI[0],indices1___,-Dum1_,indices2___]h[Dum1_,Dum2_]:=Name[LI[p],LI[0],indices1,Dum2,indices2];
 
-Name/:Name[LI[p_?((IntegerQ[#] && #\[GreaterEqual]0) &)],LI[0],indices1___,-Dum1_,indices2___]h[Dum2_,Dum1_]:=Name[LI[p],LI[0],indices1,Dum2,indices2];*)
+Name/:Name[LI[p_?((IntegerQ[#] && #>=0) &)],LI[0],indices1___,-Dum1_,indices2___]h[Dum2_,Dum1_]:=Name[LI[p],LI[0],indices1,Dum2,indices2];*)
 
 $Rulecdh[h]=Append[$Rulecdh[h],
 Name[LI[p_?((IntegerQ[#] && #>=0) &)],LI[0],indices1___,Dum1_,indices2___]h[-Dum1_,-Dum2_]:>Name[LI[p],LI[0],indices1,-Dum2,indices2] ];
@@ -1582,7 +1582,7 @@ Name/:cd[Dum_][Name[LI[p_?((IntegerQ[#] && #>=1) &)],LI[0],indices1___,-Dum_,ind
 
 Name/:cd[-Dum_][Name[LI[p_?((IntegerQ[#] && #>=1) &)],LI[0],indices1___,Dum_,indices2___]]:=0;
 
-(* then the first rule: D^aSubscript[\[ScriptCapitalL], n]Subscript[T, a... ]= Subscript[\[ScriptCapitalL], n](D^aSubscript[T, a...]) - Subscript[\[ScriptCapitalL], n](g^ab)Subscript[D, b]Subscript[Subscript[T, a], ...] + (g^ab)[Subscript[D, b],Subscript[\[ScriptCapitalL], n]]Subscript[T, a...] *)
+(* then the first rule: D^a Subscript[\[ScriptCapitalL], n] Subscript[T, a... ]= Subscript[\[ScriptCapitalL], n](D^a Subscript[T, a...]) - Subscript[\[ScriptCapitalL], n](g^ab)Subscript[D, b] Subscript[Subscript[T, a], ...] + (g^ab)[Subscript[D, b],Subscript[\[ScriptCapitalL], n]]Subscript[T, a...] *)
 Name/:cd[Dum_][Name[LI[p_?((IntegerQ[#] && #>=1) &)],LI[q_?((IntegerQ[#] && #>=1) &)],indices1___?DownIndexQ,-Dum_,indices2___?DownIndexQ]]:=Module[{Dummy1,Dummy2},
 
 Dummy1=DummyIn[Tangent[M]];
@@ -1599,7 +1599,7 @@ If[$ConformalTime,1,1/a[h][]]*LieD[n[Dummy1]][cd[Dum][Name[LI[p],LI[q-1],indices
 ]
 ];
 
-(* and the second rule: Subscript[D, a]Subscript[\[ScriptCapitalL], n]Subscript[T^a, ... ]= Subscript[\[ScriptCapitalL], n](D^aSubscript[T, a...]) - Subscript[\[ScriptCapitalL], n](g^ab)Subscript[D, b]Subscript[Subscript[T, a], ...] + (g^ab)[Subscript[D, b],Subscript[\[ScriptCapitalL], n]]Subscript[T, a...] *)
+(* and the second rule: Subscript[D, a] Subscript[\[ScriptCapitalL], n] Subscript[T^a, ... ]= Subscript[\[ScriptCapitalL], n](D^a Subscript[T, a...]) - Subscript[\[ScriptCapitalL], n](g^ab)Subscript[D, b] Subscript[Subscript[T, a], ...] + (g^ab)[Subscript[D, b],Subscript[\[ScriptCapitalL], n]]Subscript[T, a...] *)
 Name/:cd[-Dum_][Name[LI[p_?((IntegerQ[#] && #>=1) &)],LI[q_?((IntegerQ[#] && #>=1) &)],indices1___?DownIndexQ,Dum_,indices2___?DownIndexQ]]:=Module[{Dummy1,Dummy2},
 
 Dummy1=DummyIn[Tangent[M]];
@@ -1749,7 +1749,7 @@ If[Length[SlotsOfTensor[u]]=!=1||VBundleOfIndex@DummyIn[First@SlotsOfTensor@u]=!
 
 Off[DefMetric::old];(* Annoying message turned off*)
 (* contribution of Obinna *)
-(*DefMetric[1,h[-ind1,-ind2],cd,{cdpost,cdpre},InducedFrom\[Rule]{g,u},If[$ConformalTime,If[FlatSpaceBool[SpaceTimeType],PrintAs\[Rule]"\[Delta]",PrintAs\[Rule]"\!\("<>ToString[h]<>"\&-\)"],PrintAs\[Rule]"\!\("<>ToString[h]<>"\&-\)"]];*)
+(*DefMetric[1,h[-ind1,-ind2],cd,{cdpost,cdpre},InducedFrom->{g,u},If[$ConformalTime,If[FlatSpaceBool[SpaceTimeType],PrintAs->"\[Delta]",PrintAs->"\!\("<>ToString[h]<>"\&-\)"],PrintAs->"\!\("<>ToString[h]<>"\&-\)"]];*)
 
 DefMetric[1,h[-ind1,-ind2],cd,{cdpost,cdpre},InducedFrom->{g,u},PrintAs->"\!\("<>ToString[h]<>"\&-\)"];
 
@@ -1875,7 +1875,7 @@ RicciScalar[cd][]=0;,
 SpaceTimeType==="FLCurved",
 DefTensor[\[ScriptK][h][],{Manifold},PrintAs->StringJoin["\[ScriptK]"(*,ToString[h]*)]];
 
-CD[ind1_][\[ScriptK][h][]]:=-1*(-2/3)*u[ind1]\[ScriptK][h][]CD[-ind2][u[ind2]]; (* This is because Subscript[\[ScriptCapitalL], u](\[ScriptK]^(1/2)Subscript[\[Epsilon]^\[Mu], \[Nu]\[Sigma]]) must be zero since Subscript[\[ScriptCapitalL], u](Subscript[C^\[Mu], \[Nu]\[Sigma]])=0*)
+CD[ind1_][\[ScriptK][h][]]:=-1*(-2/3)*u[ind1]\[ScriptK][h][]CD[-ind2][u[ind2]]; (* This is because Subscript[\[ScriptCapitalL], u](\[ScriptK]^(1/2) Subscript[\[Epsilon]^\[Mu], \[Nu]\[Sigma]]) must be zero since Subscript[\[ScriptCapitalL], u](Subscript[C^\[Mu], \[Nu]\[Sigma]])=0*)
 (* Given that we first work on the conformal metric where the trace of the extrinsic curvature is 0, then this point does not matter at all for us.*)
 cd[ind1_][\[ScriptK][h][]]=0;
 If[dim===4,CSh[ind1_,ind2_,ind3_]:=2Sqrt[\[ScriptK][h][]]epsilon[h][ind1,ind2,ind3]];
@@ -1956,6 +1956,9 @@ Unprotect[LieD];
 (* We basically introduce the metric by hand in order to lower the up index in the Laplacian. Then it goes through the Lie Derivative*)
 (*  So we treat this special case by hand.*)
 
+
+
+
 LieD[u[ind1_]][cd[ind2_][cd[-ind2_][expr1_]]]:=Module[{dum},dum=DummyIn[Tangent[Manifold]];
 ContractMetric[LieD[u[ind1]][g[dum,ind2]]cd[-dum][cd[-ind2][expr1]]
 +g[dum,ind2]LieD[u[ind1]][cd[-dum][cd[-ind2][expr1]]]]
@@ -1966,8 +1969,11 @@ ContractMetric[LieD[u[ind1]][g[dum,ind2]]cd[-dum][cd[-ind2][expr1]]
 +g[dum,ind2]LieD[u[ind1]][cd[-dum][cd[-ind2][expr1]]]]
 ];
 
+
 LieD[u[ind1_]][cd[ind2_][expr1_]]:=LieD[u[ind1]][IndicesDown[cd[ind2][expr1] ] ]/;Length[IndicesOf[Free,Up][cd[ind2][expr1]]]=!=0&&OrthogonalToVectorQ[u][expr1]&&Abs[u[ind1]u[-ind1]]===1;
 
+(*** This part created a bug on the version 1.1.0 of xTensor ***)
+(*** A modification  was required to solve it ***)
 
 LieD[u[ind1_]][cd[ind2_?DownIndexQ][expr1_]]:=Module[{dum},dum=DummyIn[Tangent[Manifold]];
 With[{frees=FindFreeIndices[expr1]},
@@ -1976,9 +1982,11 @@ ToCanonical[
 +$ExtrinsicKSign *Plus@@(
 (-cd[#][ExtrinsicK[h][ind2,dum]]ReplaceIndex[expr1,#->-dum]
 +cd[dum][ExtrinsicK[h][#,ind2]]ReplaceIndex[expr1,#->-dum]
--cd[ind2][ExtrinsicK[h][dum,#]]ReplaceIndex[expr1,#->-dum])&/@frees))
+-cd[ind2][ExtrinsicK[h][dum,#]]ReplaceIndex[expr1,#->-dum])&/@frees)
+)
 ,UseMetricOnVBundle->None]]]/;Length[IndicesOf[Free,Up][expr1]]===0&&OrthogonalToVectorQ[u][expr1]&&Abs[u[ind1]u[-ind1]]===1;
 Protect[LieD];
+(***  ***)
 
 
 
@@ -2589,7 +2597,7 @@ Module[{cd1=CovDOfMetric[h],i1,
 n=Last@InducedFrom@h,exprtemp,res},
 i1=DummyIn[Tangent[ManifoldOfCovD[cd1]]];
 
-exprtemp=expr(*/.Tens_?((DefProjectedTensorQ[#,h])&)[LI[p_],LI[q_],inds___]\[RuleDelayed]ConformalToCosmic[Tens[LI[p],LI[q],inds]]*);
+exprtemp=expr(*/.Tens_?((DefProjectedTensorQ[#,h])&)[LI[p_],LI[q_],inds___]:>ConformalToCosmic[Tens[LI[p],LI[q],inds]]*);
 
 res=PostProcess[h]@NoScalar@SameDummies@ToCanonical@ContractMetric[
 exprtemp
@@ -2612,7 +2620,7 @@ Module[{cd1=CovDOfMetric[h],i1,
 n=Last@InducedFrom@h,exprtemp,res},
 i1=DummyIn[Tangent[ManifoldOfCovD[cd1]]];
 
-exprtemp=expr(*/.Tens_?((DefProjectedTensorQ[#,h])&)[LI[p_],LI[q_],inds___]\[RuleDelayed]CosmicToConformal[Tens[LI[p],LI[q],inds]]*);
+exprtemp=expr(*/.Tens_?((DefProjectedTensorQ[#,h])&)[LI[p_],LI[q_],inds___]:>CosmicToConformal[Tens[LI[p],LI[q],inds]]*);
 
 res=PostProcess[h]@NoScalar@SameDummies@ToCanonical@ContractMetric[
 exprtemp
@@ -2661,7 +2669,7 @@ testpatternlistnmax=TablePatternsCovDs[First@replacerule,CD,n];
 
 (* For every number of CovD we look at a match and give a list of the booleans. {True,True,False...}
 means that there is terms with no CovD, terms with one, but no terms with two CovD[tens] for instance. *)
-ListBool=(#\[GreaterEqual]1)&/@Length/@(Cases[Expand@expr,#,Infinity]&/@testpatternlistnmax);
+ListBool=(#>=1)&/@Length/@(Cases[Expand@expr,#,Infinity]&/@testpatternlistnmax);
 
 (* Then we look at the maximum number of CovDs *)
 CDmax=Max[0,Max@Position[ListBool,True]-1];
@@ -2672,7 +2680,7 @@ dummiesup=ChangeIndex/@dummiesdown;
 
 Off[Pattern::patvar];
 
-freedownleft=IndicesOf[Free,Down][First@replacerule/.pat_Pattern\[RuleDelayed]First[pat]];
+freedownleft=IndicesOf[Free,Down][First@replacerule/.pat_Pattern:>First[pat]];
 If[Length[freedownleft]=!=0,Print["** Warning: The rule should be defined with general position of indices, and not just for down indices. The free indices which were in down position are going to be raised before defining the rule. **"];];
 
 tableleftupindices=PutPatternIndicesUp[First@replacerule//ProjectorToMetric];
@@ -2692,11 +2700,11 @@ Listlhsrhs=Reverse@Transpose[{tableleft,tablerightdown}];
 res={};
 (* Now we will replace the rhs by its evaluated form when using SplitCovDs on it, so as to save time when using the rule.*)
 (rhsCDcd=SplitCovDs[IndicesDown[Last[#]],CD,cd];
-restemp=AbsoluteTiming[PutFreeIndicesUp@PutScalar@ToCanonical@ContractMetric[FixedPoint[GradNormalToExtrinsicK,rhsCDcd/.Projector[h]\[Rule]ProjectWith[h]]//.res//.$MyRules]];
+restemp=AbsoluteTiming[PutFreeIndicesUp@PutScalar@ToCanonical@ContractMetric[FixedPoint[GradNormalToExtrinsicK,rhsCDcd/.Projector[h]->ProjectWith[h]]//.res//.$MyRules]];
 pairsimplified={First[#],Last@restemp};
 ruletemp=Apply[IndexRuleDelayed,pairsimplified];
 If[$CacheRules,
-If[ToCanonical[((First[#]/.pat_Pattern\[RuleDelayed]First[pat])/.$MyRules)-((First[#]/.pat_Pattern\[RuleDelayed]First[pat]))]===0,
+If[ToCanonical[((First[#]/.pat_Pattern:>First[pat])/.$MyRules)-((First[#]/.pat_Pattern:>First[pat]))]===0,
 AppendTo[$MyRules,ruletemp];If[$DefInfoQ,Print["The rule ", ruletemp[[1]]," --> ... has been appended to $MyRules"]
 ];];,
 AppendTo[res,ruletemp];
@@ -2734,7 +2742,7 @@ If[$DebugInfoQ,Print["Preliminar Canonicalisation. "];];
 restemp0=SameDummies@ToCanonical@expr;
 SortCovDsStart[cd];If[$DebugInfoQ,Print["First Canonicalisation with automatic sorting of Cov Ds.  ",Length[restemp0]," terms."];];
 counter=0;
-restemp=Map[(If[$DebugInfoQ,counter=counter+1;If[Mod[counter,10]===0(*||counter\[GreaterEqual]4180*),Print["We canonicalize term ",counter," ",#];];];SameDummies@ToCanonical@ContractMetric[#])&,restemp0];
+restemp=Map[(If[$DebugInfoQ,counter=counter+1;If[Mod[counter,10]===0(*||counter>=4180*),Print["We canonicalize term ",counter," ",#];];];SameDummies@ToCanonical@ContractMetric[#])&,restemp0];
 Block[{Print},SortCovDsStop[cd];];,
 Block[{Print},Off[Unset::norep];SortCovDsStop[cd];On[Unset::norep];];restemp=res;
 ];
@@ -2753,7 +2761,7 @@ SplitCovDs[expr_,CD_,cd_]:=FixedPoint[FixedPoint[GradNormalToExtrinsicK[#]&,ToIn
 
 CheckSTFTensors[expr_,h_,exceptlist_List]:=Module[{tens},With[{listpb=Cases[Expand@expr,tens_?((And@@(Function[t,t=!=#]/@exceptlist))&&xTensorQ[#]&&Not@DefProjectedTensorQ[#,h]&)[inds___]->tens,Infinity]},Print["** Warning: the tensor ",#," was not defined with DefProjectedTensor. The rules necessary for its splitting were thus not defined. **"]&/@(DeleteDuplicates@listpb)];];
 
-(* Warning message to update \[Rule] the slicing should be taken into account. *)
+(* Warning message to update -> the slicing should be taken into account. *)
 
 CheckSTFTensors[expr_,h_]:=CheckSTFTensors[expr,h,{}];
 
@@ -2768,7 +2776,7 @@ restemp=IndicesDown[Identity[org[(expr)//ProjectorToMetric]]];
 
 restemp2 = FixedPoint[GradNormalToExtrinsicK,SplitCovDs[(restemp//.rules//.$MyRules),CD,cd]//GaussCodazzi[#,h]&];
 
-org[(org[(restemp2/.BackgroundFieldRule)/.Projector[h]\[Rule]ProjectWith[h]]//MetricToProjector[#,h]&//CommuteCDSafe[#,cd]&)/.ConstantsDecompositionRules[h]]];
+org[(org[(restemp2/.BackgroundFieldRule)/.Projector[h]->ProjectWith[h]]//MetricToProjector[#,h]&//CommuteCDSafe[#,cd]&)/.ConstantsDecompositionRules[h]]];
 
 CheckSTFTensors[res,h,{g,u,Riemann[cd],Ricci[cd],RicciScalar[cd],h,CS[h],nt[h],av[h],\[ScriptK][h],delta,epsilon[h],epsilon[g]}];
 
@@ -2812,6 +2820,7 @@ MaxDerOrder[expr_,CD_?CovDQ,inner_]:=-1+NestWhile[#+1&,0,ContainsDerOrderQ[expr,
 (* If the background field method is used, this rule ensures that tensor with a label index for order strictly larger than 1 vanish.*)
 BackgroundFieldRule:=If[BackgroundFieldMethod,
 {tens_?xTensorQ[inds___]:>0/;PerturbationOrder[tens[inds]]>1},{}]
+
 
 RulesCovDsOfTensor[expr_,replacerule_,rulesprojected_,h_?InducedMetricQ]:=Module[{dummiesup,tableleft,tableright,testpatternlistnmax,freedownleft,dummiesdown,leftupindices,leftupindicesnopattern,tableleftnopattern,Listlhsrhsnoreplace,temp,tempdown,rhs,rulepert,leftupindicesnopatterntests,tobecan,oncecan,RulesCovDs},Catch@With[{g=First@InducedFrom@h,u=Last@InducedFrom@h},
 With[{CD=CovDOfMetric[g],cd=CovDOfMetric[h],M=ManifoldOfCovD@CovDOfMetric[g]},
@@ -2884,7 +2893,7 @@ res3=(res2/.ProtectMyScalar[exp_]:>IndicesDown[ToCanonical[NoScalar@exp]](*Expan
 res4=NoScalar[res3/.Projector[h]->ProjectWith[h]](*//ContractMetric//ToCanonical*);
 (*If[$DebugInfoQ,Print["Ready for canonicalization."]];*)
 
-res4bis=SameDummies@ContractMetric@res4(*ParallelMap[ContractMetric,res4,Method\[Rule]"CoarsestGrained"]*);
+res4bis=SameDummies@ContractMetric@res4(*ParallelMap[ContractMetric,res4,Method->"CoarsestGrained"]*);
 (*If[$DebugInfoQ,Print["Stage 4 bis"]];*)
 If[$DebugInfoQ,Print["Number of terms to be canonicalized before Expand : ",Length[res4bis],"  ",LeafCount[res4bis],". Head is ",Head[res4bis]];];
 
@@ -2892,14 +2901,14 @@ If[$DebugInfoQ,Print["Number of terms to be canonicalized before Expand : ",Leng
 res4quater=res4bis;
 
 (*
-res4ter=Map[(If[$DebugInfoQ,counter=counter+1;If[Mod[counter,50]===0,Print["We expand term ",counter," ",SameDummies@Expand@#];];];SameDummies@Expand[#])&,res4bis](*ParallelMap[Expand,res4bis,Method\[Rule]"CoarsestGrained"]*);
+res4ter=Map[(If[$DebugInfoQ,counter=counter+1;If[Mod[counter,50]===0,Print["We expand term ",counter," ",SameDummies@Expand@#];];];SameDummies@Expand[#])&,res4bis](*ParallelMap[Expand,res4bis,Method->"CoarsestGrained"]*);
 If[$DebugInfoQ,Print["Number of terms after Expand on each term: ",Length[res4ter],"  ",LeafCount[res4ter],". Head is ",Head[res4ter]];];
 
 res4quater=FixedPoint[SameDummies@Expand[#]&,res4ter];
 If[$DebugInfoQ,Print["Expand applied globally. Canonicalisation started."];];
 
 (*counter=0;
-res5=Map[(If[$DebugInfoQ,counter=counter+1;If[Mod[counter,50]===0,Print["We Canonicalize the term ",counter," ",#];];];ToCanonical[#])&,res4quater](*ParallelMap[ToCanonical,res4ter,Method\[Rule]"CoarsestGrained"]*);
+res5=Map[(If[$DebugInfoQ,counter=counter+1;If[Mod[counter,50]===0,Print["We Canonicalize the term ",counter," ",#];];];ToCanonical[#])&,res4quater](*ParallelMap[ToCanonical,res4ter,Method->"CoarsestGrained"]*);
 If[$DebugInfoQ,Print["Main Canonicalisation performed"]];*)
 *)
 

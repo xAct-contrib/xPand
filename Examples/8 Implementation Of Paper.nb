@@ -6,7 +6,8 @@ Cell["Notebook used for the paper", "Subsection"],
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"<<", "xAct`xPert`"}]], "Input"],
+ RowBox[{"Needs", "[", "\"\<xAct`xPert`\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.59308704471841*^9, 3.593087047301364*^9}}],
 
 Cell[CellGroupData[{
 
@@ -687,7 +688,8 @@ Cell[BoxData[
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"<<", "xAct`xPand`"}]], "Input"],
+ RowBox[{"Needs", "[", "\"\<xAct`xPand`\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.593087039304356*^9, 3.593087041334983*^9}}],
 
 Cell[CellGroupData[{
 
@@ -15158,6 +15160,7 @@ Cell[BoxData[
                     Offset[0.]}}, "RowsIndexed" -> {}}],
                FontSize->Rational[39, 4]]}
             },
+            
             GridBoxAlignment->{
              "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
               "Rows" -> {{Center}}, "RowsIndexed" -> {}},
@@ -25128,7 +25131,8 @@ WindowMargins->{{0, Automatic}, {Automatic, 0}},
 Visible->True,
 PrivateNotebookOptions->{"FileOutlineCache"->False},
 ShowSelection->True,
-FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (January 25, \
-2013)",
+FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (November 20, \
+2012)",
 StyleDefinitions->"Default.nb"
 ]
+

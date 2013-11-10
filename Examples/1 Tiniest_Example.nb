@@ -14,14 +14,14 @@ Cell[TextData[{
 Cell[CellGroupData[{
 
 Cell[BoxData[{
- RowBox[{
-  RowBox[{"<<", "xAct/xPand.m"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Needs", "[", "\"\<xAct`xPand`\>\"", "]"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"$DefInfoQ", "=", "False"}], ";"}], "\n", 
  RowBox[{
   RowBox[{"SetOptions", "[", 
    RowBox[{"AutomaticRules", ",", 
-    RowBox[{"Verbose", "\[Rule]", "False"}]}], "]"}], ";"}]}], "Input"],
+    RowBox[{"Verbose", "\[Rule]", "False"}]}], "]"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.593086822733707*^9, 3.593086824524232*^9}}],
 
 Cell[CellGroupData[{
 
@@ -596,8 +596,9 @@ DockedCells->{
 PrivateNotebookOptions->{"FileOutlineCache"->False},
 ShowSelection->True,
 Magnification->1,
-FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (January 25, \
-2013)",
+FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (November 20, \
+2012)",
 StyleDefinitions->FrontEnd`FileName[{"Creative"}, "PastelColor.nb", 
   CharacterEncoding -> "UTF-8"]
 ]
+
