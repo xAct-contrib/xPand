@@ -76,8 +76,8 @@ Cell[BoxData[{
  RowBox[{
   RowBox[{"(*", 
    RowBox[{
-    RowBox[{"BackgroundFieldMethod", "=", "True"}], ";"}], "*)"}]}]}], "Input",
- CellChangeTimes->{{3.593086840407084*^9, 3.593086842006637*^9}}],
+    RowBox[{"BackgroundFieldMethod", "=", "True"}], ";"}], 
+   "*)"}]}]}], "Input"],
 
 Cell["We define the manifold, the metric and the slicing", "Text"],
 
@@ -9243,6 +9243,7 @@ DockedCells->{
           "}"}], "]"}]& )]], "DockedCell"]},
 PrivateNotebookOptions->{"FileOutlineCache"->False},
 ShowSelection->True,
+TrackCellChangeTimes->False,
 Magnification->1,
 FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (November 20, \
 2012)",

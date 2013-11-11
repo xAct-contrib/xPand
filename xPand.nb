@@ -65,8 +65,6 @@ It allows for the calculation of perturbations for all types of Bianchi \
 Version 0.4.2   (10/11/2013)\
 \>", "Text",
  InitializationCell->True,
- CellChangeTimes->{{3.59308565191761*^9, 3.593085655298959*^9}, {
-  3.593086123394886*^9, 3.5930861301849957`*^9}},
  FontSize->14],
 
 Cell[TextData[{
@@ -141,7 +139,6 @@ Cell[TextData[{
 7.0, 8.0 and 9.0."
 }], "Text",
  InitializationCell->True,
- CellChangeTimes->{{3.593086163440092*^9, 3.593086164967812*^9}},
  FontSize->14],
 
 Cell[CellGroupData[{
@@ -159,25 +156,24 @@ Cell[BoxData[
      RowBox[{"{", 
       RowBox[{"2013", ",", "11", ",", "10"}], "}"}]}], "}"}]}], 
   ";"}]], "Input",
- InitializationCell->True,
- CellChangeTimes->{{3.593086134554441*^9, 3.5930861380986*^9}}],
+ InitializationCell->True],
 
 Cell[BoxData[{
  RowBox[{
   RowBox[{"xAct`xPand`$xTensorVersionExpected", "=", 
    RowBox[{"{", 
-    RowBox[{"\"\<1.1.0\>\"", ",", 
+    RowBox[{"\"\<1.0.5\>\"", ",", 
      RowBox[{"{", 
-      RowBox[{"2013", ",", "7", ",", "1"}], "}"}]}], "}"}]}], 
+      RowBox[{"2013", ",", "1", ",", "27"}], "}"}]}], "}"}]}], 
   ";"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"xAct`xPand`$xPertVersionExpected", "=", 
    RowBox[{"{", 
     RowBox[{"\"\<1.0.3\>\"", ",", 
      RowBox[{"{", 
-      RowBox[{"2013", ",", "7", ",", "1"}], "}"}]}], "}"}]}], ";"}]}], "Input",
- InitializationCell->True,
- CellChangeTimes->{{3.59308614430634*^9, 3.593086159561925*^9}}],
+      RowBox[{"2013", ",", "1", ",", "27"}], "}"}]}], "}"}]}], 
+  ";"}]}], "Input",
+ InitializationCell->True],
 
 Cell["", "Text"]
 }, Open  ]]
@@ -2418,263 +2414,168 @@ Cell[BoxData[
      "and", " ", "a", " ", "dot", " ", "when", " ", "one", " ", "considers", 
       " ", "the", " ", "cosmic", " ", 
       RowBox[{"time", "."}]}]}], " ", "*)"}], "\[IndentingNewLine]", 
-   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"PerturbationOrderColor", "[", "1", "]"}], ":=", 
+     RowBox[{"RGBColor", "[", 
+      RowBox[{"0.85", ",", "0", ",", "0"}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"PerturbationOrderColor", "[", "2", "]"}], ":=", 
+     RowBox[{"RGBColor", "[", 
+      RowBox[{"0", ",", "0.6", ",", "0"}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"PerturbationOrderColor", "[", "3", "]"}], ":=", 
+     RowBox[{"RGBColor", "[", 
+      RowBox[{"0", ",", "0", ",", "0.85"}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"PerturbationOrderColor", "[", "4", "]"}], ":=", 
+     RowBox[{"RGBColor", "[", 
+      RowBox[{"0.6", ",", "0.4", ",", "0.2"}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"PerturbationOrderColor", "[", "5", "]"}], ":=", 
+     RowBox[{"RGBColor", "[", 
+      RowBox[{"0.7", ",", "0", ",", "0.7"}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"PerturbationOrderColor", "[", "_", "]"}], ":=", 
+     RowBox[{"RGBColor", "[", 
+      RowBox[{"1", ",", "0.6", ",", "0"}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
    RowBox[{"xTensorFormStop", "[", "Tensor", "]"}], "\[IndentingNewLine]", 
    "\[IndentingNewLine]", 
    RowBox[{
-    RowBox[{"MakeBoxes", "[", 
-     RowBox[{
+    RowBox[{
+     RowBox[{"MakeBoxes", "[", 
       RowBox[{
-       RowBox[{"Tens_", "?", "xTensorQ"}], "[", 
        RowBox[{
-        RowBox[{"LI", "[", 
-         RowBox[{"p_", "?", 
-          RowBox[{"(", 
-           RowBox[{
-            RowBox[{"(", 
-             RowBox[{
-              RowBox[{"IntegerQ", "[", "#", "]"}], "&&", 
-              RowBox[{"#", "\[GreaterEqual]", "0"}]}], ")"}], "&"}], ")"}]}], 
-         "]"}], ",", 
-        RowBox[{"LI", "[", 
-         RowBox[{"q_", "?", 
-          RowBox[{"(", 
-           RowBox[{
-            RowBox[{"(", 
-             RowBox[{
-              RowBox[{"IntegerQ", "[", "#", "]"}], "&&", 
-              RowBox[{"#", "\[GreaterEqual]", "0"}]}], ")"}], "&"}], ")"}]}], 
-         "]"}], ",", "inds___"}], "]"}], ",", "StandardForm"}], "]"}], ":=", 
-    "\[IndentingNewLine]", 
-    RowBox[{"If", "[", 
-     RowBox[{
-      RowBox[{
-       RowBox[{"(", 
+        RowBox[{"Tens_", "?", "xTensorQ"}], "[", 
         RowBox[{
-         RowBox[{"AnisotropyBool", "[", 
-          RowBox[{"SpaceType", "@", 
-           RowBox[{"InducedMetricOf", "[", "Tens", "]"}]}], "]"}], "||", 
-         RowBox[{"BianchiBool", "[", 
-          RowBox[{"SpaceType", "@", 
-           RowBox[{"InducedMetricOf", "[", "Tens", "]"}]}], "]"}]}], ")"}], "&&", 
-       RowBox[{
-        RowBox[{"Cases", "[", 
-         RowBox[{
-          RowBox[{"{", "inds", "}"}], ",", 
-          RowBox[{"_", "?", "UpIndexQ"}]}], "]"}], "=!=", 
-        RowBox[{"{", "}"}]}], "&&", 
-       RowBox[{"q", "\[GreaterEqual]", "1"}]}], ",", "\[IndentingNewLine]", 
+         RowBox[{"LI", "[", 
+          RowBox[{"p_", "?", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"IntegerQ", "[", "#", "]"}], "&&", 
+               RowBox[{"#", "\[GreaterEqual]", "0"}]}], ")"}], "&"}], ")"}]}],
+           "]"}], ",", 
+         RowBox[{"LI", "[", 
+          RowBox[{"q_", "?", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"IntegerQ", "[", "#", "]"}], "&&", 
+               RowBox[{"#", "\[GreaterEqual]", "0"}]}], ")"}], "&"}], ")"}]}],
+           "]"}], ",", "inds___"}], "]"}], ",", "StandardForm"}], "]"}], ":=",
       "\[IndentingNewLine]", 
+     RowBox[{"xAct`xTensor`Private`interpretbox", "[", 
       RowBox[{
-       RowBox[{"Message", "[", 
-        RowBox[{"xPand", "::", "makeboxes"}], "]"}], ";", 
-       "\[IndentingNewLine]", "\[IndentingNewLine]", 
-       RowBox[{"RowBox", "[", 
-        RowBox[{"{", 
+       RowBox[{"Tens", "[", 
+        RowBox[{
+         RowBox[{"LI", "[", "p", "]"}], ",", 
+         RowBox[{"LI", "[", "q", "]"}], ",", "inds"}], "]"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"If", "[", 
+        RowBox[{
          RowBox[{
-          RowBox[{"OverscriptBox", "[", 
-           RowBox[{"\"\<\\\"\\\"\>\"", ",", 
-            RowBox[{"RowBox", "[", 
-             RowBox[{"{", 
-              RowBox[{"\"\<(\>\"", ",", 
-               RowBox[{"ToString", "[", "p", "]"}], ",", "\"\<)\>\""}], "}"}],
-              "]"}]}], "]"}], ",", "\"\<\[NegativeThinSpace]\>\"", ",", 
-          RowBox[{"OverscriptBox", "[", 
+          RowBox[{"(", 
            RowBox[{
-            RowBox[{"MakeBoxes", "[", 
-             RowBox[{
-              RowBox[{"Tens", "[", "inds", "]"}], ",", "StandardForm"}], 
-             "]"}], ",", 
-            RowBox[{"ToString", "[", "q", "]"}]}], "]"}]}], "}"}], "]"}]}], 
-      ",", "\[IndentingNewLine]", "\[IndentingNewLine]", 
-      RowBox[{"Switch", "[", 
-       RowBox[{"p", ",", "\[IndentingNewLine]", "0", ",", 
-        RowBox[{"RowBox", "[", 
-         RowBox[{"{", 
-          RowBox[{"OverscriptBox", "[", 
-           RowBox[{
-            RowBox[{"MakeBoxes", "[", 
-             RowBox[{
-              RowBox[{"Tens", "[", "inds", "]"}], ",", "StandardForm"}], 
-             "]"}], ",", 
-            RowBox[{"StringJoin", "@", 
-             RowBox[{"Table", "[", 
-              RowBox[{"DerCharacter", ",", 
-               RowBox[{"{", 
-                RowBox[{"i", ",", "1", ",", "q"}], "}"}]}], "]"}]}]}], "]"}], 
-          "}"}], "]"}], ",", "\[IndentingNewLine]", "1", ",", 
-        RowBox[{"RowBox", "[", 
-         RowBox[{"{", 
+            RowBox[{"AnisotropyBool", "[", 
+             RowBox[{"SpaceType", "@", 
+              RowBox[{"InducedMetricOf", "[", "Tens", "]"}]}], "]"}], "||", 
+            RowBox[{"BianchiBool", "[", 
+             RowBox[{"SpaceType", "@", 
+              RowBox[{"InducedMetricOf", "[", "Tens", "]"}]}], "]"}]}], ")"}],
+           "&&", 
           RowBox[{
-           RowBox[{"OverscriptBox", "[", 
-            RowBox[{"\"\<\\\"\\\"\>\"", ",", 
-             RowBox[{"RowBox", "[", 
-              RowBox[{"{", 
-               RowBox[{"StyleBox", "[", 
-                RowBox[{"\"\<(1)\>\"", ",", 
-                 RowBox[{"FontColor", "\[Rule]", 
-                  RowBox[{"RGBColor", "[", 
-                   RowBox[{"0.85", ",", "0", ",", "0"}], "]"}]}]}], "]"}], 
-               "}"}], "]"}]}], "]"}], ",", "\"\<\[NegativeThinSpace]\>\"", 
-           ",", 
-           RowBox[{"OverscriptBox", "[", 
+           RowBox[{"Cases", "[", 
             RowBox[{
-             RowBox[{"MakeBoxes", "[", 
-              RowBox[{
-               RowBox[{"Tens", "[", "inds", "]"}], ",", "StandardForm"}], 
-              "]"}], ",", 
-             RowBox[{"StringJoin", "@", 
-              RowBox[{"Table", "[", 
-               RowBox[{"DerCharacter", ",", 
-                RowBox[{"{", 
-                 RowBox[{"i", ",", "1", ",", "q"}], "}"}]}], "]"}]}]}], 
-            "]"}]}], "}"}], "]"}], ",", "\[IndentingNewLine]", "2", ",", 
-        RowBox[{"RowBox", "[", 
-         RowBox[{"{", 
-          RowBox[{
-           RowBox[{"OverscriptBox", "[", 
-            RowBox[{"\"\<\\\"\\\"\>\"", ",", 
-             RowBox[{"RowBox", "[", 
-              RowBox[{"{", 
-               RowBox[{"StyleBox", "[", 
-                RowBox[{"\"\<(2)\>\"", ",", 
-                 RowBox[{"FontColor", "\[Rule]", 
-                  RowBox[{"RGBColor", "[", 
-                   RowBox[{"0", ",", "0.6", ",", "0"}], "]"}]}]}], "]"}], 
-               "}"}], "]"}]}], "]"}], ",", "\"\<\[NegativeThinSpace]\>\"", 
-           ",", "\[IndentingNewLine]", 
-           RowBox[{"OverscriptBox", "[", 
+             RowBox[{"{", "inds", "}"}], ",", 
+             RowBox[{"_", "?", "UpIndexQ"}]}], "]"}], "=!=", 
+           RowBox[{"{", "}"}]}], "&&", 
+          RowBox[{"q", "\[GreaterEqual]", "1"}]}], ",", "\[IndentingNewLine]",
+          "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"Message", "[", 
+           RowBox[{"xPand", "::", "makeboxes"}], "]"}], ";", 
+          "\[IndentingNewLine]", "\[IndentingNewLine]", 
+          RowBox[{"RowBox", "[", 
+           RowBox[{"{", 
             RowBox[{
-             RowBox[{"MakeBoxes", "[", 
-              RowBox[{
-               RowBox[{"Tens", "[", "inds", "]"}], ",", "StandardForm"}], 
-              "]"}], ",", 
-             RowBox[{"StringJoin", "@", 
-              RowBox[{"Table", "[", 
-               RowBox[{"DerCharacter", ",", 
+             RowBox[{"OverscriptBox", "[", 
+              RowBox[{"\"\<\[Null]\>\"", ",", 
+               RowBox[{"RowBox", "[", 
                 RowBox[{"{", 
-                 RowBox[{"i", ",", "1", ",", "q"}], "}"}]}], "]"}]}]}], 
-            "]"}]}], "}"}], "]"}], ",", "\[IndentingNewLine]", "3", ",", 
-        RowBox[{"RowBox", "[", 
-         RowBox[{"{", 
-          RowBox[{
-           RowBox[{"OverscriptBox", "[", 
-            RowBox[{"\"\<\\\"\\\"\>\"", ",", 
-             RowBox[{"RowBox", "[", 
-              RowBox[{"{", 
-               RowBox[{"StyleBox", "[", 
-                RowBox[{"\"\<(3)\>\"", ",", 
-                 RowBox[{"FontColor", "\[Rule]", 
-                  RowBox[{"RGBColor", "[", 
-                   RowBox[{"0", ",", "0", ",", "0.85"}], "]"}]}]}], "]"}], 
-               "}"}], "]"}]}], "]"}], ",", "\"\<\[NegativeThinSpace]\>\"", 
-           ",", 
-           RowBox[{"OverscriptBox", "[", 
-            RowBox[{
-             RowBox[{"MakeBoxes", "[", 
-              RowBox[{
-               RowBox[{"Tens", "[", "inds", "]"}], ",", "StandardForm"}], 
-              "]"}], ",", 
-             RowBox[{"StringJoin", "@", 
-              RowBox[{"Table", "[", 
-               RowBox[{"DerCharacter", ",", 
-                RowBox[{"{", 
-                 RowBox[{"i", ",", "1", ",", "q"}], "}"}]}], "]"}]}]}], 
-            "]"}]}], "}"}], "]"}], ",", "\[IndentingNewLine]", "4", ",", 
-        RowBox[{"RowBox", "[", 
-         RowBox[{"{", 
-          RowBox[{
-           RowBox[{"OverscriptBox", "[", 
-            RowBox[{"\"\<\\\"\\\"\>\"", ",", 
-             RowBox[{"RowBox", "[", 
-              RowBox[{"{", 
-               RowBox[{"StyleBox", "[", 
-                RowBox[{"\"\<(4)\>\"", ",", 
-                 RowBox[{"FontColor", "\[Rule]", 
-                  RowBox[{"RGBColor", "[", 
-                   RowBox[{"0.6", ",", "0.4", ",", "0.2"}], "]"}]}]}], "]"}], 
-               "}"}], "]"}]}], "]"}], ",", "\"\<\[NegativeThinSpace]\>\"", 
-           ",", 
-           RowBox[{"OverscriptBox", "[", 
-            RowBox[{
-             RowBox[{"MakeBoxes", "[", 
-              RowBox[{
-               RowBox[{"Tens", "[", "inds", "]"}], ",", "StandardForm"}], 
-              "]"}], ",", 
-             RowBox[{"StringJoin", "@", 
-              RowBox[{"Table", "[", 
-               RowBox[{"DerCharacter", ",", 
-                RowBox[{"{", 
-                 RowBox[{"i", ",", "1", ",", "q"}], "}"}]}], "]"}]}]}], 
-            "]"}]}], "}"}], "]"}], ",", "\[IndentingNewLine]", "5", ",", 
-        RowBox[{"RowBox", "[", 
-         RowBox[{"{", 
-          RowBox[{
-           RowBox[{"OverscriptBox", "[", 
-            RowBox[{"\"\<\\\"\\\"\>\"", ",", 
-             RowBox[{"RowBox", "[", 
-              RowBox[{"{", 
-               RowBox[{"StyleBox", "[", 
-                RowBox[{"\"\<(5)\>\"", ",", 
-                 RowBox[{"FontColor", "\[Rule]", 
-                  RowBox[{"RGBColor", "[", 
-                   RowBox[{"0.7", ",", "0", ",", "0.7"}], "]"}]}]}], "]"}], 
-               "}"}], "]"}]}], "]"}], ",", "\"\<\[NegativeThinSpace]\>\"", 
-           ",", 
-           RowBox[{"OverscriptBox", "[", 
-            RowBox[{
-             RowBox[{"MakeBoxes", "[", 
-              RowBox[{
-               RowBox[{"Tens", "[", "inds", "]"}], ",", "StandardForm"}], 
-              "]"}], ",", 
-             RowBox[{"StringJoin", "@", 
-              RowBox[{"Table", "[", 
-               RowBox[{"DerCharacter", ",", 
-                RowBox[{"{", 
-                 RowBox[{"i", ",", "1", ",", "q"}], "}"}]}], "]"}]}]}], 
-            "]"}]}], "}"}], "]"}], ",", "\[IndentingNewLine]", "_", ",", 
-        RowBox[{"RowBox", "[", 
-         RowBox[{"{", 
-          RowBox[{
-           RowBox[{"OverscriptBox", "[", 
-            RowBox[{"\"\<\\\"\\\"\>\"", ",", 
-             RowBox[{"RowBox", "[", 
-              RowBox[{"{", 
-               RowBox[{
-                RowBox[{"StyleBox", "[", 
                  RowBox[{"\"\<(\>\"", ",", 
-                  RowBox[{"FontColor", "\[Rule]", 
-                   RowBox[{"RGBColor", "[", 
-                    RowBox[{"1", ",", "0.6", ",", "0"}], "]"}]}]}], "]"}], 
-                ",", 
-                RowBox[{"StyleBox", "[", 
-                 RowBox[{
-                  RowBox[{"ToString", "[", "p", "]"}], ",", 
-                  RowBox[{"FontColor", "\[Rule]", 
-                   RowBox[{"RGBColor", "[", 
-                    RowBox[{"1", ",", "0.6", ",", "0"}], "]"}]}]}], "]"}], 
-                ",", 
-                RowBox[{"StyleBox", "[", 
-                 RowBox[{"\"\<)\>\"", ",", 
-                  RowBox[{"FontColor", "\[Rule]", 
-                   RowBox[{"RGBColor", "[", 
-                    RowBox[{"1", ",", "0.6", ",", "0"}], "]"}]}]}], "]"}]}], 
-               "}"}], "]"}]}], "]"}], ",", "\"\<\[NegativeThinSpace]\>\"", 
-           ",", 
-           RowBox[{"OverscriptBox", "[", 
-            RowBox[{
-             RowBox[{"MakeBoxes", "[", 
+                  RowBox[{"ToString", "[", "p", "]"}], ",", "\"\<)\>\""}], 
+                 "}"}], "]"}]}], "]"}], ",", "\"\<\[NegativeThinSpace]\>\"", 
+             ",", 
+             RowBox[{"OverscriptBox", "[", 
               RowBox[{
-               RowBox[{"Tens", "[", "inds", "]"}], ",", "StandardForm"}], 
-              "]"}], ",", 
-             RowBox[{"StringJoin", "@", 
-              RowBox[{"Table", "[", 
-               RowBox[{"DerCharacter", ",", 
-                RowBox[{"{", 
-                 RowBox[{"i", ",", "1", ",", "q"}], "}"}]}], "]"}]}]}], 
-            "]"}]}], "}"}], "]"}]}], "\[IndentingNewLine]", "]"}]}], 
-     "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", "\n", 
-   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+               RowBox[{"MakeBoxes", "[", 
+                RowBox[{
+                 RowBox[{"Tens", "[", "inds", "]"}], ",", "StandardForm"}], 
+                "]"}], ",", 
+               RowBox[{"ToString", "[", "q", "]"}]}], "]"}]}], "}"}], "]"}]}],
+          ",", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+         RowBox[{"Switch", "[", 
+          RowBox[{"p", ",", "\[IndentingNewLine]", "0", ",", 
+           RowBox[{"RowBox", "[", 
+            RowBox[{"{", 
+             RowBox[{"OverscriptBox", "[", 
+              RowBox[{
+               RowBox[{"MakeBoxes", "[", 
+                RowBox[{
+                 RowBox[{"Tens", "[", "inds", "]"}], ",", "StandardForm"}], 
+                "]"}], ",", 
+               RowBox[{"StringJoin", "@", 
+                RowBox[{"Table", "[", 
+                 RowBox[{"DerCharacter", ",", 
+                  RowBox[{"{", 
+                   RowBox[{"i", ",", "1", ",", "q"}], "}"}]}], "]"}]}]}], 
+              "]"}], "}"}], "]"}], ",", "\[IndentingNewLine]", "_", ",", 
+           RowBox[{"RowBox", "[", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"OverscriptBox", "[", 
+               RowBox[{"\"\<\[Null]\>\"", ",", 
+                RowBox[{"RowBox", "[", 
+                 RowBox[{"{", 
+                  RowBox[{"StyleBox", "[", 
+                   RowBox[{
+                    RowBox[{"\"\<(\>\"", "<>", 
+                    RowBox[{"ToString", "[", "p", "]"}], "<>", "\"\<)\>\""}], 
+                    ",", 
+                    RowBox[{"FontColor", "\[Rule]", 
+                    RowBox[{"PerturbationOrderColor", "[", "p", "]"}]}]}], 
+                   "]"}], "}"}], "]"}]}], "]"}], ",", 
+              "\"\<\[NegativeThinSpace]\>\"", ",", 
+              RowBox[{"OverscriptBox", "[", 
+               RowBox[{
+                RowBox[{"MakeBoxes", "[", 
+                 RowBox[{
+                  RowBox[{"Tens", "[", "inds", "]"}], ",", "StandardForm"}], 
+                 "]"}], ",", 
+                RowBox[{"StringJoin", "@", 
+                 RowBox[{"Table", "[", 
+                  RowBox[{"DerCharacter", ",", 
+                   RowBox[{"{", 
+                    RowBox[{"i", ",", "1", ",", "q"}], "}"}]}], "]"}]}]}], 
+               "]"}]}], "}"}], "]"}]}], "\[IndentingNewLine]", "]"}]}], 
+        "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", "]"}]}], ";"}],
+    "\[IndentingNewLine]", "\n", 
    RowBox[{"xTensorFormStart", "[", "Tensor", "]"}]}]}]], "Input",
  InitializationCell->True],
 
@@ -13779,13 +13680,7 @@ been converted (safely) to a Lie derivative with down indices **\>\"", "]"}],
      RowBox[{"expr", "/.", 
       RowBox[{"ConstantsOfStructureRules", "[", "h", "]"}]}]}], "]"}]}], 
   ";"}]}], "Input",
- InitializationCell->True,
- CellChangeTimes->{{3.5930857693863983`*^9, 3.593085786440909*^9}, {
-  3.5930858416506233`*^9, 3.59308599123488*^9}, {3.5930860373429003`*^9, 
-  3.593086051082155*^9}, {3.593086093562008*^9, 3.593086097459868*^9}, {
-  3.5930871274422073`*^9, 3.593087130462112*^9}, {3.593087176547402*^9, 
-  3.59308717675058*^9}, {3.593087275900579*^9, 3.5930872760621157`*^9}, {
-  3.593087427787318*^9, 3.593087430325745*^9}}]
+ InitializationCell->True]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -19286,9 +19181,7 @@ Cell[BoxData[
       RowBox[{"2", ",", "3"}], "}"}]}], "]"}], "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"Protect", "[", "SplitPerturbations", "]"}], ";"}]}]}]], "Input",
- InitializationCell->True,
- CellChangeTimes->{{3.593076793262979*^9, 3.593076803892839*^9}, {
-  3.593076884165976*^9, 3.59307689615792*^9}}]
+ InitializationCell->True]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -20845,6 +20738,7 @@ WindowSize->{1224, 756},
 WindowMargins->{{0, Automatic}, {Automatic, 0}},
 PrivateNotebookOptions->{"FileOutlineCache"->False},
 ShowSelection->True,
+TrackCellChangeTimes->False,
 Magnification->1,
 FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (November 20, \
 2012)",
