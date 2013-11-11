@@ -20,9 +20,163 @@ Cell[CellGroupData[{
 
 Cell["Loading the package", "Subsubsection"],
 
+Cell[CellGroupData[{
+
 Cell[BoxData[
  RowBox[{"Needs", "[", "\"\<xAct`xPand`\>\"", "]"}]], "Input",
- CellChangeTimes->{{3.5930867299644012`*^9, 3.593086767609644*^9}}]
+ CellChangeTimes->{{3.5930867299644012`*^9, 3.593086767609644*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\<\"------------------------------------------------------------\
+\"\>"], "Print"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Package xAct`xPerm`  version \"\>", 
+   "\[InvisibleSpace]", "\<\"1.2.0\"\>", "\[InvisibleSpace]", "\<\", \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"2013", ",", "1", ",", "27"}], "}"}]}],
+  SequenceForm["Package xAct`xPerm`  version ", "1.2.0", ", ", {2013, 1, 27}],
+  
+  Editable->False]], "Print"],
+
+Cell[BoxData["\<\"CopyRight (C) 2003-2013, Jose M. Martin-Garcia, under the \
+General Public License.\"\>"], "Print"],
+
+Cell[BoxData["\<\"Connecting to external mac executable...\"\>"], "Print"],
+
+Cell[BoxData["\<\"Connection established.\"\>"], "Print"],
+
+Cell[BoxData["\<\"------------------------------------------------------------\
+\"\>"], "Print"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Package xAct`xTensor`  version \"\>", 
+   "\[InvisibleSpace]", "\<\"1.0.5\"\>", "\[InvisibleSpace]", "\<\", \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"2013", ",", "3", ",", "3"}], "}"}]}],
+  SequenceForm["Package xAct`xTensor`  version ", "1.0.5", ", ", {2013, 3, 3}],
+  Editable->False]], "Print"],
+
+Cell[BoxData["\<\"CopyRight (C) 2002-2013, Jose M. Martin-Garcia, under the \
+General Public License.\"\>"], "Print"],
+
+Cell[BoxData["\<\"------------------------------------------------------------\
+\"\>"], "Print"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Package xAct`xPert`  version \"\>", 
+   "\[InvisibleSpace]", "\<\"1.0.3\"\>", "\[InvisibleSpace]", "\<\", \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"2013", ",", "1", ",", "27"}], "}"}]}],
+  SequenceForm["Package xAct`xPert`  version ", "1.0.3", ", ", {2013, 1, 27}],
+  
+  Editable->False]], "Print"],
+
+Cell[BoxData["\<\"CopyRight (C) 2005-2013, David Brizuela, Jose M. \
+Martin-Garcia and Guillermo A. Mena Marugan, under the General Public \
+License.\"\>"], "Print"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"** Variable \"\>", "\[InvisibleSpace]", "$PrePrint", 
+   "\[InvisibleSpace]", "\<\" assigned value \"\>", "\[InvisibleSpace]", 
+   "ScreenDollarIndices"}],
+  SequenceForm[
+  "** Variable ", $PrePrint, " assigned value ", 
+   xAct`xTensor`ScreenDollarIndices],
+  Editable->False]], "Print"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"** Variable \"\>", "\[InvisibleSpace]", "$CovDFormat", 
+   "\[InvisibleSpace]", "\<\" changed from \"\>", 
+   "\[InvisibleSpace]", "\<\"Prefix\"\>", "\[InvisibleSpace]", "\<\" to \"\>",
+    "\[InvisibleSpace]", "\<\"Postfix\"\>"}],
+  SequenceForm[
+  "** Variable ", xAct`xTensor`$CovDFormat, " changed from ", "Prefix", 
+   " to ", "Postfix"],
+  Editable->False]], "Print"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"** Option \"\>", "\[InvisibleSpace]", "AllowUpperDerivatives", 
+   "\[InvisibleSpace]", "\<\" of \"\>", "\[InvisibleSpace]", "ContractMetric",
+    "\[InvisibleSpace]", "\<\" changed from \"\>", "\[InvisibleSpace]", 
+   "False", "\[InvisibleSpace]", "\<\" to \"\>", "\[InvisibleSpace]", "True"}],
+  SequenceForm[
+  "** Option ", xAct`xTensor`AllowUpperDerivatives, " of ", 
+   xAct`xTensor`ContractMetric, " changed from ", False, " to ", True],
+  Editable->False]], "Print"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"** Option \"\>", "\[InvisibleSpace]", "MetricOn", 
+   "\[InvisibleSpace]", "\<\" of \"\>", "\[InvisibleSpace]", "MakeRule", 
+   "\[InvisibleSpace]", "\<\" changed from \"\>", "\[InvisibleSpace]", "None",
+    "\[InvisibleSpace]", "\<\" to \"\>", "\[InvisibleSpace]", "All"}],
+  SequenceForm[
+  "** Option ", xAct`xTensor`MetricOn, " of ", xAct`xTensor`MakeRule, 
+   " changed from ", None, " to ", All],
+  Editable->False]], "Print"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"** Option \"\>", "\[InvisibleSpace]", "ContractMetrics", 
+   "\[InvisibleSpace]", "\<\" of \"\>", "\[InvisibleSpace]", "MakeRule", 
+   "\[InvisibleSpace]", "\<\" changed from \"\>", "\[InvisibleSpace]", 
+   "False", "\[InvisibleSpace]", "\<\" to \"\>", "\[InvisibleSpace]", "True"}],
+  SequenceForm[
+  "** Option ", xAct`xTensor`ContractMetrics, " of ", xAct`xTensor`MakeRule, 
+   " changed from ", False, " to ", True],
+  Editable->False]], "Print"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"** \"\>", "\[InvisibleSpace]", "DefInertHead", 
+   "\[InvisibleSpace]", "\<\": Defining \"\>", 
+   "\[InvisibleSpace]", "\<\"inert head \"\>", "\[InvisibleSpace]", 
+   "Perturbation", "\[InvisibleSpace]", "\<\". \"\>", 
+   "\[InvisibleSpace]", "\<\"\"\>"}],
+  SequenceForm[
+  "** ", xAct`xTensor`DefInertHead, ": Defining ", "inert head ", 
+   xAct`xPert`Perturbation, ". ", ""],
+  Editable->False]], "Print"],
+
+Cell[BoxData["\<\"------------------------------------------------------------\
+\"\>"], "Print"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Package xAct`xPand`  version \"\>", 
+   "\[InvisibleSpace]", "\<\"0.4.1\"\>", "\[InvisibleSpace]", "\<\", \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"2013", ",", "9", ",", "5"}], "}"}]}],
+  SequenceForm["Package xAct`xPand`  version ", "0.4.1", ", ", {2013, 9, 5}],
+  Editable->False]], "Print"],
+
+Cell[BoxData["\<\"CopyRight (C) 2012-2013, Cyril Pitrou, Xavier Roy and \
+Obinna Umeh under the General Public License.\"\>"], "Print"],
+
+Cell[BoxData["\<\"------------------------------------------------------------\
+\"\>"], "Print"],
+
+Cell[BoxData["\<\"These packages come with ABSOLUTELY NO WARRANTY; for \
+details type Disclaimer[]. This is free software, and you are welcome to \
+redistribute it under certain conditions. See the General Public License for \
+details.\"\>"], "Print"],
+
+Cell[BoxData["\<\"------------------------------------------------------------\
+\"\>"], "Print"]
+}, Open  ]]
+}, Open  ]]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -398,7 +552,7 @@ Cell[BoxData[
 Cell[BoxData[
  StyleBox["\<\"Possible space types are: Anisotropic, BianchiB, BianchiA, \
 BianchiI, FLCurved, FLFlat and Minkowski.\"\>", "MSG"]], "Print", "PrintUsage",
- CellTags->"Info3587547148-4738217"]
+ CellTags->"Info3593099432-8748537"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -417,10 +571,10 @@ Cell[BoxData[
   RowBox[{"\<\"** \"\>", "\[InvisibleSpace]", "DefTensor", 
    "\[InvisibleSpace]", "\<\": Defining \"\>", 
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
-   RowBox[{"n", "[", "\[Sigma]$1980", "]"}], 
+   RowBox[{"n", "[", "\[Sigma]$1544", "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
-   $CellContext`n[$CellContext`\[Sigma]$1980], ". ", ""],
+   $CellContext`n[$CellContext`\[Sigma]$1544], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -431,12 +585,12 @@ Cell[BoxData[
    "\[InvisibleSpace]", 
    RowBox[{"h", "[", 
     RowBox[{
-     RowBox[{"-", "\[Sigma]$1980"}], ",", 
-     RowBox[{"-", "\[Sigma]$1981"}]}], "]"}], 
+     RowBox[{"-", "\[Sigma]$1544"}], ",", 
+     RowBox[{"-", "\[Sigma]$1545"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm[
   "** ", xAct`xTensor`DefTensor, ": Defining ", "symmetric metric tensor ", 
-   $CellContext`h[-$CellContext`\[Sigma]$1980, -$CellContext`\[Sigma]$1981], 
+   $CellContext`h[-$CellContext`\[Sigma]$1544, -$CellContext`\[Sigma]$1545], 
    ". ", ""],
   Editable->False]], "Print"],
 
@@ -500,11 +654,11 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"covariant derivative \"\>", "\[InvisibleSpace]", 
    
    RowBox[{"cd", "[", 
-    RowBox[{"-", "\[Sigma]$1980"}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
+    RowBox[{"-", "\[Sigma]$1544"}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
    "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm[
   "** ", xAct`xTensor`DefCovD, ": Defining ", "covariant derivative ", 
-   $CellContext`cd[-$CellContext`\[Sigma]$1980], ". ", ""],
+   $CellContext`cd[-$CellContext`\[Sigma]$1544], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -807,13 +961,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"ah", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$3249", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$3249", "]"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$2812", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$2812", "]"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`ah[
-    xAct`xTensor`LI[xAct`xPand`Private`p$3249], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$3249]], ". ", ""],
+    xAct`xTensor`LI[xAct`xPand`Private`p$2812], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$2812]], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -823,13 +977,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"Hh", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$3254", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$3254", "]"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$2817", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$2817", "]"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`Hh[
-    xAct`xTensor`LI[xAct`xPand`Private`p$3254], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$3254]], ". ", ""],
+    xAct`xTensor`LI[xAct`xPand`Private`p$2817], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$2817]], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -840,13 +994,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", 
    RowBox[{"gah2", "[", 
     RowBox[{
-     RowBox[{"-", "\[Sigma]$3260"}], ",", 
-     RowBox[{"-", "\[Sigma]$3261"}]}], "]"}], 
+     RowBox[{"-", "\[Sigma]$2823"}], ",", 
+     RowBox[{"-", "\[Sigma]$2824"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm[
   "** ", xAct`xTensor`DefTensor, ": Defining ", "symmetric metric tensor ", 
-   $CellContext`gah2[-$CellContext`\[Sigma]$3260, \
--$CellContext`\[Sigma]$3261], ". ", ""],
+   $CellContext`gah2[-$CellContext`\[Sigma]$2823, \
+-$CellContext`\[Sigma]$2824], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -855,13 +1009,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\": Defining \"\>", 
    "\[InvisibleSpace]", "\<\"inverse metric tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"Invgah2", "[", 
-    RowBox[{"\[Sigma]$3260", ",", "\[Sigma]$3261"}], "]"}], 
+    RowBox[{"\[Sigma]$2823", ",", "\[Sigma]$2824"}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", 
    "\[InvisibleSpace]", "\<\"Metric is frozen!\"\>"}],
   SequenceForm[
   "** ", xAct`xTensor`DefTensor, ": Defining ", "inverse metric tensor ", 
-   $CellContext`Invgah2[$CellContext`\[Sigma]$3260, \
-$CellContext`\[Sigma]$3261], ". ", "Metric is frozen!"],
+   $CellContext`Invgah2[$CellContext`\[Sigma]$2823, \
+$CellContext`\[Sigma]$2824], ". ", "Metric is frozen!"],
   Editable->False]], "Print"],
 
 Cell[BoxData["\<\"** DefMetric: Don't know yet how to define epsilon for a \
@@ -874,11 +1028,11 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"covariant derivative \"\>", "\[InvisibleSpace]", 
    
    RowBox[{"CDah2", "[", 
-    RowBox[{"-", "\[Sigma]$3260"}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
+    RowBox[{"-", "\[Sigma]$2823"}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
    "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm[
   "** ", xAct`xTensor`DefCovD, ": Defining ", "covariant derivative ", 
-   $CellContext`CDah2[-$CellContext`\[Sigma]$3260], ". ", ""],
+   $CellContext`CDah2[-$CellContext`\[Sigma]$2823], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -1114,13 +1268,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"Connectionh", "[", 
     RowBox[{
-     RowBox[{"-", "\[Sigma]$1980"}], ",", 
-     RowBox[{"-", "\[Sigma]$1981"}], ",", 
-     RowBox[{"-", "\[Sigma]$1982"}]}], "]"}], 
+     RowBox[{"-", "\[Sigma]$1544"}], ",", 
+     RowBox[{"-", "\[Sigma]$1545"}], ",", 
+     RowBox[{"-", "\[Sigma]$1546"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
-   $CellContext`Connectionh[-$CellContext`\[Sigma]$1980, -$CellContext`\
-\[Sigma]$1981, -$CellContext`\[Sigma]$1982], ". ", ""],
+   $CellContext`Connectionh[-$CellContext`\[Sigma]$1544, -$CellContext`\
+\[Sigma]$1545, -$CellContext`\[Sigma]$1546], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -1130,13 +1284,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"CSh", "[", 
     RowBox[{
-     RowBox[{"-", "\[Sigma]$1980"}], ",", 
-     RowBox[{"-", "\[Sigma]$1981"}], ",", 
-     RowBox[{"-", "\[Sigma]$1982"}]}], "]"}], 
+     RowBox[{"-", "\[Sigma]$1544"}], ",", 
+     RowBox[{"-", "\[Sigma]$1545"}], ",", 
+     RowBox[{"-", "\[Sigma]$1546"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
-   $CellContext`CSh[-$CellContext`\[Sigma]$1980, -$CellContext`\[Sigma]$1981, \
--$CellContext`\[Sigma]$1982], ". ", ""],
+   $CellContext`CSh[-$CellContext`\[Sigma]$1544, -$CellContext`\[Sigma]$1545, \
+-$CellContext`\[Sigma]$1546], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -1146,11 +1300,11 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"nth", "[", 
     RowBox[{
-     RowBox[{"-", "\[Sigma]$1980"}], ",", 
-     RowBox[{"-", "\[Sigma]$1981"}]}], "]"}], 
+     RowBox[{"-", "\[Sigma]$1544"}], ",", 
+     RowBox[{"-", "\[Sigma]$1545"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
-   $CellContext`nth[-$CellContext`\[Sigma]$1980, -$CellContext`\[Sigma]$1981],
+   $CellContext`nth[-$CellContext`\[Sigma]$1544, -$CellContext`\[Sigma]$1545],
     ". ", ""],
   Editable->False]], "Print"],
 
@@ -1160,10 +1314,10 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\": Defining \"\>", 
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"avh", "[", 
-    RowBox[{"-", "\[Sigma]$1980"}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
+    RowBox[{"-", "\[Sigma]$1544"}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
    "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
-   $CellContext`avh[-$CellContext`\[Sigma]$1980], ". ", ""],
+   $CellContext`avh[-$CellContext`\[Sigma]$1544], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -1185,17 +1339,17 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"Kh", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$3949", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$3949", "]"}], ",", 
-     RowBox[{"-", "\[Sigma]$1980"}], ",", 
-     RowBox[{"-", "\[Sigma]$1981"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$3512", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$3512", "]"}], ",", 
+     RowBox[{"-", "\[Sigma]$1544"}], ",", 
+     RowBox[{"-", "\[Sigma]$1545"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`Kh[
-    xAct`xTensor`LI[xAct`xPand`Private`p$3949], 
+    xAct`xTensor`LI[xAct`xPand`Private`p$3512], 
     xAct`xTensor`LI[
-    xAct`xPand`Private`q$3949], -$CellContext`\[Sigma]$1980, -$CellContext`\
-\[Sigma]$1981], ". ", ""],
+    xAct`xPand`Private`q$3512], -$CellContext`\[Sigma]$1544, -$CellContext`\
+\[Sigma]$1545], ". ", ""],
   Editable->False]], "Print"]
 }, Open  ]]
 }, Open  ]],
@@ -1251,13 +1405,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"\[Phi]h", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$4221", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$4221", "]"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$3784", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$3784", "]"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`\[Phi]h[
-    xAct`xTensor`LI[xAct`xPand`Private`p$4221], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$4221]], ". ", ""],
+    xAct`xTensor`LI[xAct`xPand`Private`p$3784], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$3784]], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -1267,13 +1421,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"Bsh", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$4226", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$4226", "]"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$3789", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$3789", "]"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`Bsh[
-    xAct`xTensor`LI[xAct`xPand`Private`p$4226], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$4226]], ". ", ""],
+    xAct`xTensor`LI[xAct`xPand`Private`p$3789], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$3789]], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -1283,14 +1437,14 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"Bvh", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$4231", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$4231", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$3794", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$3794", "]"}], ",", 
      RowBox[{"-", "\[Alpha]"}]}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
    "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`Bvh[
-    xAct`xTensor`LI[xAct`xPand`Private`p$4231], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$4231], -$CellContext`\[Alpha]], ". ",
+    xAct`xTensor`LI[xAct`xPand`Private`p$3794], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$3794], -$CellContext`\[Alpha]], ". ",
     ""],
   Editable->False]], "Print"],
 
@@ -1301,13 +1455,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"\[Psi]h", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$4237", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$4237", "]"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$3800", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$3800", "]"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`\[Psi]h[
-    xAct`xTensor`LI[xAct`xPand`Private`p$4237], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$4237]], ". ", ""],
+    xAct`xTensor`LI[xAct`xPand`Private`p$3800], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$3800]], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -1317,13 +1471,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"Esh", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$4242", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$4242", "]"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$3805", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$3805", "]"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`Esh[
-    xAct`xTensor`LI[xAct`xPand`Private`p$4242], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$4242]], ". ", ""],
+    xAct`xTensor`LI[xAct`xPand`Private`p$3805], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$3805]], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -1333,14 +1487,14 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"Evh", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$4247", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$4247", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$3810", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$3810", "]"}], ",", 
      RowBox[{"-", "\[Alpha]"}]}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
    "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`Evh[
-    xAct`xTensor`LI[xAct`xPand`Private`p$4247], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$4247], -$CellContext`\[Alpha]], ". ",
+    xAct`xTensor`LI[xAct`xPand`Private`p$3810], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$3810], -$CellContext`\[Alpha]], ". ",
     ""],
   Editable->False]], "Print"],
 
@@ -1351,16 +1505,16 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"Eth", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$4253", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$4253", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$3816", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$3816", "]"}], ",", 
      RowBox[{"-", "\[Alpha]"}], ",", 
      RowBox[{"-", "\[Beta]"}]}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
    "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`Eth[
-    xAct`xTensor`LI[xAct`xPand`Private`p$4253], 
+    xAct`xTensor`LI[xAct`xPand`Private`p$3816], 
     xAct`xTensor`LI[
-    xAct`xPand`Private`q$4253], -$CellContext`\[Alpha], \
+    xAct`xPand`Private`q$3816], -$CellContext`\[Alpha], \
 -$CellContext`\[Beta]], ". ", ""],
   Editable->False]], "Print"],
 
@@ -1371,13 +1525,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"Th", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$4262", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$4262", "]"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$3825", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$3825", "]"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`Th[
-    xAct`xTensor`LI[xAct`xPand`Private`p$4262], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$4262]], ". ", ""],
+    xAct`xTensor`LI[xAct`xPand`Private`p$3825], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$3825]], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -1387,13 +1541,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"Lsh", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$4267", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$4267", "]"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$3830", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$3830", "]"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`Lsh[
-    xAct`xTensor`LI[xAct`xPand`Private`p$4267], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$4267]], ". ", ""],
+    xAct`xTensor`LI[xAct`xPand`Private`p$3830], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$3830]], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -1403,14 +1557,14 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"Lvh", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$4272", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$4272", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$3835", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$3835", "]"}], ",", 
      RowBox[{"-", "\[Alpha]"}]}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
    "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`Lvh[
-    xAct`xTensor`LI[xAct`xPand`Private`p$4272], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$4272], -$CellContext`\[Alpha]], ". ",
+    xAct`xTensor`LI[xAct`xPand`Private`p$3835], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$3835], -$CellContext`\[Alpha]], ". ",
     ""],
   Editable->False]], "Print"],
 
@@ -1421,13 +1575,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"\[CurlyPhi]", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$4280", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$4280", "]"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$3843", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$3843", "]"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    xAct`xPand`\[CurlyPhi][
-    xAct`xTensor`LI[xAct`xPand`Private`p$4280], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$4280]], ". ", ""],
+    xAct`xTensor`LI[xAct`xPand`Private`p$3843], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$3843]], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -1437,13 +1591,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"\[Rho]u", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$4285", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$4285", "]"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$3848", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$3848", "]"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`\[Rho]u[
-    xAct`xTensor`LI[xAct`xPand`Private`p$4285], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$4285]], ". ", ""],
+    xAct`xTensor`LI[xAct`xPand`Private`p$3848], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$3848]], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -1453,13 +1607,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"Pu", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$4290", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$4290", "]"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$3853", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$3853", "]"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`Pu[
-    xAct`xTensor`LI[xAct`xPand`Private`p$4290], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$4290]], ". ", ""],
+    xAct`xTensor`LI[xAct`xPand`Private`p$3853], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$3853]], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -1469,14 +1623,14 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"Vspathu", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$4295", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$4295", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$3858", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$3858", "]"}], ",", 
      RowBox[{"-", "\[Alpha]"}]}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
    "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`Vspathu[
-    xAct`xTensor`LI[xAct`xPand`Private`p$4295], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$4295], -$CellContext`\[Alpha]], ". ",
+    xAct`xTensor`LI[xAct`xPand`Private`p$3858], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$3858], -$CellContext`\[Alpha]], ". ",
     ""],
   Editable->False]], "Print"],
 
@@ -1487,13 +1641,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"V0hu", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$4301", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$4301", "]"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$3864", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$3864", "]"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`V0hu[
-    xAct`xTensor`LI[xAct`xPand`Private`p$4301], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$4301]], ". ", ""],
+    xAct`xTensor`LI[xAct`xPand`Private`p$3864], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$3864]], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -1503,13 +1657,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"Vshu", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$4306", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$4306", "]"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$3869", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$3869", "]"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`Vshu[
-    xAct`xTensor`LI[xAct`xPand`Private`p$4306], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$4306]], ". ", ""],
+    xAct`xTensor`LI[xAct`xPand`Private`p$3869], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$3869]], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -1519,14 +1673,14 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"Vvhu", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$4311", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$4311", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$3874", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$3874", "]"}], ",", 
      RowBox[{"-", "\[Alpha]"}]}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
    "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`Vvhu[
-    xAct`xTensor`LI[xAct`xPand`Private`p$4311], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$4311], -$CellContext`\[Alpha]], ". ",
+    xAct`xTensor`LI[xAct`xPand`Private`p$3874], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$3874], -$CellContext`\[Alpha]], ". ",
     ""],
   Editable->False]], "Print"],
 
@@ -7602,13 +7756,13 @@ Cell[BoxData[
        Editable->False], ""], "2"]], 
    "\[InvisibleSpace]", "\<\" +... was performed in \"\>", 
    "\[InvisibleSpace]", 
-   "5.0619319999999996539941093942616134882`6.724916220000096", 
+   "6.75694199999999955963403408532030880451`6.85035010433897", 
    "\[InvisibleSpace]", "\<\" seconds.\"\>"}],
   SequenceForm["The Splitting of ", $CellContext`ah[
       xAct`xTensor`LI[0], 
       xAct`xTensor`LI[0]]^(-2) $CellContext`RicciScalarCD[], 
    " +... was performed in ", 
-   5.0619319999999996539941093942616134882`6.724916220000096, " seconds."],
+   6.75694199999999955963403408532030880451`6.85035010433897, " seconds."],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -22609,13 +22763,13 @@ Cell[BoxData[
        Editable->False], ""], "2"]], 
    "\[InvisibleSpace]", "\<\" +... was performed in \"\>", 
    "\[InvisibleSpace]", 
-   "5.97442700000000037618974602082744240761`6.796896172243526", 
+   "8.00279699999999927229055174393579363823`6.923841713942423", 
    "\[InvisibleSpace]", "\<\" seconds.\"\>"}],
   SequenceForm["The Splitting of ", $CellContext`ah[
       xAct`xTensor`LI[0], 
       xAct`xTensor`LI[0]]^(-2) $CellContext`RicciScalarCD[], 
    " +... was performed in ", 
-   5.97442700000000037618974602082744240761`6.796896172243526, " seconds."],
+   8.00279699999999927229055174393579363823`6.923841713942423, " seconds."],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -24470,7 +24624,7 @@ Cell[BoxData[
 perturbed metric 'gpert' in a given gauge and according to the background \
 slicing associated with the induced metric 'h'.\"\>", 
   "MSG"]], "Print", "PrintUsage",
- CellTags->"Info3587547168-4738217"]
+ CellTags->"Info3593099458-8748537"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -24869,7 +25023,7 @@ Cell[BoxData[
  StyleBox["\<\"Possible gauges are: AnyGauge, ComovingGauge, FlatGauge, \
 IsoDensityGauge, NewtonGauge and SynchronousGauge.\"\>", 
   "MSG"]], "Print", "PrintUsage",
- CellTags->"Info3587547168-4738217"]
+ CellTags->"Info3593099458-8748537"]
 }, Open  ]],
 
 Cell["so that the standard way to use SplitPerturbations is:", "Text"],
@@ -24905,13 +25059,13 @@ Cell[BoxData[
        Editable->False], ""], "2"]], 
    "\[InvisibleSpace]", "\<\" +... was performed in \"\>", 
    "\[InvisibleSpace]", 
-   "16.62967799999999840565578779205679893494`7.24148375334839", 
+   "19.41355700000000084060047811362892389297`7.308705028469316", 
    "\[InvisibleSpace]", "\<\" seconds.\"\>"}],
   SequenceForm["The Splitting of ", $CellContext`ah[
       xAct`xTensor`LI[0], 
       xAct`xTensor`LI[0]]^(-2) $CellContext`RicciScalarCD[], 
    " +... was performed in ", 
-   16.62967799999999840565578779205679893494`7.24148375334839, " seconds."],
+   19.41355700000000084060047811362892389297`7.308705028469316, " seconds."],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -36432,14 +36586,14 @@ Cell[BoxData[
       Editable->False], "2"]], 
    "\[InvisibleSpace]", "\<\" +... was performed in \"\>", 
    "\[InvisibleSpace]", 
-   "0.86384199999999999874944478506222367287`5.957034228903131", 
+   "0.90798800000000001730882104311604052782`5.978680022188132", 
    "\[InvisibleSpace]", "\<\" seconds.\"\>"}],
   SequenceForm[
   "The Splitting of ", $CellContext`RicciScalarCD[] xAct`xTensor`Scalar[
       $CellContext`ah[
        xAct`xTensor`LI[0], 
        xAct`xTensor`LI[0]]]^(-2), " +... was performed in ", 
-   0.86384199999999999874944478506222367287`5.957034228903131, " seconds."],
+   0.90798800000000001730882104311604052782`5.978680022188132, " seconds."],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -36914,14 +37068,14 @@ Cell[BoxData[
       Editable->False], "2"]], 
    "\[InvisibleSpace]", "\<\" +... was performed in \"\>", 
    "\[InvisibleSpace]", 
-   "0.57921900000000003938538384318235330284`5.783442712773648", 
+   "0.6056300000000000016697754290362354368`5.8028072931662225", 
    "\[InvisibleSpace]", "\<\" seconds.\"\>"}],
   SequenceForm[
   "The Splitting of ", $CellContext`RicciScalarCD[] xAct`xTensor`Scalar[
       $CellContext`ah[
        xAct`xTensor`LI[0], 
        xAct`xTensor`LI[0]]]^(-2), " +... was performed in ", 
-   0.57921900000000003938538384318235330284`5.783442712773648, " seconds."],
+   0.6056300000000000016697754290362354368`5.8028072931662225, " seconds."],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -37268,7 +37422,7 @@ Cell[BoxData[
       Editable->False], "2"]], 
    "\[InvisibleSpace]", "\<\" +... was performed in \"\>", 
    "\[InvisibleSpace]", 
-   "3.12872100000000008535039341950323432684`6.515966750454963", 
+   "3.34699999999999997513100424839649349451`6.5452556256374015", 
    "\[InvisibleSpace]", "\<\" seconds.\"\>"}],
   SequenceForm[
   "The Splitting of ", $CellContext`RicciCD[$CellContext`\[Mu], \
@@ -37276,7 +37430,7 @@ Cell[BoxData[
       $CellContext`ah[
        xAct`xTensor`LI[0], 
        xAct`xTensor`LI[0]]]^(-2), " +... was performed in ", 
-   3.12872100000000008535039341950323432684`6.515966750454963, " seconds."],
+   3.34699999999999997513100424839649349451`6.5452556256374015, " seconds."],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -40136,15 +40290,14 @@ Cell[BoxData[
      Editable->False]}], 
    "\[InvisibleSpace]", "\<\" +... was performed in \"\>", 
    "\[InvisibleSpace]", 
-   "3.98367000000000004433786671143025159836`6.620883268353843", 
+   "4.00641800000000003478817234281450510025`6.6233561716728016", 
    "\[InvisibleSpace]", "\<\" seconds.\"\>"}],
   SequenceForm[
-  "The Splitting of ", ((
-     Rational[-1, 
-       6] $CellContext`RicciScalarCD[]) \
-$CellContext`u[-$CellContext`\[Alpha]]) $CellContext`u[-$CellContext`\[Beta]],
-    " +... was performed in ", 
-   3.98367000000000004433786671143025159836`6.620883268353843, " seconds."],
+  "The Splitting of ", 
+   Rational[-1, 
+     6] $CellContext`RicciScalarCD[] $CellContext`u[-$CellContext`\[Alpha]] \
+$CellContext`u[-$CellContext`\[Beta]], " +... was performed in ", 
+   4.00641800000000003478817234281450510025`6.6233561716728016, " seconds."],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -42033,10 +42186,10 @@ Cell[BoxData[
             FontColor->RGBColor[1, 0, 0]]}],
           ShowAutoStyles->False,
           AutoSpacing->False],
-         xAct`xTensor`Scalar[($CellContext`dg[
-             xAct`xTensor`LI[
-             1], -$CellContext`\[Alpha], -$CellContext`\[Beta]] \
-$CellContext`n[$CellContext`\[Alpha]]) $CellContext`n[$CellContext`\[Beta]]],
+         xAct`xTensor`Scalar[$CellContext`dg[
+            xAct`xTensor`LI[
+            1], -$CellContext`\[Alpha], -$CellContext`\[Beta]] \
+$CellContext`n[$CellContext`\[Alpha]] $CellContext`n[$CellContext`\[Beta]]],
          Editable->False]}], "+", 
        RowBox[{
         OverscriptBox["\<\"\"\>", 
@@ -42204,18 +42357,18 @@ Cell[BoxData[
       Editable->False], "2"]], 
    "\[InvisibleSpace]", "\<\" +... was performed in \"\>", 
    "\[InvisibleSpace]", 
-   "0.19096199999999999286082186245039338246`5.301546867793275", 
+   "0.20098399999999999598898625663423445076`5.323761398619064", 
    "\[InvisibleSpace]", "\<\" seconds.\"\>"}],
-  SequenceForm["The Splitting of ", ((3 xAct`xTensor`Scalar[
-        $CellContext`ah[
-         xAct`xTensor`LI[0], 
-         xAct`xTensor`LI[
-         0]]]^(-2)) $CellContext`u[$CellContext`\[Nu]]) \
+  SequenceForm["The Splitting of ", 3 xAct`xTensor`Scalar[
+      $CellContext`ah[
+       xAct`xTensor`LI[0], 
+       xAct`xTensor`LI[
+       0]]]^(-2) $CellContext`u[$CellContext`\[Nu]] \
 $CellContext`CD[-$CellContext`\[Nu]][
      $CellContext`ah[
       xAct`xTensor`LI[0], 
       xAct`xTensor`LI[0]]], " +... was performed in ", 
-   0.19096199999999999286082186245039338246`5.301546867793275, " seconds."],
+   0.20098399999999999598898625663423445076`5.323761398619064, " seconds."],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -42462,18 +42615,18 @@ Cell[BoxData[
       Editable->False], "3"]], 
    "\[InvisibleSpace]", "\<\" +... was performed in \"\>", 
    "\[InvisibleSpace]", 
-   "0.42274600000000001065458832272270228714`5.646679420297727", 
+   "0.45716699999999999004529627200099639595`5.6806747871569625", 
    "\[InvisibleSpace]", "\<\" seconds.\"\>"}],
-  SequenceForm["The Splitting of ", ((xAct`xTensor`Scalar[
-        $CellContext`ah[
-         xAct`xTensor`LI[0], 
-         xAct`xTensor`LI[
-         0]]]^(-3) $CellContext`u[$CellContext`\[Mu]]) \
-$CellContext`u[$CellContext`\[Nu]]) $CellContext`CD[-$CellContext`\[Mu]][
+  SequenceForm["The Splitting of ", xAct`xTensor`Scalar[
+      $CellContext`ah[
+       xAct`xTensor`LI[0], 
+       xAct`xTensor`LI[
+       0]]]^(-3) $CellContext`u[$CellContext`\[Mu]] \
+$CellContext`u[$CellContext`\[Nu]] $CellContext`CD[-$CellContext`\[Mu]][
      $CellContext`ah[
       xAct`xTensor`LI[0], 
       xAct`xTensor`LI[0]]], " +... was performed in ", 
-   0.42274600000000001065458832272270228714`5.646679420297727, " seconds."],
+   0.45716699999999999004529627200099639595`5.6806747871569625, " seconds."],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -42918,15 +43071,15 @@ Cell[BoxData[
       Editable->False], ")"}]}], 
    "\[InvisibleSpace]", "\<\" +... was performed in \"\>", 
    "\[InvisibleSpace]", 
-   "1.66347800000000001219291334564331918955`6.241616974846484", 
+   "1.53501099999999990330934451776556670666`6.206711405289692", 
    "\[InvisibleSpace]", "\<\" seconds.\"\>"}],
-  SequenceForm["The Splitting of ", ((Rational[-1, 3] $CellContext`ah[
-       xAct`xTensor`LI[0], 
-       xAct`xTensor`LI[
-       0]]) $CellContext`g[-$CellContext`\[Mu], -$CellContext`\[Nu]]) \
+  SequenceForm["The Splitting of ", Rational[-1, 3] $CellContext`ah[
+     xAct`xTensor`LI[0], 
+     xAct`xTensor`LI[
+     0]] $CellContext`g[-$CellContext`\[Mu], -$CellContext`\[Nu]] \
 $CellContext`CD[-$CellContext`\[Alpha]][
      $CellContext`u[$CellContext`\[Alpha]]], " +... was performed in ", 
-   1.66347800000000001219291334564331918955`6.241616974846484, " seconds."],
+   1.53501099999999990330934451776556670666`6.206711405289692, " seconds."],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -43334,13 +43487,13 @@ Cell[BoxData[
      Editable->False]}], 
    "\[InvisibleSpace]", "\<\" +... was performed in \"\>", 
    "\[InvisibleSpace]", 
-   "0.15824599999999999777600123707088641822`5.219932654402617", 
+   "0.16186100000000000487254681047488702461`5.229742132476774", 
    "\[InvisibleSpace]", "\<\" seconds.\"\>"}],
   SequenceForm["The Splitting of ", $CellContext`ah[
      xAct`xTensor`LI[0], 
      xAct`xTensor`LI[0]] $CellContext`u[-$CellContext`\[Nu]], 
    " +... was performed in ", 
-   0.15824599999999999777600123707088641822`5.219932654402617, " seconds."],
+   0.16186100000000000487254681047488702461`5.229742132476774, " seconds."],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -43608,13 +43761,13 @@ Cell[BoxData[
      Editable->False]}], 
    "\[InvisibleSpace]", "\<\" +... was performed in \"\>", 
    "\[InvisibleSpace]", 
-   "0.89073899999999994747668097261339426041`5.970350381104476", 
+   "0.89596600000000004015987542516086250544`5.972891442704528", 
    "\[InvisibleSpace]", "\<\" seconds.\"\>"}],
   SequenceForm["The Splitting of ", $CellContext`ah[
      xAct`xTensor`LI[0], 
      xAct`xTensor`LI[0]] $CellContext`u[-$CellContext`\[Nu]], 
    " +... was performed in ", 
-   0.89073899999999994747668097261339426041`5.970350381104476, " seconds."],
+   0.89596600000000004015987542516086250544`5.972891442704528, " seconds."],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -45072,15 +45225,15 @@ Cell[BoxData[
       Editable->False], ")"}]}], 
    "\[InvisibleSpace]", "\<\" +... was performed in \"\>", 
    "\[InvisibleSpace]", 
-   "16.32123800000000102272679214365780353546`7.233353011090658", 
+   "15.37892399999999959447904984699562191963`7.207525864010986", 
    "\[InvisibleSpace]", "\<\" seconds.\"\>"}],
-  SequenceForm["The Splitting of ", (((Rational[-1, 2] $CellContext`ah[
-        xAct`xTensor`LI[0], 
-        xAct`xTensor`LI[
-        0]]) $CellContext`u[$CellContext`\[Alpha]]) \
-$CellContext`u[-$CellContext`\[Nu]]) $CellContext`CD[-$CellContext`\[Alpha]][
+  SequenceForm["The Splitting of ", Rational[-1, 2] $CellContext`ah[
+     xAct`xTensor`LI[0], 
+     xAct`xTensor`LI[
+     0]] $CellContext`u[$CellContext`\[Alpha]] $CellContext`u[-$CellContext`\
+\[Nu]] $CellContext`CD[-$CellContext`\[Alpha]][
      $CellContext`u[-$CellContext`\[Mu]]], " +... was performed in ", 
-   16.32123800000000102272679214365780353546`7.233353011090658, " seconds."],
+   15.37892399999999959447904984699562191963`7.207525864010986, " seconds."],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -52866,15 +53019,15 @@ Cell[BoxData[
       Editable->False], ")"}]}], 
    "\[InvisibleSpace]", "\<\" +... was performed in \"\>", 
    "\[InvisibleSpace]", 
-   "2.00538000000000016243006939475890249014`6.322796592612965", 
+   "1.78860100000000010744827250164235010743`6.273113382508355", 
    "\[InvisibleSpace]", "\<\" seconds.\"\>"}],
-  SequenceForm["The Splitting of ", ((Rational[-1, 3] $CellContext`ah[
-       xAct`xTensor`LI[0], 
-       xAct`xTensor`LI[
-       0]]) $CellContext`g[-$CellContext`\[Mu], -$CellContext`\[Nu]]) \
+  SequenceForm["The Splitting of ", Rational[-1, 3] $CellContext`ah[
+     xAct`xTensor`LI[0], 
+     xAct`xTensor`LI[
+     0]] $CellContext`g[-$CellContext`\[Mu], -$CellContext`\[Nu]] \
 $CellContext`CD[-$CellContext`\[Alpha]][
      $CellContext`u[$CellContext`\[Alpha]]], " +... was performed in ", 
-   2.00538000000000016243006939475890249014`6.322796592612965, " seconds."],
+   1.78860100000000010744827250164235010743`6.273113382508355, " seconds."],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -53534,20 +53687,20 @@ Cell[BoxData[
       Editable->False], "3"]], 
    "\[InvisibleSpace]", "\<\" +... was performed in \"\>", 
    "\[InvisibleSpace]", 
-   "2.04538099999999989364596331142820417881`6.331374130652655", 
+   "1.93439199999999988932586347800679504871`6.3071444007029385", 
    "\[InvisibleSpace]", "\<\" seconds.\"\>"}],
-  SequenceForm["The Splitting of ", ((((4 $CellContext`Pu[
-         xAct`xTensor`LI[0], 
-         xAct`xTensor`LI[0]]) xAct`xTensor`Scalar[
-         $CellContext`ah[
-          xAct`xTensor`LI[0], 
-          xAct`xTensor`LI[
-          0]]]^(-3)) $CellContext`u[$CellContext`\[Mu]]) \
-$CellContext`u[$CellContext`\[Nu]]) $CellContext`CD[-$CellContext`\[Mu]][
+  SequenceForm["The Splitting of ", 4 $CellContext`Pu[
+     xAct`xTensor`LI[0], 
+     xAct`xTensor`LI[0]] xAct`xTensor`Scalar[
+      $CellContext`ah[
+       xAct`xTensor`LI[0], 
+       xAct`xTensor`LI[
+       0]]]^(-3) $CellContext`u[$CellContext`\[Mu]] \
+$CellContext`u[$CellContext`\[Nu]] $CellContext`CD[-$CellContext`\[Mu]][
      $CellContext`ah[
       xAct`xTensor`LI[0], 
       xAct`xTensor`LI[0]]], " +... was performed in ", 
-   2.04538099999999989364596331142820417881`6.331374130652655, " seconds."],
+   1.93439199999999988932586347800679504871`6.3071444007029385, " seconds."],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -56561,7 +56714,7 @@ Cell[BoxData[
       Editable->False], "2"]], 
    "\[InvisibleSpace]", "\<\" +... was performed in \"\>", 
    "\[InvisibleSpace]", 
-   "0.54590799999999994884802845263038761914`5.757719371993715", 
+   "0.52763300000000001865885224106023088098`5.742931863288364", 
    "\[InvisibleSpace]", "\<\" seconds.\"\>"}],
   SequenceForm["The Splitting of ", xAct`xTensor`Scalar[
       $CellContext`ah[
@@ -56571,7 +56724,7 @@ Cell[BoxData[
       xAct`xPand`\[CurlyPhi][
        xAct`xTensor`LI[0], 
        xAct`xTensor`LI[0]]]], " +... was performed in ", 
-   0.54590799999999994884802845263038761914`5.757719371993715, " seconds."],
+   0.52763300000000001865885224106023088098`5.742931863288364, " seconds."],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -57890,15 +58043,15 @@ Cell[BoxData[
       Editable->False], "2"]}], 
    "\[InvisibleSpace]", "\<\" +... was performed in \"\>", 
    "\[InvisibleSpace]", 
-   "0.53976000000000001755040557327447459102`5.7528006104268625", 
+   "0.58435599999999998654942601206130348146`5.787277420889924", 
    "\[InvisibleSpace]", "\<\" seconds.\"\>"}],
-  SequenceForm["The Splitting of ", (xAct`xPand`\[Epsilon] $CellContext`dg[
-      xAct`xTensor`LI[1], -$CellContext`\[Alpha], -$CellContext`\[Beta]]) 
+  SequenceForm["The Splitting of ", xAct`xPand`\[Epsilon] $CellContext`dg[
+     xAct`xTensor`LI[1], -$CellContext`\[Alpha], -$CellContext`\[Beta]] 
    xAct`xTensor`Scalar[
       $CellContext`ah[
        xAct`xTensor`LI[0], 
        xAct`xTensor`LI[0]]]^2, " +... was performed in ", 
-   0.53976000000000001755040557327447459102`5.7528006104268625, " seconds."],
+   0.58435599999999998654942601206130348146`5.787277420889924, " seconds."],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -59473,13 +59626,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"\[Xi]h", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`ord$107180", "]"}], ",", 
-     "\[Sigma]$107181"}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`ord$106743", "]"}], ",", 
+     "\[Sigma]$106744"}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
    "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`\[Xi]h[
     xAct`xTensor`LI[
-    xAct`xPand`Private`ord$107180], $CellContext`\[Sigma]$107181], ". ", ""],
+    xAct`xPand`Private`ord$106743], $CellContext`\[Sigma]$106744], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -59541,15 +59694,15 @@ Cell[BoxData[
       Editable->False], "2"]}], 
    "\[InvisibleSpace]", "\<\" +... was performed in \"\>", 
    "\[InvisibleSpace]", 
-   "0.70220599999999999685229568058275617659`5.867064449254526", 
+   "0.73423700000000002852118541341042146087`5.886436179161223", 
    "\[InvisibleSpace]", "\<\" seconds.\"\>"}],
-  SequenceForm["The Splitting of ", (xAct`xPand`\[Epsilon] $CellContext`dg[
-      xAct`xTensor`LI[1], -$CellContext`\[Alpha], -$CellContext`\[Beta]]) 
+  SequenceForm["The Splitting of ", xAct`xPand`\[Epsilon] $CellContext`dg[
+     xAct`xTensor`LI[1], -$CellContext`\[Alpha], -$CellContext`\[Beta]] 
    xAct`xTensor`Scalar[
       $CellContext`ah[
        xAct`xTensor`LI[0], 
        xAct`xTensor`LI[0]]]^2, " +... was performed in ", 
-   0.70220599999999999685229568058275617659`5.867064449254526, " seconds."],
+   0.73423700000000002852118541341042146087`5.886436179161223, " seconds."],
   Editable->False]], "Print"]
 }, Open  ]],
 
