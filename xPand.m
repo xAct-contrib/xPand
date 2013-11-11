@@ -22,8 +22,8 @@
 xAct`xPand`$Version={"0.4.2",{2013,11,10}};
 
 
-xAct`xPand`$xTensorVersionExpected={"1.1.0",{2013,7,1}};
-xAct`xPand`$xPertVersionExpected={"1.0.3",{2013,7,1}};
+xAct`xPand`$xTensorVersionExpected={"1.0.5",{2013,1,27}};
+xAct`xPand`$xPertVersionExpected={"1.0.3",{2013,1,27}};
 
 
 (* xPand: Cosmological perturbations about homogeneous space-times *)
@@ -675,29 +675,31 @@ Block[{Print},DefInertHead[ProtectMyScalar,LinearQ->True]];
 DerCharacter:=If[$ConformalTime,"\[Prime]","."];
 (* The output format of the Lie derivative with respect to the vector normal to the hypersurfaces is a prime when one considers the conformal time, and a dot when one considers the cosmic time. *)
 
+PerturbationOrderColor[1]:=RGBColor[0.85,0,0];
+PerturbationOrderColor[2]:=RGBColor[0,0.6,0];
+PerturbationOrderColor[3]:=RGBColor[0,0,0.85];
+PerturbationOrderColor[4]:=RGBColor[0.6,0.4,0.2];
+PerturbationOrderColor[5]:=RGBColor[0.7,0,0.7];
+PerturbationOrderColor[_]:=RGBColor[1,0.6,0];
+
+
 
 xTensorFormStop[Tensor]
 
 MakeBoxes[Tens_?xTensorQ[LI[p_?((IntegerQ[#]&&#>=0)&)],LI[q_?((IntegerQ[#]&&#>=0)&)],inds___],StandardForm]:=
+xAct`xTensor`Private`interpretbox[Tens[LI[p],LI[q],inds],
 If[(AnisotropyBool[SpaceType@InducedMetricOf[Tens]]||BianchiBool[SpaceType@InducedMetricOf[Tens]])&&Cases[{inds},_?UpIndexQ]=!={}&&q>=1,
 
 Message[xPand::makeboxes];
 
-RowBox[{OverscriptBox["\"\"",RowBox[{"(",ToString[p],")"}]],"\[NegativeThinSpace]",OverscriptBox[MakeBoxes[Tens[inds],StandardForm],ToString[q]]}],
+RowBox[{OverscriptBox["\[Null]",RowBox[{"(",ToString[p],")"}]],"\[NegativeThinSpace]",OverscriptBox[MakeBoxes[Tens[inds],StandardForm],ToString[q]]}],
 
 Switch[p,
 0,RowBox[{OverscriptBox[MakeBoxes[Tens[inds],StandardForm],StringJoin@Table[DerCharacter,{i,1,q}]]}],
-1,RowBox[{OverscriptBox["\"\"",RowBox[{StyleBox["(1)",FontColor->RGBColor[0.85,0,0]]}]],"\[NegativeThinSpace]",OverscriptBox[MakeBoxes[Tens[inds],StandardForm],StringJoin@Table[DerCharacter,{i,1,q}]]}],
-2,RowBox[{OverscriptBox["\"\"",RowBox[{StyleBox["(2)",FontColor->RGBColor[0,0.6,0]]}]],"\[NegativeThinSpace]",
-OverscriptBox[MakeBoxes[Tens[inds],StandardForm],StringJoin@Table[DerCharacter,{i,1,q}]]}],
-3,RowBox[{OverscriptBox["\"\"",RowBox[{StyleBox["(3)",FontColor->RGBColor[0,0,0.85]]}]],"\[NegativeThinSpace]",OverscriptBox[MakeBoxes[Tens[inds],StandardForm],StringJoin@Table[DerCharacter,{i,1,q}]]}],
-4,RowBox[{OverscriptBox["\"\"",RowBox[{StyleBox["(4)",FontColor->RGBColor[0.6,0.4,0.2]]}]],"\[NegativeThinSpace]",OverscriptBox[MakeBoxes[Tens[inds],StandardForm],StringJoin@Table[DerCharacter,{i,1,q}]]}],
-5,RowBox[{OverscriptBox["\"\"",RowBox[{StyleBox["(5)",FontColor->RGBColor[0.7,0,0.7]]}]],"\[NegativeThinSpace]",OverscriptBox[MakeBoxes[Tens[inds],StandardForm],StringJoin@Table[DerCharacter,{i,1,q}]]}],
-_,RowBox[{OverscriptBox["\"\"",RowBox[{StyleBox["(",FontColor->RGBColor[1,0.6,0]],StyleBox[ToString[p],FontColor->RGBColor[1,0.6,0]],StyleBox[")",FontColor->RGBColor[1,0.6,0]]}]],"\[NegativeThinSpace]",OverscriptBox[MakeBoxes[Tens[inds],StandardForm],StringJoin@Table[DerCharacter,{i,1,q}]]}]
+_,RowBox[{OverscriptBox["\[Null]",RowBox[{StyleBox["("<>ToString[p]<>")",FontColor->PerturbationOrderColor[p]]}]],"\[NegativeThinSpace]",OverscriptBox[MakeBoxes[Tens[inds],StandardForm],StringJoin@Table[DerCharacter,{i,1,q}]]}]
 ]
 ]
-
-
+];
 
 xTensorFormStart[Tensor]
 
