@@ -68,18 +68,15 @@ The package can be downloaded as a single tarball xPand_0.4.2.tar.gz.
 When uncompressed (typing 'tar -xzvf xPand_0.4.2.tar.gz' under Linux),
 it gives
 -a folder 'xPand'
--a file 'xPand.m'
 -this documentation file 'documentation_xpand.txt''
 
 Note that in some cases, for instance if you uncompress the tarball by a double
-click, these 3 items are likely to be placed below a folder named xPand_0.4.2.
+click, these 2 items are likely to be placed below a folder named xPand_0.4.2.
 
-The folder xPand, and the file 'xPand.m' must be placed inside the
+The folder 'xPand' must be placed inside the
 xAct directory. For instance, in a single user installation with Mac
 OS, there should be a folder
 /Users/<user>/Library/Mathematica/Applications/xAct/xPand
-and a file
-/Users/<user>/Library/Mathematica/Applications/xAct/xPand.m
 
 Documentation:
 **************
@@ -90,7 +87,7 @@ Packages' and 'xPand'.
 
 Then the package can be loaded using unix style
 
-        <<xAct/xPand.m
+        Needs["`xAct`xPand"]
 	
 
 or Mathematica style
@@ -98,8 +95,8 @@ or Mathematica style
         <<xAct`xPand`
       
 
-If you encouter any problem, don't hesitate to contact me at
+If you encounter any problem, don't hesitate to contact me at
 
         pitrou@iap.fr
 
-This is the "install" file of xPand. Last update: 8 Feb 2013.
+This is the "install" file of xPand. Last update: 11 Nov 2013.

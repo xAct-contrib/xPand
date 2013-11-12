@@ -589,6 +589,8 @@ The default printed form of Lv[h][-index] is: '\!\(\*SubscriptBox[\(L\), \(index
 
 d\[ScriptCapitalN]::usage = "d\[ScriptCapitalN][h][LI[p],index] is the perturbation of normal vector to constant time hypersurfaces.";
 
+\[ScriptCapitalN]i::usage = "\[ScriptCapitalN]i[h][index] is the shift vector of the normal vector to constant time hypersurfaces. It is defined as \[ScriptCapitalN]i[h][upindex] = -Projector[h][\[ScriptCapitalN]0[h] \[ScriptCapitalN][h] upindex]";
+
 
 (*** RESERVED WORDS AND PROTECTED NAMES ***)
 
@@ -830,7 +832,12 @@ Lv[h_?InducedMetricQ]:=SymbolJoin[Lv,h];
 
 $ListFieldsBackgroundOnly[h_?InducedMetricQ]:={{a[h][],"a"}, {H[h][],"\[ScriptCapitalH]"}};
 
-$ListFieldsPerturbedOnly[h_?InducedMetricQ]:={{\[Phi][h][],"\[Phi]"},{Bs[h][],"B"},{Bv[h][-\[Mu]],"B"},{\[Psi][h][],"\[Psi]"},{Es[h][],"E"},{Ev[h][-\[Mu]],"E"},{Et[h][-\[Mu],-\[Nu]],"E"},{T[h][],"T"},{Ls[h][],"L"},{Lv[h][-\[Mu]],"L"}};
+$ListFieldsPerturbedOnly[h_?InducedMetricQ]:=With[{M=ManifoldOfCovD@CovDOfMetric@First@InducedFrom@h},
+Block[{\[Mu]},
+{\[Mu]}=GetIndicesOfVBundle[Tangent@M,1];
+{{\[Phi][h][],"\[Phi]"},{Bs[h][],"B"},{Bv[h][-\[Mu]],"B"},{\[Psi][h][],"\[Psi]"},{Es[h][],"E"},{Ev[h][-\[Mu]],"E"},{Et[h][-\[Mu],-\[Nu]],"E"},{T[h][],"T"},{Ls[h][],"L"},{Lv[h][-\[Mu]],"L"}}
+]
+];
 
 (* The former implementation failed to treat separately different fluids. *)
 (* Obinna proposed the replace by the version below. *)
@@ -839,7 +846,12 @@ $ListFieldsPerturbedOnly[h_?InducedMetricQ]:={{\[Phi][h][],"\[Phi]"},{Bs[h][],"B
 (*$ListFieldsBackgroundAndPerturbed[h_?InducedMetricQ,velocity_]:={{\[CurlyPhi][],"\[CurlyPhi]"},{\[Rho][velocity][],"\[Rho]"},{P[velocity][],"P"},{Vspat[h,velocity][-\[Mu]],"\[ScriptCapitalV]"},{V0[h,velocity][],"V0"},{Vs[h,velocity][],"V"},{Vv[h,velocity][-\[Mu]],"V"}};*)
 
 
-$ListFieldsBackgroundAndPerturbed[h_?InducedMetricQ,velocity_]:={{\[CurlyPhi][],"\[CurlyPhi]"},{\[Rho][velocity][],ToString@StringJoin[{"\[Rho]"},ToString[velocity]]},{P[velocity][],ToString@StringJoin[{"P"},ToString[velocity]]},{Vspat[h,velocity][-\[Mu]],ToString@StringJoin[{"\[ScriptCapitalV]",ToString[velocity]}]},{V0[h,velocity][],ToString@StringJoin[{"V0",ToString[velocity]}]},{Vs[h,velocity][],ToString@StringJoin[{"V",ToString[velocity]}]},{Vv[h,velocity][-\[Mu]],ToString@StringJoin[{"V",ToString[velocity]}]}};
+$ListFieldsBackgroundAndPerturbed[h_?InducedMetricQ,velocity_]:=With[{M=ManifoldOfCovD@CovDOfMetric@First@InducedFrom@h},
+Block[{\[Mu],\[Nu]},
+{\[Mu],\[Nu]}=GetIndicesOfVBundle[Tangent@M,2];
+{{\[CurlyPhi][],"\[CurlyPhi]"},{\[Rho][velocity][],ToString@StringJoin[{"\[Rho]"},ToString[velocity]]},{P[velocity][],ToString@StringJoin[{"P"},ToString[velocity]]},{Vspat[h,velocity][-\[Mu]],ToString@StringJoin[{"\[ScriptCapitalV]",ToString[velocity]}]},{V0[h,velocity][],ToString@StringJoin[{"V0",ToString[velocity]}]},{Vs[h,velocity][],ToString@StringJoin[{"V",ToString[velocity]}]},{Vv[h,velocity][-\[Mu]],ToString@StringJoin[{"V",ToString[velocity]}]}}
+]
+];
 
 
 (*** DEFAULT VALUES: DefProjectedTensor & DefProjectedTensorProperties ***)
@@ -2937,12 +2949,10 @@ Evaluate[V0[h,uf][LI[i],LI[0]]u[ind1]+cd[ind1][If[gauge==="ComovingGauge",-Bs[h]
 
 
 AllRulesFromProjectedRule[vector_,NormVectorSquare_,RulesVspat_,h_?InducedMetricQ,order_?IntegerQ]:=
-Module[{RuleBackgroundBoost,Rulebackgroundvelocity,RuleBoost,LocalRulesVspat,RuleBoostUpton,RulesBoostUptoOrder,X,res,nloc,debug,Boost,Vspatial},
+Module[{RuleBackgroundBoost,Rulebackgroundvelocity,RuleBoost,LocalRulesVspat,RuleBoostUpton,RulesBoostUptoOrder,res,nloc,debug,Boost,Vspatial},
 With[{g=First@InducedFrom@h,u=Last@InducedFrom@h},
 With[{M=ManifoldOfCovD@CovDOfMetric[g]},
 With[{i1=DummyIn@Tangent@M,i2=DummyIn@Tangent@M},
-
-Block[{Print},DefTensor[X[],M];];
 
 Boost=V0[h,vector];
 Vspatial=Vspat[h,vector];
@@ -2955,13 +2965,11 @@ RuleBoost[0]:=RuleBackgroundBoost;
 
 RuleBoostUpton[m_]:=Flatten@Table[ToCanonical@ContractMetric[RuleBoost[i]],{i,0,m}];
 
-RuleBoost[n_?(#>=1&)]:=(
-Boost[LI[n],LI[0]]:>Evaluate[ToCanonical@ContractMetric@PutScalar[(X[]/.First@IndexSolve[org[ExpandPerturbation@Perturbation[g[-i1,-i2]vector[i1]vector[i2],n]/.LocalRulesVspat/.Boost[LI[n],LI[0]]->X[]]==0,X[]])/.RuleBoostUpton[n-1]/.LocalRulesVspat]/.BackgroundFieldRule]);
-
+RuleBoost[n_?(#>=1&)]:=MakeRule[Evaluate[{
+Boost[LI[n],LI[0]],ToCanonical@ContractMetric@PutScalar[(Boost[LI[n],LI[0]]/.First@IndexSolve[org[ExpandPerturbation@Perturbation[g[-i1,-i2]vector[i1]vector[i2],n]/.LocalRulesVspat]==0,Boost[LI[n],LI[0]]])/.RuleBoostUpton[n-1]/.LocalRulesVspat]/.BackgroundFieldRule}]];
 
 res=Join[RulesVspat/.RuleBoostUpton[order]];
 
-Block[{Print},UndefTensor[X];];
 res
 ]]]];
 
@@ -2981,22 +2989,28 @@ Protect[SplitMatter]
 
 
 \[ScriptCapitalN]0[h_?InducedMetricQ]:=SymbolJoin[\[ScriptCapitalN]0,h];
+\[ScriptCapitalN]i[h_?InducedMetricQ]:=SymbolJoin[\[ScriptCapitalN]i,h];
 \[ScriptCapitalN][h_?InducedMetricQ]:=SymbolJoin[\[ScriptCapitalN],h];
 d\[ScriptCapitalN][h_?InducedMetricQ]:=SymbolJoin[d\[ScriptCapitalN],h];
 
 
-$ListNormalFields[h_?InducedMetricQ]:={{\[ScriptCapitalN]0[h][],"\[ScriptCapitalN]0"}};
+$ListNormalFields[h_?InducedMetricQ]:={{\[ScriptCapitalN]0[h][],"\[ScriptCapitalN]0"}}
 
 
 DefNormalFields[h_?InducedMetricQ,PerturbParameter_:\[Epsilon]]:=Module[{ord},
 
 With[{n=Last@InducedFrom@h,
-M=ManifoldOfCovD@CovDOfMetric@First@InducedFrom@h,NN=\[ScriptCapitalN][h],dn=d\[ScriptCapitalN][h]},
+M=ManifoldOfCovD@CovDOfMetric@First@InducedFrom@h,NN=\[ScriptCapitalN][h],dn=d\[ScriptCapitalN][h],Ni=\[ScriptCapitalN]i[h],N0=\[ScriptCapitalN]0[h]},
 
 Block[{\[Mu]},
 {\[Mu]}=GetIndicesOfVBundle[Tangent@M,1];
 
-(DefProjectedTensor[#[[1]],h,TensorProperties->{"Traceless","Transverse","SymmetricTensor"},SpaceTimesOfDefinition->{"Background","Perturbed"},PrintAs->#[[2]]])&/@$ListNormalFields[h];
+(DefProjectedTensor[#[[1]],h,TensorProperties->{},SpaceTimesOfDefinition->{"Background","Perturbed"},PrintAs->#[[2]]])&/@$ListNormalFields[h];
+
+If[Not[DefTensorQ[Ni]],
+DefTensor[Ni[\[Mu]],M];,
+If[$DefInfoQ,Print["** Warning: Tensor ",Ni , "is already defined. It cannot be redefined without undefining it. **"];];
+];
 
 If[Not[DefTensorQ[NN]],
 DefTensor[NN[-\[Mu]],M];,
@@ -3011,6 +3025,7 @@ If[$DefInfoQ,Print["** Warning: Tensor ",dn , "is already defined. It cannot be 
 If[Not@DefinedPerturbationParameter[$PerturbationParameter],$PerturbationParameter=PerturbParameter;DefinedPerturbationParameter[$PerturbationParameter]=True];
 
 dn[\[Mu]_?AIndexQ]:=dn[LI[0],\[Mu]];
+Ni[\[Mu]_]:=(-Projector[h][N0[]NN[\[Mu]]]/.Projector[h]->ProjectWith[h])//ProjectorToMetric;
 
 ]
 ]
@@ -3022,20 +3037,20 @@ Protect[DefNormalFields];
 
 RulesNormalFields[h_?InducedMetricQ,order_?IntegerQ]:=Module[{},
 
-With[{M=ManifoldOfCovD@CovDOfMetric@First@InducedFrom@h,cd=CovDOfMetric@h,n=Last@InducedFrom@h,dn=d\[ScriptCapitalN][h]},
+With[{M=ManifoldOfCovD@CovDOfMetric@First@InducedFrom@h,cd=CovDOfMetric@h,n=Last@InducedFrom@h,dn=d\[ScriptCapitalN][h],N0=\[ScriptCapitalN]0[h]},
 
 With[{ind1=DummyIn@Tangent@M,ind2=DummyIn@Tangent@M},
 
 Flatten@Join[
 {BuildRule[Evaluate[{dn[ind1],n[ind1]}]]},
-
+{BuildRule[Evaluate[{N0[LI[0],LI[0]],1}]]},
 
 (* The perturbation of Subscript[n, \[Mu]] has no spatial components since it is proportionnal to Subscript[d\[Eta], \[Mu]] *)
 (* It is THIS PROPERTY which says that this vector, timelike, is the one normal to constant time hypersurfaces *)
 
 Table[
 BuildRule@Evaluate[{dn[LI[i],ind1],
-Evaluate[\[ScriptCapitalN]0[h][LI[i],LI[0]]n[ind1]]}],{i,1,order}]
+Evaluate[N0[LI[i],LI[0]]n[ind1]]}],{i,1,order}]
 
 (* We have to remember that dn is the perturbation of the normal vector when indices are down. These rules are defined with both positions of indices, so the down position is the correct one, and the up position menase raising with the background metric.*)
 
@@ -3045,7 +3060,7 @@ Evaluate[\[ScriptCapitalN]0[h][LI[i],LI[0]]n[ind1]]}],{i,1,order}]
 ]
 
 
-RulesFromProjectedRule[RulesNspat_,h_?InducedMetricQ,order_?IntegerQ]:=Module[{RuleBackgroundBoost,RuleBackgroundVelocity,RuleBoost,LocalRulesNspat,RuleBoostUpton,RulesBoostUptoOrder,X,res,nloc,debug,Boost,Nspatial},
+RulesForLapse[RulesNspat_,h_?InducedMetricQ,order_?IntegerQ]:=Module[{RuleBackgroundBoost,RuleBackgroundVelocity,RuleBoost,LocalRulesNspat,RuleBoostUpton,RulesBoostUptoOrder,res,nloc,debug,Boost,Nspatial},
 
 With[{g=First@InducedFrom@h,vector=\[ScriptCapitalN][h]},
 
@@ -3053,25 +3068,27 @@ With[{M=ManifoldOfCovD@CovDOfMetric@g},
 
 With[{ind1=DummyIn@Tangent@M,ind2=DummyIn@Tangent@M},
 
-Block[{Print},DefTensor[X[],M];];
-
 Boost=\[ScriptCapitalN]0[h];
 (*Nspatial=Nspat[h,vector];*)
 
 LocalRulesNspat=RulesNspat;
 
-RuleBackgroundBoost={};
+RuleBackgroundBoost={BuildRule[Evaluate[{Boost[LI[0],LI[0]],1}]]};
 
 RuleBoost[0]:=RuleBackgroundBoost;
 
 RuleBoostUpton[m_]:=Flatten@Table[ToCanonical@ContractMetric[RuleBoost[i]],{i,0,m}];
 
+(*
 RuleBoost[p_?(#>=1&)]:=(
 Boost[LI[p],LI[0]]:>Evaluate[ToCanonical@ContractMetric@PutScalar[(X[]/.First@IndexSolve[org[ExpandPerturbation@Perturbation[g[ind1,ind2]vector[-ind1]vector[-ind2],p]/.LocalRulesNspat/.Boost[LI[p],LI[0]]->X[]]==0,X[]])/.RuleBoostUpton[p-1]/.LocalRulesNspat]/.BackgroundFieldRule]);
+*)
 
-res=Join[RulesNspat/.RuleBoostUpton[order]];
+RuleBoost[p_?(#>=1&)]:=
+MakeRule[Evaluate[{Boost[LI[p],LI[0]],ToCanonical@ContractMetric@PutScalar[(Boost[LI[p],LI[0]]/.First@IndexSolve[org[ExpandPerturbation@Perturbation[g[ind1,ind2]vector[-ind1]vector[-ind2],p]/.LocalRulesNspat]==0,Boost[LI[p],LI[0]]])/.RuleBoostUpton[p-1]/.LocalRulesNspat]/.BackgroundFieldRule}]];
 
-Block[{Print},UndefTensor[X];];
+res=RuleBoostUpton[order];
+
 res
 
 ]
@@ -3080,12 +3097,17 @@ res
 ]
 
 
+RulesForPerturbedNormal[RulesNspat_,h_?InducedMetricQ,order_?IntegerQ]:=Join[RulesNspat/.RulesForLapse[RulesNormalFields[h,order],h,order]];
+
+
+
+
 SplitNormalVector[h_?InducedMetricQ,order_?IntegerQ]:=(
 If[Not[DefTensorQ[\[ScriptCapitalN]0[h]]]||Not[DefTensorQ[d\[ScriptCapitalN][h]]],Print["** Warning: The perturbed normal vector, or the fields required to parameterize its splitting were not previously defined **"];
 Print["** DefNormalFields is called to build the perturbation of the normal vector and the projected fields **"];
 DefNormalFields[h];
 ];
-RulesFromProjectedRule[RulesNormalFields[h,order],h,order]);
+Join[RulesForPerturbedNormal[RulesNormalFields[h,order],h,order],RulesForLapse[RulesNormalFields[h,order],h,order]]);
 
 
 SetNumberOfArguments[SplitNormalVector,{2}]
