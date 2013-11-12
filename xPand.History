@@ -16,5 +16,5 @@
 
 0.4.1: Version 0.4.1 incorporates bug fixes. The degeneracy in formating of the fluid variable variables when there is more than one fluid was fixed, we thank Enrico Pajer for reporting this bug. The bug associated with the commutation relation between the conformal time and spatial derivatives when there are dummy indices was also fixed.
 
-0.4.2: Version made compatible with version 1.1.0 of xTensor.
+0.4.2: Version made compatible with version 1.1.0 of xTensor. Very basic method to perturb the normal vector to constant time hypersurfaces.
  
