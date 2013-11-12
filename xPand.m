@@ -248,6 +248,9 @@ ExtractOrder::usage = "ExtractOrder[expr,order] displays the expression at order
 IndicesUp::usage = "IndicesUp[expr] raises the indices of all the tensors of 'expr' using the ambient metric.";
 IndicesDown::usage = "IndicesDown[expr] lowers the indices of all the tensors of 'expr' using the ambient inverse metric.";
 
+(********* This command was added in version 0.4.2. More documentation is needed and syntax can still evolve ********)
+SplitNormalVector::usage = "SplitNormalVector[h,order], where h is an induced metric, and order is the order up to which the perturbations of the normal vector should be computed in function of the perturbed metric. This outputs a list of rules, one for each order of perturbation of the normal vector";
+
 (********** The following command, SplitMatter, will have to be re-edited. **********)
 
 SplitMatter::usage = "SplitMatter[uf,ufpert,normuf,h,gauge,order,tiltspecification] builds the rules to split the perturbed four-velocity 'ufpert' (with index up) in a given 'gauge', and according to the background slicing associated with the induced metric 'h'. The rules are computed to the order 'order'. 
@@ -576,6 +579,17 @@ The default printed form of Lv[h][-index] is: '\!\(\*SubscriptBox[\(L\), \(index
 \[Epsilon]::usage = "\[Epsilon] is the default perturbation parameter. It is automatically defined when calling either the function DefMetricFields or the function DefMatterFields.";
 
 
+
+
+\[ScriptCapitalN]0::usage = "\[ScriptCapitalN]0[h][LI[p],LI[q]] is the time part of the perturbation of the normal vector to constant time hypersurfaces. It is automatically defined when calling SetSlicing";
+
+
+\[ScriptCapitalN]::usage = "\[ScriptCapitalN][h][index] is the normal vector to constant time hypersurfaces. It is automatically defined when calling SetSlicing. Though it is equal to n, where nis the vector normal to h on the background space-time, this definition allow manipulation of the normal vector, like perturbation, conformal transformations, which would be impossible with n since so many definitions are already automatized for it.";
+
+
+d\[ScriptCapitalN]::usage = "d\[ScriptCapitalN][h][LI[p],index] is the perturbation of normal vector to constant time hypersurfaces.";
+
+
 (*** RESERVED WORDS AND PROTECTED NAMES ***)
 
 (*Background::usage = "Reserved word. See DefProjectedTensor.";
@@ -640,7 +654,16 @@ xAct`xTensor`NoScalar[f_?ScalarFunctionQ[expr_]]:=f[NoScalar@expr]
 Protect[xAct`xTensor`NoScalar];
 
 (** To avoid complaints from MakeRule when the rule has already been defined and the lhs is zero. **)
-xAct`xTensor`MakeRule[{lhs_?(Evaluate[#]===0&),rhs_,conditions___},options:OptionsPattern[]]:={};
+(*xAct`xTensor`MakeRule[{lhs_?(Evaluate[#]===0&),rhs_,conditions___},options:OptionsPattern[]]:={};*)
+
+(* We create our own function based on MakeRule, but separating the special problematic case. This avoids overloading a definition from xTensor.
+It does not change the way xPand works, but that way, the code is clearly separated from xTensor. 
+This is much more polite way to modify the behaviour of xTensor. This method was advised by Leo Stein**)
+
+SetAttributes[BuildRule,HoldFirst]
+BuildRule[{lhs_?(Evaluate[#]===0&),rhs_,conditions___},options:OptionsPattern[]]:={};
+BuildRule[{lhs_,rhs_,conditions___}]:=MakeRule[{lhs,rhs,conditions}];
+BuildRule[{lhs_,rhs_,conditions___},options:OptionsPattern[]]:=MakeRule[{lhs,rhs,conditions},options];
 
 
 (*** DEFAULT OPTIONS AND PROTECTED NAMES ***)
@@ -706,24 +729,8 @@ xTensorFormStart[Tensor]
 
 (*** CONVENIENT FUNCTIONS TO BUILD RULES ***)
 
-PatternLeft[(left_:> right_),PositiveIntegerList_List]:=(left/.((#->Pattern[#,_])&/@ PositiveIntegerList)):>right
-(* The function PatternLeft adds a Blank (_) to any element of the list 'PositiveIntegerList' present in the left-hand side of the delayed rule 'left :> right'. 
-
-It is used for the definition of general automatical rules. The elements of 'PositiveIntegerList' are the arguments of the label-indices for the perturbed tensors, they must be positive integers. *)
-
-(********** The following command aims at extending the previous one. It does not work. What is the correct way to add tests? **********)
-
-(*
-PatternLeft[(left_:> right_),PositiveIntegerList_List]:=(left/.((#->Pattern[#,_Integer])&/@ PositiveIntegerList)):>right
-*)
-
-PatternLeftGeneral[(left_:> right_),ReplaceLists_List]:=(left/.((#[[1]]->#[[2]])&/@ ReplaceLists) ):>right
-(* The function PatternLeftGeneral replaces the elements of 'left' matching the first element of one of the lists given in 'ReplaceLists' by the second element of the same list. It is used for the definition of general AutomaticRules. 
-
-PatternLeftGeneral is a generalization of PatternLeft: 
-
-PatternLeftGeneral[(left :> right),{ {Element\[Degree]1,Pattern[Element\[Degree]1,_]}, ... , {Element\[Degree]n,Pattern[Element\[Degree]n,_]} }]
-= PatternLeft[(left :> right),{Element\[Degree]1, ... , Element\[Degree]n}] *)
+PatternLeft[(left_:> right_),ElementsToBePatterned_List]:=(left/.((#->Pattern[#,_])&/@ ElementsToBePatterned)):>right
+PatternLeft[(left_-> right_),ElementsToBePatterned_List]:=(left/.((#->Pattern[#,_])&/@ ElementsToBePatterned))->right
 
 
 (*** HANDLING EXPRESSIONS ***)
@@ -987,18 +994,6 @@ If[$ConformalTime,1,1/a[h][]]*(LieD[n[Dummy1]][ToCan[Name[LI[p],LI[q-1],indices1
  
 ]/;( Length[Join[{indices1},{indices2},{indices3}]]+2===Length[{inds}]);
 
-(*
-
-Name/:Name[LI[p_?((IntegerQ[#] && #>=0) &)],LI[q_?((IntegerQ[#] && #>=0) &)],indices1___,Dum1_,indices2___,Dum2_,indices3___]g[-Dum1_,-Dum2_]:=0 /;( Length[Join[{indices1},{indices2},{indices3}]]+2===Length[{inds}]);
-
-Name/:Name[LI[p_?((IntegerQ[#] && #>=0) &)],LI[q_?((IntegerQ[#] && #>=0) &)],indices1___,Dum1_,indices2___,Dum2_,indices3___]g[-Dum2_,-Dum1_]:=0 /;( Length[Join[{indices1},{indices2},{indices3}]]+2===Length[{inds}]);
-
-Name/:Name[LI[p_?((IntegerQ[#] && #>=0) &)],LI[q_?((IntegerQ[#] && #>=0) &)],indices1___,-Dum1_,indices2___,-Dum2_,indices3___]g[Dum1_,Dum2_]:=0 /;( Length[Join[{indices1},{indices2},{indices3}]]+2===Length[{inds}]);
-
-Name/:Name[LI[p_?((IntegerQ[#] && #>=0) &)],LI[q_?((IntegerQ[#] && #>=0) &)],indices1___,-Dum1_,indices2___,-Dum2_,indices3___]g[Dum2_,Dum1_]:=0 /;( Length[Join[{indices1},{indices2},{indices3}]]+2===Length[{inds}]);
-
-*)
-
 ];
 
 
@@ -1146,16 +1141,7 @@ Name/:Name[LI[p_?((IntegerQ[#] && #>=0) &)],LI[q_?((IntegerQ[#] && #>=0) &)],ind
 Name/:Name[LI[p_?((IntegerQ[#] && #>=0) &)],LI[q_?((IntegerQ[#] && #>=0) &)],indices1___,-Dum_,indices2___]n[Dum_]:=0 /;( Length[Join[{indices1},{indices2}]]+1===Length[{inds}]);
 
 (* and the action of the projector onto the hypersurfaces is an invariant operation: *)
-(* On background quantities we contract automatically *)
-
-(* Old Implementation *)
-(*Name/:Name[LI[p_?((IntegerQ[#] && #>=0) &)],LI[0],indices1___,Dum1_,indices2___]h[-Dum1_,Dum2_]:=Name[LI[p],LI[0],indices1,Dum2,indices2] /;( Length[Join[{indices1},{indices2}]]+1===Length[{inds}]);
-
-Name/:Name[LI[p_?((IntegerQ[#] && #>=0) &)],LI[0],indices1___,Dum1_,indices2___]h[Dum2_,-Dum1_]:=Name[LI[p],LI[0],indices1,Dum2,indices2] /;( Length[Join[{indices1},{indices2}]]+1===Length[{inds}]);
-
-Name/:Name[LI[p_?((IntegerQ[#] && #>=0) &)],LI[0],indices1___,-Dum1_,indices2___]h[Dum1_,Dum2_]:=Name[LI[p],LI[0],indices1,Dum2,indices2] /;( Length[Join[{indices1},{indices2}]]+1===Length[{inds}]);
-
-Name/:Name[LI[p_?((IntegerQ[#] && #>=0) &)],LI[0],indices1___,-Dum1_,indices2___]h[Dum2_,Dum1_]:=Name[LI[p],LI[0],indices1,Dum2,indices2] /;( Length[Join[{indices1},{indices2}]]+1===Length[{inds}]);*)
+(* However this is left to post processing that's why we load this rule into $Rulecdh *)
 
 $Rulecdh[h]=Append[$Rulecdh[h],
 Name[LI[p_?((IntegerQ[#] && #>=0) &)],LI[0],indices1___,Dum1_,indices2___]h[-Dum1_,-Dum2_]:>Name[LI[p],LI[0],indices1,-Dum2,indices2] /;( Length[Join[{indices1},{indices2}]]+1===Length[{inds}])];
@@ -1163,11 +1149,6 @@ Name[LI[p_?((IntegerQ[#] && #>=0) &)],LI[0],indices1___,Dum1_,indices2___]h[-Dum
 $Rulecdh[h]=Append[$Rulecdh[h],
 Name[LI[p_?((IntegerQ[#] && #>=0) &)],LI[0],indices1___,-Dum1_,indices2___]h[Dum1_?UpIndexQ,Dum2_?UpIndexQ]:>Name[LI[p],LI[0],indices1,Dum2,indices2] /;( Length[Join[{indices1},{indices2}]]+1===Length[{inds}])];
 
-(*Name/:Name[LI[p_?((IntegerQ[#] && #>=0) &)],LI[0],indices1___,Dum1_,indices2___]h[Dum2_,-Dum1_]:=Name[LI[p],LI[0],indices1,Dum2,indices2] /;( Length[Join[{indices1},{indices2}]]+1===Length[{inds}]);
-
-Name/:Name[LI[p_?((IntegerQ[#] && #>=0) &)],LI[0],indices1___,-Dum1_,indices2___]h[Dum1_,Dum2_]:=Name[LI[p],LI[0],indices1,Dum2,indices2] /;( Length[Join[{indices1},{indices2}]]+1===Length[{inds}]);
-
-Name/:Name[LI[p_?((IntegerQ[#] && #>=0) &)],LI[0],indices1___,-Dum1_,indices2___]h[Dum2_,Dum1_]:=Name[LI[p],LI[0],indices1,Dum2,indices2] /;( Length[Join[{indices1},{indices2}]]+1===Length[{inds}]);*)
 
 Name/:Name[LI[p_?((IntegerQ[#] && #>=0) &)],LI[0],indices1___,Dum1_,indices2___]h[-Dum1_,Dum2_?UpIndexQ]:=Name[LI[p],LI[0],indices1,Dum2,indices2] /;( Length[Join[{indices1},{indices2}]]+1===Length[{inds}]);
 
@@ -1176,18 +1157,6 @@ Name/:Name[LI[p_?((IntegerQ[#] && #>=0) &)],LI[0],indices1___,Dum1_,indices2___]
 Name/:Name[LI[p_?((IntegerQ[#] && #>=0) &)],LI[0],indices1___,-Dum1_,indices2___]h[Dum1_,-Dum2_]:=Name[LI[p],LI[0],indices1,-Dum2,indices2] /;( Length[Join[{indices1},{indices2}]]+1===Length[{inds}]);
 
 Name/:Name[LI[p_?((IntegerQ[#] && #>=0) &)],LI[0],indices1___,-Dum1_,indices2___]h[-Dum2_,Dum1_]:=Name[LI[p],LI[0],indices1,-Dum2,indices2] /;( Length[Join[{indices1},{indices2}]]+1===Length[{inds}]);
-
-(*
-prot=Unprotect[cd];
-cd/:cd[a_]@Name[LI[p_?((IntegerQ[#] && #>=0) &)],LI[0],indices1___,Dum1_,indices2___]h[-Dum1_,Dum2_]:=cd[a]@Name[LI[p],LI[0],indices1,Dum2,indices2] /;( Length[Join[{indices1},{indices2}]]+1===Length[{inds}]);
-
-cd/:cd[a_]@Name[LI[p_?((IntegerQ[#] && #>=0) &)],LI[0],indices1___,Dum1_,indices2___]h[Dum2_,-Dum1_]:=cd[a]@Name[LI[p],LI[0],indices1,Dum2,indices2] /;( Length[Join[{indices1},{indices2}]]+1===Length[{inds}]);
-
-cd/:cd[a_]@Name[LI[p_?((IntegerQ[#] && #>=0) &)],LI[0],indices1___,-Dum1_,indices2___]h[Dum1_,Dum2_]:=cd[a]@Name[LI[p],LI[0],indices1,Dum2,indices2] /;( Length[Join[{indices1},{indices2}]]+1===Length[{inds}]);
-
-cd/:cd[a_]@Name[LI[p_?((IntegerQ[#] && #>=0) &)],LI[0],indices1___,-Dum1_,indices2___]h[Dum2_,Dum1_]:=cd[a]@Name[LI[p],LI[0],indices1,Dum2,indices2] /;( Length[Join[{indices1},{indices2}]]+1===Length[{inds}]);
-Protect[prot];
-*)
 
 (* When there are Lie derivatives, h contracted automatically only when the free index is down. Otherwise it requires ContractMetric to perform contraction *)
 
@@ -1254,7 +1223,6 @@ If[$ConformalTime,1,1/a[h][]]*LieD[n[Dummy1]][cd[Dum][Name[LI[p],LI[q-1],indices
 ]
 
 ]/;( Length[Join[{indices1},{indices2}]]+1===Length[{inds}]);
-(* apply. We have denoted by 'n' the vector normal to the hypersurfaces. The commutator [.,.] is handle automatically by another automatic rule. *)
 
 (* If the indices are not down, we separate them. In practice this happens almost never... *)
 (* This is for the case where we have at least one derivative, for which the meaning is only when the index is down.*)
@@ -1396,18 +1364,6 @@ If[$ConformalTime,1,1/a[h][]]*(LieD[n[Dummy1]][ToCan[Name[LI[p],LI[q-1],indices1
  
 ];
 
-(*
-
-Name/:Name[LI[p_?((IntegerQ[#] && #>=0) &)],LI[q_?((IntegerQ[#] && #>=0) &)],indices1___,Dum1_,indices2___,Dum2_,indices3___]g[-Dum1_,-Dum2_]:=0;
-
-Name/:Name[LI[p_?((IntegerQ[#] && #>=0) &)],LI[q_?((IntegerQ[#] && #>=0) &)],indices1___,Dum1_,indices2___,Dum2_,indices3___]g[-Dum2_,-Dum1_]:=0;
-
-Name/:Name[LI[p_?((IntegerQ[#] && #>=0) &)],LI[q_?((IntegerQ[#] && #>=0) &)],indices1___,-Dum1_,indices2___,-Dum2_,indices3___]g[Dum1_,Dum2_]:=0;
-
-Name/:Name[LI[p_?((IntegerQ[#] && #>=0) &)],LI[q_?((IntegerQ[#] && #>=0) &)],indices1___,-Dum1_,indices2___,-Dum2_,indices3___]g[Dum2_,Dum1_]:=0;
-
-*)
-
 ];
 
 
@@ -1527,15 +1483,6 @@ Name/:Name[LI[p_?((IntegerQ[#] && #>=0) &)],LI[q_?((IntegerQ[#] && #>=0) &)],ind
 Name/:Name[LI[p_?((IntegerQ[#] && #>=0) &)],LI[q_?((IntegerQ[#] && #>=0) &)],indices1___,-Dum_,indices2___]n[Dum_]:=0;
 
 (* and the action of the projector onto the hypersurfaces is an invariant operation: *)
-(* Old implementation *)
-(*
-Name/:Name[LI[p_?((IntegerQ[#] && #>=0) &)],LI[0],indices1___,Dum1_,indices2___]h[-Dum1_,Dum2_]:=Name[LI[p],LI[0],indices1,Dum2,indices2] ;
-
-Name/:Name[LI[p_?((IntegerQ[#] && #>=0) &)],LI[0],indices1___,Dum1_,indices2___]h[Dum2_,-Dum1_]:=Name[LI[p],LI[0],indices1,Dum2,indices2];
-
-Name/:Name[LI[p_?((IntegerQ[#] && #>=0) &)],LI[0],indices1___,-Dum1_,indices2___]h[Dum1_,Dum2_]:=Name[LI[p],LI[0],indices1,Dum2,indices2];
-
-Name/:Name[LI[p_?((IntegerQ[#] && #>=0) &)],LI[0],indices1___,-Dum1_,indices2___]h[Dum2_,Dum1_]:=Name[LI[p],LI[0],indices1,Dum2,indices2];*)
 
 $Rulecdh[h]=Append[$Rulecdh[h],
 Name[LI[p_?((IntegerQ[#] && #>=0) &)],LI[0],indices1___,Dum1_,indices2___]h[-Dum1_,-Dum2_]:>Name[LI[p],LI[0],indices1,-Dum2,indices2] ];
@@ -1644,7 +1591,6 @@ Name/:cd[-Dum_][Name[LI[p_?((IntegerQ[#] && #>=1) &)],LI[q_?((IntegerQ[#] && #>=
 g[indup,Dummy]cd[-Dum][Name[LI[p],LI[q],indices1,Dum,indices3,-Dummy,indices2]]
 
 ];
-(* apply. We have denoted by 'n' the vector normal to the hypersurfaces. The commutator [.,.] is handle automatically by another automatic rule. *)
 
 ];
 
@@ -1741,6 +1687,7 @@ i4=DummyIn[Tangent[Manifold]],
 i5=DummyIn[Tangent[Manifold]],
 dummy=DummyIn[Tangent[Manifold]],
 ah=a[h],Hh=H[h],
+NNh=NN[h],dnh=dn[h],
 avh=av[h],nth=nt[h],
 CSh=CS[h]},
 
@@ -1756,8 +1703,8 @@ Off[DefMetric::old];(* Annoying message turned off*)
 DefMetric[1,h[-ind1,-ind2],cd,{cdpost,cdpre},InducedFrom->{g,u},PrintAs->"\!\("<>ToString[h]<>"\&-\)"];
 
 (* Maybe not so useful...*)
-AutomaticRules[h,MakeRule[{g[ind1,ind2]h[-ind2,-ind3],h[ind1,-ind3]}]];
-AutomaticRules[h,MakeRule[{g[-ind1,-ind2]h[ind2,ind3],h[-ind1,ind3]}]];
+AutomaticRules[h,BuildRule[{g[ind1,ind2]h[-ind2,-ind3],h[ind1,-ind3]}]];
+AutomaticRules[h,BuildRule[{g[-ind1,-ind2]h[ind2,ind3],h[-ind1,ind3]}]];
 
 On[DefMetric::old];
 
@@ -1790,12 +1737,9 @@ cd[i1_][g[ind1_,ind2_]]:=0;*)
 cd[_?GIndexQ][expr_]:=Throw@Message[Validate::error,"Induced derivative acting on non-projected expression."]/;Not@OrthogonalToVectorQ[u][expr];
 
 cd[i1_][x_  y_]:=cd[i1][Expand@GradNormalToExtrinsicK@Expand[InducedDecomposition[x,{h,u}]InducedDecomposition[y,{h,u}]]]/;Head@x=!=g&&Head@y=!=g&&OrthogonalToVectorQ[u][x y];*)
-
 (********)
-
-
-
 (* ******* End of Patch *)
+
 
 SpaceType[h]^=SpaceTimeType;
 
@@ -1805,13 +1749,17 @@ SpaceType[h]^=SpaceTimeType;
 
 (* The acceleration should vanish for homogeneous spacetimes.*)
 Acceleration[u][ind1_] = 0;
-AutomaticRules[u,MakeRule[{u[ind1]u[-ind1],normu}]];
-AutomaticRules[u,MakeRule[{u[-ind1]g[ind1,ind2],u[ind2]}]];
-AutomaticRules[u,MakeRule[{g[ind1,ind2]u[-ind2]u[-ind1],normu}]];
+AutomaticRules[u,BuildRule[{u[ind1]u[-ind1],normu}]];
+AutomaticRules[u,BuildRule[{u[-ind1]g[ind1,ind2],u[ind2]}]];
+AutomaticRules[u,BuildRule[{g[ind1,ind2]u[-ind2]u[-ind1],normu}]];
 If[IntegerQ@dim&&dim>=2,
 indsdim=GetIndicesOfVBundle[Tangent@Manifold,dim,{ind5}];
-AutomaticRules[epsilon[g],MakeRule[Evaluate[{epsilon[g]@@indsdim u[-indsdim[[1]]]h[-indsdim[[2]],ind5],ReplaceIndex[Evaluate[epsilon[g]@@indsdim],indsdim[[2]]-> ind5] u[-indsdim[[1]]]}]]];
+AutomaticRules[epsilon[g],BuildRule[Evaluate[{epsilon[g]@@indsdim u[-indsdim[[1]]]h[-indsdim[[2]],ind5],ReplaceIndex[Evaluate[epsilon[g]@@indsdim],indsdim[[2]]-> ind5] u[-indsdim[[1]]]}]]];
 ];
+
+
+(* We define the perturbation of the normal vector *)
+DefNormalFields[h];
 
 (* We define a[h] the scale factor associated to h, and the Hubble factor related.*)
 (DefProjectedTensor[#[[1]],h,SpaceTimesOfDefinition->{"Background"},TensorProperties->{"Traceless","Transverse","SymmetricTensor"},PrintAs->#[[2]]])&/@$ListFieldsBackgroundOnly[h];
@@ -1839,12 +1787,15 @@ DefConformalMetric[g,ah];
 cd[_][$PerturbationParameter]=0;
 
 (* The vector used for the background slicing is indeed backgorund so should not be perturbed *)
+(* However if we want to be able to perturb the normal tensor.*)
+(* In order to do so, we will use the vector NN[h] which the vector normal to constant time hypersurfaces at the perturbed level*)
+(* See the section devoted to the perturbation of the normal vector.*)
 Perturbation[u[ind1_],n_]^:=0/;n>=1;
 
 
 (* Lie Derivatives of metric with up indices should be automatic*)
-AutomaticRules[g,MakeRule[Evaluate[{LieD[u[dummy]][g[ind1,ind2]],LieD[u[dummy]][g[ind1,ind2]]//MetricToProjector[#,h]&}],MetricOn->None]];
-AutomaticRules[g,MakeRule[Evaluate[{LieD[u[dummy]][g[-ind1,-ind2]],LieD[u[dummy]][g[-ind1,-ind2]]//MetricToProjector[#,h]&}],MetricOn->None]];
+AutomaticRules[g,BuildRule[Evaluate[{LieD[u[dummy]][g[ind1,ind2]],LieD[u[dummy]][g[ind1,ind2]]//MetricToProjector[#,h]&}],MetricOn->None]];
+AutomaticRules[g,BuildRule[Evaluate[{LieD[u[dummy]][g[-ind1,-ind2]],LieD[u[dummy]][g[-ind1,-ind2]]//MetricToProjector[#,h]&}],MetricOn->None]];
 
 
 DefTensor[Connection[h][-ind1,-ind2,-ind3],{Manifold},Antisymmetric[{-ind1,-ind3}],OrthogonalTo->{u[ind1],u[ind2],u[ind3]},ProjectedWith->{h[ind1,-ind4],h[ind2,-ind5],h[ind3,-ind6]},PrintAs->StringJoin["\[CapitalGamma]",ToString[h]]] ;
@@ -1859,7 +1810,7 @@ DefTensor[avh[-ind1],{Manifold},OrthogonalTo->{u[ind1]},ProjectedWith->{h[ind1,-
 
 If[SpaceTimeType==="BianchiA",
 avh[ind1_]=0;,
-AutomaticRules[avh,MakeRule[Evaluate[{avh[ind1]nth[-ind1,-ind2],0}]]];
+AutomaticRules[avh,BuildRule[Evaluate[{avh[ind1]nth[-ind1,-ind2],0}]]];
 ];
 ];
 
@@ -1887,24 +1838,24 @@ If[dim===4,CSh[ind1_,ind2_,ind3_]:=2Sqrt[\[ScriptK][h][]]epsilon[h][ind1,ind2,in
 (BianchiBool@SpaceTimeType)&&(Not@FlatSpaceBool@SpaceTimeType),
 (* Lie derivatives of the constants of structure in general Bianchi cases It is 0 when indices are in position Subscript[(C^i), jk] .*)
 (* We are exhaustive. Maybe there is  simpler way to write it.*)
-AutomaticRules[CSh,MakeRule[Evaluate[{LieD[u[ind1]][CSh[ind2,-ind3,-ind4]],0}],MetricOn->None]];
+AutomaticRules[CSh,BuildRule[Evaluate[{LieD[u[ind1]][CSh[ind2,-ind3,-ind4]],0}],MetricOn->None]];
 
-AutomaticRules[CSh,MakeRule[Evaluate[{LieD[u[ind1]][CSh[-ind2,-ind3,-ind4]],ToCanonical@ContractMetric[LieD[u[ind1]][g[-ind2,-ind5]]CSh[ind5,-ind3,-ind4]//MetricToProjector[#,h]&]}],MetricOn->None]];
+AutomaticRules[CSh,BuildRule[Evaluate[{LieD[u[ind1]][CSh[-ind2,-ind3,-ind4]],ToCanonical@ContractMetric[LieD[u[ind1]][g[-ind2,-ind5]]CSh[ind5,-ind3,-ind4]//MetricToProjector[#,h]&]}],MetricOn->None]];
 
-AutomaticRules[CSh,MakeRule[Evaluate[{LieD[u[ind1]][CSh[ind2,-ind3,ind4]],ToCanonical@ContractMetric[LieD[u[ind1]][g[ind4,ind6]]CSh[ind2,-ind3,-ind6]//MetricToProjector[#,h]&]}],MetricOn->None]];
+AutomaticRules[CSh,BuildRule[Evaluate[{LieD[u[ind1]][CSh[ind2,-ind3,ind4]],ToCanonical@ContractMetric[LieD[u[ind1]][g[ind4,ind6]]CSh[ind2,-ind3,-ind6]//MetricToProjector[#,h]&]}],MetricOn->None]];
 
-AutomaticRules[CSh,MakeRule[Evaluate[{LieD[u[ind1]][CSh[ind2,ind3,-ind4]],ToCanonical@ContractMetric[LieD[u[ind1]][g[ind3,ind5]]CSh[ind2,-ind5,-ind4]//MetricToProjector[#,h]&]}],MetricOn->None]];
+AutomaticRules[CSh,BuildRule[Evaluate[{LieD[u[ind1]][CSh[ind2,ind3,-ind4]],ToCanonical@ContractMetric[LieD[u[ind1]][g[ind3,ind5]]CSh[ind2,-ind5,-ind4]//MetricToProjector[#,h]&]}],MetricOn->None]];
 
-AutomaticRules[CSh,MakeRule[Evaluate[{LieD[u[ind1]][CSh[-ind2,ind3,-ind4]],ToCanonical@ContractMetric[LieD[u[ind1]][g[ind3,ind5]]g[-ind6,-ind2]CSh[ind6,-ind5,-ind4]+g[ind3,ind5]LieD[u[ind1]][g[-ind6,-ind2]]CSh[ind6,-ind5,-ind4]//MetricToProjector[#,h]&]}],MetricOn->None]];
+AutomaticRules[CSh,BuildRule[Evaluate[{LieD[u[ind1]][CSh[-ind2,ind3,-ind4]],ToCanonical@ContractMetric[LieD[u[ind1]][g[ind3,ind5]]g[-ind6,-ind2]CSh[ind6,-ind5,-ind4]+g[ind3,ind5]LieD[u[ind1]][g[-ind6,-ind2]]CSh[ind6,-ind5,-ind4]//MetricToProjector[#,h]&]}],MetricOn->None]];
 
-AutomaticRules[CSh,MakeRule[Evaluate[{LieD[u[ind1]][CSh[-ind2,-ind4,ind3]],ToCanonical@ContractMetric[LieD[u[ind1]][g[ind3,ind5]]g[-ind6,-ind2]CSh[ind6,-ind4,-ind5]+g[ind3,ind5]LieD[u[ind1]][g[-ind6,-ind2]]CSh[ind6,-ind4,-ind5]//MetricToProjector[#,h]&]}],MetricOn->None]];
+AutomaticRules[CSh,BuildRule[Evaluate[{LieD[u[ind1]][CSh[-ind2,-ind4,ind3]],ToCanonical@ContractMetric[LieD[u[ind1]][g[ind3,ind5]]g[-ind6,-ind2]CSh[ind6,-ind4,-ind5]+g[ind3,ind5]LieD[u[ind1]][g[-ind6,-ind2]]CSh[ind6,-ind4,-ind5]//MetricToProjector[#,h]&]}],MetricOn->None]];
 
-AutomaticRules[CSh,MakeRule[Evaluate[{LieD[u[ind1]][CSh[-ind2,ind3,ind4]],
+AutomaticRules[CSh,BuildRule[Evaluate[{LieD[u[ind1]][CSh[-ind2,ind3,ind4]],
 ToCanonical@ContractMetric[LieD[u[ind1]][g[ind3,ind5]]g[-ind6,-ind2]g[ind4,ind7]CSh[ind6,-ind5,-ind7]
 +g[ind3,ind5]LieD[u[ind1]][g[-ind6,-ind2]]g[ind4,ind7]CSh[ind6,-ind5,-ind7]
 +g[ind3,ind5]g[-ind6,-ind2]LieD[u[ind1]][g[ind4,ind7]]CSh[ind6,-ind5,-ind7]//MetricToProjector[#,h]&]}],MetricOn->None]];
 
-AutomaticRules[CSh,MakeRule[Evaluate[{LieD[u[ind1]][CSh[ind2,ind3,ind4]],
+AutomaticRules[CSh,BuildRule[Evaluate[{LieD[u[ind1]][CSh[ind2,ind3,ind4]],
 ToCanonical@ContractMetric[LieD[u[ind1]][g[ind3,ind5]]g[ind4,ind6]CSh[ind2,-ind5,-ind6]
 +g[ind3,ind5]LieD[u[ind1]][g[ind4,ind6]]CSh[ind2,-ind5,-ind6]//MetricToProjector[#,h]&]}],MetricOn->None]];
 ];
@@ -1919,13 +1870,11 @@ IndexSet[Riemann[cd][i1_,i2_,i3_,i4_],\[ScriptK][h][](h[i1,i3]h[i2,i4]-h[i1,i4]h
 IndexSet[Ricci[cd][i1_,i2_],\[ScriptK][h][]h[i1,i2](h[i3,-i3]-1)];
 IndexSet[RicciScalar[cd][],\[ScriptK][h][]h[i1,-i1](h[i3,-i3]-1)];,
 
-(* Rieman Ricci and RicciScalar tensors*)
-(*IndexSet[Riemann[cd][i1_,i2_,i3_,i4_], ToCanonical@ContractMetric[-Connection[h][i5,i3,i2]Connection[h][i1,i4,-i5]+Connection[h][i5,i4,i2]Connection[h][i1,i3,-i5]-CSh[i5,i3,i4]Connection[h][i1,-i5,i2]]];
-IndexSet[Ricci[cd][i1_,i3_], ToCanonical@ContractMetric[h[-i2,-i4](-Connection[h][i5,i3,i2]Connection[h][i1,i4,-i5]+Connection[h][i5,i4,i2]Connection[h][i1,i3,-i5]-CSh[i5,i3,i4]Connection[h][i1,-i5,i2])]];
-IndexSet[RicciScalar[cd][], ToCanonical@ContractMetric[h[-i2,-i4]h[-i1,-i3](-Connection[h][i5,i3,i2]Connection[h][i1,i4,-i5]+Connection[h][i5,i4,i2]Connection[h][i1,i3,-i5]-CSh[i5,i3,i4]Connection[h][i1,-i5,i2])]];*)
-ConstantsOfStructureRules[h]=Flatten@Join[MakeRule[Evaluate[{Riemann[cd][i1,i2,i3,i4], ToCanonical@ContractMetric[(-Connection[h][i5,i3,i2]Connection[h][i1,i4,-i5]+Connection[h][i5,i4,i2]Connection[h][i1,i3,-i5]-CSh[i5,i3,i4]Connection[h][i1,-i5,i2])(*/.ConstantsDecompositionRules[h]*)]}]],
-MakeRule[Evaluate[{Ricci[cd][i1,i3], ToCanonical@ContractMetric[(h[-i2,-i4](-Connection[h][i5,i3,i2]Connection[h][i1,i4,-i5]+Connection[h][i5,i4,i2]Connection[h][i1,i3,-i5]-CSh[i5,i3,i4]Connection[h][i1,-i5,i2]))(*/.ConstantsDecompositionRules[h]*)]}]],
-MakeRule[Evaluate[{RicciScalar[cd][], ToCanonical@ContractMetric[(h[-i2,-i4]h[-i1,-i3](-Connection[h][i5,i3,i2]Connection[h][i1,i4,-i5]+Connection[h][i5,i4,i2]Connection[h][i1,i3,-i5]-CSh[i5,i3,i4]Connection[h][i1,-i5,i2]))(*/.ConstantsDecompositionRules[h]*)]}]]
+(* Rieman, Ricci and RicciScalar tensors. We build rules to express them in terms of constants of structure. *)
+
+ConstantsOfStructureRules[h]=Flatten@Join[BuildRule[Evaluate[{Riemann[cd][i1,i2,i3,i4], ToCanonical@ContractMetric[(-Connection[h][i5,i3,i2]Connection[h][i1,i4,-i5]+Connection[h][i5,i4,i2]Connection[h][i1,i3,-i5]-CSh[i5,i3,i4]Connection[h][i1,-i5,i2])(*/.ConstantsDecompositionRules[h]*)]}]],
+BuildRule[Evaluate[{Ricci[cd][i1,i3], ToCanonical@ContractMetric[(h[-i2,-i4](-Connection[h][i5,i3,i2]Connection[h][i1,i4,-i5]+Connection[h][i5,i4,i2]Connection[h][i1,i3,-i5]-CSh[i5,i3,i4]Connection[h][i1,-i5,i2]))(*/.ConstantsDecompositionRules[h]*)]}]],
+BuildRule[Evaluate[{RicciScalar[cd][], ToCanonical@ContractMetric[(h[-i2,-i4]h[-i1,-i3](-Connection[h][i5,i3,i2]Connection[h][i1,i4,-i5]+Connection[h][i5,i4,i2]Connection[h][i1,i3,-i5]-CSh[i5,i3,i4]Connection[h][i1,-i5,i2]))(*/.ConstantsDecompositionRules[h]*)]}]]
 ];
 
 ];
@@ -1944,7 +1893,6 @@ ExtrinsicK[h][i1_,i2_]=0;Evaluate[K[h]][LI[0],LI[0],i1_,i2_]=0;];
 
 (* Commutation of Lie and Partial derivatives. Very important here. See draft for the formula which is implemented...*)
 Unprotect[LieD];
-
 (* A revoir... This is to commute Lie and induced derivative when the indices are up. Basically it just ensure that indices should be put down.*)
 
 (* The code below was reported not to work when there was a contraction of indices*)
@@ -1957,9 +1905,6 @@ Unprotect[LieD];
 (* This sound like a stupid pathc rather than something deeply thought*)
 (* We basically introduce the metric by hand in order to lower the up index in the Laplacian. Then it goes through the Lie Derivative*)
 (*  So we treat this special case by hand.*)
-
-
-
 
 LieD[u[ind1_]][cd[ind2_][cd[-ind2_][expr1_]]]:=Module[{dum},dum=DummyIn[Tangent[Manifold]];
 ContractMetric[LieD[u[ind1]][g[dum,ind2]]cd[-dum][cd[-ind2][expr1]]
@@ -1974,9 +1919,6 @@ ContractMetric[LieD[u[ind1]][g[dum,ind2]]cd[-dum][cd[-ind2][expr1]]
 
 LieD[u[ind1_]][cd[ind2_][expr1_]]:=LieD[u[ind1]][IndicesDown[cd[ind2][expr1] ] ]/;Length[IndicesOf[Free,Up][cd[ind2][expr1]]]=!=0&&OrthogonalToVectorQ[u][expr1]&&Abs[u[ind1]u[-ind1]]===1;
 
-(*** This part created a bug on the version 1.1.0 of xTensor ***)
-(*** A modification  was required to solve it ***)
-
 LieD[u[ind1_]][cd[ind2_?DownIndexQ][expr1_]]:=Module[{dum},dum=DummyIn[Tangent[Manifold]];
 With[{frees=FindFreeIndices[expr1]},
 ToCanonical[
@@ -1988,82 +1930,67 @@ ToCanonical[
 )
 ,UseMetricOnVBundle->None]]]/;Length[IndicesOf[Free,Up][expr1]]===0&&OrthogonalToVectorQ[u][expr1]&&Abs[u[ind1]u[-ind1]]===1;
 Protect[LieD];
-(***  ***)
 
-
-
-(* OLD Stuff *)
-(* The only CovD that I think should be automatic. It is the CovD on extrinsic curvature. *)
-(* However, it clearly creates problems so I remove the automaticity *)
-
-(*
-If[AnisotropyBool@SpaceTimeType||BianchiBool@SpaceTimeType,
-AutomaticRules[Evaluate[K[h]],PatternLeft[#,{q}]&/@
-MakeRule[Evaluate[{CD[ind1][K[h][LI[0],LI[q],ind2,ind3]],
-ToCanonical[ContractMetric[ToInducedDerivative[IndicesDown[CD[ind1][K[h][LI[0],LI[q],ind2,ind3]]],CD,cd]//GradNormalToExtrinsicK]]}]]];
-];
-*)
-(* *** *)
 
 If[(BianchiBool@SpaceTimeType)&&(Not@FlatSpaceBool@SpaceTimeType),
 (* Automatic rules for the gradients of the constants of structure. I should define one function only to define these rules since it is also called in the DefSTFTensor... Here I keep the way it was implemented in the first version*)
 AutomaticRules[CSh,
-MakeRule[Evaluate[{cd[ind1][CSh[ind2,ind3,ind4]],ToCanonical[
+BuildRule[Evaluate[{cd[ind1][CSh[ind2,ind3,ind4]],ToCanonical[
 (* Minus the connection for down indices *)
 -Plus@@((Connection[h][dummy,ind1,#] ReplaceIndex[CSh[ind2,ind3,ind4],#->-dummy])&/@{ind2,ind3,ind4})]
 }]]];
 
 (* From this, the n+1 splitting of Covariant derivatives is obvious. *)
 AutomaticRules[CSh,
-MakeRule[Evaluate[{CD[ind1][CSh[ind2,ind3,ind4]],
+BuildRule[Evaluate[{CD[ind1][CSh[ind2,ind3,ind4]],
 ToCanonical[ContractMetric[ToInducedDerivative[IndicesDown[CD[ind1][CSh[ind2,ind3,ind4]]],CD,cd]//GradNormalToExtrinsicK]]}]]];
 
 (* TODO Finish correctly this part *)
-(* Incomplete here for the Rieman induced. One should enforce the splitting and also the treatment of Lie derivative...*)
+(* It should work as it is, but it might not be optimal in terms of computatiomal time *)
+(* When doing the 1+3 splitting of the covariant derivative acting on the 3D riemann tensor, there are Lie derivatives. *)
+(* These are handled because the 3D Riemann tensor is eventually replaced by constants of structure and for the constants of structure we have defined what the Lie derivatives should give. *)
+(* So all rules are there, but this might not be optimal in terms of compyutational time because the optimal way would be to rpecompute the Lie derivative on 3D riemann, without having to rely on constants of structure.*)
 
-
-
-(* The most important part: induced derivatives on Riemann and Ricci. *)
 AutomaticRules[Evaluate[Riemann[cd]],
-MakeRule[Evaluate[{cd[ind1][Riemann[cd][ind2,ind3,ind4,ind5]],ToCanonical[
+BuildRule[Evaluate[{cd[ind1][Riemann[cd][ind2,ind3,ind4,ind5]],ToCanonical[
 (* Minus the connection for down indices *)
 -Plus@@((Connection[h][dummy,ind1,#] ReplaceIndex[Evaluate[Riemann[cd][ind2,ind3,ind4,ind5]],#->-dummy])&/@{ind2,ind3,ind4,ind5})]
 }]]];
 
 AutomaticRules[Evaluate[Ricci[cd]],
-MakeRule[Evaluate[{cd[ind1][Ricci[cd][ind2,ind3]],ToCanonical[
+BuildRule[Evaluate[{cd[ind1][Ricci[cd][ind2,ind3]],ToCanonical[
 (* Minus the connection for down indices *)
 -Plus@@((Connection[h][dummy,ind1,#] ReplaceIndex[Evaluate[Ricci[cd][ind2,ind3]],#->-dummy])&/@{ind2,ind3})]
 }]]];
 
 AutomaticRules[Evaluate[RicciScalar[cd]],
-MakeRule[Evaluate[{cd[ind1][RicciScalar[cd][]],0}]]];
+BuildRule[Evaluate[{cd[ind1][RicciScalar[cd][]],0}]]];
 
 
 (* 3+1 splitting of CD on Riemann and Ricci. Should never be used in general unless the user wants to split CD[Riemann]. Very unlikely. *)
-(* I comment out for the moment but it should be all right *)
 AutomaticRules[Evaluate[Riemann[cd]],
-MakeRule[Evaluate[{CD[ind1][Riemann[cd][ind2,ind3,ind4,ind5]],
+BuildRule[Evaluate[{CD[ind1][Riemann[cd][ind2,ind3,ind4,ind5]],
 ToCanonical[ContractMetric[ToInducedDerivative[IndicesDown[CD[ind1][Riemann[cd][ind2,ind3,ind4,ind5]]],CD,cd]//GradNormalToExtrinsicK]]}]]];
 
 AutomaticRules[Evaluate[Ricci[cd]],
-MakeRule[Evaluate[{CD[ind1][Ricci[cd][ind2,ind3]],
+BuildRule[Evaluate[{CD[ind1][Ricci[cd][ind2,ind3]],
 ToCanonical[ContractMetric[ToInducedDerivative[IndicesDown[CD[ind1][Ricci[cd][ind2,ind3]]],CD,cd]//GradNormalToExtrinsicK]]}]]];
 
 AutomaticRules[Evaluate[RicciScalar[cd]],
-MakeRule[Evaluate[{CD[ind1][RicciScalar[cd][]],
+BuildRule[Evaluate[{CD[ind1][RicciScalar[cd][]],
 ToCanonical[ContractMetric[ToInducedDerivative[IndicesDown[CD[ind1][RicciScalar[cd][]]],CD,cd]//GradNormalToExtrinsicK]]}]]];
 
-(* In that case we also need to treat the Lie Derivative which comes from thsi 3+1 splitting *)
-(* Lie D with down indices *)
-AutomaticRules[Evaluate[Riemann[cd]],MakeRule[Evaluate[{LieD[u[ind1]][Riemann[cd][-ind2,-ind3,-ind4,-ind5]],ToCanonical@ContractMetric[LieD[u[ind1]][Riemann[cd][-ind2,-ind3,-ind4,-ind5]/.ConstantsOfStructureRules[h]]] }],MetricOn->None]];
+(* We also need to treat the Lie Derivative which comes from thsi 3+1 splitting *)
+(* Lie D with down indices is treated first*)
+(* This is done by expressing the Riemann tensor in terms of constanst of structure. *)
+AutomaticRules[Evaluate[Riemann[cd]],BuildRule[Evaluate[{LieD[u[ind1]][Riemann[cd][-ind2,-ind3,-ind4,-ind5]],ToCanonical@ContractMetric[LieD[u[ind1]][Riemann[cd][-ind2,-ind3,-ind4,-ind5]/.ConstantsOfStructureRules[h]]] }],MetricOn->None]];
 
-AutomaticRules[Evaluate[Ricci[cd]],MakeRule[Evaluate[{LieD[u[ind1]][Ricci[cd][-ind2,-ind3]],ToCanonical@ContractMetric[LieD[u[ind1]][Ricci[cd][-ind2,-ind3]/.ConstantsOfStructureRules[h]]] }],MetricOn->None]];
+AutomaticRules[Evaluate[Ricci[cd]],BuildRule[Evaluate[{LieD[u[ind1]][Ricci[cd][-ind2,-ind3]],ToCanonical@ContractMetric[LieD[u[ind1]][Ricci[cd][-ind2,-ind3]/.ConstantsOfStructureRules[h]]] }],MetricOn->None]];
 
-AutomaticRules[Evaluate[RicciScalar[cd]],MakeRule[Evaluate[{LieD[u[ind1]][RicciScalar[cd][]],ToCanonical@ContractMetric[LieD[u[ind1]][RicciScalar[cd][]/.ConstantsOfStructureRules[h]]] }],MetricOn->None]];
+AutomaticRules[Evaluate[RicciScalar[cd]],BuildRule[Evaluate[{LieD[u[ind1]][RicciScalar[cd][]],ToCanonical@ContractMetric[LieD[u[ind1]][RicciScalar[cd][]/.ConstantsOfStructureRules[h]]] }],MetricOn->None]];
 
 
-(* Extension to any position of indices*)
+(* Extension to any position of indices inside a Lie Derivative*)
 Evaluate[Riemann[cd]]/:LieD[u[dummy_]][Evaluate[Riemann[cd]][indices1___,indup_?UpIndexQ,indices2___]]:=
 Module[{dum},dum=DummyIn[Tangent[Manifold]];(*Print["** Warning: a Lie derivative with up indices has been converted (safely) to a Lie derivative with down indices **"];*)g[indup,dum]LieD[u[dummy]][Evaluate[Riemann[cd]][indices1,-dum,indices2]]+Identity[LieD[u[dummy]][g[indup,dum]]Evaluate[Riemann[cd]][indices1,-dum,indices2]]];
 
@@ -2088,29 +2015,29 @@ DefProjectedTensor[Evaluate[DummyT[h]][-ind1,-ind2],h,TensorProperties->{"Symmet
 
 
 $CommutecdRules=Join[$CommutecdRules,Flatten@Join[
-PatternLeft[#,{n,q}]&/@(PatternTensorLeftScalar[#,Evaluate[DummyS[h]][LI[n],LI[q]]]&/@MakeRule[Evaluate[{cd[-ind1][cd[ind2][cd[ind3][cd[ind1][Evaluate[DummyS[h]][LI[n],LI[q]]]]]],org[CommuteCovDs[CommuteCovDs[cd[-ind1][cd[ind2][cd[ind3][cd[ind1][Evaluate[DummyS[h]][LI[n],LI[q]]]]]],cd,{ind2,-ind1}],cd,{ind3,-ind1}]]}]]),
+PatternLeft[#,{n,q}]&/@(PatternTensorLeftScalar[#,Evaluate[DummyS[h]][LI[n],LI[q]]]&/@BuildRule[Evaluate[{cd[-ind1][cd[ind2][cd[ind3][cd[ind1][Evaluate[DummyS[h]][LI[n],LI[q]]]]]],org[CommuteCovDs[CommuteCovDs[cd[-ind1][cd[ind2][cd[ind3][cd[ind1][Evaluate[DummyS[h]][LI[n],LI[q]]]]]],cd,{ind2,-ind1}],cd,{ind3,-ind1}]]}]]),
 
-PatternLeft[#,{n,q}]&/@(PatternTensorLeftScalar[#,Evaluate[DummyS[h]][LI[n],LI[q]]]&/@MakeRule[Evaluate[{cd[ind2][cd[-ind1][cd[ind3][cd[ind1][Evaluate[DummyS[h]][LI[n],LI[q]]]]]],org[CommuteCovDs[cd[ind2][cd[-ind1][cd[ind3][cd[ind1][Evaluate[DummyS[h]][LI[n],LI[q]]]]]],cd,{ind3,-ind1}]]}]]),
+PatternLeft[#,{n,q}]&/@(PatternTensorLeftScalar[#,Evaluate[DummyS[h]][LI[n],LI[q]]]&/@BuildRule[Evaluate[{cd[ind2][cd[-ind1][cd[ind3][cd[ind1][Evaluate[DummyS[h]][LI[n],LI[q]]]]]],org[CommuteCovDs[cd[ind2][cd[-ind1][cd[ind3][cd[ind1][Evaluate[DummyS[h]][LI[n],LI[q]]]]]],cd,{ind3,-ind1}]]}]]),
 
-PatternLeft[#,{n,q}]&/@(PatternTensorLeftScalar[#,Evaluate[DummyS[h]][LI[n],LI[q]]]&/@MakeRule[Evaluate[{cd[-ind1][cd[ind1][cd[ind3][cd[ind2][Evaluate[DummyS[h]][LI[n],LI[q]]]]]],org[CommuteCovDs[CommuteCovDs[CommuteCovDs[CommuteCovDs[cd[-ind1][cd[ind1][cd[ind3][cd[ind2][Evaluate[DummyS[h]][LI[n],LI[q]]]]]],cd,{ind3,ind1}],cd,{ind3,-ind1}],cd,{ind2,ind1}],cd,{ind2,-ind1}]]}]]),
+PatternLeft[#,{n,q}]&/@(PatternTensorLeftScalar[#,Evaluate[DummyS[h]][LI[n],LI[q]]]&/@BuildRule[Evaluate[{cd[-ind1][cd[ind1][cd[ind3][cd[ind2][Evaluate[DummyS[h]][LI[n],LI[q]]]]]],org[CommuteCovDs[CommuteCovDs[CommuteCovDs[CommuteCovDs[cd[-ind1][cd[ind1][cd[ind3][cd[ind2][Evaluate[DummyS[h]][LI[n],LI[q]]]]]],cd,{ind3,ind1}],cd,{ind3,-ind1}],cd,{ind2,ind1}],cd,{ind2,-ind1}]]}]]),
 
-PatternLeft[#,{n,q}]&/@(PatternTensorLeftScalar[#,Evaluate[DummyS[h]][LI[n],LI[q]]]&/@MakeRule[Evaluate[{cd[-ind2][cd[-ind1][cd[ind2][Evaluate[DummyS[h]][LI[n],LI[q]]]]],org[CommuteCovDs[cd[-ind2][cd[-ind1][cd[ind2][Evaluate[DummyS[h]][LI[n],LI[q]]]]],cd,{-ind1,-ind2}]]}]]),
+PatternLeft[#,{n,q}]&/@(PatternTensorLeftScalar[#,Evaluate[DummyS[h]][LI[n],LI[q]]]&/@BuildRule[Evaluate[{cd[-ind2][cd[-ind1][cd[ind2][Evaluate[DummyS[h]][LI[n],LI[q]]]]],org[CommuteCovDs[cd[-ind2][cd[-ind1][cd[ind2][Evaluate[DummyS[h]][LI[n],LI[q]]]]],cd,{-ind1,-ind2}]]}]]),
 
-PatternLeft[#,{n,q}]&/@(PatternTensorLeftScalar[#,Evaluate[DummyS[h]][LI[n],LI[q]]]&/@MakeRule[Evaluate[{cd[-ind2][cd[ind2][cd[-ind1][Evaluate[DummyS[h]][LI[n],LI[q]]]]],org[CommuteCovDs[CommuteCovDs[cd[-ind2][cd[ind2][cd[-ind1][Evaluate[DummyS[h]][LI[n],LI[q]]]]],cd,{-ind1,ind2}],cd,{-ind1,-ind2}]]}]]),
+PatternLeft[#,{n,q}]&/@(PatternTensorLeftScalar[#,Evaluate[DummyS[h]][LI[n],LI[q]]]&/@BuildRule[Evaluate[{cd[-ind2][cd[ind2][cd[-ind1][Evaluate[DummyS[h]][LI[n],LI[q]]]]],org[CommuteCovDs[CommuteCovDs[cd[-ind2][cd[ind2][cd[-ind1][Evaluate[DummyS[h]][LI[n],LI[q]]]]],cd,{-ind1,ind2}],cd,{-ind1,-ind2}]]}]]),
 
-PatternLeft[#,{n,q}]&/@(PatternTensorLeftVector[#,Evaluate[DummyV[h]][LI[n],LI[q],ind2]]&/@MakeRule[Evaluate[{cd[-ind2][cd[-ind1][cd[ind1][Evaluate[DummyV[h]][LI[n],LI[q],ind2]]]],org[CommuteCovDs[CommuteCovDs[cd[-ind2][cd[-ind1][cd[ind1][Evaluate[DummyV[h]][LI[n],LI[q],ind2]]]],cd,{-ind1,-ind2}],cd,{ind1,-ind2}]]}]]),
+PatternLeft[#,{n,q}]&/@(PatternTensorLeftVector[#,Evaluate[DummyV[h]][LI[n],LI[q],ind2]]&/@BuildRule[Evaluate[{cd[-ind2][cd[-ind1][cd[ind1][Evaluate[DummyV[h]][LI[n],LI[q],ind2]]]],org[CommuteCovDs[CommuteCovDs[cd[-ind2][cd[-ind1][cd[ind1][Evaluate[DummyV[h]][LI[n],LI[q],ind2]]]],cd,{-ind1,-ind2}],cd,{ind1,-ind2}]]}]]),
 
-PatternLeft[#,{n,q}]&/@(PatternTensorLeftVector[#,Evaluate[DummyV[h]][LI[n],LI[q],ind2]]&/@MakeRule[Evaluate[{cd[-ind2][cd[-ind1][cd[ind1][Evaluate[DummyV[h]][LI[n],LI[q],ind2]]]],org[CommuteCovDs[CommuteCovDs[cd[-ind2][cd[-ind1][cd[ind1][Evaluate[DummyV[h]][LI[n],LI[q],ind2]]]],cd,{-ind1,-ind2}],cd,{ind1,-ind2}]]}]]),
+PatternLeft[#,{n,q}]&/@(PatternTensorLeftVector[#,Evaluate[DummyV[h]][LI[n],LI[q],ind2]]&/@BuildRule[Evaluate[{cd[-ind2][cd[-ind1][cd[ind1][Evaluate[DummyV[h]][LI[n],LI[q],ind2]]]],org[CommuteCovDs[CommuteCovDs[cd[-ind2][cd[-ind1][cd[ind1][Evaluate[DummyV[h]][LI[n],LI[q],ind2]]]],cd,{-ind1,-ind2}],cd,{ind1,-ind2}]]}]]),
 
-PatternLeft[#,{n,q}]&/@(PatternTensorLeftVector[#,Evaluate[DummyV[h]][LI[n],LI[q],ind3]]&/@MakeRule[Evaluate[{cd[-ind3][cd[ind1][cd[ind2][Evaluate[DummyV[h]][LI[n],LI[q],ind3]]]],org[CommuteCovDs[CommuteCovDs[cd[-ind3][cd[ind1][cd[ind2][Evaluate[DummyV[h]][LI[n],LI[q],ind3]]]],cd,{ind1,-ind3}],cd,{ind2,-ind3}]]}]]),
+PatternLeft[#,{n,q}]&/@(PatternTensorLeftVector[#,Evaluate[DummyV[h]][LI[n],LI[q],ind3]]&/@BuildRule[Evaluate[{cd[-ind3][cd[ind1][cd[ind2][Evaluate[DummyV[h]][LI[n],LI[q],ind3]]]],org[CommuteCovDs[CommuteCovDs[cd[-ind3][cd[ind1][cd[ind2][Evaluate[DummyV[h]][LI[n],LI[q],ind3]]]],cd,{ind1,-ind3}],cd,{ind2,-ind3}]]}]]),
 
-PatternLeft[#,{n,q}]&/@(PatternTensorLeftVector[#,Evaluate[DummyV[h]][LI[n],LI[q],ind3]]&/@MakeRule[Evaluate[{cd[ind1][cd[-ind3][cd[ind2][Evaluate[DummyV[h]][LI[n],LI[q],ind3]]]],org[CommuteCovDs[cd[ind1][cd[-ind3][cd[ind2][Evaluate[DummyV[h]][LI[n],LI[q],ind3]]]],cd,{ind2,-ind3}]]}]]),
+PatternLeft[#,{n,q}]&/@(PatternTensorLeftVector[#,Evaluate[DummyV[h]][LI[n],LI[q],ind3]]&/@BuildRule[Evaluate[{cd[ind1][cd[-ind3][cd[ind2][Evaluate[DummyV[h]][LI[n],LI[q],ind3]]]],org[CommuteCovDs[cd[ind1][cd[-ind3][cd[ind2][Evaluate[DummyV[h]][LI[n],LI[q],ind3]]]],cd,{ind2,-ind3}]]}]]),
 
-PatternLeft[#,{n,q}]&/@(PatternTensorLeftVector[#,Evaluate[DummyV[h]][LI[n],LI[q],ind2]]&/@MakeRule[Evaluate[{cd[-ind3][cd[-ind1][cd[ind3][Evaluate[DummyV[h]][LI[n],LI[q],ind2]]]],org[CommuteCovDs[cd[-ind3][cd[-ind1][cd[ind3][Evaluate[DummyV[h]][LI[n],LI[q],ind2]]]],cd,{ind3,-ind1}]]}]]),
+PatternLeft[#,{n,q}]&/@(PatternTensorLeftVector[#,Evaluate[DummyV[h]][LI[n],LI[q],ind2]]&/@BuildRule[Evaluate[{cd[-ind3][cd[-ind1][cd[ind3][Evaluate[DummyV[h]][LI[n],LI[q],ind2]]]],org[CommuteCovDs[cd[-ind3][cd[-ind1][cd[ind3][Evaluate[DummyV[h]][LI[n],LI[q],ind2]]]],cd,{ind3,-ind1}]]}]]),
 
-PatternLeft[#,{n,q}]&/@(PatternTensorLeftVector[#,Evaluate[DummyV[h]][LI[n],LI[q],ind1]]&/@MakeRule[Evaluate[{cd[-ind1][cd[-ind2][Evaluate[DummyV[h]][LI[n],LI[q],ind1]]],org[CommuteCovDs[cd[-ind1][cd[-ind2][Evaluate[DummyV[h]][LI[n],LI[q],ind1]]],cd,{-ind2,-ind1}]]}]]),
+PatternLeft[#,{n,q}]&/@(PatternTensorLeftVector[#,Evaluate[DummyV[h]][LI[n],LI[q],ind1]]&/@BuildRule[Evaluate[{cd[-ind1][cd[-ind2][Evaluate[DummyV[h]][LI[n],LI[q],ind1]]],org[CommuteCovDs[cd[-ind1][cd[-ind2][Evaluate[DummyV[h]][LI[n],LI[q],ind1]]],cd,{-ind2,-ind1}]]}]]),
 
-PatternLeft[#,{n,q}]&/@(PatternTensorLeftTensor[#,Evaluate[DummyT[h]][LI[n],LI[q],ind2,ind3]]&/@MakeRule[Evaluate[{cd[-ind2][cd[-ind1][Evaluate[DummyT[h]][LI[n],LI[q],ind2,ind3]]],org[CommuteCovDs[cd[-ind2][cd[-ind1][Evaluate[DummyT[h]][LI[n],LI[q],ind2,ind3]]],cd,{-ind1,-ind2}]]}]])
+PatternLeft[#,{n,q}]&/@(PatternTensorLeftTensor[#,Evaluate[DummyT[h]][LI[n],LI[q],ind2,ind3]]&/@BuildRule[Evaluate[{cd[-ind2][cd[-ind1][Evaluate[DummyT[h]][LI[n],LI[q],ind2,ind3]]],org[CommuteCovDs[cd[-ind2][cd[-ind1][Evaluate[DummyT[h]][LI[n],LI[q],ind2,ind3]]],cd,{-ind1,-ind2}]]}]])
 
 ]];
 
@@ -2140,6 +2067,7 @@ Protect[SetSlicing];
 ConstantsOfStructureRules[_]:={};
 
 ToConstantsOfStructure[h_?InducedMetricQ]:=Function[expr,expr/.ConstantsOfStructureRules[h]];
+
 
 
 DefinedPerturbationParameter[x_]:=False;
@@ -2229,39 +2157,45 @@ Protect[DefMatterFields];
 BV1:=Boole@$FirstOrderVectorPerturbations;
 BT1:=Boole@$FirstOrderTensorPerturbations;
 
-SplitMetric[g_?MetricQ,dg_,h_?InducedMetricQ,gauge_?GaugeQ]:=Module[{n},
-With[{u=Last@InducedFrom@h},With[{M=ManifoldOfCovD@CovDOfMetric@g,cd=CovDOfMetric@h,ShBool=Evaluate@BianchiBool[SpaceType[h]]},
+SplitMetric[g_?MetricQ,dg_,h_?InducedMetricQ,gauge_?GaugeQ]:=Module[{n,oldpreprint},
+With[{u=Last@InducedFrom@h,M=ManifoldOfCovD@CovDOfMetric@g,cd=CovDOfMetric@h,ShBool=Evaluate@BianchiBool[SpaceType[h]]},
+
 Block[{i1,i2},
 {i1,i2}=GetIndicesOfVBundle[Tangent@M,2];
+
 If[Not[DefTensorQ[Et[h]]]||Not[DefTensorQ[dg]],Print["** Warning: The perturbed metric, or the fields required to parameterize its splitting were not previously defined **"];
 Print["** DefMetricFields is called to build the perturbation of the metric and the fields needed for future splitting **"];
 DefMetricFields[g, dg,h]];
 
 (* First the rules at first order. We separate them from higher order rules because the user can choose not to use vectors and tensor at first order.*)
-Join[{Switch[gauge ,"NewtonGauge",
-(dg[LI[1],i1_,i2_]->-u[i1]u[i2]2\[Phi][h][LI[1],LI[0]]
+
+(* I have to use the trick of PatternLeft to build the rules, because otherwise Mathematica does not use indices which are 
+on the Manifold and then this conflicts with ScreenDollarIndices. I think that with HoldPattern I could have achieved the same result, but I failed to succeed so far. I could also have unset $PrePrint instead of having it to be ScreenDollarIndices.*)
+
+Join[PatternLeft[#,{i1,i2}]&/@{Switch[gauge ,"NewtonGauge",
+(dg[LI[1],i1,i2]->-u[i1]u[i2]2\[Phi][h][LI[1],LI[0]]
 -2\[Psi][h][LI[1],LI[0]](h[i1,i2]+If[ShBool,K[h][LI[0],LI[0],i1,i2]/H[h][LI[0],LI[0]],0])
 +BT1 2Et[h][LI[1],LI[0],i1,i2]
 -BV1(u[i1]Bv[h][LI[1],LI[0],i2]+u[i2]Bv[h][LI[1],LI[0],i1])),
 "ComovingGauge",
-(dg[LI[1],i1_,i2_]->Identity[-u[i1]u[i2]2\[Phi][h][LI[1],LI[0]]
+(dg[LI[1],i1,i2]->Identity[-u[i1]u[i2]2\[Phi][h][LI[1],LI[0]]
 -2\[Psi][h][LI[1],LI[0]](h[i1,i2]+If[ShBool,K[h][LI[0],LI[0],i1,i2]/H[h][LI[0],LI[0]],0])
 +BT1 2Et[h][LI[1],LI[0],i1,i2]
 -BV1(u[i1]Bv[h][LI[1],LI[0],i2]+u[i2]Bv[h][LI[1],LI[0],i1])
 -(u[i1]cd[i2]@Bs[h][LI[1],LI[0]]+u[i2]cd[i1]@Bs[h][LI[1],LI[0]])]),
 "SynchronousGauge",
-(dg[LI[1],i1_,i2_]->Identity[
+(dg[LI[1],i1,i2]->Identity[
 -2\[Psi][h][LI[1],LI[0]](h[i1,i2]+If[ShBool,K[h][LI[0],LI[0],i1,i2]/H[h][LI[0],LI[0]],0])
 +BT1 2Et[h][LI[1],LI[0],i1,i2]
 +2cd[i1]@cd[i2]@Es[h][LI[1],LI[0]]
 +BV1(cd[i1]@Ev[h][LI[1],LI[0],i2]+cd[i2]@Ev[h][LI[1],LI[0],i1])]),
 "FlatGauge",
-(dg[LI[1],i1_,i2_]->Identity[-u[i1]u[i2]2\[Phi][h][LI[1],LI[0]]
+(dg[LI[1],i1,i2]->Identity[-u[i1]u[i2]2\[Phi][h][LI[1],LI[0]]
 +BT1 2Et[h][LI[1],LI[0],i1,i2]
 -BV1(u[i1]Bv[h][LI[1],LI[0],i2]+u[i2]Bv[h][LI[1],LI[0],i1])
 -(u[i1]cd[i2]@Bs[h][LI[1],LI[0]]+u[i2]cd[i1]@Bs[h][LI[1],LI[0]])]),
 "AnyGauge",
-(dg[LI[1],i1_,i2_]->Identity[-u[i1]u[i2]2\[Phi][h][LI[1],LI[0]]
+(dg[LI[1],i1,i2]->Identity[-u[i1]u[i2]2\[Phi][h][LI[1],LI[0]]
 -2\[Psi][h][LI[1],LI[0]](h[i1,i2]+If[ShBool,K[h][LI[0],LI[0],i1,i2]/H[h][LI[0],LI[0]],0])
 +BT1 2Et[h][LI[1],LI[0],i1,i2]
 +2cd[i1]@cd[i2]@Es[h][LI[1],LI[0]]
@@ -2269,37 +2203,37 @@ Join[{Switch[gauge ,"NewtonGauge",
 -BV1(u[i1]Bv[h][LI[1],LI[0],i2]+u[i2]Bv[h][LI[1],LI[0],i1])
 -(u[i1]cd[i2]@Bs[h][LI[1],LI[0]]+u[i2]cd[i1]@Bs[h][LI[1],LI[0]])]),
 "IsoDensityGauge",
-(dg[LI[1],i1_,i2_]->Identity[-u[i1]u[i2]2\[Phi][h][LI[1],LI[0]]
+(dg[LI[1],i1,i2]->Identity[-u[i1]u[i2]2\[Phi][h][LI[1],LI[0]]
 -2\[Psi][h][LI[1],LI[0]](h[i1,i2]+If[ShBool,K[h][LI[0],LI[0],i1,i2]/H[h][LI[0],LI[0]],0])
 +BT1 2Et[h][LI[1],LI[0],i1,i2]
 -BV1(u[i1]Bv[h][LI[1],LI[0],i2]+u[i2]Bv[h][LI[1],LI[0],i1])
 -(u[i1]cd[i2]@Bs[h][LI[1],LI[0]]+u[i2]cd[i1]@Bs[h][LI[1],LI[0]])])]},
 
 (* And then the rules at order larger that 1*)
-{Switch[gauge ,"NewtonGauge",
-(dg[LI[n_?(#>=2&)],i1_,i2_]->Identity[-u[i1]u[i2]2\[Phi][h][LI[n],LI[0]]
+PatternLeft[#,{i1,i2}]&/@{Switch[gauge ,"NewtonGauge",
+(dg[LI[n_?(#>=2&)],i1,i2]->Identity[-u[i1]u[i2]2\[Phi][h][LI[n],LI[0]]
 -2\[Psi][h][LI[n],LI[0]](h[i1,i2]+If[ShBool,K[h][LI[0],LI[0],i1,i2]/H[h][LI[0],LI[0]],0])
 +2Et[h][LI[n],LI[0],i1,i2]
 -(u[i1]Bv[h][LI[n],LI[0],i2]+u[i2]Bv[h][LI[n],LI[0],i1])]),
 "ComovingGauge",
-(dg[LI[n_?(#>=2&)],i1_,i2_]->Identity[-u[i1]u[i2]2\[Phi][h][LI[n],LI[0]]
+(dg[LI[n_?(#>=2&)],i1,i2]->Identity[-u[i1]u[i2]2\[Phi][h][LI[n],LI[0]]
 -2\[Psi][h][LI[n],LI[0]](h[i1,i2]+If[ShBool,K[h][LI[0],LI[0],i1,i2]/H[h][LI[0],LI[0]],0])
 +2Et[h][LI[n],LI[0],i1,i2]
 -(u[i1]Bv[h][LI[n],LI[0],i2]+u[i2]Bv[h][LI[n],LI[0],i1])
 -(u[i1]cd[i2]@Bs[h][LI[n],LI[0]]+u[i2]cd[i1]@Bs[h][LI[n],LI[0]])]),
 "SynchronousGauge",
-(dg[LI[n_?(#>=2&)],i1_,i2_]->Identity[
+(dg[LI[n_?(#>=2&)],i1,i2]->Identity[
 -2\[Psi][h][LI[n],LI[0]](h[i1,i2]+If[ShBool,K[h][LI[0],LI[0],i1,i2]/H[h][LI[0],LI[0]],0])
 +2Et[h][LI[n],LI[0],i1,i2]
 +2cd[i1]@cd[i2]@Es[h][LI[n],LI[0]]
 +cd[i1]@Ev[h][LI[n],LI[0],i2]+cd[i2]@Ev[h][LI[n],LI[0],i1]]),
 "FlatGauge",
-(dg[LI[n_?(#>=2&)],i1_,i2_]->Identity[-u[i1]u[i2]2\[Phi][h][LI[n],LI[0]]
+(dg[LI[n_?(#>=2&)],i1,i2]->Identity[-u[i1]u[i2]2\[Phi][h][LI[n],LI[0]]
 +2Et[h][LI[n],LI[0],i1,i2]
 -(u[i1]Bv[h][LI[n],LI[0],i2]+u[i2]Bv[h][LI[n],LI[0],i1])
 -(u[i1]cd[i2]@Bs[h][LI[n],LI[0]]+u[i2]cd[i1]@Bs[h][LI[n],LI[0]])]),
 "AnyGauge",
-(dg[LI[n_?(#>=2&)],i1_,i2_]->Identity[-u[i1]u[i2]2\[Phi][h][LI[n],LI[0]]
+(dg[LI[n_?(#>=2&)],i1,i2]->Identity[-u[i1]u[i2]2\[Phi][h][LI[n],LI[0]]
 -2\[Psi][h][LI[n],LI[0]](h[i1,i2]+If[ShBool,K[h][LI[0],LI[0],i1,i2]/H[h][LI[0],LI[0]],0])
 +2Et[h][LI[n],LI[0],i1,i2]
 +2cd[i1]@cd[i2]@Es[h][LI[n],LI[0]]
@@ -2307,12 +2241,11 @@ Join[{Switch[gauge ,"NewtonGauge",
 -(u[i1]Bv[h][LI[n],LI[0],i2]+u[i2]Bv[h][LI[n],LI[0],i1])
 -(u[i1]cd[i2]@Bs[h][LI[n],LI[0]]+u[i2]cd[i1]@Bs[h][LI[n],LI[0]])]),
 "IsoDensityGauge",
-(dg[LI[n_?(#>=2&)],i1_,i2_]->Identity[-u[i1]u[i2]2\[Phi][h][LI[n],LI[0]]
+(dg[LI[n_?(#>=2&)],i1,i2]->Identity[-u[i1]u[i2]2\[Phi][h][LI[n],LI[0]]
 -2\[Psi][h][LI[n],LI[0]](h[i1,i2]+If[ShBool,K[h][LI[0],LI[0],i1,i2]/H[h][LI[0],LI[0]],0])
 +2Et[h][LI[n],LI[0],i1,i2]
 -(u[i1]Bv[h][LI[n],LI[0],i2]+u[i2]Bv[h][LI[n],LI[0],i1])
 -(u[i1]cd[i2]@Bs[h][LI[n],LI[0]]+u[i2]cd[i1]@Bs[h][LI[n],LI[0]])])]}]
-]
 ]
 ]
 ];
@@ -2320,40 +2253,7 @@ SetNumberOfArguments[SplitMetric,4]
 Protect[SplitMetric];
 
 
-(*IndicesDown[expr_]:= Fold[SeparateMetric[First@$Metrics][#1,#2]&,xAct`xTensor`Private`ReplaceIsolated[expr],Select[IndicesOf[Up][expr],Not@LIndexQ[#]&]]*)
-
-(* IndicesDown and IndicesUp, separate the indices so as to have only indices down (or up) with inverse metrics (or with metrics)*)
-
-(* Linearity, handle products, list, etc...*)
-(*IndicesDown[expr_Times]:=IndicesDown/@expr;
-IndicesDown[expr_List]:=IndicesDown/@expr;
-IndicesDown[expr_Plus]:=IndicesDown/@expr;
-IndicesDown[Num_?NumericQ]:=Num;
-IndicesDown[param_Symbol?ParameterQ]:=param;
-IndicesDown[Power[expr_,n_Integer]]:=Power[IndicesDown[expr],n];
-
-(* We decide to go through scalar heads. This has been added after the comments of Leo Stein and Jolyon Bloomfield *)
-(* Actually that's a bad idea according to Jose. We d better make sure that IndicesDown is applied inside the Scalar heads and scalar functions (see the implementation of Conformal)*)
-
-IndicesDown[Scalar[expr_]]:=Scalar@IndicesDown[expr]
-(* We decide to go through scalar functions. I do not know if this is safe... *)
-IndicesDown[sf_?ScalarFunctionQ[args___]]:=sf@@IndicesDown/@{args}*)
-
-
-(* The actual function based on IndicesOf*)
 IndicesDown[expr_]:= Fold[SeparateMetric[First@$Metrics][#1,#2]&,expr,Select[IndicesOf[Up][expr],Not@LIndexQ[#]&]]
-
-
-(*IndicesUp is implemented in a similar way*)
-(*IndicesUp[expr_Times]:=IndicesUp/@expr;
-IndicesUp[expr_List]:=IndicesUp/@expr;
-IndicesUp[expr_Plus]:=IndicesUp/@expr;
-IndicesUp[Num_?NumericQ]:=Num;
-IndicesUp[param_Symbol?ParameterQ]:=param;
-IndicesUp[Power[expr_,n_Integer]]:=Power[IndicesUp[expr],n];
-IndicesUp[Scalar[expr_]]:=Scalar@IndicesUp[expr]
-IndicesUp[sf_?ScalarFunctionQ[args___]]:=sf@@IndicesUp/@{args}*)
-
 IndicesUp[expr_]:= Fold[SeparateMetric[First@$Metrics][#1,#2]&,expr,Select[IndicesOf[Down][expr],Not@LIndexQ[#]&]]
 
 
@@ -2369,7 +2269,6 @@ DefConformalMetric[g_?MetricQ,conffactor_]:=Module[{n,q},Catch@With[{M=ManifoldO
 With[{i1=DummyIn[Tangent[M]],i2=DummyIn[Tangent[M]],sy1=SymbolOfCovD[CD][[1]],sy2=SymbolOfCovD[CD][[2]],metlist=Select[$Metrics,InducedFrom[#]===Null&]},
 
 
-(* TODO *)
 If[Not@DefTensorQ[conffactor],DefTensor[conffactor[LI[n],LI[q]],{M},PrintAs->ToString[conffactor]]];
 
 
@@ -2403,23 +2302,15 @@ Protect[DefConformalMetric];
 
 ConfHead[_,_][delta[\[Mu]_,\[Nu]_]]:=delta[\[Mu],\[Nu]](* Because I know that when there is delta function in an expression, it is always with one index up and one down...so this should be fine.*)
 
-
-
  
 ConfHead[metric1_?MetricQ,metric2_?MetricQ][ConfHead[metric2_?MetricQ,metric1_?MetricQ][expr_]]:=expr (* Not necessary *)
 ConfHead[metric1_?MetricQ,metric1_?MetricQ][expr_]:=expr
 ConfHead[metric2_?MetricQ,metric3_?MetricQ][ConfHead[metric1_?MetricQ,metric2_?MetricQ][expr_]]:=ConfHead[metric1,metric3][expr]
 
 
-
-
-(* Updated. New definition *)
-(*ConfHead/:IsIndexOf[ConfHead[_,_][tens_?xTensorQ[inds___]],i2_,delta]:=False;*)
 (* Thanks to Jolyon and Leo Stein, the definition below should be much more general. *)
 (* The main reason is that the delta tensor is greedy and wants to contract through expressions like
-ConfHead[...][f[Scalar[phi[]]]].
-The new definition below should avoid that to happen.
-*)
+ConfHead[...][f[Scalar[phi[]]]].*)
 ConfHead/:IsIndexOf[ConfHead[_,_][_],_,delta]:=False;
 
 
@@ -2655,69 +2546,12 @@ PatternSymbolQ[expr_Symbol]:=(expr===Pattern);
 PatternTestSymbolQ[expr_Symbol]:=(expr===PatternTest);
 
 PutPatternIndicesDown[expr_]:=Fold[#1/.pat_?PatternSymbolQ[#2,st_]:>-pat[#2,st]/.a_?PatternTestSymbolQ[-pat_?PatternSymbolQ[#2,st_],fun_]:>-a[pat[#2,st],fun]&,expr,IndicesOf[Free,Up][RemovePatterns[expr]]];
-PutPatternIndicesUp[expr_]:=Fold[#1/.pat_?PatternSymbolQ[ChangeIndex[#2],st_]:>-pat[Evaluate@ChangeIndex[#2],st]/.a_?PatternTestSymbolQ[-pat_?PatternSymbolQ[Evaluate@ChangeIndex[#2],st_],fun_]:>-a[pat[Evaluate@ChangeIndex[#2],st],fun]&,expr,IndicesOf[Free,Down][RemovePatterns[expr]]];
 
+PutPatternIndicesUp[expr_]:=Fold[#1/.pat_?PatternSymbolQ[ChangeIndex[#2],st_]:>-pat[Evaluate@ChangeIndex[#2],st]/.a_?PatternTestSymbolQ[-pat_?PatternSymbolQ[Evaluate@ChangeIndex[#2],st_],fun_]:>-a[pat[Evaluate@ChangeIndex[#2],st],fun]&,expr,IndicesOf[Free,Down][RemovePatterns[expr]]];
 
 
 RemovePatterns[expr_]:=(expr/.hp_HoldPattern:>First@hp)/.a_PatternTest:>First@a/.a_Pattern:>First@a
 RemovePatternTests[expr_]:=(expr/.hp_HoldPattern:>First@hp)/.a_PatternTest:>First@a
-
-(*RulesSplitCovDsOfTensor[expr_,replacerule_,h_?InducedMetricQ,n_:10]:=Module[{dummies,dummiesup,tableleft,tableright,replacevaluesplit,testpatternlistnmax,ListBool,CDmax,res,testpatternlistnmaxnopat,Listlhsrhs,ruletemp,pairsimplified,restemp,rhsCDcd,freeupleft,freedownleft,freeupright,leftreplaceruledownindices,rightreplaceruledownindices,dummiesdown,tableleftupindices,rightdownindices,tablerightdown},Catch@With[{g=First@InducedFrom@h,u=Last@InducedFrom@h},
-With[{CD=CovDOfMetric[g],cd=CovDOfMetric[h],M=ManifoldOfCovD@CovDOfMetric[g],indicesright=Pattern[#,_]&/@FindFreeIndices[Last@replacerule],indicesleft=FindFreeIndices[First@replacerule]},
-
-(* In this fuynction we will precompute the rules for the CovDs of tensor for which the rule is given in the argument replacerule.
-For instance if we compute the perturbation of the Ricci tensor, there will be several terms with two covariant derivatives of the perturbed metric. By precomputing the rule once instead of several times, we shall save sone computing time. *)
-testpatternlistnmax=TablePatternsCovDs[First@replacerule,CD,n];
-
-(* For every number of CovD we look at a match and give a list of the booleans. {True,True,False...}
-means that there is terms with no CovD, terms with one, but no terms with two CovD[tens] for instance. *)
-ListBool=(#>=1)&/@Length/@(Cases[Expand@expr,#,Infinity]&/@testpatternlistnmax);
-
-(* Then we look at the maximum number of CovDs *)
-CDmax=Max[0,Max@Position[ListBool,True]-1];
-If[CDmax===n,Throw[Message[RulesSplitCovDsOfTensor::maxcovdnumber,n]]];
-
-dummiesdown=Take[ChangeIndex/@DummyIn/@Table[Tangent[M],{Range[CDmax]}]];
-dummiesup=ChangeIndex/@dummiesdown;
-
-Off[Pattern::patvar];
-
-freedownleft=IndicesOf[Free,Down][First@replacerule/.pat_Pattern:>First[pat]];
-If[Length[freedownleft]=!=0,Print["** Warning: The rule should be defined with general position of indices, and not just for down indices. The free indices which were in down position are going to be raised before defining the rule. **"];];
-
-tableleftupindices=PutPatternIndicesUp[First@replacerule//ProjectorToMetric];
-rightdownindices=PutFreeIndicesDown[Last@replacerule];
-
-(* We build the left hand side *)
-tableleft=Join[{tableleftupindices},Table[Fold[(CD[Pattern[#2,Blank[]]]@#1)&,tableleftupindices,#]&[Take[dummiesup,i]],{i,1,CDmax}]];
-
-(* Then the list of right hand sides*)
-replacevaluesplit=rightdownindices;
-
-tablerightdown=Join[{replacevaluesplit},Table[Fold[(CD[#2]@#1)&,replacevaluesplit,#]&[Take[dummiesdown,i]],{i,1,CDmax}]];
-
-(*And gather the list of rules*)
-Listlhsrhs=Reverse@Transpose[{tableleft,tablerightdown}];
-
-res={};
-(* Now we will replace the rhs by its evaluated form when using SplitCovDs on it, so as to save time when using the rule.*)
-(rhsCDcd=SplitCovDs[IndicesDown[Last[#]],CD,cd];
-restemp=AbsoluteTiming[PutFreeIndicesUp@PutScalar@ToCanonical@ContractMetric[FixedPoint[GradNormalToExtrinsicK,rhsCDcd/.Projector[h]->ProjectWith[h]]//.res//.$MyRules]];
-pairsimplified={First[#],Last@restemp};
-ruletemp=Apply[IndexRuleDelayed,pairsimplified];
-If[$CacheRules,
-If[ToCanonical[((First[#]/.pat_Pattern:>First[pat])/.$MyRules)-((First[#]/.pat_Pattern:>First[pat]))]===0,
-AppendTo[$MyRules,ruletemp];If[$DefInfoQ,Print["The rule ", ruletemp[[1]]," --> ... has been appended to $MyRules"]
-];];,
-AppendTo[res,ruletemp];
-])&/@Listlhsrhs;
-
-On[Pattern::patvar];
-If[$CacheRules,{},res]
-]
-]
-];
-*)
 
 
 ConstantsDecompositionRules[h_?InducedMetricQ]:=
@@ -2726,7 +2560,7 @@ With[{M=ManifoldOfCovD@CovDOfMetric[g]},
 With[{i=DummyIn[Tangent[M]],dim=DimOfManifold@M,j=DummyIn[Tangent[M]],k=DummyIn[Tangent[M]],\[Mu]=DummyIn[Tangent[M]]},
 If[$OpenConstantsOfStructure&&Not[TensorNullQ[CS[h]]]&&(SpaceType[h]==="BianchiB"||SpaceType[h]==="BianchiA")&&dim===4,
 
-MakeRule[Evaluate[{CS[h][i,j,k],epsilon[h][j,k,-\[Mu]](nt[h][\[Mu],i])+av[h][j]h[i,k]-av[h][k]h[i,j]}],MetricOn->All],{}]
+BuildRule[Evaluate[{CS[h][i,j,k],epsilon[h][j,k,-\[Mu]](nt[h][\[Mu],i])+av[h][j]h[i,k]-av[h][k]h[i,j]}],MetricOn->All],{}]
 ]
 ]
 ]
@@ -2767,33 +2601,6 @@ CheckSTFTensors[expr_,h_,exceptlist_List]:=Module[{tens},With[{listpb=Cases[Expa
 
 CheckSTFTensors[expr_,h_]:=CheckSTFTensors[expr,h,{}];
 
-(*SplitPerturbationsOld[expr_,ListPairs_List,h_?InducedMetricQ]:=Module[{res,restemp,restemp2,resfinal},
-With[{g=First@InducedFrom@h,u=Last@InducedFrom@h},
-With[{CD=CovDOfMetric[g],cd=CovDOfMetric[h],rules=Flatten@(RulesSplitCovDsOfTensor[expr,#,h]&/@ListPairs)},
-
-
-res=AbsoluteTiming[
-
-restemp=IndicesDown[Identity[org[(expr)//ProjectorToMetric]]];
-
-restemp2 = FixedPoint[GradNormalToExtrinsicK,SplitCovDs[(restemp//.rules//.$MyRules),CD,cd]//GaussCodazzi[#,h]&];
-
-org[(org[(restemp2/.BackgroundFieldRule)/.Projector[h]->ProjectWith[h]]//MetricToProjector[#,h]&//CommuteCDSafe[#,cd]&)/.ConstantsDecompositionRules[h]]];
-
-CheckSTFTensors[res,h,{g,u,Riemann[cd],Ricci[cd],RicciScalar[cd],h,CS[h],nt[h],av[h],\[ScriptK][h],delta,epsilon[h],epsilon[g]}];
-
-If[$DefInfoQ,Print["The Splitting of ",Take[expr,1]," +... was performed in ",First@res ," seconds."];];
-resfinal=ScreenDollarIndices@collect@(*ToCanonical@ContractMetric@*)NoScalar[Last@res];
-
-If[$SortCovDAutomatic,Off[Unset::norep];Block[{Print},SortCovDsStop[cd]];On[Unset::norep];];
-
-resfinal
-
-]
-]
-];
-*)
-
 
 FullToInducedDerivative[expr_,CD_,cd_]:=FixedPoint[(ToInducedDerivative[#,CD,cd]//ProjectorToMetric//GradNormalToExtrinsicK)&,expr];
 
@@ -2816,7 +2623,7 @@ ContractMetricOutSideProjector[rest_,cd_]:=ContractMetric[rest];
 ContainsDerOrderQ[expr_,CD_?CovDQ,inner_,n_Integer?NonNegative]:=!FreeQ[expr,Nest[CD[_],inner,n]];
 (* Find the maximum order of CD that expr has acting on inner (to simply count the maximum order of CD, use _ for inner) *)
 MaxDerOrder[expr_,CD_?CovDQ,inner_]:=-1+NestWhile[#+1&,0,ContainsDerOrderQ[expr,CD,inner,#]&];
-
+(* Written by Leo Stein *)
 
 
 (* If the background field method is used, this rule ensures that tensor with a label index for order strictly larger than 1 vanish.*)
@@ -2828,7 +2635,7 @@ RulesCovDsOfTensor[expr_,replacerule_,rulesprojected_,h_?InducedMetricQ]:=Module
 With[{CD=CovDOfMetric[g],cd=CovDOfMetric[h],M=ManifoldOfCovD@CovDOfMetric[g]},
 With[{CDmax=MaxDerOrder[expr,CD,First@replacerule]},
 
-(* In this fuynction we will precompute the rules for the CovDs of tensor for which the rule is given in the argument replacerule.
+(* In this function we will precompute the rules for the CovDs of tensor for which the rule is given in the argument replacerule.
 For instance if we compute the perturbation of the Ricci tensor, there will be several terms with two covariant derivatives of the perturbed metric. By precomputing the rule once instead of several times, we shall save sone computing time. *)
 
 dummiesup=DummyIn/@Table[Tangent[M],{Range[CDmax]}];
@@ -2867,63 +2674,52 @@ RulesCovDs
 
 ProjectionAndBackgroundRuleQ[rule_,h_?InducedMetricQ,n_]:=(PerturbationOrder[RemovePatterns[First@rule]]===0)&&(Projector[h][Last@rule]===0||OrthogonalToVectorQ[n][Last@rule]);
 
-SplitPerturbations[expr_,ListPairs_List,h_?InducedMetricQ]:=Module[{res,restemp,resfinal,restemp2,res0,res1,res2,res3,res4,res4bis,res6bis,res6ter,res6quater,res4ter,res4quater,res5,res6,res7,res8,counter,rules,rulesprojectedandbackground(*,$Rulecdh*)},
+SplitPerturbations[expr_,ListPairs_List,h_?InducedMetricQ]:=Module[{res,restemp,resfinal,restemp2,res0,res1,res2,res3,res4,res4bis,res6bis,res6ter,res6quater,res4ter,res4quater,res5,res6,res7,res8,rules,rulesprojectedandbackground},
 With[{g=First@InducedFrom@h,u=Last@InducedFrom@h},
 With[{CD=CovDOfMetric[g],cd=CovDOfMetric[h]},
 
-counter=0;
+(* This is a proposal to deal with the normal vector automatically *)
+(* It remains to see if this design is interesting or if the rules for the normal vector should be placed in ListPairs by the user *)
+(* Deactivated for the moment *)
 
 rulesprojectedandbackground=Select[ListPairs,ProjectionAndBackgroundRuleQ[#,h,u]&];
 
 rules=Flatten@(RulesCovDsOfTensor[expr,#,rulesprojectedandbackground,h]&/@ListPairs);
-(*If[$DebugInfoQ,Print["rules ",rules]];*)
+If[$DebugInfoQ,Print["rules ",rules]];
 
-
+(* This part needs commenting *)
 res=AbsoluteTiming[
 res0=FullToInducedDerivativeAndCDDown[org[((expr/.$RulesVanishingBackgroundFields[h])//ProjectorToMetric//GaussCodazzi[#,h]&)/.Projector[h]->ProjectWith[h]],CD,cd]//ProjectorToMetric;
-(*If[$DebugInfoQ,Print["Stage 0  ", res0]];*)
+If[$DebugInfoQ,Print["Stage 0  ", res0]];
 
 res1 =ToCanonical[(res0/.rules)/.ih_?InertHeadQ[ex_]:>ih[ToCanonical[ex]],UseMetricOnVBundle->None];
-(*If[$DebugInfoQ,Print["Stage 1  ", res1," \n ",res1/.ListPairs ]];*)
+If[$DebugInfoQ,Print["Stage 1  ", res1," \n ",res1/.ListPairs ]];
 
 res2=((res1//.ListPairs)/.BackgroundFieldRule)/.Projector[h][exp___]:>Projector[h][Expand@NoScalar[exp]];
-(*If[$DebugInfoQ,Print["Stage 2  ",res2]];*)
+If[$DebugInfoQ,Print["Stage 2  ",res2]];
 
 res3=(res2/.ProtectMyScalar[exp_]:>IndicesDown[ToCanonical[NoScalar@exp]](*Expand[NoScalar@exp]*));
-(*If[$DebugInfoQ,Print["Stage 3  ",res3]];*)
+If[$DebugInfoQ,Print["Stage 3  ",res3]];
 
 res4=NoScalar[res3/.Projector[h]->ProjectWith[h]](*//ContractMetric//ToCanonical*);
-(*If[$DebugInfoQ,Print["Ready for canonicalization."]];*)
+If[$DebugInfoQ,Print["Ready for canonicalization."]];
 
-res4bis=SameDummies@ContractMetric@res4(*ParallelMap[ContractMetric,res4,Method->"CoarsestGrained"]*);
+res4bis=SameDummies@ContractMetric@res4;
 (*If[$DebugInfoQ,Print["Stage 4 bis"]];*)
 If[$DebugInfoQ,Print["Number of terms to be canonicalized before Expand : ",Length[res4bis],"  ",LeafCount[res4bis],". Head is ",Head[res4bis]];];
 
-
 res4quater=res4bis;
-
-(*
-res4ter=Map[(If[$DebugInfoQ,counter=counter+1;If[Mod[counter,50]===0,Print["We expand term ",counter," ",SameDummies@Expand@#];];];SameDummies@Expand[#])&,res4bis](*ParallelMap[Expand,res4bis,Method->"CoarsestGrained"]*);
-If[$DebugInfoQ,Print["Number of terms after Expand on each term: ",Length[res4ter],"  ",LeafCount[res4ter],". Head is ",Head[res4ter]];];
-
-res4quater=FixedPoint[SameDummies@Expand[#]&,res4ter];
-If[$DebugInfoQ,Print["Expand applied globally. Canonicalisation started."];];
-
-(*counter=0;
-res5=Map[(If[$DebugInfoQ,counter=counter+1;If[Mod[counter,50]===0,Print["We Canonicalize the term ",counter," ",#];];];ToCanonical[#])&,res4quater](*ParallelMap[ToCanonical,res4ter,Method->"CoarsestGrained"]*);
-If[$DebugInfoQ,Print["Main Canonicalisation performed"]];*)
-*)
 
 res6=((*res5*)res4quater//MetricToProjector[#,h]&//CommuteCDSafe[#,cd]&);
 If[$DebugInfoQ,Print["Stage 6"]];
 
 If[FlatSpaceBool[SpaceType[h]],res6quater=res6;,
-res6bis=FixedPoint[SameDummies@Expand[#]&,(res6/.ConstantsOfStructureRules[h](*/.ConstantsDecompositionRules[h]*))];
+res6bis=FixedPoint[SameDummies@Expand[#]&,(res6/.ConstantsOfStructureRules[h])];
 If[$DebugInfoQ,Print["Canonicalisation of ",Length[res6bis]," terms starting"];];
 
 res6ter=SameDummies@ToCanonical@ContractMetric[res6bis];
 
-res6quater=FixedPoint[SameDummies@Expand[#]&,(res6ter(*/.ConstantsOfStructureRules[h]*)/.ConstantsDecompositionRules[h])];
+res6quater=FixedPoint[SameDummies@Expand[#]&,(res6ter/.ConstantsDecompositionRules[h])];
 If[$DebugInfoQ,Print["Canonicalisation of ",Length[res6quater]," terms starting"];];
 ];
 
@@ -2931,15 +2727,10 @@ res7=SameDummies@ToCanonical@ContractMetric[res6quater];
 If[$DebugInfoQ,Print["Riemann replaced and simplified. "(*,res7*)]];
 
 res7
-(*((res7(*//ContractMetric//ToCanonical*))/.ConstantsDecompositionRules[h])//ContractMetric//ToCanonical//SameDummies*)
+
 ];
 
 If[$DebugInfoQ,Print["Constants of structure opened and simplified. "]];
-
-(*If[$DebugInfoQ,Print["Stage 7"]];*)
-(*Print["res 5 ",res5];*)
-
-(*Print["res  ",res];*)
 
 CheckSTFTensors[Last@res,h,{g,u,Riemann[cd],Ricci[cd],RicciScalar[cd],h,CS[h],nt[h],av[h],\[ScriptK][h],delta,epsilon[h],epsilon[g]}];
 
@@ -3131,13 +2922,13 @@ Flatten@Join[
 Flatten@Join[
 If[gauge==="ComovingGauge",{\[CurlyPhi][LI[n_?(#>=1&)],LI[q_]]:>0},{}],
 If[gauge==="IsoDensityGauge",{\[Rho][uf][LI[n_?(#>=1&)],LI[q_]]:>0},{}],
-If[TiltedBool,{MakeRule[Evaluate[{uf[ind1],(Sqrt[Scalar[Vspat[h,uf][LI[0],LI[0],ind2]Vspat[h,uf][LI[0],LI[0],-ind2]]-NormVectorSquare])u[ind1]+Vspat[h,uf][LI[0],LI[0],ind1]}]]},
-{MakeRule[Evaluate[{uf[ind1],u[ind1]}]]}],
+If[TiltedBool,{BuildRule[Evaluate[{uf[ind1],(Sqrt[Scalar[Vspat[h,uf][LI[0],LI[0],ind2]Vspat[h,uf][LI[0],LI[0],-ind2]]-NormVectorSquare])u[ind1]+Vspat[h,uf][LI[0],LI[0],ind1]}]]},
+{BuildRule[Evaluate[{uf[ind1],u[ind1]}]]}],
 
-{MakeRule@Evaluate[{duf[LI[1],ind1],
+{BuildRule@Evaluate[{duf[LI[1],ind1],
 Evaluate[V0[h,uf][LI[1],LI[0]]u[ind1]+cd[ind1][If[gauge==="ComovingGauge",-Bs[h][LI[1],LI[0]] ,Vs[h,uf][LI[1],LI[0]] ]]+ BV1 Vv[h,uf][LI[1],LI[0],ind1]]}]}],
 Table[
-MakeRule@Evaluate[{duf[LI[i],ind1],
+BuildRule@Evaluate[{duf[LI[i],ind1],
 Evaluate[V0[h,uf][LI[i],LI[0]]u[ind1]+cd[ind1][If[gauge==="ComovingGauge",-Bs[h][LI[i],LI[0]] ,Vs[h,uf][LI[i],LI[0]] ]]+ Vv[h,uf][LI[i],LI[0],ind1]]}],{i,2,order}]
 ]
 ]
@@ -3187,6 +2978,118 @@ AllRulesFromProjectedRule[uf,normvector,RulesVelocitySpatial[h,uf,duf,normvector
 
 SetNumberOfArguments[SplitMatter,{6,7}]
 Protect[SplitMatter]
+
+
+\[ScriptCapitalN]0[h_?InducedMetricQ]:=SymbolJoin[\[ScriptCapitalN]0,h];
+\[ScriptCapitalN][h_?InducedMetricQ]:=SymbolJoin[\[ScriptCapitalN],h];
+d\[ScriptCapitalN][h_?InducedMetricQ]:=SymbolJoin[d\[ScriptCapitalN],h];
+
+
+$ListNormalFields[h_?InducedMetricQ]:={{\[ScriptCapitalN]0[h][],"\[ScriptCapitalN]0"}};
+
+
+DefNormalFields[h_?InducedMetricQ,PerturbParameter_:\[Epsilon]]:=Module[{ord},
+
+With[{n=Last@InducedFrom@h,
+M=ManifoldOfCovD@CovDOfMetric@First@InducedFrom@h,NN=\[ScriptCapitalN][h],dn=d\[ScriptCapitalN][h]},
+
+Block[{\[Mu]},
+{\[Mu]}=GetIndicesOfVBundle[Tangent@M,1];
+
+(DefProjectedTensor[#[[1]],h,TensorProperties->{"Traceless","Transverse","SymmetricTensor"},SpaceTimesOfDefinition->{"Background","Perturbed"},PrintAs->#[[2]]])&/@$ListNormalFields[h];
+
+If[Not[DefTensorQ[NN]],
+DefTensor[NN[-\[Mu]],M];,
+If[$DefInfoQ,Print["** Warning: Tensor ",NN , "is already defined. It cannot be redefined without undefining it. **"];];
+];
+
+If[Not[DefTensorQ[dn]],
+DefTensorPerturbation[dn[LI[ord],-\[Mu]],NN[-\[Mu]],M],PrintAs->"\[Delta]"<>PrintAs[n];,
+If[$DefInfoQ,Print["** Warning: Tensor ",dn , "is already defined. It cannot be redefined without undefining it. **"];];
+];
+
+If[Not@DefinedPerturbationParameter[$PerturbationParameter],$PerturbationParameter=PerturbParameter;DefinedPerturbationParameter[$PerturbationParameter]=True];
+
+dn[\[Mu]_?AIndexQ]:=dn[LI[0],\[Mu]];
+
+]
+]
+]
+
+SetNumberOfArguments[DefNormalFields,{1,2}]
+Protect[DefNormalFields];
+
+
+RulesNormalFields[h_?InducedMetricQ,order_?IntegerQ]:=Module[{},
+
+With[{M=ManifoldOfCovD@CovDOfMetric@First@InducedFrom@h,cd=CovDOfMetric@h,n=Last@InducedFrom@h,dn=d\[ScriptCapitalN][h]},
+
+With[{ind1=DummyIn@Tangent@M,ind2=DummyIn@Tangent@M},
+
+Flatten@Join[
+{BuildRule[Evaluate[{dn[ind1],n[ind1]}]]},
+
+
+(* The perturbation of Subscript[n, \[Mu]] has no spatial components since it is proportionnal to Subscript[d\[Eta], \[Mu]] *)
+(* It is THIS PROPERTY which says that this vector, timelike, is the one normal to constant time hypersurfaces *)
+
+Table[
+BuildRule@Evaluate[{dn[LI[i],ind1],
+Evaluate[\[ScriptCapitalN]0[h][LI[i],LI[0]]n[ind1]]}],{i,1,order}]
+
+(* We have to remember that dn is the perturbation of the normal vector when indices are down. These rules are defined with both positions of indices, so the down position is the correct one, and the up position menase raising with the background metric.*)
+
+]
+]
+]
+]
+
+
+RulesFromProjectedRule[RulesNspat_,h_?InducedMetricQ,order_?IntegerQ]:=Module[{RuleBackgroundBoost,RuleBackgroundVelocity,RuleBoost,LocalRulesNspat,RuleBoostUpton,RulesBoostUptoOrder,X,res,nloc,debug,Boost,Nspatial},
+
+With[{g=First@InducedFrom@h,vector=\[ScriptCapitalN][h]},
+
+With[{M=ManifoldOfCovD@CovDOfMetric@g},
+
+With[{ind1=DummyIn@Tangent@M,ind2=DummyIn@Tangent@M},
+
+Block[{Print},DefTensor[X[],M];];
+
+Boost=\[ScriptCapitalN]0[h];
+(*Nspatial=Nspat[h,vector];*)
+
+LocalRulesNspat=RulesNspat;
+
+RuleBackgroundBoost={};
+
+RuleBoost[0]:=RuleBackgroundBoost;
+
+RuleBoostUpton[m_]:=Flatten@Table[ToCanonical@ContractMetric[RuleBoost[i]],{i,0,m}];
+
+RuleBoost[p_?(#>=1&)]:=(
+Boost[LI[p],LI[0]]:>Evaluate[ToCanonical@ContractMetric@PutScalar[(X[]/.First@IndexSolve[org[ExpandPerturbation@Perturbation[g[ind1,ind2]vector[-ind1]vector[-ind2],p]/.LocalRulesNspat/.Boost[LI[p],LI[0]]->X[]]==0,X[]])/.RuleBoostUpton[p-1]/.LocalRulesNspat]/.BackgroundFieldRule]);
+
+res=Join[RulesNspat/.RuleBoostUpton[order]];
+
+Block[{Print},UndefTensor[X];];
+res
+
+]
+]
+]
+]
+
+
+SplitNormalVector[h_?InducedMetricQ,order_?IntegerQ]:=(
+If[Not[DefTensorQ[\[ScriptCapitalN]0[h]]]||Not[DefTensorQ[d\[ScriptCapitalN][h]]],Print["** Warning: The perturbed normal vector, or the fields required to parameterize its splitting were not previously defined **"];
+Print["** DefNormalFields is called to build the perturbation of the normal vector and the projected fields **"];
+DefNormalFields[h];
+];
+RulesFromProjectedRule[RulesNormalFields[h,order],h,order]);
+
+
+SetNumberOfArguments[SplitNormalVector,{2}]
+Protect[SplitNormalVector]
 
 
 On[RuleDelayed::rhs];
