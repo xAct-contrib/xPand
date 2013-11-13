@@ -248,8 +248,7 @@ ExtractOrder::usage = "ExtractOrder[expr,order] displays the expression at order
 IndicesUp::usage = "IndicesUp[expr] raises the indices of all the tensors of 'expr' using the ambient metric.";
 IndicesDown::usage = "IndicesDown[expr] lowers the indices of all the tensors of 'expr' using the ambient inverse metric.";
 
-(********* This command was added in version 0.4.2. More documentation is needed and syntax can still evolve ********)
-SplitNormalVector::usage = "SplitNormalVector[h,order], where h is an induced metric, and order is the order up to which the perturbations of the normal vector should be computed in function of the perturbed metric. This outputs a list of rules, one for each order of perturbation of the normal vector";
+
 
 (********** The following command, SplitMatter, will have to be re-edited. **********)
 
@@ -262,6 +261,11 @@ The perturbations of all the fields that depend on 'uf' are also computed.";
 (********** The following command, SplitMetric, will have to be re-edited. **********)
 
 SplitMetric::usage = "SplitMetric[g,gpert,h,gauge] builds the rules to split the perturbed metric 'gpert' in a given gauge and according to the background slicing associated with the induced metric 'h'.";
+
+
+(********* This command was added in version 0.4.2. More documentation is needed and syntax can still evolve ********)
+SplitNormalVector::usage = "SplitNormalVector[h,order], where h is an induced metric, and order is the order up to which the perturbations of the normal vector should be computed in function of the perturbed metric. This outputs a list of rules, one for each order of perturbation of the normal vector. All rules are expressed in function of the perturbed metric";
+
 
 $MyRules::usage = "List of global rules that are remembered by xPand.";
 
@@ -580,45 +584,39 @@ The default printed form of Lv[h][-index] is: '\!\(\*SubscriptBox[\(L\), \(index
 
 
 
+\[ScriptCapitalN]0::usage = "\[ScriptCapitalN]0[h][LI[p],LI[q]] is the time part of the perturbation of the normal vector to constant time hypersurfaces (whith index down). It is automatically defined when calling SetSlicing.
+In the ADM formalism, it is equal to the lapse function.
 
-\[ScriptCapitalN]0::usage = "\[ScriptCapitalN]0[h][LI[p],LI[q]] is the time part of the perturbation of the normal vector to constant time hypersurfaces. It is automatically defined when calling SetSlicing";
+The first Label-Index (LI) gives the order 'p' of the perturbation '\[ScriptCapitalN]0'. The second LI represents the number 'q' of Lie derivatives along the vector normal to the hypersurfaces acting on the 'p'-order of '\[ScriptCapitalN]'. Hence \[ScriptCapitalN]0[h][LI[0],LI[0]] is the background lapse and is equal to 1.
+
+The commands \[ScriptCapitalN]0[h][index] and \[ScriptCapitalN]0[h][LI[p],index] are defined to be equal to \[ScriptCapitalN]0[h][LI[0],LI[0],index] and \[ScriptCapitalN]0[h][LI[p],LI[0],index], respectively. 
+
+The command \[ScriptCapitalN]0[h] builds the symbol '\[ScriptCapitalN]0h', so one can use \[ScriptCapitalN]0[h][LI[p],LI[q],index] or, equivalently, \[ScriptCapitalN]0h[LI[p],LI[q],index]. 
+
+The default printed form of \[ScriptCapitalN]0[h][-index] is: '\!\(\*SubscriptBox[\(\[ScriptCapitalN]0\), \(index\)]\)'.";
 
 
-\[ScriptCapitalN]::usage = "\[ScriptCapitalN][h][index] is the normal vector to constant time hypersurfaces. It is automatically defined when calling SetSlicing. Though it is equal to n, where nis the vector normal to h on the background space-time, this definition allow manipulation of the normal vector, like perturbation, conformal transformations, which would be impossible with n since so many definitions are already automatized for it.";
+\[ScriptCapitalN]::usage = "\[ScriptCapitalN][h][index] is the normal vector to constant time hypersurfaces. It is automatically defined when calling SetSlicing. Though on the background spacetime it is equal to \!\(\*SuperscriptBox[\(n\), \(\[Mu]\)]\), where \!\(\*SuperscriptBox[\(n\), \(\[Mu]\)]\) is the vector normal to h on the background space-time, this definition allows manipulation of the normal vector, like perturbation, conformal transformations, which would be impossible directly with \!\(\*SuperscriptBox[\(n\), \(\[Mu]\)]\) since many definitions are already automatized for it (e.g. normalization to -1).";
 
 
-d\[ScriptCapitalN]::usage = "d\[ScriptCapitalN][h][LI[p],index] is the perturbation of normal vector to constant time hypersurfaces.";
+d\[ScriptCapitalN]::usage = "d\[ScriptCapitalN][h][LI[p],index] is the perturbation of the normal vector to constant time hypersurfaces. 'p' is the order of perturbation.
 
-\[ScriptCapitalN]i::usage = "\[ScriptCapitalN]i[h][index] is the shift vector of the normal vector to constant time hypersurfaces. It is defined as \[ScriptCapitalN]i[h][upindex] = -Projector[h][\[ScriptCapitalN]0[h] \[ScriptCapitalN][h] upindex]";
+The command d\[ScriptCapitalN][h] builds the symbol 'd\[ScriptCapitalN]h', so one can use d\[ScriptCapitalN][h][LI[p],index] or, equivalently, d\[ScriptCapitalN]h[LI[p]index].";
+
+\[ScriptCapitalN]i::usage = "\[ScriptCapitalN]i[h][index] is the shift vector (in the ADM formalism) of the normal vector to constant time hypersurfaces. It is defined as \[ScriptCapitalN]i[h][upindex] = -Projector[h][ \[ScriptCapitalN]0[h] \[ScriptCapitalN][h][upindex] ].
+It is only meaningful when used with and upper index. Its main purpose is the computation of perturbations for the shift vector in the ADM formalism.
+
+The command \[ScriptCapitalN]i[h] builds the symbol '\[ScriptCapitalN]ih', so one can use \[ScriptCapitalN]i[h][upindex] or, equivalently, \[ScriptCapitalN]ih[upindex]. 
+";
 
 
 (*** RESERVED WORDS AND PROTECTED NAMES ***)
-
-(*Background::usage = "Reserved word. See DefProjectedTensor.";
-Perturbed::usage = "Reserved word. See DefProjectedTensor.";
-
-Time::usage = "Reserved word. See ExtractComponents."
-
-SymmetricTensor::usage = "Protected name. A parameter to define tensors.";
-Traceless::usage = "Protected name. A parameter to define tensors.";
-Transverse::usage = "Protected name. A parameter to define tensors.";
-
-
-Tilted::usage = "";
-NotTilted::usage = "";*)
 
 SpaceTimesOfDefinition::usage = "";
 TensorProperties::usage = "";
 
 
 (*** TYPES OF GAUGE ***)
-
-(*AnyGauge::usage = "Type of gauge to be used as argument of the function SplitMetric.";
-ComovingGauge::usage = "Type of gauge to be used as argument of the function SplitMetric.";
-FlatGauge::usage = "Type of gauge to be used as argument of the function SplitMetric.";
-IsoDensityGauge::usage = "Type of gauge to be used as argument of the function SplitMetric.";
-NewtonGauge::usage = "Type of gauge to be used as argument of the function SplitMetric.";
-SynchronousGauge::usage = "Type of gauge to be used as argument of the function SplitMetric.";*)
 
 $ListOfGauges::usage = "Possible gauges are: AnyGauge, ComovingGauge, FlatGauge, IsoDensityGauge, NewtonGauge and SynchronousGauge."
 
@@ -660,7 +658,7 @@ Protect[xAct`xTensor`NoScalar];
 
 (* We create our own function based on MakeRule, but separating the special problematic case. This avoids overloading a definition from xTensor.
 It does not change the way xPand works, but that way, the code is clearly separated from xTensor. 
-This is much more polite way to modify the behaviour of xTensor. This method was advised by Leo Stein**)
+This is a much more polite way to modify the behaviour of xTensor. This method was advised by Leo Stein**)
 
 SetAttributes[BuildRule,HoldFirst]
 BuildRule[{lhs_?(Evaluate[#]===0&),rhs_,conditions___},options:OptionsPattern[]]:={};
@@ -672,22 +670,13 @@ BuildRule[{lhs_,rhs_,conditions___},options:OptionsPattern[]]:=MakeRule[{lhs,rhs
 
 BackgroundFieldMethod = False;
 $DebugInfoQ=False;
-(*$CacheRules = False; (* obsolete *)*)
 $CommutecdRules = {};
 $ConformalTime = True;
 $FirstOrderVectorPerturbations=True;
 $FirstOrderTensorPerturbations=True;
-(*$MyRules={};*)
 $OpenConstantsOfStructure=True;
 $PrePrint=ScreenDollarIndices;
 $SortCovDAutomatic=True;
-
-(*Protect[Anisotropic,BianchiB,BianchiA,BianchiI,FLCurved,FLFlat];
-Protect[Background,Perturbed];
-Protect[SymmetricTensor,Traceless,Transverse];
-Protect[AnyGauge,ComovingGauge,FlatGauge,IsoDensityGauge,NewtonGauge,SynchronousGauge];
-Protect[Tilted, NotTilted];
-Protect[Time];*)
 
 Off[RuleDelayed::rhs];
 
@@ -839,12 +828,9 @@ Block[{\[Mu]},
 ]
 ];
 
-(* The former implementation failed to treat separately different fluids. *)
+(* The former implementation of $ListFieldsBackgroundAndPerturbed failed to treat separately different fluids. *)
 (* Obinna proposed the replace by the version below. *)
 (* We thank Enrico Pajer for reporting this bug. *)
-
-(*$ListFieldsBackgroundAndPerturbed[h_?InducedMetricQ,velocity_]:={{\[CurlyPhi][],"\[CurlyPhi]"},{\[Rho][velocity][],"\[Rho]"},{P[velocity][],"P"},{Vspat[h,velocity][-\[Mu]],"\[ScriptCapitalV]"},{V0[h,velocity][],"V0"},{Vs[h,velocity][],"V"},{Vv[h,velocity][-\[Mu]],"V"}};*)
-
 
 $ListFieldsBackgroundAndPerturbed[h_?InducedMetricQ,velocity_]:=With[{M=ManifoldOfCovD@CovDOfMetric@First@InducedFrom@h},
 Block[{\[Mu],\[Nu]},
@@ -901,12 +887,6 @@ PrAs=PrintAs/.CheckOptions[options]/.Options[DefProjectedTensor];
 SpaTimeDef=SpaceTimesOfDefinition/.CheckOptions[options]/.Options[DefProjectedTensor];
 TensProp=TensorProperties/.CheckOptions[options]/.Options[DefProjectedTensor];
 
-(* If the argument 'options' is omitted, CheckOptions[options] = {}, and we have by default: 
- PrAs = Identity 
- SpaTimeDef = {Background,Perturbed} 
-TensProp = {SymmetricTensor,Traceless,Transverse} *)
-
-(*If[Not@DefProjectedTensorQ[Name]&&DefTensorQ[Name],*)
 
 If[DefProjectedTensorQ[Name]||DefTensorQ[Name],
 
@@ -1025,7 +1005,7 @@ If[NumericQ[q],Throw[Print["** Warning: The second label-index has to be a posit
 ];
 
 
-(* TO DO: We here have to comment on the commutation between perturbing and Lie deriving. This commutation stems from the fact that the Lie derivative is a background Lie derivative. *)
+(* TO DO: Here, we have to comment on the commutation between perturbing and Lie deriving. This commutation stems from the fact that the Lie derivative is a background Lie derivative. *)
 If[PerturbedBool,
 
 (* For any perturbed tensors, we have: *)
@@ -1107,15 +1087,16 @@ Throw[Print["** Warning: The second label-index has to be a positive integer."]]
 If[Not[BackgroundBool]&&PerturbedBool,
 
 (* This is the 0.4.0 version way to do it. We define a delayed 0 value for the background*)
-(* HOwever this is problematic when we want to perturb. Because then when we perturbe this quantity*)
+(* However this is problematic when we want to perturb. Because then when we perturbe this quantity*)
 (* we write Perturbed[quantity] but Mathematica will read Perturbed[0], and so this leads to 0.*)
 (* Instead we should append this to a list of rules, that should be applied in SplitPerturbations *)
 (* The easiest way is to define a set of global rules and to append a new rule each time there is a tensor vanishing on the background *)
 	
+(* Old implementation *)
 (*Name[LI[0],LI[q_?((IntegerQ[#]&&#>=0)&)],indices___?AIndexQ]:=0
 /;(Length[{indices}]===Length[{inds}]);*)
 
-(* This is what is implemented below:*)
+(* New implementation *)
 Lengthindices=Length[{inds}];
 $RulesVanishingBackgroundFields[h]=Append[$RulesVanishingBackgroundFields[h],Name[LI[0],LI[q_?((IntegerQ[#]&&#>=0)&)],indices___?AIndexQ]:>0
 /;(Length[{indices}]===Lengthindices) ];
@@ -1181,7 +1162,7 @@ Name/:Name[LI[p_?((IntegerQ[#] && #>=0) &)],LI[q_?((IntegerQ[#] && #>=1) &)],ind
 Name/:Name[LI[p_?((IntegerQ[#] && #>=0) &)],LI[q_?((IntegerQ[#] && #>=1) &)],indices1___,-Dum1_,indices2___]h[-Dum2_,Dum1_]:=Name[LI[p],LI[q],indices1,-Dum2,indices2] /;( Length[Join[{indices1},{indices2}]]+1===Length[{inds}]);
 
 
-(* g to h is automatic *)
+(* g converted to h when contracted with a projecte tensor. It is made automatic *)
 
 Name/:Name[LI[p_?((IntegerQ[#] && #>=0) &)],LI[q_?((IntegerQ[#] && #>=0) &)],indices1___,Dum1_,indices2___]g[-Dum1_,Dum2_]:=Name[LI[p],LI[q],indices1,Dum1,indices2]h[-Dum1,Dum2] /;( Length[Join[{indices1},{indices2}]]+1===Length[{inds}]);
 
@@ -1282,10 +1263,12 @@ ToCan[Plus@@((-Connection[h][Dummy1,Dummy2,#]ReplaceIndex[Evaluate[Name[LI[0],LI
 ];
 (* Confer the function SetSlicing for the definition of 'Connection' and its properties. *)
 (* Is the above relation correct for space-time indices? To check! *)
-(* What is the need for 'Evaluate'? *)
+(* What is the need for 'Evaluate'? I forgot. *)
 
 
 (* In principle, the following rule needs not to be used. *)
+(* However, it makes sure that, if something went wrong in our algorithm, and the Lie derivatives acts on a tensor with up indices, then this converted to down indices.*)
+(* This ensures that the algorithm for splitting the covariant derivatives into induced derivatives and Lie derivative always works. *)
 Name/:LieD[n[Dummy1_]][Name[LI[p_?((IntegerQ[#]&&#>=0)&)],LI[q_?((IntegerQ[#]&&#>=0)&)],indices1___?AIndexQ,IndexUp_?UpIndexQ,indices2___?AIndexQ]]:=Module[{Dum},
 
 Dum=DummyIn[Tangent[M]];
@@ -1293,7 +1276,6 @@ Dum=DummyIn[Tangent[M]];
 g[IndexUp,Dum]LieD[n[Dummy1]][Name[LI[p],LI[q],indices1,-Dum,indices2]]+ LieD[n[Dummy1]][g[IndexUp,Dum]] Name[LI[p],LI[q],indices1,-Dum,indices2]
 
 ]/;(Length[Join[{indices1},{indices2}]]+1===Length[{inds}]);
-
 
 ]
 ]
@@ -1625,6 +1607,8 @@ ToCan[Plus@@((-Connection[h][Dummy1,Dummy2,#]ReplaceIndex[Evaluate[Name[LI[0],LI
 
 
 (* In principle, the following rule needs not to be used. *)
+(* Indeed, the algorithm of SPlitPerturbation is designed so that there is never any Lie derivative acting on tensors with up indices.*)
+(* If that was the case because of a strange use of xPand, this rule ensure that the Lie derivative of a tensor with up indices is converted into a Lie derivative with down indices. This is to make sure that the algo always works.*)
 Name/:LieD[n[Dummy1_]][Name[LI[p_?((IntegerQ[#]&&#>=0)&)],LI[q_?((IntegerQ[#]&&#>=0)&)],Indices1___?AIndexQ,IndexUp_?UpIndexQ,Indices2___?AIndexQ]]:=Module[{Dum},
 
 Dum=DummyIn[Tangent[M]];
@@ -1699,9 +1683,8 @@ i4=DummyIn[Tangent[Manifold]],
 i5=DummyIn[Tangent[Manifold]],
 dummy=DummyIn[Tangent[Manifold]],
 ah=a[h],Hh=H[h],
-NNh=NN[h],dnh=dn[h],
 avh=av[h],nth=nt[h],
-CSh=CS[h]},
+CSh=CS[h],Connectionh=Connection[h]},
 
 If[Not@DefTensorQ[u],DefTensor[u[ind1],{Manifold},PrintAs->"\!\("<>ToString[u]<>"\&-\)"];,
 If[Length[SlotsOfTensor[u]]=!=1||VBundleOfIndex@DummyIn[First@SlotsOfTensor@u]=!=Tangent[Manifold],Throw[Message[SetSlicing::invalidnormalvector,u]]];
@@ -1709,7 +1692,7 @@ If[Length[SlotsOfTensor[u]]=!=1||VBundleOfIndex@DummyIn[First@SlotsOfTensor@u]=!
 ];
 
 Off[DefMetric::old];(* Annoying message turned off*)
-(* contribution of Obinna *)
+(* contribution of Obinna. But removed by Cyril *)
 (*DefMetric[1,h[-ind1,-ind2],cd,{cdpost,cdpre},InducedFrom->{g,u},If[$ConformalTime,If[FlatSpaceBool[SpaceTimeType],PrintAs->"\[Delta]",PrintAs->"\!\("<>ToString[h]<>"\&-\)"],PrintAs->"\!\("<>ToString[h]<>"\&-\)"]];*)
 
 DefMetric[1,h[-ind1,-ind2],cd,{cdpost,cdpre},InducedFrom->{g,u},PrintAs->"\!\("<>ToString[h]<>"\&-\)"];
@@ -1737,6 +1720,7 @@ h1[b_,a_]cd[c_]@cd[-a_][expr1_]:>cd[c]@cd[b][expr1]};
 $RulesVanishingBackgroundFields[h1_]:={};
 
 (** All of this is now included in xAct 1.0.5 so we comment these lines **)
+(** I keep it in comments to remember it**)
 (*cd[i1_][x_ y_]=.;
 cd[_?GIndexQ][expr_]=.;*)
 (* and we redefine them *)
@@ -1770,7 +1754,7 @@ AutomaticRules[epsilon[g],BuildRule[Evaluate[{epsilon[g]@@indsdim u[-indsdim[[1]
 ];
 
 
-(* We define the perturbation of the normal vector *)
+(* We define the normal vector to constant time hypersurfaces (it should be equal to the normal vector on the background spacetime.). This defines also the perturbation of the normal vector, and the fields related to it (lapse scalar and shift vector in ADM formalism). *)
 DefNormalFields[h];
 
 (* We define a[h] the scale factor associated to h, and the Hubble factor related.*)
@@ -1798,10 +1782,11 @@ DefConformalMetric[g,ah];
 (* Obvious. SHould be automatic in xPert*)
 cd[_][$PerturbationParameter]=0;
 
-(* The vector used for the background slicing is indeed backgorund so should not be perturbed *)
-(* However if we want to be able to perturb the normal tensor.*)
-(* In order to do so, we will use the vector NN[h] which the vector normal to constant time hypersurfaces at the perturbed level*)
-(* See the section devoted to the perturbation of the normal vector.*)
+(* The vector used for the background slicing is indeed background so should not be perturbed *)
+(* However we want to be able to perturb the normal vector to constan time hypersurfaces.*)
+(* In order to do so, we will use the vector \[ScriptCapitalN][h][\[Mu]] which is equal to the background normal vector n^\[Mu].
+Howeverm it is ano rule attached to it, so it can be perturbed. Its perturbation is then d\[ScriptCapitalN][LI[p],\[Mu]] *)
+(* See the section devoted to the perturbation of the normal vector for more explanations*)
 Perturbation[u[ind1_],n_]^:=0/;n>=1;
 
 
@@ -1810,7 +1795,7 @@ AutomaticRules[g,BuildRule[Evaluate[{LieD[u[dummy]][g[ind1,ind2]],LieD[u[dummy]]
 AutomaticRules[g,BuildRule[Evaluate[{LieD[u[dummy]][g[-ind1,-ind2]],LieD[u[dummy]][g[-ind1,-ind2]]//MetricToProjector[#,h]&}],MetricOn->None]];
 
 
-DefTensor[Connection[h][-ind1,-ind2,-ind3],{Manifold},Antisymmetric[{-ind1,-ind3}],OrthogonalTo->{u[ind1],u[ind2],u[ind3]},ProjectedWith->{h[ind1,-ind4],h[ind2,-ind5],h[ind3,-ind6]},PrintAs->StringJoin["\[CapitalGamma]",ToString[h]]] ;
+DefTensor[Connectionh[-ind1,-ind2,-ind3],{Manifold},Antisymmetric[{-ind1,-ind3}],OrthogonalTo->{u[ind1],u[ind2],u[ind3]},ProjectedWith->{h[ind1,-ind4],h[ind2,-ind5],h[ind3,-ind6]},PrintAs->StringJoin["\[CapitalGamma]",ToString[h]]] ;
 
 DefTensor[CSh[-ind1,-ind2,-ind3],{Manifold},Antisymmetric[{-ind2,-ind3}],OrthogonalTo->{u[ind1],u[ind2],u[ind3]},ProjectedWith->{h[ind1,-ind4],h[ind2,-ind5],h[ind3,-ind6]},PrintAs->StringJoin["C"(*,ToString[h]*)]] ;
 
@@ -1875,7 +1860,7 @@ ToCanonical@ContractMetric[LieD[u[ind1]][g[ind3,ind5]]g[ind4,ind6]CSh[ind2,-ind5
 
 (* -------- *)
 (* We now define the connection and the Riemann tensor of the induced metric. See draft *)
-IndexSet[Connection[h][i1_,i2_,i3_],1/2(CSh[i2,i1,i3]-CSh[i1,i3,i2]+CSh[i3,i1,i2])];
+IndexSet[Connectionh[i1_,i2_,i3_],1/2(CSh[i2,i1,i3]-CSh[i1,i3,i2]+CSh[i3,i1,i2])];
 
 If[SpaceTimeType==="FLCurved",
 IndexSet[Riemann[cd][i1_,i2_,i3_,i4_],\[ScriptK][h][](h[i1,i3]h[i2,i4]-h[i1,i4]h[i2,i3])];
@@ -1884,9 +1869,9 @@ IndexSet[RicciScalar[cd][],\[ScriptK][h][]h[i1,-i1](h[i3,-i3]-1)];,
 
 (* Rieman, Ricci and RicciScalar tensors. We build rules to express them in terms of constants of structure. *)
 
-ConstantsOfStructureRules[h]=Flatten@Join[BuildRule[Evaluate[{Riemann[cd][i1,i2,i3,i4], ToCanonical@ContractMetric[(-Connection[h][i5,i3,i2]Connection[h][i1,i4,-i5]+Connection[h][i5,i4,i2]Connection[h][i1,i3,-i5]-CSh[i5,i3,i4]Connection[h][i1,-i5,i2])(*/.ConstantsDecompositionRules[h]*)]}]],
-BuildRule[Evaluate[{Ricci[cd][i1,i3], ToCanonical@ContractMetric[(h[-i2,-i4](-Connection[h][i5,i3,i2]Connection[h][i1,i4,-i5]+Connection[h][i5,i4,i2]Connection[h][i1,i3,-i5]-CSh[i5,i3,i4]Connection[h][i1,-i5,i2]))(*/.ConstantsDecompositionRules[h]*)]}]],
-BuildRule[Evaluate[{RicciScalar[cd][], ToCanonical@ContractMetric[(h[-i2,-i4]h[-i1,-i3](-Connection[h][i5,i3,i2]Connection[h][i1,i4,-i5]+Connection[h][i5,i4,i2]Connection[h][i1,i3,-i5]-CSh[i5,i3,i4]Connection[h][i1,-i5,i2]))(*/.ConstantsDecompositionRules[h]*)]}]]
+ConstantsOfStructureRules[h]=Flatten@Join[BuildRule[Evaluate[{Riemann[cd][i1,i2,i3,i4], ToCanonical@ContractMetric[(-Connectionh[i5,i3,i2]Connectionh[i1,i4,-i5]+Connectionh[i5,i4,i2]Connectionh[i1,i3,-i5]-CSh[i5,i3,i4]Connectionh[i1,-i5,i2])(*/.ConstantsDecompositionRules[h]*)]}]],
+BuildRule[Evaluate[{Ricci[cd][i1,i3], ToCanonical@ContractMetric[(h[-i2,-i4](-Connectionh[i5,i3,i2]Connectionh[i1,i4,-i5]+Connectionh[i5,i4,i2]Connectionh[i1,i3,-i5]-CSh[i5,i3,i4]Connectionh[i1,-i5,i2]))(*/.ConstantsDecompositionRules[h]*)]}]],
+BuildRule[Evaluate[{RicciScalar[cd][], ToCanonical@ContractMetric[(h[-i2,-i4]h[-i1,-i3](-Connectionh[i5,i3,i2]Connectionh[i1,i4,-i5]+Connectionh[i5,i4,i2]Connectionh[i1,i3,-i5]-CSh[i5,i3,i4]Connectionh[i1,-i5,i2]))(*/.ConstantsDecompositionRules[h]*)]}]]
 ];
 
 ];
@@ -1949,7 +1934,7 @@ If[(BianchiBool@SpaceTimeType)&&(Not@FlatSpaceBool@SpaceTimeType),
 AutomaticRules[CSh,
 BuildRule[Evaluate[{cd[ind1][CSh[ind2,ind3,ind4]],ToCanonical[
 (* Minus the connection for down indices *)
--Plus@@((Connection[h][dummy,ind1,#] ReplaceIndex[CSh[ind2,ind3,ind4],#->-dummy])&/@{ind2,ind3,ind4})]
+-Plus@@((Connectionh[dummy,ind1,#] ReplaceIndex[CSh[ind2,ind3,ind4],#->-dummy])&/@{ind2,ind3,ind4})]
 }]]];
 
 (* From this, the n+1 splitting of Covariant derivatives is obvious. *)
@@ -1966,13 +1951,13 @@ ToCanonical[ContractMetric[ToInducedDerivative[IndicesDown[CD[ind1][CSh[ind2,ind
 AutomaticRules[Evaluate[Riemann[cd]],
 BuildRule[Evaluate[{cd[ind1][Riemann[cd][ind2,ind3,ind4,ind5]],ToCanonical[
 (* Minus the connection for down indices *)
--Plus@@((Connection[h][dummy,ind1,#] ReplaceIndex[Evaluate[Riemann[cd][ind2,ind3,ind4,ind5]],#->-dummy])&/@{ind2,ind3,ind4,ind5})]
+-Plus@@((Connectionh[dummy,ind1,#] ReplaceIndex[Evaluate[Riemann[cd][ind2,ind3,ind4,ind5]],#->-dummy])&/@{ind2,ind3,ind4,ind5})]
 }]]];
 
 AutomaticRules[Evaluate[Ricci[cd]],
 BuildRule[Evaluate[{cd[ind1][Ricci[cd][ind2,ind3]],ToCanonical[
 (* Minus the connection for down indices *)
--Plus@@((Connection[h][dummy,ind1,#] ReplaceIndex[Evaluate[Ricci[cd][ind2,ind3]],#->-dummy])&/@{ind2,ind3})]
+-Plus@@((Connectionh[dummy,ind1,#] ReplaceIndex[Evaluate[Ricci[cd][ind2,ind3]],#->-dummy])&/@{ind2,ind3})]
 }]]];
 
 AutomaticRules[Evaluate[RicciScalar[cd]],
@@ -2639,7 +2624,7 @@ MaxDerOrder[expr_,CD_?CovDQ,inner_]:=-1+NestWhile[#+1&,0,ContainsDerOrderQ[expr,
 
 
 (* If the background field method is used, this rule ensures that tensor with a label index for order strictly larger than 1 vanish.*)
-BackgroundFieldRule:=If[BackgroundFieldMethod,
+$BackgroundFieldRule:=If[BackgroundFieldMethod,
 {tens_?xTensorQ[inds___]:>0/;PerturbationOrder[tens[inds]]>1},{}]
 
 
@@ -2699,7 +2684,7 @@ rulesprojectedandbackground=Select[ListPairs,ProjectionAndBackgroundRuleQ[#,h,u]
 rules=Flatten@(RulesCovDsOfTensor[expr,#,rulesprojectedandbackground,h]&/@ListPairs);
 If[$DebugInfoQ,Print["rules ",rules]];
 
-(* This part needs commenting *)
+(* TODO This part needs commenting. A lot of commenting. *)
 res=AbsoluteTiming[
 res0=FullToInducedDerivativeAndCDDown[org[((expr/.$RulesVanishingBackgroundFields[h])//ProjectorToMetric//GaussCodazzi[#,h]&)/.Projector[h]->ProjectWith[h]],CD,cd]//ProjectorToMetric;
 If[$DebugInfoQ,Print["Stage 0  ", res0]];
@@ -2707,7 +2692,7 @@ If[$DebugInfoQ,Print["Stage 0  ", res0]];
 res1 =ToCanonical[(res0/.rules)/.ih_?InertHeadQ[ex_]:>ih[ToCanonical[ex]],UseMetricOnVBundle->None];
 If[$DebugInfoQ,Print["Stage 1  ", res1," \n ",res1/.ListPairs ]];
 
-res2=((res1//.ListPairs)/.BackgroundFieldRule)/.Projector[h][exp___]:>Projector[h][Expand@NoScalar[exp]];
+res2=((res1//.ListPairs)/.$BackgroundFieldRule)/.Projector[h][exp___]:>Projector[h][Expand@NoScalar[exp]];
 If[$DebugInfoQ,Print["Stage 2  ",res2]];
 
 res3=(res2/.ProtectMyScalar[exp_]:>IndicesDown[ToCanonical[NoScalar@exp]](*Expand[NoScalar@exp]*));
@@ -2949,28 +2934,22 @@ Evaluate[V0[h,uf][LI[i],LI[0]]u[ind1]+cd[ind1][If[gauge==="ComovingGauge",-Bs[h]
 
 
 AllRulesFromProjectedRule[vector_,NormVectorSquare_,RulesVspat_,h_?InducedMetricQ,order_?IntegerQ]:=
-Module[{RuleBackgroundBoost,Rulebackgroundvelocity,RuleBoost,LocalRulesVspat,RuleBoostUpton,RulesBoostUptoOrder,res,nloc,debug,Boost,Vspatial},
-With[{g=First@InducedFrom@h,u=Last@InducedFrom@h},
+Module[{Rulebackgroundvelocity,RuleBoost,LocalRulesVspat,RuleBoostUpton,RulesBoostUptoOrder},
+With[{g=First@InducedFrom@h,u=Last@InducedFrom@h,Boost=V0[h,vector],Vspatial=Vspat[h,vector]},
 With[{M=ManifoldOfCovD@CovDOfMetric[g]},
 With[{i1=DummyIn@Tangent@M,i2=DummyIn@Tangent@M},
 
-Boost=V0[h,vector];
-Vspatial=Vspat[h,vector];
+LocalRulesVspat=RulesVspat;(* This is because I have problems with n being replaced automatically in RulesVspat. Honestly I am not sure of why this happens. But this is necessary.*)
 
-LocalRulesVspat=RulesVspat;(* This is because I have problems with n being replaced automatically in RulesVspat. Honestly I am not sure of why this happens.*)
-
-RuleBackgroundBoost={};
-
-RuleBoost[0]:=RuleBackgroundBoost;
+RuleBoost[0]:={};
 
 RuleBoostUpton[m_]:=Flatten@Table[ToCanonical@ContractMetric[RuleBoost[i]],{i,0,m}];
 
 RuleBoost[n_?(#>=1&)]:=MakeRule[Evaluate[{
-Boost[LI[n],LI[0]],ToCanonical@ContractMetric@PutScalar[(Boost[LI[n],LI[0]]/.First@IndexSolve[org[ExpandPerturbation@Perturbation[g[-i1,-i2]vector[i1]vector[i2],n]/.LocalRulesVspat]==0,Boost[LI[n],LI[0]]])/.RuleBoostUpton[n-1]/.LocalRulesVspat]/.BackgroundFieldRule}]];
+Boost[LI[n],LI[0]],ToCanonical@ContractMetric@PutScalar[(Boost[LI[n],LI[0]]/.First@IndexSolve[org[ExpandPerturbation@Perturbation[g[-i1,-i2]vector[i1]vector[i2],n]/.LocalRulesVspat]==0,Boost[LI[n],LI[0]]])/.RuleBoostUpton[n-1]/.LocalRulesVspat]/.$BackgroundFieldRule}]];
 
-res=Join[RulesVspat/.RuleBoostUpton[order]];
+Join[RulesVspat/.RuleBoostUpton[order]]
 
-res
 ]]]];
 
 
@@ -3021,6 +3000,7 @@ If[Not[DefTensorQ[dn]],
 DefTensorPerturbation[dn[LI[ord],-\[Mu]],NN[-\[Mu]],M],PrintAs->"\[Delta]"<>PrintAs[n];,
 If[$DefInfoQ,Print["** Warning: Tensor ",dn , "is already defined. It cannot be redefined without undefining it. **"];];
 ];
+(* Note here, and that's very important, that the perturbation of the normal vector is defined with a down idnex. That way it is always proportionnal to the time form Subscript[d\[Eta], \[Mu]].*)
 
 If[Not@DefinedPerturbationParameter[$PerturbationParameter],$PerturbationParameter=PerturbParameter;DefinedPerturbationParameter[$PerturbationParameter]=True];
 
@@ -3044,6 +3024,7 @@ With[{ind1=DummyIn@Tangent@M,ind2=DummyIn@Tangent@M},
 Flatten@Join[
 {BuildRule[Evaluate[{dn[ind1],n[ind1]}]]},
 {BuildRule[Evaluate[{N0[LI[0],LI[0]],1}]]},
+(* \[ScriptCapitalN]0 is the lapse function in ADM formalism. So the background lapse is 1.*)
 
 (* The perturbation of Subscript[n, \[Mu]] has no spatial components since it is proportionnal to Subscript[d\[Eta], \[Mu]] *)
 (* It is THIS PROPERTY which says that this vector, timelike, is the one normal to constant time hypersurfaces *)
@@ -3052,7 +3033,7 @@ Table[
 BuildRule@Evaluate[{dn[LI[i],ind1],
 Evaluate[N0[LI[i],LI[0]]n[ind1]]}],{i,1,order}]
 
-(* We have to remember that dn is the perturbation of the normal vector when indices are down. These rules are defined with both positions of indices, so the down position is the correct one, and the up position menase raising with the background metric.*)
+(* We have to remember that dn is the perturbation of the normal vector when indices are down. These rules are defined with both positions of indices, so the down position is the correct one, and the up position means raising with the background metric.*)
 
 ]
 ]
@@ -3060,37 +3041,30 @@ Evaluate[N0[LI[i],LI[0]]n[ind1]]}],{i,1,order}]
 ]
 
 
-RulesForLapse[RulesNspat_,h_?InducedMetricQ,order_?IntegerQ]:=Module[{RuleBackgroundBoost,RuleBackgroundVelocity,RuleBoost,LocalRulesNspat,RuleBoostUpton,RulesBoostUptoOrder,res,nloc,debug,Boost,Nspatial},
+RulesForLapse[RulesNspat_,h_?InducedMetricQ,order_?IntegerQ]:=Module[{RuleBoost,LocalRulesNspat,RuleBoostUpton},
 
-With[{g=First@InducedFrom@h,vector=\[ScriptCapitalN][h]},
+With[{g=First@InducedFrom@h,vector=\[ScriptCapitalN][h],Boost=\[ScriptCapitalN]0[h]},
 
 With[{M=ManifoldOfCovD@CovDOfMetric@g},
 
 With[{ind1=DummyIn@Tangent@M,ind2=DummyIn@Tangent@M},
 
-Boost=\[ScriptCapitalN]0[h];
-(*Nspatial=Nspat[h,vector];*)
-
 LocalRulesNspat=RulesNspat;
+(* Even though one might think that this definition is useless and that I could use RulesNspat directly. This creates a conflict further that I could never understand.*)
 
-RuleBackgroundBoost={BuildRule[Evaluate[{Boost[LI[0],LI[0]],1}]]};
-
-RuleBoost[0]:=RuleBackgroundBoost;
+RuleBoost[0]:={BuildRule[Evaluate[{Boost[LI[0],LI[0]],1}]]};
 
 RuleBoostUpton[m_]:=Flatten@Table[ToCanonical@ContractMetric[RuleBoost[i]],{i,0,m}];
 
-(*
-RuleBoost[p_?(#>=1&)]:=(
-Boost[LI[p],LI[0]]:>Evaluate[ToCanonical@ContractMetric@PutScalar[(X[]/.First@IndexSolve[org[ExpandPerturbation@Perturbation[g[ind1,ind2]vector[-ind1]vector[-ind2],p]/.LocalRulesNspat/.Boost[LI[p],LI[0]]->X[]]==0,X[]])/.RuleBoostUpton[p-1]/.LocalRulesNspat]/.BackgroundFieldRule]);
-*)
+(* OLD Implementation. *)
+(*Now that IndexSolve is corrected to deal correctly with Label indices in version 1.0.5 of xAct, this implementation is obsolete.*)
+(*RuleBoost[p_?(#>=1&)]:=(
+Boost[LI[p],LI[0]]:>Evaluate[ToCanonical@ContractMetric@PutScalar[(X[]/.First@IndexSolve[org[ExpandPerturbation@Perturbation[g[ind1,ind2]vector[-ind1]vector[-ind2],p]/.LocalRulesNspat/.Boost[LI[p],LI[0]]->X[]]==0,X[]])/.RuleBoostUpton[p-1]/.LocalRulesNspat]/.$BackgroundFieldRule]);*)
 
 RuleBoost[p_?(#>=1&)]:=
-MakeRule[Evaluate[{Boost[LI[p],LI[0]],ToCanonical@ContractMetric@PutScalar[(Boost[LI[p],LI[0]]/.First@IndexSolve[org[ExpandPerturbation@Perturbation[g[ind1,ind2]vector[-ind1]vector[-ind2],p]/.LocalRulesNspat]==0,Boost[LI[p],LI[0]]])/.RuleBoostUpton[p-1]/.LocalRulesNspat]/.BackgroundFieldRule}]];
+MakeRule[Evaluate[{Boost[LI[p],LI[0]],ToCanonical@ContractMetric@PutScalar[(Boost[LI[p],LI[0]]/.First@IndexSolve[org[ExpandPerturbation@Perturbation[g[ind1,ind2]vector[-ind1]vector[-ind2],p]/.LocalRulesNspat]==0,Boost[LI[p],LI[0]]])/.RuleBoostUpton[p-1]/.LocalRulesNspat]/.$BackgroundFieldRule}]];
 
-res=RuleBoostUpton[order];
-
-res
-
+RuleBoostUpton[order]
 ]
 ]
 ]
@@ -3101,9 +3075,8 @@ RulesForPerturbedNormal[RulesNspat_,h_?InducedMetricQ,order_?IntegerQ]:=Join[Rul
 
 
 
-
 SplitNormalVector[h_?InducedMetricQ,order_?IntegerQ]:=(
-If[Not[DefTensorQ[\[ScriptCapitalN]0[h]]]||Not[DefTensorQ[d\[ScriptCapitalN][h]]],Print["** Warning: The perturbed normal vector, or the fields required to parameterize its splitting were not previously defined **"];
+If[Not[DefTensorQ[\[ScriptCapitalN]0[h]]]||Not[DefTensorQ[d\[ScriptCapitalN][h]]||Not[DefTensorQ[\[ScriptCapitalN]i[h]]]],Print["** Warning: The perturbed normal vector, or the fields required to parameterize its splitting were not previously defined **"];
 Print["** DefNormalFields is called to build the perturbation of the normal vector and the projected fields **"];
 DefNormalFields[h];
 ];
