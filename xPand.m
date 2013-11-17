@@ -2154,11 +2154,11 @@ Protect[DefMatterFields];
 BV1:=Boole@$FirstOrderVectorPerturbations;
 BT1:=Boole@$FirstOrderTensorPerturbations;
 
-SplitMetric[g_?MetricQ,dg_,h_?InducedMetricQ,gauge_?GaugeQ]:=Module[{n,oldpreprint},
+SplitMetric[g_?MetricQ,dg_,h_?InducedMetricQ,gauge_?GaugeQ]:=Module[{n,ind1,ind2},
 With[{u=Last@InducedFrom@h,M=ManifoldOfCovD@CovDOfMetric@g,cd=CovDOfMetric@h,ShBool=Evaluate@BianchiBool[SpaceType[h]]},
 
-Block[{i1,i2},
-{i1,i2}=GetIndicesOfVBundle[Tangent@M,2];
+{ind1,ind2}=GetIndicesOfVBundle[Tangent@M,2];
+With[{i1=ind1,i2=ind2},
 
 If[Not[DefTensorQ[Et[h]]]||Not[DefTensorQ[dg]],Print["** Warning: The perturbed metric, or the fields required to parameterize its splitting were not previously defined **"];
 Print["** DefMetricFields is called to build the perturbation of the metric and the fields needed for future splitting **"];
@@ -2166,83 +2166,85 @@ DefMetricFields[g, dg,h]];
 
 (* First the rules at first order. We separate them from higher order rules because the user can choose not to use vectors and tensor at first order.*)
 
-(* I have to use the trick of PatternLeft to build the rules, because otherwise Mathematica does not use indices which are 
-on the Manifold and then this conflicts with ScreenDollarIndices. I think that with HoldPattern I could have achieved the same result, but I failed to succeed so far. I could also have unset $PrePrint instead of having it to be ScreenDollarIndices.*)
 
-Join[PatternLeft[#,{i1,i2}]&/@{Switch[gauge ,"NewtonGauge",
-(dg[LI[1],i1,i2]->-u[i1]u[i2]2\[Phi][h][LI[1],LI[0]]
+(** JMM explained that I should use a combination of Module and With, and also build first the lhs and rhs that I gather in {lhs,rhs}, and apply the Rule head on it with Rule@@ **)
+(** This avoids the use  of PatternLeft and ensure that the indices inside the rule belong to the manifold and thus this avoids conflict with SCreenDollarIndices**)
+Join[(*PatternLeft[#,{i1,i2}]&/@*){Rule@@Switch[gauge ,"NewtonGauge",
+{dg[LI[1],i1_,i2_],-u[i1]u[i2]2\[Phi][h][LI[1],LI[0]]
 -2\[Psi][h][LI[1],LI[0]](h[i1,i2]+If[ShBool,K[h][LI[0],LI[0],i1,i2]/H[h][LI[0],LI[0]],0])
 +BT1 2Et[h][LI[1],LI[0],i1,i2]
--BV1(u[i1]Bv[h][LI[1],LI[0],i2]+u[i2]Bv[h][LI[1],LI[0],i1])),
+-BV1(u[i1]Bv[h][LI[1],LI[0],i2]+u[i2]Bv[h][LI[1],LI[0],i1])},
 "ComovingGauge",
-(dg[LI[1],i1,i2]->Identity[-u[i1]u[i2]2\[Phi][h][LI[1],LI[0]]
+{dg[LI[1],i1_,i2_],Identity[-u[i1]u[i2]2\[Phi][h][LI[1],LI[0]]
 -2\[Psi][h][LI[1],LI[0]](h[i1,i2]+If[ShBool,K[h][LI[0],LI[0],i1,i2]/H[h][LI[0],LI[0]],0])
 +BT1 2Et[h][LI[1],LI[0],i1,i2]
 -BV1(u[i1]Bv[h][LI[1],LI[0],i2]+u[i2]Bv[h][LI[1],LI[0],i1])
--(u[i1]cd[i2]@Bs[h][LI[1],LI[0]]+u[i2]cd[i1]@Bs[h][LI[1],LI[0]])]),
+-(u[i1]cd[i2]@Bs[h][LI[1],LI[0]]+u[i2]cd[i1]@Bs[h][LI[1],LI[0]])]},
 "SynchronousGauge",
-(dg[LI[1],i1,i2]->Identity[
+{dg[LI[1],i1_,i2_],Identity[
 -2\[Psi][h][LI[1],LI[0]](h[i1,i2]+If[ShBool,K[h][LI[0],LI[0],i1,i2]/H[h][LI[0],LI[0]],0])
 +BT1 2Et[h][LI[1],LI[0],i1,i2]
 +2cd[i1]@cd[i2]@Es[h][LI[1],LI[0]]
-+BV1(cd[i1]@Ev[h][LI[1],LI[0],i2]+cd[i2]@Ev[h][LI[1],LI[0],i1])]),
++BV1(cd[i1]@Ev[h][LI[1],LI[0],i2]+cd[i2]@Ev[h][LI[1],LI[0],i1])]},
 "FlatGauge",
-(dg[LI[1],i1,i2]->Identity[-u[i1]u[i2]2\[Phi][h][LI[1],LI[0]]
+{dg[LI[1],i1_,i2_],Identity[-u[i1]u[i2]2\[Phi][h][LI[1],LI[0]]
 +BT1 2Et[h][LI[1],LI[0],i1,i2]
 -BV1(u[i1]Bv[h][LI[1],LI[0],i2]+u[i2]Bv[h][LI[1],LI[0],i1])
--(u[i1]cd[i2]@Bs[h][LI[1],LI[0]]+u[i2]cd[i1]@Bs[h][LI[1],LI[0]])]),
+-(u[i1]cd[i2]@Bs[h][LI[1],LI[0]]+u[i2]cd[i1]@Bs[h][LI[1],LI[0]])]},
 "AnyGauge",
-(dg[LI[1],i1,i2]->Identity[-u[i1]u[i2]2\[Phi][h][LI[1],LI[0]]
+{dg[LI[1],i1_,i2_],Identity[-u[i1]u[i2]2\[Phi][h][LI[1],LI[0]]
 -2\[Psi][h][LI[1],LI[0]](h[i1,i2]+If[ShBool,K[h][LI[0],LI[0],i1,i2]/H[h][LI[0],LI[0]],0])
 +BT1 2Et[h][LI[1],LI[0],i1,i2]
 +2cd[i1]@cd[i2]@Es[h][LI[1],LI[0]]
 +BV1(cd[i1]@Ev[h][LI[1],LI[0],i2]+cd[i2]@Ev[h][LI[1],LI[0],i1])
 -BV1(u[i1]Bv[h][LI[1],LI[0],i2]+u[i2]Bv[h][LI[1],LI[0],i1])
--(u[i1]cd[i2]@Bs[h][LI[1],LI[0]]+u[i2]cd[i1]@Bs[h][LI[1],LI[0]])]),
+-(u[i1]cd[i2]@Bs[h][LI[1],LI[0]]+u[i2]cd[i1]@Bs[h][LI[1],LI[0]])]},
 "IsoDensityGauge",
-(dg[LI[1],i1,i2]->Identity[-u[i1]u[i2]2\[Phi][h][LI[1],LI[0]]
+{dg[LI[1],i1_,i2_],Identity[-u[i1]u[i2]2\[Phi][h][LI[1],LI[0]]
 -2\[Psi][h][LI[1],LI[0]](h[i1,i2]+If[ShBool,K[h][LI[0],LI[0],i1,i2]/H[h][LI[0],LI[0]],0])
 +BT1 2Et[h][LI[1],LI[0],i1,i2]
 -BV1(u[i1]Bv[h][LI[1],LI[0],i2]+u[i2]Bv[h][LI[1],LI[0],i1])
--(u[i1]cd[i2]@Bs[h][LI[1],LI[0]]+u[i2]cd[i1]@Bs[h][LI[1],LI[0]])])]},
+-(u[i1]cd[i2]@Bs[h][LI[1],LI[0]]+u[i2]cd[i1]@Bs[h][LI[1],LI[0]])]}
+]},
 
 (* And then the rules at order larger that 1*)
-PatternLeft[#,{i1,i2}]&/@{Switch[gauge ,"NewtonGauge",
-(dg[LI[n_?(#>=2&)],i1,i2]->Identity[-u[i1]u[i2]2\[Phi][h][LI[n],LI[0]]
+(*PatternLeft[#,{i1,i2}]&/@*){Rule@@Switch[gauge ,"NewtonGauge",
+{dg[LI[n_?(#>=2&)],i1_,i2_],Identity[-u[i1]u[i2]2\[Phi][h][LI[n],LI[0]]
 -2\[Psi][h][LI[n],LI[0]](h[i1,i2]+If[ShBool,K[h][LI[0],LI[0],i1,i2]/H[h][LI[0],LI[0]],0])
 +2Et[h][LI[n],LI[0],i1,i2]
--(u[i1]Bv[h][LI[n],LI[0],i2]+u[i2]Bv[h][LI[n],LI[0],i1])]),
+-(u[i1]Bv[h][LI[n],LI[0],i2]+u[i2]Bv[h][LI[n],LI[0],i1])]},
 "ComovingGauge",
-(dg[LI[n_?(#>=2&)],i1,i2]->Identity[-u[i1]u[i2]2\[Phi][h][LI[n],LI[0]]
+{dg[LI[n_?(#>=2&)],i1_,i2_],Identity[-u[i1]u[i2]2\[Phi][h][LI[n],LI[0]]
 -2\[Psi][h][LI[n],LI[0]](h[i1,i2]+If[ShBool,K[h][LI[0],LI[0],i1,i2]/H[h][LI[0],LI[0]],0])
 +2Et[h][LI[n],LI[0],i1,i2]
 -(u[i1]Bv[h][LI[n],LI[0],i2]+u[i2]Bv[h][LI[n],LI[0],i1])
--(u[i1]cd[i2]@Bs[h][LI[n],LI[0]]+u[i2]cd[i1]@Bs[h][LI[n],LI[0]])]),
+-(u[i1]cd[i2]@Bs[h][LI[n],LI[0]]+u[i2]cd[i1]@Bs[h][LI[n],LI[0]])]},
 "SynchronousGauge",
-(dg[LI[n_?(#>=2&)],i1,i2]->Identity[
+{dg[LI[n_?(#>=2&)],i1_,i2_],Identity[
 -2\[Psi][h][LI[n],LI[0]](h[i1,i2]+If[ShBool,K[h][LI[0],LI[0],i1,i2]/H[h][LI[0],LI[0]],0])
 +2Et[h][LI[n],LI[0],i1,i2]
 +2cd[i1]@cd[i2]@Es[h][LI[n],LI[0]]
-+cd[i1]@Ev[h][LI[n],LI[0],i2]+cd[i2]@Ev[h][LI[n],LI[0],i1]]),
++cd[i1]@Ev[h][LI[n],LI[0],i2]+cd[i2]@Ev[h][LI[n],LI[0],i1]]},
 "FlatGauge",
-(dg[LI[n_?(#>=2&)],i1,i2]->Identity[-u[i1]u[i2]2\[Phi][h][LI[n],LI[0]]
+{dg[LI[n_?(#>=2&)],i1_,i2_],Identity[-u[i1]u[i2]2\[Phi][h][LI[n],LI[0]]
 +2Et[h][LI[n],LI[0],i1,i2]
 -(u[i1]Bv[h][LI[n],LI[0],i2]+u[i2]Bv[h][LI[n],LI[0],i1])
--(u[i1]cd[i2]@Bs[h][LI[n],LI[0]]+u[i2]cd[i1]@Bs[h][LI[n],LI[0]])]),
+-(u[i1]cd[i2]@Bs[h][LI[n],LI[0]]+u[i2]cd[i1]@Bs[h][LI[n],LI[0]])]},
 "AnyGauge",
-(dg[LI[n_?(#>=2&)],i1,i2]->Identity[-u[i1]u[i2]2\[Phi][h][LI[n],LI[0]]
+{dg[LI[n_?(#>=2&)],i1_,i2_],Identity[-u[i1]u[i2]2\[Phi][h][LI[n],LI[0]]
 -2\[Psi][h][LI[n],LI[0]](h[i1,i2]+If[ShBool,K[h][LI[0],LI[0],i1,i2]/H[h][LI[0],LI[0]],0])
 +2Et[h][LI[n],LI[0],i1,i2]
 +2cd[i1]@cd[i2]@Es[h][LI[n],LI[0]]
 +cd[i1]@Ev[h][LI[n],LI[0],i2]+cd[i2]@Ev[h][LI[n],LI[0],i1]
 -(u[i1]Bv[h][LI[n],LI[0],i2]+u[i2]Bv[h][LI[n],LI[0],i1])
--(u[i1]cd[i2]@Bs[h][LI[n],LI[0]]+u[i2]cd[i1]@Bs[h][LI[n],LI[0]])]),
+-(u[i1]cd[i2]@Bs[h][LI[n],LI[0]]+u[i2]cd[i1]@Bs[h][LI[n],LI[0]])]},
 "IsoDensityGauge",
-(dg[LI[n_?(#>=2&)],i1,i2]->Identity[-u[i1]u[i2]2\[Phi][h][LI[n],LI[0]]
+{dg[LI[n_?(#>=2&)],i1_,i2_],Identity[-u[i1]u[i2]2\[Phi][h][LI[n],LI[0]]
 -2\[Psi][h][LI[n],LI[0]](h[i1,i2]+If[ShBool,K[h][LI[0],LI[0],i1,i2]/H[h][LI[0],LI[0]],0])
 +2Et[h][LI[n],LI[0],i1,i2]
 -(u[i1]Bv[h][LI[n],LI[0],i2]+u[i2]Bv[h][LI[n],LI[0],i1])
--(u[i1]cd[i2]@Bs[h][LI[n],LI[0]]+u[i2]cd[i1]@Bs[h][LI[n],LI[0]])])]}]
+-(u[i1]cd[i2]@Bs[h][LI[n],LI[0]]+u[i2]cd[i1]@Bs[h][LI[n],LI[0]])]}]
+}]
 ]
 ]
 ];
@@ -2334,26 +2336,25 @@ expr/.chr2[i1_,i2_,i3_]:>chr1[i1,i2,i3]+sign*chr21[i1,i2,i3]
 ExistInertHead[head_]:=Length@Cases[$InertHeads,head]>0
 
 RulesConf[metric1_?MetricQ,metric2_?MetricQ]:=(
-Module[{cd1,cd2,confa2,confa,M,res(*,i1,i2,i3,i4*)},cd1=CovDOfMetric[metric1];cd2=CovDOfMetric[metric2];
+Module[{cd1,cd2,confa2,confa,M,res,inds},cd1=CovDOfMetric[metric1];cd2=CovDOfMetric[metric2];
 
 
 confa2=ConformalFactor[metric2,metric1];
 confa=Sqrt[ConformalFactor[metric2,metric1]]/.Sqrt[x_^2]:>x;
 M=ManifoldOfCovD[cd1];
-
-Block[{inds=DummyIn/@Table[Tangent[M],{Range[4]}]},
-Block[{i1=inds[[1]],i2=inds[[2]],i3=inds[[3]],i4=inds[[4]]},
+inds=DummyIn/@Table[Tangent[M],{Range[4]}];
+With[{i1=inds[[1]],i2=inds[[2]],i3=inds[[3]],i4=inds[[4]]},
 
 (* Once confheads are put on expression (as a result of a formal conformal transformation) then we remove them by expressing what they mean in function of the original tensors and the scale factor *)
 res=
-{ConfHead[metric1,metric2][(Riemann@cd1)[i1_,i2_,i3_,i4_]]:>confa^(WeightOfIndicesList[{i1,i2,i3,i4}]-2)(Riemann@cd2)[i1,i2,i3,i4],
-ConfHead[metric1,metric2][(Ricci@cd1)[i1_,i2_]]:>confa^(WeightOfIndicesList[{i1,i2}]-2)(Ricci@cd2)[i1,i2],
-ConfHead[metric1,metric2][(RicciScalar@cd1)[]]:>(RicciScalar@cd2)[],
-ConfHead[metric1,metric2][(Christoffel@cd1)[i1_,i2_,i3_]]:>confa^(WeightOfIndicesList[{i1,i2,i3}]-1)*(Christoffel@cd2)[i1,i2,i3],
-ConfHead[metric1,metric2][(Determinant[metric1,AIndex])[]]:>(* This is removed because now xTensor is patched confa2^DimOfManifold[M]. Thanks to Leo Stein.*)(Determinant[metric2,AIndex])[],
+{RuleDelayed@@Hold[ConfHead[metric1,metric2][(Riemann@cd1)[i1_,i2_,i3_,i4_]],confa^(WeightOfIndicesList[{i1,i2,i3,i4}]-2)(Riemann@cd2)[i1,i2,i3,i4]],
+RuleDelayed@@Hold[ConfHead[metric1,metric2][(Ricci@cd1)[i1_,i2_]],confa^(WeightOfIndicesList[{i1,i2}]-2)(Ricci@cd2)[i1,i2]],
+RuleDelayed@@Hold[ConfHead[metric1,metric2][(RicciScalar@cd1)[]],(RicciScalar@cd2)[]],
+RuleDelayed@@Hold[ConfHead[metric1,metric2][(Christoffel@cd1)[i1_,i2_,i3_]],confa^(WeightOfIndicesList[{i1,i2,i3}]-1)*(Christoffel@cd2)[i1,i2,i3]],
+RuleDelayed@@Hold[ConfHead[metric1,metric2][(Determinant[metric1,AIndex])[]],(* This is removed because now xTensor is patched confa2^DimOfManifold[M]. Thanks to Leo Stein.*)(Determinant[metric2,AIndex])[]],
 
 (* This line below is not working well.  The problem should be considered later when xTensor knows how to handle the epsilon of a frozen metric. So this really works only when metric1 is the ambient metric... *)
-ConfHead[metric1,metric2][(epsilon@metric1)[inds__?(Length[{#}]===DimOfManifold[M]&)]]:>(*confa2^(DimOfManifold[M]/2)*)confa^(WeightOfIndicesList[{inds}])(epsilon@metric1)[inds],
+RuleDelayed@@Hold[ConfHead[metric1,metric2][(epsilon@metric1)[inds__?(Length[{#}]===DimOfManifold[M]&)]],(*confa2^(DimOfManifold[M]/2)*)confa^(WeightOfIndicesList[{inds}])(epsilon@metric1)[inds]],
 
 (* Not really satisfactory but minimalist for scalar functions *)
 (* Following Leo Stein suggestion, we allow the scalar function to have several arguments *)
@@ -2363,7 +2364,6 @@ ConfHead[metric1,metric2][tens_?xTensorQ[indss___]]:>Simplify[confa2^(ConformalW
 };
 
 res
-]
 ]
 ]
 )
@@ -2422,7 +2422,9 @@ SeparateIndicesDownOfInverseMetric[invmetric_?InverseMetricQ][expr_]:=Fold[Separ
 SeparateIndicesDownOfInverseMetric[_][expr_]:=expr
 
 
-Conformal[metricbase_?MetricQ][metric1_?MetricQ,metric2_?MetricQ][expr_]:=Module[{cdb,cd1,cd2,res,res2,oldpre,resbis,exprnoproj,M,i1,i2,beforeputtingconfheads,IDInvMetric},oldpre=$PrePrint;$PrePrint=Identity;
+Conformal[metricbase_?MetricQ][metric1_?MetricQ,metric2_?MetricQ][expr_]:=Module[{cdb,cd1,cd2,res,res2,(*oldpre,*)resbis,exprnoproj,M,i1,i2,beforeputtingconfheads,IDInvMetric},
+(* The conflict with CreenDollarIndicea has now been solved. So there is no need to redefine tempararoly $PrePrint*)
+(*oldpre=$PrePrint;$PrePrint=Identity;*)
 
 (* we define the Covds associated with the metric. The starting metric is metric1, the conformally transformed metric is metric2, and metricbase i the base metric for raising and lowering indiced. It might be one of the other two, but it might not be...*)
 cdb=CovDOfMetric[metricbase];
@@ -2464,7 +2466,9 @@ resbis=res//.RulesConf[metric1,metric2];
 
 (* So here we have conformally transformed the expression, but now we want to express it in function of the original metric and orginal covD etc...
 Indeed at that point, we still have the second metric, and the Riemann of the second metric for instance. SO we use again ToMetric*)
-$PrePrint=oldpre;
+
+(*$PrePrint=oldpre;*)
+
 On[ConformalFactor::"unknown"];
 Off[ToCanonical::"cmods"];
 
