@@ -318,7 +318,7 @@ SplitPerturbations::usage="SplitPerturbations[expr,ListPairs,h] splits the expre
 
 ToMetric::usage = "ToMetric[expr,metric] formulates 'expr' in terms of 'metric', and its associated covariant derivative and curvature tensors.";
 
-ToxPand::usage = "xPand[expr,gpert,uf,ufpert,h,gauge,order,tiltspecification]. 
+ToxPand::usage = "ToxPand[expr,gpert,uf,ufpert,h,gauge,order,tiltspecification]. 
 
 This function first performs on 'expr' a conformal transformation with the scale factor 'a[h]' (except for a Minkowski 'SpaceType'); then it perturbs the result up to the order 'order' by means of xPert tools; and finally, it splits the result using the rules associated with the 'gauge', and according to the background slicing associated with the induced metric 'h'. 'tiltspecification' is optional and by default is \"NotTilted\" 
 
