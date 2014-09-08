@@ -956,10 +956,10 @@ with down indices.\>\""}], ";"}], "\[IndentingNewLine]",
      RowBox[{"DefProjectedTensorProperties", "::", "symmetrictensors"}], "=", 
      "\"\<The current version of DefProjectedTensorProperties can only add \
 properties to tensors that are, at least, fully symmetric.\>\""}], ";"}], 
-   "\[IndentingNewLine]", "\n", 
-   RowBox[{"(*", 
-    RowBox[{"*", " ", "ExtractComponents"}], " ", "**)"}], 
    "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{"*", " ", "ExtractComponents"}], " ", "**)"}], "\n", 
+   "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{
      RowBox[{"ExtractComponents", "::", "invalidprojector"}], " ", "=", " ", 
@@ -1399,7 +1399,7 @@ its associated covariant derivative and curvature tensors.\>\""}], ";"}],
    RowBox[{
     RowBox[{
      RowBox[{"ToxPand", "::", "usage"}], " ", "=", " ", 
-     "\"\<xPand[expr,gpert,uf,ufpert,h,gauge,order,tiltspecification]. \n\n\
+     "\"\<ToxPand[expr,gpert,uf,ufpert,h,gauge,order,tiltspecification]. \n\n\
 This function first performs on 'expr' a conformal transformation with the \
 scale factor 'a[h]' (except for a Minkowski 'SpaceType'); then it perturbs \
 the result up to the order 'order' by means of xPert tools; and finally, it \
@@ -1460,7 +1460,7 @@ Cell[BoxData[
      "\"\<$ListFieldsBackgroundOnly[h], with 'h' being the induced metric on \
 the hypersurfaces, is the list of fields that live on the background only. It \
 is automatically defined when calling the function SetSlicing.\>\""}], ";"}], 
-   "\[IndentingNewLine]", "\n", 
+   "\n", "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{
      RowBox[{"$ListFieldsPerturbedOnly", "::", "usage"}], "=", 
@@ -2617,7 +2617,7 @@ Cell[BoxData[
                     RowBox[{"i", ",", "1", ",", "q"}], "}"}]}], "]"}]}]}], 
                "]"}]}], "}"}], "]"}]}], "\[IndentingNewLine]", "]"}]}], 
         "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", "]"}]}], ";"}],
-    "\[IndentingNewLine]", "\n", 
+    "\n", "\[IndentingNewLine]", 
    RowBox[{"xTensorFormStart", "[", "Tensor", "]"}]}]}]], "Input",
  InitializationCell->True],
 
@@ -2688,14 +2688,45 @@ Cell[BoxData[
     RowBox[{"collect", "[", "expr_", "]"}], ":=", 
     RowBox[{"Collect", "[", 
      RowBox[{"expr", ",", "$PerturbationParameter", ",", "Identity"}], 
-     "]"}]}], "\[IndentingNewLine]", 
+     "]"}]}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{"*", " ", "fix", " ", "by", " ", "Jolyon", " ", 
+     RowBox[{"Bloomfield", ".", " ", "No"}], " ", "Idea", " ", "if", " ", 
+     "this", " ", "works", " ", "or", " ", 
+     RowBox[{"not", ".", " ", "This"}], " ", "should", " ", "correct", " ", 
+     "the", " ", "bug", " ", "found", " ", "by", " ", "Adam", " ", "Solomon", 
+     " ", "in", " ", "August", " ", "2014"}], " ", "**)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"fixScalar", ":=", 
+    RowBox[{
+     RowBox[{"Scalar", "[", "expr_", "]"}], "\[RuleDelayed]", 
+     RowBox[{"Scalar", "[", 
+      RowBox[{"xAct`xTensor`Private`MathInputExpand", "[", "expr", "]"}], 
+      "]"}]}]}], "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"org", "[", "expr_", "]"}], ":=", 
     RowBox[{"Collect", "[", 
      RowBox[{
       RowBox[{"ContractMetric", "[", "expr", "]"}], ",", 
-      "$PerturbationParameter", ",", "ToCanonical"}], "]"}]}], 
+      "$PerturbationParameter", ",", 
+      RowBox[{
+       RowBox[{"ToCanonical", "[", 
+        RowBox[{"#", "/.", "fixScalar"}], "]"}], "&"}]}], "]"}]}], 
    "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{"Old", " ", "org", " ", "before", " ", "the", " ", "fix"}], 
+    "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+     RowBox[{"org", "[", "expr_", "]"}], ":=", 
+     RowBox[{"Collect", "[", 
+      RowBox[{
+       RowBox[{"ContractMetric", "[", "expr", "]"}], ",", 
+       "$PerturbationParameter", ",", 
+       RowBox[{
+        RowBox[{"ToCanonical", "[", 
+         RowBox[{"#", "/.", "fixScalar"}], "]"}], "&"}]}], "]"}]}], "*)"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"TCnoCM", "[", "expr_", "]"}], ":=", 
     RowBox[{"ToCanonical", "[", 
@@ -2949,7 +2980,7 @@ tensors defined without label-indices. \>\"", ",", "tens"}], "]"}], ",",
  InitializationCell->True],
 
 Cell["", "Text"]
-}, Closed]],
+}, Open  ]],
 
 Cell[CellGroupData[{
 
@@ -4034,8 +4065,8 @@ Cell[BoxData[
                     RowBox[{
                     RowBox[{"{", "indices1", "}"}], ",", 
                     RowBox[{"{", "indices2", "}"}], ",", 
-                    RowBox[{"{", "indices3", "}"}]}], "]"}], "]"}], "+", 
-                    "2"}], "===", 
+                    RowBox[{"{", "indices3", "}"}]}], "]"}], "]"}], "+", "2"}]
+                    , "===", 
                     RowBox[{"Length", "[", 
                     RowBox[{"{", "inds", "}"}], "]"}]}], ")"}]}]}], ";", 
                  "\[IndentingNewLine]", "\[IndentingNewLine]", 
@@ -4281,7 +4312,8 @@ positive integer.\>\"", "]"}], "]"}]}], "]"}]}], "]"}]}]}],
                     RowBox[{"(*", 
                     RowBox[{
                     RowBox[{"Throw", "[", 
-                    RowBox[{"Print", "[", 
+                    RowBox[{
+                    "Print", "[", 
                     "\"\<** Warning: The label-indices have to be positive \
 integers.\>\"", "]"}], "]"}], "]"}], "*)"}], "\[IndentingNewLine]", 
                     RowBox[{"If", "[", 
@@ -13204,7 +13236,7 @@ the metric and the fields needed for future splitting **\>\"", "]"}], ";",
              "rule", " ", "belong", " ", "to", " ", "the", " ", "manifold", 
              " ", "and", " ", "thus", " ", "this", " ", "avoids", " ", 
              "conflict", " ", "with", " ", "SCreenDollarIndices"}], "**)"}], 
-           "\[IndentingNewLine]", 
+           "\[IndentingNewLine]", "\[IndentingNewLine]", 
            RowBox[{"Join", "[", 
             RowBox[{"(*", 
              RowBox[{
@@ -13219,8 +13251,8 @@ the metric and the fields needed for future splitting **\>\"", "]"}], ";",
               RowBox[{"Rule", "@@", 
                RowBox[{"Switch", "[", 
                 RowBox[{
-                "gauge", " ", ",", "\"\<NewtonGauge\>\"", ",", 
-                 "\[IndentingNewLine]", 
+                "gauge", " ", ",", "\[IndentingNewLine]", 
+                 "\"\<NewtonGauge\>\"", ",", "\[IndentingNewLine]", 
                  RowBox[{"{", 
                   RowBox[{
                    RowBox[{"dg", "[", 
@@ -13748,8 +13780,8 @@ the metric and the fields needed for future splitting **\>\"", "]"}], ";",
               RowBox[{"Rule", "@@", 
                RowBox[{"Switch", "[", 
                 RowBox[{
-                "gauge", " ", ",", "\"\<NewtonGauge\>\"", ",", 
-                 "\[IndentingNewLine]", 
+                "gauge", " ", ",", "\[IndentingNewLine]", 
+                 "\"\<NewtonGauge\>\"", ",", "\[IndentingNewLine]", 
                  RowBox[{"{", 
                   RowBox[{
                    RowBox[{"dg", "[", 
@@ -13971,24 +14003,26 @@ the metric and the fields needed for future splitting **\>\"", "]"}], ";",
                     RowBox[{"Es", "[", "h", "]"}], "[", 
                     RowBox[{
                     RowBox[{"LI", "[", "n", "]"}], ",", 
-                    RowBox[{"LI", "[", "0", "]"}]}], "]"}]}]}]}], 
-                    "\[IndentingNewLine]", "+", 
+                    RowBox[{"LI", "[", "0", "]"}]}], "]"}]}]}], 
+                    "\[IndentingNewLine]", 
+                    RowBox[{
+                    RowBox[{"+", 
                     RowBox[{
                     RowBox[{"cd", "[", "i1", "]"}], "@", 
                     RowBox[{
                     RowBox[{"Ev", "[", "h", "]"}], "[", 
                     RowBox[{
                     RowBox[{"LI", "[", "n", "]"}], ",", 
-                    RowBox[{"LI", "[", "0", "]"}], ",", "i2"}], "]"}]}], "+", 
-                    
+                    RowBox[{"LI", "[", "0", "]"}], ",", "i2"}], "]"}]}]}], 
+                    "+", 
                     RowBox[{
                     RowBox[{"cd", "[", "i2", "]"}], "@", 
                     RowBox[{
                     RowBox[{"Ev", "[", "h", "]"}], "[", 
                     RowBox[{
                     RowBox[{"LI", "[", "n", "]"}], ",", 
-                    RowBox[{"LI", "[", "0", "]"}], ",", "i1"}], "]"}]}]}], 
-                    "]"}]}], "}"}], ",", "\[IndentingNewLine]", 
+                    RowBox[{"LI", "[", "0", "]"}], ",", "i1"}], "]"}]}]}]}]}],
+                     "]"}]}], "}"}], ",", "\[IndentingNewLine]", 
                  "\"\<FlatGauge\>\"", ",", "\[IndentingNewLine]", 
                  RowBox[{"{", 
                   RowBox[{
@@ -14714,7 +14748,7 @@ Cell[BoxData[{
      RowBox[{
       RowBox[{"MyChangeChristoffel", "[", 
        RowBox[{"#1", ",", "#2", ",", "cd1"}], "]"}], "&"}], ",", "expr", ",", 
-     "cd2list"}], "]"}]}], "\[IndentingNewLine]"}], "\n", 
+     "cd2list"}], "]"}]}], "\n"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"MyChangeChristoffel", "[", 
    RowBox[{"expr_", ",", "cd2_", ",", "cd1_"}], "]"}], ":=", 
@@ -15144,7 +15178,7 @@ since we do not know very well how to handle that. **\>\"", "]"}], ";"}]}],
                 "]"}], ";", "\[IndentingNewLine]", "res"}]}], 
              "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", "]"}]}], 
          "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", "]"}]}], 
-     "\[IndentingNewLine]", "]"}]}], ";"}], "\n"}], "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", "]"}]}], ";"}], "\[IndentingNewLine]"}], "\n", 
  RowBox[{
   RowBox[{
    RowBox[{
@@ -19628,8 +19662,7 @@ PrivateNotebookOptions->{"FileOutlineCache"->False},
 ShowSelection->True,
 TrackCellChangeTimes->False,
 Magnification->1,
-FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (November 20, \
-2012)",
+FrontEndVersion->"7.0 for Mac OS X x86 (32-bit) (November 10, 2008)",
 StyleDefinitions->FrontEnd`FileName[{"Creative"}, "PastelColor.nb", 
   CharacterEncoding -> "UTF-8"]
 ]
