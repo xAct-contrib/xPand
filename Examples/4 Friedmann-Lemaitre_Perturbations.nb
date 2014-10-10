@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       145,          7]
-NotebookDataLength[   2692559,      75049]
-NotebookOptionsPosition[   2673083,      74502]
-NotebookOutlinePosition[   2676510,      74584]
-CellTagsIndexPosition[   2676331,      74577]
+NotebookDataLength[   2692660,      75052]
+NotebookOptionsPosition[   2673181,      74505]
+NotebookOutlinePosition[   2676611,      74587]
+CellTagsIndexPosition[   2676432,      74580]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -70,11 +70,11 @@ Cell[BoxData["\<\"------------------------------------------------------------\
 Cell[BoxData[
  InterpretationBox[
   RowBox[{"\<\"Package xAct`xPerm`  version \"\>", 
-   "\[InvisibleSpace]", "\<\"1.2.1\"\>", "\[InvisibleSpace]", "\<\", \"\>", 
+   "\[InvisibleSpace]", "\<\"1.2.2\"\>", "\[InvisibleSpace]", "\<\", \"\>", 
    "\[InvisibleSpace]", 
    RowBox[{"{", 
-    RowBox[{"2014", ",", "2", ",", "15"}], "}"}]}],
-  SequenceForm["Package xAct`xPerm`  version ", "1.2.1", ", ", {2014, 2, 15}],
+    RowBox[{"2014", ",", "9", ",", "28"}], "}"}]}],
+  SequenceForm["Package xAct`xPerm`  version ", "1.2.2", ", ", {2014, 9, 28}],
   
   Editable->False]], "Print"],
 
@@ -94,8 +94,9 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"1.1.1\"\>", "\[InvisibleSpace]", "\<\", \"\>", 
    "\[InvisibleSpace]", 
    RowBox[{"{", 
-    RowBox[{"2014", ",", "9", ",", "6"}], "}"}]}],
-  SequenceForm["Package xAct`xTensor`  version ", "1.1.1", ", ", {2014, 9, 6}],
+    RowBox[{"2014", ",", "9", ",", "28"}], "}"}]}],
+  SequenceForm[
+  "Package xAct`xTensor`  version ", "1.1.1", ", ", {2014, 9, 28}],
   Editable->False]], "Print"],
 
 Cell[BoxData["\<\"CopyRight (C) 2002-2014, Jose M. Martin-Garcia, under the \
@@ -609,7 +610,7 @@ Cell[BoxData[
 Cell[BoxData[
  StyleBox["\<\"Possible space types are: Anisotropic, BianchiB, BianchiA, \
 BianchiI, FLCurved, FLFlat and Minkowski.\"\>", "MSG"]], "Print", "PrintUsage",
- CellTags->"Info3620462317-6586433"]
+ CellTags->"Info3621958145-7338395"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -666,10 +667,10 @@ Cell[BoxData[
   RowBox[{"\<\"** \"\>", "\[InvisibleSpace]", "DefTensor", 
    "\[InvisibleSpace]", "\<\": Defining \"\>", 
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
-   RowBox[{"n", "[", "\[Sigma]$1313", "]"}], 
+   RowBox[{"n", "[", "\[Sigma]$1712", "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
-   $CellContext`n[$CellContext`\[Sigma]$1313], ". ", ""],
+   $CellContext`n[$CellContext`\[Sigma]$1712], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -680,12 +681,12 @@ Cell[BoxData[
    "\[InvisibleSpace]", 
    RowBox[{"h", "[", 
     RowBox[{
-     RowBox[{"-", "\[Sigma]$1313"}], ",", 
-     RowBox[{"-", "\[Sigma]$1314"}]}], "]"}], 
+     RowBox[{"-", "\[Sigma]$1712"}], ",", 
+     RowBox[{"-", "\[Sigma]$1713"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm[
   "** ", xAct`xTensor`DefTensor, ": Defining ", "symmetric metric tensor ", 
-   $CellContext`h[-$CellContext`\[Sigma]$1313, -$CellContext`\[Sigma]$1314], 
+   $CellContext`h[-$CellContext`\[Sigma]$1712, -$CellContext`\[Sigma]$1713], 
    ". ", ""],
   Editable->False]], "Print"],
 
@@ -749,11 +750,11 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"covariant derivative \"\>", "\[InvisibleSpace]", 
    
    RowBox[{"cd", "[", 
-    RowBox[{"-", "\[Sigma]$1313"}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
+    RowBox[{"-", "\[Sigma]$1712"}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
    "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm[
   "** ", xAct`xTensor`DefCovD, ": Defining ", "covariant derivative ", 
-   $CellContext`cd[-$CellContext`\[Sigma]$1313], ". ", ""],
+   $CellContext`cd[-$CellContext`\[Sigma]$1712], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -1057,13 +1058,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"\[ScriptCapitalN]0h", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$2255", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$2255", "]"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$2761", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$2761", "]"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`\[ScriptCapitalN]0h[
-    xAct`xTensor`LI[xAct`xPand`Private`p$2255], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$2255]], ". ", ""],
+    xAct`xTensor`LI[xAct`xPand`Private`p$2761], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$2761]], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -1111,13 +1112,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"ah", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$2271", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$2271", "]"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$2781", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$2781", "]"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`ah[
-    xAct`xTensor`LI[xAct`xPand`Private`p$2271], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$2271]], ". ", ""],
+    xAct`xTensor`LI[xAct`xPand`Private`p$2781], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$2781]], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -1127,13 +1128,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"Hh", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$2276", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$2276", "]"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$2787", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$2787", "]"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`Hh[
-    xAct`xTensor`LI[xAct`xPand`Private`p$2276], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$2276]], ". ", ""],
+    xAct`xTensor`LI[xAct`xPand`Private`p$2787], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$2787]], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -1144,13 +1145,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", 
    RowBox[{"gah2", "[", 
     RowBox[{
-     RowBox[{"-", "\[Sigma]$2282"}], ",", 
-     RowBox[{"-", "\[Sigma]$2283"}]}], "]"}], 
+     RowBox[{"-", "\[Sigma]$2794"}], ",", 
+     RowBox[{"-", "\[Sigma]$2795"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm[
   "** ", xAct`xTensor`DefTensor, ": Defining ", "symmetric metric tensor ", 
-   $CellContext`gah2[-$CellContext`\[Sigma]$2282, \
--$CellContext`\[Sigma]$2283], ". ", ""],
+   $CellContext`gah2[-$CellContext`\[Sigma]$2794, \
+-$CellContext`\[Sigma]$2795], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -1159,13 +1160,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\": Defining \"\>", 
    "\[InvisibleSpace]", "\<\"inverse metric tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"Invgah2", "[", 
-    RowBox[{"\[Sigma]$2282", ",", "\[Sigma]$2283"}], "]"}], 
+    RowBox[{"\[Sigma]$2794", ",", "\[Sigma]$2795"}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", 
    "\[InvisibleSpace]", "\<\"Metric is frozen!\"\>"}],
   SequenceForm[
   "** ", xAct`xTensor`DefTensor, ": Defining ", "inverse metric tensor ", 
-   $CellContext`Invgah2[$CellContext`\[Sigma]$2282, \
-$CellContext`\[Sigma]$2283], ". ", "Metric is frozen!"],
+   $CellContext`Invgah2[$CellContext`\[Sigma]$2794, \
+$CellContext`\[Sigma]$2795], ". ", "Metric is frozen!"],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -1228,11 +1229,11 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"covariant derivative \"\>", "\[InvisibleSpace]", 
    
    RowBox[{"CDah2", "[", 
-    RowBox[{"-", "\[Sigma]$2282"}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
+    RowBox[{"-", "\[Sigma]$2794"}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
    "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm[
   "** ", xAct`xTensor`DefCovD, ": Defining ", "covariant derivative ", 
-   $CellContext`CDah2[-$CellContext`\[Sigma]$2282], ". ", ""],
+   $CellContext`CDah2[-$CellContext`\[Sigma]$2794], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -1468,13 +1469,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"Connectionh", "[", 
     RowBox[{
-     RowBox[{"-", "\[Sigma]$1313"}], ",", 
-     RowBox[{"-", "\[Sigma]$1314"}], ",", 
-     RowBox[{"-", "\[Sigma]$1315"}]}], "]"}], 
+     RowBox[{"-", "\[Sigma]$1712"}], ",", 
+     RowBox[{"-", "\[Sigma]$1713"}], ",", 
+     RowBox[{"-", "\[Sigma]$1714"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
-   $CellContext`Connectionh[-$CellContext`\[Sigma]$1313, -$CellContext`\
-\[Sigma]$1314, -$CellContext`\[Sigma]$1315], ". ", ""],
+   $CellContext`Connectionh[-$CellContext`\[Sigma]$1712, -$CellContext`\
+\[Sigma]$1713, -$CellContext`\[Sigma]$1714], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -1484,13 +1485,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"CSh", "[", 
     RowBox[{
-     RowBox[{"-", "\[Sigma]$1313"}], ",", 
-     RowBox[{"-", "\[Sigma]$1314"}], ",", 
-     RowBox[{"-", "\[Sigma]$1315"}]}], "]"}], 
+     RowBox[{"-", "\[Sigma]$1712"}], ",", 
+     RowBox[{"-", "\[Sigma]$1713"}], ",", 
+     RowBox[{"-", "\[Sigma]$1714"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
-   $CellContext`CSh[-$CellContext`\[Sigma]$1313, -$CellContext`\[Sigma]$1314, \
--$CellContext`\[Sigma]$1315], ". ", ""],
+   $CellContext`CSh[-$CellContext`\[Sigma]$1712, -$CellContext`\[Sigma]$1713, \
+-$CellContext`\[Sigma]$1714], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -1500,11 +1501,11 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"nth", "[", 
     RowBox[{
-     RowBox[{"-", "\[Sigma]$1313"}], ",", 
-     RowBox[{"-", "\[Sigma]$1314"}]}], "]"}], 
+     RowBox[{"-", "\[Sigma]$1712"}], ",", 
+     RowBox[{"-", "\[Sigma]$1713"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
-   $CellContext`nth[-$CellContext`\[Sigma]$1313, -$CellContext`\[Sigma]$1314],
+   $CellContext`nth[-$CellContext`\[Sigma]$1712, -$CellContext`\[Sigma]$1713],
     ". ", ""],
   Editable->False]], "Print"],
 
@@ -1514,10 +1515,10 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\": Defining \"\>", 
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"avh", "[", 
-    RowBox[{"-", "\[Sigma]$1313"}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
+    RowBox[{"-", "\[Sigma]$1712"}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
    "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
-   $CellContext`avh[-$CellContext`\[Sigma]$1313], ". ", ""],
+   $CellContext`avh[-$CellContext`\[Sigma]$1712], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -1539,17 +1540,17 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"Kh", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$2894", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$2894", "]"}], ",", 
-     RowBox[{"-", "\[Sigma]$1313"}], ",", 
-     RowBox[{"-", "\[Sigma]$1314"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$3539", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$3539", "]"}], ",", 
+     RowBox[{"-", "\[Sigma]$1712"}], ",", 
+     RowBox[{"-", "\[Sigma]$1713"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`Kh[
-    xAct`xTensor`LI[xAct`xPand`Private`p$2894], 
+    xAct`xTensor`LI[xAct`xPand`Private`p$3539], 
     xAct`xTensor`LI[
-    xAct`xPand`Private`q$2894], -$CellContext`\[Sigma]$1313, -$CellContext`\
-\[Sigma]$1314], ". ", ""],
+    xAct`xPand`Private`q$3539], -$CellContext`\[Sigma]$1712, -$CellContext`\
+\[Sigma]$1713], ". ", ""],
   Editable->False]], "Print"]
 }, Open  ]]
 }, Open  ]],
@@ -1615,13 +1616,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"\[Phi]h", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$3138", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$3138", "]"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$3805", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$3805", "]"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`\[Phi]h[
-    xAct`xTensor`LI[xAct`xPand`Private`p$3138], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$3138]], ". ", ""],
+    xAct`xTensor`LI[xAct`xPand`Private`p$3805], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$3805]], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -1631,13 +1632,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"Bsh", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$3143", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$3143", "]"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$3811", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$3811", "]"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`Bsh[
-    xAct`xTensor`LI[xAct`xPand`Private`p$3143], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$3143]], ". ", ""],
+    xAct`xTensor`LI[xAct`xPand`Private`p$3811], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$3811]], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -1647,14 +1648,14 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"Bvh", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$3148", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$3148", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$3817", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$3817", "]"}], ",", 
      RowBox[{"-", "\[Alpha]"}]}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
    "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`Bvh[
-    xAct`xTensor`LI[xAct`xPand`Private`p$3148], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$3148], -$CellContext`\[Alpha]], ". ",
+    xAct`xTensor`LI[xAct`xPand`Private`p$3817], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$3817], -$CellContext`\[Alpha]], ". ",
     ""],
   Editable->False]], "Print"],
 
@@ -1665,13 +1666,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"\[Psi]h", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$3154", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$3154", "]"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$3824", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$3824", "]"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`\[Psi]h[
-    xAct`xTensor`LI[xAct`xPand`Private`p$3154], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$3154]], ". ", ""],
+    xAct`xTensor`LI[xAct`xPand`Private`p$3824], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$3824]], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -1681,13 +1682,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"Esh", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$3159", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$3159", "]"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$3830", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$3830", "]"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`Esh[
-    xAct`xTensor`LI[xAct`xPand`Private`p$3159], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$3159]], ". ", ""],
+    xAct`xTensor`LI[xAct`xPand`Private`p$3830], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$3830]], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -1697,14 +1698,14 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"Evh", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$3164", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$3164", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$3836", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$3836", "]"}], ",", 
      RowBox[{"-", "\[Alpha]"}]}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
    "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`Evh[
-    xAct`xTensor`LI[xAct`xPand`Private`p$3164], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$3164], -$CellContext`\[Alpha]], ". ",
+    xAct`xTensor`LI[xAct`xPand`Private`p$3836], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$3836], -$CellContext`\[Alpha]], ". ",
     ""],
   Editable->False]], "Print"],
 
@@ -1715,16 +1716,16 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"Eth", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$3170", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$3170", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$3843", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$3843", "]"}], ",", 
      RowBox[{"-", "\[Alpha]"}], ",", 
      RowBox[{"-", "\[Beta]"}]}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
    "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`Eth[
-    xAct`xTensor`LI[xAct`xPand`Private`p$3170], 
+    xAct`xTensor`LI[xAct`xPand`Private`p$3843], 
     xAct`xTensor`LI[
-    xAct`xPand`Private`q$3170], -$CellContext`\[Alpha], \
+    xAct`xPand`Private`q$3843], -$CellContext`\[Alpha], \
 -$CellContext`\[Beta]], ". ", ""],
   Editable->False]], "Print"],
 
@@ -1735,13 +1736,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"Th", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$3179", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$3179", "]"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$3853", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$3853", "]"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`Th[
-    xAct`xTensor`LI[xAct`xPand`Private`p$3179], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$3179]], ". ", ""],
+    xAct`xTensor`LI[xAct`xPand`Private`p$3853], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$3853]], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -1751,13 +1752,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"Lsh", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$3184", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$3184", "]"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$3859", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$3859", "]"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`Lsh[
-    xAct`xTensor`LI[xAct`xPand`Private`p$3184], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$3184]], ". ", ""],
+    xAct`xTensor`LI[xAct`xPand`Private`p$3859], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$3859]], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -1767,14 +1768,14 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"Lvh", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$3189", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$3189", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$3865", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$3865", "]"}], ",", 
      RowBox[{"-", "\[Alpha]"}]}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
    "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`Lvh[
-    xAct`xTensor`LI[xAct`xPand`Private`p$3189], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$3189], -$CellContext`\[Alpha]], ". ",
+    xAct`xTensor`LI[xAct`xPand`Private`p$3865], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$3865], -$CellContext`\[Alpha]], ". ",
     ""],
   Editable->False]], "Print"],
 
@@ -1785,13 +1786,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"\[CurlyPhi]", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$3198", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$3198", "]"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$3875", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$3875", "]"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    xAct`xPand`\[CurlyPhi][
-    xAct`xTensor`LI[xAct`xPand`Private`p$3198], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$3198]], ". ", ""],
+    xAct`xTensor`LI[xAct`xPand`Private`p$3875], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$3875]], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -1801,13 +1802,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"\[Rho]u", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$3203", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$3203", "]"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$3881", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$3881", "]"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`\[Rho]u[
-    xAct`xTensor`LI[xAct`xPand`Private`p$3203], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$3203]], ". ", ""],
+    xAct`xTensor`LI[xAct`xPand`Private`p$3881], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$3881]], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -1817,13 +1818,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"Pu", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$3208", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$3208", "]"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$3887", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$3887", "]"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`Pu[
-    xAct`xTensor`LI[xAct`xPand`Private`p$3208], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$3208]], ". ", ""],
+    xAct`xTensor`LI[xAct`xPand`Private`p$3887], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$3887]], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -1833,14 +1834,14 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"Vspathu", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$3213", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$3213", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$3893", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$3893", "]"}], ",", 
      RowBox[{"-", "\[Alpha]"}]}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
    "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`Vspathu[
-    xAct`xTensor`LI[xAct`xPand`Private`p$3213], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$3213], -$CellContext`\[Alpha]], ". ",
+    xAct`xTensor`LI[xAct`xPand`Private`p$3893], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$3893], -$CellContext`\[Alpha]], ". ",
     ""],
   Editable->False]], "Print"],
 
@@ -1851,13 +1852,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"V0hu", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$3219", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$3219", "]"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$3900", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$3900", "]"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`V0hu[
-    xAct`xTensor`LI[xAct`xPand`Private`p$3219], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$3219]], ". ", ""],
+    xAct`xTensor`LI[xAct`xPand`Private`p$3900], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$3900]], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -1867,13 +1868,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"Vshu", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$3224", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$3224", "]"}]}], "]"}], 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$3906", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$3906", "]"}]}], "]"}], 
    "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`Vshu[
-    xAct`xTensor`LI[xAct`xPand`Private`p$3224], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$3224]], ". ", ""],
+    xAct`xTensor`LI[xAct`xPand`Private`p$3906], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$3906]], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -1883,14 +1884,14 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"Vvhu", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`p$3229", "]"}], ",", 
-     RowBox[{"LI", "[", "xAct`xPand`Private`q$3229", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`p$3912", "]"}], ",", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`q$3912", "]"}], ",", 
      RowBox[{"-", "\[Alpha]"}]}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
    "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`Vvhu[
-    xAct`xTensor`LI[xAct`xPand`Private`p$3229], 
-    xAct`xTensor`LI[xAct`xPand`Private`q$3229], -$CellContext`\[Alpha]], ". ",
+    xAct`xTensor`LI[xAct`xPand`Private`p$3912], 
+    xAct`xTensor`LI[xAct`xPand`Private`q$3912], -$CellContext`\[Alpha]], ". ",
     ""],
   Editable->False]], "Print"],
 
@@ -8687,13 +8688,13 @@ Cell[BoxData[
       Editable->False], "2"]], 
    "\[InvisibleSpace]", "\<\" +... was performed in \"\>", 
    "\[InvisibleSpace]", 
-   "6.61716399999999982384224495035596191883`6.841271811624657", 
+   "5.23192799999999991200638760346919298172`6.739261672025144", 
    "\[InvisibleSpace]", "\<\" seconds.\"\>"}],
   SequenceForm["The Splitting of ", $CellContext`ah[
       xAct`xTensor`LI[0], 
       xAct`xTensor`LI[0]]^(-2) $CellContext`RicciScalarCD[], 
    " +... was performed in ", 
-   6.61716399999999982384224495035596191883`6.841271811624657, " seconds."],
+   5.23192799999999991200638760346919298172`6.739261672025144, " seconds."],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -14097,7 +14098,24 @@ $CellContext`\[Gamma]],
           xAct`xTensor`LI[0], 
           xAct`xTensor`LI[0]],
          Editable->False], "2"]}]], "+", 
-     FractionBox[
+     RowBox[{
+      FractionBox["1", 
+       SuperscriptBox[
+        InterpretationBox[
+         StyleBox[
+          OverscriptBox[
+           InterpretationBox[
+            StyleBox["a",
+             ShowAutoStyles->False,
+             AutoSpacing->False],
+            $CellContext`ah[],
+            Editable->False], ""],
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`ah[
+          xAct`xTensor`LI[0], 
+          xAct`xTensor`LI[0]],
+         Editable->False], "3"]], 
       RowBox[{"3", " ", 
        RowBox[{"(", 
         RowBox[{
@@ -14718,23 +14736,7 @@ $CellContext`\[Gamma]],
           $CellContext`ah[
            xAct`xTensor`LI[0], 
            xAct`xTensor`LI[0]]],
-         Editable->False], ")"}]}], 
-      SuperscriptBox[
-       InterpretationBox[
-        StyleBox[
-         OverscriptBox[
-          InterpretationBox[
-           StyleBox["a",
-            ShowAutoStyles->False,
-            AutoSpacing->False],
-           $CellContext`ah[],
-           Editable->False], ""],
-         ShowAutoStyles->False,
-         AutoSpacing->False],
-        $CellContext`ah[
-         xAct`xTensor`LI[0], 
-         xAct`xTensor`LI[0]],
-        Editable->False], "3"]], "-", 
+         Editable->False], ")"}]}]}], "-", 
      FractionBox[
       RowBox[{"3", " ", 
        RowBox[{"(", 
@@ -17250,7 +17252,24 @@ $CellContext`\[Gamma]],
           xAct`xTensor`LI[0], 
           xAct`xTensor`LI[0]],
          Editable->False], "2"]}]], "-", 
-     FractionBox[
+     RowBox[{
+      FractionBox["1", 
+       SuperscriptBox[
+        InterpretationBox[
+         StyleBox[
+          OverscriptBox[
+           InterpretationBox[
+            StyleBox["a",
+             ShowAutoStyles->False,
+             AutoSpacing->False],
+            $CellContext`ah[],
+            Editable->False], ""],
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`ah[
+          xAct`xTensor`LI[0], 
+          xAct`xTensor`LI[0]],
+         Editable->False], "3"]], 
       RowBox[{"6", " ", 
        RowBox[{"(", 
         RowBox[{
@@ -17871,23 +17890,7 @@ $CellContext`\[Gamma]],
                 $CellContext`\[Psi]h[
                  xAct`xTensor`LI[1], 
                  xAct`xTensor`LI[0]]],
-               Editable->False], ")"}]}]}], ")"}]}]}], ")"}]}], 
-      SuperscriptBox[
-       InterpretationBox[
-        StyleBox[
-         OverscriptBox[
-          InterpretationBox[
-           StyleBox["a",
-            ShowAutoStyles->False,
-            AutoSpacing->False],
-           $CellContext`ah[],
-           Editable->False], ""],
-         ShowAutoStyles->False,
-         AutoSpacing->False],
-        $CellContext`ah[
-         xAct`xTensor`LI[0], 
-         xAct`xTensor`LI[0]],
-        Editable->False], "3"]], "-", 
+               Editable->False], ")"}]}]}], ")"}]}]}], ")"}]}]}], "-", 
      RowBox[{
       FractionBox["1", 
        SuperscriptBox[
@@ -18733,7 +18736,24 @@ $CellContext`\[Gamma]],
                  xAct`xTensor`LI[1], 
                  xAct`xTensor`LI[0]]],
                Editable->False], ")"}]}]}], ")"}]}]}], ")"}]}]}], "-", 
-     FractionBox[
+     RowBox[{
+      FractionBox["1", 
+       SuperscriptBox[
+        InterpretationBox[
+         StyleBox[
+          OverscriptBox[
+           InterpretationBox[
+            StyleBox["a",
+             ShowAutoStyles->False,
+             AutoSpacing->False],
+            $CellContext`ah[],
+            Editable->False], ""],
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`ah[
+          xAct`xTensor`LI[0], 
+          xAct`xTensor`LI[0]],
+         Editable->False], "3"]], 
       RowBox[{"6", " ", 
        RowBox[{"(", 
         RowBox[{
@@ -19352,23 +19372,7 @@ $CellContext`\[Gamma]],
                 $CellContext`\[Psi]h[
                  xAct`xTensor`LI[1], 
                  xAct`xTensor`LI[0]]],
-               Editable->False], ")"}]}]}], ")"}]}]}], ")"}]}], 
-      SuperscriptBox[
-       InterpretationBox[
-        StyleBox[
-         OverscriptBox[
-          InterpretationBox[
-           StyleBox["a",
-            ShowAutoStyles->False,
-            AutoSpacing->False],
-           $CellContext`ah[],
-           Editable->False], ""],
-         ShowAutoStyles->False,
-         AutoSpacing->False],
-        $CellContext`ah[
-         xAct`xTensor`LI[0], 
-         xAct`xTensor`LI[0]],
-        Editable->False], "3"]], "+", 
+               Editable->False], ")"}]}]}], ")"}]}]}], ")"}]}]}], "+", 
      FractionBox[
       RowBox[{
        RowBox[{"(", 
@@ -19584,7 +19588,6 @@ $CellContext`\[Gamma]],
                     Offset[0.]}}, "RowsIndexed" -> {}}],
                    FontSize->Rational[39, 4]]}
                 },
-                
                 GridBoxAlignment->{
                  "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
                   "Rows" -> {{Center}}, "RowsIndexed" -> {}},
@@ -20351,7 +20354,6 @@ $CellContext`\[Gamma]],
                     Offset[0.]}}, "RowsIndexed" -> {}}],
                     FontSize->Rational[39, 4]]}
                     },
-                    
                     GridBoxAlignment->{
                     "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
                     "Rows" -> {{Center}}, "RowsIndexed" -> {}},
@@ -22209,6 +22211,7 @@ $CellContext`\[Gamma]],
                     Offset[0.]}}, "RowsIndexed" -> {}}],
                     FontSize->Rational[39, 4]]}
                     },
+                    
                     GridBoxAlignment->{
                     "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
                     "Rows" -> {{Center}}, "RowsIndexed" -> {}},
@@ -25596,13 +25599,13 @@ Cell[BoxData[
       Editable->False], "2"]], 
    "\[InvisibleSpace]", "\<\" +... was performed in \"\>", 
    "\[InvisibleSpace]", 
-   "8.30889499999999969759301166050136089325`6.940143184077966", 
+   "6.28322599999999997777422322542406618595`6.818782594320999", 
    "\[InvisibleSpace]", "\<\" seconds.\"\>"}],
   SequenceForm["The Splitting of ", $CellContext`ah[
       xAct`xTensor`LI[0], 
       xAct`xTensor`LI[0]]^(-2) $CellContext`RicciScalarCD[], 
    " +... was performed in ", 
-   8.30889499999999969759301166050136089325`6.940143184077966, " seconds."],
+   6.28322599999999997777422322542406618595`6.818782594320999, " seconds."],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -28188,7 +28191,7 @@ Cell[BoxData[
 perturbed metric 'gpert' in a given gauge and according to the background \
 slicing associated with the induced metric 'h'.\"\>", "MSG"]], "Print", \
 "PrintUsage",
- CellTags->"Info3620462342-6586433"]
+ CellTags->"Info3621958166-7338395"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -28683,7 +28686,7 @@ Cell[BoxData[
  StyleBox["\<\"Possible gauges are: AnyGauge, ComovingGauge, FlatGauge, \
 IsoDensityGauge, NewtonGauge and SynchronousGauge.\"\>", "MSG"]], "Print", \
 "PrintUsage",
- CellTags->"Info3620462343-6586433"]
+ CellTags->"Info3621958167-7338395"]
 }, Open  ]],
 
 Cell["so that the standard way to use SplitPerturbations is:", "Text",
@@ -28738,13 +28741,13 @@ Cell[BoxData[
       Editable->False], "2"]], 
    "\[InvisibleSpace]", "\<\" +... was performed in \"\>", 
    "\[InvisibleSpace]", 
-   "22.29041499999999942360773275140672922134`7.368718067472389", 
+   "17.11618400000000050908965931739658117294`7.254006859808226", 
    "\[InvisibleSpace]", "\<\" seconds.\"\>"}],
   SequenceForm["The Splitting of ", $CellContext`ah[
       xAct`xTensor`LI[0], 
       xAct`xTensor`LI[0]]^(-2) $CellContext`RicciScalarCD[], 
    " +... was performed in ", 
-   22.29041499999999942360773275140672922134`7.368718067472389, " seconds."],
+   17.11618400000000050908965931739658117294`7.254006859808226, " seconds."],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -43298,14 +43301,14 @@ Cell[BoxData[
       Editable->False], "2"]], 
    "\[InvisibleSpace]", "\<\" +... was performed in \"\>", 
    "\[InvisibleSpace]", 
-   "1.31582599999999994011545823013875633478`6.139798376846316", 
+   "0.93302899999999999725019961260841228068`5.990495055787371", 
    "\[InvisibleSpace]", "\<\" seconds.\"\>"}],
   SequenceForm[
   "The Splitting of ", $CellContext`RicciScalarCD[] xAct`xTensor`Scalar[
       $CellContext`ah[
        xAct`xTensor`LI[0], 
        xAct`xTensor`LI[0]]]^(-2), " +... was performed in ", 
-   1.31582599999999994011545823013875633478`6.139798376846316, " seconds."],
+   0.93302899999999999725019961260841228068`5.990495055787371, " seconds."],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -44015,14 +44018,14 @@ Cell[BoxData[
       Editable->False], "2"]], 
    "\[InvisibleSpace]", "\<\" +... was performed in \"\>", 
    "\[InvisibleSpace]", 
-   "0.75150899999999998257749211916234344244`5.896534099302927", 
+   "0.59098600000000001131184035330079495907`5.792177106183278", 
    "\[InvisibleSpace]", "\<\" seconds.\"\>"}],
   SequenceForm[
   "The Splitting of ", $CellContext`RicciScalarCD[] xAct`xTensor`Scalar[
       $CellContext`ah[
        xAct`xTensor`LI[0], 
        xAct`xTensor`LI[0]]]^(-2), " +... was performed in ", 
-   0.75150899999999998257749211916234344244`5.896534099302927, " seconds."],
+   0.59098600000000001131184035330079495907`5.792177106183278, " seconds."],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -44552,7 +44555,7 @@ Cell[BoxData[
       Editable->False], "2"]], 
    "\[InvisibleSpace]", "\<\" +... was performed in \"\>", 
    "\[InvisibleSpace]", 
-   "4.23119400000000034367531043244525790215`6.647062851444282", 
+   "3.29276999999999997470467860694043338299`6.538161309579344", 
    "\[InvisibleSpace]", "\<\" seconds.\"\>"}],
   SequenceForm[
   "The Splitting of ", $CellContext`RicciCD[$CellContext`\[Mu], \
@@ -44560,7 +44563,7 @@ Cell[BoxData[
       $CellContext`ah[
        xAct`xTensor`LI[0], 
        xAct`xTensor`LI[0]]]^(-2), " +... was performed in ", 
-   4.23119400000000034367531043244525790215`6.647062851444282, " seconds."],
+   3.29276999999999997470467860694043338299`6.538161309579344, " seconds."],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -48182,14 +48185,14 @@ Cell[BoxData[
      Editable->False]}], 
    "\[InvisibleSpace]", "\<\" +... was performed in \"\>", 
    "\[InvisibleSpace]", 
-   "5.31247399999999991848653735360130667686`6.745896730844503", 
+   "4.04608800000000012886403055745176970959`6.627635237463", 
    "\[InvisibleSpace]", "\<\" seconds.\"\>"}],
   SequenceForm[
   "The Splitting of ", 
    Rational[-1, 
      6] $CellContext`RicciScalarCD[] $CellContext`u[-$CellContext`\[Alpha]] \
 $CellContext`u[-$CellContext`\[Beta]], " +... was performed in ", 
-   5.31247399999999991848653735360130667686`6.745896730844503, " seconds."],
+   4.04608800000000012886403055745176970959`6.627635237463, " seconds."],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -49390,7 +49393,7 @@ Cell[BoxData[
          StyleBox[GridBox[{
             {
              RowBox[{
-              RowBox[{"(", "xAct`xPand`Private`n$48564_", ")"}], "?", 
+              RowBox[{"(", "xAct`xPand`Private`n$56141_", ")"}], "?", 
               RowBox[{"(", 
                RowBox[{
                 RowBox[{"#1", " ", ">=", " ", "2"}], " ", "&"}], " ", ")"}]}], 
@@ -49420,7 +49423,7 @@ Cell[BoxData[
      $CellContext`dg[
       xAct`xTensor`LI[
        PatternTest[
-        Pattern[xAct`xPand`Private`n$48564, 
+        Pattern[xAct`xPand`Private`n$56141, 
          Blank[]], # >= 2& ]], 
       Pattern[$CellContext`\[Alpha], 
        Blank[]], 
@@ -49433,7 +49436,7 @@ Cell[BoxData[
        StyleBox[GridBox[{
           {"E", 
            StyleBox[GridBox[{
-              {"xAct`xPand`Private`n$48564", "0", "\[Alpha]", "\[Beta]"},
+              {"xAct`xPand`Private`n$56141", "0", "\[Alpha]", "\[Beta]"},
               {" ", " ", " ", " "}
              },
              GridBoxSpacings->{"Columns" -> {
@@ -49456,7 +49459,7 @@ Cell[BoxData[
         ShowAutoStyles->False,
         AutoSpacing->False],
        $CellContext`Eth[
-        xAct`xTensor`LI[xAct`xPand`Private`n$48564], 
+        xAct`xTensor`LI[xAct`xPand`Private`n$56141], 
         xAct`xTensor`LI[0], $CellContext`\[Alpha], $CellContext`\[Beta]],
        Editable->False]}], "-", 
      RowBox[{
@@ -49464,7 +49467,7 @@ Cell[BoxData[
        StyleBox[GridBox[{
           {"B", 
            StyleBox[GridBox[{
-              {"xAct`xPand`Private`n$48564", "0", "\[Beta]"},
+              {"xAct`xPand`Private`n$56141", "0", "\[Beta]"},
               {" ", " ", " "}
              },
              GridBoxSpacings->{"Columns" -> {
@@ -49487,7 +49490,7 @@ Cell[BoxData[
         ShowAutoStyles->False,
         AutoSpacing->False],
        $CellContext`Bvh[
-        xAct`xTensor`LI[xAct`xPand`Private`n$48564], 
+        xAct`xTensor`LI[xAct`xPand`Private`n$56141], 
         xAct`xTensor`LI[0], $CellContext`\[Beta]],
        Editable->False], " ", 
       InterpretationBox[
@@ -49524,7 +49527,7 @@ Cell[BoxData[
        StyleBox[GridBox[{
           {"B", 
            StyleBox[GridBox[{
-              {"xAct`xPand`Private`n$48564", "0", "\[Alpha]"},
+              {"xAct`xPand`Private`n$56141", "0", "\[Alpha]"},
               {" ", " ", " "}
              },
              GridBoxSpacings->{"Columns" -> {
@@ -49547,7 +49550,7 @@ Cell[BoxData[
         ShowAutoStyles->False,
         AutoSpacing->False],
        $CellContext`Bvh[
-        xAct`xTensor`LI[xAct`xPand`Private`n$48564], 
+        xAct`xTensor`LI[xAct`xPand`Private`n$56141], 
         xAct`xTensor`LI[0], $CellContext`\[Alpha]],
        Editable->False], " ", 
       InterpretationBox[
@@ -49642,7 +49645,7 @@ Cell[BoxData[
        StyleBox[GridBox[{
           {"\[Phi]", 
            StyleBox[GridBox[{
-              {"xAct`xPand`Private`n$48564", "0"},
+              {"xAct`xPand`Private`n$56141", "0"},
               {" ", " "}
              },
              GridBoxSpacings->{"Columns" -> {
@@ -49665,7 +49668,7 @@ Cell[BoxData[
         ShowAutoStyles->False,
         AutoSpacing->False],
        $CellContext`\[Phi]h[
-        xAct`xTensor`LI[xAct`xPand`Private`n$48564], 
+        xAct`xTensor`LI[xAct`xPand`Private`n$56141], 
         xAct`xTensor`LI[0]],
        Editable->False]}], "-", 
      RowBox[{"2", " ", 
@@ -49702,7 +49705,7 @@ Cell[BoxData[
        StyleBox[GridBox[{
           {"\[Psi]", 
            StyleBox[GridBox[{
-              {"xAct`xPand`Private`n$48564", "0"},
+              {"xAct`xPand`Private`n$56141", "0"},
               {" ", " "}
              },
              GridBoxSpacings->{"Columns" -> {
@@ -49725,7 +49728,7 @@ Cell[BoxData[
         ShowAutoStyles->False,
         AutoSpacing->False],
        $CellContext`\[Psi]h[
-        xAct`xTensor`LI[xAct`xPand`Private`n$48564], 
+        xAct`xTensor`LI[xAct`xPand`Private`n$56141], 
         xAct`xTensor`LI[0]],
        Editable->False]}], "-", 
      RowBox[{
@@ -49766,7 +49769,7 @@ Cell[BoxData[
            OverscriptBox["D", "_"], "\[Alpha]"], GridBox[{
             {"B", 
              StyleBox[GridBox[{
-                {"xAct`xPand`Private`n$48564", "0"},
+                {"xAct`xPand`Private`n$56141", "0"},
                 {" ", " "}
                },
                GridBoxSpacings->{"Columns" -> {
@@ -49791,7 +49794,7 @@ Cell[BoxData[
          AutoSpacing->False],
         $CellContext`cd[$CellContext`\[Alpha]][
          $CellContext`Bsh[
-          xAct`xTensor`LI[xAct`xPand`Private`n$48564], 
+          xAct`xTensor`LI[xAct`xPand`Private`n$56141], 
           xAct`xTensor`LI[0]]],
         Editable->False], ")"}]}], "-", 
      RowBox[{
@@ -49832,7 +49835,7 @@ Cell[BoxData[
            OverscriptBox["D", "_"], "\[Beta]"], GridBox[{
             {"B", 
              StyleBox[GridBox[{
-                {"xAct`xPand`Private`n$48564", "0"},
+                {"xAct`xPand`Private`n$56141", "0"},
                 {" ", " "}
                },
                GridBoxSpacings->{"Columns" -> {
@@ -49857,7 +49860,7 @@ Cell[BoxData[
          AutoSpacing->False],
         $CellContext`cd[$CellContext`\[Beta]][
          $CellContext`Bsh[
-          xAct`xTensor`LI[xAct`xPand`Private`n$48564], 
+          xAct`xTensor`LI[xAct`xPand`Private`n$56141], 
           xAct`xTensor`LI[0]]],
         Editable->False], ")"}]}]}]}], ",", 
    RowBox[{
@@ -50354,7 +50357,7 @@ Cell[BoxData[
       Editable->False], "2"]], 
    "\[InvisibleSpace]", "\<\" +... was performed in \"\>", 
    "\[InvisibleSpace]", 
-   "0.25562299999999998911803800183406565338`5.428199840714711", 
+   "0.20876300000000000411937151056918082759`5.340253442477054", 
    "\[InvisibleSpace]", "\<\" seconds.\"\>"}],
   SequenceForm["The Splitting of ", 3 xAct`xTensor`Scalar[
       $CellContext`ah[
@@ -50365,7 +50368,7 @@ $CellContext`CD[-$CellContext`\[Nu]][
      $CellContext`ah[
       xAct`xTensor`LI[0], 
       xAct`xTensor`LI[0]]], " +... was performed in ", 
-   0.25562299999999998911803800183406565338`5.428199840714711, " seconds."],
+   0.20876300000000000411937151056918082759`5.340253442477054, " seconds."],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -50693,7 +50696,7 @@ Cell[BoxData[
       Editable->False], "3"]], 
    "\[InvisibleSpace]", "\<\" +... was performed in \"\>", 
    "\[InvisibleSpace]", 
-   "0.53184200000000003694111683216760866344`5.746382544221754", 
+   "0.44559500000000001884714606603665743023`5.669540222275206", 
    "\[InvisibleSpace]", "\<\" seconds.\"\>"}],
   SequenceForm["The Splitting of ", xAct`xTensor`Scalar[
       $CellContext`ah[
@@ -50704,7 +50707,7 @@ $CellContext`u[$CellContext`\[Nu]] $CellContext`CD[-$CellContext`\[Mu]][
      $CellContext`ah[
       xAct`xTensor`LI[0], 
       xAct`xTensor`LI[0]]], " +... was performed in ", 
-   0.53184200000000003694111683216760866344`5.746382544221754, " seconds."],
+   0.44559500000000001884714606603665743023`5.669540222275206, " seconds."],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -51281,7 +51284,7 @@ Cell[BoxData[
       Editable->False], ")"}]}], 
    "\[InvisibleSpace]", "\<\" +... was performed in \"\>", 
    "\[InvisibleSpace]", 
-   "1.9662120000000000707984781911363825202`6.314230255598934", 
+   "1.55574100000000004051514679304091259837`6.212537210539126", 
    "\[InvisibleSpace]", "\<\" seconds.\"\>"}],
   SequenceForm["The Splitting of ", Rational[-1, 3] $CellContext`ah[
      xAct`xTensor`LI[0], 
@@ -51289,7 +51292,7 @@ Cell[BoxData[
      0]] $CellContext`g[-$CellContext`\[Mu], -$CellContext`\[Nu]] \
 $CellContext`CD[-$CellContext`\[Alpha]][
      $CellContext`u[$CellContext`\[Alpha]]], " +... was performed in ", 
-   1.9662120000000000707984781911363825202`6.314230255598934, " seconds."],
+   1.55574100000000004051514679304091259837`6.212537210539126, " seconds."],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -51759,13 +51762,13 @@ Cell[BoxData[
      Editable->False]}], 
    "\[InvisibleSpace]", "\<\" +... was performed in \"\>", 
    "\[InvisibleSpace]", 
-   "0.18167800000000000615330009168246760964`5.2799022535922235", 
+   "0.14989500000000000046185277824406512082`5.196387059746145", 
    "\[InvisibleSpace]", "\<\" seconds.\"\>"}],
   SequenceForm["The Splitting of ", $CellContext`ah[
      xAct`xTensor`LI[0], 
      xAct`xTensor`LI[0]] $CellContext`u[-$CellContext`\[Nu]], 
    " +... was performed in ", 
-   0.18167800000000000615330009168246760964`5.2799022535922235, " seconds."],
+   0.14989500000000000046185277824406512082`5.196387059746145, " seconds."],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -52109,13 +52112,13 @@ Cell[BoxData[
      Editable->False]}], 
    "\[InvisibleSpace]", "\<\" +... was performed in \"\>", 
    "\[InvisibleSpace]", 
-   "1.09600900000000001099920154956635087729`6.060414033700136", 
+   "0.88246199999999996865795992562198080122`5.966295926437919", 
    "\[InvisibleSpace]", "\<\" seconds.\"\>"}],
   SequenceForm["The Splitting of ", $CellContext`ah[
      xAct`xTensor`LI[0], 
      xAct`xTensor`LI[0]] $CellContext`u[-$CellContext`\[Nu]], 
    " +... was performed in ", 
-   1.09600900000000001099920154956635087729`6.060414033700136, " seconds."],
+   0.88246199999999996865795992562198080122`5.966295926437919, " seconds."],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -53943,7 +53946,7 @@ Cell[BoxData[
       Editable->False], ")"}]}], 
    "\[InvisibleSpace]", "\<\" +... was performed in \"\>", 
    "\[InvisibleSpace]", 
-   "20.0347329999999992367065715370699763298`7.322383472306924", 
+   "15.01319100000000084094153862679377198219`7.197072923071484", 
    "\[InvisibleSpace]", "\<\" seconds.\"\>"}],
   SequenceForm["The Splitting of ", Rational[-1, 2] $CellContext`ah[
      xAct`xTensor`LI[0], 
@@ -53951,7 +53954,7 @@ Cell[BoxData[
      0]] $CellContext`u[$CellContext`\[Alpha]] $CellContext`u[-$CellContext`\
 \[Nu]] $CellContext`CD[-$CellContext`\[Alpha]][
      $CellContext`u[-$CellContext`\[Mu]]], " +... was performed in ", 
-   20.0347329999999992367065715370699763298`7.322383472306924, " seconds."],
+   15.01319100000000084094153862679377198219`7.197072923071484, " seconds."],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -63041,7 +63044,7 @@ Cell[BoxData[
       Editable->False], ")"}]}], 
    "\[InvisibleSpace]", "\<\" +... was performed in \"\>", 
    "\[InvisibleSpace]", 
-   "2.18748399999999998399857759068254381418`6.360544798408434", 
+   "1.791409000000000029118041311448905617`6.273794665049616", 
    "\[InvisibleSpace]", "\<\" seconds.\"\>"}],
   SequenceForm["The Splitting of ", Rational[-1, 3] $CellContext`ah[
      xAct`xTensor`LI[0], 
@@ -63049,7 +63052,7 @@ Cell[BoxData[
      0]] $CellContext`g[-$CellContext`\[Mu], -$CellContext`\[Nu]] \
 $CellContext`CD[-$CellContext`\[Alpha]][
      $CellContext`u[$CellContext`\[Alpha]]], " +... was performed in ", 
-   2.18748399999999998399857759068254381418`6.360544798408434, " seconds."],
+   1.791409000000000029118041311448905617`6.273794665049616, " seconds."],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -63817,7 +63820,7 @@ Cell[BoxData[
       Editable->False], "3"]], 
    "\[InvisibleSpace]", "\<\" +... was performed in \"\>", 
    "\[InvisibleSpace]", 
-   "2.29670899999999988949639373458921909332`6.381705885531576", 
+   "1.87196399999999996133226431993534788489`6.292897405784444", 
    "\[InvisibleSpace]", "\<\" seconds.\"\>"}],
   SequenceForm["The Splitting of ", 4 $CellContext`Pu[
      xAct`xTensor`LI[0], 
@@ -63830,7 +63833,7 @@ $CellContext`u[$CellContext`\[Nu]] $CellContext`CD[-$CellContext`\[Mu]][
      $CellContext`ah[
       xAct`xTensor`LI[0], 
       xAct`xTensor`LI[0]]], " +... was performed in ", 
-   2.29670899999999988949639373458921909332`6.381705885531576, " seconds."],
+   1.87196399999999996133226431993534788489`6.292897405784444, " seconds."],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -68098,7 +68101,7 @@ Cell[BoxData[
       Editable->False], "2"]], 
    "\[InvisibleSpace]", "\<\" +... was performed in \"\>", 
    "\[InvisibleSpace]", 
-   "0.7380560000000000453468373962095938623`5.8886892284472525", 
+   "0.55529899999999998705391135445097461343`5.765126804661658", 
    "\[InvisibleSpace]", "\<\" seconds.\"\>"}],
   SequenceForm["The Splitting of ", xAct`xTensor`Scalar[
       $CellContext`ah[
@@ -68108,7 +68111,7 @@ Cell[BoxData[
       xAct`xPand`\[CurlyPhi][
        xAct`xTensor`LI[0], 
        xAct`xTensor`LI[0]]]], " +... was performed in ", 
-   0.7380560000000000453468373962095938623`5.8886892284472525, " seconds."],
+   0.55529899999999998705391135445097461343`5.765126804661658, " seconds."],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -69762,7 +69765,7 @@ Cell[BoxData[
       Editable->False], "2"]}], 
    "\[InvisibleSpace]", "\<\" +... was performed in \"\>", 
    "\[InvisibleSpace]", 
-   "0.7314410000000000078301809480763040483`5.884779213791767", 
+   "0.57013199999999997213961933084647171199`5.776575330767533", 
    "\[InvisibleSpace]", "\<\" seconds.\"\>"}],
   SequenceForm["The Splitting of ", xAct`xPand`\[Epsilon] $CellContext`dg[
      xAct`xTensor`LI[1], -$CellContext`\[Alpha], -$CellContext`\[Beta]] 
@@ -69770,7 +69773,7 @@ Cell[BoxData[
       $CellContext`ah[
        xAct`xTensor`LI[0], 
        xAct`xTensor`LI[0]]]^2, " +... was performed in ", 
-   0.7314410000000000078301809480763040483`5.884779213791767, " seconds."],
+   0.57013199999999997213961933084647171199`5.776575330767533, " seconds."],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -71756,13 +71759,13 @@ Cell[BoxData[
    "\[InvisibleSpace]", "\<\"tensor \"\>", "\[InvisibleSpace]", 
    RowBox[{"\[Xi]h", "[", 
     RowBox[{
-     RowBox[{"LI", "[", "xAct`xPand`Private`ord$78875", "]"}], ",", 
-     "\[Sigma]$78876"}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
+     RowBox[{"LI", "[", "xAct`xPand`Private`ord$89717", "]"}], ",", 
+     "\[Sigma]$89718"}], "]"}], "\[InvisibleSpace]", "\<\". \"\>", 
    "\[InvisibleSpace]", "\<\"\"\>"}],
   SequenceForm["** ", xAct`xTensor`DefTensor, ": Defining ", "tensor ", 
    $CellContext`\[Xi]h[
     xAct`xTensor`LI[
-    xAct`xPand`Private`ord$78875], $CellContext`\[Sigma]$78876], ". ", ""],
+    xAct`xPand`Private`ord$89717], $CellContext`\[Sigma]$89718], ". ", ""],
   Editable->False]], "Print"],
 
 Cell[BoxData[
@@ -71832,7 +71835,7 @@ Cell[BoxData[
       Editable->False], "2"]}], 
    "\[InvisibleSpace]", "\<\" +... was performed in \"\>", 
    "\[InvisibleSpace]", 
-   "0.9597029999999999727577915109577588737`6.002736765675776", 
+   "0.73908499999999999197086708591086789966`5.889294301482482", 
    "\[InvisibleSpace]", "\<\" seconds.\"\>"}],
   SequenceForm["The Splitting of ", xAct`xPand`\[Epsilon] $CellContext`dg[
      xAct`xTensor`LI[1], -$CellContext`\[Alpha], -$CellContext`\[Beta]] 
@@ -71840,7 +71843,7 @@ Cell[BoxData[
       $CellContext`ah[
        xAct`xTensor`LI[0], 
        xAct`xTensor`LI[0]]]^2, " +... was performed in ", 
-   0.9597029999999999727577915109577588737`6.002736765675776, " seconds."],
+   0.73908499999999999197086708591086789966`5.889294301482482, " seconds."],
   Editable->False]], "Print"]
 }, Open  ]],
 
@@ -74501,7 +74504,7 @@ Cell[BoxData[
 }, Open  ]]
 },
 AutoGeneratedPackage->Automatic,
-WindowSize->{1227, 756},
+WindowSize->{1225, 756},
 WindowMargins->{{0, Automatic}, {Automatic, 0}},
 DockedCells->{
   Cell[
@@ -74553,8 +74556,8 @@ DockedCells->{
 ShowSelection->True,
 TrackCellChangeTimes->False,
 Magnification->1,
-FrontEndVersion->"10.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (June 27, \
-2014)",
+FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (November 20, \
+2012)",
 StyleDefinitions->FrontEnd`FileName[{"Creative"}, "PastelColor.nb", 
   CharacterEncoding -> "UTF-8"]
 ]
@@ -74563,22 +74566,22 @@ StyleDefinitions->FrontEnd`FileName[{"Creative"}, "PastelColor.nb",
 (* Internal cache information *)
 (*CellTagsOutline
 CellTagsIndex->{
- "Info3620462317-6586433"->{
-  Cell[23331, 608, 206, 3, 40, "Print",
-   CellTags->"Info3620462317-6586433"]},
- "Info3620462342-6586433"->{
-  Cell[1066218, 28185, 290, 5, 43, "Print",
-   CellTags->"Info3620462342-6586433"]},
- "Info3620462343-6586433"->{
-  Cell[1084238, 28681, 215, 4, 43, "Print",
-   CellTags->"Info3620462343-6586433"]}
+ "Info3621958145-7338395"->{
+  Cell[23336, 609, 206, 3, 40, "Print",
+   CellTags->"Info3621958145-7338395"]},
+ "Info3621958166-7338395"->{
+  Cell[1066320, 28188, 290, 5, 43, "Print",
+   CellTags->"Info3621958166-7338395"]},
+ "Info3621958167-7338395"->{
+  Cell[1084340, 28684, 215, 4, 43, "Print",
+   CellTags->"Info3621958167-7338395"]}
  }
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"Info3620462317-6586433", 2675999, 74565},
- {"Info3620462342-6586433", 2676109, 74568},
- {"Info3620462343-6586433", 2676223, 74571}
+ {"Info3621958145-7338395", 2676100, 74568},
+ {"Info3621958166-7338395", 2676210, 74571},
+ {"Info3621958167-7338395", 2676324, 74574}
  }
 *)
 (*NotebookFileOutline
@@ -74586,7 +74589,7 @@ Notebook[{
 Cell[CellGroupData[{
 Cell[567, 22, 607, 17, 79, "Title"],
 Cell[CellGroupData[{
-Cell[1199, 43, 91, 1, 57, "Section"],
+Cell[1199, 43, 91, 1, 73, "Section"],
 Cell[CellGroupData[{
 Cell[1315, 48, 211, 3, 25, "Subsubsection"],
 Cell[CellGroupData[{
@@ -74598,456 +74601,456 @@ Cell[2531, 80, 117, 1, 22, "Print"],
 Cell[2651, 83, 74, 0, 22, "Print"],
 Cell[2728, 85, 57, 0, 21, "Print"],
 Cell[2788, 87, 96, 1, 21, "Print"],
-Cell[2887, 90, 367, 8, 22, "Print"],
-Cell[3257, 100, 117, 1, 22, "Print"],
-Cell[3377, 103, 96, 1, 21, "Print"],
-Cell[3476, 106, 368, 9, 22, "Print"],
-Cell[3847, 117, 165, 2, 22, "Print"],
-Cell[4015, 121, 338, 8, 22, "Print"],
-Cell[4356, 131, 422, 9, 22, "Print"],
-Cell[4781, 142, 523, 9, 22, "Print"],
-Cell[5307, 153, 481, 9, 22, "Print"],
-Cell[5791, 164, 499, 9, 22, "Print"],
-Cell[6293, 175, 96, 1, 21, "Print"],
-Cell[6392, 178, 367, 8, 22, "Print"],
-Cell[6762, 188, 135, 1, 22, "Print"],
-Cell[6900, 191, 96, 1, 21, "Print"],
-Cell[6999, 194, 251, 3, 38, "Print"],
-Cell[7253, 199, 96, 1, 21, "Print"]
+Cell[2887, 90, 372, 9, 22, "Print"],
+Cell[3262, 101, 117, 1, 22, "Print"],
+Cell[3382, 104, 96, 1, 21, "Print"],
+Cell[3481, 107, 368, 9, 22, "Print"],
+Cell[3852, 118, 165, 2, 22, "Print"],
+Cell[4020, 122, 338, 8, 22, "Print"],
+Cell[4361, 132, 422, 9, 22, "Print"],
+Cell[4786, 143, 523, 9, 22, "Print"],
+Cell[5312, 154, 481, 9, 22, "Print"],
+Cell[5796, 165, 499, 9, 22, "Print"],
+Cell[6298, 176, 96, 1, 21, "Print"],
+Cell[6397, 179, 367, 8, 22, "Print"],
+Cell[6767, 189, 135, 1, 22, "Print"],
+Cell[6905, 192, 96, 1, 21, "Print"],
+Cell[7004, 195, 251, 3, 38, "Print"],
+Cell[7258, 200, 96, 1, 21, "Print"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[7410, 207, 320, 4, 25, "Subsubsection"],
-Cell[7733, 213, 842, 19, 56, "Input"]
+Cell[7415, 208, 320, 4, 25, "Subsubsection"],
+Cell[7738, 214, 842, 19, 56, "Input"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[8612, 237, 392, 5, 35, "Subsection"],
-Cell[9007, 244, 616, 13, 28, "Text"],
+Cell[8617, 238, 392, 5, 35, "Subsection"],
+Cell[9012, 245, 616, 13, 28, "Text"],
 Cell[CellGroupData[{
-Cell[9648, 261, 1223, 28, 61, "Input"],
+Cell[9653, 262, 1223, 28, 61, "Input"],
 Cell[CellGroupData[{
-Cell[10896, 293, 428, 9, 22, "Print"],
-Cell[11327, 304, 438, 9, 22, "Print"],
-Cell[11768, 315, 614, 14, 22, "Print"],
-Cell[12385, 331, 750, 17, 22, "Print"],
-Cell[13138, 350, 721, 15, 22, "Print"],
-Cell[13862, 367, 743, 16, 22, "Print"],
-Cell[14608, 385, 530, 12, 22, "Print"],
-Cell[15141, 399, 674, 15, 22, "Print"],
-Cell[15818, 416, 694, 16, 22, "Print"],
-Cell[16515, 434, 736, 16, 22, "Print"],
-Cell[17254, 452, 628, 15, 22, "Print"],
-Cell[17885, 469, 105, 1, 22, "Print"],
-Cell[17993, 472, 482, 10, 22, "Print"],
-Cell[18478, 484, 109, 1, 22, "Print"],
-Cell[18590, 487, 644, 16, 22, "Print"],
-Cell[19237, 505, 721, 15, 22, "Print"],
-Cell[19961, 522, 636, 15, 22, "Print"],
-Cell[20600, 539, 494, 10, 22, "Print"],
-Cell[21097, 551, 240, 5, 22, "Print"],
-Cell[21340, 558, 232, 5, 22, "Print"],
-Cell[21575, 565, 244, 5, 22, "Print"],
-Cell[21822, 572, 498, 10, 22, "Print"]
+Cell[10901, 294, 428, 9, 22, "Print"],
+Cell[11332, 305, 438, 9, 22, "Print"],
+Cell[11773, 316, 614, 14, 22, "Print"],
+Cell[12390, 332, 750, 17, 22, "Print"],
+Cell[13143, 351, 721, 15, 22, "Print"],
+Cell[13867, 368, 743, 16, 22, "Print"],
+Cell[14613, 386, 530, 12, 22, "Print"],
+Cell[15146, 400, 674, 15, 22, "Print"],
+Cell[15823, 417, 694, 16, 22, "Print"],
+Cell[16520, 435, 736, 16, 22, "Print"],
+Cell[17259, 453, 628, 15, 22, "Print"],
+Cell[17890, 470, 105, 1, 22, "Print"],
+Cell[17998, 473, 482, 10, 22, "Print"],
+Cell[18483, 485, 109, 1, 22, "Print"],
+Cell[18595, 488, 644, 16, 22, "Print"],
+Cell[19242, 506, 721, 15, 22, "Print"],
+Cell[19966, 523, 636, 15, 22, "Print"],
+Cell[20605, 540, 494, 10, 22, "Print"],
+Cell[21102, 552, 240, 5, 22, "Print"],
+Cell[21345, 559, 232, 5, 22, "Print"],
+Cell[21580, 566, 244, 5, 22, "Print"],
+Cell[21827, 573, 498, 10, 22, "Print"]
 }, Open  ]]
 }, Open  ]],
-Cell[22347, 586, 852, 14, 65, "Text"],
+Cell[22352, 587, 852, 14, 65, "Text"],
 Cell[CellGroupData[{
-Cell[23224, 604, 104, 2, 38, "Input"],
-Cell[23331, 608, 206, 3, 40, "Print",
- CellTags->"Info3620462317-6586433"]
+Cell[23229, 605, 104, 2, 38, "Input"],
+Cell[23336, 609, 206, 3, 40, "Print",
+ CellTags->"Info3621958145-7338395"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[23574, 616, 3025, 43, 45, "Input"],
+Cell[23579, 617, 3025, 43, 45, "Input"],
 Cell[CellGroupData[{
-Cell[26624, 663, 486, 9, 22, "Print"],
-Cell[27113, 674, 640, 15, 22, "Print"],
-Cell[27756, 691, 686, 16, 22, "Print"],
-Cell[28445, 709, 721, 15, 22, "Print"],
-Cell[29169, 726, 743, 16, 22, "Print"],
-Cell[29915, 744, 540, 12, 22, "Print"],
-Cell[30458, 758, 674, 15, 22, "Print"],
-Cell[31135, 775, 694, 16, 22, "Print"],
-Cell[31832, 793, 736, 16, 22, "Print"],
-Cell[32571, 811, 628, 15, 22, "Print"],
-Cell[33202, 828, 105, 1, 22, "Print"],
-Cell[33310, 831, 482, 10, 22, "Print"],
-Cell[33795, 843, 109, 1, 22, "Print"],
-Cell[33907, 846, 644, 16, 22, "Print"],
-Cell[34554, 864, 744, 16, 22, "Print"],
-Cell[35301, 882, 636, 15, 22, "Print"],
-Cell[35940, 899, 494, 10, 22, "Print"],
-Cell[36437, 911, 240, 5, 22, "Print"],
-Cell[36680, 918, 232, 5, 22, "Print"],
-Cell[36915, 925, 244, 5, 22, "Print"],
-Cell[37162, 932, 498, 10, 22, "Print"],
-Cell[37663, 944, 648, 14, 22, "Print"],
-Cell[38314, 960, 581, 12, 22, "Print"],
-Cell[38898, 974, 476, 10, 22, "Print"],
-Cell[39377, 986, 512, 12, 22, "Print"],
-Cell[39892, 1000, 512, 12, 22, "Print"],
-Cell[40407, 1014, 423, 10, 22, "Print"],
-Cell[40833, 1026, 449, 10, 22, "Print"],
-Cell[41285, 1038, 512, 12, 22, "Print"],
-Cell[41800, 1052, 717, 14, 22, "Print"],
-Cell[42520, 1068, 512, 9, 22, "Print"],
-Cell[43035, 1079, 531, 10, 22, "Print"],
-Cell[43569, 1091, 634, 13, 22, "Print"],
-Cell[44206, 1106, 683, 14, 22, "Print"],
-Cell[44892, 1122, 683, 14, 22, "Print"],
-Cell[45578, 1138, 644, 15, 22, "Print"],
-Cell[46225, 1155, 636, 13, 22, "Print"],
-Cell[46864, 1170, 756, 17, 22, "Print"],
-Cell[47623, 1189, 727, 15, 22, "Print"],
-Cell[48353, 1206, 745, 15, 22, "Print"],
-Cell[49101, 1223, 546, 12, 22, "Print"],
-Cell[49650, 1237, 680, 15, 22, "Print"],
-Cell[50333, 1254, 700, 16, 22, "Print"],
-Cell[51036, 1272, 754, 17, 22, "Print"],
-Cell[51793, 1291, 802, 17, 22, "Print"],
-Cell[52598, 1310, 634, 15, 22, "Print"],
-Cell[53235, 1327, 105, 1, 22, "Print"],
-Cell[53343, 1330, 488, 10, 22, "Print"],
-Cell[53834, 1342, 109, 1, 22, "Print"],
-Cell[53946, 1345, 650, 16, 22, "Print"],
-Cell[54599, 1363, 94, 1, 22, "Print"],
-Cell[54696, 1366, 727, 15, 22, "Print"],
-Cell[55426, 1383, 642, 15, 22, "Print"],
-Cell[56071, 1400, 500, 10, 22, "Print"],
-Cell[56574, 1412, 240, 5, 22, "Print"],
-Cell[56817, 1419, 244, 5, 22, "Print"],
-Cell[57064, 1426, 504, 10, 22, "Print"],
-Cell[57571, 1438, 512, 12, 22, "Print"],
-Cell[58086, 1452, 394, 9, 22, "Print"],
-Cell[58483, 1463, 689, 14, 22, "Print"],
-Cell[59175, 1479, 673, 14, 22, "Print"],
-Cell[59851, 1495, 603, 13, 22, "Print"],
-Cell[60457, 1510, 511, 10, 22, "Print"],
-Cell[60971, 1522, 453, 10, 22, "Print"],
-Cell[61427, 1534, 834, 18, 22, "Print"]
+Cell[26629, 664, 486, 9, 22, "Print"],
+Cell[27118, 675, 640, 15, 22, "Print"],
+Cell[27761, 692, 686, 16, 22, "Print"],
+Cell[28450, 710, 721, 15, 22, "Print"],
+Cell[29174, 727, 743, 16, 22, "Print"],
+Cell[29920, 745, 540, 12, 22, "Print"],
+Cell[30463, 759, 674, 15, 22, "Print"],
+Cell[31140, 776, 694, 16, 22, "Print"],
+Cell[31837, 794, 736, 16, 22, "Print"],
+Cell[32576, 812, 628, 15, 22, "Print"],
+Cell[33207, 829, 105, 1, 22, "Print"],
+Cell[33315, 832, 482, 10, 22, "Print"],
+Cell[33800, 844, 109, 1, 22, "Print"],
+Cell[33912, 847, 644, 16, 22, "Print"],
+Cell[34559, 865, 744, 16, 22, "Print"],
+Cell[35306, 883, 636, 15, 22, "Print"],
+Cell[35945, 900, 494, 10, 22, "Print"],
+Cell[36442, 912, 240, 5, 22, "Print"],
+Cell[36685, 919, 232, 5, 22, "Print"],
+Cell[36920, 926, 244, 5, 22, "Print"],
+Cell[37167, 933, 498, 10, 22, "Print"],
+Cell[37668, 945, 648, 14, 22, "Print"],
+Cell[38319, 961, 581, 12, 22, "Print"],
+Cell[38903, 975, 476, 10, 22, "Print"],
+Cell[39382, 987, 512, 12, 22, "Print"],
+Cell[39897, 1001, 512, 12, 22, "Print"],
+Cell[40412, 1015, 423, 10, 22, "Print"],
+Cell[40838, 1027, 449, 10, 22, "Print"],
+Cell[41290, 1039, 512, 12, 22, "Print"],
+Cell[41805, 1053, 717, 14, 22, "Print"],
+Cell[42525, 1069, 512, 9, 22, "Print"],
+Cell[43040, 1080, 531, 10, 22, "Print"],
+Cell[43574, 1092, 634, 13, 22, "Print"],
+Cell[44211, 1107, 683, 14, 22, "Print"],
+Cell[44897, 1123, 683, 14, 22, "Print"],
+Cell[45583, 1139, 644, 15, 22, "Print"],
+Cell[46230, 1156, 636, 13, 22, "Print"],
+Cell[46869, 1171, 756, 17, 22, "Print"],
+Cell[47628, 1190, 727, 15, 22, "Print"],
+Cell[48358, 1207, 745, 15, 22, "Print"],
+Cell[49106, 1224, 546, 12, 22, "Print"],
+Cell[49655, 1238, 680, 15, 22, "Print"],
+Cell[50338, 1255, 700, 16, 22, "Print"],
+Cell[51041, 1273, 754, 17, 22, "Print"],
+Cell[51798, 1292, 802, 17, 22, "Print"],
+Cell[52603, 1311, 634, 15, 22, "Print"],
+Cell[53240, 1328, 105, 1, 22, "Print"],
+Cell[53348, 1331, 488, 10, 22, "Print"],
+Cell[53839, 1343, 109, 1, 22, "Print"],
+Cell[53951, 1346, 650, 16, 22, "Print"],
+Cell[54604, 1364, 94, 1, 22, "Print"],
+Cell[54701, 1367, 727, 15, 22, "Print"],
+Cell[55431, 1384, 642, 15, 22, "Print"],
+Cell[56076, 1401, 500, 10, 22, "Print"],
+Cell[56579, 1413, 240, 5, 22, "Print"],
+Cell[56822, 1420, 244, 5, 22, "Print"],
+Cell[57069, 1427, 504, 10, 22, "Print"],
+Cell[57576, 1439, 512, 12, 22, "Print"],
+Cell[58091, 1453, 394, 9, 22, "Print"],
+Cell[58488, 1464, 689, 14, 22, "Print"],
+Cell[59180, 1480, 673, 14, 22, "Print"],
+Cell[59856, 1496, 603, 13, 22, "Print"],
+Cell[60462, 1511, 511, 10, 22, "Print"],
+Cell[60976, 1523, 453, 10, 22, "Print"],
+Cell[61432, 1535, 834, 18, 22, "Print"]
 }, Open  ]]
 }, Open  ]],
-Cell[62288, 1556, 225, 4, 29, "Text"],
+Cell[62293, 1557, 225, 4, 29, "Text"],
 Cell[CellGroupData[{
-Cell[62538, 1564, 854, 13, 56, "Input"],
+Cell[62543, 1565, 854, 13, 56, "Input"],
 Cell[CellGroupData[{
-Cell[63417, 1581, 452, 10, 22, "Print"],
-Cell[63872, 1593, 664, 15, 22, "Print"],
-Cell[64539, 1610, 693, 14, 22, "Print"],
-Cell[65235, 1626, 685, 14, 22, "Print"],
-Cell[65923, 1642, 751, 16, 22, "Print"],
-Cell[66677, 1660, 693, 14, 22, "Print"],
-Cell[67373, 1676, 685, 14, 22, "Print"],
-Cell[68061, 1692, 751, 16, 22, "Print"],
-Cell[68815, 1710, 814, 18, 22, "Print"],
-Cell[69632, 1730, 683, 14, 22, "Print"],
-Cell[70318, 1746, 685, 14, 22, "Print"],
-Cell[71006, 1762, 751, 16, 22, "Print"],
-Cell[71760, 1780, 699, 14, 22, "Print"],
-Cell[72462, 1796, 693, 14, 22, "Print"],
-Cell[73158, 1812, 683, 14, 22, "Print"],
-Cell[73844, 1828, 759, 16, 22, "Print"],
-Cell[74606, 1846, 687, 14, 22, "Print"],
-Cell[75296, 1862, 687, 14, 22, "Print"],
-Cell[75986, 1878, 753, 16, 22, "Print"],
-Cell[76742, 1896, 476, 9, 22, "Print"],
-Cell[77221, 1907, 578, 12, 22, "Print"]
-}, Open  ]]
-}, Open  ]]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[77860, 1926, 237, 3, 35, "Subsection"],
-Cell[78100, 1931, 405, 7, 29, "Text"],
-Cell[CellGroupData[{
-Cell[78530, 1942, 127, 2, 38, "Input"],
-Cell[78660, 1946, 86, 2, 38, "Output"]
-}, Open  ]],
-Cell[78761, 1951, 206, 2, 29, "Text"],
-Cell[CellGroupData[{
-Cell[78992, 1957, 938, 22, 73, "Input"],
-Cell[79933, 1981, 7491, 229, 72, "Output"],
-Cell[87427, 2212, 649, 13, 22, "Print"],
-Cell[88079, 2227, 1828, 60, 68, "Output"],
-Cell[89910, 2289, 1832, 60, 47, "Output"]
-}, Open  ]],
-Cell[91757, 2352, 263, 5, 29, "Text"],
-Cell[CellGroupData[{
-Cell[92045, 2361, 434, 9, 38, "Input"],
-Cell[92482, 2372, 499, 10, 22, "Print"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[93018, 2387, 1876, 34, 56, "Input"],
-Cell[94897, 2423, 5751, 178, 47, "Output"],
-Cell[100651, 2603, 8446, 270, 66, "Output"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[109134, 2878, 2536, 51, 73, "Input"],
-Cell[111673, 2931, 2642, 95, 62, "Output"],
-Cell[114318, 3028, 43138, 1250, 175, "Output"],
-Cell[157459, 4280, 43138, 1250, 175, "Output"]
-}, Open  ]],
-Cell[200612, 5533, 168, 3, 29, "Text"],
-Cell[CellGroupData[{
-Cell[200805, 5540, 142, 3, 38, "Input"],
-Cell[200950, 5545, 28, 0, 38, "Output"]
-}, Open  ]]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[201027, 5551, 299, 4, 35, "Subsection"],
-Cell[201329, 5557, 129, 1, 29, "Text"],
-Cell[CellGroupData[{
-Cell[201483, 5562, 100, 1, 38, "Input"],
-Cell[201586, 5565, 1513, 22, 124, "Output"]
-}, Open  ]],
-Cell[203114, 5590, 233, 4, 29, "Text"],
-Cell[CellGroupData[{
-Cell[203372, 5598, 691, 15, 73, "Input"],
-Cell[204066, 5615, 1497, 43, 54, "Output"],
-Cell[205566, 5660, 2651, 74, 58, "Output"],
-Cell[208220, 5736, 1505, 43, 54, "Output"]
-}, Open  ]],
-Cell[209740, 5782, 2367, 72, 107, "Text"]
-}, Open  ]]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[212156, 5860, 121, 1, 57, "Section"],
-Cell[212280, 5863, 657, 15, 73, "Input"],
-Cell[CellGroupData[{
-Cell[212962, 5882, 104, 1, 35, "Subsection"],
-Cell[213069, 5885, 287, 6, 47, "Text"],
-Cell[213359, 5893, 508, 9, 47, "Text"],
-Cell[CellGroupData[{
-Cell[213892, 5906, 2639, 41, 73, "Input"],
-Cell[216534, 5949, 221, 8, 40, "Output"],
-Cell[216758, 5959, 2642, 95, 62, "Output"],
-Cell[219403, 6056, 84033, 2311, 277, "Output"]
-}, Open  ]],
-Cell[303451, 8370, 369, 7, 29, "Text"],
-Cell[CellGroupData[{
-Cell[303845, 8381, 1105, 29, 38, "Input"],
-Cell[304953, 8412, 7954, 225, 50, "Output"]
-}, Open  ]],
-Cell[312922, 8640, 624, 10, 47, "Text"],
-Cell[CellGroupData[{
-Cell[313571, 8654, 157, 3, 38, "Input"],
-Cell[313731, 8659, 1235, 37, 42, "Print"],
-Cell[314969, 8698, 85294, 2549, 368, "Output"]
-}, Open  ]],
-Cell[400278, 11250, 791, 14, 101, "Text"],
-Cell[401072, 11266, 533, 9, 29, "Text"],
-Cell[CellGroupData[{
-Cell[401630, 11279, 127, 2, 38, "Input"],
-Cell[401760, 11283, 575971, 14262, 1394, "Output"]
-}, Open  ]],
-Cell[977746, 25548, 331, 6, 29, "Text"],
-Cell[CellGroupData[{
-Cell[978102, 25558, 479, 8, 38, "Input"],
-Cell[978584, 25568, 1235, 37, 42, "Print"],
-Cell[979822, 25607, 85294, 2549, 368, "Output"]
-}, Open  ]],
-Cell[1065131, 28159, 303, 5, 47, "Text"],
-Cell[1065437, 28166, 633, 11, 47, "Text"],
-Cell[CellGroupData[{
-Cell[1066095, 28181, 120, 2, 38, "Input"],
-Cell[1066218, 28185, 290, 5, 43, "Print",
- CellTags->"Info3620462342-6586433"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[1066545, 28195, 1305, 30, 56, "Input"],
-Cell[1067853, 28227, 7857, 217, 111, "Output"],
-Cell[1075713, 28446, 7852, 217, 111, "Output"]
-}, Open  ]],
-Cell[1083580, 28666, 504, 7, 29, "Text"],
-Cell[CellGroupData[{
-Cell[1084109, 28677, 126, 2, 38, "Input"],
-Cell[1084238, 28681, 215, 4, 43, "Print",
- CellTags->"Info3620462343-6586433"]
-}, Open  ]],
-Cell[1084468, 28688, 187, 2, 29, "Text"],
-Cell[CellGroupData[{
-Cell[1084680, 28694, 837, 14, 38, "Input"],
-Cell[1085520, 28710, 1237, 37, 42, "Print"],
-Cell[1086760, 28749, 505388, 14426, 1698, "Output"]
-}, Open  ]],
-Cell[1592163, 43178, 1569, 28, 209, "Text"],
-Cell[1593735, 43208, 627, 12, 38, "Input"],
-Cell[1594365, 43222, 100, 1, 29, "Text"],
-Cell[CellGroupData[{
-Cell[1594490, 43227, 1745, 27, 38, "Input"],
-Cell[1596238, 43256, 1685, 52, 47, "Print"],
-Cell[1597926, 43310, 19418, 630, 139, "Output"]
-}, Open  ]],
-Cell[1617359, 43943, 122, 1, 29, "Text"],
-Cell[CellGroupData[{
-Cell[1617506, 43948, 1496, 23, 38, "Input"],
-Cell[1619005, 43973, 1685, 52, 47, "Print"],
-Cell[1620693, 44027, 12728, 420, 88, "Output"]
-}, Open  ]],
-Cell[1633436, 44450, 578, 12, 50, "Text"],
-Cell[CellGroupData[{
-Cell[1634039, 44466, 1162, 20, 38, "Input"],
-Cell[1635204, 44488, 2609, 75, 53, "Print"],
-Cell[1637816, 44565, 101466, 2957, 346, "Output"]
-}, Open  ]],
-Cell[1739297, 47525, 139, 1, 29, "Text"],
-Cell[CellGroupData[{
-Cell[1739461, 47530, 333, 8, 38, "Input"],
-Cell[1739797, 47540, 5909, 195, 88, "Output"]
-}, Open  ]],
-Cell[1745721, 47738, 169, 2, 29, "Text"],
-Cell[CellGroupData[{
-Cell[1745915, 47744, 343, 7, 38, "Input"],
-Cell[1746261, 47753, 5885, 195, 88, "Output"]
-}, Open  ]],
-Cell[1752161, 47951, 187, 4, 29, "Text"],
-Cell[CellGroupData[{
-Cell[1752373, 47959, 204, 4, 38, "Input"],
-Cell[1752580, 47965, 3639, 121, 74, "Output"]
-}, Open  ]],
-Cell[1756234, 48089, 100, 1, 29, "Text"],
-Cell[CellGroupData[{
-Cell[1756359, 48094, 590, 16, 38, "Input"],
-Cell[1756952, 48112, 2911, 80, 39, "Print"],
-Cell[1759866, 48194, 23460, 658, 97, "Output"]
-}, Open  ]]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[1783375, 48858, 145, 2, 35, "Subsection"],
-Cell[CellGroupData[{
-Cell[1783545, 48864, 181, 2, 25, "Subsubsection"],
-Cell[1783729, 48868, 416, 7, 29, "Text"],
-Cell[1784148, 48877, 324, 6, 29, "Text"],
-Cell[CellGroupData[{
-Cell[1784497, 48887, 1105, 21, 56, "Input"],
-Cell[1785605, 48910, 49276, 1314, 169, "Output"]
-}, Open  ]],
-Cell[1834896, 50227, 386, 7, 29, "Text"],
-Cell[1835285, 50236, 389, 11, 32, "Text"],
-Cell[CellGroupData[{
-Cell[1835699, 50251, 913, 17, 38, "Input"],
-Cell[1836615, 50270, 3248, 98, 53, "Print"],
-Cell[1839866, 50370, 5087, 172, 88, "Output"]
-}, Open  ]],
-Cell[1844968, 50545, 460, 13, 32, "Text"],
-Cell[CellGroupData[{
-Cell[1845453, 50562, 747, 16, 38, "Input"],
-Cell[1846203, 50580, 4314, 127, 53, "Print"],
-Cell[1850520, 50709, 13504, 418, 87, "Output"]
-}, Open  ]],
-Cell[1864039, 51130, 113, 1, 29, "Text"],
-Cell[1864155, 51133, 366, 10, 38, "Input"],
-Cell[CellGroupData[{
-Cell[1864546, 51147, 1899, 49, 56, "Input"],
-Cell[1866448, 51198, 3444, 94, 39, "Print"],
-Cell[1869895, 51294, 10505, 313, 59, "Output"]
-}, Open  ]],
-Cell[1880415, 51610, 187, 2, 29, "Text"],
-Cell[1880605, 51614, 359, 8, 29, "Text"],
-Cell[CellGroupData[{
-Cell[1880989, 51626, 317, 8, 56, "Input"],
-Cell[CellGroupData[{
-Cell[1881331, 51638, 445, 9, 22, "Print"],
-Cell[1881779, 51649, 493, 10, 22, "Print"]
-}, Open  ]]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[1882321, 51665, 1605, 45, 56, "Input"],
-Cell[1883929, 51712, 1976, 56, 30, "Print"],
-Cell[1885908, 51770, 9599, 290, 71, "Output"],
-Cell[1895510, 52062, 1974, 56, 30, "Print"],
-Cell[1897487, 52120, 57904, 1675, 163, "Output"]
-}, Open  ]],
-Cell[1955406, 53798, 158, 2, 29, "Text"],
-Cell[CellGroupData[{
-Cell[1955589, 53804, 1011, 27, 38, "Input"],
-Cell[1956603, 53833, 4401, 121, 38, "Print"],
-Cell[1961007, 53956, 313000, 8917, 665, "Output"]
-}, Open  ]],
-Cell[2274022, 62876, 254, 5, 29, "Text"],
-Cell[CellGroupData[{
-Cell[2274301, 62885, 636, 13, 56, "Input"],
-Cell[2274940, 62900, 28, 0, 38, "Output"]
-}, Open  ]],
-Cell[2274983, 62903, 105, 1, 29, "Text"],
-Cell[CellGroupData[{
-Cell[2275113, 62908, 1757, 48, 73, "Input"],
-Cell[2276873, 62958, 3446, 94, 39, "Print"],
-Cell[2280322, 63054, 18735, 560, 59, "Output"]
-}, Open  ]]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[2299106, 63620, 111, 1, 25, "Subsubsection"],
-Cell[CellGroupData[{
-Cell[2299242, 63625, 1115, 30, 56, "Input"],
-Cell[2300360, 63657, 571, 12, 22, "Print"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[2300968, 63674, 575, 13, 38, "Input"],
-Cell[2301546, 63689, 4798, 144, 53, "Print"],
-Cell[2306347, 63835, 82650, 2533, 289, "Output"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[2389034, 66373, 510, 10, 38, "Input"],
-Cell[2389547, 66385, 56350, 1595, 139, "Output"]
-}, Open  ]],
-Cell[2445912, 67983, 106, 1, 29, "Text"],
-Cell[CellGroupData[{
-Cell[2446043, 67988, 751, 13, 73, "Input"],
-Cell[2446797, 68003, 454, 9, 22, "Print"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[2447288, 68017, 1033, 23, 38, "Input"],
-Cell[2448324, 68042, 2265, 69, 49, "Print"],
-Cell[2450592, 68113, 19468, 643, 88, "Output"]
-}, Open  ]]
+Cell[63422, 1582, 452, 10, 22, "Print"],
+Cell[63877, 1594, 664, 15, 22, "Print"],
+Cell[64544, 1611, 693, 14, 22, "Print"],
+Cell[65240, 1627, 685, 14, 22, "Print"],
+Cell[65928, 1643, 751, 16, 22, "Print"],
+Cell[66682, 1661, 693, 14, 22, "Print"],
+Cell[67378, 1677, 685, 14, 22, "Print"],
+Cell[68066, 1693, 751, 16, 22, "Print"],
+Cell[68820, 1711, 814, 18, 22, "Print"],
+Cell[69637, 1731, 683, 14, 22, "Print"],
+Cell[70323, 1747, 685, 14, 22, "Print"],
+Cell[71011, 1763, 751, 16, 22, "Print"],
+Cell[71765, 1781, 699, 14, 22, "Print"],
+Cell[72467, 1797, 693, 14, 22, "Print"],
+Cell[73163, 1813, 683, 14, 22, "Print"],
+Cell[73849, 1829, 759, 16, 22, "Print"],
+Cell[74611, 1847, 687, 14, 22, "Print"],
+Cell[75301, 1863, 687, 14, 22, "Print"],
+Cell[75991, 1879, 753, 16, 22, "Print"],
+Cell[76747, 1897, 476, 9, 22, "Print"],
+Cell[77226, 1908, 578, 12, 22, "Print"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2470133, 68764, 106, 1, 57, "Section"],
-Cell[2470242, 68767, 216, 4, 29, "Text"],
+Cell[77865, 1927, 237, 3, 35, "Subsection"],
+Cell[78105, 1932, 405, 7, 29, "Text"],
 Cell[CellGroupData[{
-Cell[2470483, 68775, 1147, 19, 38, "Input"],
-Cell[2471633, 68796, 581, 12, 22, "Print"]
+Cell[78535, 1943, 127, 2, 38, "Input"],
+Cell[78665, 1947, 86, 2, 38, "Output"]
 }, Open  ]],
-Cell[2472229, 68811, 137, 1, 29, "Text"],
+Cell[78766, 1952, 206, 2, 29, "Text"],
 Cell[CellGroupData[{
-Cell[2472391, 68816, 2317, 47, 38, "Input"],
-Cell[2474711, 68865, 7021, 197, 47, "Output"]
+Cell[78997, 1958, 938, 22, 73, "Input"],
+Cell[79938, 1982, 7491, 229, 71, "Output"],
+Cell[87432, 2213, 649, 13, 22, "Print"],
+Cell[88084, 2228, 1828, 60, 68, "Output"],
+Cell[89915, 2290, 1832, 60, 47, "Output"]
 }, Open  ]],
+Cell[91762, 2353, 263, 5, 29, "Text"],
 Cell[CellGroupData[{
-Cell[2481769, 69067, 301, 7, 38, "Input"],
-Cell[2482073, 69076, 4511, 141, 52, "Output"]
-}, Open  ]],
-Cell[2486599, 69220, 125, 1, 29, "Text"],
-Cell[CellGroupData[{
-Cell[2486749, 69225, 1161, 33, 56, "Input"],
-Cell[2487913, 69260, 5160, 141, 55, "Output"],
-Cell[2493076, 69403, 9546, 255, 62, "Output"]
-}, Open  ]],
-Cell[2502637, 69661, 221, 5, 47, "Text"],
-Cell[CellGroupData[{
-Cell[2502883, 69670, 1336, 25, 38, "Input"],
-Cell[2504222, 69697, 2709, 76, 30, "Print"],
-Cell[2506934, 69775, 44851, 1294, 97, "Output"]
-}, Open  ]],
-Cell[2551800, 71072, 239, 5, 29, "Text"],
-Cell[CellGroupData[{
-Cell[2552064, 71081, 364, 11, 38, "Input"],
-Cell[2552431, 71094, 23355, 626, 123, "Output"]
-}, Open  ]],
-Cell[2575801, 71723, 406, 7, 29, "Text"],
-Cell[CellGroupData[{
-Cell[2576232, 71734, 707, 13, 38, "Input"],
-Cell[CellGroupData[{
-Cell[2576964, 71751, 645, 14, 22, "Print"],
-Cell[2577612, 71767, 2709, 76, 30, "Print"]
-}, Open  ]],
-Cell[2580336, 71846, 61197, 1773, 152, "Output"]
+Cell[92050, 2362, 434, 9, 38, "Input"],
+Cell[92487, 2373, 499, 10, 22, "Print"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2641570, 73624, 846, 19, 38, "Input"],
-Cell[2642419, 73645, 30624, 852, 151, "Output"]
+Cell[93023, 2388, 1876, 34, 56, "Input"],
+Cell[94902, 2424, 5751, 178, 47, "Output"],
+Cell[100656, 2604, 8446, 270, 66, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[109139, 2879, 2536, 51, 73, "Input"],
+Cell[111678, 2932, 2642, 95, 63, "Output"],
+Cell[114323, 3029, 43138, 1250, 175, "Output"],
+Cell[157464, 4281, 43138, 1250, 175, "Output"]
+}, Open  ]],
+Cell[200617, 5534, 168, 3, 29, "Text"],
+Cell[CellGroupData[{
+Cell[200810, 5541, 142, 3, 38, "Input"],
+Cell[200955, 5546, 28, 0, 38, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[201032, 5552, 299, 4, 35, "Subsection"],
+Cell[201334, 5558, 129, 1, 29, "Text"],
+Cell[CellGroupData[{
+Cell[201488, 5563, 100, 1, 38, "Input"],
+Cell[201591, 5566, 1513, 22, 124, "Output"]
+}, Open  ]],
+Cell[203119, 5591, 233, 4, 29, "Text"],
+Cell[CellGroupData[{
+Cell[203377, 5599, 691, 15, 73, "Input"],
+Cell[204071, 5616, 1497, 43, 54, "Output"],
+Cell[205571, 5661, 2651, 74, 58, "Output"],
+Cell[208225, 5737, 1505, 43, 54, "Output"]
+}, Open  ]],
+Cell[209745, 5783, 2367, 72, 107, "Text"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[212161, 5861, 121, 1, 73, "Section"],
+Cell[212285, 5864, 657, 15, 73, "Input"],
+Cell[CellGroupData[{
+Cell[212967, 5883, 104, 1, 35, "Subsection"],
+Cell[213074, 5886, 287, 6, 47, "Text"],
+Cell[213364, 5894, 508, 9, 47, "Text"],
+Cell[CellGroupData[{
+Cell[213897, 5907, 2639, 41, 73, "Input"],
+Cell[216539, 5950, 221, 8, 40, "Output"],
+Cell[216763, 5960, 2642, 95, 63, "Output"],
+Cell[219408, 6057, 84033, 2311, 277, "Output"]
+}, Open  ]],
+Cell[303456, 8371, 369, 7, 29, "Text"],
+Cell[CellGroupData[{
+Cell[303850, 8382, 1105, 29, 38, "Input"],
+Cell[304958, 8413, 7954, 225, 49, "Output"]
+}, Open  ]],
+Cell[312927, 8641, 624, 10, 47, "Text"],
+Cell[CellGroupData[{
+Cell[313576, 8655, 157, 3, 38, "Input"],
+Cell[313736, 8660, 1235, 37, 42, "Print"],
+Cell[314974, 8699, 85294, 2549, 368, "Output"]
+}, Open  ]],
+Cell[400283, 11251, 791, 14, 101, "Text"],
+Cell[401077, 11267, 533, 9, 29, "Text"],
+Cell[CellGroupData[{
+Cell[401635, 11280, 127, 2, 38, "Input"],
+Cell[401765, 11284, 576068, 14264, 1448, "Output"]
+}, Open  ]],
+Cell[977848, 25551, 331, 6, 29, "Text"],
+Cell[CellGroupData[{
+Cell[978204, 25561, 479, 8, 38, "Input"],
+Cell[978686, 25571, 1235, 37, 42, "Print"],
+Cell[979924, 25610, 85294, 2549, 368, "Output"]
+}, Open  ]],
+Cell[1065233, 28162, 303, 5, 47, "Text"],
+Cell[1065539, 28169, 633, 11, 47, "Text"],
+Cell[CellGroupData[{
+Cell[1066197, 28184, 120, 2, 38, "Input"],
+Cell[1066320, 28188, 290, 5, 43, "Print",
+ CellTags->"Info3621958166-7338395"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1066647, 28198, 1305, 30, 56, "Input"],
+Cell[1067955, 28230, 7857, 217, 111, "Output"],
+Cell[1075815, 28449, 7852, 217, 111, "Output"]
+}, Open  ]],
+Cell[1083682, 28669, 504, 7, 29, "Text"],
+Cell[CellGroupData[{
+Cell[1084211, 28680, 126, 2, 38, "Input"],
+Cell[1084340, 28684, 215, 4, 43, "Print",
+ CellTags->"Info3621958167-7338395"]
+}, Open  ]],
+Cell[1084570, 28691, 187, 2, 29, "Text"],
+Cell[CellGroupData[{
+Cell[1084782, 28697, 837, 14, 38, "Input"],
+Cell[1085622, 28713, 1237, 37, 42, "Print"],
+Cell[1086862, 28752, 505388, 14426, 1761, "Output"]
+}, Open  ]],
+Cell[1592265, 43181, 1569, 28, 209, "Text"],
+Cell[1593837, 43211, 627, 12, 38, "Input"],
+Cell[1594467, 43225, 100, 1, 29, "Text"],
+Cell[CellGroupData[{
+Cell[1594592, 43230, 1745, 27, 38, "Input"],
+Cell[1596340, 43259, 1685, 52, 47, "Print"],
+Cell[1598028, 43313, 19418, 630, 163, "Output"]
+}, Open  ]],
+Cell[1617461, 43946, 122, 1, 29, "Text"],
+Cell[CellGroupData[{
+Cell[1617608, 43951, 1496, 23, 38, "Input"],
+Cell[1619107, 43976, 1685, 52, 47, "Print"],
+Cell[1620795, 44030, 12728, 420, 88, "Output"]
+}, Open  ]],
+Cell[1633538, 44453, 578, 12, 50, "Text"],
+Cell[CellGroupData[{
+Cell[1634141, 44469, 1162, 20, 38, "Input"],
+Cell[1635306, 44491, 2609, 75, 53, "Print"],
+Cell[1637918, 44568, 101466, 2957, 346, "Output"]
+}, Open  ]],
+Cell[1739399, 47528, 139, 1, 29, "Text"],
+Cell[CellGroupData[{
+Cell[1739563, 47533, 333, 8, 38, "Input"],
+Cell[1739899, 47543, 5909, 195, 88, "Output"]
+}, Open  ]],
+Cell[1745823, 47741, 169, 2, 29, "Text"],
+Cell[CellGroupData[{
+Cell[1746017, 47747, 343, 7, 38, "Input"],
+Cell[1746363, 47756, 5885, 195, 88, "Output"]
+}, Open  ]],
+Cell[1752263, 47954, 187, 4, 29, "Text"],
+Cell[CellGroupData[{
+Cell[1752475, 47962, 204, 4, 38, "Input"],
+Cell[1752682, 47968, 3639, 121, 74, "Output"]
+}, Open  ]],
+Cell[1756336, 48092, 100, 1, 29, "Text"],
+Cell[CellGroupData[{
+Cell[1756461, 48097, 590, 16, 38, "Input"],
+Cell[1757054, 48115, 2905, 80, 40, "Print"],
+Cell[1759962, 48197, 23460, 658, 97, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1783471, 48861, 145, 2, 35, "Subsection"],
+Cell[CellGroupData[{
+Cell[1783641, 48867, 181, 2, 25, "Subsubsection"],
+Cell[1783825, 48871, 416, 7, 29, "Text"],
+Cell[1784244, 48880, 324, 6, 29, "Text"],
+Cell[CellGroupData[{
+Cell[1784593, 48890, 1105, 21, 56, "Input"],
+Cell[1785701, 48913, 49276, 1314, 170, "Output"]
+}, Open  ]],
+Cell[1834992, 50230, 386, 7, 29, "Text"],
+Cell[1835381, 50239, 389, 11, 32, "Text"],
+Cell[CellGroupData[{
+Cell[1835795, 50254, 913, 17, 38, "Input"],
+Cell[1836711, 50273, 3248, 98, 53, "Print"],
+Cell[1839962, 50373, 5087, 172, 88, "Output"]
+}, Open  ]],
+Cell[1845064, 50548, 460, 13, 32, "Text"],
+Cell[CellGroupData[{
+Cell[1845549, 50565, 747, 16, 38, "Input"],
+Cell[1846299, 50583, 4314, 127, 53, "Print"],
+Cell[1850616, 50712, 13504, 418, 87, "Output"]
+}, Open  ]],
+Cell[1864135, 51133, 113, 1, 29, "Text"],
+Cell[1864251, 51136, 366, 10, 38, "Input"],
+Cell[CellGroupData[{
+Cell[1864642, 51150, 1899, 49, 56, "Input"],
+Cell[1866544, 51201, 3446, 94, 40, "Print"],
+Cell[1869993, 51297, 10505, 313, 59, "Output"]
+}, Open  ]],
+Cell[1880513, 51613, 187, 2, 29, "Text"],
+Cell[1880703, 51617, 359, 8, 29, "Text"],
+Cell[CellGroupData[{
+Cell[1881087, 51629, 317, 8, 56, "Input"],
+Cell[CellGroupData[{
+Cell[1881429, 51641, 445, 9, 22, "Print"],
+Cell[1881877, 51652, 493, 10, 22, "Print"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1882419, 51668, 1605, 45, 56, "Input"],
+Cell[1884027, 51715, 1974, 56, 30, "Print"],
+Cell[1886004, 51773, 9599, 290, 71, "Output"],
+Cell[1895606, 52065, 1974, 56, 30, "Print"],
+Cell[1897583, 52123, 57904, 1675, 181, "Output"]
+}, Open  ]],
+Cell[1955502, 53801, 158, 2, 29, "Text"],
+Cell[CellGroupData[{
+Cell[1955685, 53807, 1011, 27, 38, "Input"],
+Cell[1956699, 53836, 4403, 121, 39, "Print"],
+Cell[1961105, 53959, 313000, 8917, 704, "Output"]
+}, Open  ]],
+Cell[2274120, 62879, 254, 5, 29, "Text"],
+Cell[CellGroupData[{
+Cell[2274399, 62888, 636, 13, 56, "Input"],
+Cell[2275038, 62903, 28, 0, 38, "Output"]
+}, Open  ]],
+Cell[2275081, 62906, 105, 1, 29, "Text"],
+Cell[CellGroupData[{
+Cell[2275211, 62911, 1757, 48, 73, "Input"],
+Cell[2276971, 62961, 3442, 94, 40, "Print"],
+Cell[2280416, 63057, 18735, 560, 59, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2299200, 63623, 111, 1, 25, "Subsubsection"],
+Cell[CellGroupData[{
+Cell[2299336, 63628, 1115, 30, 56, "Input"],
+Cell[2300454, 63660, 571, 12, 22, "Print"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2301062, 63677, 575, 13, 38, "Input"],
+Cell[2301640, 63692, 4798, 144, 53, "Print"],
+Cell[2306441, 63838, 82650, 2533, 351, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2389128, 66376, 510, 10, 38, "Input"],
+Cell[2389641, 66388, 56350, 1595, 163, "Output"]
+}, Open  ]],
+Cell[2446006, 67986, 106, 1, 29, "Text"],
+Cell[CellGroupData[{
+Cell[2446137, 67991, 751, 13, 73, "Input"],
+Cell[2446891, 68006, 454, 9, 22, "Print"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2447382, 68020, 1033, 23, 38, "Input"],
+Cell[2448418, 68045, 2265, 69, 49, "Print"],
+Cell[2450686, 68116, 19468, 643, 88, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2470227, 68767, 106, 1, 73, "Section"],
+Cell[2470336, 68770, 216, 4, 29, "Text"],
+Cell[CellGroupData[{
+Cell[2470577, 68778, 1147, 19, 38, "Input"],
+Cell[2471727, 68799, 581, 12, 22, "Print"]
+}, Open  ]],
+Cell[2472323, 68814, 137, 1, 29, "Text"],
+Cell[CellGroupData[{
+Cell[2472485, 68819, 2317, 47, 38, "Input"],
+Cell[2474805, 68868, 7021, 197, 49, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2481863, 69070, 301, 7, 38, "Input"],
+Cell[2482167, 69079, 4511, 141, 52, "Output"]
+}, Open  ]],
+Cell[2486693, 69223, 125, 1, 29, "Text"],
+Cell[CellGroupData[{
+Cell[2486843, 69228, 1161, 33, 56, "Input"],
+Cell[2488007, 69263, 5160, 141, 55, "Output"],
+Cell[2493170, 69406, 9546, 255, 62, "Output"]
+}, Open  ]],
+Cell[2502731, 69664, 221, 5, 47, "Text"],
+Cell[CellGroupData[{
+Cell[2502977, 69673, 1336, 25, 38, "Input"],
+Cell[2504316, 69700, 2711, 76, 30, "Print"],
+Cell[2507030, 69778, 44851, 1294, 97, "Output"]
+}, Open  ]],
+Cell[2551896, 71075, 239, 5, 29, "Text"],
+Cell[CellGroupData[{
+Cell[2552160, 71084, 364, 11, 38, "Input"],
+Cell[2552527, 71097, 23355, 626, 123, "Output"]
+}, Open  ]],
+Cell[2575897, 71726, 406, 7, 29, "Text"],
+Cell[CellGroupData[{
+Cell[2576328, 71737, 707, 13, 38, "Input"],
+Cell[CellGroupData[{
+Cell[2577060, 71754, 645, 14, 22, "Print"],
+Cell[2577708, 71770, 2711, 76, 30, "Print"]
+}, Open  ]],
+Cell[2580434, 71849, 61197, 1773, 152, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2641668, 73627, 846, 19, 38, "Input"],
+Cell[2642517, 73648, 30624, 852, 151, "Output"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]

@@ -2007,7 +2007,8 @@ Module[{dum},dum=DummyIn[Tangent[Manifold]];(*Print["** Warning: a Lie derivativ
 
 (* TODO MAJOR PROBLEM HERE. IF the tensores are not Symmetric or not transverse or not traceless etc... the properties are also applied so this will give wrong results. TODO TODO. SO we should remove the option that these tensors are tranverse. I will patch that. In general users use only transverse vectors though.*)
 
-(* We gather many many rules for the commutation of induced derivatives. These are in general made to make sure that the transverse conditions of vectors and tensors are used. It is also made to gather Laplacians.*)
+(* We gather many many rules for the commutation of induced derivatives. These are in general made to make sure that the transverse conditions of vectors and tensors are used. It is also made to gather Laplacians.
+*)
 DummyS[Sym_]:=SymbolJoin[DS,Sym];
 DummyV[Sym_]:=SymbolJoin[DV,Sym];
 DummyT[Sym_]:=SymbolJoin[DT,Sym];
