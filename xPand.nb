@@ -674,7 +674,7 @@ Cell[BoxData["$Context"], "Input"],
 
 Cell[BoxData["\<\"xAct`xPand`\"\>"], "Output"]
 }, Open  ]]
-}, Open  ]],
+}, Closed]],
 
 Cell[CellGroupData[{
 
@@ -956,7 +956,7 @@ with down indices.\>\""}], ";"}], "\[IndentingNewLine]",
      RowBox[{"DefProjectedTensorProperties", "::", "symmetrictensors"}], "=", 
      "\"\<The current version of DefProjectedTensorProperties can only add \
 properties to tensors that are, at least, fully symmetric.\>\""}], ";"}], 
-   "\[IndentingNewLine]", "\n", 
+   "\n", "\[IndentingNewLine]", 
    RowBox[{"(*", 
     RowBox[{"*", " ", "ExtractComponents"}], " ", "**)"}], 
    "\[IndentingNewLine]", "\[IndentingNewLine]", 
@@ -1460,7 +1460,7 @@ Cell[BoxData[
      "\"\<$ListFieldsBackgroundOnly[h], with 'h' being the induced metric on \
 the hypersurfaces, is the list of fields that live on the background only. It \
 is automatically defined when calling the function SetSlicing.\>\""}], ";"}], 
-   "\[IndentingNewLine]", "\n", 
+   "\n", "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{
      RowBox[{"$ListFieldsPerturbedOnly", "::", "usage"}], "=", 
@@ -2617,7 +2617,7 @@ Cell[BoxData[
                     RowBox[{"i", ",", "1", ",", "q"}], "}"}]}], "]"}]}]}], 
                "]"}]}], "}"}], "]"}]}], "\[IndentingNewLine]", "]"}]}], 
         "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", "]"}]}], ";"}],
-    "\[IndentingNewLine]", "\n", 
+    "\n", "\[IndentingNewLine]", 
    RowBox[{"xTensorFormStart", "[", "Tensor", "]"}]}]}]], "Input",
  InitializationCell->True],
 
@@ -3423,7 +3423,7 @@ Cell[BoxData[{
  InitializationCell->True],
 
 Cell["", "Text"]
-}, Open  ]],
+}, Closed]],
 
 Cell[CellGroupData[{
 
@@ -5382,7 +5382,7 @@ positive integer.\>\"", "]"}], "]"}]}], "]"}]}]}], "\[IndentingNewLine]",
               RowBox[{"(*", " ", 
                RowBox[{
                "g", " ", "converted", " ", "to", " ", "h", " ", "when", " ", 
-                "contracted", " ", "with", " ", "a", " ", "projecte", " ", 
+                "contracted", " ", "with", " ", "a", " ", "projected", " ", 
                 RowBox[{"tensor", ".", " ", "It"}], " ", "is", " ", "made", 
                 " ", "automatic"}], " ", "*)"}], "\[IndentingNewLine]", 
               "\[IndentingNewLine]", 
@@ -11753,7 +11753,28 @@ been converted (safely) to a Lie derivative with down indices **\>\"", "]"}],
                     "]"}]}]}]}], "]"}]}], ";"}]}], "\[IndentingNewLine]", 
               "\[IndentingNewLine]", "\[IndentingNewLine]", 
               "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
-             "\[IndentingNewLine]", "\[IndentingNewLine]", 
+             "\[IndentingNewLine]", 
+             RowBox[{"(*", " ", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"TODO", " ", "MAJOR", " ", "PROBLEM", " ", 
+                 RowBox[{"HERE", ".", " ", "IF"}], " ", "the", " ", 
+                 "tensores", " ", "are", " ", "not", " ", "Symmetric", " ", 
+                 "or", " ", "not", " ", "transverse", " ", "or", " ", "not", 
+                 " ", "traceless", " ", "etc"}], "..."}], " ", "the", " ", 
+               "properties", " ", "are", " ", "also", " ", "applied", " ", 
+               "so", " ", "this", " ", "will", " ", "give", " ", "wrong", " ", 
+               RowBox[{"results", ".", " ", "TODO"}], " ", 
+               RowBox[{"TODO", ".", " ", "SO"}], " ", "we", " ", "should", 
+               " ", "remove", " ", "the", " ", "option", " ", "that", " ", 
+               "these", " ", "tensors", " ", "are", " ", 
+               RowBox[{"tranverse", ".", " ", "I"}], " ", "will", " ", 
+               "patch", " ", 
+               RowBox[{"that", ".", " ", "In"}], " ", "general", " ", "users",
+                " ", "use", " ", "only", " ", "transverse", " ", "vectors", 
+               " ", 
+               RowBox[{"though", "."}]}], "*)"}], "\[IndentingNewLine]", 
+             "\[IndentingNewLine]", 
              RowBox[{"(*", " ", 
               RowBox[{
               "We", " ", "gather", " ", "many", " ", "many", " ", "rules", 
@@ -11804,8 +11825,9 @@ been converted (safely) to a Lie derivative with down indices **\>\"", "]"}],
                   RowBox[{"SpaceTimesOfDefinition", "->", 
                    RowBox[{"{", "\"\<Perturbed\>\"", "}"}]}], ",", 
                   RowBox[{"TensorProperties", "->", 
-                   RowBox[{"{", "\"\<Transverse\>\"", "}"}]}]}], "]"}], ";", 
-                "\[IndentingNewLine]", 
+                   RowBox[{"{", 
+                    RowBox[{"(*", "\"\<Transverse\>\"", "*)"}], "}"}]}]}], 
+                 "]"}], ";", "\[IndentingNewLine]", 
                 RowBox[{"DefProjectedTensor", "[", 
                  RowBox[{
                   RowBox[{
@@ -11816,9 +11838,10 @@ been converted (safely) to a Lie derivative with down indices **\>\"", "]"}],
                     RowBox[{"-", "ind2"}]}], "]"}], ",", "h", ",", 
                   RowBox[{"TensorProperties", "->", 
                    RowBox[{"{", 
-                    RowBox[{
-                    "\"\<SymmetricTensor\>\"", ",", "\"\<Transverse\>\"", 
-                    ",", "\"\<Traceless\>\""}], "}"}]}], ",", 
+                    RowBox[{"\"\<SymmetricTensor\>\"", ",", 
+                    RowBox[{"(*", 
+                    RowBox[{"\"\<Transverse\>\"", ","}], "*)"}], 
+                    "\"\<Traceless\>\""}], "}"}]}], ",", 
                   RowBox[{"SpaceTimesOfDefinition", "->", 
                    RowBox[{"{", "\"\<Perturbed\>\"", "}"}]}]}], "]"}], 
                 ";"}]}], "\[IndentingNewLine]", "]"}], ";", 
@@ -14748,7 +14771,7 @@ Cell[BoxData[{
      RowBox[{
       RowBox[{"MyChangeChristoffel", "[", 
        RowBox[{"#1", ",", "#2", ",", "cd1"}], "]"}], "&"}], ",", "expr", ",", 
-     "cd2list"}], "]"}]}], "\[IndentingNewLine]"}], "\n", 
+     "cd2list"}], "]"}]}], "\n"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"MyChangeChristoffel", "[", 
    RowBox[{"expr_", ",", "cd2_", ",", "cd1_"}], "]"}], ":=", 
@@ -15189,7 +15212,7 @@ since we do not know very well how to handle that. **\>\"", "]"}], ";"}]}],
                 "]"}], ";", "\[IndentingNewLine]", "res"}]}], 
              "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", "]"}]}], 
          "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", "]"}]}], 
-     "\[IndentingNewLine]", "]"}]}], ";"}], "\n"}], "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", "]"}]}], ";"}], "\[IndentingNewLine]"}], "\n", 
  RowBox[{
   RowBox[{
    RowBox[{
@@ -15682,7 +15705,7 @@ Cell[BoxData[{
      RowBox[{"metric1", ",", "metric2"}], "]"}], "[", "expr", "]"}]}], 
   "\[IndentingNewLine]"}], "\[IndentingNewLine]"}], "Input",
  InitializationCell->True]
-}, Open  ]],
+}, Closed]],
 
 Cell[CellGroupData[{
 
@@ -16017,7 +16040,7 @@ Cell[BoxData[{
         "\[IndentingNewLine]", "res"}]}], "\[IndentingNewLine]", "]"}]}]}], 
    "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]"}], "Input",
  InitializationCell->True]
-}, Open  ]],
+}, Closed]],
 
 Cell[CellGroupData[{
 
@@ -16438,8 +16461,8 @@ Cell[BoxData[
            RowBox[{"On", "[", 
             StyleBox[
              RowBox[{"Unset", "::", "norep"}], "MessageName"], "]"}], ";"}]}],
-          "]"}], ";", 
-        RowBox[{"restemp", "=", "res"}], ";"}]}], "\[IndentingNewLine]", 
+          "]"}], ";", "\[IndentingNewLine]", 
+        RowBox[{"restemp", "=", "expr"}], ";"}]}], "\[IndentingNewLine]", 
       "]"}], ";", "\[IndentingNewLine]", 
      RowBox[{"(*", 
       RowBox[{
@@ -16501,20 +16524,21 @@ behaviour. **\>\"", "]"}], ";"}]}], "]"}], ";", "\[IndentingNewLine]",
  InitializationCell->True],
 
 Cell[BoxData[
- RowBox[{
+ RowBox[{"(*", 
   RowBox[{
-   RowBox[{"SplitCovDs", "[", 
-    RowBox[{"expr_", ",", "CD_", ",", "cd_"}], "]"}], ":=", 
-   RowBox[{"FixedPoint", "[", 
-    RowBox[{
-     RowBox[{"FixedPoint", "[", 
-      RowBox[{
+   RowBox[{
+    RowBox[{"SplitCovDs", "[", 
+     RowBox[{"expr_", ",", "CD_", ",", "cd_"}], "]"}], ":=", 
+    RowBox[{"FixedPoint", "[", 
+     RowBox[{
+      RowBox[{"FixedPoint", "[", 
        RowBox[{
-        RowBox[{"GradNormalToExtrinsicK", "[", "#", "]"}], "&"}], ",", 
-       RowBox[{
-        RowBox[{"ToInducedDerivative", "[", 
-         RowBox[{"#", ",", "CD", ",", "cd"}], "]"}], "&"}]}], "]"}], ",", 
-     "expr"}], "]"}]}], ";"}]], "Input",
+        RowBox[{
+         RowBox[{"GradNormalToExtrinsicK", "[", "#", "]"}], "&"}], ",", 
+        RowBox[{
+         RowBox[{"ToInducedDerivative", "[", 
+          RowBox[{"#", ",", "CD", ",", "cd"}], "]"}], "&"}]}], "]"}], ",", 
+      "expr"}], "]"}]}], ";"}], "*)"}]], "Input",
  InitializationCell->True],
 
 Cell["\<\
@@ -17493,11 +17517,9 @@ Cell[BoxData[{
   RowBox[{
    RowBox[{
     RowBox[{"ToxPandFromRules", "[", 
-     RowBox[{"expr_", ",", "RulesList_List", ",", "h_", 
-      RowBox[{"(*", 
-       RowBox[{"?", "InducedMetricQ"}], "*)"}], ",", "n_"}], 
-     RowBox[{"(*", 
-      RowBox[{"?", "IntegerQ"}], "*)"}], "]"}], ":=", "\[IndentingNewLine]", 
+     RowBox[{"expr_", ",", "RulesList_List", ",", 
+      RowBox[{"h_", "?", "InducedMetricQ"}], ",", 
+      RowBox[{"n_", "?", "IntegerQ"}]}], "]"}], ":=", "\[IndentingNewLine]", 
     RowBox[{"With", "[", 
      RowBox[{
       RowBox[{"{", 
@@ -17773,7 +17795,7 @@ Cell[BoxData[{
     RowBox[{"{", 
      RowBox[{"6", ",", "8"}], "}"}]}], "]"}], ";"}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{"Protect", "[", "ToxPandFromRules", "]"}], ";"}]}], "Input",
+  RowBox[{"Protect", "[", "ToxPand", "]"}], ";"}]}], "Input",
  InitializationCell->True],
 
 Cell[BoxData[
@@ -17785,7 +17807,7 @@ Cell[BoxData[
 Cell[BoxData[
  RowBox[{"{", "\<\"ToxPandFromRules\"\>", "}"}]], "Output"]
 }, Open  ]]
-}, Open  ]],
+}, Closed]],
 
 Cell[CellGroupData[{
 
@@ -18198,7 +18220,7 @@ Cell[BoxData[{
  RowBox[{
   RowBox[{"Protect", "[", "ExtractOrder", "]"}], ";"}]}], "Input",
  InitializationCell->True]
-}, Open  ]],
+}, Closed]],
 
 Cell[CellGroupData[{
 
@@ -18980,7 +19002,7 @@ Cell[BoxData[
 Cell[BoxData[
  RowBox[{"{", "\<\"SplitMatter\"\>", "}"}]], "Output"]
 }, Open  ]]
-}, Open  ]],
+}, Closed]],
 
 Cell[CellGroupData[{
 
@@ -19640,7 +19662,7 @@ normal vector and the projected fields **\>\"", "]"}], ";",
    RowBox[{"{", "2", "}"}]}], "]"}], "\[IndentingNewLine]", 
  RowBox[{"Protect", "[", "SplitNormalVector", "]"}]}], "Input",
  InitializationCell->True]
-}, Open  ]],
+}, Closed]],
 
 Cell[CellGroupData[{
 
@@ -19667,7 +19689,7 @@ Cell[BoxData["\<\"xAct`xPand`Private`\"\>"], "Output"]
 }, Open  ]]
 },
 AutoGeneratedPackage->Automatic,
-WindowSize->{1621, 1006},
+WindowSize->{1225, 756},
 WindowMargins->{{0, Automatic}, {Automatic, 0}},
 PrivateNotebookOptions->{"FileOutlineCache"->False},
 ShowSelection->True,

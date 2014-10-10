@@ -1169,7 +1169,7 @@ Name/:Name[LI[p_?((IntegerQ[#] && #>=0) &)],LI[q_?((IntegerQ[#] && #>=1) &)],ind
 Name/:Name[LI[p_?((IntegerQ[#] && #>=0) &)],LI[q_?((IntegerQ[#] && #>=1) &)],indices1___,-Dum1_,indices2___]h[-Dum2_,Dum1_]:=Name[LI[p],LI[q],indices1,-Dum2,indices2] /;( Length[Join[{indices1},{indices2}]]+1===Length[{inds}]);
 
 
-(* g converted to h when contracted with a projecte tensor. It is made automatic *)
+(* g converted to h when contracted with a projected tensor. It is made automatic *)
 
 Name/:Name[LI[p_?((IntegerQ[#] && #>=0) &)],LI[q_?((IntegerQ[#] && #>=0) &)],indices1___,Dum1_,indices2___]g[-Dum1_,Dum2_]:=Name[LI[p],LI[q],indices1,Dum1,indices2]h[-Dum1,Dum2] /;( Length[Join[{indices1},{indices2}]]+1===Length[{inds}]);
 
@@ -2005,6 +2005,7 @@ Module[{dum},dum=DummyIn[Tangent[Manifold]];(*Print["** Warning: a Lie derivativ
 
 ];
 
+(* TODO MAJOR PROBLEM HERE. IF the tensores are not Symmetric or not transverse or not traceless etc... the properties are also applied so this will give wrong results. TODO TODO. SO we should remove the option that these tensors are tranverse. I will patch that. In general users use only transverse vectors though.*)
 
 (* We gather many many rules for the commutation of induced derivatives. These are in general made to make sure that the transverse conditions of vectors and tensors are used. It is also made to gather Laplacians.*)
 DummyS[Sym_]:=SymbolJoin[DS,Sym];
@@ -2013,8 +2014,8 @@ DummyT[Sym_]:=SymbolJoin[DT,Sym];
 
 Block[{Print},
 DefProjectedTensor[Evaluate[DummyS[h]][],h,SpaceTimesOfDefinition->{"Perturbed"}];
-DefProjectedTensor[Evaluate[DummyV[h]][-ind1],h,SpaceTimesOfDefinition->{"Perturbed"},TensorProperties->{"Transverse"}];
-DefProjectedTensor[Evaluate[DummyT[h]][-ind1,-ind2],h,TensorProperties->{"SymmetricTensor","Transverse","Traceless"},SpaceTimesOfDefinition->{"Perturbed"}];
+DefProjectedTensor[Evaluate[DummyV[h]][-ind1],h,SpaceTimesOfDefinition->{"Perturbed"},TensorProperties->{(*"Transverse"*)}];
+DefProjectedTensor[Evaluate[DummyT[h]][-ind1,-ind2],h,TensorProperties->{"SymmetricTensor",(*"Transverse",*)"Traceless"},SpaceTimesOfDefinition->{"Perturbed"}];
 ];
 
 
@@ -2593,7 +2594,8 @@ SortCovDsStart[cd];If[$DebugInfoQ,Print["First Canonicalisation with automatic s
 counter=0;
 restemp=Map[(If[$DebugInfoQ,counter=counter+1;If[Mod[counter,10]===0(*||counter>=4180*),Print["We canonicalize term ",counter," ",#];];];SameDummies@ToCanonical@ContractMetric[#])&,restemp0];
 Block[{Print},SortCovDsStop[cd];];,
-Block[{Print},Off[Unset::norep];SortCovDsStop[cd];On[Unset::norep];];restemp=res;
+Block[{Print},Off[Unset::norep];SortCovDsStop[cd];On[Unset::norep];];
+restemp=expr;
 ];
 (*Entering the Cov Ds sorting defined by BackgroundSLicing. Made to gather the Laplacian near the perturbations, and to use the transversailty conditions.*)
 If[$DebugInfoQ,Print["Entering the commutation of Cov Ds..."];];
@@ -2605,7 +2607,7 @@ res
 ]
 
 
-SplitCovDs[expr_,CD_,cd_]:=FixedPoint[FixedPoint[GradNormalToExtrinsicK[#]&,ToInducedDerivative[#,CD,cd]&],expr];
+(*SplitCovDs[expr_,CD_,cd_]:=FixedPoint[FixedPoint[GradNormalToExtrinsicK[#]&,ToInducedDerivative[#,CD,cd]&],expr];*)
 
 
 CheckSTFTensors[expr_,h_,exceptlist_List]:=Module[{tens},With[{listpb=Cases[Expand@expr,tens_?((And@@(Function[t,t=!=#]/@exceptlist))&&xTensorQ[#]&&Not@DefProjectedTensorQ[#,h]&)[inds___]->tens,Infinity]},Print["** Warning: the tensor ",#," was not defined with DefProjectedTensor. The rules necessary for its splitting were thus not defined. **"]&/@(DeleteDuplicates@listpb)];];
@@ -2775,7 +2777,7 @@ SetNumberOfArguments[SplitPerturbations,{2,3}]
 Protect[SplitPerturbations];
 
 
-ToxPandFromRules[expr_,RulesList_List,h_(*?InducedMetricQ*),n_(*?IntegerQ*)]:=
+ToxPandFromRules[expr_,RulesList_List,h_?InducedMetricQ,n_?IntegerQ]:=
 With[{g=First@InducedFrom@h},
 If[Not[DefTensorQ[ConformalMetricName[g,a[h]]]]&&SpaceType[h]=!="Minkowski",
 If[$DefInfoQ,
@@ -2827,7 +2829,7 @@ SplitPerturbations[ExpandPerturbation@Perturbed[Conformal[g,ConformalMetricName[
 ];
 
 SetNumberOfArguments[ToxPand,{6,8}];
-Protect[ToxPandFromRules];
+Protect[ToxPand];
 
 
 ExtractComponents[expr_,h_?InducedMetricQ,proj_List,ListIndsToContract_List]:=
