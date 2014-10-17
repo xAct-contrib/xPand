@@ -956,10 +956,10 @@ with down indices.\>\""}], ";"}], "\[IndentingNewLine]",
      RowBox[{"DefProjectedTensorProperties", "::", "symmetrictensors"}], "=", 
      "\"\<The current version of DefProjectedTensorProperties can only add \
 properties to tensors that are, at least, fully symmetric.\>\""}], ";"}], 
-   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", "\n", 
    RowBox[{"(*", 
-    RowBox[{"*", " ", "ExtractComponents"}], " ", "**)"}], "\n", 
-   "\[IndentingNewLine]", 
+    RowBox[{"*", " ", "ExtractComponents"}], " ", "**)"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{
      RowBox[{"ExtractComponents", "::", "invalidprojector"}], " ", "=", " ", 
@@ -1460,7 +1460,7 @@ Cell[BoxData[
      "\"\<$ListFieldsBackgroundOnly[h], with 'h' being the induced metric on \
 the hypersurfaces, is the list of fields that live on the background only. It \
 is automatically defined when calling the function SetSlicing.\>\""}], ";"}], 
-   "\n", "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", "\n", 
    RowBox[{
     RowBox[{
      RowBox[{"$ListFieldsPerturbedOnly", "::", "usage"}], "=", 
@@ -2394,15 +2394,22 @@ InertHead used to replace the scalars. This is to avoid the application of \
 the Leibniz rule inside the Scalar Head.\
 \>", "Text"],
 
-Cell[BoxData[
+Cell[BoxData[{
  RowBox[{
-  RowBox[{"Block", "[", 
-   RowBox[{
-    RowBox[{"{", "Print", "}"}], ",", 
-    RowBox[{"DefInertHead", "[", 
-     RowBox[{"ProtectMyScalar", ",", 
-      RowBox[{"LinearQ", "\[Rule]", "True"}]}], "]"}]}], "]"}], 
-  ";"}]], "Input",
+  RowBox[{
+   RowBox[{"Block", "[", 
+    RowBox[{
+     RowBox[{"{", "Print", "}"}], ",", 
+     RowBox[{"DefInertHead", "[", 
+      RowBox[{"ProtectMyScalar", ",", 
+       RowBox[{"LinearQ", "\[Rule]", "True"}]}], "]"}]}], "]"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"FixProtectScalar", ":=", 
+  RowBox[{
+   RowBox[{"ProtectMyScalar", "[", "expr_", "]"}], "\[RuleDelayed]", 
+   RowBox[{"ProtectMyScalar", "[", 
+    RowBox[{"xAct`xTensor`Private`MathInputExpand", "[", "expr", "]"}], 
+    "]"}]}]}]}], "Input",
  InitializationCell->True]
 }, Open  ]]
 }, Open  ]],
@@ -2618,7 +2625,7 @@ Cell[BoxData[
                     RowBox[{"i", ",", "1", ",", "q"}], "}"}]}], "]"}]}]}], 
                "]"}]}], "}"}], "]"}]}], "\[IndentingNewLine]", "]"}]}], 
         "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", "]"}]}], ";"}],
-    "\n", "\[IndentingNewLine]", 
+    "\[IndentingNewLine]", "\n", 
    RowBox[{"xTensorFormStart", "[", "Tensor", "]"}]}]}]], "Input",
  InitializationCell->True],
 
@@ -4066,8 +4073,8 @@ Cell[BoxData[
                     RowBox[{
                     RowBox[{"{", "indices1", "}"}], ",", 
                     RowBox[{"{", "indices2", "}"}], ",", 
-                    RowBox[{"{", "indices3", "}"}]}], "]"}], "]"}], "+", "2"}]
-                    , "===", 
+                    RowBox[{"{", "indices3", "}"}]}], "]"}], "]"}], "+", 
+                    "2"}], "===", 
                     RowBox[{"Length", "[", 
                     RowBox[{"{", "inds", "}"}], "]"}]}], ")"}]}]}], ";", 
                  "\[IndentingNewLine]", "\[IndentingNewLine]", 
@@ -6892,6 +6899,7 @@ Cell[BoxData[
                     RowBox[{"Throw", "[", 
                     RowBox[{
                     "Print", "[", 
+                    
                     "\"\<** Warning: The second label-index has to be a \
 positive integer.\>\"", "]"}], "]"}], "]"}], "*)"}], "\[IndentingNewLine]", 
                     RowBox[{"If", "[", 
@@ -14960,7 +14968,7 @@ Cell[BoxData[{
      RowBox[{
       RowBox[{"MyChangeChristoffel", "[", 
        RowBox[{"#1", ",", "#2", ",", "cd1"}], "]"}], "&"}], ",", "expr", ",", 
-     "cd2list"}], "]"}]}], "\n"}], "\[IndentingNewLine]", 
+     "cd2list"}], "]"}]}], "\[IndentingNewLine]"}], "\n", 
  RowBox[{
   RowBox[{"MyChangeChristoffel", "[", 
    RowBox[{"expr_", ",", "cd2_", ",", "cd1_"}], "]"}], ":=", 
@@ -15401,7 +15409,7 @@ since we do not know very well how to handle that. **\>\"", "]"}], ";"}]}],
                 "]"}], ";", "\[IndentingNewLine]", "res"}]}], 
              "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", "]"}]}], 
          "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", "]"}]}], 
-     "\[IndentingNewLine]", "]"}]}], ";"}], "\[IndentingNewLine]"}], "\n", 
+     "\[IndentingNewLine]", "]"}]}], ";"}], "\n"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
    RowBox[{
@@ -17193,8 +17201,10 @@ Cell[BoxData[
                     RowBox[{"Scalar", "\[Rule]", "ProtectMyScalar"}]}], ")"}],
                      "]"}]}]}], ";", "\[IndentingNewLine]", 
                     RowBox[{"temp", "=", 
-                    RowBox[{"tempdown", "/.", "rulepert"}]}], ";", 
-                    "\[IndentingNewLine]", 
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{"tempdown", "/.", "rulepert"}], ")"}], "/.", 
+                    "FixProtectScalar"}]}], ";", "\[IndentingNewLine]", 
                     RowBox[{"tobecan", "=", 
                     RowBox[{"FullToInducedDerivative", "[", 
                     RowBox[{"temp", ",", "CD", ",", "cd"}], "]"}]}], ";", 
@@ -17540,9 +17550,8 @@ Cell[BoxData[
              RowBox[{"$DebugInfoQ", ",", 
               RowBox[{
               "Print", "[", 
-               "\"\<Constants of structure opened and simplified. \>\"", 
-               "]"}]}], "]"}], ";", "\[IndentingNewLine]", 
-            "\[IndentingNewLine]", 
+               "\"\<Constants of structure opened and simplified. \>\"", "]"}]
+               }], "]"}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
             RowBox[{"CheckSTFTensors", "[", 
              RowBox[{
               RowBox[{"Last", "@", "res"}], ",", "h", ",", 
@@ -19194,7 +19203,7 @@ Cell[BoxData[
 Cell[BoxData[
  RowBox[{"{", "\<\"SplitMatter\"\>", "}"}]], "Output"]
 }, Open  ]]
-}, Open  ]],
+}, Closed]],
 
 Cell[CellGroupData[{
 

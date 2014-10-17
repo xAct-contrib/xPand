@@ -683,6 +683,8 @@ Off[RuleDelayed::rhs];
 
 Block[{Print},DefInertHead[ProtectMyScalar,LinearQ->True]];
 
+FixProtectScalar:=ProtectMyScalar[expr_]:>ProtectMyScalar[xAct`xTensor`Private`MathInputExpand[expr]]
+
 
 (*** COLORATION OF THE PERTURBATION ORDERS ***)
 
@@ -2687,7 +2689,7 @@ Listlhsrhsnoreplace=Reverse@Transpose[{tableleft,tableleftnopattern}];
 RulesCovDs=(
 tempdown=IndicesDown[Last@#];
 rulepert=leftupindicesnopatterntests:>Evaluate[(InducedDecomposition[leftupindicesnopattern,{h,u}]/.rulesprojected/.Scalar->ProtectMyScalar)];
-temp=tempdown/.rulepert;
+temp=(tempdown/.rulepert)/.FixProtectScalar;
 tobecan=FullToInducedDerivative[temp,CD,cd];
 oncecan=ContractMetricOutSideProjector[Expand@tobecan,cd];
 rhs=ToCanonical[oncecan,UseMetricOnVBundle->None];
