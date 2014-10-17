@@ -1093,7 +1093,6 @@ Cell[BoxData[
                     Offset[0.]}}, "RowsIndexed" -> {}}],
                 FontSize->9]}
              },
-             
              GridBoxAlignment->{
               "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
                "Rows" -> {{Center}}, "RowsIndexed" -> {}},

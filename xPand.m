@@ -618,7 +618,7 @@ TensorProperties::usage = "";
 
 (*** TYPES OF GAUGE ***)
 
-$ListOfGauges::usage = "Possible gauges are: AnyGauge, ComovingGauge, FlatGauge, IsoDensityGauge, NewtonGauge and SynchronousGauge."
+$ListOfGauges::usage = "Possible gauges are: AnyGauge, FluidComovingGauge, ScalarFieldComovingGauge FlatGauge, IsoDensityGauge, NewtonGauge and SynchronousGauge."
 
 
 (*** TYPES OF MANIFOLD ***)
@@ -753,7 +753,7 @@ AnyIndicesListQ[inds_List]:=Cases[inds,AnyIndices[_]]=!={}
 DefTensorQ[symb_]:=Cases[$Tensors,symb]==={symb}
 (* If 'symb' has been defined as a tensor, then DefTensorQ[symb] returns 'True'; otherwise it returns 'False'. *)
 
-GaugeQ[strg_]:=Cases[{"AnyGauge","ComovingGauge","FlatGauge","IsoDensityGauge","NewtonGauge","SynchronousGauge"},strg]==={strg}
+GaugeQ[strg_]:=Cases[{"AnyGauge","FluidComovingGauge","ScalarFieldComovingGauge","FlatGauge","IsoDensityGauge","NewtonGauge","SynchronousGauge"},strg]==={strg}
 (* If 'strg' matches one of the element in the list, then GaugeQ[strg] returns 'True'; otherwise it returns 'False'. *)
 
 InducedMetricQ[symb_]:=If[MetricQ[symb],InducedFrom[symb]=!=Null,False]
@@ -2185,7 +2185,13 @@ Join[(*PatternLeft[#,{i1,i2}]&/@*){Rule@@Switch[gauge ,
 -2\[Psi][h][LI[1],LI[0]](h[i1,i2]+If[ShBool,K[h][LI[0],LI[0],i1,i2]/H[h][LI[0],LI[0]],0])
 +BT1 2Et[h][LI[1],LI[0],i1,i2]
 -BV1(u[i1]Bv[h][LI[1],LI[0],i2]+u[i2]Bv[h][LI[1],LI[0],i1])},
-"ComovingGauge",
+"FluidComovingGauge",
+{dg[LI[1],i1_,i2_],Identity[-u[i1]u[i2]2\[Phi][h][LI[1],LI[0]]
+-2\[Psi][h][LI[1],LI[0]](h[i1,i2]+If[ShBool,K[h][LI[0],LI[0],i1,i2]/H[h][LI[0],LI[0]],0])
++BT1 2Et[h][LI[1],LI[0],i1,i2]
+-BV1(u[i1]Bv[h][LI[1],LI[0],i2]+u[i2]Bv[h][LI[1],LI[0],i1])
+-(u[i1]cd[i2]@Bs[h][LI[1],LI[0]]+u[i2]cd[i1]@Bs[h][LI[1],LI[0]])]},
+"ScalarFieldComovingGauge",
 {dg[LI[1],i1_,i2_],Identity[-u[i1]u[i2]2\[Phi][h][LI[1],LI[0]]
 -2\[Psi][h][LI[1],LI[0]](h[i1,i2]+If[ShBool,K[h][LI[0],LI[0],i1,i2]/H[h][LI[0],LI[0]],0])
 +BT1 2Et[h][LI[1],LI[0],i1,i2]
@@ -2225,7 +2231,13 @@ Join[(*PatternLeft[#,{i1,i2}]&/@*){Rule@@Switch[gauge ,
 -2\[Psi][h][LI[n],LI[0]](h[i1,i2]+If[ShBool,K[h][LI[0],LI[0],i1,i2]/H[h][LI[0],LI[0]],0])
 +2Et[h][LI[n],LI[0],i1,i2]
 -(u[i1]Bv[h][LI[n],LI[0],i2]+u[i2]Bv[h][LI[n],LI[0],i1])]},
-"ComovingGauge",
+"FluidComovingGauge",
+{dg[LI[n_?(#>=2&)],i1_,i2_],Identity[-u[i1]u[i2]2\[Phi][h][LI[n],LI[0]]
+-2\[Psi][h][LI[n],LI[0]](h[i1,i2]+If[ShBool,K[h][LI[0],LI[0],i1,i2]/H[h][LI[0],LI[0]],0])
++2Et[h][LI[n],LI[0],i1,i2]
+-(u[i1]Bv[h][LI[n],LI[0],i2]+u[i2]Bv[h][LI[n],LI[0],i1])
+-(u[i1]cd[i2]@Bs[h][LI[n],LI[0]]+u[i2]cd[i1]@Bs[h][LI[n],LI[0]])]},
+"ScalarFieldComovingGauge",
 {dg[LI[n_?(#>=2&)],i1_,i2_],Identity[-u[i1]u[i2]2\[Phi][h][LI[n],LI[0]]
 -2\[Psi][h][LI[n],LI[0]](h[i1,i2]+If[ShBool,K[h][LI[0],LI[0],i1,i2]/H[h][LI[0],LI[0]],0])
 +2Et[h][LI[n],LI[0],i1,i2]
@@ -2936,16 +2948,16 @@ Protect[SplitFieldsAndGaugeChange];
 RulesVelocitySpatial[h_?InducedMetricQ,uf_,duf_,NormVectorSquare_,gauge_?GaugeQ,order_?IntegerQ,TiltedBool_:False]:=Module[{n,q},With[{M=ManifoldOfCovD@CovDOfMetric@h,cd=CovDOfMetric@h,u=Last@InducedFrom[h]},With[{ind1=DummyIn@Tangent@M,ind2=DummyIn@Tangent@M},
 Flatten@Join[
 Flatten@Join[
-If[gauge==="ComovingGauge",{\[CurlyPhi][LI[n_?(#>=1&)],LI[q_]]:>0},{}],
+If[gauge==="ScalarFieldComovingGauge",{\[CurlyPhi][LI[n_?(#>=1&)],LI[q_]]:>0},{}],
 If[gauge==="IsoDensityGauge",{\[Rho][uf][LI[n_?(#>=1&)],LI[q_]]:>0},{}],
 If[TiltedBool,{BuildRule[Evaluate[{uf[ind1],(Sqrt[Scalar[Vspat[h,uf][LI[0],LI[0],ind2]Vspat[h,uf][LI[0],LI[0],-ind2]]-NormVectorSquare])u[ind1]+Vspat[h,uf][LI[0],LI[0],ind1]}]]},
 {BuildRule[Evaluate[{uf[ind1],u[ind1]}]]}],
 
 {BuildRule@Evaluate[{duf[LI[1],ind1],
-Evaluate[V0[h,uf][LI[1],LI[0]]u[ind1]+cd[ind1][If[gauge==="ComovingGauge",-Bs[h][LI[1],LI[0]] ,Vs[h,uf][LI[1],LI[0]] ]]+ BV1 Vv[h,uf][LI[1],LI[0],ind1]]}]}],
+Evaluate[V0[h,uf][LI[1],LI[0]]u[ind1]+cd[ind1][If[gauge==="FluidComovingGauge",-Bs[h][LI[1],LI[0]] ,Vs[h,uf][LI[1],LI[0]] ]]+ BV1 Vv[h,uf][LI[1],LI[0],ind1]]}]}],
 Table[
 BuildRule@Evaluate[{duf[LI[i],ind1],
-Evaluate[V0[h,uf][LI[i],LI[0]]u[ind1]+cd[ind1][If[gauge==="ComovingGauge",-Bs[h][LI[i],LI[0]] ,Vs[h,uf][LI[i],LI[0]] ]]+ Vv[h,uf][LI[i],LI[0],ind1]]}],{i,2,order}]
+Evaluate[V0[h,uf][LI[i],LI[0]]u[ind1]+cd[ind1][If[gauge==="FluidComovingGauge",-Bs[h][LI[i],LI[0]] ,Vs[h,uf][LI[i],LI[0]] ]]+ Vv[h,uf][LI[i],LI[0],ind1]]}],{i,2,order}]
 ]
 ]
 ]
