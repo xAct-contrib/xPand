@@ -2018,9 +2018,9 @@ DummyT[Sym_]:=SymbolJoin[DT,Sym];
 Block[{Print},
 DefProjectedTensor[Evaluate[DummyS[h]][],h,SpaceTimesOfDefinition->{"Perturbed"}];
 DefProjectedTensor[Evaluate[DummyV[h]][-ind1],h,SpaceTimesOfDefinition->{"Perturbed"},TensorProperties->{(*"Transverse"*)}];
-DefProjectedTensor[Evaluate[DummyT[h]][-ind1,-ind2],h,TensorProperties->{"SymmetricTensor",(*"Transverse",*)"Traceless"},SpaceTimesOfDefinition->{"Perturbed"}];
+DefProjectedTensor[Evaluate[DummyT[h]][-ind1,-ind2],h,TensorProperties->{"SymmetricTensor"(*,(*"Transverse",*)"Traceless"*)},SpaceTimesOfDefinition->{"Perturbed"}];
 ];
-
+(* Here we consider a general tensor which is not necessarily traceless or transverse. But it is symmetric.*)
 
 $CommutecdRules=Join[$CommutecdRules,Flatten@Join[
 PatternLeft[#,{n,q}]&/@(PatternTensorLeftScalar[#,Evaluate[DummyS[h]][LI[n],LI[q]]]&/@BuildRule[Evaluate[{cd[-ind1][cd[ind2][cd[ind3][cd[ind1][Evaluate[DummyS[h]][LI[n],LI[q]]]]]],org[CommuteCovDs[CommuteCovDs[cd[-ind1][cd[ind2][cd[ind3][cd[ind1][Evaluate[DummyS[h]][LI[n],LI[q]]]]]],cd,{ind2,-ind1}],cd,{ind3,-ind1}]]}]]),
@@ -2720,9 +2720,11 @@ If[$DebugInfoQ,Print["rules ",rules]];
 (* TODO This part needs commenting. A lot of commenting. *)
 res=AbsoluteTiming[
 res0=FullToInducedDerivativeAndCDDown[org[((expr/.$RulesVanishingBackgroundFields[h])//ProjectorToMetric//GaussCodazzi[#,h]&)/.Projector[h]->ProjectWith[h]],CD,cd]//ProjectorToMetric;
-If[$DebugInfoQ,Print["Stage 0  ", res0]];
 
-res1 =ToCanonical[(res0/.rules)/.ih_?InertHeadQ[ex_]:>ih[ToCanonical[ex]],UseMetricOnVBundle->None];
+ If[$DebugInfoQ,Print["Stage 0", res0]];
+
+(* 7/12/14: Michael Kopp Found a bug below. I have replaced ToCanonical by ToCanonical@NoScalar and this seems to correct for the bug. The problem is the treatment of Scalars by ToCanonical. In some very strange configurations this did not work. This is very strange though and we should warn JMM about it. *)
+res1 =ToCanonical[NoScalar[(res0/.rules)/.ih_?InertHeadQ[ex_]:>ih[ToCanonical[ex]]],UseMetricOnVBundle->None];
 If[$DebugInfoQ,Print["Stage 1  ", res1," \n ",res1/.ListPairs ]];
 
 res2=((res1//.ListPairs)/.$BackgroundFieldRule)/.Projector[h][exp___]:>Projector[h][Expand@NoScalar[exp]];
