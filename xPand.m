@@ -2724,6 +2724,7 @@ res0=FullToInducedDerivativeAndCDDown[org[((expr/.$RulesVanishingBackgroundField
  If[$DebugInfoQ,Print["Stage 0", res0]];
 
 (* 7/12/14: Michael Kopp Found a bug below. I have replaced ToCanonical by ToCanonical@NoScalar and this seems to correct for the bug. The problem is the treatment of Scalars by ToCanonical. In some very strange configurations this did not work. This is very strange though and we should warn JMM about it. *)
+(* 8/12/14 In fact the solution is to make sure that we expand before using PutScalar. So that there is noever any sum inside a Scalar Head. Just to be sure, I add both solutions.*)
 res1 =ToCanonical[NoScalar[(res0/.rules)/.ih_?InertHeadQ[ex_]:>ih[ToCanonical[ex]]],UseMetricOnVBundle->None];
 If[$DebugInfoQ,Print["Stage 1  ", res1," \n ",res1/.ListPairs ]];
 
@@ -2764,7 +2765,7 @@ res7
 
 If[$DebugInfoQ,Print["Constants of structure opened and simplified. "]];
 
-CheckSTFTensors[Last@res,h,{g,u,Riemann[cd],Ricci[cd],RicciScalar[cd],h,CS[h],nt[h],av[h],\[ScriptK][h],delta,epsilon[h],epsilon[g]}];
+CheckSTFTensors[Last@res,h,{g,u,SymbolJoin[Det,g],Riemann[cd],Ricci[cd],RicciScalar[cd],h,CS[h],nt[h],av[h],\[ScriptK][h],delta,epsilon[h],epsilon[g]}];
 
 If[$DefInfoQ,Print["The Splitting of ",Take[expr,1]," +... was performed in ",First@res ," seconds."];];
 
@@ -2911,7 +2912,7 @@ temp1=GaugeChange[confpert,my\[Xi]];
 If[$DebugInfoQ,Print["temp1 ",temp1]];
 
 (* Then we perform the GaugeChange using the function GaugeChange of xPert *)
-temp=PutScalar[LieDToCovD[ExpandPerturbation[temp1],CD]/.rulebackgroundfield];
+temp=PutScalar@Expand[LieDToCovD[ExpandPerturbation[temp1],CD]/.rulebackgroundfield];
 If[$DebugInfoQ,Print["temp ",temp]];
 
 (*Then we say again that the conformal factor should not be perturbed*)
@@ -2981,7 +2982,7 @@ RuleBoost[0]:={};
 RuleBoostUpton[m_]:=Flatten@Table[ToCanonical@ContractMetric[RuleBoost[i]],{i,0,m}];
 
 RuleBoost[n_?(#>=1&)]:=MakeRule[Evaluate[{
-Boost[LI[n],LI[0]],ToCanonical@ContractMetric@PutScalar[(Boost[LI[n],LI[0]]/.First@IndexSolve[org[ExpandPerturbation@Perturbation[g[-i1,-i2]vector[i1]vector[i2],n]/.LocalRulesVspat]==0,Boost[LI[n],LI[0]]])/.RuleBoostUpton[n-1]/.LocalRulesVspat]/.$BackgroundFieldRule}]];
+Boost[LI[n],LI[0]],ToCanonical@ContractMetric@PutScalar@Expand[(Boost[LI[n],LI[0]]/.First@IndexSolve[org[ExpandPerturbation@Perturbation[g[-i1,-i2]vector[i1]vector[i2],n]/.LocalRulesVspat]==0,Boost[LI[n],LI[0]]])/.RuleBoostUpton[n-1]/.LocalRulesVspat]/.$BackgroundFieldRule}]];
 
 Join[RulesVspat/.RuleBoostUpton[order]]
 
@@ -3097,7 +3098,7 @@ RuleBoostUpton[m_]:=Flatten@Table[ToCanonical@ContractMetric[RuleBoost[i]],{i,0,
 Boost[LI[p],LI[0]]:>Evaluate[ToCanonical@ContractMetric@PutScalar[(X[]/.First@IndexSolve[org[ExpandPerturbation@Perturbation[g[ind1,ind2]vector[-ind1]vector[-ind2],p]/.LocalRulesNspat/.Boost[LI[p],LI[0]]->X[]]==0,X[]])/.RuleBoostUpton[p-1]/.LocalRulesNspat]/.$BackgroundFieldRule]);*)
 
 RuleBoost[p_?(#>=1&)]:=
-MakeRule[Evaluate[{Boost[LI[p],LI[0]],ToCanonical@ContractMetric@PutScalar[(Boost[LI[p],LI[0]]/.First@IndexSolve[org[ExpandPerturbation@Perturbation[g[ind1,ind2]vector[-ind1]vector[-ind2],p]/.LocalRulesNspat]==0,Boost[LI[p],LI[0]]])/.RuleBoostUpton[p-1]/.LocalRulesNspat]/.$BackgroundFieldRule}]];
+MakeRule[Evaluate[{Boost[LI[p],LI[0]],ToCanonical@ContractMetric@PutScalar@Expand[(Boost[LI[p],LI[0]]/.First@IndexSolve[org[ExpandPerturbation@Perturbation[g[ind1,ind2]vector[-ind1]vector[-ind2],p]/.LocalRulesNspat]==0,Boost[LI[p],LI[0]]])/.RuleBoostUpton[p-1]/.LocalRulesNspat]/.$BackgroundFieldRule}]];
 
 RuleBoostUpton[order]
 ]

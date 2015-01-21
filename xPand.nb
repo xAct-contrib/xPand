@@ -303,7 +303,7 @@ types) *)
  InitializationCell->True],
 
 Cell["", "Text"]
-}, Closed]],
+}, Open  ]],
 
 Cell[CellGroupData[{
 
@@ -956,10 +956,10 @@ with down indices.\>\""}], ";"}], "\[IndentingNewLine]",
      RowBox[{"DefProjectedTensorProperties", "::", "symmetrictensors"}], "=", 
      "\"\<The current version of DefProjectedTensorProperties can only add \
 properties to tensors that are, at least, fully symmetric.\>\""}], ";"}], 
-   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   "\n", "\[IndentingNewLine]", 
    RowBox[{"(*", 
-    RowBox[{"*", " ", "ExtractComponents"}], " ", "**)"}], "\n", 
-   "\[IndentingNewLine]", 
+    RowBox[{"*", " ", "ExtractComponents"}], " ", "**)"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{
      RowBox[{"ExtractComponents", "::", "invalidprojector"}], " ", "=", " ", 
@@ -17396,6 +17396,22 @@ Cell[BoxData[
                   " ", "strange", " ", "though", " ", "and", " ", "we", " ", 
                   "should", " ", "warn", " ", "JMM", " ", "about", " ", 
                   RowBox[{"it", "."}]}]}], " ", "*)"}], "\[IndentingNewLine]", 
+               RowBox[{"(*", " ", 
+                RowBox[{
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{"8", "/", "12"}], "/", "14"}], " ", "In", " ", 
+                  "fact", " ", "the", " ", "solution", " ", "is", " ", "to", 
+                  " ", "make", " ", "sure", " ", "that", " ", "we", " ", 
+                  "expand", " ", "before", " ", "using", " ", 
+                  RowBox[{"PutScalar", ".", " ", "So"}], " ", "that", " ", 
+                  "there", " ", "is", " ", "noever", " ", "any", " ", "sum", 
+                  " ", "inside", " ", "a", " ", "Scalar", " ", 
+                  RowBox[{"Head", ".", " ", "Just"}], " ", "to", " ", "be", 
+                  " ", "sure"}], ",", " ", 
+                 RowBox[{"I", " ", "add", " ", "both", " ", 
+                  RowBox[{"solutions", "."}]}]}], "*)"}], 
+               "\[IndentingNewLine]", 
                RowBox[{"res1", " ", "=", 
                 RowBox[{"ToCanonical", "[", 
                  RowBox[{
@@ -17591,6 +17607,8 @@ Cell[BoxData[
               RowBox[{"Last", "@", "res"}], ",", "h", ",", 
               RowBox[{"{", 
                RowBox[{"g", ",", "u", ",", 
+                RowBox[{"SymbolJoin", "[", 
+                 RowBox[{"Det", ",", "g"}], "]"}], ",", 
                 RowBox[{"Riemann", "[", "cd", "]"}], ",", 
                 RowBox[{"Ricci", "[", "cd", "]"}], ",", 
                 RowBox[{"RicciScalar", "[", "cd", "]"}], ",", "h", ",", 
@@ -18039,7 +18057,7 @@ Cell[BoxData[
 Cell[BoxData[
  RowBox[{"{", "\<\"ToxPandFromRules\"\>", "}"}]], "Output"]
 }, Open  ]]
-}, Closed]],
+}, Open  ]],
 
 Cell[CellGroupData[{
 
@@ -18596,13 +18614,14 @@ Cell[BoxData[{
               "GaugeChange", " ", "of", " ", "xPert"}], " ", "*)"}], 
             "\[IndentingNewLine]", 
             RowBox[{"temp", "=", 
-             RowBox[{"PutScalar", "[", 
-              RowBox[{
-               RowBox[{"LieDToCovD", "[", 
-                RowBox[{
-                 RowBox[{"ExpandPerturbation", "[", "temp1", "]"}], ",", 
-                 "CD"}], "]"}], "/.", "rulebackgroundfield"}], "]"}]}], ";", 
-            "\[IndentingNewLine]", 
+             RowBox[{"PutScalar", "@", 
+              RowBox[{"Expand", "[", 
+               RowBox[{
+                RowBox[{"LieDToCovD", "[", 
+                 RowBox[{
+                  RowBox[{"ExpandPerturbation", "[", "temp1", "]"}], ",", 
+                  "CD"}], "]"}], "/.", "rulebackgroundfield"}], "]"}]}]}], 
+            ";", "\[IndentingNewLine]", 
             RowBox[{"If", "[", 
              RowBox[{"$DebugInfoQ", ",", 
               RowBox[{"Print", "[", 
@@ -18784,7 +18803,7 @@ Cell[BoxData[{
  RowBox[{
   RowBox[{"Protect", "[", "SplitFieldsAndGaugeChange", "]"}], ";"}]}], "Input",
  InitializationCell->True]
-}, Closed]],
+}, Open  ]],
 
 Cell[CellGroupData[{
 
@@ -19118,7 +19137,8 @@ Cell[BoxData[
                  RowBox[{
                   RowBox[{"ToCanonical", "@", 
                    RowBox[{"ContractMetric", "@", 
-                    RowBox[{"PutScalar", "[", 
+                    RowBox[{"PutScalar", "@", 
+                    RowBox[{"Expand", "[", 
                     RowBox[{
                     RowBox[{
                     RowBox[{"(", 
@@ -19151,7 +19171,7 @@ Cell[BoxData[
                     ")"}], "/.", 
                     RowBox[{"RuleBoostUpton", "[", 
                     RowBox[{"n", "-", "1"}], "]"}]}], "/.", 
-                    "LocalRulesVspat"}], "]"}]}]}], "/.", 
+                    "LocalRulesVspat"}], "]"}]}]}]}], "/.", 
                   "$BackgroundFieldRule"}]}], "}"}], "]"}], "]"}]}], ";", 
             "\[IndentingNewLine]", "\[IndentingNewLine]", 
             RowBox[{"Join", "[", 
@@ -19778,7 +19798,8 @@ Cell[BoxData[
                 RowBox[{
                  RowBox[{"ToCanonical", "@", 
                   RowBox[{"ContractMetric", "@", 
-                   RowBox[{"PutScalar", "[", 
+                   RowBox[{"PutScalar", "@", 
+                    RowBox[{"Expand", "[", 
                     RowBox[{
                     RowBox[{
                     RowBox[{"(", 
@@ -19811,7 +19832,7 @@ Cell[BoxData[
                     ")"}], "/.", 
                     RowBox[{"RuleBoostUpton", "[", 
                     RowBox[{"p", "-", "1"}], "]"}]}], "/.", 
-                    "LocalRulesNspat"}], "]"}]}]}], "/.", 
+                    "LocalRulesNspat"}], "]"}]}]}]}], "/.", 
                  "$BackgroundFieldRule"}]}], "}"}], "]"}], "]"}]}], ";", 
            "\[IndentingNewLine]", "\[IndentingNewLine]", 
            RowBox[{"RuleBoostUpton", "[", "order", "]"}]}]}], 
@@ -19897,7 +19918,7 @@ normal vector and the projected fields **\>\"", "]"}], ";",
    RowBox[{"{", "2", "}"}]}], "]"}], "\[IndentingNewLine]", 
  RowBox[{"Protect", "[", "SplitNormalVector", "]"}]}], "Input",
  InitializationCell->True]
-}, Closed]],
+}, Open  ]],
 
 Cell[CellGroupData[{
 
