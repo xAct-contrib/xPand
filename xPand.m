@@ -2450,6 +2450,10 @@ SeparateIndicesDownOfInverseMetric[invmetric_?InverseMetricQ][expr_]:=Fold[Separ
 SeparateIndicesDownOfInverseMetric[_][expr_]:=expr
 
 
+(*Conformal[mecbas_][m1_,m2_][expr_Plus]:=Map[Conformal[mecbas][m1,m2],expr]
+Conformal[m1_,m2_][expr_Plus]:=Map[Conformal[m1,m2],expr]*)
+
+
 Conformal[metricbase_?MetricQ][metric1_?MetricQ,metric2_?MetricQ][expr_]:=Module[{cdb,cd1,cd2,res,res2,(*oldpre,*)resbis,exprnoproj,M,i1,i2,beforeputtingconfheads,IDInvMetric},
 (* The conflict with CreenDollarIndicea has now been solved. So there is no need to redefine tempararoly $PrePrint*)
 (*oldpre=$PrePrint;$PrePrint=Identity;*)
@@ -2489,7 +2493,10 @@ res=(beforeputtingconfheads
 
 (* And then all other rules to remove the ConfHead*)
 
-resbis=res//.RulesConf[metric1,metric2];
+
+(* DEBUG Attempt. I have added a NoSCalar. Check if this works fine for the rest*)
+(* It seems to be fine so I should post the modification*)
+resbis=NoScalar[res//.RulesConf[metric1,metric2]];
 
 
 (* So here we have conformally transformed the expression, but now we want to express it in function of the original metric and orginal covD etc...
