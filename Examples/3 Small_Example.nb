@@ -6760,8 +6760,9 @@ Cell[BoxData[
       RowBox[{"-", "\[Nu]"}], "]"}], "@", 
      RowBox[{
       RowBox[{"CD", "[", "\[Nu]", "]"}], "@", 
-      RowBox[{"\[CurlyPhi]", "[", "]"}]}]}], ",", "\"\<ComovingGauge\>\"", 
-    ",", "order"}], "]"}], " "}]], "Input"],
+      RowBox[{"\[CurlyPhi]", "[", "]"}]}]}], ",", 
+    "\"\<ScalarFieldComovingGauge\>\"", ",", "order"}], "]"}], 
+  " "}]], "Input"],
 
 Cell[BoxData[
  InterpretationBox[

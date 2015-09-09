@@ -19,11 +19,11 @@
 
 
 
-xAct`xPand`$Version={"0.4.2",{2013,11,10}};
+xAct`xPand`$Version={"0.4.3",{2015,09,09}};
 
 
-xAct`xPand`$xTensorVersionExpected={"1.0.5",{2013,1,27}};
-xAct`xPand`$xPertVersionExpected={"1.0.3",{2013,1,27}};
+xAct`xPand`$xTensorVersionExpected={"1.1.2",{2015,8,3}};
+xAct`xPand`$xPertVersionExpected={"1.0.5",{2014,9,28}};
 
 
 (* xPand: Cosmological perturbations about homogeneous space-times *)
@@ -59,9 +59,9 @@ You should have received a copy of the GNU General Public License
   
 (* :Context: xAct`xPand` *)
 
-(* :Package Version: 0.4.0 *)
+(* :Package Version: 0.4.3 *)
 
-(* :Copyright: Cyril Pitrou, Xavier Roy and Obinna Umeh (2012-2013) *)
+(* :Copyright: Cyril Pitrou, Xavier Roy and Obinna Umeh (2012-2016) *)
 
 (* :History: see xPand.History *)
 
@@ -129,11 +129,11 @@ This option should be placed at the begining of the notebook, right after loadin
 $CacheRules::usage = "If set to 'True', the rules are remembered. This is potentially dangerous, so default is 'False'.";
 (* This is obsolete. This will have to be erased. *)
 
-$ConformalTime::usage = "If set to 'True' (default value), then the prime ' stands for the Lie derivative along the vector 'n' normal to the spatial slices. If the time coordinate is taken to be the proper time of the Eulerian observers (identified by the normal vector), then the Lie derivative along 'n' corresponds to the partial time derivative with respect to the conformal time, namely: \!\(\*SubscriptBox[\"\[ScriptCapitalL]\", \"n\"]\) .. = \[PartialD]/\[PartialD]\[Eta] .. . 
+$ConformalTime::usage = "If set to 'True' (default value), then the prime ' stands for the Lie derivative along the vector 'n' normal to the spatial slices. If the time coordinate is taken to be the proper time of the Eulerian observers (identified by the normal vector), then the Lie derivative along 'n' corresponds to the partial time derivative with respect to the conformal time, namely: \!\(\*SubscriptBox[\(\[ScriptCapitalL]\), \(n\)]\) .. = \[PartialD]/\[PartialD]\[Eta] .. . 
 
 The second Label-Index (LI) of projected tensors represents the number of Lie derivatives along 'n' that are applied to them. It also corresponds to the number of partial derivatives with respect to conformal time. 
 
-In the cases for which we prefer to use the cosmic time, we can choose to employ the second LI not for the number of \!\(\*SubscriptBox[\"\[ScriptCapitalL]\", \"n\"]\), but rather for the number of 1/a \!\(\*SubscriptBox[\"\[ScriptCapitalL]\", \"n\"]\), where 'a' is the scale factor. This is done by setting '$ConformalTime' to 'False'. The label index then indicates a derivative with respect to cosmic time.
+In the cases for which we prefer to use the cosmic time, we can choose to employ the second LI not for the number of \!\(\*SubscriptBox[\(\[ScriptCapitalL]\), \(n\)]\), but rather for the number of 1/a \!\(\*SubscriptBox[\(\[ScriptCapitalL]\), \(n\)]\), where 'a' is the scale factor. This is done by setting '$ConformalTime' to 'False'. The label index then indicates a derivative with respect to cosmic time.
 
 The output format of the second LI is a prime for a conformal time derivative, and a dot for a cosmic time derivative.";
 
@@ -141,10 +141,7 @@ $FirstOrderVectorPerturbations::usage = "Boolean option to decide if first order
 
 $FirstOrderTensorPerturbations::usage = "Boolean option to decide if first order tensor modes should be included. Default is 'True'.";
 
-$OpenConstantsOfStructure::usage = "Boolean value to decide if the constants of structure should be parameterized as in Ellis & MacCallum (1969). If 'False', then the constants of structure are kept general. If 'True', then the parameterization is: \!\(\*SubscriptBox[SuperscriptBox[\"C\", \"i\"], 
-RowBox[{\"jk\", \" \"}]]\)= \!\(\*SubscriptBox[\"\[Epsilon]\", \"jkl\"]\)\!\(\*SuperscriptBox[\"N\", \"li\"]\) + \!\(\*SubscriptBox[\"A\", 
-RowBox[{\"[\", \"j\"}]]\)\!\(\*SubscriptBox[SuperscriptBox[\"\[Delta]\", \"i\"], 
-RowBox[{\"k\", \"]\"}]]\).";
+$OpenConstantsOfStructure::usage = "Boolean value to decide if the constants of structure should be parameterized as in Ellis & MacCallum (1969). If 'False', then the constants of structure are kept general. If 'True', then the parameterization is: \!\(\*SubscriptBox[SuperscriptBox[\(C\), \(i\)], \(\(jk\)\(\\\ \)\)]\)= \!\(\*SubscriptBox[\(\[Epsilon]\), \(jkl\)]\)\!\(\*SuperscriptBox[\(N\), \(li\)]\) + \!\(\*SubscriptBox[\(A\), \([j\)]\)\!\(\*SubscriptBox[SuperscriptBox[\(\[Delta]\), \(i\)], \(\(k\)\(]\)\)]\).";
 
 $SortCovDAutomatic::usage = "Boolean value to decide whether or not xTensor should commute automatically the induced derivatives. Default is 'True' in order to optimize the canonicalization of expression. Note that some adhoc commutation relations defined in '$CommutecdRules' are also applied in order to enforce the transverse properties of vector and tensor fields, on the one hand, and the appearance of Laplacians, on the other hand.";
 
@@ -278,10 +275,7 @@ The parametrization follows Ellis & MacCallum (1969), that is, the constants of 
 
 ToBianchiType::usage = "ToBianchiType[h][expr] applies to expr the necessary rules to express the constants of structure according to the Bianchi type of the homogeneous hypersurfaces associated with the induced metric 'h'. This option is only valid for three-dimensional hypersurfaces. 
 
-The parametrization follows Ellis & MacCallum (1969), that is, the constants of structure are decomposed as: \!\(\*SubscriptBox[SuperscriptBox[\"C\", \"i\"], 
-RowBox[{\"jk\", \" \"}]]\)= \!\(\*SubscriptBox[\"\[Epsilon]\", \"jkl\"]\)\!\(\*SuperscriptBox[\"N\", \"li\"]\) + \!\(\*SubscriptBox[\"A\", 
-RowBox[{\"[\", \"j\"}]]\)\!\(\*SubscriptBox[SuperscriptBox[\"\[Delta]\", \"i\"], 
-RowBox[{\"k\", \"]\"}]]\).";
+The parametrization follows Ellis & MacCallum (1969), that is, the constants of structure are decomposed as: \!\(\*SubscriptBox[SuperscriptBox[\(C\), \(i\)], \(\(jk\)\(\\\ \)\)]\)= \!\(\*SubscriptBox[\(\[Epsilon]\), \(jkl\)]\)\!\(\*SuperscriptBox[\(N\), \(li\)]\) + \!\(\*SubscriptBox[\(A\), \([j\)]\)\!\(\*SubscriptBox[SuperscriptBox[\(\[Delta]\), \(i\)], \(\(k\)\(]\)\)]\).";
 
 (*ConstantsOfStructureRules::usage = "ConstantsOfStructureRules[h]. 
 
@@ -298,9 +292,9 @@ RulesCovDsOfTensor::usage = "";*)
 
 (* ************** *)
 
-ToCosmicTime::usage = "Transforms an expression where the second label index of projected tensor means \!\(\*SubscriptBox[\"\[ScriptCapitalL]\", SuperscriptBox[\"n\", \"\[Alpha]\"]]\), that is a derivative with respect to conformal time, into an expression where the second index means '1/a *\!\(\*SubscriptBox[\"\[ScriptCapitalL]\", SuperscriptBox[\"n\", \"\[Alpha]\"]]\)', that is a derivative with respect to cosmic time. The global variable $ConformalTime is set to False in the process.";
+ToCosmicTime::usage = "Transforms an expression where the second label index of projected tensor means \!\(\*SubscriptBox[\(\[ScriptCapitalL]\), SuperscriptBox[\(n\), \(\[Alpha]\)]]\), that is a derivative with respect to conformal time, into an expression where the second index means '1/a *\!\(\*SubscriptBox[\(\[ScriptCapitalL]\), SuperscriptBox[\(n\), \(\[Alpha]\)]]\)', that is a derivative with respect to cosmic time. The global variable $ConformalTime is set to False in the process.";
 
-ToConformalTime::usage = "Transforms an expression where the second label index of projected tensor means '1/a * \!\(\*SubscriptBox[\"\[ScriptCapitalL]\", SuperscriptBox[\"n\", \"\[Alpha]\"]]\)', that is a derivative with respect to cosmic time, into an expression where the second index means '\!\(\*SubscriptBox[\"\[ScriptCapitalL]\", SuperscriptBox[\"n\", \"\[Alpha]\"]]\)', that is a derivative with respect to conformal time. The global variable $ConformalTime is set to True in the process.";
+ToConformalTime::usage = "Transforms an expression where the second label index of projected tensor means '1/a * \!\(\*SubscriptBox[\(\[ScriptCapitalL]\), SuperscriptBox[\(n\), \(\[Alpha]\)]]\)', that is a derivative with respect to cosmic time, into an expression where the second index means '\!\(\*SubscriptBox[\(\[ScriptCapitalL]\), SuperscriptBox[\(n\), \(\[Alpha]\)]]\)', that is a derivative with respect to conformal time. The global variable $ConformalTime is set to True in the process.";
 
 (********** The following command, RulesVelocitySpatial, is not yet edited. **********)
 
@@ -376,27 +370,19 @@ CS::usage = "CS[h][index,index,index] are the constants of structure on the hype
 
 The command CS[h] builds the symbol 'CSh', so one can use CS[h][index,index,index] or, equivalently, CSh[index,index,index]. 
 
-The default printed form of CS[h][-index,-index,-index] is: '\!\(\*SubscriptBox[\"C\", 
-RowBox[{\"index\", \" \", \"index\", \" \", \"index\"}]]\)'.";
+The default printed form of CS[h][-index,-index,-index] is: '\!\(\*SubscriptBox[\(C\), \(index\\\ index\\\ index\)]\)'.";
 
-nt::usage = "nt[h][index,index] is the symmetric tensor part involved in the decomposition of the constants of structure: \!\(\*SubscriptBox[SuperscriptBox[\"C\", \"i\"], 
-RowBox[{\"jk\", \" \"}]]\)= \!\(\*SubscriptBox[\"\[Epsilon]\", \"jkl\"]\)\!\(\*SuperscriptBox[\"N\", \"li\"]\) + \!\(\*SubscriptBox[\"A\", 
-RowBox[{\"[\", \"j\"}]]\)\!\(\*SubscriptBox[SuperscriptBox[\"\[Delta]\", \"i\"], 
-RowBox[{\"k\", \"]\"}]]\), in Ellis and MacCallum (1969). It is automatically defined when calling the function SetSlicing for Bianchi space-times of type other then I. The presence as an argument of the induced metric 'h' is reminiscent of the choice of the background slicing. 
+nt::usage = "nt[h][index,index] is the symmetric tensor part involved in the decomposition of the constants of structure: \!\(\*SubscriptBox[SuperscriptBox[\(C\), \(i\)], \(\(jk\)\(\\\ \)\)]\)= \!\(\*SubscriptBox[\(\[Epsilon]\), \(jkl\)]\)\!\(\*SuperscriptBox[\(N\), \(li\)]\) + \!\(\*SubscriptBox[\(A\), \([j\)]\)\!\(\*SubscriptBox[SuperscriptBox[\(\[Delta]\), \(i\)], \(\(k\)\(]\)\)]\), in Ellis and MacCallum (1969). It is automatically defined when calling the function SetSlicing for Bianchi space-times of type other then I. The presence as an argument of the induced metric 'h' is reminiscent of the choice of the background slicing. 
 
 The command nt[h] builds the symbol 'nth', so one can use nt[h][index,index] or, equivalently, nth[index,index]. 
 
-The default printed form of nt[h][-index,-index] is: '\!\(\*SubscriptBox[\"N\", 
-RowBox[{\"index\", \" \", \"index\"}]]\)'.";
+The default printed form of nt[h][-index,-index] is: '\!\(\*SubscriptBox[\(N\), \(index\\\ index\)]\)'.";
 
-av::usage = "av[h][index] is the 'vector' part involved in the decomposition of the constants of structure: \!\(\*SubscriptBox[SuperscriptBox[\"C\", \"i\"], 
-RowBox[{\"jk\", \" \"}]]\)= \!\(\*SubscriptBox[\"\[Epsilon]\", \"jkl\"]\)\!\(\*SuperscriptBox[\"N\", \"li\"]\) + \!\(\*SubscriptBox[\"A\", 
-RowBox[{\"[\", \"j\"}]]\)\!\(\*SubscriptBox[SuperscriptBox[\"\[Delta]\", \"i\"], 
-RowBox[{\"k\", \"]\"}]]\), in Ellis & MacCallum (1969). It is automatically defined when calling the function SetSlicing for Bianchi space-times of type other than I. The presence as an argument of the induced metric 'h' is reminiscent of the choice of the background slicing.
+av::usage = "av[h][index] is the 'vector' part involved in the decomposition of the constants of structure: \!\(\*SubscriptBox[SuperscriptBox[\(C\), \(i\)], \(\(jk\)\(\\\ \)\)]\)= \!\(\*SubscriptBox[\(\[Epsilon]\), \(jkl\)]\)\!\(\*SuperscriptBox[\(N\), \(li\)]\) + \!\(\*SubscriptBox[\(A\), \([j\)]\)\!\(\*SubscriptBox[SuperscriptBox[\(\[Delta]\), \(i\)], \(\(k\)\(]\)\)]\), in Ellis & MacCallum (1969). It is automatically defined when calling the function SetSlicing for Bianchi space-times of type other than I. The presence as an argument of the induced metric 'h' is reminiscent of the choice of the background slicing.
 
 The command av[h] builds the symbol 'avh', so one can use av[h][index] or, equivalently, avh[index]. 
 
-The default printed form of av[h][-index] is: '\!\(\*SubscriptBox[\"A\", \"index\"]\)'.";
+The default printed form of av[h][-index] is: '\!\(\*SubscriptBox[\(A\), \(index\)]\)'.";
 
 \[ScriptK]::usage = "\[ScriptK][h] is the (constant) curvature parameter of the isotropic and homogeneous hypersurfaces associated with the induced metric 'h'. It is automatically defined when calling the function SetSlicing for Friedmann-Lemaitre cosmologies. 
 
@@ -458,7 +444,7 @@ The commands Vspat[h,uf][index] and Vspat[h,uf][LI[p],index] are defined to be e
 
 The command Vspat[h,uf] builds the symbol 'Vspathuf', so one can use Vspat[h,uf][LI[p],LI[q],index] or, equivalently, Vspathuf[LI[p],LI[q],index]. 
 
-The default printed form of Vspat[h,uf][-index] is: '\!\(\*SubscriptBox[\"\[ScriptCapitalV]\", \"index\"]\)'.";
+The default printed form of Vspat[h,uf][-index] is: '\!\(\*SubscriptBox[\(\[ScriptCapitalV]\), \(index\)]\)'.";
 
 Vs::usage = "Vs[h,uf][LI[p],LI[q]] is the scalar part of the scalar-vector decomposition of 'Vspat', where 'Vspat' is the spatial part of the perturbed fluid four-velocity 'ufpert' (with index up). It is automatically defined when calling the function DefMatterFields. It depends on the choice of the background slicing, and hence on the induced metric 'h'. 
 
@@ -478,7 +464,7 @@ The commands Vv[h,uf][index] and Vv[h,uf][LI[p],index] are defined to be equal t
 
 The command Vv[h,uf] builds the symbol 'Vvhuf', so one can use Vv[h,uf][LI[p],LI[q],index] or, equivalently, Vvhuf[LI[p],LI[q],index]. 
 
-The default printed form of Vv[h,uf][-index] is: '\!\(\*SubscriptBox[\"V\", \"index\"]\)'.";
+The default printed form of Vv[h,uf][-index] is: '\!\(\*SubscriptBox[\(V\), \(index\)]\)'.";
 
 
 (*** PREDEFINED FIELDS: Perturbation of the metric ***)
@@ -513,7 +499,7 @@ The commands Bv[h][index] and Bv[h][LI[p],index] are defined to be equal to Bv[h
 
 The command Bv[h] builds the symbol 'Bvh', so one can use Bv[h][LI[p],LI[q],index] or, equivalently, Bvh[LI[p],LI[q],index]. 
 
-The default printed form of Bv[h][-index] is: '\!\(\*SubscriptBox[\"B\", \"index\"]\)'.";
+The default printed form of Bv[h][-index] is: '\!\(\*SubscriptBox[\(B\), \(index\)]\)'.";
 
 (** Spatial components of the metric perturbation **)
 
@@ -543,7 +529,7 @@ The commands Ev[h][index] and Ev[h][LI[p],index] are defined to be equal to Ev[h
 
 The command Ev[h] builds the symbol 'Evh', so one can use Ev[h][LI[p],LI[q],index] or, equivalently, Evh[LI[p],LI[q],index]. 
 
-The default printed form of Ev[h][-index] is: '\!\(\*SubscriptBox[\"E\", \"index\"]\)'.";
+The default printed form of Ev[h][-index] is: '\!\(\*SubscriptBox[\(E\), \(index\)]\)'.";
 
 Et::usage = "Et[h][LI[p],LI[q],index,index] is the tensor part of the scalar-vector-tensor decomposition of the spatial components of the metric perturbation. It is automatically defined when calling the function DefMetricFields. It depends on the choice of the background slicing, and hence on the induced metric 'h'. 
 
@@ -553,8 +539,7 @@ The commands Et[h][index,index] and Et[h][LI[p],index,index] are defined to be e
 
 The command Et[h] builds the symbol 'Eth', so one can use Et[h][LI[p],LI[q],index,index] or, equivalently, Eth[LI[p],LI[q],index,index]. 
 
-The default printed form of Et[h][-index,-index] is: '\!\(\*SubscriptBox[\"E\", 
-RowBox[{\"index\", \" \", \"index\"}]]\)'.";
+The default printed form of Et[h][-index,-index] is: '\!\(\*SubscriptBox[\(E\), \(index\\\ index\)]\)'.";
 
 
 (*** PREDEFINED FIELDS: Gauge vector, its decomposition and perturbation parameter ***)
@@ -593,7 +578,7 @@ The commands Lv[h][index] and Lv[h][LI[p],index] are defined to be equal to Lv[h
 
 The command Lv[h] builds the symbol 'Lvh', so one can use Lv[h][LI[p],LI[q],index] or, equivalently, Lvh[LI[p],LI[q],index]. 
 
-The default printed form of Lv[h][-index] is: '\!\(\*SubscriptBox[\"L\", \"index\"]\)'.";
+The default printed form of Lv[h][-index] is: '\!\(\*SubscriptBox[\(L\), \(index\)]\)'.";
 
 \[Epsilon]::usage = "\[Epsilon] is the default perturbation parameter. It is automatically defined when calling either the function DefMetricFields or the function DefMatterFields.";
 
@@ -608,10 +593,10 @@ The commands \[ScriptCapitalN]0[h][index] and \[ScriptCapitalN]0[h][LI[p],index]
 
 The command \[ScriptCapitalN]0[h] builds the symbol '\[ScriptCapitalN]0h', so one can use \[ScriptCapitalN]0[h][LI[p],LI[q],index] or, equivalently, \[ScriptCapitalN]0h[LI[p],LI[q],index]. 
 
-The default printed form of \[ScriptCapitalN]0[h][-index] is: '\!\(\*SubscriptBox[\"\[ScriptCapitalN]0\", \"index\"]\)'.";
+The default printed form of \[ScriptCapitalN]0[h][-index] is: '\!\(\*SubscriptBox[\(\[ScriptCapitalN]0\), \(index\)]\)'.";
 
 
-\[ScriptCapitalN]::usage = "\[ScriptCapitalN][h][index] is the normal vector to constant time hypersurfaces. It is automatically defined when calling SetSlicing. Though on the background spacetime it is equal to \!\(\*SuperscriptBox[\"n\", \"\[Mu]\"]\), where \!\(\*SuperscriptBox[\"n\", \"\[Mu]\"]\) is the vector normal to h on the background space-time, this definition allows manipulation of the normal vector, like perturbation, conformal transformations, which would be impossible directly with \!\(\*SuperscriptBox[\"n\", \"\[Mu]\"]\) since many definitions are already automatized for it (e.g. normalization to -1).";
+\[ScriptCapitalN]::usage = "\[ScriptCapitalN][h][index] is the normal vector to constant time hypersurfaces. It is automatically defined when calling SetSlicing. Though on the background spacetime it is equal to \!\(\*SuperscriptBox[\(n\), \(\[Mu]\)]\), where \!\(\*SuperscriptBox[\(n\), \(\[Mu]\)]\) is the vector normal to h on the background space-time, this definition allows manipulation of the normal vector, like perturbation, conformal transformations, which would be impossible directly with \!\(\*SuperscriptBox[\(n\), \(\[Mu]\)]\) since many definitions are already automatized for it (e.g. normalization to -1).";
 
 
 d\[ScriptCapitalN]::usage = "d\[ScriptCapitalN][h][LI[p],index] is the perturbation of the normal vector to constant time hypersurfaces. 'p' is the order of perturbation.
@@ -633,7 +618,7 @@ TensorProperties::usage = "";
 
 (*** TYPES OF GAUGE ***)
 
-$ListOfGauges::usage = "Possible gauges are: AnyGauge, ComovingGauge, FlatGauge, IsoDensityGauge, NewtonGauge and SynchronousGauge."
+$ListOfGauges::usage = "Possible gauges are: AnyGauge, FluidComovingGauge, ScalarFieldComovingGauge FlatGauge, IsoDensityGauge, NewtonGauge and SynchronousGauge."
 
 
 (*** TYPES OF MANIFOLD ***)
@@ -697,6 +682,8 @@ Off[RuleDelayed::rhs];
 
 
 Block[{Print},DefInertHead[ProtectMyScalar,LinearQ->True]];
+
+FixProtectScalar:=ProtectMyScalar[expr_]:>ProtectMyScalar[xAct`xTensor`Private`MathInputExpand[expr]]
 
 
 (*** COLORATION OF THE PERTURBATION ORDERS ***)
@@ -768,7 +755,7 @@ AnyIndicesListQ[inds_List]:=Cases[inds,AnyIndices[_]]=!={}
 DefTensorQ[symb_]:=Cases[$Tensors,symb]==={symb}
 (* If 'symb' has been defined as a tensor, then DefTensorQ[symb] returns 'True'; otherwise it returns 'False'. *)
 
-GaugeQ[strg_]:=Cases[{"AnyGauge","ComovingGauge","FlatGauge","IsoDensityGauge","NewtonGauge","SynchronousGauge"},strg]==={strg}
+GaugeQ[strg_]:=Cases[{"AnyGauge","FluidComovingGauge","ScalarFieldComovingGauge","FlatGauge","IsoDensityGauge","NewtonGauge","SynchronousGauge"},strg]==={strg}
 (* If 'strg' matches one of the element in the list, then GaugeQ[strg] returns 'True'; otherwise it returns 'False'. *)
 
 InducedMetricQ[symb_]:=If[MetricQ[symb],InducedFrom[symb]=!=Null,False]
@@ -1184,7 +1171,7 @@ Name/:Name[LI[p_?((IntegerQ[#] && #>=0) &)],LI[q_?((IntegerQ[#] && #>=1) &)],ind
 Name/:Name[LI[p_?((IntegerQ[#] && #>=0) &)],LI[q_?((IntegerQ[#] && #>=1) &)],indices1___,-Dum1_,indices2___]h[-Dum2_,Dum1_]:=Name[LI[p],LI[q],indices1,-Dum2,indices2] /;( Length[Join[{indices1},{indices2}]]+1===Length[{inds}]);
 
 
-(* g converted to h when contracted with a projecte tensor. It is made automatic *)
+(* g converted to h when contracted with a projected tensor. It is made automatic *)
 
 Name/:Name[LI[p_?((IntegerQ[#] && #>=0) &)],LI[q_?((IntegerQ[#] && #>=0) &)],indices1___,Dum1_,indices2___]g[-Dum1_,Dum2_]:=Name[LI[p],LI[q],indices1,Dum1,indices2]h[-Dum1,Dum2] /;( Length[Join[{indices1},{indices2}]]+1===Length[{inds}]);
 
@@ -1204,7 +1191,7 @@ Name/:cd[Dum_][Name[LI[p_?((IntegerQ[#] && #>=1) &)],LI[0],indices1___,-Dum_,ind
 Name/:cd[-Dum_][Name[LI[p_?((IntegerQ[#] && #>=1) &)],LI[0],indices1___,Dum_,indices2___]]:=
 0/;( Length[Join[{indices1},{indices2}]]+1===Length[{inds}]);
 
-(* then the first rule: D^a Subscript[\[ScriptCapitalL], n] Subscript[T, a... ]= Subscript[\[ScriptCapitalL], n](D^a Subscript[T, a...]) - Subscript[\[ScriptCapitalL], n](g^ab) Subscript[D, b] Subscript[Subscript[T, a], ...] + (g^ab)[Subscript[D, b],Subscript[\[ScriptCapitalL], n]] Subscript[T, a...] *)
+(* then the first rule: D^a Subscript[\[ScriptCapitalL], n] Subscript[T, a... ]= Subscript[\[ScriptCapitalL], n](D^a Subscript[T, a...]) - Subscript[\[ScriptCapitalL], n](g^ab)Subscript[D, b] Subscript[Subscript[T, a], ...] + (g^ab)[Subscript[D, b],Subscript[\[ScriptCapitalL], n]]Subscript[T, a...] *)
 Name/:cd[Dum_][Name[LI[p_?((IntegerQ[#] && #>=1) &)],LI[q_?((IntegerQ[#] && #>=1) &)],indices1___?DownIndexQ,-Dum_,indices2___?DownIndexQ]]:=Module[{Dummy1,Dummy2},
 
 Dummy1=DummyIn[Tangent[M]];
@@ -1221,7 +1208,7 @@ If[$ConformalTime,1,1/a[h][]]*LieD[n[Dummy1]][cd[Dum][Name[LI[p],LI[q-1],indices
 ]
 ]/;( Length[Join[{indices1},{indices2}]]+1===Length[{inds}]);
 
-(* and the second rule: Subscript[D, a] Subscript[\[ScriptCapitalL], n] Subscript[T^a, ... ]= Subscript[\[ScriptCapitalL], n](D^a Subscript[T, a...]) - Subscript[\[ScriptCapitalL], n](g^ab) Subscript[D, b] Subscript[Subscript[T, a], ...] + (g^ab)[Subscript[D, b],Subscript[\[ScriptCapitalL], n]] Subscript[T, a...] *)
+(* and the second rule: Subscript[D, a] Subscript[\[ScriptCapitalL], n] Subscript[T^a, ... ]= Subscript[\[ScriptCapitalL], n](D^a Subscript[T, a...]) - Subscript[\[ScriptCapitalL], n](g^ab)Subscript[D, b] Subscript[Subscript[T, a], ...] + (g^ab)[Subscript[D, b],Subscript[\[ScriptCapitalL], n]]Subscript[T, a...] *)
 Name/:cd[-Dum_][Name[LI[p_?((IntegerQ[#] && #>=1) &)],LI[q_?((IntegerQ[#] && #>=1) &)],indices1___?DownIndexQ,Dum_,indices2___?DownIndexQ]]:=Module[{Dummy1,Dummy2},
 
 Dummy1=DummyIn[Tangent[M]];
@@ -1547,7 +1534,7 @@ Name/:cd[Dum_][Name[LI[p_?((IntegerQ[#] && #>=1) &)],LI[0],indices1___,-Dum_,ind
 
 Name/:cd[-Dum_][Name[LI[p_?((IntegerQ[#] && #>=1) &)],LI[0],indices1___,Dum_,indices2___]]:=0;
 
-(* then the first rule: D^a Subscript[\[ScriptCapitalL], n] Subscript[T, a... ]= Subscript[\[ScriptCapitalL], n](D^a Subscript[T, a...]) - Subscript[\[ScriptCapitalL], n](g^ab) Subscript[D, b] Subscript[Subscript[T, a], ...] + (g^ab)[Subscript[D, b],Subscript[\[ScriptCapitalL], n]] Subscript[T, a...] *)
+(* then the first rule: D^a Subscript[\[ScriptCapitalL], n] Subscript[T, a... ]= Subscript[\[ScriptCapitalL], n](D^a Subscript[T, a...]) - Subscript[\[ScriptCapitalL], n](g^ab)Subscript[D, b] Subscript[Subscript[T, a], ...] + (g^ab)[Subscript[D, b],Subscript[\[ScriptCapitalL], n]]Subscript[T, a...] *)
 Name/:cd[Dum_][Name[LI[p_?((IntegerQ[#] && #>=1) &)],LI[q_?((IntegerQ[#] && #>=1) &)],indices1___?DownIndexQ,-Dum_,indices2___?DownIndexQ]]:=Module[{Dummy1,Dummy2},
 
 Dummy1=DummyIn[Tangent[M]];
@@ -1564,7 +1551,7 @@ If[$ConformalTime,1,1/a[h][]]*LieD[n[Dummy1]][cd[Dum][Name[LI[p],LI[q-1],indices
 ]
 ];
 
-(* and the second rule: Subscript[D, a] Subscript[\[ScriptCapitalL], n] Subscript[T^a, ... ]= Subscript[\[ScriptCapitalL], n](D^a Subscript[T, a...]) - Subscript[\[ScriptCapitalL], n](g^ab) Subscript[D, b] Subscript[Subscript[T, a], ...] + (g^ab)[Subscript[D, b],Subscript[\[ScriptCapitalL], n]] Subscript[T, a...] *)
+(* and the second rule: Subscript[D, a] Subscript[\[ScriptCapitalL], n] Subscript[T^a, ... ]= Subscript[\[ScriptCapitalL], n](D^a Subscript[T, a...]) - Subscript[\[ScriptCapitalL], n](g^ab)Subscript[D, b] Subscript[Subscript[T, a], ...] + (g^ab)[Subscript[D, b],Subscript[\[ScriptCapitalL], n]]Subscript[T, a...] *)
 Name/:cd[-Dum_][Name[LI[p_?((IntegerQ[#] && #>=1) &)],LI[q_?((IntegerQ[#] && #>=1) &)],indices1___?DownIndexQ,Dum_,indices2___?DownIndexQ]]:=Module[{Dummy1,Dummy2},
 
 Dummy1=DummyIn[Tangent[M]];
@@ -1687,9 +1674,7 @@ dim=DimOfManifold[Manifold];
 If[NumericQ[dim]&&dim<2,Throw[Message[SetSlicing::dimension,dim]]];
 
 If[BianchiBool[SpaceTimeType],
-If[Not@NumericQ[dim]||dim=!=4,Print["** Warning: You define a Bianchi spacetime for a dimension which is not 4. The Ellis&MacCallum-1969 parameterization of the constants of structure as \!\(\*SubscriptBox[SuperscriptBox[\"C\", \"i\"], \"jk\"]\)=\!\(\*SubscriptBox[\"\[Epsilon]\", \"jkl\"]\)\!\(\*SuperscriptBox[\"n\", \"li\"]\) + \!\(\*SubscriptBox[SuperscriptBox[\"\[Delta]\", \"i\"], 
-RowBox[{\"[\", \"j\"}]]\) \!\(\*SubscriptBox[\"a\", 
-RowBox[{\"k\", \"]\"}]]\) is not possible. The option $OpenConstantsOfStructure is set to False. **"];
+If[Not@NumericQ[dim]||dim=!=4,Print["** Warning: You define a Bianchi spacetime for a dimension which is not 4. The Ellis&MacCallum-1969 parameterization of the constants of structure as \!\(\*SubscriptBox[SuperscriptBox[\(C\), \(i\)], \(jk\)]\)=\!\(\*SubscriptBox[\(\[Epsilon]\), \(jkl\)]\)\!\(\*SuperscriptBox[\(n\), \(li\)]\) + \!\(\*SubscriptBox[SuperscriptBox[\(\[Delta]\), \(i\)], \([j\)]\) \!\(\*SubscriptBox[\(a\), \(\(k\)\(]\)\)]\) is not possible. The option $OpenConstantsOfStructure is set to False. **"];
 $OpenConstantsOfStructure=False;
 ]];
 
@@ -2022,18 +2007,20 @@ Module[{dum},dum=DummyIn[Tangent[Manifold]];(*Print["** Warning: a Lie derivativ
 
 ];
 
+(* TODO MAJOR PROBLEM HERE. IF the tensores are not Symmetric or not transverse or not traceless etc... the properties are also applied so this will give wrong results. TODO TODO. SO we should remove the option that these tensors are tranverse. I will patch that. In general users use only transverse vectors though.*)
 
-(* We gather many many rules for the commutation of induced derivatives. These are in general made to make sure that the transverse conditions of vectors and tensors are used. It is also made to gather Laplacians.*)
+(* We gather many many rules for the commutation of induced derivatives. These are in general made to make sure that the transverse conditions of vectors and tensors are used. It is also made to gather Laplacians.
+*)
 DummyS[Sym_]:=SymbolJoin[DS,Sym];
 DummyV[Sym_]:=SymbolJoin[DV,Sym];
 DummyT[Sym_]:=SymbolJoin[DT,Sym];
 
 Block[{Print},
 DefProjectedTensor[Evaluate[DummyS[h]][],h,SpaceTimesOfDefinition->{"Perturbed"}];
-DefProjectedTensor[Evaluate[DummyV[h]][-ind1],h,SpaceTimesOfDefinition->{"Perturbed"},TensorProperties->{"Transverse"}];
-DefProjectedTensor[Evaluate[DummyT[h]][-ind1,-ind2],h,TensorProperties->{"SymmetricTensor","Transverse","Traceless"},SpaceTimesOfDefinition->{"Perturbed"}];
+DefProjectedTensor[Evaluate[DummyV[h]][-ind1],h,SpaceTimesOfDefinition->{"Perturbed"},TensorProperties->{(*"Transverse"*)}];
+DefProjectedTensor[Evaluate[DummyT[h]][-ind1,-ind2],h,TensorProperties->{"SymmetricTensor"(*,(*"Transverse",*)"Traceless"*)},SpaceTimesOfDefinition->{"Perturbed"}];
 ];
-
+(* Here we consider a general tensor which is not necessarily traceless or transverse. But it is symmetric.*)
 
 $CommutecdRules=Join[$CommutecdRules,Flatten@Join[
 PatternLeft[#,{n,q}]&/@(PatternTensorLeftScalar[#,Evaluate[DummyS[h]][LI[n],LI[q]]]&/@BuildRule[Evaluate[{cd[-ind1][cd[ind2][cd[ind3][cd[ind1][Evaluate[DummyS[h]][LI[n],LI[q]]]]]],org[CommuteCovDs[CommuteCovDs[cd[-ind1][cd[ind2][cd[ind3][cd[ind1][Evaluate[DummyS[h]][LI[n],LI[q]]]]]],cd,{ind2,-ind1}],cd,{ind3,-ind1}]]}]]),
@@ -2199,37 +2186,43 @@ Join[(*PatternLeft[#,{i1,i2}]&/@*){Rule@@Switch[gauge ,
 {dg[LI[1],i1_,i2_],-u[i1]u[i2]2\[Phi][h][LI[1],LI[0]]
 -2\[Psi][h][LI[1],LI[0]](h[i1,i2]+If[ShBool,K[h][LI[0],LI[0],i1,i2]/H[h][LI[0],LI[0]],0])
 +BT1 2Et[h][LI[1],LI[0],i1,i2]
--BV1 (u[i1]Bv[h][LI[1],LI[0],i2]+u[i2]Bv[h][LI[1],LI[0],i1])},
-"ComovingGauge",
+-BV1(u[i1]Bv[h][LI[1],LI[0],i2]+u[i2]Bv[h][LI[1],LI[0],i1])},
+"FluidComovingGauge",
 {dg[LI[1],i1_,i2_],Identity[-u[i1]u[i2]2\[Phi][h][LI[1],LI[0]]
 -2\[Psi][h][LI[1],LI[0]](h[i1,i2]+If[ShBool,K[h][LI[0],LI[0],i1,i2]/H[h][LI[0],LI[0]],0])
 +BT1 2Et[h][LI[1],LI[0],i1,i2]
--BV1 (u[i1]Bv[h][LI[1],LI[0],i2]+u[i2]Bv[h][LI[1],LI[0],i1])
+-BV1(u[i1]Bv[h][LI[1],LI[0],i2]+u[i2]Bv[h][LI[1],LI[0],i1])
+-(u[i1]cd[i2]@Bs[h][LI[1],LI[0]]+u[i2]cd[i1]@Bs[h][LI[1],LI[0]])]},
+"ScalarFieldComovingGauge",
+{dg[LI[1],i1_,i2_],Identity[-u[i1]u[i2]2\[Phi][h][LI[1],LI[0]]
+-2\[Psi][h][LI[1],LI[0]](h[i1,i2]+If[ShBool,K[h][LI[0],LI[0],i1,i2]/H[h][LI[0],LI[0]],0])
++BT1 2Et[h][LI[1],LI[0],i1,i2]
+-BV1(u[i1]Bv[h][LI[1],LI[0],i2]+u[i2]Bv[h][LI[1],LI[0],i1])
 -(u[i1]cd[i2]@Bs[h][LI[1],LI[0]]+u[i2]cd[i1]@Bs[h][LI[1],LI[0]])]},
 "SynchronousGauge",
 {dg[LI[1],i1_,i2_],Identity[
 -2\[Psi][h][LI[1],LI[0]](h[i1,i2]+If[ShBool,K[h][LI[0],LI[0],i1,i2]/H[h][LI[0],LI[0]],0])
 +BT1 2Et[h][LI[1],LI[0],i1,i2]
 +2cd[i1]@cd[i2]@Es[h][LI[1],LI[0]]
-+BV1 (cd[i1]@Ev[h][LI[1],LI[0],i2]+cd[i2]@Ev[h][LI[1],LI[0],i1])]},
++BV1(cd[i1]@Ev[h][LI[1],LI[0],i2]+cd[i2]@Ev[h][LI[1],LI[0],i1])]},
 "FlatGauge",
 {dg[LI[1],i1_,i2_],Identity[-u[i1]u[i2]2\[Phi][h][LI[1],LI[0]]
 +BT1 2Et[h][LI[1],LI[0],i1,i2]
--BV1 (u[i1]Bv[h][LI[1],LI[0],i2]+u[i2]Bv[h][LI[1],LI[0],i1])
+-BV1(u[i1]Bv[h][LI[1],LI[0],i2]+u[i2]Bv[h][LI[1],LI[0],i1])
 -(u[i1]cd[i2]@Bs[h][LI[1],LI[0]]+u[i2]cd[i1]@Bs[h][LI[1],LI[0]])]},
 "AnyGauge",
 {dg[LI[1],i1_,i2_],Identity[-u[i1]u[i2]2\[Phi][h][LI[1],LI[0]]
 -2\[Psi][h][LI[1],LI[0]](h[i1,i2]+If[ShBool,K[h][LI[0],LI[0],i1,i2]/H[h][LI[0],LI[0]],0])
 +BT1 2Et[h][LI[1],LI[0],i1,i2]
 +2cd[i1]@cd[i2]@Es[h][LI[1],LI[0]]
-+BV1 (cd[i1]@Ev[h][LI[1],LI[0],i2]+cd[i2]@Ev[h][LI[1],LI[0],i1])
--BV1 (u[i1]Bv[h][LI[1],LI[0],i2]+u[i2]Bv[h][LI[1],LI[0],i1])
++BV1(cd[i1]@Ev[h][LI[1],LI[0],i2]+cd[i2]@Ev[h][LI[1],LI[0],i1])
+-BV1(u[i1]Bv[h][LI[1],LI[0],i2]+u[i2]Bv[h][LI[1],LI[0],i1])
 -(u[i1]cd[i2]@Bs[h][LI[1],LI[0]]+u[i2]cd[i1]@Bs[h][LI[1],LI[0]])]},
 "IsoDensityGauge",
 {dg[LI[1],i1_,i2_],Identity[-u[i1]u[i2]2\[Phi][h][LI[1],LI[0]]
 -2\[Psi][h][LI[1],LI[0]](h[i1,i2]+If[ShBool,K[h][LI[0],LI[0],i1,i2]/H[h][LI[0],LI[0]],0])
 +BT1 2Et[h][LI[1],LI[0],i1,i2]
--BV1 (u[i1]Bv[h][LI[1],LI[0],i2]+u[i2]Bv[h][LI[1],LI[0],i1])
+-BV1(u[i1]Bv[h][LI[1],LI[0],i2]+u[i2]Bv[h][LI[1],LI[0],i1])
 -(u[i1]cd[i2]@Bs[h][LI[1],LI[0]]+u[i2]cd[i1]@Bs[h][LI[1],LI[0]])]}
 ]},
 
@@ -2240,7 +2233,13 @@ Join[(*PatternLeft[#,{i1,i2}]&/@*){Rule@@Switch[gauge ,
 -2\[Psi][h][LI[n],LI[0]](h[i1,i2]+If[ShBool,K[h][LI[0],LI[0],i1,i2]/H[h][LI[0],LI[0]],0])
 +2Et[h][LI[n],LI[0],i1,i2]
 -(u[i1]Bv[h][LI[n],LI[0],i2]+u[i2]Bv[h][LI[n],LI[0],i1])]},
-"ComovingGauge",
+"FluidComovingGauge",
+{dg[LI[n_?(#>=2&)],i1_,i2_],Identity[-u[i1]u[i2]2\[Phi][h][LI[n],LI[0]]
+-2\[Psi][h][LI[n],LI[0]](h[i1,i2]+If[ShBool,K[h][LI[0],LI[0],i1,i2]/H[h][LI[0],LI[0]],0])
++2Et[h][LI[n],LI[0],i1,i2]
+-(u[i1]Bv[h][LI[n],LI[0],i2]+u[i2]Bv[h][LI[n],LI[0],i1])
+-(u[i1]cd[i2]@Bs[h][LI[n],LI[0]]+u[i2]cd[i1]@Bs[h][LI[n],LI[0]])]},
+"ScalarFieldComovingGauge",
 {dg[LI[n_?(#>=2&)],i1_,i2_],Identity[-u[i1]u[i2]2\[Phi][h][LI[n],LI[0]]
 -2\[Psi][h][LI[n],LI[0]](h[i1,i2]+If[ShBool,K[h][LI[0],LI[0],i1,i2]/H[h][LI[0],LI[0]],0])
 +2Et[h][LI[n],LI[0],i1,i2]
@@ -2367,7 +2366,9 @@ Module[{cd1,cd2,confa2,confa,M,res,inds},cd1=CovDOfMetric[metric1];cd2=CovDOfMet
 
 
 confa2=ConformalFactor[metric2,metric1];
-confa=Sqrt[ConformalFactor[metric2,metric1]]/.Sqrt[x_^2]:>x;
+confa=Sqrt[ConformalFactor[metric2,metric1]]/.Sqrt[x_^n_?EvenQ]:>x^(n/2);
+(*In principle this should give a or 1/a depending if we go from metric1 to metric2 or metric2 to metric1*)
+
 M=ManifoldOfCovD[cd1];
 inds=DummyIn/@Table[Tangent[M],{Range[4]}];
 With[{i1=inds[[1]],i2=inds[[2]],i3=inds[[3]],i4=inds[[4]]},
@@ -2488,7 +2489,11 @@ res=(beforeputtingconfheads
 
 (* And then all other rules to remove the ConfHead*)
 
-resbis=res//.RulesConf[metric1,metric2];
+
+(* A bug with Scalar expressions. I have added a NoSCalar . Check if this works fine for the rest. It seems so.*)
+(* It seems to be fine so I should post the modification*)
+(* This avoids the appearance of sums inside SymmetryOf which were resulting from a removed Scalar head.*)
+resbis=NoScalar[res//.RulesConf[metric1,metric2]];
 
 
 (* So here we have conformally transformed the expression, but now we want to express it in function of the original metric and orginal covD etc...
@@ -2608,7 +2613,8 @@ SortCovDsStart[cd];If[$DebugInfoQ,Print["First Canonicalisation with automatic s
 counter=0;
 restemp=Map[(If[$DebugInfoQ,counter=counter+1;If[Mod[counter,10]===0(*||counter>=4180*),Print["We canonicalize term ",counter," ",#];];];SameDummies@ToCanonical@ContractMetric[#])&,restemp0];
 Block[{Print},SortCovDsStop[cd];];,
-Block[{Print},Off[Unset::norep];SortCovDsStop[cd];On[Unset::norep];];restemp=res;
+Block[{Print},Off[Unset::norep];SortCovDsStop[cd];On[Unset::norep];];
+restemp=expr;
 ];
 (*Entering the Cov Ds sorting defined by BackgroundSLicing. Made to gather the Laplacian near the perturbations, and to use the transversailty conditions.*)
 If[$DebugInfoQ,Print["Entering the commutation of Cov Ds..."];];
@@ -2620,7 +2626,7 @@ res
 ]
 
 
-SplitCovDs[expr_,CD_,cd_]:=FixedPoint[FixedPoint[GradNormalToExtrinsicK[#]&,ToInducedDerivative[#,CD,cd]&],expr];
+(*SplitCovDs[expr_,CD_,cd_]:=FixedPoint[FixedPoint[GradNormalToExtrinsicK[#]&,ToInducedDerivative[#,CD,cd]&],expr];*)
 
 
 CheckSTFTensors[expr_,h_,exceptlist_List]:=Module[{tens},With[{listpb=Cases[Expand@expr,tens_?((And@@(Function[t,t=!=#]/@exceptlist))&&xTensorQ[#]&&Not@DefProjectedTensorQ[#,h]&)[inds___]->tens,Infinity]},Print["** Warning: the tensor ",#," was not defined with DefProjectedTensor. The rules necessary for its splitting were thus not defined. **"]&/@(DeleteDuplicates@listpb)];];
@@ -2687,7 +2693,7 @@ Listlhsrhsnoreplace=Reverse@Transpose[{tableleft,tableleftnopattern}];
 RulesCovDs=(
 tempdown=IndicesDown[Last@#];
 rulepert=leftupindicesnopatterntests:>Evaluate[(InducedDecomposition[leftupindicesnopattern,{h,u}]/.rulesprojected/.Scalar->ProtectMyScalar)];
-temp=tempdown/.rulepert;
+temp=(tempdown/.rulepert)/.FixProtectScalar;
 tobecan=FullToInducedDerivative[temp,CD,cd];
 oncecan=ContractMetricOutSideProjector[Expand@tobecan,cd];
 rhs=ToCanonical[oncecan,UseMetricOnVBundle->None];
@@ -2718,9 +2724,12 @@ If[$DebugInfoQ,Print["rules ",rules]];
 (* TODO This part needs commenting. A lot of commenting. *)
 res=AbsoluteTiming[
 res0=FullToInducedDerivativeAndCDDown[org[((expr/.$RulesVanishingBackgroundFields[h])//ProjectorToMetric//GaussCodazzi[#,h]&)/.Projector[h]->ProjectWith[h]],CD,cd]//ProjectorToMetric;
-If[$DebugInfoQ,Print["Stage 0  ", res0]];
 
-res1 =ToCanonical[(res0/.rules)/.ih_?InertHeadQ[ex_]:>ih[ToCanonical[ex]],UseMetricOnVBundle->None];
+ If[$DebugInfoQ,Print["Stage 0", res0]];
+
+(* 7/12/14: Michael Kopp Found a bug below. I have replaced ToCanonical by ToCanonical@NoScalar and this seems to correct for the bug. The problem is the treatment of Scalars by ToCanonical. In some very strange configurations this did not work. This is very strange though and we should warn JMM about it. *)
+(* 8/12/14 In fact the solution is to make sure that we expand before using PutScalar. So that there is noever any sum inside a Scalar Head. Just to be sure, I add both solutions.*)
+res1 =ToCanonical[NoScalar[(res0/.rules)/.ih_?InertHeadQ[ex_]:>ih[ToCanonical[ex]]],UseMetricOnVBundle->None];
 If[$DebugInfoQ,Print["Stage 1  ", res1," \n ",res1/.ListPairs ]];
 
 res2=((res1//.ListPairs)/.$BackgroundFieldRule)/.Projector[h][exp___]:>Projector[h][Expand@NoScalar[exp]];
@@ -2760,7 +2769,7 @@ res7
 
 If[$DebugInfoQ,Print["Constants of structure opened and simplified. "]];
 
-CheckSTFTensors[Last@res,h,{g,u,Riemann[cd],Ricci[cd],RicciScalar[cd],h,CS[h],nt[h],av[h],\[ScriptK][h],delta,epsilon[h],epsilon[g]}];
+CheckSTFTensors[Last@res,h,{g,u,SymbolJoin[Det,g],Riemann[cd],Ricci[cd],RicciScalar[cd],h,CS[h],nt[h],av[h],\[ScriptK][h],delta,epsilon[h],epsilon[g]}];
 
 If[$DefInfoQ,Print["The Splitting of ",Take[expr,1]," +... was performed in ",First@res ," seconds."];];
 
@@ -2790,7 +2799,7 @@ SetNumberOfArguments[SplitPerturbations,{2,3}]
 Protect[SplitPerturbations];
 
 
-ToxPandFromRules[expr_,RulesList_List,h_(*?InducedMetricQ*),n_(*?IntegerQ*)]:=
+ToxPandFromRules[expr_,RulesList_List,h_?InducedMetricQ,n_?IntegerQ]:=
 With[{g=First@InducedFrom@h},
 If[Not[DefTensorQ[ConformalMetricName[g,a[h]]]]&&SpaceType[h]=!="Minkowski",
 If[$DefInfoQ,
@@ -2842,7 +2851,7 @@ SplitPerturbations[ExpandPerturbation@Perturbed[Conformal[g,ConformalMetricName[
 ];
 
 SetNumberOfArguments[ToxPand,{6,8}];
-Protect[ToxPandFromRules];
+Protect[ToxPand];
 
 
 ExtractComponents[expr_,h_?InducedMetricQ,proj_List,ListIndsToContract_List]:=
@@ -2907,7 +2916,7 @@ temp1=GaugeChange[confpert,my\[Xi]];
 If[$DebugInfoQ,Print["temp1 ",temp1]];
 
 (* Then we perform the GaugeChange using the function GaugeChange of xPert *)
-temp=PutScalar[LieDToCovD[ExpandPerturbation[temp1],CD]/.rulebackgroundfield];
+temp=PutScalar@Expand[LieDToCovD[ExpandPerturbation[temp1],CD]/.rulebackgroundfield];
 If[$DebugInfoQ,Print["temp ",temp]];
 
 (*Then we say again that the conformal factor should not be perturbed*)
@@ -2948,16 +2957,16 @@ Protect[SplitFieldsAndGaugeChange];
 RulesVelocitySpatial[h_?InducedMetricQ,uf_,duf_,NormVectorSquare_,gauge_?GaugeQ,order_?IntegerQ,TiltedBool_:False]:=Module[{n,q},With[{M=ManifoldOfCovD@CovDOfMetric@h,cd=CovDOfMetric@h,u=Last@InducedFrom[h]},With[{ind1=DummyIn@Tangent@M,ind2=DummyIn@Tangent@M},
 Flatten@Join[
 Flatten@Join[
-If[gauge==="ComovingGauge",{\[CurlyPhi][LI[n_?(#>=1&)],LI[q_]]:>0},{}],
+If[gauge==="ScalarFieldComovingGauge",{\[CurlyPhi][LI[n_?(#>=1&)],LI[q_]]:>0},{}],
 If[gauge==="IsoDensityGauge",{\[Rho][uf][LI[n_?(#>=1&)],LI[q_]]:>0},{}],
 If[TiltedBool,{BuildRule[Evaluate[{uf[ind1],(Sqrt[Scalar[Vspat[h,uf][LI[0],LI[0],ind2]Vspat[h,uf][LI[0],LI[0],-ind2]]-NormVectorSquare])u[ind1]+Vspat[h,uf][LI[0],LI[0],ind1]}]]},
 {BuildRule[Evaluate[{uf[ind1],u[ind1]}]]}],
 
 {BuildRule@Evaluate[{duf[LI[1],ind1],
-Evaluate[V0[h,uf][LI[1],LI[0]]u[ind1]+cd[ind1][If[gauge==="ComovingGauge",-Bs[h][LI[1],LI[0]] ,Vs[h,uf][LI[1],LI[0]] ]]+ BV1 Vv[h,uf][LI[1],LI[0],ind1]]}]}],
+Evaluate[V0[h,uf][LI[1],LI[0]]u[ind1]+cd[ind1][If[gauge==="FluidComovingGauge",-Bs[h][LI[1],LI[0]] ,Vs[h,uf][LI[1],LI[0]] ]]+ BV1 Vv[h,uf][LI[1],LI[0],ind1]]}]}],
 Table[
 BuildRule@Evaluate[{duf[LI[i],ind1],
-Evaluate[V0[h,uf][LI[i],LI[0]]u[ind1]+cd[ind1][If[gauge==="ComovingGauge",-Bs[h][LI[i],LI[0]] ,Vs[h,uf][LI[i],LI[0]] ]]+ Vv[h,uf][LI[i],LI[0],ind1]]}],{i,2,order}]
+Evaluate[V0[h,uf][LI[i],LI[0]]u[ind1]+cd[ind1][If[gauge==="FluidComovingGauge",-Bs[h][LI[i],LI[0]] ,Vs[h,uf][LI[i],LI[0]] ]]+ Vv[h,uf][LI[i],LI[0],ind1]]}],{i,2,order}]
 ]
 ]
 ]
@@ -2977,7 +2986,7 @@ RuleBoost[0]:={};
 RuleBoostUpton[m_]:=Flatten@Table[ToCanonical@ContractMetric[RuleBoost[i]],{i,0,m}];
 
 RuleBoost[n_?(#>=1&)]:=MakeRule[Evaluate[{
-Boost[LI[n],LI[0]],ToCanonical@ContractMetric@PutScalar[(Boost[LI[n],LI[0]]/.First@IndexSolve[org[ExpandPerturbation@Perturbation[g[-i1,-i2]vector[i1]vector[i2],n]/.LocalRulesVspat]==0,Boost[LI[n],LI[0]]])/.RuleBoostUpton[n-1]/.LocalRulesVspat]/.$BackgroundFieldRule}]];
+Boost[LI[n],LI[0]],ToCanonical@ContractMetric@PutScalar@Expand[(Boost[LI[n],LI[0]]/.First@IndexSolve[org[ExpandPerturbation@Perturbation[g[-i1,-i2]vector[i1]vector[i2],n]/.LocalRulesVspat]==0,Boost[LI[n],LI[0]]])/.RuleBoostUpton[n-1]/.LocalRulesVspat]/.$BackgroundFieldRule}]];
 
 Join[RulesVspat/.RuleBoostUpton[order]]
 
@@ -3093,7 +3102,7 @@ RuleBoostUpton[m_]:=Flatten@Table[ToCanonical@ContractMetric[RuleBoost[i]],{i,0,
 Boost[LI[p],LI[0]]:>Evaluate[ToCanonical@ContractMetric@PutScalar[(X[]/.First@IndexSolve[org[ExpandPerturbation@Perturbation[g[ind1,ind2]vector[-ind1]vector[-ind2],p]/.LocalRulesNspat/.Boost[LI[p],LI[0]]->X[]]==0,X[]])/.RuleBoostUpton[p-1]/.LocalRulesNspat]/.$BackgroundFieldRule]);*)
 
 RuleBoost[p_?(#>=1&)]:=
-MakeRule[Evaluate[{Boost[LI[p],LI[0]],ToCanonical@ContractMetric@PutScalar[(Boost[LI[p],LI[0]]/.First@IndexSolve[org[ExpandPerturbation@Perturbation[g[ind1,ind2]vector[-ind1]vector[-ind2],p]/.LocalRulesNspat]==0,Boost[LI[p],LI[0]]])/.RuleBoostUpton[p-1]/.LocalRulesNspat]/.$BackgroundFieldRule}]];
+MakeRule[Evaluate[{Boost[LI[p],LI[0]],ToCanonical@ContractMetric@PutScalar@Expand[(Boost[LI[p],LI[0]]/.First@IndexSolve[org[ExpandPerturbation@Perturbation[g[ind1,ind2]vector[-ind1]vector[-ind2],p]/.LocalRulesNspat]==0,Boost[LI[p],LI[0]]])/.RuleBoostUpton[p-1]/.LocalRulesNspat]/.$BackgroundFieldRule}]];
 
 RuleBoostUpton[order]
 ]
