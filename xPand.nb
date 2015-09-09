@@ -62,7 +62,7 @@ cosmology.
 It allows for the calculation of perturbations for all types of Bianchi \
 (homogeneous) cosmologies, at any order and in several gauges. 
         
-Version 0.4.2   (10/11/2013)\
+Version 0.4.3   (9/9/2015)\
 \>", "Text",
  InitializationCell->True,
  FontSize->14],
@@ -136,7 +136,7 @@ Cell[TextData[{
     URL["http://metric.iem.csic.es/Martin-Garcia/"], None}],
   FontSize->13],
  "\n\t\nIt is tested so far for xAct_1.0.5 and xPert_1.0.3, under Mathematica \
-7.0, 8.0 and 9.0."
+7.0, 8.0, 9.0 and 10.0."
 }], "Text",
  InitializationCell->True,
  FontSize->14],
@@ -152,9 +152,9 @@ Cell[BoxData[
  RowBox[{
   RowBox[{"xAct`xPand`$Version", "=", 
    RowBox[{"{", 
-    RowBox[{"\"\<0.4.2\>\"", ",", 
+    RowBox[{"\"\<0.4.3\>\"", ",", 
      RowBox[{"{", 
-      RowBox[{"2013", ",", "11", ",", "10"}], "}"}]}], "}"}]}], 
+      RowBox[{"2015", ",", "09", ",", "09"}], "}"}]}], "}"}]}], 
   ";"}]], "Input",
  InitializationCell->True],
 
@@ -162,16 +162,16 @@ Cell[BoxData[{
  RowBox[{
   RowBox[{"xAct`xPand`$xTensorVersionExpected", "=", 
    RowBox[{"{", 
-    RowBox[{"\"\<1.0.5\>\"", ",", 
+    RowBox[{"\"\<1.1.2\>\"", ",", 
      RowBox[{"{", 
-      RowBox[{"2013", ",", "1", ",", "27"}], "}"}]}], "}"}]}], 
+      RowBox[{"2015", ",", "8", ",", "3"}], "}"}]}], "}"}]}], 
   ";"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"xAct`xPand`$xPertVersionExpected", "=", 
    RowBox[{"{", 
-    RowBox[{"\"\<1.0.3\>\"", ",", 
+    RowBox[{"\"\<1.0.5\>\"", ",", 
      RowBox[{"{", 
-      RowBox[{"2013", ",", "1", ",", "27"}], "}"}]}], "}"}]}], 
+      RowBox[{"2014", ",", "9", ",", "28"}], "}"}]}], "}"}]}], 
   ";"}]}], "Input",
  InitializationCell->True],
 
@@ -282,9 +282,9 @@ types) *)
   
 (* :Context: xAct`xPand` *)
 
-(* :Package Version: 0.4.0 *)
+(* :Package Version: 0.4.3 *)
 
-(* :Copyright: Cyril Pitrou, Xavier Roy and Obinna Umeh (2012-2013) *)
+(* :Copyright: Cyril Pitrou, Xavier Roy and Obinna Umeh (2012-2016) *)
 
 (* :History: see xPand.History *)
 
@@ -958,8 +958,8 @@ with down indices.\>\""}], ";"}], "\[IndentingNewLine]",
 properties to tensors that are, at least, fully symmetric.\>\""}], ";"}], 
    "\[IndentingNewLine]", "\[IndentingNewLine]", 
    RowBox[{"(*", 
-    RowBox[{"*", " ", "ExtractComponents"}], " ", "**)"}], 
-   "\[IndentingNewLine]", "\n", 
+    RowBox[{"*", " ", "ExtractComponents"}], " ", "**)"}], "\n", 
+   "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{
      RowBox[{"ExtractComponents", "::", "invalidprojector"}], " ", "=", " ", 
@@ -1460,7 +1460,7 @@ Cell[BoxData[
      "\"\<$ListFieldsBackgroundOnly[h], with 'h' being the induced metric on \
 the hypersurfaces, is the list of fields that live on the background only. It \
 is automatically defined when calling the function SetSlicing.\>\""}], ";"}], 
-   "\[IndentingNewLine]", "\n", 
+   "\n", "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{
      RowBox[{"$ListFieldsPerturbedOnly", "::", "usage"}], "=", 
@@ -2625,7 +2625,7 @@ Cell[BoxData[
                     RowBox[{"i", ",", "1", ",", "q"}], "}"}]}], "]"}]}]}], 
                "]"}]}], "}"}], "]"}]}], "\[IndentingNewLine]", "]"}]}], 
         "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", "]"}]}], ";"}],
-    "\[IndentingNewLine]", "\n", 
+    "\n", "\[IndentingNewLine]", 
    RowBox[{"xTensorFormStart", "[", "Tensor", "]"}]}]}]], "Input",
  InitializationCell->True],
 
@@ -14977,7 +14977,7 @@ Cell[BoxData[{
      RowBox[{
       RowBox[{"MyChangeChristoffel", "[", 
        RowBox[{"#1", ",", "#2", ",", "cd1"}], "]"}], "&"}], ",", "expr", ",", 
-     "cd2list"}], "]"}]}], "\[IndentingNewLine]"}], "\n", 
+     "cd2list"}], "]"}]}], "\n"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"MyChangeChristoffel", "[", 
    RowBox[{"expr_", ",", "cd2_", ",", "cd1_"}], "]"}], ":=", 
@@ -15418,7 +15418,7 @@ since we do not know very well how to handle that. **\>\"", "]"}], ";"}]}],
                 "]"}], ";", "\[IndentingNewLine]", "res"}]}], 
              "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", "]"}]}], 
          "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", "]"}]}], 
-     "\[IndentingNewLine]", "]"}]}], ";"}], "\n"}], "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", "]"}]}], ";"}], "\[IndentingNewLine]"}], "\n", 
  RowBox[{
   RowBox[{
    RowBox[{
@@ -15625,38 +15625,6 @@ Cell[BoxData[{
    RowBox[{"SeparateIndicesDownOfInverseMetric", "[", "_", "]"}], "[", 
    "expr_", "]"}], ":=", "expr"}]}], "Input",
  InitializationCell->True],
-
-Cell["\<\
-We try to avoid the appearance of SymmetryOf which bugs on sums of \
-expressions. This is debugging. Not clean. And does not work anyway.\
-\>", "Text"],
-
-Cell[BoxData[
- RowBox[{"(*", 
-  RowBox[{
-   RowBox[{
-    RowBox[{
-     RowBox[{"Conformal", "[", "mecbas_", "]"}], "[", 
-     RowBox[{"m1_", ",", "m2_"}], "]"}], "[", "expr_Plus", "]"}], ":=", 
-   RowBox[{
-    RowBox[{
-     RowBox[{"Map", "[", 
-      RowBox[{
-       RowBox[{
-        RowBox[{"Conformal", "[", "mecbas", "]"}], "[", 
-        RowBox[{"m1", ",", "m2"}], "]"}], ",", "expr"}], "]"}], 
-     "\[IndentingNewLine]", 
-     RowBox[{
-      RowBox[{"Conformal", "[", 
-       RowBox[{"m1_", ",", "m2_"}], "]"}], "[", "expr_Plus", "]"}]}], ":=", 
-    RowBox[{"Map", "[", 
-     RowBox[{
-      RowBox[{"Conformal", "[", 
-       RowBox[{"m1", ",", "m2"}], "]"}], ",", "expr"}], "]"}]}]}], 
-  "*)"}]], "Input",
- InitializationCell->True],
-
-Cell["End of debug attempt", "Text"],
 
 Cell[BoxData[{
  RowBox[{
@@ -15873,17 +15841,25 @@ Cell[BoxData[{
         " ", "remove", " ", "the", " ", "ConfHead"}], "*)"}], 
       "\[IndentingNewLine]", "\[IndentingNewLine]", "\[IndentingNewLine]", 
       RowBox[{"(*", " ", 
-       RowBox[{"DEBUG", " ", 
-        RowBox[{"Attempt", ".", " ", "I"}], " ", "have", " ", "added", " ", 
-        "a", " ", 
-        RowBox[{"NoSCalar", ".", " ", "Check"}], " ", "if", " ", "this", " ", 
-        "works", " ", "fine", " ", "for", " ", "the", " ", "rest"}], "*)"}], 
-      "\[IndentingNewLine]", 
+       RowBox[{"A", " ", "bug", " ", "with", " ", "Scalar", " ", 
+        RowBox[{"expressions", ".", " ", "I"}], " ", "have", " ", "added", 
+        " ", "a", " ", 
+        RowBox[{"NoSCalar", " ", ".", " ", "Check"}], " ", "if", " ", "this", 
+        " ", "works", " ", "fine", " ", "for", " ", "the", " ", 
+        RowBox[{"rest", ".", " ", "It"}], " ", "seems", " ", 
+        RowBox[{"so", "."}]}], "*)"}], "\[IndentingNewLine]", 
       RowBox[{"(*", " ", 
        RowBox[{
        "It", " ", "seems", " ", "to", " ", "be", " ", "fine", " ", "so", " ", 
         "I", " ", "should", " ", "post", " ", "the", " ", "modification"}], 
        "*)"}], "\[IndentingNewLine]", 
+      RowBox[{"(*", " ", 
+       RowBox[{
+       "This", " ", "avoids", " ", "the", " ", "appearance", " ", "of", " ", 
+        "sums", " ", "inside", " ", "SymmetryOf", " ", "which", " ", "were", 
+        " ", "resulting", " ", "from", " ", "a", " ", "removed", " ", 
+        "Scalar", " ", 
+        RowBox[{"head", "."}]}], "*)"}], "\[IndentingNewLine]", 
       RowBox[{"resbis", "=", 
        RowBox[{"NoScalar", "[", 
         RowBox[{"res", "//.", 
@@ -17644,8 +17620,9 @@ Cell[BoxData[
              RowBox[{"$DebugInfoQ", ",", 
               RowBox[{
               "Print", "[", 
-               "\"\<Constants of structure opened and simplified. \>\"", "]"}]
-               }], "]"}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+               "\"\<Constants of structure opened and simplified. \>\"", 
+               "]"}]}], "]"}], ";", "\[IndentingNewLine]", 
+            "\[IndentingNewLine]", 
             RowBox[{"CheckSTFTensors", "[", 
              RowBox[{
               RowBox[{"Last", "@", "res"}], ",", "h", ",", 

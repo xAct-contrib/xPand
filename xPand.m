@@ -19,11 +19,11 @@
 
 
 
-xAct`xPand`$Version={"0.4.2",{2013,11,10}};
+xAct`xPand`$Version={"0.4.3",{2015,09,09}};
 
 
-xAct`xPand`$xTensorVersionExpected={"1.0.5",{2013,1,27}};
-xAct`xPand`$xPertVersionExpected={"1.0.3",{2013,1,27}};
+xAct`xPand`$xTensorVersionExpected={"1.1.2",{2015,8,3}};
+xAct`xPand`$xPertVersionExpected={"1.0.5",{2014,9,28}};
 
 
 (* xPand: Cosmological perturbations about homogeneous space-times *)
@@ -59,9 +59,9 @@ You should have received a copy of the GNU General Public License
   
 (* :Context: xAct`xPand` *)
 
-(* :Package Version: 0.4.0 *)
+(* :Package Version: 0.4.3 *)
 
-(* :Copyright: Cyril Pitrou, Xavier Roy and Obinna Umeh (2012-2013) *)
+(* :Copyright: Cyril Pitrou, Xavier Roy and Obinna Umeh (2012-2016) *)
 
 (* :History: see xPand.History *)
 
@@ -2450,10 +2450,6 @@ SeparateIndicesDownOfInverseMetric[invmetric_?InverseMetricQ][expr_]:=Fold[Separ
 SeparateIndicesDownOfInverseMetric[_][expr_]:=expr
 
 
-(*Conformal[mecbas_][m1_,m2_][expr_Plus]:=Map[Conformal[mecbas][m1,m2],expr]
-Conformal[m1_,m2_][expr_Plus]:=Map[Conformal[m1,m2],expr]*)
-
-
 Conformal[metricbase_?MetricQ][metric1_?MetricQ,metric2_?MetricQ][expr_]:=Module[{cdb,cd1,cd2,res,res2,(*oldpre,*)resbis,exprnoproj,M,i1,i2,beforeputtingconfheads,IDInvMetric},
 (* The conflict with CreenDollarIndicea has now been solved. So there is no need to redefine tempararoly $PrePrint*)
 (*oldpre=$PrePrint;$PrePrint=Identity;*)
@@ -2494,8 +2490,9 @@ res=(beforeputtingconfheads
 (* And then all other rules to remove the ConfHead*)
 
 
-(* DEBUG Attempt. I have added a NoSCalar. Check if this works fine for the rest*)
+(* A bug with Scalar expressions. I have added a NoSCalar . Check if this works fine for the rest. It seems so.*)
 (* It seems to be fine so I should post the modification*)
+(* This avoids the appearance of sums inside SymmetryOf which were resulting from a removed Scalar head.*)
 resbis=NoScalar[res//.RulesConf[metric1,metric2]];
 
 
