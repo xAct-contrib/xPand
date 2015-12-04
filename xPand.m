@@ -1208,7 +1208,8 @@ If[$ConformalTime,1,1/a[h][]]*LieD[n[Dummy1]][cd[Dum][Name[LI[p],LI[q-1],indices
 ]
 ]/;( Length[Join[{indices1},{indices2}]]+1===Length[{inds}]);
 
-(* and the second rule: Subscript[D, a] Subscript[\[ScriptCapitalL], n] Subscript[T^a, ... ]= Subscript[\[ScriptCapitalL], n](D^a Subscript[T, a...]) - Subscript[\[ScriptCapitalL], n](g^ab)Subscript[D, b] Subscript[Subscript[T, a], ...] + (g^ab)[Subscript[D, b],Subscript[\[ScriptCapitalL], n]]Subscript[T, a...] *)
+(* and the second rule: Subscript[D, a] g^ab Subscript[\[ScriptCapitalL], n] Subscript[Subscript[T, b], ... ]= Subscript[\[ScriptCapitalL], n](D^a Subscript[T, a...]) - Subscript[\[ScriptCapitalL], n](g^ab)Subscript[D, b] Subscript[Subscript[T, a], ...] + (g^ab)[Subscript[D, b],Subscript[\[ScriptCapitalL], n]]Subscript[T, a...] *)
+(* XR remark 09/2015: careful that the index up means that it is raised after the Lie derivative is taken. Thus the rhs is the same as the previous rule.*)
 Name/:cd[-Dum_][Name[LI[p_?((IntegerQ[#] && #>=1) &)],LI[q_?((IntegerQ[#] && #>=1) &)],indices1___?DownIndexQ,Dum_,indices2___?DownIndexQ]]:=Module[{Dummy1,Dummy2},
 
 Dummy1=DummyIn[Tangent[M]];
