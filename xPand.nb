@@ -956,7 +956,7 @@ with down indices.\>\""}], ";"}], "\[IndentingNewLine]",
      RowBox[{"DefProjectedTensorProperties", "::", "symmetrictensors"}], "=", 
      "\"\<The current version of DefProjectedTensorProperties can only add \
 properties to tensors that are, at least, fully symmetric.\>\""}], ";"}], 
-   "\[IndentingNewLine]", "\n", 
+   "\n", "\[IndentingNewLine]", 
    RowBox[{"(*", 
     RowBox[{"*", " ", "ExtractComponents"}], " ", "**)"}], 
    "\[IndentingNewLine]", "\[IndentingNewLine]", 
@@ -1460,7 +1460,7 @@ Cell[BoxData[
      "\"\<$ListFieldsBackgroundOnly[h], with 'h' being the induced metric on \
 the hypersurfaces, is the list of fields that live on the background only. It \
 is automatically defined when calling the function SetSlicing.\>\""}], ";"}], 
-   "\[IndentingNewLine]", "\n", 
+   "\n", "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{
      RowBox[{"$ListFieldsPerturbedOnly", "::", "usage"}], "=", 
@@ -2625,7 +2625,7 @@ Cell[BoxData[
                     RowBox[{"i", ",", "1", ",", "q"}], "}"}]}], "]"}]}]}], 
                "]"}]}], "}"}], "]"}]}], "\[IndentingNewLine]", "]"}]}], 
         "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", "]"}]}], ";"}],
-    "\[IndentingNewLine]", "\n", 
+    "\n", "\[IndentingNewLine]", 
    RowBox[{"xTensorFormStart", "[", "Tensor", "]"}]}]}]], "Input",
  InitializationCell->True],
 
@@ -10120,7 +10120,9 @@ expression.\>\""}], "]"}]}], "/;",
                  RowBox[{
                   RowBox[{"CD", "[", "ind1_", "]"}], "[", 
                   RowBox[{
-                   RowBox[{"\[ScriptK]", "[", "h", "]"}], "[", "]"}], "]"}], ":=", 
+                   RowBox[{"\[ScriptK]", "[", "h", "]"}], "[", "]"}], "]"}], ":=",
+                  "0"}], 
+                RowBox[{"(*", 
                  RowBox[{
                   RowBox[{"-", "1"}], "*", 
                   RowBox[{"(", 
@@ -10132,7 +10134,7 @@ expression.\>\""}], "]"}]}], "/;",
                   RowBox[{
                    RowBox[{"CD", "[", 
                     RowBox[{"-", "ind2"}], "]"}], "[", 
-                   RowBox[{"u", "[", "ind2", "]"}], "]"}]}]}], ";", " ", 
+                   RowBox[{"u", "[", "ind2", "]"}], "]"}]}], "*)"}], ";", " ", 
                 RowBox[{"(*", " ", 
                  RowBox[{
                   RowBox[{"This", " ", "is", " ", "because", " ", 
@@ -10162,6 +10164,46 @@ expression.\>\""}], "]"}]}], "/;",
                   "then", " ", "this", " ", "point", " ", "does", " ", "not", 
                    " ", "matter", " ", "at", " ", "all", " ", "for", " ", 
                    RowBox[{"us", "."}]}]}], "*)"}], "\[IndentingNewLine]", 
+                "\[IndentingNewLine]", "\[IndentingNewLine]", 
+                RowBox[{"(*", 
+                 RowBox[{
+                  RowBox[{
+                  "In", " ", "case", " ", "the", " ", "user", " ", "uses", 
+                   " ", "a", " ", "Lie", " ", "derivative", " ", "on", " ", 
+                   "spatila", " ", "curvature", " ", "instead", " ", "of", 
+                   " ", "a", " ", "covariant", " ", "derivative"}], ",", " ", 
+                  
+                  RowBox[{
+                  "we", " ", "also", " ", "specify", " ", "that", " ", "it", 
+                   " ", "should", " ", 
+                   RowBox[{"vanish", ".", " ", "This"}], " ", "was", " ", 
+                   "suggested", " ", "by", " ", "Adam", " ", 
+                   RowBox[{"Solomon", "."}]}]}], "*)"}], 
+                "\[IndentingNewLine]", 
+                RowBox[{
+                 RowBox[{"Evaluate", "[", 
+                  RowBox[{"\[ScriptK]", "[", "h", "]"}], "]"}], "/:", 
+                 RowBox[{
+                  RowBox[{"LieD", "[", 
+                   RowBox[{"u", "[", "ind1_", "]"}], "]"}], "[", 
+                  RowBox[{
+                   RowBox[{"\[ScriptK]", "[", "h", "]"}], "[", "]"}], "]"}], ":=",
+                  "0"}], ";", 
+                RowBox[{"(*", 
+                 RowBox[{"Module", "[", 
+                  RowBox[{
+                   RowBox[{"{", "dum", "}"}], ",", 
+                   RowBox[{"dum", "=", 
+                    RowBox[{
+                    RowBox[{"DummyIn", "[", 
+                    RowBox[{"Tangent", "[", "Manifold", "]"}], "]"}], 
+                    RowBox[{"u", "[", 
+                    RowBox[{"-", "dum"}], "]"}], 
+                    RowBox[{
+                    RowBox[{"CD", "[", "dum", "]"}], "[", 
+                    RowBox[{
+                    RowBox[{"\[ScriptK]", "[", "h", "]"}], "[", "]"}], 
+                    "]"}]}]}]}], "]"}], "*)"}], "\[IndentingNewLine]", 
                 RowBox[{
                  RowBox[{
                   RowBox[{"cd", "[", "ind1_", "]"}], "[", 
@@ -14991,7 +15033,7 @@ Cell[BoxData[{
      RowBox[{
       RowBox[{"MyChangeChristoffel", "[", 
        RowBox[{"#1", ",", "#2", ",", "cd1"}], "]"}], "&"}], ",", "expr", ",", 
-     "cd2list"}], "]"}]}], "\[IndentingNewLine]"}], "\n", 
+     "cd2list"}], "]"}]}], "\n"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"MyChangeChristoffel", "[", 
    RowBox[{"expr_", ",", "cd2_", ",", "cd1_"}], "]"}], ":=", 
@@ -15432,7 +15474,7 @@ since we do not know very well how to handle that. **\>\"", "]"}], ";"}]}],
                 "]"}], ";", "\[IndentingNewLine]", "res"}]}], 
              "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", "]"}]}], 
          "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", "]"}]}], 
-     "\[IndentingNewLine]", "]"}]}], ";"}], "\n"}], "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", "]"}]}], ";"}], "\[IndentingNewLine]"}], "\n", 
  RowBox[{
   RowBox[{
    RowBox[{
@@ -19986,8 +20028,8 @@ PrivateNotebookOptions->{"FileOutlineCache"->False},
 ShowSelection->True,
 TrackCellChangeTimes->False,
 Magnification->1,
-FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (November 20, \
-2012)",
+FrontEndVersion->"10.2 for Mac OS X x86 (32-bit, 64-bit Kernel) (July 29, \
+2015)",
 StyleDefinitions->FrontEnd`FileName[{"Creative"}, "PastelColor.nb", 
   CharacterEncoding -> "UTF-8"]
 ]

@@ -1102,7 +1102,7 @@ If[Not[BackgroundBool]&&PerturbedBool,
 (* The easiest way is to define a set of global rules and to append a new rule each time there is a tensor vanishing on the background *)
 	
 (* Old implementation *)
-(*Name[LI[0],LI[q_?((IntegerQ[#]&&#>=0)&)],indices___?AIndexQ]:=0
+(*Name[LI[0],LI[q_?((IntegerQ[#]&&#\[GreaterEqual]0)&)],indices___?AIndexQ]:=0
 /;(Length[{indices}]===Length[{inds}]);*)
 
 (* New implementation *)
@@ -1191,7 +1191,7 @@ Name/:cd[Dum_][Name[LI[p_?((IntegerQ[#] && #>=1) &)],LI[0],indices1___,-Dum_,ind
 Name/:cd[-Dum_][Name[LI[p_?((IntegerQ[#] && #>=1) &)],LI[0],indices1___,Dum_,indices2___]]:=
 0/;( Length[Join[{indices1},{indices2}]]+1===Length[{inds}]);
 
-(* then the first rule: D^a Subscript[\[ScriptCapitalL], n] Subscript[T, a... ]= Subscript[\[ScriptCapitalL], n](D^a Subscript[T, a...]) - Subscript[\[ScriptCapitalL], n](g^ab)Subscript[D, b] Subscript[Subscript[T, a], ...] + (g^ab)[Subscript[D, b],Subscript[\[ScriptCapitalL], n]]Subscript[T, a...] *)
+(* then the first rule: D^aSubscript[\[ScriptCapitalL], n]Subscript[T, a... ]= Subscript[\[ScriptCapitalL], n](D^aSubscript[T, a...]) - Subscript[\[ScriptCapitalL], n](g^ab)Subscript[D, b]Subscript[Subscript[T, a], ...] + (g^ab)[Subscript[D, b],Subscript[\[ScriptCapitalL], n]]Subscript[T, a...] *)
 Name/:cd[Dum_][Name[LI[p_?((IntegerQ[#] && #>=1) &)],LI[q_?((IntegerQ[#] && #>=1) &)],indices1___?DownIndexQ,-Dum_,indices2___?DownIndexQ]]:=Module[{Dummy1,Dummy2},
 
 Dummy1=DummyIn[Tangent[M]];
@@ -1208,7 +1208,7 @@ If[$ConformalTime,1,1/a[h][]]*LieD[n[Dummy1]][cd[Dum][Name[LI[p],LI[q-1],indices
 ]
 ]/;( Length[Join[{indices1},{indices2}]]+1===Length[{inds}]);
 
-(* and the second rule: Subscript[D, a] g^ab Subscript[\[ScriptCapitalL], n] Subscript[Subscript[T, b], ... ]= Subscript[\[ScriptCapitalL], n](D^a Subscript[T, a...]) - Subscript[\[ScriptCapitalL], n](g^ab)Subscript[D, b] Subscript[Subscript[T, a], ...] + (g^ab)[Subscript[D, b],Subscript[\[ScriptCapitalL], n]]Subscript[T, a...] *)
+(* and the second rule: Subscript[D, a]g^abSubscript[\[ScriptCapitalL], n]Subscript[Subscript[T, b], ... ]= Subscript[\[ScriptCapitalL], n](D^aSubscript[T, a...]) - Subscript[\[ScriptCapitalL], n](g^ab)Subscript[D, b]Subscript[Subscript[T, a], ...] + (g^ab)[Subscript[D, b],Subscript[\[ScriptCapitalL], n]]Subscript[T, a...] *)
 (* XR remark 09/2015: careful that the index up means that it is raised after the Lie derivative is taken. Thus the rhs is the same as the previous rule.*)
 Name/:cd[-Dum_][Name[LI[p_?((IntegerQ[#] && #>=1) &)],LI[q_?((IntegerQ[#] && #>=1) &)],indices1___?DownIndexQ,Dum_,indices2___?DownIndexQ]]:=Module[{Dummy1,Dummy2},
 
@@ -1460,7 +1460,7 @@ If[Not[BackgroundBool]&&PerturbedBool,
 
 (* Again we do not Set it to 0 but rather add a rule which is used in SplitPerturbations*)
 (* So when we perturbed a quantity this avoids to do Perturbed[0]. *)
-(*Name[LI[0],LI[q_?((IntegerQ[#]&&#>=0)&)],indices___?AIndexQ]:=0*)
+(*Name[LI[0],LI[q_?((IntegerQ[#]&&#\[GreaterEqual]0)&)],indices___?AIndexQ]:=0*)
 $RulesVanishingBackgroundFields[h]=Append[$RulesVanishingBackgroundFields[h],Name[LI[0],LI[q_?((IntegerQ[#]&&#>=0)&)],indices___?AIndexQ]:>0];
 ];
 
@@ -1535,7 +1535,7 @@ Name/:cd[Dum_][Name[LI[p_?((IntegerQ[#] && #>=1) &)],LI[0],indices1___,-Dum_,ind
 
 Name/:cd[-Dum_][Name[LI[p_?((IntegerQ[#] && #>=1) &)],LI[0],indices1___,Dum_,indices2___]]:=0;
 
-(* then the first rule: D^a Subscript[\[ScriptCapitalL], n] Subscript[T, a... ]= Subscript[\[ScriptCapitalL], n](D^a Subscript[T, a...]) - Subscript[\[ScriptCapitalL], n](g^ab)Subscript[D, b] Subscript[Subscript[T, a], ...] + (g^ab)[Subscript[D, b],Subscript[\[ScriptCapitalL], n]]Subscript[T, a...] *)
+(* then the first rule: D^aSubscript[\[ScriptCapitalL], n]Subscript[T, a... ]= Subscript[\[ScriptCapitalL], n](D^aSubscript[T, a...]) - Subscript[\[ScriptCapitalL], n](g^ab)Subscript[D, b]Subscript[Subscript[T, a], ...] + (g^ab)[Subscript[D, b],Subscript[\[ScriptCapitalL], n]]Subscript[T, a...] *)
 Name/:cd[Dum_][Name[LI[p_?((IntegerQ[#] && #>=1) &)],LI[q_?((IntegerQ[#] && #>=1) &)],indices1___?DownIndexQ,-Dum_,indices2___?DownIndexQ]]:=Module[{Dummy1,Dummy2},
 
 Dummy1=DummyIn[Tangent[M]];
@@ -1552,7 +1552,7 @@ If[$ConformalTime,1,1/a[h][]]*LieD[n[Dummy1]][cd[Dum][Name[LI[p],LI[q-1],indices
 ]
 ];
 
-(* and the second rule: Subscript[D, a] Subscript[\[ScriptCapitalL], n] Subscript[T^a, ... ]= Subscript[\[ScriptCapitalL], n](D^a Subscript[T, a...]) - Subscript[\[ScriptCapitalL], n](g^ab)Subscript[D, b] Subscript[Subscript[T, a], ...] + (g^ab)[Subscript[D, b],Subscript[\[ScriptCapitalL], n]]Subscript[T, a...] *)
+(* and the second rule: Subscript[D, a]Subscript[\[ScriptCapitalL], n]Subscript[T^a, ... ]= Subscript[\[ScriptCapitalL], n](D^aSubscript[T, a...]) - Subscript[\[ScriptCapitalL], n](g^ab)Subscript[D, b]Subscript[Subscript[T, a], ...] + (g^ab)[Subscript[D, b],Subscript[\[ScriptCapitalL], n]]Subscript[T, a...] *)
 Name/:cd[-Dum_][Name[LI[p_?((IntegerQ[#] && #>=1) &)],LI[q_?((IntegerQ[#] && #>=1) &)],indices1___?DownIndexQ,Dum_,indices2___?DownIndexQ]]:=Module[{Dummy1,Dummy2},
 
 Dummy1=DummyIn[Tangent[M]];
@@ -1703,7 +1703,7 @@ If[Length[SlotsOfTensor[u]]=!=1||VBundleOfIndex@DummyIn[First@SlotsOfTensor@u]=!
 
 Off[DefMetric::old];(* Annoying message turned off*)
 (* contribution of Obinna. But removed by Cyril *)
-(*DefMetric[1,h[-ind1,-ind2],cd,{cdpost,cdpre},InducedFrom->{g,u},If[$ConformalTime,If[FlatSpaceBool[SpaceTimeType],PrintAs->"\[Delta]",PrintAs->"\!\("<>ToString[h]<>"\&-\)"],PrintAs->"\!\("<>ToString[h]<>"\&-\)"]];*)
+(*DefMetric[1,h[-ind1,-ind2],cd,{cdpost,cdpre},InducedFrom\[Rule]{g,u},If[$ConformalTime,If[FlatSpaceBool[SpaceTimeType],PrintAs\[Rule]"\[Delta]",PrintAs\[Rule]"\!\("<>ToString[h]<>"\&-\)"],PrintAs\[Rule]"\!\("<>ToString[h]<>"\&-\)"]];*)
 
 DefMetric[1,h[-ind1,-ind2],cd,{cdpost,cdpre},InducedFrom->{g,u},PrintAs->"\!\("<>ToString[h]<>"\&-\)"];
 
@@ -1835,8 +1835,12 @@ RicciScalar[cd][]=0;,
 SpaceTimeType==="FLCurved",
 DefTensor[\[ScriptK][h][],{Manifold},PrintAs->StringJoin["\[ScriptK]"(*,ToString[h]*)]];
 
-CD[ind1_][\[ScriptK][h][]]:=-1*(-2/3)*u[ind1]\[ScriptK][h][]CD[-ind2][u[ind2]]; (* This is because Subscript[\[ScriptCapitalL], u](\[ScriptK]^(1/2) Subscript[\[Epsilon]^\[Mu], \[Nu]\[Sigma]]) must be zero since Subscript[\[ScriptCapitalL], u](Subscript[C^\[Mu], \[Nu]\[Sigma]])=0*)
+CD[ind1_][\[ScriptK][h][]]:=0(*-1*(-2/3)*u[ind1]\[ScriptK][h][]CD[-ind2][u[ind2]]*); (* This is because Subscript[\[ScriptCapitalL], u](\[ScriptK]^(1/2)Subscript[\[Epsilon]^\[Mu], \[Nu]\[Sigma]]) must be zero since Subscript[\[ScriptCapitalL], u](Subscript[C^\[Mu], \[Nu]\[Sigma]])=0*)
 (* Given that we first work on the conformal metric where the trace of the extrinsic curvature is 0, then this point does not matter at all for us.*)
+
+
+(*In case the user uses a Lie derivative on spatila curvature instead of a covariant derivative, we also specify that it should vanish. This was suggested by Adam Solomon.*)
+Evaluate[\[ScriptK][h]]/:LieD[u[ind1_]][\[ScriptK][h][]]:=0;(*Module[{dum},dum=DummyIn[Tangent[Manifold]]u[-dum]CD[dum][\[ScriptK][h][]]]*)
 cd[ind1_][\[ScriptK][h][]]=0;
 If[dim===4,CSh[ind1_,ind2_,ind3_]:=2Sqrt[\[ScriptK][h][]]epsilon[h][ind1,ind2,ind3]];
 ,
@@ -2524,7 +2528,7 @@ Module[{cd1=CovDOfMetric[h],i1,
 n=Last@InducedFrom@h,exprtemp,res},
 i1=DummyIn[Tangent[ManifoldOfCovD[cd1]]];
 
-exprtemp=expr(*/.Tens_?((DefProjectedTensorQ[#,h])&)[LI[p_],LI[q_],inds___]:>ConformalToCosmic[Tens[LI[p],LI[q],inds]]*);
+exprtemp=expr(*/.Tens_?((DefProjectedTensorQ[#,h])&)[LI[p_],LI[q_],inds___]\[RuleDelayed]ConformalToCosmic[Tens[LI[p],LI[q],inds]]*);
 
 res=PostProcess[h]@NoScalar@SameDummies@ToCanonical@ContractMetric[
 exprtemp
@@ -2547,7 +2551,7 @@ Module[{cd1=CovDOfMetric[h],i1,
 n=Last@InducedFrom@h,exprtemp,res},
 i1=DummyIn[Tangent[ManifoldOfCovD[cd1]]];
 
-exprtemp=expr(*/.Tens_?((DefProjectedTensorQ[#,h])&)[LI[p_],LI[q_],inds___]:>CosmicToConformal[Tens[LI[p],LI[q],inds]]*);
+exprtemp=expr(*/.Tens_?((DefProjectedTensorQ[#,h])&)[LI[p_],LI[q_],inds___]\[RuleDelayed]CosmicToConformal[Tens[LI[p],LI[q],inds]]*);
 
 res=PostProcess[h]@NoScalar@SameDummies@ToCanonical@ContractMetric[
 exprtemp
@@ -2612,7 +2616,7 @@ If[$DebugInfoQ,Print["Preliminar Canonicalisation. "];];
 restemp0=SameDummies@ToCanonical@expr;
 SortCovDsStart[cd];If[$DebugInfoQ,Print["First Canonicalisation with automatic sorting of Cov Ds.  ",Length[restemp0]," terms."];];
 counter=0;
-restemp=Map[(If[$DebugInfoQ,counter=counter+1;If[Mod[counter,10]===0(*||counter>=4180*),Print["We canonicalize term ",counter," ",#];];];SameDummies@ToCanonical@ContractMetric[#])&,restemp0];
+restemp=Map[(If[$DebugInfoQ,counter=counter+1;If[Mod[counter,10]===0(*||counter\[GreaterEqual]4180*),Print["We canonicalize term ",counter," ",#];];];SameDummies@ToCanonical@ContractMetric[#])&,restemp0];
 Block[{Print},SortCovDsStop[cd];];,
 Block[{Print},Off[Unset::norep];SortCovDsStop[cd];On[Unset::norep];];
 restemp=expr;
@@ -2632,7 +2636,7 @@ res
 
 CheckSTFTensors[expr_,h_,exceptlist_List]:=Module[{tens},With[{listpb=Cases[Expand@expr,tens_?((And@@(Function[t,t=!=#]/@exceptlist))&&xTensorQ[#]&&Not@DefProjectedTensorQ[#,h]&)[inds___]->tens,Infinity]},Print["** Warning: the tensor ",#," was not defined with DefProjectedTensor. The rules necessary for its splitting were thus not defined. **"]&/@(DeleteDuplicates@listpb)];];
 
-(* Warning message to update -> the slicing should be taken into account. *)
+(* Warning message to update \[Rule] the slicing should be taken into account. *)
 
 CheckSTFTensors[expr_,h_]:=CheckSTFTensors[expr,h,{}];
 
@@ -3099,8 +3103,8 @@ RuleBoostUpton[m_]:=Flatten@Table[ToCanonical@ContractMetric[RuleBoost[i]],{i,0,
 
 (* OLD Implementation. *)
 (*Now that IndexSolve is corrected to deal correctly with Label indices in version 1.0.5 of xAct, this implementation is obsolete.*)
-(*RuleBoost[p_?(#>=1&)]:=(
-Boost[LI[p],LI[0]]:>Evaluate[ToCanonical@ContractMetric@PutScalar[(X[]/.First@IndexSolve[org[ExpandPerturbation@Perturbation[g[ind1,ind2]vector[-ind1]vector[-ind2],p]/.LocalRulesNspat/.Boost[LI[p],LI[0]]->X[]]==0,X[]])/.RuleBoostUpton[p-1]/.LocalRulesNspat]/.$BackgroundFieldRule]);*)
+(*RuleBoost[p_?(#\[GreaterEqual]1&)]:=(
+Boost[LI[p],LI[0]]\[RuleDelayed]Evaluate[ToCanonical@ContractMetric@PutScalar[(X[]/.First@IndexSolve[org[ExpandPerturbation@Perturbation[g[ind1,ind2]vector[-ind1]vector[-ind2],p]/.LocalRulesNspat/.Boost[LI[p],LI[0]]\[Rule]X[]]\[Equal]0,X[]])/.RuleBoostUpton[p-1]/.LocalRulesNspat]/.$BackgroundFieldRule]);*)
 
 RuleBoost[p_?(#>=1&)]:=
 MakeRule[Evaluate[{Boost[LI[p],LI[0]],ToCanonical@ContractMetric@PutScalar@Expand[(Boost[LI[p],LI[0]]/.First@IndexSolve[org[ExpandPerturbation@Perturbation[g[ind1,ind2]vector[-ind1]vector[-ind2],p]/.LocalRulesNspat]==0,Boost[LI[p],LI[0]]])/.RuleBoostUpton[p-1]/.LocalRulesNspat]/.$BackgroundFieldRule}]];
