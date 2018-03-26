@@ -30,15 +30,15 @@ Cell[BoxData["\<\"------------------------------------------------------------\
 Cell[BoxData[
  InterpretationBox[
   RowBox[{"\<\"Package xAct`xPerm`  version \"\>", 
-   "\[InvisibleSpace]", "\<\"1.2.0\"\>", "\[InvisibleSpace]", "\<\", \"\>", 
+   "\[InvisibleSpace]", "\<\"1.2.3\"\>", "\[InvisibleSpace]", "\<\", \"\>", 
    "\[InvisibleSpace]", 
    RowBox[{"{", 
-    RowBox[{"2013", ",", "1", ",", "27"}], "}"}]}],
-  SequenceForm["Package xAct`xPerm`  version ", "1.2.0", ", ", {2013, 1, 27}],
+    RowBox[{"2015", ",", "8", ",", "23"}], "}"}]}],
+  SequenceForm["Package xAct`xPerm`  version ", "1.2.3", ", ", {2015, 8, 23}],
   
   Editable->False]], "Print"],
 
-Cell[BoxData["\<\"CopyRight (C) 2003-2013, Jose M. Martin-Garcia, under the \
+Cell[BoxData["\<\"CopyRight (C) 2003-2018, Jose M. Martin-Garcia, under the \
 General Public License.\"\>"], "Print"],
 
 Cell[BoxData["\<\"Connecting to external mac executable...\"\>"], "Print"],
@@ -51,15 +51,15 @@ Cell[BoxData["\<\"------------------------------------------------------------\
 Cell[BoxData[
  InterpretationBox[
   RowBox[{"\<\"Package xAct`xTensor`  version \"\>", 
-   "\[InvisibleSpace]", "\<\"1.0.5\"\>", "\[InvisibleSpace]", "\<\", \"\>", 
+   "\[InvisibleSpace]", "\<\"1.1.3\"\>", "\[InvisibleSpace]", "\<\", \"\>", 
    "\[InvisibleSpace]", 
    RowBox[{"{", 
-    RowBox[{"2013", ",", "1", ",", "27"}], "}"}]}],
+    RowBox[{"2018", ",", "2", ",", "28"}], "}"}]}],
   SequenceForm[
-  "Package xAct`xTensor`  version ", "1.0.5", ", ", {2013, 1, 27}],
+  "Package xAct`xTensor`  version ", "1.1.3", ", ", {2018, 2, 28}],
   Editable->False]], "Print"],
 
-Cell[BoxData["\<\"CopyRight (C) 2002-2013, Jose M. Martin-Garcia, under the \
+Cell[BoxData["\<\"CopyRight (C) 2002-2018, Jose M. Martin-Garcia, under the \
 General Public License.\"\>"], "Print"],
 
 Cell[BoxData["\<\"------------------------------------------------------------\
@@ -68,15 +68,15 @@ Cell[BoxData["\<\"------------------------------------------------------------\
 Cell[BoxData[
  InterpretationBox[
   RowBox[{"\<\"Package xAct`xPert`  version \"\>", 
-   "\[InvisibleSpace]", "\<\"1.0.3\"\>", "\[InvisibleSpace]", "\<\", \"\>", 
+   "\[InvisibleSpace]", "\<\"1.0.6\"\>", "\[InvisibleSpace]", "\<\", \"\>", 
    "\[InvisibleSpace]", 
    RowBox[{"{", 
-    RowBox[{"2013", ",", "1", ",", "27"}], "}"}]}],
-  SequenceForm["Package xAct`xPert`  version ", "1.0.3", ", ", {2013, 1, 27}],
+    RowBox[{"2018", ",", "2", ",", "28"}], "}"}]}],
+  SequenceForm["Package xAct`xPert`  version ", "1.0.6", ", ", {2018, 2, 28}],
   
   Editable->False]], "Print"],
 
-Cell[BoxData["\<\"CopyRight (C) 2005-2013, David Brizuela, Jose M. \
+Cell[BoxData["\<\"CopyRight (C) 2005-2018, David Brizuela, Jose M. \
 Martin-Garcia and Guillermo A. Mena Marugan, under the General Public \
 License.\"\>"], "Print"],
 
@@ -134,32 +134,20 @@ Cell[BoxData[
    " changed from ", False, " to ", True],
   Editable->False]], "Print"],
 
-Cell[BoxData[
- InterpretationBox[
-  RowBox[{"\<\"** \"\>", "\[InvisibleSpace]", "DefInertHead", 
-   "\[InvisibleSpace]", "\<\": Defining \"\>", 
-   "\[InvisibleSpace]", "\<\"inert head \"\>", "\[InvisibleSpace]", 
-   "Perturbation", "\[InvisibleSpace]", "\<\". \"\>", 
-   "\[InvisibleSpace]", "\<\"\"\>"}],
-  SequenceForm[
-  "** ", xAct`xTensor`DefInertHead, ": Defining ", "inert head ", 
-   xAct`xPert`Perturbation, ". ", ""],
-  Editable->False]], "Print"],
-
 Cell[BoxData["\<\"------------------------------------------------------------\
 \"\>"], "Print"],
 
 Cell[BoxData[
  InterpretationBox[
   RowBox[{"\<\"Package xAct`xPand`  version \"\>", 
-   "\[InvisibleSpace]", "\<\"0.4.0\"\>", "\[InvisibleSpace]", "\<\", \"\>", 
+   "\[InvisibleSpace]", "\<\"0.4.3\"\>", "\[InvisibleSpace]", "\<\", \"\>", 
    "\[InvisibleSpace]", 
    RowBox[{"{", 
-    RowBox[{"2013", ",", "2", ",", "8"}], "}"}]}],
-  SequenceForm["Package xAct`xPand`  version ", "0.4.0", ", ", {2013, 2, 8}],
+    RowBox[{"2015", ",", "9", ",", "9"}], "}"}]}],
+  SequenceForm["Package xAct`xPand`  version ", "0.4.3", ", ", {2015, 9, 9}],
   Editable->False]], "Print"],
 
-Cell[BoxData["\<\"CopyRight (C) 2012-2013, Cyril Pitrou, Xavier Roy and \
+Cell[BoxData["\<\"CopyRight (C) 2012-2018, Cyril Pitrou, Xavier Roy and \
 Obinna Umeh under the General Public License.\"\>"], "Print"],
 
 Cell[BoxData["\<\"------------------------------------------------------------\
@@ -205,14 +193,8 @@ Cell[BoxData[{
      RowBox[{"\"\<|\>\"", ",", "\"\<D\>\""}], "}"}], ",", 
     "\"\<FLCurved\>\""}], "]"}], ";"}]}], "Input"],
 
-Cell[CellGroupData[{
-
-Cell[BoxData["\<\"** DefMetric: Don't know yet how to define epsilon for a \
-frozen metric.\"\>"], "Print"],
-
 Cell[BoxData["\<\"** MakeRule: Potential problems moving indices on the \
 LHS.\"\>"], "Print"]
-}, Open  ]]
 }, Open  ]],
 
 Cell[BoxData[
@@ -285,38 +267,70 @@ Cell[BoxData[
   FractionBox[
    RowBox[{"6", " ", 
     SuperscriptBox[
-     OverscriptBox[
-      InterpretationBox[
-       StyleBox["\[ScriptCapitalH]",
-        ShowAutoStyles->False,
-        AutoSpacing->False],
-       $CellContext`Hh[],
-       Editable->False], ""], "2"]}], 
-   SuperscriptBox[
-    OverscriptBox[
      InterpretationBox[
-      StyleBox["a",
+      StyleBox[
+       OverscriptBox[
+        InterpretationBox[
+         StyleBox["\[ScriptCapitalH]",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`Hh[],
+         Editable->False], ""],
        ShowAutoStyles->False,
        AutoSpacing->False],
-      $CellContext`ah[],
-      Editable->False], ""], "2"]], "+", 
+      $CellContext`Hh[
+       xAct`xTensor`LI[0], 
+       xAct`xTensor`LI[0]],
+      Editable->False], "2"]}], 
+   SuperscriptBox[
+    InterpretationBox[
+     StyleBox[
+      OverscriptBox[
+       InterpretationBox[
+        StyleBox["a",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`ah[],
+        Editable->False], ""],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`ah[
+      xAct`xTensor`LI[0], 
+      xAct`xTensor`LI[0]],
+     Editable->False], "2"]], "+", 
   FractionBox[
    RowBox[{"6", " ", 
-    OverscriptBox[
-     InterpretationBox[
-      StyleBox["\[ScriptCapitalH]",
-       ShowAutoStyles->False,
-       AutoSpacing->False],
-      $CellContext`Hh[],
-      Editable->False], "\[Prime]"]}], 
+    InterpretationBox[
+     StyleBox[
+      OverscriptBox[
+       InterpretationBox[
+        StyleBox["\[ScriptCapitalH]",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`Hh[],
+        Editable->False], "\[Prime]"],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`Hh[
+      xAct`xTensor`LI[0], 
+      xAct`xTensor`LI[1]],
+     Editable->False]}], 
    SuperscriptBox[
-    OverscriptBox[
-     InterpretationBox[
-      StyleBox["a",
-       ShowAutoStyles->False,
-       AutoSpacing->False],
-      $CellContext`ah[],
-      Editable->False], ""], "2"]], "+", 
+    InterpretationBox[
+     StyleBox[
+      OverscriptBox[
+       InterpretationBox[
+        StyleBox["a",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`ah[],
+        Editable->False], ""],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`ah[
+      xAct`xTensor`LI[0], 
+      xAct`xTensor`LI[0]],
+     Editable->False], "2"]], "+", 
   FractionBox[
    RowBox[{"6", " ", 
     InterpretationBox[
@@ -326,13 +340,21 @@ Cell[BoxData[
      $CellContext`\[ScriptK]h[],
      Editable->False]}], 
    SuperscriptBox[
-    OverscriptBox[
-     InterpretationBox[
-      StyleBox["a",
-       ShowAutoStyles->False,
-       AutoSpacing->False],
-      $CellContext`ah[],
-      Editable->False], ""], "2"]], "+", 
+    InterpretationBox[
+     StyleBox[
+      OverscriptBox[
+       InterpretationBox[
+        StyleBox["a",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`ah[],
+        Editable->False], ""],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`ah[
+      xAct`xTensor`LI[0], 
+      xAct`xTensor`LI[0]],
+     Editable->False], "2"]], "+", 
   RowBox[{
    InterpretationBox[
     StyleBox["\[Epsilon]",
@@ -346,94 +368,166 @@ Cell[BoxData[
       FractionBox[
        RowBox[{"12", " ", 
         SuperscriptBox[
+         InterpretationBox[
+          StyleBox[
+           OverscriptBox[
+            InterpretationBox[
+             StyleBox["\[ScriptCapitalH]",
+              ShowAutoStyles->False,
+              AutoSpacing->False],
+             $CellContext`Hh[],
+             Editable->False], ""],
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          $CellContext`Hh[
+           xAct`xTensor`LI[0], 
+           xAct`xTensor`LI[0]],
+          Editable->False], "2"], " ", 
+        RowBox[{"(", 
+         InterpretationBox[
+          StyleBox[
+           RowBox[{
+            OverscriptBox["\[Null]", 
+             StyleBox[
+              RowBox[{"(", "1", ")"}],
+              FontColor->RGBColor[0.85, 0, 0]]], "\[NegativeThinSpace]", 
+            OverscriptBox[
+             InterpretationBox[
+              StyleBox["\[Phi]",
+               ShowAutoStyles->False,
+               AutoSpacing->False],
+              xAct`xPand`\[Phi][],
+              Editable->False], ""]}],
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          xAct`xPand`\[Phi][
+           xAct`xTensor`LI[1], 
+           xAct`xTensor`LI[0]],
+          Editable->False], ")"}]}], 
+       SuperscriptBox[
+        InterpretationBox[
+         StyleBox[
+          OverscriptBox[
+           InterpretationBox[
+            StyleBox["a",
+             ShowAutoStyles->False,
+             AutoSpacing->False],
+            $CellContext`ah[],
+            Editable->False], ""],
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`ah[
+          xAct`xTensor`LI[0], 
+          xAct`xTensor`LI[0]],
+         Editable->False], "2"]]}], "-", 
+     FractionBox[
+      RowBox[{"12", " ", 
+       InterpretationBox[
+        StyleBox[
          OverscriptBox[
           InterpretationBox[
            StyleBox["\[ScriptCapitalH]",
             ShowAutoStyles->False,
             AutoSpacing->False],
            $CellContext`Hh[],
-           Editable->False], ""], "2"], " ", 
-        RowBox[{"(", 
-         RowBox[{
-          OverscriptBox["\<\"\"\>", 
-           StyleBox[
-            RowBox[{"(", "1", ")"}],
-            FontColor->RGBColor[0.85, 0, 0]]], "\[NegativeThinSpace]", 
-          OverscriptBox[
-           InterpretationBox[
-            StyleBox["\[Phi]",
-             ShowAutoStyles->False,
-             AutoSpacing->False],
-            xAct`xPand`\[Phi][],
-            Editable->False], ""]}], ")"}]}], 
-       SuperscriptBox[
-        OverscriptBox[
-         InterpretationBox[
-          StyleBox["a",
-           ShowAutoStyles->False,
-           AutoSpacing->False],
-          $CellContext`ah[],
-          Editable->False], ""], "2"]]}], "-", 
-     FractionBox[
-      RowBox[{"12", " ", 
-       OverscriptBox[
+           Editable->False], "\[Prime]"],
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`Hh[
+         xAct`xTensor`LI[0], 
+         xAct`xTensor`LI[1]],
+        Editable->False], " ", 
+       RowBox[{"(", 
         InterpretationBox[
-         StyleBox["\[ScriptCapitalH]",
+         StyleBox[
+          RowBox[{
+           OverscriptBox["\[Null]", 
+            StyleBox[
+             RowBox[{"(", "1", ")"}],
+             FontColor->RGBColor[0.85, 0, 0]]], "\[NegativeThinSpace]", 
+           OverscriptBox[
+            InterpretationBox[
+             StyleBox["\[Phi]",
+              ShowAutoStyles->False,
+              AutoSpacing->False],
+             xAct`xPand`\[Phi][],
+             Editable->False], ""]}],
           ShowAutoStyles->False,
           AutoSpacing->False],
-         $CellContext`Hh[],
-         Editable->False], "\[Prime]"], " ", 
-       RowBox[{"(", 
-        RowBox[{
-         OverscriptBox["\<\"\"\>", 
-          StyleBox[
-           RowBox[{"(", "1", ")"}],
-           FontColor->RGBColor[0.85, 0, 0]]], "\[NegativeThinSpace]", 
+         xAct`xPand`\[Phi][
+          xAct`xTensor`LI[1], 
+          xAct`xTensor`LI[0]],
+         Editable->False], ")"}]}], 
+      SuperscriptBox[
+       InterpretationBox[
+        StyleBox[
          OverscriptBox[
           InterpretationBox[
-           StyleBox["\[Phi]",
+           StyleBox["a",
             ShowAutoStyles->False,
             AutoSpacing->False],
-           xAct`xPand`\[Phi][],
-           Editable->False], ""]}], ")"}]}], 
-      SuperscriptBox[
-       OverscriptBox[
-        InterpretationBox[
-         StyleBox["a",
-          ShowAutoStyles->False,
-          AutoSpacing->False],
-         $CellContext`ah[],
-         Editable->False], ""], "2"]], "-", 
+           $CellContext`ah[],
+           Editable->False], ""],
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`ah[
+         xAct`xTensor`LI[0], 
+         xAct`xTensor`LI[0]],
+        Editable->False], "2"]], "-", 
      FractionBox[
       RowBox[{"6", " ", 
-       OverscriptBox[
-        InterpretationBox[
-         StyleBox["\[ScriptCapitalH]",
-          ShowAutoStyles->False,
-          AutoSpacing->False],
-         $CellContext`Hh[],
-         Editable->False], ""], " ", 
-       RowBox[{"(", 
-        RowBox[{
-         OverscriptBox["\<\"\"\>", 
-          StyleBox[
-           RowBox[{"(", "1", ")"}],
-           FontColor->RGBColor[0.85, 0, 0]]], "\[NegativeThinSpace]", 
+       InterpretationBox[
+        StyleBox[
          OverscriptBox[
           InterpretationBox[
-           StyleBox["\[Phi]",
+           StyleBox["\[ScriptCapitalH]",
             ShowAutoStyles->False,
             AutoSpacing->False],
-           xAct`xPand`\[Phi][],
-           Editable->False], "\[Prime]"]}], ")"}]}], 
-      SuperscriptBox[
-       OverscriptBox[
+           $CellContext`Hh[],
+           Editable->False], ""],
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`Hh[
+         xAct`xTensor`LI[0], 
+         xAct`xTensor`LI[0]],
+        Editable->False], " ", 
+       RowBox[{"(", 
         InterpretationBox[
-         StyleBox["a",
+         StyleBox[
+          RowBox[{
+           OverscriptBox["\[Null]", 
+            StyleBox[
+             RowBox[{"(", "1", ")"}],
+             FontColor->RGBColor[0.85, 0, 0]]], "\[NegativeThinSpace]", 
+           OverscriptBox[
+            InterpretationBox[
+             StyleBox["\[Phi]",
+              ShowAutoStyles->False,
+              AutoSpacing->False],
+             xAct`xPand`\[Phi][],
+             Editable->False], "\[Prime]"]}],
           ShowAutoStyles->False,
           AutoSpacing->False],
-         $CellContext`ah[],
-         Editable->False], ""], "2"]], "+", 
+         xAct`xPand`\[Phi][
+          xAct`xTensor`LI[1], 
+          xAct`xTensor`LI[1]],
+         Editable->False], ")"}]}], 
+      SuperscriptBox[
+       InterpretationBox[
+        StyleBox[
+         OverscriptBox[
+          InterpretationBox[
+           StyleBox["a",
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           $CellContext`ah[],
+           Editable->False], ""],
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`ah[
+         xAct`xTensor`LI[0], 
+         xAct`xTensor`LI[0]],
+        Editable->False], "2"]], "+", 
      FractionBox[
       RowBox[{"12", " ", 
        InterpretationBox[
@@ -443,79 +537,135 @@ Cell[BoxData[
         $CellContext`\[ScriptK]h[],
         Editable->False], " ", 
        RowBox[{"(", 
-        RowBox[{
-         OverscriptBox["\<\"\"\>", 
-          StyleBox[
-           RowBox[{"(", "1", ")"}],
-           FontColor->RGBColor[0.85, 0, 0]]], "\[NegativeThinSpace]", 
-         OverscriptBox[
-          InterpretationBox[
-           StyleBox["\[Psi]",
-            ShowAutoStyles->False,
-            AutoSpacing->False],
-           xAct`xPand`\[Psi][],
-           Editable->False], ""]}], ")"}]}], 
-      SuperscriptBox[
-       OverscriptBox[
         InterpretationBox[
-         StyleBox["a",
+         StyleBox[
+          RowBox[{
+           OverscriptBox["\[Null]", 
+            StyleBox[
+             RowBox[{"(", "1", ")"}],
+             FontColor->RGBColor[0.85, 0, 0]]], "\[NegativeThinSpace]", 
+           OverscriptBox[
+            InterpretationBox[
+             StyleBox["\[Psi]",
+              ShowAutoStyles->False,
+              AutoSpacing->False],
+             xAct`xPand`\[Psi][],
+             Editable->False], ""]}],
           ShowAutoStyles->False,
           AutoSpacing->False],
-         $CellContext`ah[],
-         Editable->False], ""], "2"]], "-", 
+         xAct`xPand`\[Psi][
+          xAct`xTensor`LI[1], 
+          xAct`xTensor`LI[0]],
+         Editable->False], ")"}]}], 
+      SuperscriptBox[
+       InterpretationBox[
+        StyleBox[
+         OverscriptBox[
+          InterpretationBox[
+           StyleBox["a",
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           $CellContext`ah[],
+           Editable->False], ""],
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`ah[
+         xAct`xTensor`LI[0], 
+         xAct`xTensor`LI[0]],
+        Editable->False], "2"]], "-", 
      FractionBox[
       RowBox[{"18", " ", 
-       OverscriptBox[
-        InterpretationBox[
-         StyleBox["\[ScriptCapitalH]",
-          ShowAutoStyles->False,
-          AutoSpacing->False],
-         $CellContext`Hh[],
-         Editable->False], ""], " ", 
-       RowBox[{"(", 
-        RowBox[{
-         OverscriptBox["\<\"\"\>", 
-          StyleBox[
-           RowBox[{"(", "1", ")"}],
-           FontColor->RGBColor[0.85, 0, 0]]], "\[NegativeThinSpace]", 
+       InterpretationBox[
+        StyleBox[
          OverscriptBox[
           InterpretationBox[
-           StyleBox["\[Psi]",
+           StyleBox["\[ScriptCapitalH]",
             ShowAutoStyles->False,
             AutoSpacing->False],
-           xAct`xPand`\[Psi][],
-           Editable->False], "\[Prime]"]}], ")"}]}], 
-      SuperscriptBox[
-       OverscriptBox[
+           $CellContext`Hh[],
+           Editable->False], ""],
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`Hh[
+         xAct`xTensor`LI[0], 
+         xAct`xTensor`LI[0]],
+        Editable->False], " ", 
+       RowBox[{"(", 
         InterpretationBox[
-         StyleBox["a",
+         StyleBox[
+          RowBox[{
+           OverscriptBox["\[Null]", 
+            StyleBox[
+             RowBox[{"(", "1", ")"}],
+             FontColor->RGBColor[0.85, 0, 0]]], "\[NegativeThinSpace]", 
+           OverscriptBox[
+            InterpretationBox[
+             StyleBox["\[Psi]",
+              ShowAutoStyles->False,
+              AutoSpacing->False],
+             xAct`xPand`\[Psi][],
+             Editable->False], "\[Prime]"]}],
           ShowAutoStyles->False,
           AutoSpacing->False],
-         $CellContext`ah[],
-         Editable->False], ""], "2"]], "-", 
+         xAct`xPand`\[Psi][
+          xAct`xTensor`LI[1], 
+          xAct`xTensor`LI[1]],
+         Editable->False], ")"}]}], 
+      SuperscriptBox[
+       InterpretationBox[
+        StyleBox[
+         OverscriptBox[
+          InterpretationBox[
+           StyleBox["a",
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           $CellContext`ah[],
+           Editable->False], ""],
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`ah[
+         xAct`xTensor`LI[0], 
+         xAct`xTensor`LI[0]],
+        Editable->False], "2"]], "-", 
      FractionBox[
       RowBox[{"6", " ", 
        RowBox[{"(", 
-        RowBox[{
-         OverscriptBox["\<\"\"\>", 
-          StyleBox[
-           RowBox[{"(", "1", ")"}],
-           FontColor->RGBColor[0.85, 0, 0]]], "\[NegativeThinSpace]", 
-         OverscriptBox[
-          InterpretationBox[
-           StyleBox["\[Psi]",
-            ShowAutoStyles->False,
-            AutoSpacing->False],
-           xAct`xPand`\[Psi][],
-           Editable->False], "\[Prime]\[Prime]"]}], ")"}]}], 
-      SuperscriptBox[
-       OverscriptBox[
         InterpretationBox[
-         StyleBox["a",
+         StyleBox[
+          RowBox[{
+           OverscriptBox["\[Null]", 
+            StyleBox[
+             RowBox[{"(", "1", ")"}],
+             FontColor->RGBColor[0.85, 0, 0]]], "\[NegativeThinSpace]", 
+           OverscriptBox[
+            InterpretationBox[
+             StyleBox["\[Psi]",
+              ShowAutoStyles->False,
+              AutoSpacing->False],
+             xAct`xPand`\[Psi][],
+             Editable->False], "\[Prime]\[Prime]"]}],
           ShowAutoStyles->False,
           AutoSpacing->False],
-         $CellContext`ah[],
-         Editable->False], ""], "2"]], "-", 
+         xAct`xPand`\[Psi][
+          xAct`xTensor`LI[1], 
+          xAct`xTensor`LI[2]],
+         Editable->False], ")"}]}], 
+      SuperscriptBox[
+       InterpretationBox[
+        StyleBox[
+         OverscriptBox[
+          InterpretationBox[
+           StyleBox["a",
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           $CellContext`ah[],
+           Editable->False], ""],
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`ah[
+         xAct`xTensor`LI[0], 
+         xAct`xTensor`LI[0]],
+        Editable->False], "2"]], "-", 
      FractionBox[
       RowBox[{"2", " ", 
        RowBox[{"(", 
@@ -524,7 +674,7 @@ Cell[BoxData[
           RowBox[{
            SubscriptBox["D", "b"], 
            SuperscriptBox["D", "b"], 
-           OverscriptBox["\<\"\"\>", 
+           OverscriptBox["\[Null]", 
             StyleBox[
              RowBox[{"(", "1", ")"}],
              FontColor->RGBColor[0.85, 0, 0]]], "\[NegativeThinSpace]", 
@@ -544,13 +694,21 @@ Cell[BoxData[
             xAct`xTensor`LI[0]]]],
          Editable->False], ")"}]}], 
       SuperscriptBox[
-       OverscriptBox[
-        InterpretationBox[
-         StyleBox["a",
-          ShowAutoStyles->False,
-          AutoSpacing->False],
-         $CellContext`ah[],
-         Editable->False], ""], "2"]], "+", 
+       InterpretationBox[
+        StyleBox[
+         OverscriptBox[
+          InterpretationBox[
+           StyleBox["a",
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           $CellContext`ah[],
+           Editable->False], ""],
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`ah[
+         xAct`xTensor`LI[0], 
+         xAct`xTensor`LI[0]],
+        Editable->False], "2"]], "+", 
      FractionBox[
       RowBox[{"4", " ", 
        RowBox[{"(", 
@@ -559,7 +717,7 @@ Cell[BoxData[
           RowBox[{
            SubscriptBox["D", "b"], 
            SuperscriptBox["D", "b"], 
-           OverscriptBox["\<\"\"\>", 
+           OverscriptBox["\[Null]", 
             StyleBox[
              RowBox[{"(", "1", ")"}],
              FontColor->RGBColor[0.85, 0, 0]]], "\[NegativeThinSpace]", 
@@ -579,13 +737,21 @@ Cell[BoxData[
             xAct`xTensor`LI[0]]]],
          Editable->False], ")"}]}], 
       SuperscriptBox[
-       OverscriptBox[
-        InterpretationBox[
-         StyleBox["a",
-          ShowAutoStyles->False,
-          AutoSpacing->False],
-         $CellContext`ah[],
-         Editable->False], ""], "2"]]}], ")"}]}]}]], "Output"]
+       InterpretationBox[
+        StyleBox[
+         OverscriptBox[
+          InterpretationBox[
+           StyleBox["a",
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           $CellContext`ah[],
+           Editable->False], ""],
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`ah[
+         xAct`xTensor`LI[0], 
+         xAct`xTensor`LI[0]],
+        Editable->False], "2"]]}], ")"}]}]}]], "Output"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -608,13 +774,21 @@ Cell[BoxData[
      RowBox[{
       RowBox[{"3", " ", 
        SuperscriptBox[
-        OverscriptBox[
-         InterpretationBox[
-          StyleBox["\[ScriptCapitalH]",
-           ShowAutoStyles->False,
-           AutoSpacing->False],
-          $CellContext`Hh[],
-          Editable->False], ""], "2"]}], "+", 
+        InterpretationBox[
+         StyleBox[
+          OverscriptBox[
+           InterpretationBox[
+            StyleBox["\[ScriptCapitalH]",
+             ShowAutoStyles->False,
+             AutoSpacing->False],
+            $CellContext`Hh[],
+            Editable->False], ""],
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`Hh[
+          xAct`xTensor`LI[0], 
+          xAct`xTensor`LI[0]],
+         Editable->False], "2"]}], "+", 
       RowBox[{"3", " ", 
        InterpretationBox[
         StyleBox["\[ScriptK]",
@@ -639,18 +813,26 @@ Cell[BoxData[
            $CellContext`\[ScriptK]h[],
            Editable->False], " ", 
           RowBox[{"(", 
-           RowBox[{
-            OverscriptBox["\<\"\"\>", 
-             StyleBox[
-              RowBox[{"(", "1", ")"}],
-              FontColor->RGBColor[0.85, 0, 0]]], "\[NegativeThinSpace]", 
-            OverscriptBox[
-             InterpretationBox[
-              StyleBox["\[Phi]",
-               ShowAutoStyles->False,
-               AutoSpacing->False],
-              xAct`xPand`\[Phi][],
-              Editable->False], ""]}], ")"}]}], "+", 
+           InterpretationBox[
+            StyleBox[
+             RowBox[{
+              OverscriptBox["\[Null]", 
+               StyleBox[
+                RowBox[{"(", "1", ")"}],
+                FontColor->RGBColor[0.85, 0, 0]]], "\[NegativeThinSpace]", 
+              OverscriptBox[
+               InterpretationBox[
+                StyleBox["\[Phi]",
+                 ShowAutoStyles->False,
+                 AutoSpacing->False],
+                xAct`xPand`\[Phi][],
+                Editable->False], ""]}],
+             ShowAutoStyles->False,
+             AutoSpacing->False],
+            xAct`xPand`\[Phi][
+             xAct`xTensor`LI[1], 
+             xAct`xTensor`LI[0]],
+            Editable->False], ")"}]}], "+", 
          RowBox[{"6", " ", 
           InterpretationBox[
            StyleBox["\[ScriptK]",
@@ -659,39 +841,63 @@ Cell[BoxData[
            $CellContext`\[ScriptK]h[],
            Editable->False], " ", 
           RowBox[{"(", 
-           RowBox[{
-            OverscriptBox["\<\"\"\>", 
-             StyleBox[
-              RowBox[{"(", "1", ")"}],
-              FontColor->RGBColor[0.85, 0, 0]]], "\[NegativeThinSpace]", 
-            OverscriptBox[
-             InterpretationBox[
-              StyleBox["\[Psi]",
-               ShowAutoStyles->False,
-               AutoSpacing->False],
-              xAct`xPand`\[Psi][],
-              Editable->False], ""]}], ")"}]}], "-", 
-         RowBox[{"6", " ", 
-          OverscriptBox[
            InterpretationBox[
-            StyleBox["\[ScriptCapitalH]",
+            StyleBox[
+             RowBox[{
+              OverscriptBox["\[Null]", 
+               StyleBox[
+                RowBox[{"(", "1", ")"}],
+                FontColor->RGBColor[0.85, 0, 0]]], "\[NegativeThinSpace]", 
+              OverscriptBox[
+               InterpretationBox[
+                StyleBox["\[Psi]",
+                 ShowAutoStyles->False,
+                 AutoSpacing->False],
+                xAct`xPand`\[Psi][],
+                Editable->False], ""]}],
              ShowAutoStyles->False,
              AutoSpacing->False],
-            $CellContext`Hh[],
-            Editable->False], ""], " ", 
-          RowBox[{"(", 
-           RowBox[{
-            OverscriptBox["\<\"\"\>", 
-             StyleBox[
-              RowBox[{"(", "1", ")"}],
-              FontColor->RGBColor[0.85, 0, 0]]], "\[NegativeThinSpace]", 
+            xAct`xPand`\[Psi][
+             xAct`xTensor`LI[1], 
+             xAct`xTensor`LI[0]],
+            Editable->False], ")"}]}], "-", 
+         RowBox[{"6", " ", 
+          InterpretationBox[
+           StyleBox[
             OverscriptBox[
              InterpretationBox[
-              StyleBox["\[Psi]",
+              StyleBox["\[ScriptCapitalH]",
                ShowAutoStyles->False,
                AutoSpacing->False],
-              xAct`xPand`\[Psi][],
-              Editable->False], "\[Prime]"]}], ")"}]}], "+", 
+              $CellContext`Hh[],
+              Editable->False], ""],
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           $CellContext`Hh[
+            xAct`xTensor`LI[0], 
+            xAct`xTensor`LI[0]],
+           Editable->False], " ", 
+          RowBox[{"(", 
+           InterpretationBox[
+            StyleBox[
+             RowBox[{
+              OverscriptBox["\[Null]", 
+               StyleBox[
+                RowBox[{"(", "1", ")"}],
+                FontColor->RGBColor[0.85, 0, 0]]], "\[NegativeThinSpace]", 
+              OverscriptBox[
+               InterpretationBox[
+                StyleBox["\[Psi]",
+                 ShowAutoStyles->False,
+                 AutoSpacing->False],
+                xAct`xPand`\[Psi][],
+                Editable->False], "\[Prime]"]}],
+             ShowAutoStyles->False,
+             AutoSpacing->False],
+            xAct`xPand`\[Psi][
+             xAct`xTensor`LI[1], 
+             xAct`xTensor`LI[1]],
+            Editable->False], ")"}]}], "+", 
          RowBox[{"2", " ", 
           RowBox[{"(", 
            InterpretationBox[
@@ -699,7 +905,7 @@ Cell[BoxData[
              RowBox[{
               SubscriptBox["D", "i"], 
               SuperscriptBox["D", "i"], 
-              OverscriptBox["\<\"\"\>", 
+              OverscriptBox["\[Null]", 
                StyleBox[
                 RowBox[{"(", "1", ")"}],
                 FontColor->RGBColor[0.85, 0, 0]]], "\[NegativeThinSpace]", 
@@ -728,19 +934,27 @@ Cell[BoxData[
       RowBox[{"(", 
        RowBox[{
         RowBox[{"2", " ", 
-         OverscriptBox[
-          InterpretationBox[
-           StyleBox["\[ScriptCapitalH]",
-            ShowAutoStyles->False,
-            AutoSpacing->False],
-           $CellContext`Hh[],
-           Editable->False], ""], " ", 
+         InterpretationBox[
+          StyleBox[
+           OverscriptBox[
+            InterpretationBox[
+             StyleBox["\[ScriptCapitalH]",
+              ShowAutoStyles->False,
+              AutoSpacing->False],
+             $CellContext`Hh[],
+             Editable->False], ""],
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          $CellContext`Hh[
+           xAct`xTensor`LI[0], 
+           xAct`xTensor`LI[0]],
+          Editable->False], " ", 
          RowBox[{"(", 
           InterpretationBox[
            StyleBox[
             RowBox[{
              SubscriptBox["D", "c"], 
-             OverscriptBox["\<\"\"\>", 
+             OverscriptBox["\[Null]", 
               StyleBox[
                RowBox[{"(", "1", ")"}],
                FontColor->RGBColor[0.85, 0, 0]]], "\[NegativeThinSpace]", 
@@ -764,7 +978,7 @@ Cell[BoxData[
            StyleBox[
             RowBox[{
              SubscriptBox["D", "c"], 
-             OverscriptBox["\<\"\"\>", 
+             OverscriptBox["\[Null]", 
               StyleBox[
                RowBox[{"(", "1", ")"}],
                FontColor->RGBColor[0.85, 0, 0]]], "\[NegativeThinSpace]", 
@@ -793,19 +1007,27 @@ Cell[BoxData[
       RowBox[{"(", 
        RowBox[{
         RowBox[{"2", " ", 
-         OverscriptBox[
-          InterpretationBox[
-           StyleBox["\[ScriptCapitalH]",
-            ShowAutoStyles->False,
-            AutoSpacing->False],
-           $CellContext`Hh[],
-           Editable->False], ""], " ", 
+         InterpretationBox[
+          StyleBox[
+           OverscriptBox[
+            InterpretationBox[
+             StyleBox["\[ScriptCapitalH]",
+              ShowAutoStyles->False,
+              AutoSpacing->False],
+             $CellContext`Hh[],
+             Editable->False], ""],
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          $CellContext`Hh[
+           xAct`xTensor`LI[0], 
+           xAct`xTensor`LI[0]],
+          Editable->False], " ", 
          RowBox[{"(", 
           InterpretationBox[
            StyleBox[
             RowBox[{
              SubscriptBox["D", "b"], 
-             OverscriptBox["\<\"\"\>", 
+             OverscriptBox["\[Null]", 
               StyleBox[
                RowBox[{"(", "1", ")"}],
                FontColor->RGBColor[0.85, 0, 0]]], "\[NegativeThinSpace]", 
@@ -829,7 +1051,7 @@ Cell[BoxData[
            StyleBox[
             RowBox[{
              SubscriptBox["D", "b"], 
-             OverscriptBox["\<\"\"\>", 
+             OverscriptBox["\[Null]", 
               StyleBox[
                RowBox[{"(", "1", ")"}],
                FontColor->RGBColor[0.85, 0, 0]]], "\[NegativeThinSpace]", 
@@ -863,7 +1085,7 @@ Cell[BoxData[
                     Offset[0.034999999999999996`]}, 
                    Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                     Offset[0.]}}, "RowsIndexed" -> {}}],
-              FontSize->9]}
+              FontSize->Rational[39, 4]]}
            },
            
            GridBoxAlignment->{
@@ -881,13 +1103,21 @@ Cell[BoxData[
          $CellContext`h[-$CellContext`b, -$CellContext`c],
          Editable->False]}], " ", 
        SuperscriptBox[
-        OverscriptBox[
-         InterpretationBox[
-          StyleBox["\[ScriptCapitalH]",
-           ShowAutoStyles->False,
-           AutoSpacing->False],
-          $CellContext`Hh[],
-          Editable->False], ""], "2"]}], "-", 
+        InterpretationBox[
+         StyleBox[
+          OverscriptBox[
+           InterpretationBox[
+            StyleBox["\[ScriptCapitalH]",
+             ShowAutoStyles->False,
+             AutoSpacing->False],
+            $CellContext`Hh[],
+            Editable->False], ""],
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`Hh[
+          xAct`xTensor`LI[0], 
+          xAct`xTensor`LI[0]],
+         Editable->False], "2"]}], "-", 
       RowBox[{"2", " ", 
        InterpretationBox[
         StyleBox[GridBox[{
@@ -902,7 +1132,7 @@ Cell[BoxData[
                    Offset[0.034999999999999996`]}, 
                   Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                    Offset[0.]}}, "RowsIndexed" -> {}}],
-             FontSize->9]}
+             FontSize->Rational[39, 4]]}
           },
           
           GridBoxAlignment->{
@@ -919,13 +1149,21 @@ Cell[BoxData[
          AutoSpacing->False],
         $CellContext`h[-$CellContext`b, -$CellContext`c],
         Editable->False], " ", 
-       OverscriptBox[
-        InterpretationBox[
-         StyleBox["\[ScriptCapitalH]",
-          ShowAutoStyles->False,
-          AutoSpacing->False],
-         $CellContext`Hh[],
-         Editable->False], "\[Prime]"]}], "-", 
+       InterpretationBox[
+        StyleBox[
+         OverscriptBox[
+          InterpretationBox[
+           StyleBox["\[ScriptCapitalH]",
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           $CellContext`Hh[],
+           Editable->False], "\[Prime]"],
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`Hh[
+         xAct`xTensor`LI[0], 
+         xAct`xTensor`LI[1]],
+        Editable->False]}], "-", 
       RowBox[{
        InterpretationBox[
         StyleBox[GridBox[{
@@ -940,7 +1178,7 @@ Cell[BoxData[
                    Offset[0.034999999999999996`]}, 
                   Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                    Offset[0.]}}, "RowsIndexed" -> {}}],
-             FontSize->9]}
+             FontSize->Rational[39, 4]]}
           },
           
           GridBoxAlignment->{
@@ -986,7 +1224,7 @@ Cell[BoxData[
                     Offset[0.034999999999999996`]}, 
                     Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                     Offset[0.]}}, "RowsIndexed" -> {}}],
-                FontSize->9]}
+                FontSize->Rational[39, 4]]}
              },
              
              GridBoxAlignment->{
@@ -1005,26 +1243,42 @@ Cell[BoxData[
            $CellContext`h[-$CellContext`b, -$CellContext`c],
            Editable->False], " ", 
           SuperscriptBox[
-           OverscriptBox[
-            InterpretationBox[
-             StyleBox["\[ScriptCapitalH]",
-              ShowAutoStyles->False,
-              AutoSpacing->False],
-             $CellContext`Hh[],
-             Editable->False], ""], "2"], " ", 
+           InterpretationBox[
+            StyleBox[
+             OverscriptBox[
+              InterpretationBox[
+               StyleBox["\[ScriptCapitalH]",
+                ShowAutoStyles->False,
+                AutoSpacing->False],
+               $CellContext`Hh[],
+               Editable->False], ""],
+             ShowAutoStyles->False,
+             AutoSpacing->False],
+            $CellContext`Hh[
+             xAct`xTensor`LI[0], 
+             xAct`xTensor`LI[0]],
+            Editable->False], "2"], " ", 
           RowBox[{"(", 
-           RowBox[{
-            OverscriptBox["\<\"\"\>", 
-             StyleBox[
-              RowBox[{"(", "1", ")"}],
-              FontColor->RGBColor[0.85, 0, 0]]], "\[NegativeThinSpace]", 
-            OverscriptBox[
-             InterpretationBox[
-              StyleBox["\[Phi]",
-               ShowAutoStyles->False,
-               AutoSpacing->False],
-              xAct`xPand`\[Phi][],
-              Editable->False], ""]}], ")"}]}], "+", 
+           InterpretationBox[
+            StyleBox[
+             RowBox[{
+              OverscriptBox["\[Null]", 
+               StyleBox[
+                RowBox[{"(", "1", ")"}],
+                FontColor->RGBColor[0.85, 0, 0]]], "\[NegativeThinSpace]", 
+              OverscriptBox[
+               InterpretationBox[
+                StyleBox["\[Phi]",
+                 ShowAutoStyles->False,
+                 AutoSpacing->False],
+                xAct`xPand`\[Phi][],
+                Editable->False], ""]}],
+             ShowAutoStyles->False,
+             AutoSpacing->False],
+            xAct`xPand`\[Phi][
+             xAct`xTensor`LI[1], 
+             xAct`xTensor`LI[0]],
+            Editable->False], ")"}]}], "+", 
          RowBox[{"4", " ", 
           InterpretationBox[
            StyleBox[GridBox[{
@@ -1039,7 +1293,7 @@ Cell[BoxData[
                     Offset[0.034999999999999996`]}, 
                     Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                     Offset[0.]}}, "RowsIndexed" -> {}}],
-                FontSize->9]}
+                FontSize->Rational[39, 4]]}
              },
              
              GridBoxAlignment->{
@@ -1057,26 +1311,42 @@ Cell[BoxData[
             AutoSpacing->False],
            $CellContext`h[-$CellContext`b, -$CellContext`c],
            Editable->False], " ", 
-          OverscriptBox[
-           InterpretationBox[
-            StyleBox["\[ScriptCapitalH]",
-             ShowAutoStyles->False,
-             AutoSpacing->False],
-            $CellContext`Hh[],
-            Editable->False], "\[Prime]"], " ", 
-          RowBox[{"(", 
-           RowBox[{
-            OverscriptBox["\<\"\"\>", 
-             StyleBox[
-              RowBox[{"(", "1", ")"}],
-              FontColor->RGBColor[0.85, 0, 0]]], "\[NegativeThinSpace]", 
+          InterpretationBox[
+           StyleBox[
             OverscriptBox[
              InterpretationBox[
-              StyleBox["\[Phi]",
+              StyleBox["\[ScriptCapitalH]",
                ShowAutoStyles->False,
                AutoSpacing->False],
-              xAct`xPand`\[Phi][],
-              Editable->False], ""]}], ")"}]}], "+", 
+              $CellContext`Hh[],
+              Editable->False], "\[Prime]"],
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           $CellContext`Hh[
+            xAct`xTensor`LI[0], 
+            xAct`xTensor`LI[1]],
+           Editable->False], " ", 
+          RowBox[{"(", 
+           InterpretationBox[
+            StyleBox[
+             RowBox[{
+              OverscriptBox["\[Null]", 
+               StyleBox[
+                RowBox[{"(", "1", ")"}],
+                FontColor->RGBColor[0.85, 0, 0]]], "\[NegativeThinSpace]", 
+              OverscriptBox[
+               InterpretationBox[
+                StyleBox["\[Phi]",
+                 ShowAutoStyles->False,
+                 AutoSpacing->False],
+                xAct`xPand`\[Phi][],
+                Editable->False], ""]}],
+             ShowAutoStyles->False,
+             AutoSpacing->False],
+            xAct`xPand`\[Phi][
+             xAct`xTensor`LI[1], 
+             xAct`xTensor`LI[0]],
+            Editable->False], ")"}]}], "+", 
          RowBox[{"2", " ", 
           InterpretationBox[
            StyleBox[GridBox[{
@@ -1091,8 +1361,9 @@ Cell[BoxData[
                     Offset[0.034999999999999996`]}, 
                     Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                     Offset[0.]}}, "RowsIndexed" -> {}}],
-                FontSize->9]}
+                FontSize->Rational[39, 4]]}
              },
+             
              GridBoxAlignment->{
               "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
                "Rows" -> {{Center}}, "RowsIndexed" -> {}},
@@ -1108,26 +1379,42 @@ Cell[BoxData[
             AutoSpacing->False],
            $CellContext`h[-$CellContext`b, -$CellContext`c],
            Editable->False], " ", 
-          OverscriptBox[
-           InterpretationBox[
-            StyleBox["\[ScriptCapitalH]",
-             ShowAutoStyles->False,
-             AutoSpacing->False],
-            $CellContext`Hh[],
-            Editable->False], ""], " ", 
-          RowBox[{"(", 
-           RowBox[{
-            OverscriptBox["\<\"\"\>", 
-             StyleBox[
-              RowBox[{"(", "1", ")"}],
-              FontColor->RGBColor[0.85, 0, 0]]], "\[NegativeThinSpace]", 
+          InterpretationBox[
+           StyleBox[
             OverscriptBox[
              InterpretationBox[
-              StyleBox["\[Phi]",
+              StyleBox["\[ScriptCapitalH]",
                ShowAutoStyles->False,
                AutoSpacing->False],
-              xAct`xPand`\[Phi][],
-              Editable->False], "\[Prime]"]}], ")"}]}], "+", 
+              $CellContext`Hh[],
+              Editable->False], ""],
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           $CellContext`Hh[
+            xAct`xTensor`LI[0], 
+            xAct`xTensor`LI[0]],
+           Editable->False], " ", 
+          RowBox[{"(", 
+           InterpretationBox[
+            StyleBox[
+             RowBox[{
+              OverscriptBox["\[Null]", 
+               StyleBox[
+                RowBox[{"(", "1", ")"}],
+                FontColor->RGBColor[0.85, 0, 0]]], "\[NegativeThinSpace]", 
+              OverscriptBox[
+               InterpretationBox[
+                StyleBox["\[Phi]",
+                 ShowAutoStyles->False,
+                 AutoSpacing->False],
+                xAct`xPand`\[Phi][],
+                Editable->False], "\[Prime]"]}],
+             ShowAutoStyles->False,
+             AutoSpacing->False],
+            xAct`xPand`\[Phi][
+             xAct`xTensor`LI[1], 
+             xAct`xTensor`LI[1]],
+            Editable->False], ")"}]}], "+", 
          RowBox[{"2", " ", 
           InterpretationBox[
            StyleBox[GridBox[{
@@ -1142,7 +1429,7 @@ Cell[BoxData[
                     Offset[0.034999999999999996`]}, 
                     Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                     Offset[0.]}}, "RowsIndexed" -> {}}],
-                FontSize->9]}
+                FontSize->Rational[39, 4]]}
              },
              
              GridBoxAlignment->{
@@ -1161,26 +1448,42 @@ Cell[BoxData[
            $CellContext`h[-$CellContext`b, -$CellContext`c],
            Editable->False], " ", 
           SuperscriptBox[
-           OverscriptBox[
-            InterpretationBox[
-             StyleBox["\[ScriptCapitalH]",
-              ShowAutoStyles->False,
-              AutoSpacing->False],
-             $CellContext`Hh[],
-             Editable->False], ""], "2"], " ", 
+           InterpretationBox[
+            StyleBox[
+             OverscriptBox[
+              InterpretationBox[
+               StyleBox["\[ScriptCapitalH]",
+                ShowAutoStyles->False,
+                AutoSpacing->False],
+               $CellContext`Hh[],
+               Editable->False], ""],
+             ShowAutoStyles->False,
+             AutoSpacing->False],
+            $CellContext`Hh[
+             xAct`xTensor`LI[0], 
+             xAct`xTensor`LI[0]],
+            Editable->False], "2"], " ", 
           RowBox[{"(", 
-           RowBox[{
-            OverscriptBox["\<\"\"\>", 
-             StyleBox[
-              RowBox[{"(", "1", ")"}],
-              FontColor->RGBColor[0.85, 0, 0]]], "\[NegativeThinSpace]", 
-            OverscriptBox[
-             InterpretationBox[
-              StyleBox["\[Psi]",
-               ShowAutoStyles->False,
-               AutoSpacing->False],
-              xAct`xPand`\[Psi][],
-              Editable->False], ""]}], ")"}]}], "+", 
+           InterpretationBox[
+            StyleBox[
+             RowBox[{
+              OverscriptBox["\[Null]", 
+               StyleBox[
+                RowBox[{"(", "1", ")"}],
+                FontColor->RGBColor[0.85, 0, 0]]], "\[NegativeThinSpace]", 
+              OverscriptBox[
+               InterpretationBox[
+                StyleBox["\[Psi]",
+                 ShowAutoStyles->False,
+                 AutoSpacing->False],
+                xAct`xPand`\[Psi][],
+                Editable->False], ""]}],
+             ShowAutoStyles->False,
+             AutoSpacing->False],
+            xAct`xPand`\[Psi][
+             xAct`xTensor`LI[1], 
+             xAct`xTensor`LI[0]],
+            Editable->False], ")"}]}], "+", 
          RowBox[{"4", " ", 
           InterpretationBox[
            StyleBox[GridBox[{
@@ -1195,7 +1498,7 @@ Cell[BoxData[
                     Offset[0.034999999999999996`]}, 
                     Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                     Offset[0.]}}, "RowsIndexed" -> {}}],
-                FontSize->9]}
+                FontSize->Rational[39, 4]]}
              },
              
              GridBoxAlignment->{
@@ -1213,26 +1516,42 @@ Cell[BoxData[
             AutoSpacing->False],
            $CellContext`h[-$CellContext`b, -$CellContext`c],
            Editable->False], " ", 
-          OverscriptBox[
-           InterpretationBox[
-            StyleBox["\[ScriptCapitalH]",
-             ShowAutoStyles->False,
-             AutoSpacing->False],
-            $CellContext`Hh[],
-            Editable->False], "\[Prime]"], " ", 
-          RowBox[{"(", 
-           RowBox[{
-            OverscriptBox["\<\"\"\>", 
-             StyleBox[
-              RowBox[{"(", "1", ")"}],
-              FontColor->RGBColor[0.85, 0, 0]]], "\[NegativeThinSpace]", 
+          InterpretationBox[
+           StyleBox[
             OverscriptBox[
              InterpretationBox[
-              StyleBox["\[Psi]",
+              StyleBox["\[ScriptCapitalH]",
                ShowAutoStyles->False,
                AutoSpacing->False],
-              xAct`xPand`\[Psi][],
-              Editable->False], ""]}], ")"}]}], "+", 
+              $CellContext`Hh[],
+              Editable->False], "\[Prime]"],
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           $CellContext`Hh[
+            xAct`xTensor`LI[0], 
+            xAct`xTensor`LI[1]],
+           Editable->False], " ", 
+          RowBox[{"(", 
+           InterpretationBox[
+            StyleBox[
+             RowBox[{
+              OverscriptBox["\[Null]", 
+               StyleBox[
+                RowBox[{"(", "1", ")"}],
+                FontColor->RGBColor[0.85, 0, 0]]], "\[NegativeThinSpace]", 
+              OverscriptBox[
+               InterpretationBox[
+                StyleBox["\[Psi]",
+                 ShowAutoStyles->False,
+                 AutoSpacing->False],
+                xAct`xPand`\[Psi][],
+                Editable->False], ""]}],
+             ShowAutoStyles->False,
+             AutoSpacing->False],
+            xAct`xPand`\[Psi][
+             xAct`xTensor`LI[1], 
+             xAct`xTensor`LI[0]],
+            Editable->False], ")"}]}], "+", 
          RowBox[{"4", " ", 
           InterpretationBox[
            StyleBox[GridBox[{
@@ -1247,7 +1566,7 @@ Cell[BoxData[
                     Offset[0.034999999999999996`]}, 
                     Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                     Offset[0.]}}, "RowsIndexed" -> {}}],
-                FontSize->9]}
+                FontSize->Rational[39, 4]]}
              },
              
              GridBoxAlignment->{
@@ -1265,26 +1584,42 @@ Cell[BoxData[
             AutoSpacing->False],
            $CellContext`h[-$CellContext`b, -$CellContext`c],
            Editable->False], " ", 
-          OverscriptBox[
-           InterpretationBox[
-            StyleBox["\[ScriptCapitalH]",
-             ShowAutoStyles->False,
-             AutoSpacing->False],
-            $CellContext`Hh[],
-            Editable->False], ""], " ", 
-          RowBox[{"(", 
-           RowBox[{
-            OverscriptBox["\<\"\"\>", 
-             StyleBox[
-              RowBox[{"(", "1", ")"}],
-              FontColor->RGBColor[0.85, 0, 0]]], "\[NegativeThinSpace]", 
+          InterpretationBox[
+           StyleBox[
             OverscriptBox[
              InterpretationBox[
-              StyleBox["\[Psi]",
+              StyleBox["\[ScriptCapitalH]",
                ShowAutoStyles->False,
                AutoSpacing->False],
-              xAct`xPand`\[Psi][],
-              Editable->False], "\[Prime]"]}], ")"}]}], "+", 
+              $CellContext`Hh[],
+              Editable->False], ""],
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           $CellContext`Hh[
+            xAct`xTensor`LI[0], 
+            xAct`xTensor`LI[0]],
+           Editable->False], " ", 
+          RowBox[{"(", 
+           InterpretationBox[
+            StyleBox[
+             RowBox[{
+              OverscriptBox["\[Null]", 
+               StyleBox[
+                RowBox[{"(", "1", ")"}],
+                FontColor->RGBColor[0.85, 0, 0]]], "\[NegativeThinSpace]", 
+              OverscriptBox[
+               InterpretationBox[
+                StyleBox["\[Psi]",
+                 ShowAutoStyles->False,
+                 AutoSpacing->False],
+                xAct`xPand`\[Psi][],
+                Editable->False], "\[Prime]"]}],
+             ShowAutoStyles->False,
+             AutoSpacing->False],
+            xAct`xPand`\[Psi][
+             xAct`xTensor`LI[1], 
+             xAct`xTensor`LI[1]],
+            Editable->False], ")"}]}], "+", 
          RowBox[{"2", " ", 
           InterpretationBox[
            StyleBox[GridBox[{
@@ -1299,7 +1634,7 @@ Cell[BoxData[
                     Offset[0.034999999999999996`]}, 
                     Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                     Offset[0.]}}, "RowsIndexed" -> {}}],
-                FontSize->9]}
+                FontSize->Rational[39, 4]]}
              },
              
              GridBoxAlignment->{
@@ -1318,24 +1653,32 @@ Cell[BoxData[
            $CellContext`h[-$CellContext`b, -$CellContext`c],
            Editable->False], " ", 
           RowBox[{"(", 
-           RowBox[{
-            OverscriptBox["\<\"\"\>", 
-             StyleBox[
-              RowBox[{"(", "1", ")"}],
-              FontColor->RGBColor[0.85, 0, 0]]], "\[NegativeThinSpace]", 
-            OverscriptBox[
-             InterpretationBox[
-              StyleBox["\[Psi]",
-               ShowAutoStyles->False,
-               AutoSpacing->False],
-              xAct`xPand`\[Psi][],
-              Editable->False], "\[Prime]\[Prime]"]}], ")"}]}], "-", 
+           InterpretationBox[
+            StyleBox[
+             RowBox[{
+              OverscriptBox["\[Null]", 
+               StyleBox[
+                RowBox[{"(", "1", ")"}],
+                FontColor->RGBColor[0.85, 0, 0]]], "\[NegativeThinSpace]", 
+              OverscriptBox[
+               InterpretationBox[
+                StyleBox["\[Psi]",
+                 ShowAutoStyles->False,
+                 AutoSpacing->False],
+                xAct`xPand`\[Psi][],
+                Editable->False], "\[Prime]\[Prime]"]}],
+             ShowAutoStyles->False,
+             AutoSpacing->False],
+            xAct`xPand`\[Psi][
+             xAct`xTensor`LI[1], 
+             xAct`xTensor`LI[2]],
+            Editable->False], ")"}]}], "-", 
          InterpretationBox[
           StyleBox[
            RowBox[{
             SubscriptBox["D", "c"], 
             SubscriptBox["D", "b"], 
-            OverscriptBox["\<\"\"\>", 
+            OverscriptBox["\[Null]", 
              StyleBox[
               RowBox[{"(", "1", ")"}],
               FontColor->RGBColor[0.85, 0, 0]]], "\[NegativeThinSpace]", 
@@ -1359,7 +1702,7 @@ Cell[BoxData[
            RowBox[{
             SubscriptBox["D", "c"], 
             SubscriptBox["D", "b"], 
-            OverscriptBox["\<\"\"\>", 
+            OverscriptBox["\[Null]", 
              StyleBox[
               RowBox[{"(", "1", ")"}],
               FontColor->RGBColor[0.85, 0, 0]]], "\[NegativeThinSpace]", 
@@ -1392,7 +1735,7 @@ Cell[BoxData[
                     Offset[0.034999999999999996`]}, 
                     Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                     Offset[0.]}}, "RowsIndexed" -> {}}],
-                FontSize->9]}
+                FontSize->Rational[39, 4]]}
              },
              
              GridBoxAlignment->{
@@ -1416,7 +1759,7 @@ Cell[BoxData[
              RowBox[{
               SubscriptBox["D", "i"], 
               SuperscriptBox["D", "i"], 
-              OverscriptBox["\<\"\"\>", 
+              OverscriptBox["\[Null]", 
                StyleBox[
                 RowBox[{"(", "1", ")"}],
                 FontColor->RGBColor[0.85, 0, 0]]], "\[NegativeThinSpace]", 
@@ -1449,7 +1792,7 @@ Cell[BoxData[
                     Offset[0.034999999999999996`]}, 
                     Offset[0.]}, "ColumnsIndexed" -> {}, "Rows" -> {{
                     Offset[0.]}}, "RowsIndexed" -> {}}],
-                FontSize->9]}
+                FontSize->Rational[39, 4]]}
              },
              
              GridBoxAlignment->{
@@ -1473,7 +1816,7 @@ Cell[BoxData[
              RowBox[{
               SubscriptBox["D", "i"], 
               SuperscriptBox["D", "i"], 
-              OverscriptBox["\<\"\"\>", 
+              OverscriptBox["\[Null]", 
                StyleBox[
                 RowBox[{"(", "1", ")"}],
                 FontColor->RGBColor[0.85, 0, 0]]], "\[NegativeThinSpace]", 
@@ -1555,8 +1898,8 @@ PrivateNotebookOptions->{"FileOutlineCache"->False},
 ShowSelection->True,
 TrackCellChangeTimes->False,
 Magnification->1,
-FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (November 20, \
-2012)",
+FrontEndVersion->"10.4 for Mac OS X x86 (32-bit, 64-bit Kernel) (April 11, \
+2016)",
 StyleDefinitions->FrontEnd`FileName[{"Creative"}, "PastelColor.nb", 
   CharacterEncoding -> "UTF-8"]
 ]

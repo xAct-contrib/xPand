@@ -28,7 +28,7 @@ xAct`xPand`$xPertVersionExpected={"1.0.5",{2014,9,28}};
 
 (* xPand: Cosmological perturbations about homogeneous space-times *)
 
-(* Copyright (C) 2012-2013 Cyril Pitrou, Xavier Roy and Obinna Umeh *)
+(* Copyright (C) 2012-2018 Cyril Pitrou, Xavier Roy and Obinna Umeh *)
 
 (* This program is free software; you can redistribute it and/or
  modify it under the terms of the GNU General Public License as
@@ -91,7 +91,7 @@ If[Not@OrderedQ@Map[Last,{$xPertVersionExpected,xAct`xPert`$Version}],Throw@Mess
 
 Print[xAct`xCore`Private`bars];
 Print["Package xAct`xPand`  version ",$Version[[1]],", ",$Version[[2]]];
-Print["CopyRight (C) 2012-2013, Cyril Pitrou, Xavier Roy and Obinna Umeh under the General Public License."];
+Print["CopyRight (C) 2012-2018, Cyril Pitrou, Xavier Roy and Obinna Umeh under the General Public License."];
 
 
 Off[General::shdw]
