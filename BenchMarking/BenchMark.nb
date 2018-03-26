@@ -163,7 +163,7 @@ Cell[BoxData[{
  RowBox[{
   RowBox[{"DefMatterFields", "[", 
    RowBox[{"uf", ",", " ", "duf", ",", "h2"}], "]"}], 
-  "\n"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]"}], "\n", 
  RowBox[{"DefMetricFields", "[", 
   RowBox[{"g", ",", "dg", ",", "h3"}], "]"}], "\[IndentingNewLine]", 
  RowBox[{
@@ -3099,9 +3099,11 @@ DockedCells->{
           "}"}], "]"}]& )]], "DockedCell"]},
 PrivateNotebookOptions->{"FileOutlineCache"->False},
 ShowSelection->True,
+TrackCellChangeTimes->False,
 Magnification->1,
-FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (January 25, \
-2013)",
+FrontEndVersion->"10.4 for Mac OS X x86 (32-bit, 64-bit Kernel) (April 11, \
+2016)",
 StyleDefinitions->FrontEnd`FileName[{"Creative"}, "PastelColor.nb", 
   CharacterEncoding -> "UTF-8"]
 ]
+
