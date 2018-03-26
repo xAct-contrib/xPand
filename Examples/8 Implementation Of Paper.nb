@@ -1,7 +1,9 @@
 Notebook[{
 
 Cell[CellGroupData[{
-Cell["Notebook used for the paper", "Subsection"],
+Cell["\<\
+Notebook used for the xPand paper, Semi-private notebook. Poorly commented.\
+\>", "Subsection"],
 
 Cell[CellGroupData[{
 
@@ -712,10 +714,9 @@ Cell[BoxData["\<\"------------------------------------------------------------\
 Cell[BoxData[
  RowBox[{
   StyleBox[
-   RowBox[{"\[Epsilon]", "::", "shdw"}], "MessageName"], 
-  RowBox[{
-  ":", " "}], "\<\"Symbol \[NoBreak]\\!\\(\\\"\\\\[Epsilon]\\\"\\)\[NoBreak] \
-appears in multiple contexts \[NoBreak]\\!\\({\\\"xAct`xPand`\\\", \
+   RowBox[{"\[Epsilon]", "::", "shdw"}], "MessageName"], ":", 
+  " ", "\<\"Symbol \[NoBreak]\\!\\(\\\"\\\\[Epsilon]\\\"\\)\[NoBreak] appears \
+in multiple contexts \[NoBreak]\\!\\({\\\"xAct`xPand`\\\", \
 \\\"Global`\\\"}\\)\[NoBreak]; definitions in context \
 \[NoBreak]\\!\\(\\\"xAct`xPand`\\\"\\)\[NoBreak] may shadow or be shadowed by \
 other definitions. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\
@@ -6209,11 +6210,9 @@ Cell[BoxData[
 Cell[BoxData[
  RowBox[{
   StyleBox[
-   RowBox[{"xPand", "::", "makeboxes"}], "MessageName"], 
-  RowBox[{
-  ":", " "}], "\<\"For anisotropic manifolds, the second label-index can be \
-only interpreted as a Lie derivative for indices down.\"\>"}]], "Message", \
-"MSG"],
+   RowBox[{"xPand", "::", "makeboxes"}], "MessageName"], ":", 
+  " ", "\<\"For anisotropic manifolds, the second label-index can be only \
+interpreted as a Lie derivative for indices down.\"\>"}]], "Message", "MSG"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -9088,41 +9087,37 @@ Cell[BoxData[
 Cell[BoxData[
  RowBox[{
   StyleBox[
-   RowBox[{"ToCanonical", "::", "noident"}], "MessageName"], 
-  RowBox[{
-  ":", " "}], "\<\"Unknown expression not canonicalized: \
+   RowBox[{"ToCanonical", "::", "noident"}], "MessageName"], ":", 
+  " ", "\<\"Unknown expression not canonicalized: \
 \[NoBreak]\\!\\(\\*StyleBox[\\\"\[Epsilon]\\\", Rule[FontColor, \
 RGBColor[0.3`, 0.8`, 0.8`]]]\\)\[NoBreak] .\"\>"}]], "Message", "MSG"],
 
 Cell[BoxData[
  RowBox[{
   StyleBox[
-   RowBox[{"ToCanonical", "::", "noident"}], "MessageName"], 
-  RowBox[{
-  ":", " "}], "\<\"Unknown expression not canonicalized: \
+   RowBox[{"ToCanonical", "::", "noident"}], "MessageName"], ":", 
+  " ", "\<\"Unknown expression not canonicalized: \
 \[NoBreak]\\!\\(\\*StyleBox[\\\"\[Epsilon]\\\", Rule[FontColor, \
 RGBColor[0.3`, 0.8`, 0.8`]]]\\)\[NoBreak] .\"\>"}]], "Message", "MSG"],
 
 Cell[BoxData[
  RowBox[{
   StyleBox[
-   RowBox[{"ToCanonical", "::", "noident"}], "MessageName"], 
-  RowBox[{
-  ":", " "}], "\<\"Unknown expression not canonicalized: \
+   RowBox[{"ToCanonical", "::", "noident"}], "MessageName"], ":", 
+  " ", "\<\"Unknown expression not canonicalized: \
 \[NoBreak]\\!\\(\\*StyleBox[\\\"\[Epsilon]\\\", Rule[FontColor, \
 RGBColor[0.3`, 0.8`, 0.8`]]]\\)\[NoBreak] .\"\>"}]], "Message", "MSG"],
 
 Cell[BoxData[
  RowBox[{
   StyleBox[
-   RowBox[{"General", "::", "stop"}], "MessageName"], 
-  RowBox[{
-  ":", " "}], "\<\"Further output of \
-\[NoBreak]\\!\\(\\*StyleBox[\\(ToCanonical :: noident\\), \
-\\\"MessageName\\\"]\\)\[NoBreak] will be suppressed during this calculation. \
-\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
-ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/General/stop\\\", \
-ButtonNote -> \\\"General::stop\\\"]\\)\"\>"}]], "Message", "MSG"],
+   RowBox[{"General", "::", "stop"}], "MessageName"], ":", 
+  " ", "\<\"Further output of \[NoBreak]\\!\\(\\*StyleBox[\\(ToCanonical :: \
+noident\\), \\\"MessageName\\\"]\\)\[NoBreak] will be suppressed during this \
+calculation. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/General/stop\\\", ButtonNote -> \
+\\\"General::stop\\\"]\\)\"\>"}]], "Message", "MSG"],
 
 Cell[BoxData[
  RowBox[{
@@ -19005,41 +19000,37 @@ Cell[BoxData[
 Cell[BoxData[
  RowBox[{
   StyleBox[
-   RowBox[{"ToCanonical", "::", "noident"}], "MessageName"], 
-  RowBox[{
-  ":", " "}], "\<\"Unknown expression not canonicalized: \
+   RowBox[{"ToCanonical", "::", "noident"}], "MessageName"], ":", 
+  " ", "\<\"Unknown expression not canonicalized: \
 \[NoBreak]\\!\\(\\*StyleBox[\\\"\[Epsilon]\\\", Rule[FontColor, \
 RGBColor[0.3`, 0.8`, 0.8`]]]\\)\[NoBreak] .\"\>"}]], "Message", "MSG"],
 
 Cell[BoxData[
  RowBox[{
   StyleBox[
-   RowBox[{"ToCanonical", "::", "noident"}], "MessageName"], 
-  RowBox[{
-  ":", " "}], "\<\"Unknown expression not canonicalized: \
+   RowBox[{"ToCanonical", "::", "noident"}], "MessageName"], ":", 
+  " ", "\<\"Unknown expression not canonicalized: \
 \[NoBreak]\\!\\(\\*StyleBox[\\\"\[Epsilon]\\\", Rule[FontColor, \
 RGBColor[0.3`, 0.8`, 0.8`]]]\\)\[NoBreak] .\"\>"}]], "Message", "MSG"],
 
 Cell[BoxData[
  RowBox[{
   StyleBox[
-   RowBox[{"ToCanonical", "::", "noident"}], "MessageName"], 
-  RowBox[{
-  ":", " "}], "\<\"Unknown expression not canonicalized: \
+   RowBox[{"ToCanonical", "::", "noident"}], "MessageName"], ":", 
+  " ", "\<\"Unknown expression not canonicalized: \
 \[NoBreak]\\!\\(\\*StyleBox[\\\"\[Epsilon]\\\", Rule[FontColor, \
 RGBColor[0.3`, 0.8`, 0.8`]]]\\)\[NoBreak] .\"\>"}]], "Message", "MSG"],
 
 Cell[BoxData[
  RowBox[{
   StyleBox[
-   RowBox[{"General", "::", "stop"}], "MessageName"], 
-  RowBox[{
-  ":", " "}], "\<\"Further output of \
-\[NoBreak]\\!\\(\\*StyleBox[\\(ToCanonical :: noident\\), \
-\\\"MessageName\\\"]\\)\[NoBreak] will be suppressed during this calculation. \
-\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
-ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/General/stop\\\", \
-ButtonNote -> \\\"General::stop\\\"]\\)\"\>"}]], "Message", "MSG"],
+   RowBox[{"General", "::", "stop"}], "MessageName"], ":", 
+  " ", "\<\"Further output of \[NoBreak]\\!\\(\\*StyleBox[\\(ToCanonical :: \
+noident\\), \\\"MessageName\\\"]\\)\[NoBreak] will be suppressed during this \
+calculation. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/General/stop\\\", ButtonNote -> \
+\\\"General::stop\\\"]\\)\"\>"}]], "Message", "MSG"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -19530,41 +19521,37 @@ Cell[BoxData[
 Cell[BoxData[
  RowBox[{
   StyleBox[
-   RowBox[{"ToCanonical", "::", "noident"}], "MessageName"], 
-  RowBox[{
-  ":", " "}], "\<\"Unknown expression not canonicalized: \
+   RowBox[{"ToCanonical", "::", "noident"}], "MessageName"], ":", 
+  " ", "\<\"Unknown expression not canonicalized: \
 \[NoBreak]\\!\\(\\*StyleBox[\\\"\[Epsilon]\\\", Rule[FontColor, \
 RGBColor[0.3`, 0.8`, 0.8`]]]\\)\[NoBreak] .\"\>"}]], "Message", "MSG"],
 
 Cell[BoxData[
  RowBox[{
   StyleBox[
-   RowBox[{"ToCanonical", "::", "noident"}], "MessageName"], 
-  RowBox[{
-  ":", " "}], "\<\"Unknown expression not canonicalized: \
+   RowBox[{"ToCanonical", "::", "noident"}], "MessageName"], ":", 
+  " ", "\<\"Unknown expression not canonicalized: \
 \[NoBreak]\\!\\(\\*StyleBox[\\\"\[Epsilon]\\\", Rule[FontColor, \
 RGBColor[0.3`, 0.8`, 0.8`]]]\\)\[NoBreak] .\"\>"}]], "Message", "MSG"],
 
 Cell[BoxData[
  RowBox[{
   StyleBox[
-   RowBox[{"ToCanonical", "::", "noident"}], "MessageName"], 
-  RowBox[{
-  ":", " "}], "\<\"Unknown expression not canonicalized: \
+   RowBox[{"ToCanonical", "::", "noident"}], "MessageName"], ":", 
+  " ", "\<\"Unknown expression not canonicalized: \
 \[NoBreak]\\!\\(\\*StyleBox[\\\"\[Epsilon]\\\", Rule[FontColor, \
 RGBColor[0.3`, 0.8`, 0.8`]]]\\)\[NoBreak] .\"\>"}]], "Message", "MSG"],
 
 Cell[BoxData[
  RowBox[{
   StyleBox[
-   RowBox[{"General", "::", "stop"}], "MessageName"], 
-  RowBox[{
-  ":", " "}], "\<\"Further output of \
-\[NoBreak]\\!\\(\\*StyleBox[\\(ToCanonical :: noident\\), \
-\\\"MessageName\\\"]\\)\[NoBreak] will be suppressed during this calculation. \
-\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
-ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/General/stop\\\", \
-ButtonNote -> \\\"General::stop\\\"]\\)\"\>"}]], "Message", "MSG"],
+   RowBox[{"General", "::", "stop"}], "MessageName"], ":", 
+  " ", "\<\"Further output of \[NoBreak]\\!\\(\\*StyleBox[\\(ToCanonical :: \
+noident\\), \\\"MessageName\\\"]\\)\[NoBreak] will be suppressed during this \
+calculation. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/General/stop\\\", ButtonNote -> \
+\\\"General::stop\\\"]\\)\"\>"}]], "Message", "MSG"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -21903,9 +21890,9 @@ Cell[BoxData[
    "3.41687099999999999155875229917000979185`6.55422849610364", 
    "\[InvisibleSpace]", "\<\" seconds.\"\>"}],
   SequenceForm[
-  "The Splitting of ", $CellContext`\[Kappa]^(-1) $CellContext`\
-\[CapitalLambda] xAct`xTensor`delta[$CellContext`\[Mu], -$CellContext`\[Nu]], 
-   " +... was performed in ", 
+  "The Splitting of ", ($CellContext`\[Kappa]^(-1) $CellContext`\
+\[CapitalLambda]) xAct`xTensor`delta[$CellContext`\[Mu], -$CellContext`\[Nu]],
+    " +... was performed in ", 
    3.41687099999999999155875229917000979185`6.55422849610364, " seconds."],
   Editable->False]], "Print"]
 }, Open  ]],
@@ -27539,8 +27526,8 @@ Visible->True,
 PrivateNotebookOptions->{"FileOutlineCache"->False},
 ShowSelection->True,
 TrackCellChangeTimes->False,
-FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (November 20, \
-2012)",
+FrontEndVersion->"10.4 for Mac OS X x86 (32-bit, 64-bit Kernel) (April 11, \
+2016)",
 StyleDefinitions->"Default.nb"
 ]
 
