@@ -2338,7 +2338,7 @@ ConfHead[metric1_?MetricQ,metric1_?MetricQ][expr_]:=expr
 ConfHead[metric2_?MetricQ,metric3_?MetricQ][ConfHead[metric1_?MetricQ,metric2_?MetricQ][expr_]]:=ConfHead[metric1,metric3][expr]
 
 
-(* Thanks to Jolyon and Leo Stein, the definition below should be much more general. *)
+(* Thanks to Jolyon Bloomfield and Leo Stein, the definition below should be much more general. *)
 (* The main reason is that the delta tensor is greedy and wants to contract through expressions like
 ConfHead[...][f[Scalar[phi[]]]].*)
 ConfHead/:IsIndexOf[ConfHead[_,_][_],_,delta]:=False;
@@ -2455,8 +2455,8 @@ SeparateIndicesDownOfInverseMetric[invmetric_?InverseMetricQ][expr_]:=Fold[Separ
 SeparateIndicesDownOfInverseMetric[_][expr_]:=expr
 
 
-Conformal[metricbase_?MetricQ][metric1_?MetricQ,metric2_?MetricQ][expr_]:=Module[{cdb,cd1,cd2,res,res2,(*oldpre,*)resbis,exprnoproj,M,i1,i2,beforeputtingconfheads,IDInvMetric},
-(* The conflict with CreenDollarIndicea has now been solved. So there is no need to redefine tempararoly $PrePrint*)
+Conformal[metricbase_?MetricQ][metric1_?MetricQ,metric2_?MetricQ][expr_]:=Module[{cdb,cd1,cd2,res,res2,(*oldpre,*)resbis,exprnoproj,M,i1,i2,beforeputtingconfheads,IDInvMetric,restoFirstMetric},
+(* The conflict with ScreenDollarIndicea has now been solved. So there is no need to redefine temporarily $PrePrint*)
 (*oldpre=$PrePrint;$PrePrint=Identity;*)
 
 (* we define the Covds associated with the metric. The starting metric is metric1, the conformally transformed metric is metric2, and metricbase i the base metric for raising and lowering indiced. It might be one of the other two, but it might not be...*)
@@ -2464,7 +2464,13 @@ cdb=CovDOfMetric[metricbase];
 cd1=CovDOfMetric[metric1];Off[ConformalFactor::"unknown"];
 cd2=CovDOfMetric[metric2];
 
-exprnoproj=expr//ProjectorToMetric;
+(* Modification March 2018. We go systematically back to the active metric before doing any conformal computation*)
+(* This should ensure that Conformal transformation with multiple metrics work correctly *)
+Off[ToCanonical::"cmods"];
+exprnoproj=ToCanonical@ToMetric[expr,First@$Metrics]//ProjectorToMetric;
+On[ToCanonical::"cmods"];
+(* End of modification *)
+
 M=ManifoldOfCovD[cd1];
 i1=DummyIn[Tangent[M]];
 i2=DummyIn[Tangent[M]];
@@ -2509,7 +2515,12 @@ Indeed at that point, we still have the second metric, and the Riemann of the se
 On[ConformalFactor::"unknown"];
 Off[ToCanonical::"cmods"];
 
-res2=ToCanonical@ContractMetric@NoScalar[ToMetric[resbis,metricbase]];
+(*Print[resbis];*)
+(* Patch added on March 2018. This is because for frozen metric, some contraction of indices, namely the position frozen[\[Alpha],-\[Beta]]Inv[frozen][-\[Gamma],\[Beta]] does not simplify to Dirac. Hence it results in problems.*)
+(* More generally, we choose to always go through the First active metric to avoid all problems. I do not really understand what is going on. But we always go back to the active metric whenever doing anything and this avoids many bugs  *)
+restoFirstMetric=ToCanonical@ContractMetric@NoScalar[ToMetric[resbis,First@$Metrics]];
+
+res2=If[metricbase===First@$Metrics,restoFirstMetric,ToCanonical@ContractMetric@NoScalar[ToMetric[restoFirstMetric,metricbase]]];
 On[ToCanonical::"cmods"];
 res2
 ]
