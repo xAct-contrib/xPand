@@ -2455,7 +2455,7 @@ SeparateIndicesDownOfInverseMetric[invmetric_?InverseMetricQ][expr_]:=Fold[Separ
 SeparateIndicesDownOfInverseMetric[_][expr_]:=expr
 
 
-Conformal[metricbase_?MetricQ][metric1_?MetricQ,metric2_?MetricQ][expr_]:=Module[{cdb,cd1,cd2,res,res2,(*oldpre,*)resbis,exprnoproj,M,i1,i2,beforeputtingconfheads,IDInvMetric,restoFirstMetric},
+Conformal[metricbase_?MetricQ][metric1_?MetricQ,metric2_?MetricQ][expr_]:=Module[{cdb,cd1,cd2,res,res2,(*oldpre,*)resbis,exprnoproj,M,i1,i2,beforeputtingconfheads,IDInvMetric,res3,firstmetric},
 (* The conflict with ScreenDollarIndicea has now been solved. So there is no need to redefine temporarily $PrePrint*)
 (*oldpre=$PrePrint;$PrePrint=Identity;*)
 
@@ -2464,12 +2464,8 @@ cdb=CovDOfMetric[metricbase];
 cd1=CovDOfMetric[metric1];Off[ConformalFactor::"unknown"];
 cd2=CovDOfMetric[metric2];
 
-(* Modification March 2018. We go systematically back to the active metric before doing any conformal computation*)
-(* This should ensure that Conformal transformation with multiple metrics work correctly *)
-Off[ToCanonical::"cmods"];
-exprnoproj=ToCanonical@ToMetric[expr,First@$Metrics]//ProjectorToMetric;
-On[ToCanonical::"cmods"];
-(* End of modification *)
+
+exprnoproj=expr//ProjectorToMetric;
 
 M=ManifoldOfCovD[cd1];
 i1=DummyIn[Tangent[M]];
@@ -2515,14 +2511,19 @@ Indeed at that point, we still have the second metric, and the Riemann of the se
 On[ConformalFactor::"unknown"];
 Off[ToCanonical::"cmods"];
 
-(*Print[resbis];*)
-(* Patch added on March 2018. This is because for frozen metric, some contraction of indices, namely the position frozen[\[Alpha],-\[Beta]]Inv[frozen][-\[Gamma],\[Beta]] does not simplify to Dirac. Hence it results in problems.*)
-(* More generally, we choose to always go through the First active metric to avoid all problems. I do not really understand what is going on. But we always go back to the active metric whenever doing anything and this avoids many bugs  *)
-restoFirstMetric=ToCanonical@ContractMetric@NoScalar[ToMetric[resbis,First@$Metrics]];
+res2=ToCanonical@ContractMetric@NoScalar[ToMetric[resbis,metricbase]];
 
-res2=If[metricbase===First@$Metrics,restoFirstMetric,ToCanonical@ContractMetric@NoScalar[ToMetric[restoFirstMetric,metricbase]]];
+
+
+(* Cyril Pitrou : March 2018. I have added an attempt to patch the problems I have with multiples frozen metrics coming from multiple conformal transformations. Does not affect xPand as usuall in xPand we never use the conformally related metrics and always use the base metric *)
+(* I think it works... The idea is that since for frozen metrics some simplifications to Dirac do not occur when they should, I switch to active metric, let xTensor put the Dirac, and switch back to the desired metric. *)
+firstmetric=First@$Metrics;
+If[metricbase=!=firstmetric,
+res3=ContractMetric[((ToCanonical@NoScalar@ContractMetric[res2/.ConformalRules[metricbase,firstmetric]])/.ConformalRules[firstmetric,metricbase])];,
+res3=res2;];
+
 On[ToCanonical::"cmods"];
-res2
+res3
 ]
 
 (* In case the base metric is unspecified, it is the base metric of course...*)
