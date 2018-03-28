@@ -2517,6 +2517,7 @@ res2=ToCanonical@ContractMetric@NoScalar[ToMetric[resbis,metricbase]];
 
 (* Cyril Pitrou : March 2018. I have added an attempt to patch the problems I have with multiples frozen metrics coming from multiple conformal transformations. Does not affect xPand as usuall in xPand we never use the conformally related metrics and always use the base metric *)
 (* I think it works... The idea is that since for frozen metrics some simplifications to Dirac do not occur when they should, I switch to active metric, let xTensor put the Dirac, and switch back to the desired metric. *)
+(* It happened that some definitions in xTensor were missing for frozen metrics. As of 28/03/2018 version of xAct this should be fixed and the patch I am adding below should not be necessary...*)
 firstmetric=First@$Metrics;
 If[metricbase=!=firstmetric,
 res3=ContractMetric[((ToCanonical@NoScalar@ContractMetric[res2/.ConformalRules[metricbase,firstmetric]])/.ConformalRules[firstmetric,metricbase])];,

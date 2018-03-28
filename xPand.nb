@@ -959,10 +959,10 @@ with down indices.\>\""}], ";"}], "\[IndentingNewLine]",
      RowBox[{"DefProjectedTensorProperties", "::", "symmetrictensors"}], "=", 
      "\"\<The current version of DefProjectedTensorProperties can only add \
 properties to tensors that are, at least, fully symmetric.\>\""}], ";"}], 
-   "\n", "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
    RowBox[{"(*", 
     RowBox[{"*", " ", "ExtractComponents"}], " ", "**)"}], 
-   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", "\n", 
    RowBox[{
     RowBox[{
      RowBox[{"ExtractComponents", "::", "invalidprojector"}], " ", "=", " ", 
@@ -1463,7 +1463,7 @@ Cell[BoxData[
      "\"\<$ListFieldsBackgroundOnly[h], with 'h' being the induced metric on \
 the hypersurfaces, is the list of fields that live on the background only. It \
 is automatically defined when calling the function SetSlicing.\>\""}], ";"}], 
-   "\n", "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", "\n", 
    RowBox[{
     RowBox[{
      RowBox[{"$ListFieldsPerturbedOnly", "::", "usage"}], "=", 
@@ -2628,7 +2628,7 @@ Cell[BoxData[
                     RowBox[{"i", ",", "1", ",", "q"}], "}"}]}], "]"}]}]}], 
                "]"}]}], "}"}], "]"}]}], "\[IndentingNewLine]", "]"}]}], 
         "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", "]"}]}], ";"}],
-    "\n", "\[IndentingNewLine]", 
+    "\[IndentingNewLine]", "\n", 
    RowBox[{"xTensorFormStart", "[", "Tensor", "]"}]}]}]], "Input",
  InitializationCell->True],
 
@@ -15036,7 +15036,7 @@ Cell[BoxData[{
      RowBox[{
       RowBox[{"MyChangeChristoffel", "[", 
        RowBox[{"#1", ",", "#2", ",", "cd1"}], "]"}], "&"}], ",", "expr", ",", 
-     "cd2list"}], "]"}]}], "\n"}], "\[IndentingNewLine]", 
+     "cd2list"}], "]"}]}], "\[IndentingNewLine]"}], "\n", 
  RowBox[{
   RowBox[{"MyChangeChristoffel", "[", 
    RowBox[{"expr_", ",", "cd2_", ",", "cd1_"}], "]"}], ":=", 
@@ -15477,7 +15477,7 @@ since we do not know very well how to handle that. **\>\"", "]"}], ";"}]}],
                 "]"}], ";", "\[IndentingNewLine]", "res"}]}], 
              "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", "]"}]}], 
          "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", "]"}]}], 
-     "\[IndentingNewLine]", "]"}]}], ";"}], "\[IndentingNewLine]"}], "\n", 
+     "\[IndentingNewLine]", "]"}]}], ";"}], "\n"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
    RowBox[{
@@ -16000,6 +16000,19 @@ Cell[BoxData[{
         "and", " ", "switch", " ", "back", " ", "to", " ", "the", " ", 
          "desired", " ", 
          RowBox[{"metric", "."}]}]}], " ", "*)"}], "\[IndentingNewLine]", 
+      RowBox[{"(*", " ", 
+       RowBox[{
+        RowBox[{
+        "It", " ", "happened", " ", "that", " ", "some", " ", "definitions", 
+         " ", "in", " ", "xTensor", " ", "were", " ", "missing", " ", "for", 
+         " ", "frozen", " ", 
+         RowBox[{"metrics", ".", " ", "As"}], " ", "of", " ", 
+         RowBox[{
+          RowBox[{"28", "/", "03"}], "/", "2018"}], " ", "version", " ", "of",
+          " ", "xAct", " ", "this", " ", "should", " ", "be", " ", "fixed", 
+         " ", "and", " ", "the", " ", "patch", " ", "I", " ", "am", " ", 
+         "adding", " ", "below", " ", "should", " ", "not", " ", "be", " ", 
+         "necessary"}], "..."}], "*)"}], "\[IndentingNewLine]", 
       RowBox[{"firstmetric", "=", 
        RowBox[{"First", "@", "$Metrics"}]}], ";", "\[IndentingNewLine]", 
       RowBox[{"If", "[", 
@@ -17740,9 +17753,8 @@ Cell[BoxData[
              RowBox[{"$DebugInfoQ", ",", 
               RowBox[{
               "Print", "[", 
-               "\"\<Constants of structure opened and simplified. \>\"", 
-               "]"}]}], "]"}], ";", "\[IndentingNewLine]", 
-            "\[IndentingNewLine]", 
+               "\"\<Constants of structure opened and simplified. \>\"", "]"}]
+               }], "]"}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
             RowBox[{"CheckSTFTensors", "[", 
              RowBox[{
               RowBox[{"Last", "@", "res"}], ",", "h", ",", 
